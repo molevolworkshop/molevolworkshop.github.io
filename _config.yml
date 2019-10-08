@@ -1,13 +1,18 @@
-title: Molecular Evolution Workshop (Woods Hole)
+title: Workshop in Molecular Evolution
+director: Paul O. Lewis
+codirector: Peter Beerli
+logo_filename: tshirt-2019.png
 email: moledirector@mbl.edu
 description: >-
-  Founded in 1988, the Workshop in Molecular Evolution at the Woods Hole Marine
-  Biological Laboratory is the longest-running workshop of its kind, and it has 
-  earned worldwide recognition for its rich and intensive learning experience.
+  Since 1988, the Workshop in Molecular Evolution at Woods Hole has 
+  provided essential training in the theory and methods of molecular evolution.
+#baseurl: "/people/plewis/wh2020"
 baseurl: ""
 url: ""
 #twitter_username: jekyllrb
-github_username:  molevolworkshop
+facebook_username: Molecular Evolution Workshop at the MBL
+#github_username:  molevolworkshop
+show_excerpts: true
 
 # Build settings
 markdown: kramdown
