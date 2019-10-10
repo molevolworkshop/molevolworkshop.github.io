@@ -6,8 +6,8 @@ email: moledirector@mbl.edu
 description: >-
   Since 1988, the Workshop in Molecular Evolution at Woods Hole has 
   provided essential training in the theory and methods of molecular evolution.
-baseurl: "/people/plewis/wh2020"
-#baseurl: ""
+#baseurl: "/people/plewis/wh2020"
+baseurl: ""
 url: ""
 #twitter_username: jekyllrb
 facebook_username: Molecular Evolution Workshop at the MBL
