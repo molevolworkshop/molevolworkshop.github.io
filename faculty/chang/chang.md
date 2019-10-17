@@ -8,7 +8,8 @@ permalink: /faculty-chang/
 [https://chang.eeb.utoronto.ca/](https://chang.eeb.utoronto.ca/)
 
 ### Arrival and Departure
-Thursday August 8 - Sunday August 11
+
+Not yet determined.
 
 ### Lecture Materials
 

@@ -105,8 +105,8 @@ Free Day
  08:00 - 09:30 | Huelsenbeck         | C++ Programming Workshop (optional)
  09:00 - 10:30 | Eme                 | [Substitution models for proteins]({{ site.baseurl }}/faculty/eme/pdf/Phylogenomics_EmeLaura_WoodsHole2019_4-opt.pdf)
  10:30 - 12:00 | Eme                 | [Multi-gene phylogenetics: methods & applications]({{ site.baseurl }}/faculty/eme/pdf/Phylogenomics_EmeLaura_WoodsHole2019_4-opt.pdf#page=72)
- 14:00 - 15:30 | Huerta-Sanchez      | [Pop. gen. + selection]({{ site.baseurl }}/faculty/huerta-sanchez/pdf/MBL_WoodsHole_Aug10_2019_Part1-opt.pdf)
- 15:30 - 17:00 | Huerta-Sanchez      | [Pop. gen. + selection]({{ site.baseurl }}/faculty/huerta-sanchez/pdf/MBL_WoodsHole_Aug10_2019_Part2-opt.pdf)
+ 14:00 - 15:30 | ???                 | [Huerta-Sanchez 2019 lecture: Pop. gen. + selection I]({{ site.baseurl }}/faculty/huerta-sanchez/pdf/MBL_WoodsHole_Aug10_2019_Part1-opt.pdf)
+ 15:30 - 17:00 | ???                 | [Huerta-Sanchez 2019 lecture: Pop. gen. + selection II]({{ site.baseurl }}/faculty/huerta-sanchez/pdf/MBL_WoodsHole_Aug10_2019_Part2-opt.pdf)
  19:00 - 20:30 | Knowles             | Evolutionary applications of genomic data
  20:30 - 22:00 | Knowles             | Evolutionary applications of genomic data
 {:.daily-schedule-cpp}

@@ -14,15 +14,11 @@ permalink: /faculty/
 
 [Scott Edwards]({{ '/faculty-edwards/' | relative_url }}), Harvard University
 
-[Laura Eme]({{ '/faculty-eme/' | relative_url }}), Uppsala University
+[Laura Eme]({{ '/faculty-eme/' | relative_url }}), Université Paris-Sud
 
 [Tracy Heath]({{ '/faculty-heath/' | relative_url }}), Iowa State University
 
-[Mark Holder]({{ '/faculty-holder/' | relative_url }}), University of Kansas
-
 [John Huelsenbeck]({{ '/faculty-huelsenbeck/' | relative_url }}), University of California-Berkeley
-
-[Emilia Huerta-Sanchez]({{ '/faculty-huerta-sanchez/' | relative_url }}), Brown University
 
 [Lacey Knowles]({{ '/faculty-knowles/' | relative_url }}), University of Michigan
 
@@ -56,7 +52,8 @@ Will Pett, Iowa State University
 
 Marlene Abouaassi
 
-Former recent faculty
+## Former recent faculty
+
 Cécile Ané, University of Wisconsin-Madison
 
 Mario dos Reis, Queen Mary University London
@@ -70,6 +67,10 @@ Ben Evans, McMaster University
 David Hillis, University of Texas
 
 Joseph Felsenstein, University of Washington
+
+Emilia Huerta-Sanchez, Brown University
+
+Mark Holder, University of Kansas
 
 Conor Meehan, Institute of Tropical Medicine
 
