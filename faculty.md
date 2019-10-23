@@ -30,7 +30,7 @@ permalink: /faculty/
 
 [Emily Jane McTavish]({{ '/faculty-mctavish/' | relative_url }}), University of California-Merced
 
-[Bui Quang Minh]({{ '/faculty-mihn/' | relative_url }}), Australian National University
+[Bui Quang Minh]({{ '/faculty-minh/' | relative_url }}), Australian National University
 
 [Claudia Solís-Lemus]({{ '/faculty-solis-lemus/' | relative_url }}), Emory University
 
