@@ -4,6 +4,7 @@ title: Faculty
 menutitle: Faculty
 permalink: /faculty/
 ---
+{% include figure.html description="" url="/assets/img/fromback2018.jpg" css="image-center" height="250px" %}
 ## 2019 Course Faculty
 
 [Peter Beerli]({{ '/faculty-beerli/' | relative_url }}), Florida State University
@@ -13,8 +14,6 @@ permalink: /faculty/
 [Belinda Chang]({{ '/faculty-chang/' | relative_url }}), University of Toronto
 
 [Scott Edwards]({{ '/faculty-edwards/' | relative_url }}), Harvard University
-
-[Laura Eme]({{ '/faculty-eme/' | relative_url }}), Université Paris-Sud
 
 [Tracy Heath]({{ '/faculty-heath/' | relative_url }}), Iowa State University
 
@@ -40,17 +39,16 @@ permalink: /faculty/
 
 ## 2019 Course TAs
 
-George Tiley (Instructor/Lead TA), Department of Biology, Duke University
+[George Tiley]({{ '/faculty-tiley/' | relative_url }}) (Instructor/Lead TA), Department of Biology, Duke University
 
-Deise Josely Pereira Gonçalves, Department of Integrative Biology, University of Texas at Austin
+[Katie Taylor]({{ '/faculty-taylor/' | relative_url }}), Department of Ecology and Evolutionary Biology, University of Connecticut
 
-Will Pett, Iowa State University
+[Deise Josely Pereira Gonçalves]({{ '/faculty-goncalves/' | relative_url }}), Department of Integrative Biology, University of Texas at Austin
 
-Áki Jarl Láruson Northeastern University
+[Will Pett]({{ '/faculty-pett/' | relative_url }}), Iowa State University
 
 ## 2019 Course Assistant
 
-Marlene Abouaassi
 
 ## Former recent faculty
 
@@ -61,6 +59,8 @@ Mario dos Reis, Queen Mary University London
 Casey Dunn, Yale University
 
 Deren Eaton, Yale University
+
+Laura Eme, Université Paris-Sud
 
 Ben Evans, McMaster University
 
@@ -84,15 +84,28 @@ Rachel Williams, Duke University
 
 Derrick Zwickl, University of Arizona
 
+{% comment %}
+Axel Meyer, Harold Zakon, Sara Sawyer, Shozo Yokoyama, Gavin Naylor
+{% endcomment %}
+
 ## Former recent TAs
 
-Peter Larsen, Duke University
+[Áki Jarl Láruson](https://akijarl.wordpress.com/cv/) Northeastern University
 
-Ben Liebeskind, University of Texas, Austin
+[Peter Larsen](https://vetmed.umn.edu/bio/college-of-veterinary-medicine/peter-larsen), University of Minnesota
 
-Nicholas Meyerson, University of Colorado Boulder
+[Ben Liebeskind](https://sites.cns.utexas.edu/raldrich/people/ben-leibeskind), University of Texas, Austin
 
-Noor White, National Eye Institute, National Science Foundation
+[Nicholas Meyerson](https://scholar.google.com/citations?user=2nWxzoYAAAAJ&hl=en), University of Colorado Boulder
 
-April Wright, Iowa State University
+[Noor White](http://www.noorwhite.com), National Eye Institute, National Science Foundation
+
+[April Wright](http://www.southeastern.edu/acad_research/depts/biol/faculty/directory/wright.html), Southeastern Louisiana University
+
+## Former Recent Course Assistants
+
+[Marlene Abouaassi](https://j.p.gogarten.uconn.edu/personnel.htm#Current)
+
+[Marcus W. Fedarko](https://fedarko.github.io)
+
 

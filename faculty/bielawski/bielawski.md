@@ -3,19 +3,18 @@ layout: page
 title: Joe Bielawski
 permalink: /faculty-bielawski/
 ---
-{% include figure.html description="Joe" url="/faculty/bielawski/img/JPB.jpg" css="image-left" height="250px" %}
-**Arrival:** Not yet determined.
+{% include figure.html description="Joe" url="/faculty/bielawski/img/JPB.jpg" css="image-right" height="250px" %}
+## Institutional home pages
 
-**Departure:** Not yet determined.
+* [Statistics](http://www.mscs.dal.ca/Faculty/bielawski.html)
 
-**Institutional home pages:**
+* [Biology](http://www.bielawski.info)
 
-[Statistics](http://www.mscs.dal.ca/Faculty/bielawski.html)
+## Arrival and Departure
 
-[Biology](http://www.bielawski.info)
+Not yet determined.
 
 ## Lecture Materials
-{:style="clear:both"}
 
 I did an extensive update of the lecture slides on codon models for 2017. The update includes greater coverage of the mechanistic process of codon evolution (via the MutSel framework).  Because there is now less detail about fitting codon models to real data, I have included links to the 2015 & 2016 slides below; these slides provide more practical information about the powers and pitfalls of inference under codon models.
 

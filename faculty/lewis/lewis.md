@@ -3,7 +3,7 @@ layout: page
 title: Paul O. Lewis
 permalink: /faculty-lewis/
 ---
-{% include figure.html description="Paul" url="/faculty/lewis/img/plewis2019.jpg" height="300px" css="image-right" %}
+{% include figure.html description="Paul" url="/faculty/lewis/img/300px-Irobot.jpg" height="300px" css="image-right" %}
 
 ### Time at MBL 
 I will be present from July 31 to August 12, 2019.

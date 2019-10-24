@@ -5,9 +5,9 @@ permalink: /faculty-edwards/
 ---
 {% include figure.html description="Scott" url="/faculty/edwards/img/Scott_Galapagos.jpg" css="image-right" %}
 
-### Duration of Stay
+## Arrival and Departure
 
-Not yet determined
+Not yet determined.
 
 ### Institutional Website
 

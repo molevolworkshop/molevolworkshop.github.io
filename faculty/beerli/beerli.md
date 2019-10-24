@@ -3,12 +3,14 @@ layout: page
 title: Peter Beerli
 permalink: /faculty-beerli/
 ---
-{% include figure.html description="Peter" url="/faculty/beerli/img/Peter.jpg" css="image-right" %}
+{% include figure.html description="Peter" url="/faculty/beerli/img/Peter.jpg" css="image-right" height="250px" %}
 
 ## Institutional home page
+
 [http://people.sc.fsu.edu/~beerli](http://people.sc.fsu.edu/~beerli)
 
 ## Arrival and Departure
+
 Not yet determined.
 
 ## Lecture Materials

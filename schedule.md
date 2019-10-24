@@ -4,6 +4,7 @@ title: Schedule
 menutitle: Schedule
 permalink: /schedule/
 ---
+{% include figure.html description="" url="/assets/img/eelpond2019.jpg" css="image-center" height="250px" %}
 All sessions are in Loeb G70 (basement of Loeb building)
 
 ### Sunday, May 31, 2020
