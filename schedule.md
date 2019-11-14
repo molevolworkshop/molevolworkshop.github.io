@@ -2,6 +2,7 @@
 layout: page
 title: Schedule
 menutitle: Schedule
+menuorder: 2
 permalink: /schedule/
 ---
 {% include figure.html description="" url="/assets/img/eelpond2019.jpg" css="image-center" height="250px" %}
@@ -84,8 +85,8 @@ Free Day
  10:30 - 12:00 | Kubatko/Swofford    | [Species tree lab](http://phylosolutions.com/tutorials/wh2019-svdq-astral/species-trees-tutorial.html)
  14:00 - 15:30 | Edwards             | [Multilocus phylogeography and phylogenetics I]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2019_partI-opt.pdf)
  15:30 - 17:00 | Edwards             | [Multilocus phylogeography and phylogenetics II]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2019_partII-opt.pdf)
- 19:00 - 20:30 | Beerli              | [Population model extimation using MIGRATE](http://peterbeerli.com/workshops/mbl/2018/tutorial/)
- 20:30 - 22:00 | Beerli              | [Population model extimation using MIGRATE](http://peterbeerli.com/workshops/mbl/2018/tutorial/)
+ 19:00 - 20:30 | Beerli              | [Population model estimation using MIGRATE](http://peterbeerli.com/workshops/mbl/2018/tutorial/)
+ 20:30 - 22:00 | Beerli              | [Population model estimation using MIGRATE](http://peterbeerli.com/workshops/mbl/2018/tutorial/)
 {:.daily-schedule-cpp}
 
 ### Monday, June 8, 2020

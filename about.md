@@ -2,6 +2,7 @@
 layout: page
 title: About
 menutitle: About
+menuorder: 0
 permalink: /about/
 ---
 {% include figure.html description="Rainbow, Eel Pond, 2019" url="/assets/img/rainbow2019.jpg" css="image-right" height="300px" %}
