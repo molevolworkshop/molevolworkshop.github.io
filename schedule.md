@@ -6,6 +6,11 @@ menuorder: 2
 permalink: /schedule/
 ---
 {% include figure.html description="" url="/assets/img/eelpond2019.jpg" css="image-center" height="250px" %}
+
+IMPORTANT: this schedule is still under construction and will continue to change until this notice is removed. 
+Lectures linked here are those from the 2019 version of the workshop.
+{:.pozor}
+
 All sessions are in Loeb G70 (basement of Loeb building)
 
 ### Sunday, May 31, 2020

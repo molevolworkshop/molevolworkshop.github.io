@@ -2,6 +2,12 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
+.pozor {
+    font-size:large;
+    color:red;
+    background:yellow;
+}
+
 @import "minima";
 @import "schedule-table";
 @import "logo";
