@@ -2,7 +2,6 @@
 layout: page
 title: Schedule
 menutitle: Schedule
-menuorder: 2
 permalink: /schedule/
 ---
 {% include figure.html description="" url="/assets/img/eelpond2019.jpg" css="image-center" height="250px" %}
@@ -26,7 +25,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  10:30 - 12:00 | Lewis               | Introduction to Phylogenetics ([Holder 2019 lecture]({{ site.baseurl }}/faculty/holder/pdf/Holder_phylo_intro_and_msa-opt.pdf))
  14:00 - 15:30 | Huelsenbeck         | [Introduction to Likelihood]({{ site.baseurl }}/faculty/huelsenbeck/pdf/WoodsHole2012_1-opt.pdf)
  15:30 - 17:00 | Huelsenbeck         | Simulating Molecular Evolution
- 19:00 - 20:30 | TAs                 | Intro computer lab
+ 19:00 - 20:30 | TAs                 | [Intro computer lab](/labs/intro/)
  20:30 - 22:00 | TAs                 | Alignment lab
 {: .daily-schedule-std}
 

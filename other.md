@@ -2,7 +2,6 @@
 layout: page
 title: Other Information
 menutitle: Other
-menuorder: 3
 permalink: /other/
 ---
 ## T-shirts
