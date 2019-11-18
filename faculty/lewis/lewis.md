@@ -3,13 +3,13 @@ layout: page
 title: Paul O. Lewis
 permalink: /faculty-lewis/
 ---
-{% include figure.html description="Paul" url="/faculty/lewis/img/300px-Irobot.jpg" height="300px" css="image-right" %}
+{% include figure.html description="Paul" url="/faculty-lewis/img/300px-Irobot.jpg" height="300px" css="image-right" %}
 
 ### Time at MBL 
 I will be present from July 31 to August 12, 2019.
 
 ### Contact Info 
-E-mail: [paul.lewis@uconn.edu](paul.lewis@uconn.edu)
+E-mail: [paul.lewis@uconn.edu](mailto:paul.lewis@uconn.edu)
 
 Address: Department of Ecology and Evolutionary Biology, University of Connecticut, 75 N. Eagleville Road, Unit 3043, Storrs, CT 06269-3043 U.S.A.
 
