@@ -96,10 +96,57 @@ The initial part `{% include figure.html` should not be modified. You can change
 description, url, height, and css attributes however to suit your purposes. 
 
 **Important:**
-* Note that the only options for `css` are `image-center` and `image-right`.
+* Note that the only options for `css` are `image-left`, `image-center` and `image-right`.
 * Note that the url provided must be the actual path from the root of the web site 
 to the image file (don't be tempted to use the permalink specified in the frontmatter
-of your personal page as part of this url)
+of your personal page as part of this url)\
+
+### How do I create a simple table?
+
+Tables couldn't be simpler to create in markdown:
+~~~~~~
+Lecturer    |       Affiliation                 
+----------  | ----------------------------------
+Beerli      | Florida State University          
+Bielawski   | Dalhousie University              
+Chang       | University of Toronto             
+Edwards     | Harvard University University     
+Heath       | Iowa State University             
+Huelsenbeck | University of California-Berkeley 
+Knowles     | University of Michigan            
+Kubatko     | Ohio State University             
+Lewis       | University of Connecticut         
+McTavish    | University of California-Merced   
+Minh        | Australian National University    
+Solís-Lemus | University of Wisconsin           
+Swofford    | University of Florida             
+Tiley       | Duke University                   
+Yoder       | Duke University                   
+~~~~
+The vertical bar (created using pipe `|` characters) is the boundary between columns, and
+the horizontal bar (created using hyphen `-` characters) is the boundary between the header
+line and the ordinary table lines. You can justify particular columns using colons in 
+the line of hyphens defining the boudary separating header and table. For example, this
+woud cause lecturar names to be right justified and affiliation to be left justified:
+~~~~~~
+Lecturer    |       Affiliation                 
+----------: | :-------------------------------
+Beerli      | Florida State University          
+Bielawski   | Dalhousie University              
+Chang       | University of Toronto   
+  .         |        .          
+  .         |        .          
+  .         |        .          
+Yoder       | Duke University                   
+~~~~
+The spacing is irrelevant: you do not need to be tidy as long as you get a vertical bar
+between your columns. Also, the number of hyphens in each column of the header separator
+does not matter (but you do need at least 3).
+
+You may desire to have more control over your tables (e.g. want a particular column to be
+wider or narrower), but markdown only allows pretty simple tables. Talk to the [directors](mailto:moledirector@mbl.edu)
+if you feel you really need to do something more complicated and we can add CSS to the site
+to do some simple tweaking of table format.
 
 ### Is there a limit to the size of files I can upload?
 
