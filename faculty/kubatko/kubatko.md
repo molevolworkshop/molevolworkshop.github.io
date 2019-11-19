@@ -3,7 +3,7 @@ layout: page
 title: Laura Kubatko
 permalink: /faculty-kubatko/
 ---
-{% include figure.html description="Laura" url="/faculty/kubatko/img/Kubatko.jpg" css="image-right" height="250px" %}
+{% include figure.html description="Laura Kubatko" url="/faculty/kubatko/img/Kubatko.jpg" css="image-right" height="250px" %}
 
 ### Duration of Stay 2019
 

@@ -3,7 +3,7 @@ layout: page
 title: Michael Landis
 permalink: /faculty-landis/
 ---
-{% include figure.html description="Michael" url="/faculty/landis/img/Mlandis_head_071414.png" css="image-right" height="250px" %}
+{% include figure.html description="Michael Landis" url="/faculty/landis/img/Mlandis_head_071414.png" css="image-right" height="250px" %}
 ## Institutional home page
 
 [https://biology.wustl.edu/people/michael-landis](https://biology.wustl.edu/people/michael-landis)

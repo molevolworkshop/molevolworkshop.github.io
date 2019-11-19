@@ -3,7 +3,7 @@ layout: page
 title: Peter Beerli
 permalink: /faculty-beerli/
 ---
-{% include figure.html description="Peter" url="/faculty/beerli/img/Peter.jpg" css="image-right" height="250px" %}
+{% include figure.html description="Peter Beerli" url="/faculty/beerli/img/Peter.jpg" css="image-right" height="250px" %}
 
 ## Institutional home page
 

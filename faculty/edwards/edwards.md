@@ -3,7 +3,7 @@ layout: page
 title: Scott Edwards
 permalink: /faculty-edwards/
 ---
-{% include figure.html description="Scott" url="/faculty/edwards/img/Scott_Galapagos.jpg" css="image-right" %}
+{% include figure.html description="Scott Edwards" url="/faculty/edwards/img/Scott_Galapagos.jpg" css="image-right" %}
 
 ## Arrival and Departure
 

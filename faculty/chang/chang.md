@@ -4,7 +4,7 @@ title: Belinda Chang
 permalink: /faculty-chang/
 ---
 {% comment %}
-{% include figure.html description="Belinda" url="/faculty/chang/img/ChangMOLE2017.jpg" css="image-right" height="200px" %}
+{% include figure.html description="Belinda Chang" url="/faculty/chang/img/ChangMOLE2017.jpg" css="image-right" height="200px" %}
 {% endcomment %}
 ### Institutional home pag
 

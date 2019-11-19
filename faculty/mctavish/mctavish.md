@@ -3,7 +3,7 @@ layout: page
 title: Emily Jane McTavish
 permalink: /faculty-mctavish/
 ---
-{% include figure.html description="Emily Jane" url="/faculty/mctavish/img/McT.jpg" css="image-right" height="250px" %}
+{% include figure.html description="Emily Jane McTavish" url="/faculty/mctavish/img/McT.jpg" css="image-right" height="250px" %}
 
 ### Emily Jane McTavish
 

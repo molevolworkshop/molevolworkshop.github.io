@@ -3,7 +3,7 @@ layout: page
 title: George Tiley
 permalink: /faculty-tiley/
 ---
-{% include figure.html description="George" url="/faculty/tiley/img/Gtiley.jpeg" css="image-right" height="250px" %}
+{% include figure.html description="George Tiley" url="/faculty/tiley/img/Gtiley.jpeg" css="image-right" height="250px" %}
 
 
 ### About me

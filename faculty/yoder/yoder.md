@@ -3,7 +3,7 @@ layout: page
 title: Anne Yoder
 permalink: /faculty-yoder/
 ---
-{% include figure.html description="Anne" url="/faculty/yoder/img/Yoder.jpg" css="image-right" height="350px" %}
+{% include figure.html description="Anne Yoder" url="/faculty/yoder/img/Yoder.jpg" css="image-right" height="350px" %}
 
 ### Duration of Stay
 

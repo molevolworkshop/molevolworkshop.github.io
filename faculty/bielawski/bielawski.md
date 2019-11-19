@@ -3,7 +3,7 @@ layout: page
 title: Joe Bielawski
 permalink: /faculty-bielawski/
 ---
-{% include figure.html description="Joe" url="/faculty/bielawski/img/JPB.jpg" css="image-right" height="250px" %}
+{% include figure.html description="Joe Bielawski" url="/faculty/bielawski/img/JPB.jpg" css="image-right" height="250px" %}
 ## Institutional home pages
 
 * [Statistics](http://www.mscs.dal.ca/Faculty/bielawski.html)

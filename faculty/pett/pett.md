@@ -3,7 +3,7 @@ layout: page
 title: Will Pett
 permalink: /faculty-pett/
 ---
-{% include figure.html description="Will" url="/faculty/pett/img/Wpett.jpg" css="image-right" height="250px" %}
+{% include figure.html description="Will Pett" url="/faculty/pett/img/Wpett.jpg" css="image-right" height="250px" %}
 
 ### About me
 I am currently a postdoc in Tracy Heath’s lab at Iowa State University, where in 2014 I also received my PhD in Bioinformatics and Computational Biology studying animal mtDNA with Dennis Lavrov. In between, I spent some time as a postdoc with Nicolas Lartillot at the Laboratoire de Biométrie et Biologie Évolutive in Lyon, France. My research interests include animal phylogeny, models of genome evolution, and Bayesian phylogenetics methods using MCMC.

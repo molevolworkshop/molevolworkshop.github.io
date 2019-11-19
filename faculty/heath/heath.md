@@ -3,7 +3,7 @@ layout: page
 title: Tracy Heath
 permalink: /faculty-heath/
 ---
-{% include figure.html description="Tracy" url="/faculty/heath/img/tracy-heath.jpg" css="image-right" height="150px" %}
+{% include figure.html description="Tracy Heath" url="/faculty/heath/img/tracy-heath.jpg" css="image-right" height="150px" %}
 Assistant Professor<br/>
 Dept. Ecology, Evolution, & Organismal Biology<br/>
 Iowa State University

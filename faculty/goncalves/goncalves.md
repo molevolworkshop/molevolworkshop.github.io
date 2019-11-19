@@ -3,7 +3,7 @@ layout: page
 title: Deise Josely Pereira Gonçalves
 permalink: /faculty-goncalves/
 ---
-{% include figure.html description="Deise" url="/faculty/goncalves/img/Deise_Goncalves.jpg" css="image-right" height="250px" %}
+{% include figure.html description="Deise Goncalves" url="/faculty/goncalves/img/Deise_Goncalves.jpg" css="image-right" height="250px" %}
 
 ### About me
 

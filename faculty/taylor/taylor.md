@@ -3,7 +3,7 @@ layout: page
 title: Katie Taylor
 permalink: /faculty-taylor/
 ---
-{% include figure.html description="Katie" url="/faculty/taylor/img/klt14003.jpg" css="image-right" height="250px" %}
+{% include figure.html description="Katie Taylor" url="/faculty/taylor/img/klt14003.jpg" css="image-right" height="250px" %}
 
 
 ### About me
