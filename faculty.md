@@ -5,50 +5,47 @@ menutitle: Faculty
 permalink: /faculty/
 ---
 {% include figure.html description="" url="/assets/img/fromback2018.jpg" css="image-center" height="250px" %}
-## 2019 Course Faculty
+## 2020 Course Faculty
 
-[Peter Beerli]({{ '/faculty-beerli/' | relative_url }}), Florida State University
+[Peter Beerli](/faculty-beerli/), Florida State University
 
-[Joseph Bielawski]({{ '/faculty-bielawski/' | relative_url }}), Dalhousie University
+[Joseph Bielawski](/faculty-bielawski/), Dalhousie University
 
-[Belinda Chang]({{ '/faculty-chang/' | relative_url }}), University of Toronto
+[Belinda Chang](/faculty-chang/), University of Toronto
 
-[Scott Edwards]({{ '/faculty-edwards/' | relative_url }}), Harvard University
+[Scott Edwards](/faculty-edwards/), Harvard University
 
-[Tracy Heath]({{ '/faculty-heath/' | relative_url }}), Iowa State University
+[Tracy Heath](/faculty-heath/), Iowa State University
 
-[John Huelsenbeck]({{ '/faculty-huelsenbeck/' | relative_url }}), University of California-Berkeley
+[John Huelsenbeck](/faculty-huelsenbeck/), University of California-Berkeley
 
-[Lacey Knowles]({{ '/faculty-knowles/' | relative_url }}), University of Michigan
+[Lacey Knowles](/faculty-knowles/), University of Michigan
 
-[Laura Kubatko]({{ '/faculty-kubatko/' | relative_url }}), Ohio State University
+[Laura Kubatko](/faculty-kubatko/), Ohio State University
 
-[Michael Landis]({{ '/faculty-landis/' | relative_url }}), Washington University in St. Louis
+[Michael Landis](/faculty-landis/), Washington University in St. Louis
 
-[Paul Lewis]({{ '/faculty-lewis/' | relative_url }}), University of Connecticut
+[Paul Lewis](/faculty-lewis/), University of Connecticut
 
-[Emily Jane McTavish]({{ '/faculty-mctavish/' | relative_url }}), University of California-Merced
+[Emily Jane McTavish](/faculty-mctavish/), University of California-Merced
 
-[Bui Quang Minh]({{ '/faculty-minh/' | relative_url }}), Australian National University
+[Bui Quang Minh](/faculty-minh/), Australian National University
 
-[Claudia Solís-Lemus]({{ '/faculty-solis-lemus/' | relative_url }}), Emory University
+[Claudia Solís-Lemus](/faculty-solis-lemus/), Emory University
 
-[David Swofford]({{ '/faculty-swofford/' | relative_url }}), Duke University
+[David Swofford](/faculty-swofford/), Duke University
 
-[Anne Yoder]({{ '/faculty-yoder/' | relative_url }}), Duke University
+[Anne Yoder](/faculty-yoder/), Duke University
 
-## 2019 Course TAs
+## 2020 Course TAs
 
-[George Tiley]({{ '/faculty-tiley/' | relative_url }}) (Instructor/Lead TA), Department of Biology, Duke University
+[Deise Gonçalves](/faculty-goncalves/), Department of Integrative Biology, University of Texas at Austin
 
-[Katie Taylor]({{ '/faculty-taylor/' | relative_url }}), Department of Ecology and Evolutionary Biology, University of Connecticut
+[Áki Láruson](/faculty-laruson/), Marine Science Center, Northeastern University
 
-[Deise Josely Pereira Gonçalves]({{ '/faculty-goncalves/' | relative_url }}), Department of Integrative Biology, University of Texas at Austin
+[Katie Taylor](/faculty-taylor/), Department of Ecology and Evolutionary Biology, University of Connecticut
 
-[Will Pett]({{ '/faculty-pett/' | relative_url }}), Iowa State University
-
-## 2019 Course Assistant
-
+[George Tiley](/faculty-tiley/) (Instructor/Lead TA), Department of Biology, Duke University
 
 ## Former recent faculty
 
@@ -90,9 +87,9 @@ Axel Meyer, Harold Zakon, Sara Sawyer, Shozo Yokoyama, Gavin Naylor
 
 ## Former recent TAs
 
-[Áki Jarl Láruson](https://akijarl.wordpress.com/cv/) Northeastern University
-
 [Peter Larsen](https://vetmed.umn.edu/bio/college-of-veterinary-medicine/peter-larsen), University of Minnesota
+
+[Walker Pett](http://willpett.github.io), Iowa State University
 
 [Ben Liebeskind](https://sites.cns.utexas.edu/raldrich/people/ben-leibeskind), University of Texas, Austin
 
