@@ -11,9 +11,13 @@ permalink: /faculty/
 
 [Joseph Bielawski](/faculty-bielawski/), Dalhousie University
 
+[Jeremy Brown](/faculty-brown/), Louisiana State University
+
 [Belinda Chang](/faculty-chang/), University of Toronto
 
 [Scott Edwards](/faculty-edwards/), Harvard University
+
+[Kelley Harris](/faculty-harris/), University of Washington
 
 [Tracy Heath](/faculty-heath/), Iowa State University
 
@@ -23,8 +27,6 @@ permalink: /faculty/
 
 [Laura Kubatko](/faculty-kubatko/), Ohio State University
 
-[Michael Landis](/faculty-landis/), Washington University in St. Louis
-
 [Paul Lewis](/faculty-lewis/), University of Connecticut
 
 [Emily Jane McTavish](/faculty-mctavish/), University of California-Merced
@@ -32,6 +34,8 @@ permalink: /faculty/
 [Bui Quang Minh](/faculty-minh/), Australian National University
 
 [Claudia Solís-Lemus](/faculty-solis-lemus/), Emory University
+
+[Edward Susko](/faculty-susko/), Dalhousie University
 
 [David Swofford](/faculty-swofford/), Duke University
 
@@ -68,6 +72,8 @@ Joseph Felsenstein, University of Washington
 Emilia Huerta-Sanchez, Brown University
 
 Mark Holder, University of Kansas
+
+Michael Landis, Washington University in St. Louis
 
 Conor Meehan, Institute of Tropical Medicine
 
