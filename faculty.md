@@ -33,7 +33,7 @@ permalink: /faculty/
 
 [Bui Quang Minh](/faculty-minh/), Australian National University
 
-[Claudia Solís-Lemus](/faculty-solis-lemus/), Emory University
+[Claudia Solís-Lemus](/faculty-solis-lemus/), University of Wisconsin-Madison
 
 [Edward Susko](/faculty-susko/), Dalhousie University
 

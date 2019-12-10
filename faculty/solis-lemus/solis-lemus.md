@@ -17,6 +17,11 @@ Not yet determined.
 
 Tutorial: [wiki](https://github.com/crsl4/PhyloNetworks.jl/wiki)
 
-### Contact Info
+### Contact Info 
+E-mail: [solislemus@wisc.edu](mailto:solislemus@wisc.edu)
 
-Webpage: [http://crsl4.github.io/](http://crsl4.github.io/)
+Address: Wisconsin Institute for Discovery and Department of Plant Pathology, University of Wisconsin-Madison, Madison, WI 53715, USA
+
+### Institutional home page 
+[http://crsl4.github.io/](http://crsl4.github.io/](http://crsl4.github.io/](http://crsl4.github.io/)
+
