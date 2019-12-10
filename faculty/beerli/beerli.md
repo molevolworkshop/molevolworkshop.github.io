@@ -11,16 +11,18 @@ permalink: /faculty-beerli/
 
 ## Arrival and Departure
 
-Not yet determined.
+May 30 - June 11, 2019
 
 ## Lecture Materials
 
-Note: The presentations may change up until the moment the lecture or lab begins. I will try to post the modified the PDF before the lecture but will post the actual talk-PDF after each talk.
+Note: *The presentations may change up until the moment the lecture or lab begins. I will try to post the modified the PDF before the lecture but will post the actual talk-PDF after each talk.*
+<!-- , and Laura Kubatko will follow and talk about speciestrees/genetree estimation. -->
 
-Coalescence lecture (Monday, August 5 2019) I will introduce the coalescent and its use for population genetics inference, the first section of the lecture will discuss basics, and Laura Kubatko will follow and talk about speciestrees/genetree estimation. On August 8 2019 I will talk about extensions of the basic coalescent. I will focus on neutral population processes, such as population structure, population size changes through time, population divergence, multi-merger coalescence and problems and complications with inferences using the coalescence; Emilia Huerta-Sanchez will talk about selection and the coalescent on August 10 2019.
+Coalescence lecture (Thursday, June 4 2020) I will introduce the coalescent and its use for population genetics inference, the first section of the lecture will discuss basics;  the second partil will discuss extensions of the basic coalescent. I will focus on neutral population processes, such as population structure, population size changes through time, population divergence, multi-merger coalescence and problems and complications with inferences using the coalescence. Kelley Harris will talk about selection and the coalescent on June 9 2020. On June 7 we will work through a tutorial with my program *MIGRATE*.
 
-* August 5: Introduction to the coalescent [Coalescence2019talk]({{ site.baseurl }}/assets/pdf/beerli/talk1-opt.pdf) (talk given in 2018: [Coalescence2018talk](https://peterbeerli.com/workshops/mbl/2018/talk1.pdf))
-* August 8: extending the basic coalescent [Coalescence2018talk2]({{ site.baseurl }}/assets/pdf/beerli/talk2-opt.pdf) (this file will change)
+* June 4 (9-10:30): Introduction to the coalescent [Coalescence2019talk]({{ site.baseurl }}/assets/pdf/beerli/talk1-opt.pdf) (talk given in 2018: [Coalescence2018talk](https://peterbeerli.com/workshops/mbl/2018/talk1.pdf))
+* June 4 (10:30-12): extending the basic coalescent [Coalescence2018talk2]({{ site.baseurl }}/assets/pdf/beerli/talk2-opt.pdf) (this file will change)
+* June 7 (19:00-22:00) *MIGRATE* tutorial, specific tutorial instructions TBA.
 
 ## Teaching Tools
 {% include figure.html description="Wright-Fisher Model" url="/faculty/beerli/img/Wf.png" css="image-right" %}
