@@ -6,7 +6,7 @@ permalink: /other/
 ---
 ## Workshop Values and Ethics
 
-[Please read!](/value-and-ethics/)
+[Please read!](/values-and-ethics/)
 
 ## T-shirts
 
