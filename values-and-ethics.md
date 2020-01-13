@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Values and Ethics Statement
-permalink: /value-and-ethics/
+permalink: /values-and-ethics/
 ---
 The Workshop on Molecular Evolution is committed to providing a safe, caring and inclusive learning and working environment. The personal and professional conduct of all participants will reflect MBL's commitment to the fundamental principles of dignity, integrity, and respect for the law. The workshop has a zero tolerance policy with respect to personal or sexual harassment in any form. The Workshop on Molecular Evolution promotes respect, responsible citizenship, and academic excellence by expecting all participants to:
 * respect the rights of others and treat one another with dignity and respect at all times, regardless of economic status, race, colour, national or ethnic origin, language group, religion, gender, sexual orientation, gender identity, age or ability;
