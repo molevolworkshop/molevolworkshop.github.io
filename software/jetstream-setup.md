@@ -13,6 +13,7 @@ These are notes on setting up Jetstream virtual machines for the MOLE workshop. 
 * [Online tutorial](https://cvw.cac.cornell.edu/jetstream/default)
 * [Jetstream FAQ](https://wiki.jetstream-cloud.org/Troubleshooting+and+FAQ)
 * [Getting Started with a new Instance](https://iujetstream.atlassian.net/wiki/spaces/JWT/overview)
+* [Customizing and saving a VM](https://iujetstream.atlassian.net/wiki/spaces/JWT/pages/17465518/Customizing+and+saving+a+VM)
 * E-mail Support: [Atmosphere RT <help@jetstream-cloud.org>](mailto:help@jetstream-cloud.org)
 
 ### Most important!
@@ -23,7 +24,7 @@ Be sure to **shelve** instance if not planning to work with it for several hours
 
 Login to Jetstream at this address (click on "Login with XSEDE" button): [https://use.jetstream-cloud.org/](https://use.jetstream-cloud.org/). In order to do anything described below, you will need to have an [Xsede portal](portal.xsede.org) account and be added to the project.
 
-### Starting an instance once in Jetstream Atmosphere  
+### Unshelving an instance once in Jetstream Atmosphere  
   
 * In the Dashboard, you should see the educational allocation for MOLE (TG-DEB190022)
 * Go to Projects and click on plewis to see details (this may have your username instead of plewis)
@@ -218,9 +219,9 @@ sudo mv MSAlab /usr/local/share/examples/mole/
 ~~~~~~
 
 ### Install [MAFFT](https://mafft.cbrc.jp/alignment/software/)
-Instructions below work except the man page is not installed because (strangely) the makefile
+Instructions below work except the man page is not installed because the makefile
 tries to create the directory _/usr/local/share/man/man1_ will and issues and error when it
-finds that that directory already exists!
+finds that that directory already exists. I didn't think the man page was all that important and thus did not try to fix the makefile.
 ~~~~~~
 cd
 curl -LO https://mafft.cbrc.jp/alignment/software/mafft-7.453-with-extensions-src.tgz    
@@ -309,6 +310,28 @@ alias moledir="cd /usr/local/share/examples/mole"
 # Ctrl-d to close file
 sudo mv mole-setup.sh /etc/profile.d
 ~~~~~~
+
+## Creating a custom image (template)
+
+Once the preceding steps were followed to setup a single instance, a custom image was saved
+to make it easy to clone this virtual machine. Good documentation: [Customizing and saving a VM](https://iujetstream.atlassian.net/wiki/spaces/JWT/pages/17465518/Customizing+and+saving+a+VM).
+
+* I wish I had seen this before setting up the template instance
+
+_Creating an image on the SMALLEST possible size VM on which it will run will allow the 
+image to be launched on VMs of the same size and larger._ 
+
+I created an m1.quad to serve as the template when an m1.tiny would have sufficed and allowed more flexibility. I may do the setup again (now that I have good notes!), in which case I will remove this bit.
+
+* Update the OS
+~~~~~~
+sudo apt-get update
+sudo apt-get upgrade
+~~~~~~
+
+* TODO
+
+The rest of this needs to be written.
 
 {% comment %}
 Date: 08/11/2019
