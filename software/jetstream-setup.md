@@ -20,7 +20,17 @@ These are notes on setting up Jetstream virtual machines for the MOLE workshop. 
 
 Be sure to **shelve** instance if not planning to work with it for several hours. Shelving is the only option that does not burn SUs. **Suspending** burns SUs at 75% of the normal rate and **stopping** burns SUs at 50% the normal rate. See [Instance management actions](https://iujetstream.atlassian.net/wiki/spaces/JWT/pages/537460754/Instance+management+actions) for more info.
 
+### Logging into Xsede User Portal
+
+Login to [Xsede](https://www.xsede.org/).
+
+You can **view resource usage** by going to "Allocations/Usage" under the "My Xsede" tab.
+
+You can **add a user** to the project if that user has an Xsede account by going to "Add User" under the "My Xsede" tab.
+
 ### Logging into Jetstream Atmosphere
+
+Xsede is an umbrella that comprises many HPC resources. The resource that we have obtained access to is the Jetstream cloud hosted at Indiana University. 
 
 Login to Jetstream at this address (click on "Login with XSEDE" button): [https://use.jetstream-cloud.org/](https://use.jetstream-cloud.org/). In order to do anything described below, you will need to have an [Xsede portal](portal.xsede.org) account and be added to the project.
 
@@ -177,18 +187,26 @@ cd
 git clone https://github.com/stamatak/standard-RAxML.git
 cd standard-RAxML
 make -f Makefile.AVX.PTHREADS.gcc
-sudo mv raxmlHPC-PTHREADS-AVX /usr/local/bin
+sudo mv raxmlHPC-PTHREADS-AVX /usr/local/bin/raxml
+~~~~~~
+
+### Install [Java](https://www.java.com/en/)
+The Java Runtime Environment is needed for ASTRAL.
+~~~~~~
+cd
+sudo apt install default-jre 
 ~~~~~~
 
 ### Install [ASTRAL](https://github.com/smirarab/ASTRAL)
-ASTRAL is used in the SNaQ tutorial. These instructions install the binary in _/usr/local/bin_.
+ASTRAL is used in the SNaQ tutorial. These instructions install the binary in _/opt/astral_. Note that the _/opt/astral/astral.5.7.3.jar_ jar file and the _/opt/astral/lib_ directory need to be owned by an ordinary user, otherwise the jar must be executed as root.
 ~~~~~~
 curl -LO https://github.com/smirarab/ASTRAL/raw/master/Astral.5.7.3.zip
 unzip Astral.5.7.3.zip
 rm Astral.5.7.3.zip
 sudo mkdir /opt/astral
-sudo cp astral.5.7.3.jar /opt/astral
-sudo cp lib /opt/astral
+sudo cp Astral/astral.5.7.3.jar /opt/astral
+sudo cp -r Astral/lib /opt/astral
+sudo chown -R $LOGNAME.$LOGNAME /opt/astral
 ~~~~~~
 
 ### Create MOLE directory
@@ -211,10 +229,8 @@ my $astral = '/opt/astral/astral.5.7.3.jar'; # adapt to your system
 ### Download datasets for alignment tutorial
 ~~~~~~
 cd 
-curl -O http://molevol.mbl.edu/images/3/3c/MSAlab.zip 
-# omitted the usual L switch in the curl command because of SSL certificate problems on the MBL server
+curl -LO https://molevolworkshop.github.io/assets/data/MSAlab.zip
 unzip MSAlab.zip
-# above command failed, so I resorted to unzipping the file on my mac and rsync'ing directory to instance
 sudo mv MSAlab /usr/local/share/examples/mole/
 ~~~~~~
 
@@ -234,6 +250,7 @@ sudo make install
 
 ### Install [MUSCLE](https://www.drive5.com/muscle/)
 ~~~~~~
+cd
 curl -LO https://www.drive5.com/muscle/downloads3.8.31/muscle3.8.31_i86linux64.tar.gz
 tar zxvf muscle3.8.31_i86linux64.tar.gz
 rm muscle3.8.31_i86linux64.tar.gz
@@ -242,6 +259,7 @@ sudo mv muscle3.8.31_i86linux64 /usr/local/bin/muscle
 
 ### Install [IQ-TREE](http://www.iqtree.org)
 ~~~~~~
+cd
 curl -LO https://github.com/Cibiv/IQ-TREE/releases/download/v1.6.12/iqtree-1.6.12-Linux.tar.gz
 tar zxvf iqtree-1.6.12-Linux.tar.gz
 rm iqtree-1.6.12-Linux.tar.gz
@@ -257,10 +275,12 @@ sudo apt-get install libboost-all-dev   # this takes awhile
 
 ### Install [RevBayes](https://revbayes.github.io/compile-linux)
 ~~~~~~
+cd
 # not necessary to issue this command --> sudo apt install build-essential cmake libboost-all-dev
 git clone https://github.com/revbayes/revbayes.git
 cd revbayes/projects/cmake
 ./build.sh # this step takes a really long time!
+sudo cp rb /usr/local/bin
 ~~~~~~
 
 ### Install dataset for RevBayes tutorial
@@ -316,22 +336,62 @@ sudo mv mole-setup.sh /etc/profile.d
 Once the preceding steps were followed to setup a single instance, a custom image was saved
 to make it easy to clone this virtual machine. Good documentation: [Customizing and saving a VM](https://iujetstream.atlassian.net/wiki/spaces/JWT/pages/17465518/Customizing+and+saving+a+VM).
 
-* I wish I had seen this before setting up the template instance
+### Base image on smallest VM size
 
-_Creating an image on the SMALLEST possible size VM on which it will run will allow the 
-image to be launched on VMs of the same size and larger._ 
+The documentation says _Creating an image on the SMALLEST possible size VM on which it will run will allow the 
+image to be launched on VMs of the same size and larger. For example, an image created on a Tiny size VM can be launched on a VM of any size; an image created on a Medium VM can only be launched on a Medium or larger size VM._ 
 
-I created an m1.quad to serve as the template when an m1.tiny would have sufficed and allowed more flexibility. I may do the setup again (now that I have good notes!), in which case I will remove this bit.
+Note that m1.tiny is too small, however. It does not have enough memory to compile RevBayes, so the smallest viable template should be m1.small.
 
-* Update the OS
+### Update the OS
 ~~~~~~
 sudo apt-get update
 sudo apt-get upgrade
 ~~~~~~
 
-* TODO
+### Fill out the form
 
-The rest of this needs to be written.
+* New Image Name
+~~~~~~
+MOLE-2020
+~~~~~~
+
+* Description of the Image
+~~~~~~
+Ubuntu 18.04 with software and example data to be used in the Workshop in Molecular Evolution (MBL, Woods Hole, Massachusetts), May 31 to June 10, 2020.
+~~~~~~
+
+* Image Tags
+~~~~~~
+base, desktop, development, docker, docker-compose, Ubuntu, vnc,
+iq-tree, migrate-n, paup, phylo-networks, revbayes
+~~~~~~
+
+* Version
+~~~~~~
+1.0
+~~~~~~
+
+* Change log
+~~~~~~
+Installed software (/usr/local/bin, /opt) and example data (/usr/local/share/examples/mole) used in the 2019 MOLE workshop
+~~~~~~
+
+* Users
+
+Left blank
+
+* Allow access by pattern
+
+Added these patterns.
+~~~~~~
+cretens
+gtiley
+~~~~~~
+
+* Licensed software
+
+Checked the box that states that the image contains no licensed software.
 
 {% comment %}
 Date: 08/11/2019
