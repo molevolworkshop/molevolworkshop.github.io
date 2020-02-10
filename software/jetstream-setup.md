@@ -260,10 +260,16 @@ sudo mv muscle3.8.31_i86linux64 /usr/local/bin/muscle
 ### Install [IQ-TREE](http://www.iqtree.org)
 ~~~~~~
 cd
+# install standard version
 curl -LO https://github.com/Cibiv/IQ-TREE/releases/download/v1.6.12/iqtree-1.6.12-Linux.tar.gz
 tar zxvf iqtree-1.6.12-Linux.tar.gz
 rm iqtree-1.6.12-Linux.tar.gz
 sudo cp iqtree-1.6.12-Linux/bin/iqtree /usr/local/bin
+# install beta version needed for computing concordance factors
+curl -LO https://github.com/Cibiv/IQ-TREE/releases/download/v2.0-rc1/iqtree-2.0-rc1-Linux.tar.gz
+tar zxvf iqtree-2.0-rc1-Linux.tar.gz
+rm iqtree-2.0-rc1-Linux.tar.gz
+sudo cp iqtree-2.0-rc1-Linux/bin/iqtree /usr/local/bin/iqtree-beta
 ~~~~~~
 
 ### Install Boost C++
@@ -353,7 +359,7 @@ sudo apt-get upgrade
 
 * New Image Name
 ~~~~~~
-MOLE-2020
+MOLE2020
 ~~~~~~
 
 * Description of the Image
@@ -392,6 +398,12 @@ gtiley
 * Licensed software
 
 Checked the box that states that the image contains no licensed software.
+
+## Updating the custom image (MOLE2020)
+
+Need to include in version 1.1:
+* install beta version of IQ-TREE as /usr/local/bin/iqtree-beta
+* install turtle.fa, turtle.nex in /usr/local/share/examples/mole/iqtree
 
 {% comment %}
 Date: 08/11/2019
