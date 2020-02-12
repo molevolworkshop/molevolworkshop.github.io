@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Bui Quang Minh
-permalink: /faculty-minh/
+title: Minh Quang Bui
+permalink: /faculty-bui/
 ---
-{% include figure.html description="Bui Minh" url="/faculty/minh/img/B_Q_Minh.jpg" css="image-right" height="250px" %}
+{% include figure.html description="Minh Bui" url="/faculty/minh/img/B_Q_Minh.jpg" css="image-right" height="250px" %}
 
-## Bui Quang Minh
+## Minh Quang Bui
 
 ### Duration of Stay 2019 
 

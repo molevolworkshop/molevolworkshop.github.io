@@ -13,6 +13,8 @@ permalink: /faculty/
 
 [Jeremy Brown](/faculty-brown/), Louisiana State University
 
+[Minh Quang Bui](/faculty-bui/), Australian National University
+
 [Belinda Chang](/faculty-chang/), University of Toronto
 
 [Scott Edwards](/faculty-edwards/), Harvard University
@@ -30,8 +32,6 @@ permalink: /faculty/
 [Paul Lewis](/faculty-lewis/), University of Connecticut
 
 [Emily Jane McTavish](/faculty-mctavish/), University of California-Merced
-
-[Bui Quang Minh](/faculty-minh/), Australian National University
 
 [Claudia Solís-Lemus](/faculty-solis-lemus/), University of Wisconsin-Madison
 

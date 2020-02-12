@@ -13,6 +13,7 @@ These are notes on setting up Jetstream virtual machines for the MOLE workshop. 
 * [Online tutorial](https://cvw.cac.cornell.edu/jetstream/default)
 * [Jetstream FAQ](https://wiki.jetstream-cloud.org/Troubleshooting+and+FAQ)
 * [Getting Started with a new Instance](https://iujetstream.atlassian.net/wiki/spaces/JWT/overview)
+* [Adding a user to a running instance](https://iujetstream.atlassian.net/wiki/spaces/JWT/pages/29720579/How+to+add+users+to+a+running+instance)
 * [Customizing and saving a VM](https://iujetstream.atlassian.net/wiki/spaces/JWT/pages/17465518/Customizing+and+saving+a+VM)
 * E-mail Support: [Atmosphere RT <help@jetstream-cloud.org>](mailto:help@jetstream-cloud.org)
 
