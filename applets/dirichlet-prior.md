@@ -946,6 +946,7 @@ Drag right-to-left (or left-to-right) with mouse to rotate view. Use controls be
     var details_div  = createDetailsPanel();
 
 </script>
+
 <br/>
 
 ## Acknowledgements

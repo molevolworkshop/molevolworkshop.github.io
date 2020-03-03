@@ -39,7 +39,7 @@ function POLPanel(parent, idprefix, t, l, w, h) {
         .style("text-align", "center");
     }
 
-POLPanel.prototype.setup = function() {
+    POLPanel.prototype.setup = function() {
     }
 
 function POLHelpPanel(parent, idprefix, t, l, w, h) {
