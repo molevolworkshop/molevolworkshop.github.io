@@ -12,7 +12,7 @@ baseurl: ""
 
 header_pages:
    - about.md
-   - faculty.md
+   - people.md
    - schedule.md
    - other.md
 

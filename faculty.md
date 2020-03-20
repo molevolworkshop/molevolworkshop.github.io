@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Faculty
-menutitle: Faculty
 permalink: /faculty/
 ---
 {% include figure.html description="" url="/assets/img/fromback2018.jpg" css="image-center" height="250px" %}
@@ -50,6 +49,10 @@ permalink: /faculty/
 [Katie Taylor](/faculty-taylor/), Department of Ecology and Evolutionary Biology, University of Connecticut
 
 [George Tiley](/faculty-tiley/) (Instructor/Lead TA), Department of Biology, Duke University
+
+## 2020 Course Assistant
+
+[Jason Vailionis](/course-assistant/), Department of Ecology and Evolutionary Biology
 
 ## Former recent faculty
 
