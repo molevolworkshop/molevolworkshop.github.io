@@ -1,6 +1,6 @@
 ---
 layout: applet
-title: Confidence/credible intervals
+title: Confidence versus credible intervals
 author: Paul O. Lewis
 permalink: /applets/ci/
 ---
