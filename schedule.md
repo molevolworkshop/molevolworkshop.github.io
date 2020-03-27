@@ -4,11 +4,11 @@ title: Schedule
 menutitle: Schedule
 permalink: /schedule/
 ---
+{% include cancelation-notice.html %}
 {% include figure.html description="" url="/assets/img/eelpond2019.jpg" css="image-center" height="250px" %}
 
 IMPORTANT: this schedule is subject to change until this notice is removed just before the 2020 workshop begins. 
 Lectures linked here are those from the 2019 version of the workshop and may differ from the 2020 versions (especially if the people giving those lectures have changed).
-{:.pozor}
 
 All sessions are in Loeb G70 (basement of Loeb building)
 

@@ -4,6 +4,7 @@ title: People
 menutitle: People
 permalink: /people/
 ---
+{% include cancelation-notice.html %}
 {% include figure.html description="" url="/assets/img/group-photos/group-photo-2019.png" css="image-right" height="250px" %}
 
 ## Course Faculty

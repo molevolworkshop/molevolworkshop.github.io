@@ -4,6 +4,8 @@ title: Other Information
 menutitle: Other
 permalink: /other/
 ---
+{% include cancelation-notice.html %}
+
 ## Workshop Values and Ethics
 
 [Please read!](/values-and-ethics/)

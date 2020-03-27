@@ -1,54 +1,69 @@
 ---
 layout: applet
-title: Stick Breaking Process
-permalink: /applets/stickbreaking/
+title: Dirichlet Process Priors
+author: Paul O. Lewis
+permalink: /applets/dpp/
 ---
+## Dirichlet Process Prior applet
+Written by Paul O. Lewis (27-Mar-2020)
 
-## Stick Breaking Process and Dirichlet Process Priors
+A description of this applet is provided below the plot.
 
-Before the stick has been broken the first time, the remainder has length 1 (i.e. all of the stick).
-Each subsequent break affects the remainder only. Larger values of alpha lead to more, smaller sticks.
-
-<div id="canvas"></div>
+<div id="arbitrary" style="display:inline-block"></div>
+<div id="controls" style="display:inline-block; vertical-align:top;"></div>
 <script type="text/javascript">
-    // Written by Paul O. Lewis 21-Mar-2020
+    // written by Paul O. Lewis 27-Mar-2020
 
+    const lot = new Random();
+    
     // width and height of svg
-    var w = 600;
-    var h = 220;
-    var bm = 20;
-
-    var alpha = 1.0;
-    var alphamin = 0.1;
+    const w         = 600;
+    const h         = 600;
+    const labelw    =  90;
+    const xhistbase = 100;
+    const histw     = 300;
+    const xinfo     = 500;
+    const infopad   = 50;
     
-    var ndarts = 100;
-    var ndartsmin = 10;
-    var ndartsmax = 100;
-    var dart_radius = 3;
-    var num_occupied = 0;
-    var somebad = false;
+    let alpha       = 2;     // concentration parameter
+    let alphamin    = 0.1
     
-    var sticks = [];
-    var darts = [];
-    var Ek = [];
-    var remainder = 1.0;
-    var remainder_cutoff = 0.0001;
+    let maxflips    = 2000;   // maximum number of coinflips allowed
     
-    var lot = new Random();
+    let prior_a = 2;    // G0 is Beta(prior_a, prior_b)
+    let prior_b = 2;
+                
+    const iteration_milisecs = 10;
+    let iterating = false;
     
-    var xscale = d3.scaleLinear()
-        .domain([0,1])
-        .range([0,w]);
-
-    var yscale = d3.scaleLinear()
-        .domain([0,1])
-        .range([h-bm,0]);
+    let configurations = [
+        {partition:"ABCD",    sets:[[0,1,2,3]]},
+        {partition:"ABC|D",   sets:[[0,1,2],[3]]},
+        {partition:"ABD|C",   sets:[[0,1,3],[2]]},
+        {partition:"AB|CD",   sets:[[0,1],[2,3]]},
+        {partition:"AB|C|D",  sets:[[0,1],[2],[3]]},
+        {partition:"ACD|B",   sets:[[0,2,3],[1]]},
+        {partition:"AC|BD",   sets:[[0,2],[1,3]]},
+        {partition:"AC|B|D",  sets:[[0,2],[1],[3]]},
+        {partition:"AD|BC",   sets:[[0,3],[1,2]]},
+        {partition:"A|BCD",   sets:[[0],[1,2,3]]},
+        {partition:"A|BC|D",  sets:[[0],[1,2],[3]]},
+        {partition:"AD|B|C",  sets:[[0,3],[1],[2]]},
+        {partition:"A|BD|C",  sets:[[0],[1,3],[2]]},
+        {partition:"A|B|CD",  sets:[[0],[1],[2,3]]},
+        {partition:"A|B|C|D", sets:[[0],[1],[2],[3]]}
+    ];
+    
+    let longest = 0;
+    for (let i = 0; i < 15; i++)
+        if (configurations[i].partition.length > longest)
+            longest = configurations[i].partition.length;
 
     // Select DIV element already created (see above) to hold SVG
-    var plot_div = d3.select("div#canvas");
+    const plot_div = d3.select("div#arbitrary");
 
     // Create SVG element
-    var plot_svg = plot_div.append("svg")
+    const plot_svg = plot_div.append("svg")
         .attr("width", w)
         .attr("height", h);
 
@@ -57,155 +72,582 @@ Each subsequent break affects the remainder only. Larger values of alpha lead to
         .attr("x", 0)
         .attr("y", 0)
         .attr("width", w)
-        .attr("height", h-bm)
+        .attr("height", h)
         .attr("fill", "lavender");
         
-    // Create text showing current value of alpha
-    plot_svg.append("text")
-        .attr("id", "alpha")
-        .attr("x", w/2)
-        .attr("y", h - bm + 16)
-        .attr("font-family", "Verdana")
-        .attr("font-size", "16px")
-        .style("text-anchor", "middle")
-        .text("");     
+    // Create vertical line showing where xhistbase lies
+    plot_svg.append("line")
+        .attr("x1", xhistbase)
+        .attr("y1", 0)
+        .attr("x2", xhistbase)
+        .attr("y2", h)
+        .attr("stroke", "purple")
+        .style("visibility", "visible");
+    
+    // Create vertical line showing where xinfo lies
+    plot_svg.append("line")
+        .attr("x1", xinfo)
+        .attr("y1", 0)
+        .attr("x2", xinfo)
+        .attr("y2", h)
+        .attr("stroke", "orange")
+        .style("visibility", "hidden");
+    
+    // ########################################################################
+    // ########################### configurations  ############################
+    // ########################################################################
+
+    const xconfigscale = d3.scaleLinear()
+        .domain([0,1])
+        .range([0,labelw]);
+
+    const yconfigscale = d3.scaleBand()
+        .domain(d3.range(15))
+        .range([0,h])
+        .padding(0.2);
         
-    function precomputeExpectedNumberOccupiedTables() {
-        // Compute expected number of occupied tables Ek
-        Ek = [];
-        var cum = 0.0;
-        Ek.push(0.0);
-        for (let i = 0; i < 10*ndartsmax; i++) {
-            cum += alpha/(alpha + i);
-            Ek.push(cum);
-        }                
+    // Returns the x coordinate of the upper left corner of a configuration box
+    function configBoxX(d,i) {
+        let textw = 10*d.partition.length;
+        return labelw - textw;
     }
-    precomputeExpectedNumberOccupiedTables();
+
+    // Returns the y coordinate of the upper left corner of a configuration box
+    function configBoxY(d,i) {
+        return yconfigscale(i);
+    }
+
+    // Returns the width of a configuration box associated with d
+    function configBoxW(d,i) {
+        return 10*d.partition.length;
+    }
+
+    // Returns the height of a configuration box
+    function configBoxH(d,i) {
+        return yconfigscale.bandwidth();
+    }
+
+    // Returns the x coordinate of the center the text string displayed in
+    // a configuration box associated with d
+    function configTextX(d,i) {
+        let textw = 10*d.partition.length;
+        return labelw - textw/2;
+    }
+
+    // Returns the y coordinate of the lower left corner of the text string
+    // displayed in a configuration box associated with d
+    function configTextY(d,i) {
+        return yconfigscale(i) + (yconfigscale.bandwidth()/2 + 6) + "px";
+    }
+
+    // Create rounded rects showing configuration
+    plot_svg.selectAll("rect.config")
+        .data(configurations)
+        .enter()
+        .append("rect")
+        .attr("class", "config")
+        .attr("x", function(d,i) {return configBoxX(d,i);})
+        .attr("y", function(d,i) {return configBoxY(d,i);})
+        .attr("rx", "10")
+        .attr("width", function(d,i) {return configBoxW(d,i);})
+        .attr("height", function(d,i) {return configBoxH(d,i);})
+        .attr("stroke", "purple")
+        .attr("fill", "none");
+
+    // Create text elements showing configuration
+    plot_svg.selectAll("text.config")
+        .data(configurations)
+        .enter()
+        .append("text")
+        .attr("class", "config")
+        .attr("x", function(d,i) {return configTextX(d,i);})
+        .attr("y", function(d,i) {return configTextY(d,i);})
+        .attr("font-family", "Courier")
+        .attr("font-size", "14px")
+        .style("text-anchor", "middle")
+        .text(function(d) {return d.partition;});
         
-    function showStatus() {
-        //console.log("alpha = " + alpha);
-        if (somebad) {
-            plot_svg.select("text#alpha")
-                .text("alpha = " + alpha.toFixed(1) + " | n = " + ndarts + " | E = " + Ek[ndarts].toFixed(1) + " | O = NA (break more sticks)");            
+    const xinfoscale = d3.scaleLinear()
+        .domain([0,1])
+        .range([xinfo,w]);
+        
+    const yinfoscale = d3.scaleBand()
+        .domain(d3.range(21))
+        .range([infopad,h-infopad]);
+
+    // ###################################################################
+    // ########################### coin info  ############################
+    // ###################################################################
+    let coininfo = [
+        {name:"A", y:0, n:0, p:0.5},
+        {name:"B", y:0, n:0, p:0.5},
+        {name:"C", y:0, n:0, p:0.5},
+        {name:"D", y:0, n:0, p:0.5}
+    ];
+    plot_svg.append("text")
+        .attr("id", "alphalabel")
+        .attr("x", xinfo)
+        .attr("y", yinfoscale(20))
+        .attr("font-family", "Verdana")
+        .attr("font-size", "14px")
+        .style("text-anchor", "end")
+        .text("alpha = ");
+        
+    plot_svg.append("text")
+        .attr("id", "alphavalue")
+        .attr("x", xinfo + 3)
+        .attr("y", yinfoscale(20))
+        .attr("font-family", "Verdana")
+        .attr("font-size", "14px")
+        .style("text-anchor", "begin")
+        .text(alpha.toFixed(1));
+        
+    plot_svg.selectAll("text.coinlabel")
+        .data(coininfo)
+        .enter()
+        .append("text")
+        .attr("class", "coinlabel")
+        .attr("x", xinfo)
+        .attr("y", function(d,i) {return yinfoscale(5*i);})
+        .attr("font-family", "Verdana")
+        .attr("font-size", "14px")
+        .style("text-anchor", "end")
+        .text(function(d) {return "coin " + d.name + ":";});
+        
+    plot_svg.selectAll("text.plabel")
+        .data(coininfo)
+        .enter()
+        .append("text")
+        .attr("class", "plabel")
+        .attr("x", xinfo)
+        .attr("y", function(d,i) {return yinfoscale(5*i+1);})
+        .attr("font-family", "Verdana")
+        .attr("font-size", "14px")
+        .style("text-anchor", "end")
+        .text("p = ");
+        
+    plot_svg.selectAll("text.pvalue")
+        .data(coininfo)
+        .enter()
+        .append("text")
+        .attr("class", "pvalue")
+        .attr("x", xinfo + 3)
+        .attr("y", function(d,i) {return yinfoscale(5*i+1);})
+        .attr("font-family", "Verdana")
+        .attr("font-size", "14px")
+        .style("text-anchor", "begin")
+        .text(function(d) {return d.p.toFixed(2);});
+
+    plot_svg.selectAll("text.ylabel")
+        .data(coininfo)
+        .enter()
+        .append("text")
+        .attr("class", "ylabel")
+        .attr("x", xinfo)
+        .attr("y", function(d,i) {return yinfoscale(5*i+2);})
+        .attr("font-family", "Verdana")
+        .attr("font-size", "14px")
+        .style("text-anchor", "end")
+        .text("y = ");
+        
+    plot_svg.selectAll("text.yvalue")
+        .data(coininfo)
+        .enter()
+        .append("text")
+        .attr("class", "yvalue")
+        .attr("x", xinfo + 3)
+        .attr("y", function(d,i) {return yinfoscale(5*i+2);})
+        .attr("font-family", "Verdana")
+        .attr("font-size", "14px")
+        .style("text-anchor", "begin")
+        .text(function(d) {return d.y;});
+
+    plot_svg.selectAll("text.nlabel")
+        .data(coininfo)
+        .enter()
+        .append("text")
+        .attr("class", "nlabel")
+        .attr("x", xinfo)
+        .attr("y", function(d,i) {return yinfoscale(5*i+3);})
+        .attr("font-family", "Verdana")
+        .attr("font-size", "14px")
+        .style("text-anchor", "end")
+        .text("n = ");
+
+    plot_svg.selectAll("text.nvalue")
+        .data(coininfo)
+        .enter()
+        .append("text")
+        .attr("class", "nvalue")
+        .attr("x", xinfo + 3)
+        .attr("y", function(d,i) {return yinfoscale(5*i+3);})
+        .attr("font-family", "Verdana")
+        .attr("font-size", "14px")
+        .style("text-anchor", "begin")
+        .text(function(d) {return d.n;});
+
+    function updateInfo() {
+        plot_svg.select("text#alphavalue")
+            .text(alpha.toFixed(1));
+        plot_svg.selectAll("text.pvalue")
+            .data(coininfo)
+            .text(function(d) {return d.p.toFixed(2);});
+        plot_svg.selectAll("text.yvalue")
+            .data(coininfo)
+            .text(function(d) {return d.y;});
+        plot_svg.selectAll("text.nvalue")
+            .data(coininfo)
+            .text(function(d) {return d.n;});
+    }
+    
+    // ##############################################################
+    // ########################### MCMC  ############################
+    // ##############################################################
+    
+    const config_k     = [1,2,2,2,3,2,2,3,2,2,3,3,3,3,4];
+    const config_nfact = [6,2,2,1,1,2,1,1,1,2,1,1,1,1,1];
+    let config_prob    = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    
+    function drawFromG0() {
+        let a = lot.gamma(prior_a,1);
+        let b = lot.gamma(prior_b,1);
+        return a/(a+b);
+    }
+    
+    // Begin with all four coins in one group
+    let phi = [];
+    phi.push(drawFromG0());
+    let allocation = [0,0,0,0]; 
+
+    let total_count = 1;
+    let config_counts  = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+    function recalcConfigProbs(a) {
+        let denom = a*(a+1)*(a+2)*(a+3);
+        for (let i = 0; i < 15; i++) {
+            config_prob[i] = Math.pow(a,config_k[i])*config_nfact[i]/denom;
+        }
+    }
+    recalcConfigProbs(alpha);
+    
+    function drawFromPrior() {
+        total_count++;
+        let cumpr = 0.0;
+        let u = lot.uniform(0,1);
+        for (let i = 0; i < 15; i++) {
+            cumpr += config_prob[i];
+            if (u < cumpr) {
+                config_counts[i]++;
+                break;
+            }
+        }
+    }
+    
+    plot_svg.selectAll("rect.hist")
+        .data(config_counts)
+        .enter()
+        .append("rect")
+        .attr("class", "hist")
+        .attr("x", xhistbase)
+        .attr("y", function(d,i) {return yconfigscale(i);})
+        .attr("width", function(d) {return histw*d/total_count;})
+        .attr("height", yconfigscale.bandwidth())
+        .attr("fill", "navy");
+
+    function updateHistogram() {
+        plot_svg.selectAll("rect.hist")
+            .data(config_counts)
+            .attr("width", function(d) {return histw*d/total_count;});
+    }
+    
+    function isSingleton(i) {
+        if (i != 0 && allocation[i] == allocation[0])
+            return false;
+        if (i != 1 && allocation[i] == allocation[1])
+            return false;
+        if (i != 2 && allocation[i] == allocation[2])
+            return false;
+        if (i != 3 && allocation[i] == allocation[3])
+            return false;
+        return true;
+    }
+    
+    function logLikelihood(y, n, p) {
+        let logLike = 0.0;
+        logLike += log_gamma(n+1);
+        logLike -= log_gamma(y+1);
+        logLike -= log_gamma(n-y+1);
+        logLike += y*Math.log(p);
+        logLike += (n-y)*Math.log(1-p);
+        return logLike;
+    }
+
+    function calcAllocProbs(i, is_singleton) {
+        // Initialize probabilities used to choose a new category for coin i
+        let probs = [];
+        for (let j = 0; j < phi.length; j++) {
+            probs.push(0);
+        }
+        
+        // Set numerator for existing categories
+        for (let j = 0; j < 4; j++) {
+            if (i != j) {
+                probs[allocation[j]]++;
+            }
+        } 
+
+        // Set numerator for auxilliary categories
+        if (is_singleton) {
+            probs[allocation[i]] = alpha/3;
+            for (let j = phi.length - 2; j < phi.length; j++) {
+                probs[j] = alpha/3;
+            }
         }
         else {
-            plot_svg.select("text#alpha")
-                .text("alpha = " + alpha.toFixed(1) + " | n = " + ndarts + " | E = " + Ek[ndarts].toFixed(1) + " | O = " + num_occupied);            
+            for (let j = phi.length - 3; j < phi.length; j++) {
+                probs[j] = alpha/3;
+            }
         }
-    }       
-    showStatus();
         
-    function reset() {
-        // Delete all existing sticks
-        plot_svg.selectAll("rect.stick").remove();
-        sticks = [];
+        // Multiply by coin i likelihood
+        let denom = [];
+        for (let j = 0; j < phi.length; j++) {
+            let logNumer = Math.log(probs[j]);
+            if (coininfo[i].n > 0) {
+                logNumer += logLikelihood(coininfo[i].y, coininfo[i].n, phi[j]);
+            }
+            probs[j] = logNumer;
+            denom.push(logNumer);
+        }
         
-        // Delete all existing darts
-        plot_svg.selectAll("circle.dart").remove();
-        darts = [];
-
-        num_occupied = 0;
-        somebad = false;
-        remainder = 1.0;
+        // Normalize
+        let log_max = Math.max(...denom);
+        let sum_of_ratios = 0.0;
+        for (let j = 0; j < phi.length; j++) {
+            sum_of_ratios += Math.exp(probs[j] - log_max);
+        }
+        let log_denom = log_max + Math.log(sum_of_ratios);
+        for (let j = 0; j < phi.length; j++) {
+            probs[j] = Math.exp(probs[j] - log_denom);
+        }
         
-        precomputeExpectedNumberOccupiedTables();
-        showStatus();
+        return probs;
     }
     
-    function breakStick() {
-        // Draw Beta(1,alpha) random variable
-        let x = lot.gamma(1, 1);
-        let y = lot.gamma(alpha, 1);
-        let s = x/(x + y);
-        let stickx = 1.0 - remainder; 
-        let stickw = s*remainder;
-        let r = Math.floor(lot.uniform(0,255));
-        let g = Math.floor(lot.uniform(0,255));
-        let b = Math.floor(lot.uniform(0,255));
-        var stick = {"x":stickx, "width":stickw, "color":d3.color("rgba(" + r + ", " + g + ", " + b + ", 1)")};
-
-        // console.log("~~~~~~~~~~~~~~~~~~~~~");
-        // console.log("alpha     = " + alpha);
-        // console.log("s         = " + s);
-        // console.log("remainder = " + remainder);
-        // console.log("stickx    = " + stickx);
-        // console.log("stickw    = " + stickw);
-
-        sticks.push(stick);
-        plot_svg.selectAll("rect.stick")   
-            .data(sticks)
-            .enter()
-            .append("rect")
-            .attr("class", "stick")
-            .attr("x", function(d) {return xscale(d.x);})
-            .attr("y", 0)
-            .attr("width", function(d) {return xscale(d.width);})
-            .attr("height", h-bm)
-            .attr("fill", function(d) {return d.color;})
-            .attr("stroke", "white");
-        remainder -= stickw;
+    function notAllocated(j) {
+        // Returns true if no allocation entry equals i
+        if (allocation[0] == j)
+            return false;
+        if (allocation[1] == j)
+            return false;
+        if (allocation[2] == j)
+            return false;
+        if (allocation[3] == j)
+            return false;
+        return true;
     }
     
-    function partition() {
-        while (remainder > remainder_cutoff) {
-            breakStick();
+    function shiftAllocIndicesLeft(j) {
+        // Subtract 1 from all allocation entries > j
+        for (let i = 0; i < allocation.length; i++) {
+            if (allocation[i] > j)
+                allocation[i]--;
         }
     }
-
-    function throwDarts() {
-        plot_svg.selectAll("circle.dart").remove();
-        
-        // Create one bin for every stick
-        bins = [];
+    
+    function chooseCategory(i, probs, is_singleton, cat0) {
+        // Choose category randomly using probabilities in probs
+        let cat = -1;
         let cum = 0.0;
-        for (let i = 0; i < sticks.length; i++) {
-            cum += sticks[i].width;
-            bins.push(0);
+        let u = lot.uniform(0,1);
+        for (let k = 0; k < probs.length; k++) {
+            cum += probs[k];
+            if (u <= cum) {
+                cat = k;
+                break;
+            }
         }
         
-        somebad = false;
-        darts = [];
-        for (let i = 0; i < ndarts; i++) {
-            let cx = lot.uniform(0,1);
-            let cy = lot.uniform(0,1);
-            let isbad = cx > cum ? true : false;
-
-            let dartcolor = "red";
-            if (isbad) {
-                somebad = true;
+        // Report error if failed to choose category
+        if (cat < 0) {
+            console.log("***** ERROR: could not choose category ***** u = " + u.toFixed(5));
+            for (let j = 0; j < probs.length; j++) {
+                console.log("  probs[" + j + "] = " + probs[j].toFixed(5));
             }
+        }
+        
+        allocation[i] = cat;
+        //console.log("--> cat = " + cat);
+        //console.log("--> phi (start)");
+        //console.log(phi);
+        for (let j = phi.length-1; j >= 0; j--) {
+            if (notAllocated(j)) {
+                shiftAllocIndicesLeft(j);
+                phi.splice(j,1);
+                //console.log("--> phi (after removing " + j + ")");
+                //console.log(phi);
+            }
+        } 
+    }
+    
+    function debugShowAllocProbs(probs, is_singleton) {
+        console.log(" ");
+        console.log("probs");
+        let start = phi.length - (is_singleton ? 2 : 3);
+        let cumprob = 0.0;
+        for (let j = 0; j < start; j++) {
+            cumprob += probs[j];
+            console.log("   " + j + "  " + phi[j].toFixed(5) + " " + probs[j].toFixed(5) + "  " + cumprob);
+        }
+        for (let j = start; j < phi.length; j++) {
+            cumprob += probs[j];
+            console.log(" * " + j + "  " + phi[j].toFixed(5) + " " + probs[j].toFixed(5) + "  " + cumprob);
+        }
+    }
+    
+    function debugShowPhi() {
+        console.log(" ");
+        console.log("phi");
+        for (let j = 0; j < phi.length; j++) {
+            console.log("   " + j + "  " + phi[j].toFixed(5));
+        }
+    }
+    
+    function debugShowAllocation() {
+        console.log(" ");
+        console.log("allocation");
+        for (let j = 0; j < allocation.length; j++) {
+            console.log("   " + j + "  " + allocation[j]);
+        }
+    }
+    
+    function updateCounts() {
+        total_count++;
+        if (phi.length == 4)
+            config_counts[14]++;
+        else if (phi.length == 3) {
+            if (allocation[0] == allocation[1])
+                config_counts[4]++;
+            else if (allocation[0] == allocation[2])
+                config_counts[7]++;
+            else if (allocation[1] == allocation[2])
+                config_counts[10]++;
+            else if (allocation[0] == allocation[3])
+                config_counts[11]++;
+            else if (allocation[1] == allocation[3])
+                config_counts[12]++;
+            else if (allocation[2] == allocation[3])
+                config_counts[13]++;
+        }
+        else if (phi.length == 2) {
+            if (allocation[0] == allocation[1] && allocation[1] == allocation[2])
+                config_counts[1]++;
+            else if (allocation[0] == allocation[1] && allocation[1] == allocation[3])
+                config_counts[2]++;
+            else if (allocation[0] == allocation[1] && allocation[2] == allocation[3])
+                config_counts[3]++;
+            else if (allocation[0] == allocation[2] && allocation[2] == allocation[3])
+                config_counts[5]++;
+            else if (allocation[0] == allocation[2] && allocation[1] == allocation[3])
+                config_counts[6]++;
+            else if (allocation[0] == allocation[3] && allocation[1] == allocation[2])
+                config_counts[8]++;
+            else if (allocation[1] == allocation[2] && allocation[2] == allocation[3])
+                config_counts[9]++;
+        }
+        else
+            config_counts[0]++;
+    }
+    
+    function updateAllocationVector() {
+        for (let i = 0; i < 4; i++) {
+            let is_singleton = isSingleton(i);
+            
+            //console.log("is_singleton(" + i + ") = " + is_singleton);
+            
+            // update group to which coin i is a member
+            if (is_singleton) {
+                // coin i is in its own group
+                phi.push(drawFromG0());
+                phi.push(drawFromG0());
+            } 
             else {
-                let scum = 0.0;
-                for (let s = 0; s < sticks.length; s++) {
-                    scum += sticks[s].width;
-                    if (cx < scum) {
-                        bins[s] += 1;
-                        dartcolor = sticks[s].color;
-                        break;
-                    }
-                }
+                // coin i is in the same group as at least one other coin
+                phi.push(drawFromG0());
+                phi.push(drawFromG0());
+                phi.push(drawFromG0());
             }
-            darts.push({"cx":cx, "cy":cy, "color":dartcolor});
+            let probs = calcAllocProbs(i, is_singleton);
+            //debugShowAllocProbs(probs, is_singleton);
+            chooseCategory(i, probs, is_singleton, allocation[i]);
+            //debugShowPhi();
+            //debugShowAllocation();
+            updateCounts();
+        }                
+    }
+                
+    // function updatePhi() {
+    //     for (let j = 0; j < phi.length; j++) {
+    //         phi[j] = drawFromG0();
+    //     }
+    // }
+                
+    function restartMCMC() {
+        phi = [];
+        phi.push(drawFromG0());
+        allocation = [0,0,0,0]; 
+        total_count = 1;
+        config_counts  = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+        updateHistogram();
+        updateInfo();
+    }
+                
+    function resetCoins() {
+        coininfo[0].y = 0;
+        coininfo[0].n = 0;
+        coininfo[1].y = 0;
+        coininfo[1].n = 0;
+        coininfo[2].y = 0;
+        coininfo[2].n = 0;
+        coininfo[3].y = 0;
+        coininfo[3].n = 0;
+        restartMCMC();
+    }
+                
+    function nextIteration() {
+        //console.log("~~~~~ nextIteration ~~~~~");
+        updateAllocationVector();
+        //updatePhi();
+        updateHistogram();
+    }
+    
+    function startOrStop() {
+        if (iterating)
+            iterating = false;
+        else {
+            iterating = true;
+            var timer = setInterval(function() {
+                if (iterating)
+                    nextIteration();
+                else
+                    clearInterval(timer);
+            }, iteration_milisecs);
         }
-        
-        // Determine how many bins have darts in them
-        num_occupied = 0;
-        for (let i = 0; i < bins.length; i++) {
-            if (bins[i] > 0)
-                num_occupied += 1;
+    }
+    startOrStop();
+    
+    function flipAllCoins(number_of_flips) {
+        for (let j = 0; j < 4; j++) {
+            // Flip coin j number_of_flips times
+            let p = coininfo[j].p;
+            for (let i = 0; i < number_of_flips; i++) {
+                coininfo[j].n++;
+                let u = lot.uniform(0,1);
+                if (u < p)
+                    coininfo[j].y++;
+            }
         }
-        showStatus();
-        
-        plot_svg.selectAll("circle.dart")   
-            .data(darts)
-            .enter()
-            .append("circle")
-            .attr("class", "dart")
-            .attr("cx", function(d) {return xscale(d.cx);})
-            .attr("cy", function(d) {return yscale(d.cy);})
-            .attr("r", dart_radius)
-            .attr("fill", function(d) {return d.color;})
-            .attr("stroke", "white");
+        restartMCMC();
     }
     
     function modifyAlpha(incr) {
@@ -224,20 +666,10 @@ Each subsequent break affects the remainder only. Larger values of alpha lead to
         else {
             a -= (a > 10 ? 10 : 1);
         }
-        //console.log("a = " + a);
         alpha = a/10;
         if (alpha < alphamin)
             alpha = alphamin;
-        reset();
-    }
-
-    function modifySampleSize(increment) {
-        ndarts += increment;
-        if (ndarts < ndartsmin)
-            ndarts = ndartsmin;
-        if (ndarts > ndartsmax)
-            ndarts = ndartsmax;
-        reset();
+        restartMCMC();
     }
 
     // Listen and react to keystrokes
@@ -257,19 +689,13 @@ Each subsequent break affects the remainder only. Larger values of alpha lead to
     //                                      l   76    y   89
     //                                      m   77    z   90
     function keyDown() {
-        //console.log("key was pressed: " + d3.event.keyCode);
-        if (d3.event.keyCode == 84 || d3.event.keyCode == 68) {
-            // 68 is the "d" key
-            // 84 is the "t" key
-            throwDarts();
+        if (d3.event.keyCode == 83) {
+            // 83 is the "s" key
+            startOrStop();
         }
-        else if (d3.event.keyCode == 66) {
-            // 66 is the "b" key
-            breakStick();
-        }
-        else if (d3.event.keyCode == 82) {
-            // 82 is the "r" key
-            reset();
+        else if (d3.event.keyCode == 77) {
+            // 77 is the "m" key
+            restartMCMC();
         }
         else if (d3.event.keyCode == 38) {
             // 38 is the "up arrow" key
@@ -279,38 +705,113 @@ Each subsequent break affects the remainder only. Larger values of alpha lead to
             // 40 is the "down arrow" key
             modifyAlpha(-1);
         }
-        else if (d3.event.keyCode == 37) {
-            // 37 is the "left arrow" key
-            modifySampleSize(-10);
+        else if (d3.event.keyCode == 70) {
+            // 70 is the "f" key
+            flipAllCoins(100);
         }
-        else if (d3.event.keyCode == 39) {
-            // 39 is the "right arrow" key
-            modifySampleSize(10);
-        }
-        else if (d3.event.keyCode == 80) {
-            // 80 is the "p" key
-            partition();
+        else if (d3.event.keyCode == 82) {
+            // 82 is the "r" key
+            resetCoins();
         }
     }
     d3.select("body")
         .on("keydown", keyDown);
+        
+    let pchoices = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
+    let pindex = 4; // index of value selected at start
+
+    function addButton(panel, label, onfunc) {
+        let control_div = panel.append("div").append("div")
+            .attr("class", "control");
+        control_div.append("input")
+            .attr("value",label)
+            .attr("type", "button")
+            .on("click", onfunc);
+        }
+
+    function addDropdown(panel, id, label, choices, selected_index, onfunc) {
+        let control_div = panel.append("div").append("div")
+            .attr("class", "control");
+        control_div.append("select")
+            .attr("id", id)
+            .on("change", onfunc)
+            .selectAll("option")
+            .data(choices)
+            .enter()
+            .append("option")
+            .text(function(d) {return d.toFixed(1);});
+        d3.select("select#" + id).property("selectedIndex", selected_index);
+        control_div.append("label")
+            .html("&nbsp;" + label);
+        }
+
+    function createControlsPanel() {
+        var controls_div = d3.select("div#controls");
+
+        // Create drop-down lists within controls_div to allow changing the 
+        // true proportion of heads for each of the four coins
+        addDropdown(controls_div, "dropdownA", "true fraction heads for coin A", pchoices, pindex, function() {
+            var selected_index = d3.select(this).property('selectedIndex');
+            coininfo[0].p = pchoices[selected_index];
+            let nflips = coininfo[0].n;
+            resetCoins();
+            flipAllCoins(nflips);
+        });
+        addDropdown(controls_div, "dropdownB", "true fraction heads for coin B", pchoices, pindex, function() {
+            var selected_index = d3.select(this).property('selectedIndex');
+            coininfo[1].p = pchoices[selected_index];
+            let nflips = coininfo[1].n;
+            resetCoins();
+            flipAllCoins(nflips);
+        });
+        addDropdown(controls_div, "dropdownC", "true fraction heads for coin C", pchoices, pindex, function() {
+            var selected_index = d3.select(this).property('selectedIndex');
+            coininfo[2].p = pchoices[selected_index];
+            let nflips = coininfo[2].n;
+            resetCoins();
+            flipAllCoins(nflips);
+        });
+        addDropdown(controls_div, "dropdownD", "true fraction heads for coin D", pchoices, pindex, function() {
+            var selected_index = d3.select(this).property('selectedIndex');
+            coininfo[3].p = pchoices[selected_index];
+            let nflips = coininfo[03].n;
+            resetCoins();
+            flipAllCoins(nflips);
+        });
+        addButton(controls_div, "Flip all coins 100 times (f key)", function() {
+            flipAllCoins(100);
+        });
+        addButton(controls_div, "Reset all coins to zero flips (r key)", function() {
+            resetCoins();
+        });
+        addButton(controls_div, "Increase alpha (up arrow key)", function() {
+            modifyAlpha(1);
+        });
+        addButton(controls_div, "Decrease alpha (down arrow key", function() {
+            modifyAlpha(-1);
+        });
+        addButton(controls_div, "Restart MCMC (m key)", function() {
+            restartMCMC();
+        });
+        addButton(controls_div, "Start/stop MCMC (s key)", function() {
+            startOrStop();
+        });
+    }                
+    createControlsPanel();
 </script>
+<br/>
 
-Notes:
-* b key breaks off fraction from the remainder (lavender) using a draw from Beta(1,alpha)
-* p key mimics pressing the b key until the remainder is tiny (0.001)
-* r key resets everything
-* t key throws darts and computes the O statistic
-* shift-up/shift-down arrow keys increase/decrease alpha (but smallest value is 0.1)
-* shift-right/shift-left arrow keys increase/decrease the number of darts (within the range 10-100)
-* E is the expected number of colored rectangles hit by at least one of the n darts
-* O is the observed number of colored rectangles hit by at least one dart
+## Description
+Imagine you have 4 coins (A, B, C, and D) that have potentially different propensities for coming up heads on any given flip (you can set the true propensities for each coin using the drop-down controls). This applet demonstrates how you can use a Dirichlet Process Prior (DPP) to automatically cluster coins into groups. If all 4 coins have p = 0.5 and you flip them a sufficient number of times, the ABCD (all in one group) configuration should have the highest posterior probability. If coins A and B have p = 0.2 and coins C and D have p = 0.8, then (given sufficient flips) the configuration AB|CD should have the highest probability. The concentration parameter alpha determines how much clustering is encouraged by the prior: small values of alpha lead to fewer groups, while large values of alpha encourage placing each coin in its own group.
 
-This process provides a prior distribution known as the Dirichlet Process Prior (DPP). Imagine that the darts are sites and the colors of the rectangles represent different relative substitution rates. The stick breaking process illustrated in this applet shows what typical draws from a Dirichlet Process Prior look like for different values of alpha and different numbers of sites (darts). Used in a Bayesian MCMC analysis, a DPP would allow you to learn something about how many rate categories are present and which sites fall into which category. Normally, a hierarchical model would be used in which alpha is a hyperparameter and its hyperprior would be vague but nevertheless discourage alpha from getting too large.
+Run the applet without data (all coins have n = 0) to see the prior (e.g. try changing alpha while n = 0). Now flip the coins a few hundred times to see the effect of information being added via the likelihood.
+
+Note: if nothing seems to happen when you press the shortcut keys, click on the lavender plot box so that the app has the keyboard focus. Hold down the shift key while using the arrow keys to modify alpha so that the browser does not scroll at the same time.
 
 ## Acknowledgements
 
-This applet makes use of [d3js](https://d3js.org/) and [simjs](http://simjs.com/download.html). Please see the 
+This applet makes use of [d3js](https://d3js.org/) and the lgamma function from [picomath](http://picomath.org/javascript/gamma.js.html).
+Please see the 
 [GitHub site](https://github.com/molevolworkshop/molevolworkshop.github.io/tree/master/assets/js) 
 for details about licensing.
 
