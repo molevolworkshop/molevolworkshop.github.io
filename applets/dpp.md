@@ -30,6 +30,8 @@ A description of this applet is provided below the plot.
     const ngzerobins = 30;
     const xinfo      = 500;
     const infopad    = 50;
+    const wstatebox  = 125;
+    const hstatebox  =  75;
     
     const color_alloc_hist = "navy";
     
@@ -61,12 +63,25 @@ A description of this applet is provided below the plot.
         {partition:"A|B|CD",  sets:[[0],[1],[2,3]]},
         {partition:"A|B|C|D", sets:[[0],[1],[2],[3]]}
     ];
+    let current_config = 0;
     
     let longest = 0;
     for (let i = 0; i < 15; i++)
         if (configurations[i].partition.length > longest)
             longest = configurations[i].partition.length;
             
+    function CenterTextInRect(text_element, x, y, w, h) {
+        // center text_element horizontally
+        text_element.attr("text-anchor", "middle");
+        text_element.attr("x", x + w/2);
+
+        // center text_element vertically
+        text_element.attr("y", 0);
+        var bb = text_element.node().getBBox();
+        var descent = bb.height + bb.y;
+        text_element.attr("y", y + h/2 + bb.height/2 - descent);
+        }
+        
     // ########################################################################
     // ############################### scales  ################################
     // ########################################################################
@@ -116,6 +131,33 @@ A description of this applet is provided below the plot.
         .attr("height", h)
         .attr("fill", "lavender");
         
+    // Create box showing current state when MCMC is paused
+    let MCMCbox = plot_svg.append("rect")
+        .attr("id", "mcmcstatebox")
+        .attr("x", w/2 - wstatebox)
+        .attr("y", h/2 - hstatebox)
+        .attr("width", wstatebox)
+        .attr("height", hstatebox)
+        .attr("rx", "10")
+        .attr("fill", "white")
+        .attr("stroke", "purple")
+        .attr("stroke-width", "2")
+        .style("pointer-events", "none")
+        .style("visibility", "hidden");
+    
+    // Create text element to show inside MCMC state box
+    let MCMCstate = plot_svg.append("text")
+        .attr("id", "mcmcstatetext")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("font-family", "Courier")
+        .attr("font-size", "24px")
+        .style("text-anchor", "middle")
+        .style("pointer-events", "none")
+        .style("visibility", "hidden")
+        .text("ABCD");
+    CenterTextInRect(MCMCstate, w/2 - wstatebox, h/2 - hstatebox, wstatebox, hstatebox);
+
     // Create box showing allocation histogram extent
     plot_svg.append("rect")
         .attr("id", "alloc")
@@ -161,6 +203,18 @@ A description of this applet is provided below the plot.
     // ########################################################################
     // ########################### configurations  ############################
     // ########################################################################
+
+    function showCurrentMCMCState(reveal) {
+        if (reveal) {
+            MCMCbox.style("visibility", "visible"); 
+            MCMCstate.text(configurations[current_config].partition);               
+            MCMCstate.style("visibility", "visible");                
+        }
+        else {
+            MCMCbox.style("visibility", "hidden");                
+            MCMCstate.style("visibility", "hidden");                
+        }
+    }
 
     // Returns the x coordinate of the upper left corner of a configuration box
     function configBoxX(d,i) {
@@ -631,39 +685,55 @@ A description of this applet is provided below the plot.
     function updateCounts() {
         total_count++;
         if (phi.length == 4)
-            config_counts[14]++;
+            current_config = 14;
+            //config_counts[14]++;
         else if (phi.length == 3) {
             if (allocation[0] == allocation[1])
-                config_counts[4]++;
+                current_config = 4;
+                //config_counts[4]++;
             else if (allocation[0] == allocation[2])
-                config_counts[7]++;
+                current_config = 7;
+                //config_counts[7]++;
             else if (allocation[1] == allocation[2])
-                config_counts[10]++;
+                current_config = 10;
+                //config_counts[10]++;
             else if (allocation[0] == allocation[3])
-                config_counts[11]++;
+                current_config = 11;
+                //config_counts[11]++;
             else if (allocation[1] == allocation[3])
-                config_counts[12]++;
+                current_config = 12;
+                //config_counts[12]++;
             else if (allocation[2] == allocation[3])
-                config_counts[13]++;
+                current_config = 13;
+                //config_counts[13]++;
         }
         else if (phi.length == 2) {
             if (allocation[0] == allocation[1] && allocation[1] == allocation[2])
-                config_counts[1]++;
+                current_config = 1;
+                //config_counts[1]++;
             else if (allocation[0] == allocation[1] && allocation[1] == allocation[3])
-                config_counts[2]++;
+                current_config = 2;
+                //config_counts[2]++;
             else if (allocation[0] == allocation[1] && allocation[2] == allocation[3])
-                config_counts[3]++;
+                current_config = 3;
+                //config_counts[3]++;
             else if (allocation[0] == allocation[2] && allocation[2] == allocation[3])
-                config_counts[5]++;
+                current_config = 5;
+                //config_counts[5]++;
             else if (allocation[0] == allocation[2] && allocation[1] == allocation[3])
-                config_counts[6]++;
+                current_config = 6;
+                //config_counts[6]++;
             else if (allocation[0] == allocation[3] && allocation[1] == allocation[2])
-                config_counts[8]++;
+                current_config = 8;
+                //config_counts[8]++;
             else if (allocation[1] == allocation[2] && allocation[2] == allocation[3])
-                config_counts[9]++;
+                current_config = 9;
+                //config_counts[9]++;
         }
         else
-            config_counts[0]++;
+            current_config = 0;
+            //config_counts[0]++;
+        config_counts[current_config]++;
     }
     
     function updateAllocationVector() {
@@ -694,10 +764,12 @@ A description of this applet is provided below the plot.
         allocation = [0,0,0,0]; 
         total_count = 1;
         config_counts  = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+        current_config = 0;
         resetGZeroCounts();
         updateAllocationHistogram();
         updateGZeroHistogram();
         updateInfo();
+        showCurrentMCMCState(!iterating);
     }
                 
     function resetCoins() {
@@ -719,10 +791,13 @@ A description of this applet is provided below the plot.
     }
     
     function startOrStop() {
-        if (iterating)
+        if (iterating) {
             iterating = false;
+            showCurrentMCMCState(true);
+        }
         else {
             iterating = true;
+            showCurrentMCMCState(false);
             var timer = setInterval(function() {
                 if (iterating)
                     nextIteration();
@@ -787,11 +862,11 @@ A description of this applet is provided below the plot.
     //                                      m   77    z   90
     function keyDown() {
         if (d3.event.keyCode == 83) {
-            // 83 is the "s" key
+            // 83 is the "S" key
             startOrStop();
         }
         else if (d3.event.keyCode == 77) {
-            // 77 is the "m" key
+            // 77 is the "M" key
             restartMCMC();
         }
         else if (d3.event.keyCode == 38) {
@@ -803,11 +878,11 @@ A description of this applet is provided below the plot.
             modifyAlpha(-1);
         }
         else if (d3.event.keyCode == 70) {
-            // 70 is the "f" key
+            // 70 is the "F" key
             flipAllCoins(100);
         }
         else if (d3.event.keyCode == 82) {
-            // 82 is the "r" key
+            // 82 is the "R" key
             resetCoins();
             resetGZeroCounts();
         }
@@ -902,6 +977,7 @@ A description of this applet is provided below the plot.
     }                
     createControlsPanel();
 </script>
+
 <br/>
 
 ## Description
