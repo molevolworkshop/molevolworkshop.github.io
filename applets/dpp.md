@@ -32,16 +32,28 @@ A description of this applet is provided below the plot.
     const infopad    = 50;
     const wstatebox  = 125;
     const hstatebox  =  75;
-    
-    const color_alloc_hist = "navy";
-    
+                
     let alpha        = 2;      // concentration parameter
     let alphamin     = 0.1
+    let hierarchical_model = false;
     
     let maxflips     = 2000;   // maximum number of coinflips allowed
     
-    let prior_a      = 2;      // G0 is Beta(prior_a, prior_b)
+    // G0 is Beta(prior_a, prior_b)
+    let prior_a      = 2;      
     let prior_b      = 2;
+    let delta        = 0.3;    // half the width of the p proposal window
+    
+    // alpha has hyperprior Gamma(alpha_hyperprior_shape, alpha_hyperprior_scale)
+    let alpha_hyperprior_shape = 1;
+    let alpha_hyperprior_scale = 2;
+                
+    let estimate_alpha_button = null;
+    let increase_alpha_button = null;
+    let decrease_alpha_button = null;
+    let alpha_text_element = null;
+    let sum_alpha = alpha;
+    let num_alpha = 1;
                 
     const iteration_milisecs = 10;
     let iterating = false;
@@ -295,7 +307,7 @@ A description of this applet is provided below the plot.
         .style("text-anchor", "end")
         .text("alpha = ");
         
-    plot_svg.append("text")
+    alpha_text_element = plot_svg.append("text")
         .attr("id", "alphavalue")
         .attr("x", xinfo + 3)
         .attr("y", yinfoscale(20))
@@ -420,12 +432,16 @@ A description of this applet is provided below the plot.
     const config_nfact = [6,2,2,1,1,2,1,1,1,2,1,1,1,1,1];
     let config_prob    = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
     
-    function drawFromG0() {
-        let a = lot.gamma(prior_a,1);
-        let b = lot.gamma(prior_b,1);
-        return a/(a+b);
+    function drawFromBetaDist(a,b) {
+        let x = lot.gamma(a,1);
+        let y = lot.gamma(b,1);
+        return x/(x+y);
     }
     
+    function drawFromG0() {
+        return drawFromBetaDist(prior_a, prior_b);
+    }
+
     function binGZero(g0) {
         for (let i = 0; i < ngzerobins; i++) {
             if (g0 < gzero_uppers[i]) {
@@ -530,6 +546,12 @@ A description of this applet is provided below the plot.
         if (i != 3 && allocation[i] == allocation[3])
             return false;
         return true;
+    }
+    
+    function logPrior(p) {
+        let logp = log_gamma(prior_a + prior_b) - log_gamma(prior_a) - log_gamma(prior_b);
+        logp += (prior_a - 1)*Math.log(p) + (prior_b - 1)*Math.log(1 - p);
+        return logp;
     }
     
     function logLikelihood(y, n, p) {
@@ -686,53 +708,38 @@ A description of this applet is provided below the plot.
         total_count++;
         if (phi.length == 4)
             current_config = 14;
-            //config_counts[14]++;
         else if (phi.length == 3) {
             if (allocation[0] == allocation[1])
                 current_config = 4;
-                //config_counts[4]++;
             else if (allocation[0] == allocation[2])
                 current_config = 7;
-                //config_counts[7]++;
             else if (allocation[1] == allocation[2])
                 current_config = 10;
-                //config_counts[10]++;
             else if (allocation[0] == allocation[3])
                 current_config = 11;
-                //config_counts[11]++;
             else if (allocation[1] == allocation[3])
                 current_config = 12;
-                //config_counts[12]++;
             else if (allocation[2] == allocation[3])
                 current_config = 13;
-                //config_counts[13]++;
         }
         else if (phi.length == 2) {
             if (allocation[0] == allocation[1] && allocation[1] == allocation[2])
                 current_config = 1;
-                //config_counts[1]++;
             else if (allocation[0] == allocation[1] && allocation[1] == allocation[3])
                 current_config = 2;
-                //config_counts[2]++;
             else if (allocation[0] == allocation[1] && allocation[2] == allocation[3])
                 current_config = 3;
-                //config_counts[3]++;
             else if (allocation[0] == allocation[2] && allocation[2] == allocation[3])
                 current_config = 5;
-                //config_counts[5]++;
             else if (allocation[0] == allocation[2] && allocation[1] == allocation[3])
                 current_config = 6;
-                //config_counts[6]++;
             else if (allocation[0] == allocation[3] && allocation[1] == allocation[2])
                 current_config = 8;
-                //config_counts[8]++;
             else if (allocation[1] == allocation[2] && allocation[2] == allocation[3])
                 current_config = 9;
-                //config_counts[9]++;
         }
         else
             current_config = 0;
-            //config_counts[0]++;
         config_counts[current_config]++;
     }
     
@@ -758,6 +765,77 @@ A description of this applet is provided below the plot.
         }                
     }
                                         
+    function updatePhi() {
+        for (let i = 0; i < phi.length; i++) {
+            // propose new value for phi[i]
+            let phi_prev = phi[i];
+            let phi_new = lot.uniform(phi_prev - delta, phi_prev + delta);
+            
+            // reflect back into [0,1] if necessary
+            if (phi_new > 1.0)
+                phi_new = 1.0 - (phi_new - 1.0);
+            else if (phi_new < 0.0)
+                phi_new = -phi_new;
+            
+            // calculate log-likelihoods
+            let lnL_prev = 0.0;
+            let lnL_new = 0.0;
+            let n = 0;
+            for (let j = 0; j < 4; j++) {
+                if (allocation[j] == i) {
+                    // coin j is currently assigned to category i
+                    n++;
+                    lnL_prev += logLikelihood(coininfo[j].y, coininfo[j].n, phi_prev);
+                    lnL_new  += logLikelihood(coininfo[j].y, coininfo[j].n, phi_new);
+                }
+            }
+            
+            // calculate log-priors
+            let lnP_prev = logPrior(phi_prev);
+            let lnP_new  = logPrior(phi_new);
+            
+            // calculate log-posterior-kernels
+            let log_kernel_prev = lnL_prev + lnP_prev;
+            let log_kernel_new  = lnL_new  + lnP_new;
+            
+            // calculate log acceptance ratio
+            let logR = log_kernel_new - log_kernel_prev;
+            let logu = Math.log(lot.uniform(0,1));
+            if (logu < logR) {
+                phi[i] = phi_new;
+            }
+            binGZero(phi[i]);
+        }
+    }
+           
+   function updateAlpha() {
+        if (hierarchical_model) {
+            // Use method described in left column, p. 585 in
+            // MD Escobar and M West. 1995. Bayesian density estimation
+            // and inference using mixtures. JASA 90(430):577-588.
+    
+            // let k equal current number of categories
+            let k = phi.length;
+    
+            // sample eta value given alpha and n (always 4)
+            let n = 4;
+            let eta = drawFromBetaDist(alpha + 1, n);
+            let log_eta = Math.log(eta);
+    
+            // sample new alpha given k and eta
+            let gamma_scale = 1.0/(1/alpha_hyperprior_scale - log_eta);
+            let pi_eta = (alpha_hyperprior_shape + k - 1)/(alpha_hyperprior_shape + k - 1 + n*gamma_scale);
+            let gamma1 = lot.gamma(alpha_hyperprior_shape + k,     gamma_scale);
+            let gamma2 = lot.gamma(alpha_hyperprior_shape + k - 1, gamma_scale);
+            alpha = pi_eta*gamma1 + (1 - pi_eta)*gamma2;
+        
+            sum_alpha += alpha;
+            num_alpha += 1;
+            let mean_alpha = sum_alpha/num_alpha;
+            alpha_text_element.text(mean_alpha.toFixed(1));
+        }
+   }
+
     function restartMCMC() {
         phi = [];
         phi.push(drawFromG0());
@@ -766,6 +844,10 @@ A description of this applet is provided below the plot.
         config_counts  = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
         current_config = 0;
         resetGZeroCounts();
+
+        sum_alpha = alpha;
+        num_alpha = 1;
+
         updateAllocationHistogram();
         updateGZeroHistogram();
         updateInfo();
@@ -783,9 +865,11 @@ A description of this applet is provided below the plot.
         coininfo[3].n = 0;
         restartMCMC();
     }
-                
+    
     function nextIteration() {
         updateAllocationVector();
+        updatePhi();
+        updateAlpha();
         updateGZeroHistogram();
         updateAllocationHistogram();
     }
@@ -822,26 +906,51 @@ A description of this applet is provided below the plot.
         restartMCMC();
     }
     
-    function modifyAlpha(incr) {
-        // alpha  10*alpha     a   incr = +1     incr = -1 
-        // -----------------------------------------------
-        //     2        20    20   30/10 = 3   10/10 =   1
-        //  1.01      10.1    10   20/10 = 2    9/10 = 0.9
-        //     1        10    10   20/10 = 2    9/10 = 0.9
-        //  0.99       9.9    10   20/10 = 2    9/10 = 0.9
-        //   0.9         9     9   10/10 = 1    8/10 = 0.8
-        // -----------------------------------------------
-        var a = Math.round(10*alpha);
-        if (incr > 0) {
-            a += (a < 10 ? 1 : 10);
+    function toggleHierarchical() {
+        if (hierarchical_model) {
+            // Going to non-hierarchical model
+            hierarchical_model = false;
+            alpha = Math.round(alpha);
+            if (alpha < 0.1)
+                alpha = 0.1;
+            sum_alpha = alpha;
+            num_alpha = 1;
+            alpha_text_element.text(alpha.toFixed(1));
+            increase_alpha_button.property("disabled", false);
+            decrease_alpha_button.property("disabled", false);
+            estimate_alpha_button.attr("value", "Estimate alpha (A key)");
         }
         else {
-            a -= (a > 10 ? 10 : 1);
+            // Going to hierarchical model
+            hierarchical_model = true;
+            increase_alpha_button.property("disabled", true);
+            decrease_alpha_button.property("disabled", true);
+            estimate_alpha_button.attr("value", "Stop estimating alpha (A key)");
         }
-        alpha = a/10;
-        if (alpha < alphamin)
-            alpha = alphamin;
-        restartMCMC();
+    }
+
+    function modifyAlpha(incr) {
+        if (!hierarchical_model) {
+            // alpha  10*alpha     a   incr = +1     incr = -1 
+            // -----------------------------------------------
+            //     2        20    20   30/10 = 3   10/10 =   1
+            //  1.01      10.1    10   20/10 = 2    9/10 = 0.9
+            //     1        10    10   20/10 = 2    9/10 = 0.9
+            //  0.99       9.9    10   20/10 = 2    9/10 = 0.9
+            //   0.9         9     9   10/10 = 1    8/10 = 0.8
+            // -----------------------------------------------
+            var a = Math.round(10*alpha);
+            if (incr > 0) {
+                a += (a < 10 ? 1 : 10);
+            }
+            else {
+                a -= (a > 10 ? 10 : 1);
+            }
+            alpha = a/10;
+            if (alpha < alphamin)
+                alpha = alphamin;
+            restartMCMC();
+        }
     }
 
     // Listen and react to keystrokes
@@ -869,6 +978,10 @@ A description of this applet is provided below the plot.
             // 77 is the "M" key
             restartMCMC();
         }
+        else if (d3.event.keyCode == 65) {
+            // 65 is the "A" key
+            toggleHierarchical();
+        }
         else if (d3.event.keyCode == 38) {
             // 38 is the "up arrow" key
             modifyAlpha(1);
@@ -893,13 +1006,14 @@ A description of this applet is provided below the plot.
     let pchoices = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
     let pindex = 4; // index of value selected at start
 
-    var addButton = function(panel, label, onfunc) {
+    function addButton(panel, label, onfunc) {
         var control_div = panel.append("div").append("div")
             .attr("class", "control");
-        control_div.append("input")
+        let btn = control_div.append("input")
             .attr("value",label)
             .attr("type", "button")
             .on("click", onfunc);
+        return btn;
         }
 
     function addDropdown(panel, id, label, choices, selected_index, onfunc) {
@@ -955,23 +1069,26 @@ A description of this applet is provided below the plot.
             flipAllCoins(nflips);
             resetGZeroCounts();
         });
-        addButton(controls_div, "Flip all coins 100 times (f key)", function() {
+        addButton(controls_div, "Flip all coins 100 times (F key)", function() {
             flipAllCoins(100);
         });
-        addButton(controls_div, "Reset all coins to zero flips (r key)", function() {
+        addButton(controls_div, "Reset all coins to zero flips (R key)", function() {
             resetCoins();
             resetGZeroCounts();
         });
-        addButton(controls_div, "Increase alpha (up arrow key)", function() {
+        estimate_alpha_button = addButton(controls_div, "Estimate alpha (A key)", function() {
+            toggleHierarchical();
+        });
+        increase_alpha_button = addButton(controls_div, "Increase alpha (up arrow key)", function() {
             modifyAlpha(1);
         });
-        addButton(controls_div, "Decrease alpha (down arrow key", function() {
+        decrease_alpha_button = addButton(controls_div, "Decrease alpha (down arrow key", function() {
             modifyAlpha(-1);
         });
-        addButton(controls_div, "Restart MCMC (m key)", function() {
+        addButton(controls_div, "Restart MCMC (M key)", function() {
             restartMCMC();
         });
-        addButton(controls_div, "Start/stop MCMC (s key)", function() {
+        addButton(controls_div, "Start/stop MCMC (S key)", function() {
             startOrStop();
         });
     }                
@@ -981,17 +1098,19 @@ A description of this applet is provided below the plot.
 <br/>
 
 ## Description
-Imagine you have 4 coins (A, B, C, and D) that have potentially different propensities for coming up heads on any given flip (you can set the true propensities for each coin using the drop-down controls). This applet demonstrates how you can use a Dirichlet Process Prior (DPP) to automatically cluster coins into groups. 
+Imagine the four coins (A, B, C, and D) have potentially different propensities for coming up heads on any given flip (you can set the true propensities for each coin using the drop-down controls). This applet demonstrates how you can use a Dirichlet Process Prior (DPP) to automatically cluster coins into groups. 
 
 If all 4 coins have p = 0.5 and you flip them a sufficient number of times, the ABCD (all in one group) configuration should have the highest posterior probability. 
 
-If coins A and B have p = 0.2 and coins C and D have p = 0.8, then (given sufficient flips) the configuration AB\|CD should have the highest probability. 
+If coins A and B have p = 0.2 and coins C and D have p = 0.8, then (given sufficient flips) the configuration AB\|CD will have the highest probability. 
 
 The concentration parameter alpha determines how much clustering is encouraged by the prior: small values of alpha lead to fewer groups, while large values of alpha encourage placing each coin in its own group.
 
 Run the applet without data (all coins have n = 0) to see the prior (e.g. try changing alpha while n = 0). Now flip the coins a few hundred times to see the effect of information being added via the likelihood.
 
 The small histogram in the lower right corner shows the distribution of p, the propensity to land heads on any given flip. This distribution is Beta(2,2) in the prior, but note how information in the data can easily make it bimodal or multimodal.
+
+If you press the "Estimate alpha" button, the model becomes hierarchical with hyperparameter alpha, which now can be estimated. The hyperprior is Gamma(shape=1, scale=2), so if you are running without data (all coins have n=0) then alpha should hover around 2, the mean of its Gamma(1,2) hyperprior. Click the "Stop estimating alpha" button to return alpha to being fixed.
 
 Notes: 
 * If nothing seems to happen when you press the shortcut keys, click on the lavender plot box so that the app has the keyboard focus
