@@ -13,25 +13,33 @@ A description of this applet is provided below the plot.
 <div id="controls" style="display:inline-block; vertical-align:top;"></div>
 <script type="text/javascript">
     // written by Paul O. Lewis 27-Mar-2020
+    // See https://developer.mozilla.org/en-US/docs/Web/SVG/Element
+    // See https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute
 
-    const lot = new Random();
+    const lot = new Random(1234);
     
     // width and height of svg
-    const w         = 600;
-    const h         = 600;
-    const labelw    =  90;
-    const xhistbase = 100;
-    const histw     = 300;
-    const xinfo     = 500;
-    const infopad   = 50;
+    const w          = 600;
+    const h          = 600;
+    const labelw     =  90;
+    const xhist      = 100;
+    const whist      = 300;
+    const xgzero     = 425;
+    const wgzero     = 150;
+    const hgzero     = 150;
+    const ngzerobins = 30;
+    const xinfo      = 500;
+    const infopad    = 50;
     
-    let alpha       = 2;     // concentration parameter
-    let alphamin    = 0.1
+    const color_alloc_hist = "navy";
     
-    let maxflips    = 2000;   // maximum number of coinflips allowed
+    let alpha        = 2;      // concentration parameter
+    let alphamin     = 0.1
     
-    let prior_a = 2;    // G0 is Beta(prior_a, prior_b)
-    let prior_b = 2;
+    let maxflips     = 2000;   // maximum number of coinflips allowed
+    
+    let prior_a      = 2;      // G0 is Beta(prior_a, prior_b)
+    let prior_b      = 2;
                 
     const iteration_milisecs = 10;
     let iterating = false;
@@ -58,6 +66,39 @@ A description of this applet is provided below the plot.
     for (let i = 0; i < 15; i++)
         if (configurations[i].partition.length > longest)
             longest = configurations[i].partition.length;
+            
+    // ########################################################################
+    // ############################### scales  ################################
+    // ########################################################################
+
+    const xinfoscale = d3.scaleLinear()
+        .domain([0,1])
+        .range([xinfo,w]);
+        
+    const yinfoscale = d3.scaleBand()
+        .domain(d3.range(30))
+        .range([infopad,h-infopad]);
+
+    const xgzeroscale = d3.scaleBand()
+        .domain(d3.range(ngzerobins))
+        .range([xgzero,xgzero+wgzero]);
+
+    const ygzeroscale = d3.scaleLinear()
+        .domain([0,1])
+        .range([575,425]);
+        
+    const xconfigscale = d3.scaleLinear()
+        .domain([0,1])
+        .range([0,labelw]);
+
+    const yconfigscale = d3.scaleBand()
+        .domain(d3.range(15))
+        .range([0,h])
+        .padding(0.2);
+        
+    // ########################################################################
+    // ################################ svg  ##################################
+    // ########################################################################
 
     // Select DIV element already created (see above) to hold SVG
     const plot_div = d3.select("div#arbitrary");
@@ -75,12 +116,36 @@ A description of this applet is provided below the plot.
         .attr("height", h)
         .attr("fill", "lavender");
         
-    // Create vertical line showing where xhistbase lies
+    // Create box showing allocation histogram extent
+    plot_svg.append("rect")
+        .attr("id", "alloc")
+        .attr("x", xhist)
+        .attr("y", 0)
+        .attr("width", whist)
+        .attr("height", h)
+        .attr("fill", "none")
+        .attr("stroke", "purple")
+        .style("visibility", "hidden");
+    
+    // Create line serving as base of allocation histogram
     plot_svg.append("line")
-        .attr("x1", xhistbase)
+        .attr("id", "alloc")
+        .attr("x1", xhist)
         .attr("y1", 0)
-        .attr("x2", xhistbase)
+        .attr("x2", xhist)
         .attr("y2", h)
+        .attr("fill", "none")
+        .attr("stroke", "purple")
+        .style("visibility", "visible");
+    
+    // Create box showing G0 histogram extent
+    plot_svg.append("rect")
+        .attr("id", "gzero")
+        .attr("x", xgzero)
+        .attr("y", ygzeroscale(1))
+        .attr("width", wgzero)
+        .attr("height", hgzero)
+        .attr("fill", "none")
         .attr("stroke", "purple")
         .style("visibility", "visible");
     
@@ -97,15 +162,6 @@ A description of this applet is provided below the plot.
     // ########################### configurations  ############################
     // ########################################################################
 
-    const xconfigscale = d3.scaleLinear()
-        .domain([0,1])
-        .range([0,labelw]);
-
-    const yconfigscale = d3.scaleBand()
-        .domain(d3.range(15))
-        .range([0,h])
-        .padding(0.2);
-        
     // Returns the x coordinate of the upper left corner of a configuration box
     function configBoxX(d,i) {
         let textw = 10*d.partition.length;
@@ -167,14 +223,6 @@ A description of this applet is provided below the plot.
         .style("text-anchor", "middle")
         .text(function(d) {return d.partition;});
         
-    const xinfoscale = d3.scaleLinear()
-        .domain([0,1])
-        .range([xinfo,w]);
-        
-    const yinfoscale = d3.scaleBand()
-        .domain(d3.range(21))
-        .range([infopad,h-infopad]);
-
     // ###################################################################
     // ########################### coin info  ############################
     // ###################################################################
@@ -301,8 +349,18 @@ A description of this applet is provided below the plot.
     }
     
     // ##############################################################
-    // ########################### MCMC  ############################
+    // ########################### MCMC #############################
     // ##############################################################
+    
+    let gzero_counts = [];
+    let gzero_uppers = [];
+    let g0incr = 1.0/ngzerobins;
+    let upper = 0.0;
+    for (let i = 0; i < ngzerobins; i++) {
+        gzero_counts.push(0);
+        upper += g0incr;
+        gzero_uppers.push(upper);
+    }
     
     const config_k     = [1,2,2,2,3,2,2,3,2,2,3,3,3,3,4];
     const config_nfact = [6,2,2,1,1,2,1,1,1,2,1,1,1,1,1];
@@ -314,9 +372,26 @@ A description of this applet is provided below the plot.
         return a/(a+b);
     }
     
+    function binGZero(g0) {
+        for (let i = 0; i < ngzerobins; i++) {
+            if (g0 < gzero_uppers[i]) {
+                gzero_counts[i]++;
+                break;
+            }
+        }
+    }
+    
+    function resetGZeroCounts() {
+        for (let i = 0; i < ngzerobins; i++) {
+            gzero_counts[i] = 0;
+        }
+    }
+    
     // Begin with all four coins in one group
     let phi = [];
-    phi.push(drawFromG0());
+    let g0 = drawFromG0();
+    binGZero(g0);
+    phi.push(g0);
     let allocation = [0,0,0,0]; 
 
     let total_count = 1;
@@ -343,21 +418,52 @@ A description of this applet is provided below the plot.
         }
     }
     
-    plot_svg.selectAll("rect.hist")
+    plot_svg.selectAll("rect.allochist")
         .data(config_counts)
         .enter()
         .append("rect")
-        .attr("class", "hist")
-        .attr("x", xhistbase)
+        .attr("class", "allochist")
+        .attr("x", xhist)
         .attr("y", function(d,i) {return yconfigscale(i);})
-        .attr("width", function(d) {return histw*d/total_count;})
+        .attr("width", function(d) {return whist*d/total_count;})
         .attr("height", yconfigscale.bandwidth())
-        .attr("fill", "navy");
+        .attr("fill", function(d) {return "rgb(0, 0, " + calcColor(d, total_count) + ")";});
 
-    function updateHistogram() {
-        plot_svg.selectAll("rect.hist")
+    function calcColor(d, maxd) {
+        return (Math.floor(255.0*d/maxd));
+    }
+    
+    function updateAllocationHistogram() {
+        plot_svg.selectAll("rect.allochist")
             .data(config_counts)
-            .attr("width", function(d) {return histw*d/total_count;});
+            .attr("width", function(d) {return whist*d/total_count;})
+            .attr("fill", function(d) {return "rgb(0, 0, " + calcColor(d, total_count) + ")";});
+    }
+    
+    plot_svg.selectAll("rect.gzerohist")
+        .data(gzero_counts)
+        .enter()
+        .append("rect")
+        .attr("class", "gzerohist")
+        .attr("x", function(d,i) {return xgzeroscale(i);})
+        .attr("y", ygzeroscale(0))
+        .attr("width", xgzeroscale.bandwidth())
+        .attr("height", 0);
+
+    function updateGZeroHistogram() {
+        let maxcount = Math.max(...gzero_counts);
+        if (maxcount > 0 ) {
+            plot_svg.selectAll("rect.gzerohist")
+                .data(gzero_counts)
+                .attr("y", function(d) {return ygzeroscale(0) - 0.8*hgzero*d/maxcount;})
+                .attr("height", function(d) {return 0.8*hgzero*d/maxcount;})
+                .attr("fill", function(d) {return "rgb(" + calcColor(d, maxcount) + ", 0, 0)";});
+        }
+        else {
+            plot_svg.selectAll("rect.gzerohist")
+                .attr("y", ygzeroscale(0))
+                .attr("height", 0);
+        }
     }
     
     function isSingleton(i) {
@@ -476,16 +582,17 @@ A description of this applet is provided below the plot.
             }
         }
         
+        // Record phi value if cat indexes one of the new proposed ones
+        let aux_start = phi.length - (is_singleton ? 2 : 3);
+        if (cat >= aux_start) {
+            binGZero(phi[cat]);
+        }
+        
         allocation[i] = cat;
-        //console.log("--> cat = " + cat);
-        //console.log("--> phi (start)");
-        //console.log(phi);
         for (let j = phi.length-1; j >= 0; j--) {
             if (notAllocated(j)) {
                 shiftAllocIndicesLeft(j);
                 phi.splice(j,1);
-                //console.log("--> phi (after removing " + j + ")");
-                //console.log(phi);
             }
         } 
     }
@@ -562,9 +669,7 @@ A description of this applet is provided below the plot.
     function updateAllocationVector() {
         for (let i = 0; i < 4; i++) {
             let is_singleton = isSingleton(i);
-            
-            //console.log("is_singleton(" + i + ") = " + is_singleton);
-            
+                                
             // update group to which coin i is a member
             if (is_singleton) {
                 // coin i is in its own group
@@ -578,27 +683,20 @@ A description of this applet is provided below the plot.
                 phi.push(drawFromG0());
             }
             let probs = calcAllocProbs(i, is_singleton);
-            //debugShowAllocProbs(probs, is_singleton);
             chooseCategory(i, probs, is_singleton, allocation[i]);
-            //debugShowPhi();
-            //debugShowAllocation();
             updateCounts();
         }                
     }
-                
-    // function updatePhi() {
-    //     for (let j = 0; j < phi.length; j++) {
-    //         phi[j] = drawFromG0();
-    //     }
-    // }
-                
+                                        
     function restartMCMC() {
         phi = [];
         phi.push(drawFromG0());
         allocation = [0,0,0,0]; 
         total_count = 1;
         config_counts  = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-        updateHistogram();
+        resetGZeroCounts();
+        updateAllocationHistogram();
+        updateGZeroHistogram();
         updateInfo();
     }
                 
@@ -615,10 +713,9 @@ A description of this applet is provided below the plot.
     }
                 
     function nextIteration() {
-        //console.log("~~~~~ nextIteration ~~~~~");
         updateAllocationVector();
-        //updatePhi();
-        updateHistogram();
+        updateGZeroHistogram();
+        updateAllocationHistogram();
     }
     
     function startOrStop() {
@@ -712,6 +809,7 @@ A description of this applet is provided below the plot.
         else if (d3.event.keyCode == 82) {
             // 82 is the "r" key
             resetCoins();
+            resetGZeroCounts();
         }
     }
     d3.select("body")
@@ -720,8 +818,8 @@ A description of this applet is provided below the plot.
     let pchoices = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
     let pindex = 4; // index of value selected at start
 
-    function addButton(panel, label, onfunc) {
-        let control_div = panel.append("div").append("div")
+    var addButton = function(panel, label, onfunc) {
+        var control_div = panel.append("div").append("div")
             .attr("class", "control");
         control_div.append("input")
             .attr("value",label)
@@ -730,7 +828,7 @@ A description of this applet is provided below the plot.
         }
 
     function addDropdown(panel, id, label, choices, selected_index, onfunc) {
-        let control_div = panel.append("div").append("div")
+        var control_div = panel.append("div").append("div")
             .attr("class", "control");
         control_div.append("select")
             .attr("id", id)
@@ -756,6 +854,7 @@ A description of this applet is provided below the plot.
             let nflips = coininfo[0].n;
             resetCoins();
             flipAllCoins(nflips);
+            resetGZeroCounts();
         });
         addDropdown(controls_div, "dropdownB", "true fraction heads for coin B", pchoices, pindex, function() {
             var selected_index = d3.select(this).property('selectedIndex');
@@ -763,6 +862,7 @@ A description of this applet is provided below the plot.
             let nflips = coininfo[1].n;
             resetCoins();
             flipAllCoins(nflips);
+            resetGZeroCounts();
         });
         addDropdown(controls_div, "dropdownC", "true fraction heads for coin C", pchoices, pindex, function() {
             var selected_index = d3.select(this).property('selectedIndex');
@@ -770,6 +870,7 @@ A description of this applet is provided below the plot.
             let nflips = coininfo[2].n;
             resetCoins();
             flipAllCoins(nflips);
+            resetGZeroCounts();
         });
         addDropdown(controls_div, "dropdownD", "true fraction heads for coin D", pchoices, pindex, function() {
             var selected_index = d3.select(this).property('selectedIndex');
@@ -777,12 +878,14 @@ A description of this applet is provided below the plot.
             let nflips = coininfo[03].n;
             resetCoins();
             flipAllCoins(nflips);
+            resetGZeroCounts();
         });
         addButton(controls_div, "Flip all coins 100 times (f key)", function() {
             flipAllCoins(100);
         });
         addButton(controls_div, "Reset all coins to zero flips (r key)", function() {
             resetCoins();
+            resetGZeroCounts();
         });
         addButton(controls_div, "Increase alpha (up arrow key)", function() {
             modifyAlpha(1);
@@ -802,15 +905,25 @@ A description of this applet is provided below the plot.
 <br/>
 
 ## Description
-Imagine you have 4 coins (A, B, C, and D) that have potentially different propensities for coming up heads on any given flip (you can set the true propensities for each coin using the drop-down controls). This applet demonstrates how you can use a Dirichlet Process Prior (DPP) to automatically cluster coins into groups. If all 4 coins have p = 0.5 and you flip them a sufficient number of times, the ABCD (all in one group) configuration should have the highest posterior probability. If coins A and B have p = 0.2 and coins C and D have p = 0.8, then (given sufficient flips) the configuration AB|CD should have the highest probability. The concentration parameter alpha determines how much clustering is encouraged by the prior: small values of alpha lead to fewer groups, while large values of alpha encourage placing each coin in its own group.
+Imagine you have 4 coins (A, B, C, and D) that have potentially different propensities for coming up heads on any given flip (you can set the true propensities for each coin using the drop-down controls). This applet demonstrates how you can use a Dirichlet Process Prior (DPP) to automatically cluster coins into groups. 
+
+If all 4 coins have p = 0.5 and you flip them a sufficient number of times, the ABCD (all in one group) configuration should have the highest posterior probability. 
+
+If coins A and B have p = 0.2 and coins C and D have p = 0.8, then (given sufficient flips) the configuration AB\|CD should have the highest probability. 
+
+The concentration parameter alpha determines how much clustering is encouraged by the prior: small values of alpha lead to fewer groups, while large values of alpha encourage placing each coin in its own group.
 
 Run the applet without data (all coins have n = 0) to see the prior (e.g. try changing alpha while n = 0). Now flip the coins a few hundred times to see the effect of information being added via the likelihood.
 
-Note: if nothing seems to happen when you press the shortcut keys, click on the lavender plot box so that the app has the keyboard focus. Hold down the shift key while using the arrow keys to modify alpha so that the browser does not scroll at the same time.
+The small histogram in the lower right corner shows the distribution of p, the propensity to land heads on any given flip. This distribution is Beta(2,2) in the prior, but note how information in the data can easily make it bimodal or multimodal.
+
+Notes: 
+* If nothing seems to happen when you press the shortcut keys, click on the lavender plot box so that the app has the keyboard focus
+* Hold down the shift key while using the arrow keys to modify alpha so that the browser does not scroll at the same time
 
 ## Acknowledgements
 
-This applet makes use of [d3js](https://d3js.org/) and the lgamma function from [picomath](http://picomath.org/javascript/gamma.js.html).
+This applet makes use of [d3js](https://d3js.org/) and the lgamma function from [John D. Cook](https://www.johndcook.com/blog/stand_alone_code/).
 Please see the 
 [GitHub site](https://github.com/molevolworkshop/molevolworkshop.github.io/tree/master/assets/js) 
 for details about licensing.
