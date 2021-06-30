@@ -122,7 +122,8 @@ Solís-Lemus | University of Wisconsin
 Swofford    | University of Florida             
 Tiley       | Duke University                   
 Yoder       | Duke University                   
-~~~~
+~~~~~~
+
 The vertical bar (created using pipe `|` characters) is the boundary between columns, and
 the horizontal bar (created using hyphen `-` characters) is the boundary between the header
 line and the ordinary table lines. You can justify particular columns using colons in 
@@ -138,7 +139,8 @@ Chang       | University of Toronto
   .         |        .          
   .         |        .          
 Yoder       | Duke University                   
-~~~~
+~~~~~~
+
 The spacing is irrelevant: you do not need to be tidy as long as you get a vertical bar
 between your columns. Also, the number of hyphens in each column of the header separator
 does not matter (but you do need at least 3).
