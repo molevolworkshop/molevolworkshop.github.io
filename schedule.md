@@ -4,21 +4,20 @@ title: Schedule
 menutitle: Schedule
 permalink: /schedule/
 ---
-{% include cancelation-notice.html %}
 {% include figure.html description="" url="/assets/img/eelpond2019.jpg" css="image-center" height="250px" %}
 
-IMPORTANT: this schedule is subject to change until this notice is removed just before the 2020 workshop begins. 
-Lectures linked here are those from the 2019 version of the workshop and may differ from the 2020 versions (especially if the people giving those lectures have changed).
+IMPORTANT: this schedule is subject to change until this notice is removed just before the 2022 workshop begins. 
+Lectures linked here are those from the 2019 version of the workshop and may differ from the 2022 versions (especially if the people giving those lectures have changed).
 
 All sessions are in Loeb G70 (basement of Loeb building)
 
-### Sunday, May 31, 2020
+### Monday, May 30, 2022
 
 ---------------|--------------------------------------|-----------------------------------
  18:00 - 21:00 |  Meigs Room, Swope                   | Opening Reception
 {:.daily-schedule-std}
 
-### Monday, June 1, 2020
+### Tuesday, May 31, 2022
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 |                                      | Welcome and Introductions
@@ -29,7 +28,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  20:30 - 22:00 | TAs                                  | [Alignment lab](/labs/alignment/)
 {: .daily-schedule-std}
 
-### Tuesday, June 2, 2020
+### Wednesday, June 1, 2022
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
@@ -41,7 +40,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  20:30 - 22:00 | [Bui](/faculty-bui/)                 | [IQ-TREE lab](http://www.iqtree.org/workshop/molevol2019) <!--, [tutorial solution]({{ site.baseurl }}/faculty/bui/pdf/Minh_2019_Tutorial-solutions-opt.pdf) -->
 {:.daily-schedule-cpp}
  
-### Wednesday, June 3, 2020
+### Thursday, June 2, 2022
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck)  | C++ Programming Workshop (optional)
@@ -53,7 +52,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  20:00 - 22:00 | [Brown](/faculty-brown/)             | [Gene tree estimation with RevBayes](https://revbayes.github.io/tutorials/ctmc/)
 {:.daily-schedule-cpp}
 
-### Thursday, June 4, 2020
+### Friday, June 3, 2022
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
@@ -65,7 +64,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  20:30 - 22:00 | [Heath](/faculty-heath/)             | [Divergence time estimation Lab](https://revbayes.github.io/tutorials/fbd/fbd_specimen.html)
 {:.daily-schedule-cpp}
 
-### Friday, June 5, 2020
+### Saturday, June 4, 2022
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
@@ -77,11 +76,11 @@ All sessions are in Loeb G70 (basement of Loeb building)
  20:30 - 22:00 | Swope Terrace                        | Course Dinner Party
 {:.daily-schedule-cpp}
 
-### Saturday, June 6, 2020
+### Sunday, June 5, 2022
 
 **Free Day** (sleep in, catch up on email, visit [Martha's Vineyard](https://mvol.com), go [whale watching in Hyannis](https://www.whales.net), etc.)
 
-### Sunday, June 7, 2020
+### Monday, June 6, 2022
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
@@ -93,7 +92,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  20:30 - 22:00 | [Beerli](/faculty-beerli/)           | [Population model estimation using MIGRATE](http://peterbeerli.com/workshops/mbl/2018/tutorial/)
 {:.daily-schedule-cpp}
 
-### Monday, June 8, 2020
+### Tuesday, June 7, 2022
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
@@ -105,7 +104,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  20:30 - 22:00 | [Bielawski](/faculty-bielawski/)     | [Additional resource](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html), [advanced lab](https://bitbucket.org/EvoWorks/protocol-inference-of-episodic-selection/downloads)
 {:.daily-schedule-cpp}
 
-### Tuesday, June 9, 2020
+### Wednesday, June 8, 2022
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
@@ -117,7 +116,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  20:30 - 22:00 | [Knowles](/faculty-knowles/)         | Evolutionary applications of genomic data
 {:.daily-schedule-cpp}
 
-### Wednesday, June 10, 2020
+### Thursday, June 9, 2022
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Swofford](/faculty-swofford/)       | Scientific ethics ([Holder 2019 lecture]({{ site.baseurl }}/faculty/holder/pdf/Holder_last_lecture_2019-opt.pdf))

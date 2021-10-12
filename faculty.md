@@ -4,7 +4,7 @@ title: Faculty
 permalink: /faculty/
 ---
 {% include figure.html description="" url="/assets/img/fromback2018.jpg" css="image-center" height="250px" %}
-## 2020 Course Faculty
+## 2022 Course Faculty
 
 [Peter Beerli](/faculty-beerli/), Florida State University
 
@@ -40,7 +40,7 @@ permalink: /faculty/
 
 [Anne Yoder](/faculty-yoder/), Duke University
 
-## 2020 Course TAs
+## 2022 Course TAs
 
 [Deise Gonçalves](/faculty-goncalves/), Department of Integrative Biology, University of Texas at Austin
 
@@ -50,9 +50,11 @@ permalink: /faculty/
 
 [George Tiley](/faculty-tiley/) (Instructor/Lead TA), Department of Biology, Duke University
 
-## 2020 Course Assistant
+{% comment %}
+## 2022 Course Assistant
 
 [Jason Vailionis](/course-assistant/), Department of Ecology and Evolutionary Biology
+{% endcomment %}
 
 ## Former recent faculty
 

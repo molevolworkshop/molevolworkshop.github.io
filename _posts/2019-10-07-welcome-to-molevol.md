@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Course dates: May 31 to June 10, 2020"
-date:   2019-10-07 21:21:57 -0400
-categories: 2020 workshop
+title:  "Course dates: May 30 to June 9, 2022"
+date:   2021-10-12 13:35:00 -0400
+categories: 2022 workshop
 ---
-Important! The 2020 workshop will take place much earlier than it has in recent years, beginning on **May 31, 2020** and concluding **June 10, 2020**. [Application Info - deadline **extended** to Feb. 26!](https://www.mbl.edu/education/courses/workshop-on-molecular-evolution/)
+Important! The 2022 workshop will begin **May 30, 2022** and conclude **June 9, 2022**. [Application Info](https://www.mbl.edu/education/courses/workshop-on-molecular-evolution/)
 
