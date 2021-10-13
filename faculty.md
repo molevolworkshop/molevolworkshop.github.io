@@ -18,7 +18,9 @@ permalink: /faculty/
 
 [Scott Edwards](/faculty-edwards/), Harvard University
 
+{% comment %}
 [Kelley Harris](/faculty-harris/), University of Washington
+{% endcomment %}
 
 [Tracy Heath](/faculty-heath/), Iowa State University
 

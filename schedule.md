@@ -108,8 +108,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
- 09:00 - 10:30 | [Harris](/faculty-harris/)           | Demography, selection, and introgression
- 10:30 - 12:00 | [Harris](/faculty-harris/)           | Demography, selection, and introgression
+ 09:00 - 10:30 | TBA                                  | Demography, selection, and introgression
+ 10:30 - 12:00 | TBA                                  | Demography, selection, and introgression
  14:00 - 15:30 | [Susko](/faculty-susko/)             | Amino acid models and deep-time phylogenetic inference <!-- ([Eme 2019 lecture]({{ site.baseurl }}/faculty/eme/pdf/Phylogenomics_EmeLaura_WoodsHole2019_4-opt.pdf)) -->
  15:30 - 17:00 | [Susko](/faculty-susko/)             | Topology tests (KH, SH, AU)
  19:00 - 20:30 | [Knowles](/faculty-knowles/)         | Evolutionary applications of genomic data
