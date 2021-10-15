@@ -84,13 +84,15 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
- 09:00 - 10:30 | [Kubatko](/faculty-kubatko/)         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2019-opt.pdf)
- 10:30 - 12:00 | [Kubatko](/faculty-kubatko/)/[Swofford](/faculty-swofford/) | [Species tree lab](http://phylosolutions.com/tutorials/wh2019-svdq-astral/species-trees-tutorial.html)
+ 09:00 - 10:30 | [Kubatko](/faculty-kubatko/)*         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2019-opt.pdf)
+ 10:30 - 12:00 | [Kubatko](/faculty-kubatko/)*/[Swofford](/faculty-swofford/) | [Species tree lab](http://phylosolutions.com/tutorials/wh2019-svdq-astral/species-trees-tutorial.html)
  14:00 - 15:30 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics I]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2019_partI-opt.pdf)
  15:30 - 17:00 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics II]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2019_partII-opt.pdf)
  19:00 - 20:30 | [Beerli](/faculty-beerli/)           | [Population model estimation using MIGRATE](http://peterbeerli.com/workshops/mbl/2018/tutorial/)
  20:30 - 22:00 | [Beerli](/faculty-beerli/)           | [Population model estimation using MIGRATE](http://peterbeerli.com/workshops/mbl/2018/tutorial/)
 {:.daily-schedule-cpp}
+
+\* Laura Kubatko's lecture and lab will be presented by David Swofford in 2022
 
 ### Tuesday, June 7, 2022
 
@@ -123,4 +125,5 @@ All sessions are in Loeb G70 (basement of Loeb building)
  10:30 - 12:00 | Open lab                             |
 {:.daily-schedule-std}
      
+
      
