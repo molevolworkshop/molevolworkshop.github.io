@@ -23,7 +23,6 @@ permalink: /people/
 |            Fabien |             Burki |                                         Uppsala University |
 |           Chiawen |            Chiang |                                       Hong Kong University |
 | Seung Sub (Shane) |              Choi |                                          Landcare research |
-|            Arrigo |        Coen Coria |                            University of Wisconsin-Madison |
 |             Jaime |           Cordova |                           University of Wisconsin, Madison |
 |         Theodoros |             Danis |                 Hellenic Centre for Marine Research (HCMR) |
 |              Sade |         Davenport |                        North Carolina A&T State University |
