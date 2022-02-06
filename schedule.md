@@ -7,7 +7,7 @@ permalink: /schedule/
 {% include figure.html description="" url="/assets/img/eelpond2019.jpg" css="image-center" height="250px" %}
 
 IMPORTANT: this schedule is subject to change until this notice is removed just before the 2022 workshop begins. 
-Lectures linked here are those from the 2019 version of the workshop and may differ from the 2022 versions (especially if the people giving those lectures have changed).
+Lectures linked here are those from the 2019 version of the workshop and may differ from the 2022 versions.
 
 All sessions are in Loeb G70 (basement of Loeb building)
 
@@ -36,20 +36,20 @@ All sessions are in Loeb G70 (basement of Loeb building)
  10:30 - 12:00 | [Swofford](/faculty-swofford/)       | [Model Selection]({{ site.baseurl }}/faculty/swofford/pdf/Swofford_WH2018_modsel-opt.pdf)
  14:00 - 15:30 | [Swofford](/faculty-swofford/)       | Introduction to PAUP*
  15:30 - 17:00 | [Swofford](/faculty-swofford/)       | PAUP* lab
- 19:00 - 20:30 | TBA                                  | TBA
- 20:30 - 22:00 | TBA                                  | TBA
+ 19:00 - 20:30 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-part1-opt.pdf)
+ 20:30 - 22:00 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-part2-opt.pdf)
 {:.daily-schedule-cpp}
  
 ### Monday, May 30, 2022
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck)  | C++ Programming Workshop (optional)
- 09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-part1-opt.pdf)
- 10:30 - 12:00 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-part2-opt.pdf)
- 14:00 - 15:30 | [Brown](/faculty-brown/)             | Introduction to graphical models and RevBayes
- 15:30 - 17:00 | [Heath](/faculty-heath/)             | [Divergence time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
- 19:00 - 20:00 | [Heath](/faculty-heath/)             | [Divergence time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
- 20:00 - 22:00 | [Brown](/faculty-brown/)             | [Gene tree estimation with RevBayes](https://revbayes.github.io/tutorials/ctmc/)
+ 09:00 - 10:30 | [Brown](/faculty-brown/)             | Introduction to graphical models and RevBayes
+ 10:30 - 12:00 | [Heath](/faculty-heath/)             | [Divergence time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
+ 14:00 - 15:30 | [Heath](/faculty-heath/)             | [Divergence time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
+ 15:30 - 17:00 | [Brown](/faculty-brown/)             | [Gene tree estimation with RevBayes](https://revbayes.github.io/tutorials/ctmc/)
+ 19:00 - 20:00 | TBA                                  | TBA
+ 20:00 - 22:00 | TBA                                  | TBA
 {:.daily-schedule-cpp}
 
 ### Tuesday, May 31, 2022
