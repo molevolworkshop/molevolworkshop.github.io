@@ -36,8 +36,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
  10:30 - 12:00 | [Swofford](/faculty-swofford/)       | [Model Selection]({{ site.baseurl }}/faculty/swofford/pdf/Swofford_WH2018_modsel-opt.pdf)
  14:00 - 15:30 | [Swofford](/faculty-swofford/)       | Introduction to PAUP*
  15:30 - 17:00 | [Swofford](/faculty-swofford/)       | PAUP* lab
- 19:00 - 20:30 | TBA                                  | Demography, selection, and introgression
- 20:30 - 22:00 | TBA                                  | Demography, selection, and introgression
+ 19:00 - 20:30 | TBA                                  | TBA
+ 20:30 - 22:00 | TBA                                  | TBA
 {:.daily-schedule-cpp}
  
 ### Monday, May 30, 2022
