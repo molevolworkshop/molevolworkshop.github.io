@@ -46,7 +46,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck)  | C++ Programming Workshop (optional)
  09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-part1-opt.pdf)
  10:30 - 12:00 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-part2-opt.pdf)
- 14:00 - 15:30 | [Brown](/faculty-brown/)             | [Landis 2019 lecture on Phylogenetics & graphical models]({{ site.baseurl }}/faculty/landis/pdf/Lecture_phylo_pgm_mlandis_WH2019-opt.pdf)
+ 14:00 - 15:30 | [Brown](/faculty-brown/)             | Introduction to graphical models and RevBayes
  15:30 - 17:00 | [Heath](/faculty-heath/)             | [Divergence time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
  19:00 - 20:00 | [Heath](/faculty-heath/)             | [Divergence time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
  20:00 - 22:00 | [Brown](/faculty-brown/)             | [Gene tree estimation with RevBayes](https://revbayes.github.io/tutorials/ctmc/)
