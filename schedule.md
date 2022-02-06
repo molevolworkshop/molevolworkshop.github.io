@@ -31,7 +31,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Sunday, May 29, 2022
 
 ---------------|--------------------------------------|-----------------------------------
- 08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
+ 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
  09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Maximum likelihood (cont.)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-part2-opt.pdf)
  10:30 - 12:00 | [Swofford](/faculty-swofford/)       | [Model Selection]({{ site.baseurl }}/faculty/swofford/pdf/Swofford_WH2018_modsel-opt.pdf)
  14:00 - 15:30 | [Swofford](/faculty-swofford/)       | Introduction to PAUP*
@@ -43,7 +43,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Monday, May 30, 2022
 
 ---------------|--------------------------------------|-----------------------------------
- 08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck)  | C++ Programming Workshop (optional)
+ 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck)  | C++ Programming Workshop (optional)
  09:00 - 10:30 | [Brown](/faculty-brown/)             | Introduction to graphical models and RevBayes
  10:30 - 12:00 | [Heath](/faculty-heath/)             | [Divergence time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
  14:00 - 15:30 | [Heath](/faculty-heath/)             | [Divergence time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
@@ -55,7 +55,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Tuesday, May 31, 2022
 
 ---------------|--------------------------------------|-----------------------------------
- 08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
+ 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
  09:00 - 10:30 | [Beerli](/faculty-beerli/)           | [Introduction to The Coalescent]({{ site.baseurl }}/faculty/beerli/pdf/talk1-opt.pdf)
  10:30 - 12:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/talk2-opt.pdf) 
  14:00 - 15:30 | [Solis-Lemus](/faculty-solis-lemus/) | [Network models lecture]({{ site.baseurl }}/faculty/solis-lemus/pdf/Talk-networks-mbl-opt.pdf)
@@ -67,7 +67,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Wednesday, June 1, 2022
 
 ---------------|--------------------------------------|-----------------------------------
- 08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
+ 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
  09:00 - 10:30 | [McTavish](/faculty-mctavish/)       | [Open Tree of Life, gene tree updating slides]({{ site.baseurl }}/faculty/mctavish/pdf/Opentree_2019opt.pdf)
  10:30 - 12:00 | [McTavish](/faculty-mctavish/)       | [Open Tree of Life, gene tree updating lab](https://github.com/snacktavish/Mole2019/blob/master/TreeComparison.md)
  14:00 - 15:30 | [Yoder](/faculty-yoder/)             | [What are we even talking about when we say "species tree"?]({{ site.baseurl }}/faculty/yoder/pdf/Yoder_MBL.8.2019-opt.pdf)
@@ -83,7 +83,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Friday, June 3, 2022
 
 ---------------|--------------------------------------|-----------------------------------
- 08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
+ 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
  09:00 - 10:30 | [Kubatko](/faculty-kubatko/)*         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2019-opt.pdf)
  10:30 - 12:00 | [Kubatko](/faculty-kubatko/)*/[Swofford](/faculty-swofford/) | [Species tree lab](http://phylosolutions.com/tutorials/wh2019-svdq-astral/species-trees-tutorial.html)
  14:00 - 15:30 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics I]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2019_partI-opt.pdf)
@@ -97,7 +97,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Saturday, June 4, 2022
 
 ---------------|--------------------------------------|-----------------------------------
- 08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
+ 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
  09:00 - 10:30 | [Bielawski](/faculty-bielawski/)     | [Drift, selection, codon models]({{ site.baseurl }}/faculty/bielawski/pdf/WH2019_Parts1and2_handouts-opt.pdf)
  10:30 - 12:00 | [Bielawski](/faculty-bielawski/)     | [Statistical analysis/testing]({{ site.baseurl }}/faculty/bielawski/pdf/WH2019_Parts3and4_handouts-opt.pdf)
  14:00 - 15:30 | [Chang](/faculty-chang/)             | [Protein evolution, anc. recon.]({{ site.baseurl }}/faculty/chang/pdf/Protein_Evolution_&_Ancestral_Reconstruction-opt.pdf)
@@ -109,7 +109,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Sunday, June 5, 2022
 
 ---------------|--------------------------------------|-----------------------------------
- 08:00 - 09:30 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
+ 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
  09:00 - 10:30 | [Bui](/faculty-bui/)                 | [IQ-TREE Introduction]({{ site.baseurl }}/faculty/bui/pdf/Minh-2019-lecture-material-opt.pdf)
  10:30 - 12:00 | [Bui](/faculty-bui/)                 | [IQ-TREE lab](http://www.iqtree.org/workshop/molevol2019) <!--, [tutorial solution]({{ site.baseurl }}/faculty/bui/pdf/Minh_2019_Tutorial-solutions-opt.pdf) -->
  14:00 - 15:30 | [Susko](/faculty-susko/)             | Amino acid models and deep-time phylogenetic inference <!-- ([Eme 2019 lecture]({{ site.baseurl }}/faculty/eme/pdf/Phylogenomics_EmeLaura_WoodsHole2019_4-opt.pdf)) -->
