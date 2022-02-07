@@ -45,12 +45,16 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck)  | C++ Programming Workshop (optional)
  09:00 - 10:30 | [Brown](/faculty-brown/)             | Introduction to graphical models and RevBayes
- 10:30 - 12:00 | [Heath](/faculty-heath/)             | [Divergence time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
+ 10:30 - 12:00 | [Brown](/faculty-brown/)             | [Gene tree estimation with RevBayes](https://revbayes.github.io/tutorials/ctmc/)
  14:00 - 15:30 | [Heath](/faculty-heath/)             | [Divergence time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
- 15:30 - 17:00 | [Brown](/faculty-brown/)             | [Gene tree estimation with RevBayes](https://revbayes.github.io/tutorials/ctmc/)
- 19:00 - 20:00 | TBA                                  | TBA
- 20:00 - 22:00 | TBA                                  | TBA
+ 15:30 - 17:00 | [Heath](/faculty-heath/)             | [Divergence time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
+ 19:00 - 20:00 | [Heath](/faculty-heath/)             | [Divergence time estimation Lab](https://revbayes.github.io/tutorials/fbd/fbd_specimen.html)
+ 20:00 - 22:00 |                                      | Time to finish RevBayes labs
 {:.daily-schedule-cpp}
+
+
+
+
 
 ### Tuesday, May 31, 2022
 
@@ -61,7 +65,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  14:00 - 15:30 | [Solis-Lemus](/faculty-solis-lemus/) | [Network models lecture]({{ site.baseurl }}/faculty/solis-lemus/pdf/Talk-networks-mbl-opt.pdf)
  15:30 - 17:00 | [Solis-Lemus](/faculty-solis-lemus/) | [Network models tutorial](https://github.com/crsl4/PhyloNetworks.jl/wiki)
  19:00 - 20:30 | [McTavish](/faculty-mctavish/)       | [Phylogenomics]({{ site.baseurl }}/faculty/mctavish/pdf/Genomics_WH2019opt.pdf)
- 20:30 - 22:00 | [Heath](/faculty-heath/)             | [Divergence time estimation Lab](https://revbayes.github.io/tutorials/fbd/fbd_specimen.html)
+ 20:30 - 22:00 |                                      | Time to finish Network models tutorial
 {:.daily-schedule-cpp}
 
 ### Wednesday, June 1, 2022
