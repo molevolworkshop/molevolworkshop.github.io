@@ -44,19 +44,17 @@ permalink: /faculty/
 
 ## 2022 Course TAs
 
+[Ksenia Arzumanova](/faculty-arzumanova/) Department of Integrative Biology, University of California, Berkeley
+
 [Deise Gonçalves](/faculty-goncalves/), Department of Integrative Biology, University of Texas at Austin
 
-[Áki Láruson](/faculty-laruson/), Marine Science Center, Northeastern University
+[Áki Láruson](/faculty-laruson/) (Lead TA), University of Iceland
 
 [Katie Taylor](/faculty-taylor/), Department of Ecology and Evolutionary Biology, University of Connecticut
 
-[George Tiley](/faculty-tiley/) (Instructor/Lead TA), Department of Biology, Duke University
-
-{% comment %}
 ## 2022 Course Assistant
 
-[Jason Vailionis](/course-assistant/), Department of Ecology and Evolutionary Biology
-{% endcomment %}
+[Alyssa McGurer](/course-assistant/), Department of Ecology and Evolutionary Biology, University of Connecticut
 
 ## Former recent faculty
 
@@ -99,6 +97,8 @@ Axel Meyer, Harold Zakon, Sara Sawyer, Shozo Yokoyama, Gavin Naylor
 {% endcomment %}
 
 ## Former recent TAs
+
+[George Tiley](http://yoderlab.org/people/current-lab-members/george-tiley/), Duke University
 
 [Peter Larsen](https://vetmed.umn.edu/bio/college-of-veterinary-medicine/peter-larsen), University of Minnesota
 
