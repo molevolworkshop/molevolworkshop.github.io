@@ -21,19 +21,17 @@ biology, especially in the context of marine ecology.
 
 ### Contact
 
-Marine Science Center <br/>
-430 Nahant Road <br/>
-Nahant, MA 01908
+Institute of Life and Environmental Sciences<br/>
+University of Iceland<br/>
+155 Askja, Sturlugata 7, 101 Reykjavík
 
-_Email:_ [a.laruson@northeastern.edu](mailto:a.laruson@northeastern.edu)
+_Email:_ [akijarl@hi.is](mailto:akijarl@hi.is)
 
 _twitter:_ [@AkiJarl](https://twitter.com/AkiJarl)
 
 _github:_ [https://github.com/akijarl](https://github.com/akijarl)
 
 ### Website
-
-Lotterhos Lab page: [https://sites.google.com/site/katielotterhos/people?authuser=0](https://sites.google.com/site/katielotterhos/people?authuser=0)
 
 Personal website: [http://akijarl.wordpress.com](http://akijarl.wordpress.com) 
 
