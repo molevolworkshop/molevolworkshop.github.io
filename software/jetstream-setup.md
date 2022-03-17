@@ -45,7 +45,11 @@ Login to Jetstream at this address (click on "Login with XSEDE" button): [https:
 
 To create a new instance, click the New button from the project. Note that there is no need to create a new instance if one have already been created and set up - just unshelve it. These notes are just a record of what has been done already.
 
-I used the _Ubuntu 18_04 Devel and Docker_ image and specified an instance size of m1.quad (CPU: 4, Mem 10 GB, Disk: 20 GB) when setting up the virtual machine serving as the template for MOLE 2020. Press the Launch Instance button to create the instance.
+I used the _Ubuntu 20_04 Devel and Docker_ image and specified an instance size of m1.small (CPU: 2, Mem 4 GB, Disk: 20 GB) when setting up the virtual machine serving as the template for MOLE 2022. 
+
+I have sometimes received big red warnings about not having enough resources to launch the instance, but was able to launch the instance anyway.
+
+Press the Launch Instance button to create the instance.
 
 ### Unshelving an instance
 
@@ -68,13 +72,110 @@ Now ssh into the instance using the jet host set up in _.ssh/config_ file:
 ssh jet
 ~~~~~~
 
-## Initial setup of Ubuntu 18.04 m1.quad instance used to create custom image
+## Initial setup of Ubuntu 20.04 m1.small instance used to create custom image
+
+### Finding basic information
+
+Get current date:
+
+    $ date
+    Sun Mar 13 17:25:51 EDT 2022    
+
+Find processor info:
+
+    $ more /proc/cpuinfo
+    processor	: 0
+    vendor_id	: GenuineIntel
+    cpu family	: 6
+    model		: 63
+    model name	: Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz
+    stepping	: 2
+    microcode	: 0x1
+    cpu MHz		: 2494.222
+    cache size	: 16384 KB
+    physical id	: 0
+    siblings	: 1
+    core id		: 0
+    cpu cores	: 1
+    apicid		: 0
+    initial apicid	: 0
+    fpu		: yes
+    fpu_exception	: yes
+    cpuid level	: 13
+    wp		: yes
+    flags		: fpu vme ...
+    bugs		: cpu_meltdown ...
+    bogomips	: 4988.44
+    clflush size	: 64
+    cache_alignment	: 64
+    address sizes	: 46 bits physical, 48 bits virtual
+    power management:
+    
+    ...info for processor 1 not shown...
+    
+Find 32 vs 64 bit:
+    $ uname -m
+    x86_64    
 
 ### Update operating system before doing any work
 ~~~~~~
 sudo apt update
 sudo apt upgrade
 ~~~~~~
+
+### Install JupyterLab
+
+There are no plans currently to use JupyterLab, but here is how to install nevertheless. Mike Lee uses JupyterLab in the STAMPS course to teach basic unix skills, but if that's all it is used for in MOLE, we might as well teach them unix commands in the actual environment they will be using.
+
+#### Install Miniconda
+
+Instructions from [Mike Lee's STAMPS site](https://hackmd.io/tU79TQPpQqi1IUiK__mRvg)
+~~~~~~
+sudo bash
+curl -O -L https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+~~~~~~
+NOTE: set install location to _/opt/miniconda3_ (this ensures it will get into the image created later; remember that images don't include the home, mnt, tmp, or root directory [see the imaging guidelines](https://iujetstream.atlassian.net/wiki/spaces/JWT/pages/17465521/Imaging+Guidelines))
+
+#### Make miniconda3 available to all users
+
+    # find /opt/miniconda3 -exec chmod a+rw {} \;
+    # find /opt/miniconda3 -type d -exec chmod a+rwx {} \;
+
+#### Install jupyterlab
+
+    # . ~/.bashrc  # source .bashrc to activate new environment
+    # conda install -y jupyter jupyterlab
+
+#### Start jupyterlab
+
+This illustrates how to start JupyterLab manually. If JupyterLab will be used for the workshop, a more automated method will be needed (see last two sections of [Mike Lee's STAMPS site](https://hackmd.io/tU79TQPpQqi1IUiK__mRvg)).
+
+First, generate a notebook config file:
+
+    $ /opt/miniconda3/bin/jupyter notebook --generate-config
+    
+Now append the following to the end of the notebook config file:
+
+    c = get_config()
+    c.NotebookApp.ip = '0.0.0.0'
+    c.NotebookApp.open_browser = False
+    #c.NotebookApp.password = u'sha1:bfe0eeac8110:28c41eb8bab4c0b4260d1e60dbc85c95791c311b'
+    c.NotebookApp.port = 8000
+
+Note the NotebookApp.password line commented out above. You will need to figure out how to 
+generate a password in this format in order to automate the process, but for now we'll take
+the easy route.
+
+Generate a password (automatically stored in json file):
+    
+    $ /opt/miniconda3/bin/jupyter notebook password
+    
+Finally, start the server:
+    
+    $ nohup /opt/miniconda3/bin/jupyter notebook >& ~/.jupyter/log &
+    
+You can now point your browswer [here](http://<ipaddress>:8000/lab) to gain access to the notebook.
 
 ### Grant sudo access
 See [How to Add User to Sudoers in Ubuntu](https://linuxize.com/post/how-to-add-user-to-sudoers-in-ubuntu/) for good instructions. 
@@ -93,12 +194,14 @@ pbeerli ALL=(ALL) NOPASSWD:ALL
 ~~~~~~
 sudo apt install unzip
 ~~~~~~
+Last updated 2022-03-15.
 
 ### Install [R](https://www.r-project.org)
 R is needed in order to precompile PhyloPlots.
 ~~~~~~
 sudo apt-get install r-base
 ~~~~~~
+Last updated 2022-03-15.
 
 ### Install [migrate-n](https://peterbeerli.com/migrate-html5/index.html)
 Install _migrate-n_ to _/usr/local/bin_.
@@ -108,23 +211,27 @@ sudo apt install zlib1g-dev
 curl -LO http://peterbeerli.com/migrate-html5/download_version4/migrate-newest-src.tar.gz
 tar zxvf migrate-newest-src.tar.gz
 rm migrate-newest-src.tar.gz
-cd migrate-4.4.4/src
+cd migrate-5.0.2/src
 ./configure
 make
 sudo make install
 ~~~~~~
+Installed as _/usr/local/bin/migrate-n_. 
+Last updated 2022-03-15.
 
 ### Install [Julia](https://julialang.org)
+
 This places the julia directory in _/opt_ and creates a symbolic link to the executable in _/usr/local/bin_.
 ~~~~~~
 cd
-curl -LO https://julialang-s3.julialang.org/bin/linux/x64/1.3/julia-1.3.1-linux-x86_64.tar.gz
-tar zxvf julia-1.3.1-linux-x86_64.tar.gz
-rm julia-1.3.1-linux-x86_64.tar.gz
-sudo mv julia-1.3.1 /opt/
+curl -LO https://julialang-s3.julialang.org/bin/linux/x64/1.7/julia-1.7.2-linux-x86_64.tar.gz
+tar zxvf julia-1.7.2-linux-x86_64.tar.gz
+rm julia-1.7.2-linux-x86_64.tar.gz
+sudo mv julia-1.7.2 /opt/
 cd /usr/local/bin
-sudo ln -s /opt/julia-1.3.1/bin/julia julia
+sudo ln -s /opt/julia-1.7.2/bin/julia julia
 ~~~~~~
+Last updated 2022-03-15.
 
 ### Install Julia packages needed by the [PhyloNetworks tutorial](https://github.com/crsl4/PhyloNetworks.jl/wiki)
 This follows the [instructions](https://github.com/crsl4/PhyloNetworks.jl/wiki) on the PhyloNetworks site.
@@ -142,6 +249,7 @@ julia> using PhyloNetworks      # may take some time: pre-compiles functions in 
 julia> using PhyloPlots         # may take some time: pre-compiles functions in the package
 # use Ctrl-d to quit julia
 ~~~~~~
+Last updated 2022-03-15.
 
 ### Install [MrBayes](https://nbisweden.github.io/MrBayes/)
 MrBayes is used in the SNaQ tutorial. These instructions install the binary in _/usr/local/bin_.
@@ -155,6 +263,8 @@ cd MrBayes-3.2.7a/
 make
 sudo make install
 ~~~~~~
+Installed as _/usr/local/bin/mb_. 
+Last updated 2022-03-15.
 
 ### Install [BUCKy](http://pages.stat.wisc.edu/~ane/bucky/index.html)
 BUCKy is used in the SNaQ tutorial. These instructions install the binary in _/usr/local/bin_.
@@ -167,6 +277,7 @@ make
 sudo mv bucky /usr/local/bin
 sudo mv mbsum /usr/local/bin
 ~~~~~~
+Last updated 2022-03-15.
 
 ### Install [maxcut](http://research.haifa.ac.il/~ssagi/)
 maxcut is used in the SNaQ tutorial. These instructions install the binary in _/usr/local/bin_.
@@ -180,6 +291,8 @@ tar zxvf QMCN.tar.gz
 rm QMCN.tar.gz
 sudo cp find-cut-Linux-64 /usr/local/bin 
 ~~~~~~
+Installed as _/usr/local/bin/find-cut-Linux-64_. 
+Last updated 2022-03-15.
 
 ### Install [RAxML](https://github.com/stamatak/standard-RAxML)
 RAxML is used in the SNaQ tutorial. These instructions install the binary in _/usr/local/bin_.
@@ -190,6 +303,8 @@ cd standard-RAxML
 make -f Makefile.AVX.PTHREADS.gcc
 sudo mv raxmlHPC-PTHREADS-AVX /usr/local/bin/raxml
 ~~~~~~
+Installed as _/usr/local/bin/raxml_. 
+Last updated 2022-03-15.
 
 ### Install [Java](https://www.java.com/en/)
 The Java Runtime Environment is needed for ASTRAL.
@@ -197,24 +312,28 @@ The Java Runtime Environment is needed for ASTRAL.
 cd
 sudo apt install default-jre 
 ~~~~~~
+Last updated 2022-03-15.
 
 ### Install [ASTRAL](https://github.com/smirarab/ASTRAL)
 ASTRAL is used in the SNaQ tutorial. These instructions install the binary in _/opt/astral_. Note that the _/opt/astral/astral.5.7.3.jar_ jar file and the _/opt/astral/lib_ directory need to be owned by an ordinary user, otherwise the jar must be executed as root.
 ~~~~~~
-curl -LO https://github.com/smirarab/ASTRAL/raw/master/Astral.5.7.3.zip
-unzip Astral.5.7.3.zip
-rm Astral.5.7.3.zip
+#decided against using this version: curl -LO https://github.com/smirarab/ASTRAL/raw/master/Astral.5.7.3.zip
+curl -LO https://github.com/smirarab/ASTRAL/archive/refs/tags/v5.7.1.zip
+unzip Astral.5.7.1.zip
+rm v5.7.1.tar.gz
 sudo mkdir /opt/astral
-sudo cp Astral/astral.5.7.3.jar /opt/astral
+sudo cp Astral/astral.5.7.1.jar /opt/astral
 sudo cp -r Astral/lib /opt/astral
-sudo chown -R $LOGNAME.$LOGNAME /opt/astral
+#sudo chown -R $LOGNAME.$LOGNAME /opt/astral
 ~~~~~~
+Last updated 2022-03-15.
 
 ### Create MOLE directory
 This directory will be used to store example data needed by students for tutorials.
 ~~~~~~
 sudo mkdir /usr/local/share/examples/mole
 ~~~~~~
+Last updated 2022-03-15.
 
 ### Install data for [PhyloNetworks](http://crsl4.github.io/PhyloNetworks.jl/latest/) tutorial
 ~~~~~~
@@ -222,10 +341,17 @@ cd
 git clone https://github.com/crsl4/PhyloNetworks.jl.wiki.git
 sudo mv PhyloNetworks.jl.wiki /usr/local/share/examples/mole/
 ~~~~~~
+
+Modify line 46 of /usr/local/share/examples/mole/PhyloNetworks.jl.wiki/data_results/scripts/raxml.pl to say:
+~~~~~~
+my $raxml = '/usr/local/bin/raxml'; # executable
+~~~~~~
+
 Modify line 47 of /usr/local/share/examples/mole/PhyloNetworks.jl.wiki/data_results/scripts/raxml.pl to say:
 ~~~~~~
-my $astral = '/opt/astral/astral.5.7.3.jar'; # adapt to your system
+my $astral = '/opt/astral/astral.5.7.1.jar'; # adapt to your system
 ~~~~~~
+Last updated 2022-03-15.
 
 ### Download datasets for alignment tutorial
 ~~~~~~
@@ -234,6 +360,7 @@ curl -LO https://molevolworkshop.github.io/assets/data/MSAlab.zip
 unzip MSAlab.zip
 sudo mv MSAlab /usr/local/share/examples/mole/
 ~~~~~~
+Last updated 2022-03-15.
 
 ### Install [MAFFT](https://mafft.cbrc.jp/alignment/software/)
 Instructions below work except the man page is not installed because the makefile
@@ -241,22 +368,25 @@ tries to create the directory _/usr/local/share/man/man1_ will and issues and er
 finds that that directory already exists. I didn't think the man page was all that important and thus did not try to fix the makefile.
 ~~~~~~
 cd
-curl -LO https://mafft.cbrc.jp/alignment/software/mafft-7.453-with-extensions-src.tgz    
-tar zxvf mafft-7.453-with-extensions-src.tgz
-rm mafft-7.453-with-extensions-src.tgz
-cd mafft-7.453-with-extensions/core
+curl -LO https://mafft.cbrc.jp/alignment/software/mafft-7.490-with-extensions-src.tgz    
+tar zxvf mafft-7.490-with-extensions-src.tgz
+rm mafft-7.490-with-extensions-src.tgz
+cd mafft-7.490-with-extensions/core
 make
 sudo make install
 ~~~~~~
+Installed into _/usr/local/bin/_. 
+Last updated 2022-03-15.
 
 ### Install [MUSCLE](https://www.drive5.com/muscle/)
 ~~~~~~
 cd
-curl -LO https://www.drive5.com/muscle/downloads3.8.31/muscle3.8.31_i86linux64.tar.gz
-tar zxvf muscle3.8.31_i86linux64.tar.gz
-rm muscle3.8.31_i86linux64.tar.gz
-sudo mv muscle3.8.31_i86linux64 /usr/local/bin/muscle
+curl -LO https://github.com/rcedgar/muscle/releases/download/v5.1/muscle5.1.linux_intel64
+sudo mv muscle5.1.linux_intel64 /usr/local/bin/muscle
+sudo chmod +x /usr/local/bin/muscle
 ~~~~~~
+Installed as _/usr/local/bin/muscle_. 
+Last updated 2022-03-16.
 
 ### Install [IQ-TREE](http://www.iqtree.org)
 ~~~~~~
@@ -267,18 +397,23 @@ tar zxvf iqtree-1.6.12-Linux.tar.gz
 rm iqtree-1.6.12-Linux.tar.gz
 sudo cp iqtree-1.6.12-Linux/bin/iqtree /usr/local/bin
 # install beta version needed for computing concordance factors
-curl -LO https://github.com/Cibiv/IQ-TREE/releases/download/v2.0-rc1/iqtree-2.0-rc1-Linux.tar.gz
-tar zxvf iqtree-2.0-rc1-Linux.tar.gz
-rm iqtree-2.0-rc1-Linux.tar.gz
-sudo cp iqtree-2.0-rc1-Linux/bin/iqtree /usr/local/bin/iqtree-beta
+#curl -LO https://github.com/Cibiv/IQ-TREE/releases/download/v2.0-rc1/iqtree-2.0-rc1-Linux.tar.gz
+curl -LO https://github.com/Cibiv/IQ-TREE/releases/download/v2.0.6/iqtree-2.0.6-Linux.tar.gz
+tar zxvf iqtree-2.0.6-Linux.tar.gz
+rm iqtree-2.0.6-Linux.tar.gz
+sudo cp iqtree-2.0.6-Linux/bin/iqtree2 /usr/local/bin
 ~~~~~~
+Installed 1.6.12 as _/usr/local/bin/iqtree_ and 2.0.6 as _/usr/local/bin/iqtree2_. 
+Last updated 2022-03-16.
 
-### Install Boost C++
+### Install [Boost C++](https://www.boost.org)
+
 Needed in order to build RevBayes.
 ~~~~~~
 cd
 sudo apt-get install libboost-all-dev   # this takes awhile
 ~~~~~~
+Last updated 2022-03-16.
 
 ### Install [RevBayes](https://revbayes.github.io/compile-linux)
 ~~~~~~
@@ -286,9 +421,11 @@ cd
 # not necessary to issue this command --> sudo apt install build-essential cmake libboost-all-dev
 git clone https://github.com/revbayes/revbayes.git
 cd revbayes/projects/cmake
-./build.sh # this step takes a really long time!
+./build.sh # this step takes a really long time (34 minutes)!
 sudo cp rb /usr/local/bin
 ~~~~~~
+Installed as _/usr/local/bin/rb_. 
+Last updated 2022-03-16.
 
 ### Install dataset for RevBayes tutorial
 ~~~~~~
@@ -297,15 +434,18 @@ curl -LO https://revbayes.github.io/tutorials/ctmc/data/primates_and_galeopterus
 sudo mkdir /usr/local/share/examples/mole/revbayes
 sudo mv primates_and_galeopterus_cytb.nex /usr/local/share/examples/mole/revbayes/
 ~~~~~~
-    
+Last updated 2022-03-16.
+
 ### Install [PAUP*](http://phylosolutions.com/paup-test/)
 ~~~~~~
 cd
-curl -LO http://phylosolutions.com/paup-test/paup4a166_ubuntu64.gz
-gunzip paup4a166_ubuntu64.gz
-sudo mv paup4a166_ubuntu64 /usr/local/bin/paup
+curl -LO http://phylosolutions.com/paup-test/paup4a168_ubuntu64.gz
+gunzip paup4a168_ubuntu64.gz
+sudo mv paup4a168_ubuntu64 /usr/local/bin/paup
 sudo chmod +x /usr/local/bin/paup
 ~~~~~~
+Installed as _/usr/local/bin/paup_. 
+Last updated 2022-03-16.
 
 ### Install [PAML](http://abacus.gene.ucl.ac.uk/software/paml.html)
 ~~~~~~
@@ -317,6 +457,8 @@ cd paml4.9j/src
 make -f Makefile
 sudo mv baseml basemlg chi2 codeml evolver infinitesites mcmctree pamp yn00 /usr/local/bin
 ~~~~~~
+Installed baseml, basemlg, chi2, codeml, evolver, infinitesites, mcmctree, pamp, and yn00in _/usr/local/bin_. 
+Last updated 2022-03-16.
 
 ### Install data files for PAML lab
 ~~~~~~
@@ -327,8 +469,10 @@ rm PamlLab.zip
 rm -rf __MACOSX
 sudo mv PamlLab /usr/local/share/examples/mole/
 ~~~~~~
+2022-03-16: Skipped until I can get PamlLab.zip from the MOLE2020 image.
 
 ### Create alias to mole folder
+
 Allows students to type moledir to go to the example data directory for the course.
 ~~~~~~
 cd
@@ -337,6 +481,7 @@ alias moledir="cd /usr/local/share/examples/mole"
 # Ctrl-d to close file
 sudo mv mole-setup.sh /etc/profile.d
 ~~~~~~
+Last updated 2022-03-16.
 
 ## Creating a custom image (template)
 
@@ -358,20 +503,23 @@ sudo apt-get upgrade
 
 ### Fill out the form
 
+Choose Image from the Actions list on the right of an active or stopped (but not suspended or shelved) instance.
+
 * New Image Name
-~~~~~~
-MOLE2020
-~~~~~~
+
+    MOLE2022
+
 
 * Description of the Image
 ~~~~~~
-Ubuntu 18.04 with software and example data to be used in the Workshop in Molecular Evolution (MBL, Woods Hole, Massachusetts), May 31 to June 10, 2020.
+Ubuntu 20.04 with software and example data to be used in the Workshop in Molecular Evolution (MBL, Woods Hole, Massachusetts), May 27 to June 6, 2022.
 ~~~~~~
 
 * Image Tags
 ~~~~~~
 base, desktop, development, docker, docker-compose, Ubuntu, vnc,
-iq-tree, migrate-n, paup, phylo-networks, revbayes
+iq-tree, migrate-n, paup, phylo-networks, revbayes, MrBayes, ASTRAL,
+MUSCLE, MAFFT, BUCKy, PAML, RAxML
 ~~~~~~
 
 * Version
@@ -381,24 +529,45 @@ iq-tree, migrate-n, paup, phylo-networks, revbayes
 
 * Change log
 ~~~~~~
-Installed software (/usr/local/bin, /opt) and example data (/usr/local/share/examples/mole) used in the 2019 MOLE workshop
+Installed software (/usr/local/bin, /opt) and example data (/usr/local/share/examples/mole) used in the MOLE workshop
 ~~~~~~
 
+* Image Visibility
+~~~~~~
+Specific Users
+~~~~~~
+    
 * Users
-
-Left blank
-
-* Allow access by pattern
-
-Added these patterns.
 ~~~~~~
 cretens
-gtiley
 ~~~~~~
+
+* Files to exclude
+
+None specified
 
 * Licensed software
 
-Checked the box that states that the image contains no licensed software.
+| Software      | Licence                                                                      |
+| ------------- | ---------------------------------------------------------------------------- |
+| JupyterLab    | ?                                                                            |
+| R             | [numerous](https://www.r-project.org/Licenses/)                              |
+| migrate-n     | ?                                                                            |
+| Julia         | [MIT](https://github.com/JuliaLang/julia/blob/master/LICENSE.md)             |
+| MrBayes       | ?                                                                            |
+| BUCKy         | ?                                                                            |
+| maxcut        | ?                                                                            |
+| RAxML         | ?                                                                            |
+| Java          | ?                                                                            |
+| ASTRAL        | [Apache License 2.0](https://github.com/smirarab/ASTRAL/blob/master/LICENSE) |
+| PhyloNetworks | ?                                                                            |
+| MAFFT         | [BSD](https://mafft.cbrc.jp/alignment/software/license.txt)                  |
+| MUSCLE        | [Public Domain](https://www.drive5.com/muscle/manual/license.html)           |
+| IQ-TREE       | [GNU GPL License 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)  |
+| Boost C++     | [Boost License](https://www.boost.org/LICENSE_1_0.txt)                       |
+| RevBayes      | [GNU GPL License 3](https://www.gnu.org/licenses/gpl-3.0.html)               |
+| PAUP*         | ?                                                                            |
+| PAML          | ?                                                                            |
 
 ## Updating the custom image (MOLE2020)
 
@@ -453,3 +622,21 @@ Dec 15 thru Jan 15 --> April 1 allocation begin date
 https://use.jetstream-cloud.org/application/images
 Ubuntu 18.04 Devel and Docker
 {% endcomment %}
+
+# atmo
+
+## Atmo
+
+The command line interface is called [atmo](https://iujetstream.atlassian.net/wiki/spaces/JWT/pages/641794049/Atmosphere+Command+Line+Interface)
+
+Obtained a Personal Access Token from https://use.jetstream-cloud.org/ as follows:
+
+* Upper right, click on plewis
+* Settings
+* Advanced: Show more
+* Specify public key for logging in
+* Created personal access token named polmole. This can be used instead of a password for authentication.
+
+
+
+
