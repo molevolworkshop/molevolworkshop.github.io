@@ -27,6 +27,8 @@ These have proven to be useful resources to have handy.
 * [Jetstream2 documentation](https://docs.jetstream-cloud.org)
 * [Exosphere](https://jetstream2.exosphere.app/)
 * [Exosphere documentation](https://docs.jetstream-cloud.org/ui/exo/exo/)
+* [Horizon home page](https://js2.jetstream-cloud.org/)
+* [Jetstream2 API tutorial](https://github.com/jlf599/JetstreamAPITutorial)
 
 ## Most important!
 
@@ -562,6 +564,84 @@ From the Exosphere home page,
 
 Provide **MOLE_2022_image** as the image name and save the image. This works extremely fast compared to the original Jetsream (almost instantanous). The image can be found in Home > Project TG-DEB190022 > Images (may have to click on "and 3 more images" to see MOLE_2022_image. The image is private so no worries about licenses.
 
+## Command line client
+
+### Obtaining CLI credentials
+
+These instructions copied from the illustrated and more complete instructions at the [Setting up application credentials and openrc.sh for the Jetstream2 CLI](https://docs.jetstream-cloud.org/ui/cli/openrc/) page.
+
+* Login to [Horizon](https://js2.jetstream-cloud.org/) using Xsede credentials
+* Be sure it says xsede * TG-DEB190022 at the top dropdown box
+* Choose Identity, then Application Credentials from the left sidebar menu
+* Click "Create Application Credential" towards the top right
+* Filled out form using entries below, then pressed the Create Application Credential button
+
+| Field                    | Value                                       |
+| ------------------------ | ------------------------------------------- |
+| Name                     | POL-CLI-MOLE-credential                     |
+| Description              | For Woods Hole MOLE project                 |
+| Secret                   | not shown here, stored in password manager  |
+| Expiration Date          |  07/01/2023                                 |
+| Expiration Time          | left blank                                  |
+| Roles                    | left blank                                  |
+| Access Rules             | left blan                                   |
+| Unrestricted (dangerous) | left unchecked                              |
+
+Copied the ID provided in my password manager. 
+
+The file _clounds.yaml_ was generated and placed here on my local laptop:
+
+    ~/.config/openstack/clouds.yaml
+
+The file _app-cred-POL-CLI-MOLE-credential-openrc.sh_ was generated and saved on my local hard drive. This file can be sourced to provide these environmental variables needed for authentication:
+
+    OS_AUTH_TYPE
+    OS_AUTH_URL
+    OS_IDENTITY_API_VERSION
+    OS_REGION_NAME
+    OS_INTERFACE
+    OS_APPLICATION_CREDENTIAL_ID
+    OS_APPLICATION_CREDENTIAL_SECRET
+
+### Using CLI
+
+I have not put a lot of effort into learning how to control things using the API from scripts because Exosphere makes all these operations pretty simple. Thus, there are still a lot of TODO entries below.
+
+Most of these instructions come from the [Jetstream2 API tutorial](https://github.com/jlf599/JetstreamAPITutorial).
+
+You will need to install the openstack client on your local laptop (see [installing openstack](https://pypi.org/project/python-openstackclient/)):
+
+    pip3 install python-openstackclient
+    
+You will need to source your openrc file (see last section):
+
+    . app-cred-POL-CLI-MOLE-credential-openrc.sh
+    
+To show a list of flavors:
+
+    openstack flavor list
+    
+To show a list of images:
+
+    openstack image list
+
+To show details for one particular image:
+
+    openstack image show MOLE_2022_image --fit-width
+
+To create an launch an instance (see [Launch and Access Your Instance](https://docs.jetstream-cloud.org/ui/cli/launch/)):
+
+    TODO
+        
+To shelve or unshelve an instance (see [Instance Management Actions in the CLI](https://docs.jetstream-cloud.org/ui/cli/manage/)):
+
+    TODO
+    
+    
+To delete an instance (see [Deleting items in the CLI](https://docs.jetstream-cloud.org/ui/cli/deleting/)):
+
+    TODO 
+    
 ## Open issues
 
 ### Migrate-n-mpi
@@ -576,7 +656,13 @@ The [General FAQ page](https://docs.jetstream-cloud.org/faq/general-faq/) says t
     
 to set a password for a user. It sounds like we will need to create 62+ passwords this way so that students can login the first time at least.
 
-* What is the passphrase for an instance used for? Does not work as password when logging in
+### Passphrase
+
+What is the passphrase for an instance used for? Does not work as password when logging in.
+
+### Instance limits
+
+Exosphere says up to 25 instances can be run from one account. Can this be increased to, say, 75, or do we need three separate Xsede accounts?
 
 
 
