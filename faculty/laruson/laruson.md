@@ -7,17 +7,11 @@ permalink: /faculty-laruson/
 
 ### About me
 
-I am a postdoctoral researcher in the lab of Dr. Katie Lotterhos at
-Northeastern University’s Marine Science Center. We're working on
-verifying approaches aimed at detecting molecular signatures of
-adaptation.
+I am an evolutionary biologist who focuses on questions of adaptation in the sea. My research interests generally relate to molecular evolution (population genetics and phylogenetics), especially in the context of marine ecology. I'm inordinately fond of marine invertebrates, especially echinoderms.
 
-I graduated with my Ph.D. from the lab of Dr. Floyd Reed at the
-University of Hawai‘i at Mānoa, with a specialization in Evolution,
-Ecology, and Conservation Biology. My dissertation work focused on gene
-and genome evolution in the pan-tropical sea urchin genus Tripneustes.
-My research interests generally relate to molecular evolutionary
-biology, especially in the context of marine ecology.
+I am currently a postdoc with Dr. Snæbjörn Pálsson at the University of Iceland. 
+I graduated with my Ph.D. from the lab of Dr. Floyd Reed at the University of Hawai‘i at Mānoa, with a specialization in Evolution, Ecology, and 
+Conservation Biology. My dissertation work focused on gene and genome evolution in the pan-tropical sea urchin genus Tripneustes. 
 
 ### Contact
 
