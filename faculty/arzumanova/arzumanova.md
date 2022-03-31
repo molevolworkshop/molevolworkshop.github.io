@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Ksenia (Kasey) Arzumanova
+title: Ksenia (Nia) Arzumanova
 permalink: /faculty-arzumanova/
 ---
-{% include figure.html description="Kasey Arzumanova" url="/faculty/arzumanova/img/kasey.jpg" css="image-right" height="250px" %}
+{% include figure.html description="Nia Arzumanova" url="/faculty/arzumanova/img/kasey.jpg" css="image-right" height="250px" %}
 
 ### About me
 
-I am a third year PhD Candidate in the [John Huelsenbeck lab](https://vcresearch.berkeley.edu/faculty/john-huelsenbeck) at the University of California, Berkeley.
+I am a fourth year PhD Candidate in the [John Huelsenbeck lab](https://vcresearch.berkeley.edu/faculty/john-huelsenbeck) at the University of California, Berkeley.
 
 The Huelsenbeck lab focuses on theoretical and statistical phylogenetics. My area of research is model development with application in phylogenetics to explore genome evolution.
 

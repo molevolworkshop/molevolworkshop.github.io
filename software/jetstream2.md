@@ -229,8 +229,22 @@ Needed for migrate-n-mpi.
 ~~~~~~
 sudo apt-get install -y openmpi-bin 
 sudo apt-get install -y libopenmpi-dev
+sudo apt-get install -y openmpi-common
 ~~~~~~
-Last updated 2022-03-18.
+
+Above didn't work, led to link errors in migrate-mpi-n. Trying to build from scratch...
+~~~~~~
+sudo apt-get --purge remove openmpi-bin
+sudo apt-get --purge remove libopenmpi-dev
+sudo apt-get --purge remove openmpi-common
+
+curl -LO https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.2.tar.gz
+tar zxvf openmpi-4.1.2.tar.gz
+mv openmpi-4.1.2.tar.gz TARs
+./configure --prefix=/usr/local
+make all install
+~~~~~~
+Last updated 2022-03-22.
 
 ### Install [migrate-n](https://peterbeerli.com/migrate-html5/index.html)
 Migrate has its own lab in the workshop.
