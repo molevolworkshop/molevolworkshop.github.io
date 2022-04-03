@@ -253,42 +253,28 @@ cd
 curl -LO http://peterbeerli.com/migrate-html5/download_version4/migrate-newest-src.tar.gz
 tar zxvf migrate-newest-src.tar.gz
 rm migrate-newest-src.tar.gz
-cd migrate-5.0.2/src
+cd migrate-5.0.3/src
 ./configure
 make
 sudo make install
 make clean
 make mpis
-make install
+sudo make installmpi
 ~~~~~~
 Installed as _/usr/local/bin/migrate-n_. 
-Last updated 2022-03-18.
+Last updated 2022-04-03.
 
-make install produces the following output: not sure whether this is worrisome
+make produces the following output:
 
     Create the PDF library (libharu 1.x): [linker warnings are OK]
     Using system zlib architecture
-    /bin/sh: 1: .: showgit.sh: not found
     Compile the main source files and create the executable
-    
-Got lots of linker errors trying to install mpi version, but it compiled just fine using "make mpis". Here are the first few errors:
+Produces many warnings but will compile
+sudo make install proceeds fine
 
-    $ sudo make install
-    Create the PDF library (libharu 1.x): [linker warnings are OK]
-    Using system zlib architecture
-    /bin/sh: 1: .: showgit.sh: not found
-    Compile the main source files and create the executable
-    /usr/bin/ld: menu.o: in function `get_menu':
-    menu.c:(.text+0xb394): undefined reference to `ompi_mpi_long'
-    /usr/bin/ld: menu.c:(.text+0xb3ae): undefined reference to `MPI_Bcast'
-    /usr/bin/ld: menu.c:(.text+0xb3c5): undefined reference to `ompi_mpi_char'
-    /usr/bin/ld: menu.c:(.text+0xb3ca): undefined reference to `MPI_Bcast'
-    /usr/bin/ld: menu.c:(.text+0xb3d7): undefined reference to `MPI_Finalize'
-    /usr/bin/ld: main.o: in function `main':
-    main.c:(.text.startup+0x9b): undefined reference to `MPI_Init'
-    .
-    .
-    .
+make clean; make mpis
+generates lots of warnings but will compile; if there are errors, for example 'undefined reference to 'MPI_Init' openmpi may be misconfigured.
+sudo make installmpi works fine 
 
 ### Install [Julia](https://julialang.org)
 
