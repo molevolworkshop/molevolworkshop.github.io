@@ -52,28 +52,24 @@ All sessions are in Loeb G70 (basement of Loeb building)
  20:00 - 22:00 |                                      | Time to finish RevBayes labs
 {:.daily-schedule-cpp}
 
-
-
-
-
 ### Tuesday, May 31, 2022
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
  09:00 - 10:30 | [Beerli](/faculty-beerli/)           | [Introduction to The Coalescent]({{ site.baseurl }}/faculty/beerli/pdf/talk1-opt.pdf)
  10:30 - 12:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/talk2-opt.pdf) 
- 14:00 - 15:30 | [Solis-Lemus](/faculty-solis-lemus/) | [Network models lecture]({{ site.baseurl }}/faculty/solis-lemus/pdf/Talk-networks-mbl-opt.pdf)
- 15:30 - 17:00 | [Solis-Lemus](/faculty-solis-lemus/) | [Network models tutorial](https://github.com/crsl4/PhyloNetworks.jl/wiki)
+ 14:00 - 15:30 | [McTavish](/faculty-mctavish/)       | [Open Tree of Life, gene tree updating slides]({{ site.baseurl }}/faculty/mctavish/pdf/Opentree_2019opt.pdf)
+ 15:30 - 17:00 | [McTavish](/faculty-mctavish/)       | [Open Tree of Life, gene tree updating lab](https://github.com/snacktavish/Mole2019/blob/master/TreeComparison.md)
  19:00 - 20:30 | [McTavish](/faculty-mctavish/)       | [Phylogenomics]({{ site.baseurl }}/faculty/mctavish/pdf/Genomics_WH2019opt.pdf)
- 20:30 - 22:00 |                                      | Time to finish Network models tutorial
+ 20:30 - 22:00 |                                      | Time to finish gene tree updating lab
 {:.daily-schedule-cpp}
 
 ### Wednesday, June 1, 2022
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
- 09:00 - 10:30 | [McTavish](/faculty-mctavish/)       | [Open Tree of Life, gene tree updating slides]({{ site.baseurl }}/faculty/mctavish/pdf/Opentree_2019opt.pdf)
- 10:30 - 12:00 | [McTavish](/faculty-mctavish/)       | [Open Tree of Life, gene tree updating lab](https://github.com/snacktavish/Mole2019/blob/master/TreeComparison.md)
+ 09:00 - 10:30 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics I]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2019_partI-opt.pdf)
+ 10:30 - 12:00 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics II]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2019_partII-opt.pdf)
  14:00 - 15:30 | [Yoder](/faculty-yoder/)             | [What are we even talking about when we say "species tree"?]({{ site.baseurl }}/faculty/yoder/pdf/Yoder_MBL.8.2019-opt.pdf)
  15:30 - 17:00 | [Yoder](/faculty-yoder/)             | [What are we even talking about when we say "species tree"? (cont.)]({{ site.baseurl }}/faculty/yoder/pdf/Yoder_MBL.8.2019-opt.pdf)
  19:00 - 20:30 | Swope Terrace                        | Course Dinner Party
@@ -90,8 +86,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
  09:00 - 10:30 | [Kubatko](/faculty-kubatko/)*         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2019-opt.pdf)
  10:30 - 12:00 | [Kubatko](/faculty-kubatko/)*/[Swofford](/faculty-swofford/) | [Species tree lab](http://phylosolutions.com/tutorials/wh2019-svdq-astral/species-trees-tutorial.html)
- 14:00 - 15:30 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics I]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2019_partI-opt.pdf)
- 15:30 - 17:00 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics II]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2019_partII-opt.pdf)
+ 14:00 - 15:30 | [Solis-Lemus](/faculty-solis-lemus/) | [Network models lecture]({{ site.baseurl }}/faculty/solis-lemus/pdf/Talk-networks-mbl-opt.pdf)
+ 15:30 - 17:00 | [Solis-Lemus](/faculty-solis-lemus/) | [Network models tutorial](https://github.com/crsl4/PhyloNetworks.jl/wiki)
  19:00 - 20:30 | [Beerli](/faculty-beerli/)           | [Population model estimation using MIGRATE](http://peterbeerli.com/workshops/mbl/2018/tutorial/)
  20:30 - 22:00 | [Beerli](/faculty-beerli/)           | [Population model estimation using MIGRATE](http://peterbeerli.com/workshops/mbl/2018/tutorial/)
 {:.daily-schedule-cpp}
