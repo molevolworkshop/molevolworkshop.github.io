@@ -199,9 +199,17 @@ To remove a package:
 
 ### Update operating system before doing any work
 ~~~~~~
+sudo apt-add-repository universe
 sudo apt update
 sudo apt upgrade
 ~~~~~~
+
+### Install mlocate
+This provides the locate command, useful for finding where libraries and other system files are installed.
+~~~~~~
+sudo apt install -y mlocate
+~~~~~~
+Last updated 2022-04-19.
 
 ### Install unzip
 Not really necessary, already installed.
@@ -385,7 +393,15 @@ cd Astral
 sudo cp astral.5.7.1.jar /opt/astral
 sudo cp -r lib /opt/astral
 ~~~~~~
-Last updated 2022-03-18.
+
+**TODO: this needs to be added to the startup script for every virtual machine cloned from the master image**. Change ownership
+~~~~~~
+sudo chown moleuser.moleuser /opt/astral/astral.5.7.1.jar
+sudo chown moleuser.moleuser /opt/astral/lib -R
+~~~~~~
+You should now be able to start ASTRAL as follows:
+    java -jar /opt/astral/astral.5.7.1.jar
+Last updated 2022-04-19.
 
 ### Create MOLE directory
 This directory will be used to store example data needed by students for tutorials.
@@ -506,6 +522,14 @@ sudo mv divtime /usr/local/share/examples/mole/revbayes/
 sudo mv genetree /usr/local/share/examples/mole/revbayes/
 ~~~~~~
 Last updated 2022-03-18.
+
+### Install [libpython2.7.so.1.0 shared library](https://askubuntu.com/questions/1213461/cant-locate-libpython2-7-so-1-0)
+The file _libpython2.7.so.1.0_ is required for PAUP*. 
+~~~~~~
+sudo apt install -y libpython2.7
+~~~~~~
+Installed as _/usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0_. 
+Last updated 2022-04-19.
 
 ### Install [PAUP*](http://phylosolutions.com/paup-test/)
 ~~~~~~

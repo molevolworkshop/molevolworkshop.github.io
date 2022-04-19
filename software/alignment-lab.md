@@ -283,10 +283,12 @@ three (i.e. a full open reading frame).
 
 Another great option is to use PRANK (Löytynoja and Goldman 2005), which
 can use codon-aware data structures for alignment. Many people now write
-their own scripts for back-translation of aligned amino acids - here is
-a very ugly [Perl
-script](https://github.com/gtiley/Alignment_Tools/tree/master/
+their own scripts for back-translation of aligned amino acids.
+
+{% comment %}
+Here is a very ugly [Perl script](https://github.com/gtiley/Alignment_Tools/tree/master/
 Codon_Alignment) I (George Tiley) wrote when starting grad school.
+{% endcomment %}
 
 ## Filtering
 

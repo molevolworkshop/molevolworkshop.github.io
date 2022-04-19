@@ -15,10 +15,10 @@ permalink: /people/
 |            First Name |           Last Name |                                                Institution |
 |     ----------------- |   ----------------- | ---------------------------------------------------------- |
 |                 Rasel |               Ahmed |                 Basic and Applied Research on Jute Project |
+|                 Ragib |               Ahsan |                                              Smith College |
 |                  Noor |             Albader | King Abdullah University of Science and Technology (KAUST) |
 |                  Toni |            Androski |                                   University of New Mexico |
 |                Aileen |   Berasategui Lopez |                                           Emory University |
-|                 Shane |                Choi |                                          Landcare research |
 |                 Jaime |             Cordova |                           University of Wisconsin, Madison |
 |             Theodoros |               Danis |                 Hellenic Centre for Marine Research (HCMR) |
 |                  Sade |           Davenport |                        North Carolina A&T State University |
@@ -52,7 +52,6 @@ permalink: /people/
 |                  Mark |              Stukel |                                  University of Connecticut |
 |                   Tom |          Theirlynck |               Royal Netherlands Institute for Sea Research |
 |                 Laura |                Timm |           University of Colorado - Anschutz Medical Campus |
-|              Zelalem  |              Tolesa |                                         Hawassa University |
 |                Astrid |            Vilstrup |                                          Aarhus University |
 |                 James |            Wainaina |                                      Ohio State University |
 |                 Britt |               White |                              University of Texas at Austin |
