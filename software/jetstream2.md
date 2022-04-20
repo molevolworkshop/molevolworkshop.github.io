@@ -3,6 +3,10 @@ layout: page
 title: Jetstream2 Setup Notes
 permalink: /jetstream2/
 ---
+{% comment %}
+https://www.webfx.com/tools/emoji-cheat-sheet/
+{% endcomment %}
+
 These are notes on setting up Jetstream2 virtual machines for the MOLE workshop. If you are a participant, these notes are not intended for you, but you are of course welcome to read them. They are intended for the current directors and head TA of the workshop, who must get the Jetstream virtual machines up and running before the workshop begins. 
 
 [Paul Lewis](mailto:paul.lewis@uconn.edu) created the first version of this document 18-Mar-2022. Whenever "I" or "me" appears in this document, it is Paul speaking.
@@ -66,9 +70,9 @@ Now ssh into the instance using the jet host set up in _.ssh/config_ file:
 ssh jet
 ~~~~~~
 
-## Creating a new instance
+## Creating the instance to be used as the master image
 
-To create a new instance, click the red Create button in the upper right corner of Exosphere. Note that one only needs to create a new instance this way in order to set up a virtual machine to serve as an image. After that point, it makes more sense to use the command line tools to create bunches of instances from that image.
+To create a new instance, click the red Create button in the upper right corner of Exosphere. 
 
 I used the **Ubuntu 20_04 (latest)** image source and specified **MOLE_2022_image_basis** as the name. I chose **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **1** for number of instances, **no** for enable web desktop, and **Show** for Advanced Options.
 
@@ -80,67 +84,16 @@ Advanced Options:
 | Deploy Guacamole for easy remote access? | Yes                    | Yes      |
 | Network                                  | auto_allocated_network | Yes      |
 | Public IP Address                        | Automatic              | Yes      |
-| SSH Public Key                           | cormy                  | No       |
-| Boot Script                              | see below              | Yes      |
-
-### Boot script used
-
-    #cloud-config
-    users:
-      - default
-      - name: exouser
-        shell: /bin/bash
-        groups: sudo, admin
-        sudo: ['ALL=(ALL) NOPASSWD:ALL']{ssh-authorized-keys}
-    ssh_pwauth: true
-    package_update: true
-    package_upgrade: {install-os-updates}
-    packages:
-      - python3-virtualenv
-      - git{write-files}
-    runcmd:
-      - echo on > /proc/sys/kernel/printk_devkmsg || true  # Disable console rate limiting for distros that use kmsg
-      - sleep 1  # Ensures that console log output from any previous command completes before the following command begins
-      - >-
-        echo '{"status":"running", "epoch": '$(date '+%s')'000}' | tee --append /dev/console > /dev/kmsg || true
-      - chmod 640 /var/log/cloud-init-output.log
-      - {create-cluster-command}
-      - |-
-        (which virtualenv && virtualenv /opt/ansible-venv) || (which virtualenv-3 && virtualenv-3 /opt/ansible-venv) || python3 -m virtualenv /opt/ansible-venv
-        . /opt/ansible-venv/bin/activate
-        pip install ansible-core
-        ansible-pull --url "{instance-config-mgt-repo-url}" --checkout "{instance-config-mgt-repo-checkout}" --directory /opt/instance-config-mgt -i /opt/instance-config-mgt/ansible/hosts -e "{ansible-extra-vars}" /opt/instance-config-mgt/ansible/playbook.yml
-      - ANSIBLE_RETURN_CODE=$?
-      - if [ $ANSIBLE_RETURN_CODE -eq 0 ]; then STATUS="complete"; else STATUS="error"; fi
-      - sleep 1  # Ensures that console log output from any previous commands complete before the following command begins
-      - >-
-        echo '{"status":"'$STATUS'", "epoch": '$(date '+%s')'000}' | tee --append /dev/console > /dev/kmsg || true
-    mount_default_fields: [None, None, "ext4", "user,exec,rw,auto,nofail,x-systemd.makefs,x-systemd.automount", "0", "2"]
-    mounts:
-      - [ /dev/sdb, /media/volume/sdb ]
-      - [ /dev/sdc, /media/volume/sdc ]
-      - [ /dev/sdd, /media/volume/sdd ]
-      - [ /dev/sde, /media/volume/sde ]
-      - [ /dev/sdf, /media/volume/sdf ]
-      - [ /dev/vdb, /media/volume/vdb ]
-      - [ /dev/vdc, /media/volume/vdc ]
-      - [ /dev/vdd, /media/volume/vdd ]
-      - [ /dev/vde, /media/volume/vde ]
-      - [ /dev/vdf, /media/volume/vdf ]
+| SSH Public Key                           | none specified         | Yes      |
+| Boot Script                              | used default           | Yes      |
 
 Press the Create button to create the instance. The Exosphere GUI will say "Building" in orange for about 5 minutes, then "running Setup" for another minute, then "Ready" in green. Clicking on "Instances" will take you to a screen that shows the MOLE_2022_image_basis instance and its IP address.
 
-You can now log into the instance as **exouser** (specified in the boot script).
+You can now log into the instance as **exouser**.
 
     ssh exouser@149.165.159.178
     
-The SSH public key specified will be used for authentication, so no password is needed. However, that will not work for the Workshop. You can set a password for exouser as follows:
-
-    sudo passwd exouser
-    
-We will need to do this for all 62 instances we start at the workshop unless I can find a better solution.
-
-## Setting up the new instance
+### Setting up the new instance
 
 The newly created MOLE_2022_image_basis needs to be provisioned with the software and data files used during the workshop.
 
@@ -394,7 +347,7 @@ sudo cp astral.5.7.1.jar /opt/astral
 sudo cp -r lib /opt/astral
 ~~~~~~
 
-**TODO: this needs to be added to the startup script for every virtual machine cloned from the master image**. Change ownership
+Change ownership
 ~~~~~~
 sudo chown moleuser.moleuser /opt/astral/astral.5.7.1.jar
 sudo chown moleuser.moleuser /opt/astral/lib -R
@@ -577,16 +530,96 @@ sudo mv mole-setup.sh /etc/profile.d
 ~~~~~~
 Last updated 2022-03-18.
 
-## Create MOLE_2022_image
+## Create MOLE-2022-master snapshot
 
-From the Exosphere home page, 
+Once the **MOLE_2022_image_basis** VM is set up and running, you can create a **snapshot** image using the Actions menu. I named this snapshot image **MOLE-2022-master** and keep this image up-to-date (as changes are made to MOLE_2022_image_basis) by deleting the old snapshot and creating a new one.
 
-* click on Allocation TG-DEB190022
-* click on Instance
-* click on MOLE_2022_image_basis
-* choose Image from the Actions menu
+## Creating instances based on MOLE-2022-master
 
-Provide **MOLE_2022_image** as the image name and save the image. This works extremely fast compared to the original Jetsream (almost instantanous). The image can be found in Home > Project TG-DEB190022 > Images (may have to click on "and 3 more images" to see MOLE_2022_image. The image is private so no worries about licenses.
+To create new instances, click the red _Create_ button in the upper right corner of Exosphere, then choose _Instance_ and then, in the _Choose an Image Source_ section, click the _By Image_ tab and hit the _Create Instance_ button beside MOLE-2022-master.
+
+Choose **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **62** for number of instances, **no** for enable web desktop, and **Show** for Advanced Options.
+
+Advanced Options:
+
+| Name                                     | Value                  | Default? |
+| ---------------------------------------- | ---------------------- | -------- |
+| Install operating system updates?        | Yes                    | Yes      |
+| Deploy Guacamole for easy remote access? | Yes                    | Yes      |
+| Network                                  | auto_allocated_network | Yes      |
+| Public IP Address                        | Automatic              | Yes      |
+| SSH Public Key                           | none specified         | Yes      |
+| Boot Script                              | see below              | No       |
+
+Press the Create button to create the instances. The Exosphere GUI will say "Building" in orange, then "running Setup", then "Ready" in green. Clicking on "Instances" will take you to a screen that shows each instance created and its IP address.
+
+You (or a student) can now log into an instance as **moleuser**.
+
+    ssh moleuser@149.165.159.178
+
+### Boot script used
+
+This is the default cloud-config boot script with some modifications for MOLE: 
+
+:small_blue_diamond: One modification is the addition of the moleuser. Note that SSH public keys for the co-directors as well as the TAs are automatically saved to the _~moleuser/.ssh/authorized_keys_ directory on each instance, making it easy for the TAs to log in to any instance, even if the student has changed the moleuser password, which is not shown in the cloud-config script below for security reasons (you should replace <tt><not shown></tt> with a meaningful password that will be communicated to students in the first (intro) computer lab.
+
+:small_blue_diamond: Another modification is the addition of 3 lines to the runcmd section. These three lines change the ownership of files and directories in _/opt/astral_ directory to moleuser (needed for ASTRAL to be started without using sudo) and create an alias named astral to make it easier for students to start ASTRAL.
+
+    #cloud-config
+    users:
+      - default                 # preserve the standard default user
+      - name: moleuser          # MOLE-specific: adds a user moleuser common to all
+        shell: /bin/bash        # VMs in addition to the exouser added by default
+        groups: sudo, admin    
+        sudo: ['ALL=(ALL) NOPASSWD:ALL']{ssh-authorized-keys}
+        ssh_authorized_keys:    # moleuser has public keys for directors and TAs allowing easy login
+            - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMpNe5iim6O1x93lNkJw5ZLF6f5Kd9KIMaNuifz3MY1K4+NIFQHgrbENAaimuvwNCQDCUDgOY2u4v92O2PQLmPjO5NR9Yl1vOhpzb3EFe1EM7lwFSIKNl6S2jNd4mghUXImaXT6vtS/V6X9HwB6/qhFwHrb3ic+7RPxUplMRhnflatIGWk7V+OaSBvC1AuswXqGAeBeOItJJKeGqerWDq8ytbeUbp3qFtzyHT+z08m0UnSYIIyPfV5lxztCpw22xmkReQ2pc1FtwJKmxCa3QxegsQ30X/r9fjiVS7K2CPJSTwqWbs33GfSnYgYyynjch0pQt0ByOPB1ncpfbLZWbw3 plewis@cormoran.local
+            - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCouLhDpekh1GQMpx1oyMKhAzbl2bINJMaW6N0G6Kp1kYuaQddK3TGHNhQ/BcIHli7uVHlGD1Q5ABuJI+X66bh4k02/DDDhGqbtqw18IfufMRTsSyOvrvZ2QWMw9xHNg5J+2n+hfuuCyXZuay+DYyXShq4FvMqBfd2c0GeMWBNqpyH6QicsfMc/JyNFZdCdm0G86E61Y9QLM1cgGe8oUA3/85AaT0X/yCUdkbX6QZPZEfrBtMilXDV9oCGqrLUR/ZBp/EdEmxz0a39aU6xzZamPbRC1gYeVvzg2QfQeM1t2zYRIGc8ssJ39AbI6Kk1ZDrNqYFRQUk5ywqjixyqXpWbL akijarl@Akis-MacBook.local
+            - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwLwDmVCAamrG+cUzsv93qNO83TBymqimSCF+q9CD0zVXve6oYcKqKWt+nJqwYfeP1iLzi0NAEVcYpu9u34De9ortuWflMEZoh+1R32q0zqOkULMBCol4yXC7ou0+t23DFwkiavTn7ggQtmFKZ06/TGMSHdILaiFptpkKdadg7/qEKnuXXL3BZ7Jw9ZYrCr2oIEJ0expAEmf3xURFUwS23DcsJJTH2UJcipq7yucjjb+5YvAaMBc5NaT+q3j4otBjc9/mEiJUFgFwtu8KmZ5czUgnVMUi4dIkxxjVgtDnmChTA9P150yZ0YMXipyQPpKRbQ17ZCWTAvR5mWGqi2UGQA+etXxtopLdGref9OqNUA/6szVMZsFAYT2gUgLobkWtsX17WSjM+G3py4Kl5EBdbGChtqlbFth3X9J3/yzyt+Q3NKpsxeSE9b5FTCn5zD1Sqsx34tOByyeGDIAVbUXqhGvDJLTXLqqqkMmbabzHYNcXOwJVFxYFvbyfIe6d8Wuk= beerli@cornelius.local
+            - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCzNnLX1WagNRL8pZaaB5zMrrSBmondVSKfAtiNGd7z++WT/2UonvDzxOEpfo61dvPqY/NP+wNdRJ2+gDxUuUNQsFZEVZpFWt+rAjtVbfKF7V+qfB4crKDVsPV92FlbzyD2Z8azc3rrJMl4Oxl16/d8vpZMSeM8q35cpqif75+Yyc0pPB/kCiwRfzifgCLouK23tUwuCLRTY0nK3Mwd41Jbvt+xoFlRhBbw1iou2SR0yhl6C+DrLwgcaEp1I9oUX8EBWR7Hp/Pfw3qESk4sEIInX3aEZQq1WJRxnKJynyo9E2WlBuL4eotF1en/ppCRDYLQw6ySn/fRncCRr6X9CNijoog7HZdjMiBMk1EteJaso7fHqsALeTcLonR9WnGoirNfFQJr2g6LYdNjrhYA5pWzgEwPuZrNnYaHZj1JW2Bj9XRx/SKFlkKE4oooAgdopZLA6AngjMXqFJ5pXVsrxRnqV+vWSKE25pyRzGJ7heahtHfzaB6U+QMB+wCUxxmaAy0= kate@Kates-MacBook-Air
+            - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOvS4hXxZfIIIxDiU0p5I7eazXO7MBeTJXI+wY2YPfnIwqSB7dr5pw98mocoqQAGiNdq7LD2lvtHOlAy3wlDhzs=
+    ssh_pwauth: true             # allow password authentication (for students)
+    chpasswd:
+        expire: false            # do not force user to change passwd on first login
+        list:
+            - moleuser: <not shown>  # specify starting password for moleuser
+    package_update: true
+    package_upgrade: {install-os-updates}
+    packages:
+      - python3-virtualenv
+      - git{write-files}
+    runcmd:
+      - chown moleuser.moleuser /opt/astral/astral.5.7.1.jar # first 3 lines of runcmd are
+      - chown moleuser.moleuser /opt/astral/lib -R           # MOLE-specific, rest is boiler-plate
+      - echo 'alias astral="java -jar /opt/astral/astral.5.7.1.jar"' >> /home/moleuser/.bash_profile
+      - echo on > /proc/sys/kernel/printk_devkmsg || true  # Disable console rate limiting for distros that use kmsg
+      - sleep 1  # Ensures that console log output from any previous command completes before the following command begins
+      - >-
+        echo '{"status":"running", "epoch": '$(date '+%s')'000}' | tee --append /dev/console > /dev/kmsg || true
+      - chmod 640 /var/log/cloud-init-output.log
+      - {create-cluster-command}
+      - |-
+        (which virtualenv && virtualenv /opt/ansible-venv) || (which virtualenv-3 && virtualenv-3 /opt/ansible-venv) || python3 -m virtualenv /opt/ansible-venv
+        . /opt/ansible-venv/bin/activate
+        pip install ansible-core
+        ansible-pull --url "{instance-config-mgt-repo-url}" --checkout "{instance-config-mgt-repo-checkout}" --directory /opt/instance-config-mgt -i /opt/instance-config-mgt/ansible/hosts -e "{ansible-extra-vars}" /opt/instance-config-mgt/ansible/playbook.yml
+      - ANSIBLE_RETURN_CODE=$?
+      - if [ $ANSIBLE_RETURN_CODE -eq 0 ]; then STATUS="complete"; else STATUS="error"; fi
+      - sleep 1  # Ensures that console log output from any previous commands complete before the following command begins
+      - >-
+        echo '{"status":"'$STATUS'", "epoch": '$(date '+%s')'000}' | tee --append /dev/console > /dev/kmsg || true
+    mount_default_fields: [None, None, "ext4", "user,exec,rw,auto,nofail,x-systemd.makefs,x-systemd.automount", "0", "2"]
+    mounts:
+      - [ /dev/sdb, /media/volume/sdb ]
+      - [ /dev/sdc, /media/volume/sdc ]
+      - [ /dev/sdd, /media/volume/sdd ]
+      - [ /dev/sde, /media/volume/sde ]
+      - [ /dev/sdf, /media/volume/sdf ]
+      - [ /dev/vdb, /media/volume/vdb ]
+      - [ /dev/vdc, /media/volume/vdc ]
+      - [ /dev/vdd, /media/volume/vdd ]
+      - [ /dev/vde, /media/volume/vde ]
+      - [ /dev/vdf, /media/volume/vdf ]
 
 ## Command line client
 
