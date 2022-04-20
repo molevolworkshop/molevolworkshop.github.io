@@ -48,7 +48,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  10:30 - 12:00 | [Brown](/faculty-brown/)             | [Gene tree estimation with RevBayes](https://revbayes.github.io/tutorials/ctmc/)
  14:00 - 15:30 | [Heath](/faculty-heath/)             | [Divergence time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
  15:30 - 17:00 | [Heath](/faculty-heath/)             | [Divergence time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
- 19:00 - 20:00 | [Heath](/faculty-heath/)             | [Divergence time estimation Lab](https://revbayes.github.io/tutorials/fbd/fbd_specimen.html)
+ 19:00 - 20:00 | [Heath](/faculty-heath/)             | [Divergence time estimation Lab](https://revbayes.github.io/tutorials/fbd_simple)
  20:00 - 22:00 |                                      | Time to finish RevBayes labs
 {:.daily-schedule-cpp}
 
