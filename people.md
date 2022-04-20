@@ -18,7 +18,7 @@ permalink: /people/
 |                 Ragib |               Ahsan |                                              Smith College |
 |                  Noor |             Albader | King Abdullah University of Science and Technology (KAUST) |
 |                  Toni |            Androski |                                   University of New Mexico |
-|                Aileen |   Berasategui Lopez |                                           Emory University |
+|                 Lucia |    Bazan Williamson |                           University of California, Merced |
 |                 Jaime |             Cordova |                           University of Wisconsin, Madison |
 |             Theodoros |               Danis |                 Hellenic Centre for Marine Research (HCMR) |
 |                  Sade |           Davenport |                        North Carolina A&T State University |
@@ -43,6 +43,7 @@ permalink: /people/
 |           Maximillian |               Marin |                                     Harvard Medical School |
 |                  Alix |            Matthews |                                  Arkansas State University |
 |                 Hanon |              McShea |                                        Stanford University |
+|              Fernando |    Melendez Vasquez |                                     University of Oklahoma |
 |               Analisa |              Milkey |                                  University of Connecticut |
 |                 Sarah |              Morris |                                                    RBG Kew |
 |                 Diego |      Paredes Burneo |                                 Louisiana State University |
