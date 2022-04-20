@@ -44,8 +44,6 @@ permalink: /faculty/
 
 ## 2022 Course TAs
 
-[Ksenia Arzumanova](/faculty-arzumanova/) Department of Integrative Biology, University of California, Berkeley
-
 [Deise Gonçalves](/faculty-goncalves/), Department of Integrative Biology, University of Texas at Austin
 
 [Áki Láruson](/faculty-laruson/) (Lead TA), University of Iceland
