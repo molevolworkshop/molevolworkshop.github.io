@@ -563,7 +563,13 @@ This is the default cloud-config boot script with some modifications for MOLE:
 
 :small_blue_diamond: One modification is the addition of the moleuser. Note that SSH public keys for the co-directors as well as the TAs are automatically saved to the _~moleuser/.ssh/authorized_keys_ directory on each instance, making it easy for the TAs to log in to any instance, even if the student has changed the moleuser password, which is not shown in the cloud-config script below for security reasons (you should replace <tt><not shown></tt> with a meaningful password that will be communicated to students in the first (intro) computer lab.
 
-:small_blue_diamond: Another modification is the addition of 3 lines to the runcmd section. These three lines change the ownership of files and directories in _/opt/astral_ directory to moleuser (needed for ASTRAL to be started without using sudo) and create an alias named astral to make it easier for students to start ASTRAL.
+:small_blue_diamond: Another modification is the addition of 5 lines to the runcmd section. These lines do the following:
+
+1. makes moleuser the owner of _/opt/astral/astral.5.7.1.jar_ (needed for ASTRAL to be started without using sudo) 
+2. makes moleuser the owner of _/opt/astral/lib_ (ditto)
+3. creates an alias named _astral_ (makes it easier to start ASTRAL)
+4. creates an alias named _raxmlHPC_ (some tutorials use raxmlHPC rather than raxml)
+5. creates a symbolic link named _moledata_ (makes it easier to find example datasets)
 
     #cloud-config
     users:
@@ -589,9 +595,11 @@ This is the default cloud-config boot script with some modifications for MOLE:
       - python3-virtualenv
       - git{write-files}
     runcmd:
-      - chown moleuser.moleuser /opt/astral/astral.5.7.1.jar # first 3 lines of runcmd are
+      - chown moleuser.moleuser /opt/astral/astral.5.7.1.jar # first 5 lines of runcmd are
       - chown moleuser.moleuser /opt/astral/lib -R           # MOLE-specific, rest is boiler-plate
       - echo 'alias astral="java -jar /opt/astral/astral.5.7.1.jar"' >> /home/moleuser/.bash_profile
+      - echo 'alias raxmlHPC="/usr/local/bin/raxml"' >> /home/moleuser/.bash_profile
+      - ln -s /usr/local/share/examples/mole /home/moleuser/moledata
       - echo on > /proc/sys/kernel/printk_devkmsg || true  # Disable console rate limiting for distros that use kmsg
       - sleep 1  # Ensures that console log output from any previous command completes before the following command begins
       - >-
