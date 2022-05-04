@@ -48,6 +48,8 @@ permalink: /faculty/
 
 [Áki Láruson](/faculty-laruson/) (Lead TA), University of Iceland
 
+[Jordan Satler](/faculty-satler/), Department of Evolution, Ecology and Organismal Biology, The Ohio State University
+
 [Katie Taylor](/faculty-taylor/), Department of Ecology and Evolutionary Biology, University of Connecticut
 
 ## 2022 Course Assistant
