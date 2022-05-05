@@ -102,7 +102,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  10:30 - 12:00 | [Bielawski](/faculty-bielawski/)     | [Statistical analysis/testing]({{ site.baseurl }}/faculty/bielawski/pdf/WH2019_Parts3and4_handouts-opt.pdf)
  14:00 - 15:30 | [Chang](/faculty-chang/)             | [Protein evolution, anc. recon.]({{ site.baseurl }}/faculty/chang/pdf/Protein_Evolution_&_Ancestral_Reconstruction-opt.pdf)
  15:30 - 17:00 | [Chang](/faculty-chang/)             | [Adaptive protein evolution]({{ site.baseurl }}/faculty/chang/pdf/Adaptive_Protein_Evolution-opt.pdf)
- 19:00 - 20:30 | [Bielawski](/faculty-bielawski/)     | [PAML lab wesite](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html), [lab slides]({{ site.baseurl }}/faculty/bielawski/pdf/pamlDEMO_slides-opt.pdf)
+ 19:00 - 20:30 | [Bielawski](/faculty-bielawski/)     | [PAML lab](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html), [lab slides]({{ site.baseurl }}/faculty/bielawski/pdf/pamlDEMO_slides-opt.pdf)
  20:30 - 22:00 | [Bielawski](/faculty-bielawski/)     | [Additional resource](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html), [advanced lab](https://bitbucket.org/EvoWorks/protocol-inference-of-episodic-selection/downloads)
 {:.daily-schedule-cpp}
 
