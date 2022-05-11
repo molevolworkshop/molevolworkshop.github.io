@@ -3,7 +3,7 @@ layout: page
 title: Edward Susko
 permalink: /faculty-susko/
 ---
-{% include figure.html description="Kelley Harris" url="/faculty/susko/img/susko.jpg" css="image-right" height="200px" %}
+{% include figure.html description="Edward Susko" url="/faculty/susko/img/susko.jpg" css="image-right" height="200px" %}
 
 ### Duration of Stay
 Not yet determined

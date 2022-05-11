@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Lacey Knowles
+title: L. Lacey Knowles
 permalink: /faculty-knowles/
 ---
 {% include figure.html description="Lacey Knowles" url="/faculty/knowles/img/Lacey-MOLjpg.jpg" css="image-right" height="250px" %}
@@ -10,7 +10,7 @@ permalink: /faculty-knowles/
 
 ### Arrival and Departure 
 
-Not yet determined.
+May 31 to June 7
 
 {% comment %}
 ### Lecture Materials

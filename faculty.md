@@ -1,11 +1,10 @@
 ---
 layout: page
 title: Faculty
-menutitle: Faculty
 permalink: /faculty/
 ---
 {% include figure.html description="" url="/assets/img/fromback2018.jpg" css="image-center" height="250px" %}
-## 2020 Course Faculty
+## 2022 Course Faculty
 
 [Peter Beerli](/faculty-beerli/), Florida State University
 
@@ -13,11 +12,15 @@ permalink: /faculty/
 
 [Jeremy Brown](/faculty-brown/), Louisiana State University
 
+[Minh Quang Bui](/faculty-bui/), Australian National University
+
 [Belinda Chang](/faculty-chang/), University of Toronto
 
 [Scott Edwards](/faculty-edwards/), Harvard University
 
+{% comment %}
 [Kelley Harris](/faculty-harris/), University of Washington
+{% endcomment %}
 
 [Tracy Heath](/faculty-heath/), Iowa State University
 
@@ -31,8 +34,6 @@ permalink: /faculty/
 
 [Emily Jane McTavish](/faculty-mctavish/), University of California-Merced
 
-[Bui Quang Minh](/faculty-minh/), Australian National University
-
 [Claudia Solís-Lemus](/faculty-solis-lemus/), University of Wisconsin-Madison
 
 [Edward Susko](/faculty-susko/), Dalhousie University
@@ -41,15 +42,19 @@ permalink: /faculty/
 
 [Anne Yoder](/faculty-yoder/), Duke University
 
-## 2020 Course TAs
+## 2022 Course TAs
 
 [Deise Gonçalves](/faculty-goncalves/), Department of Integrative Biology, University of Texas at Austin
 
-[Áki Láruson](/faculty-laruson/), Marine Science Center, Northeastern University
+[Áki Láruson](/faculty-laruson/) (Lead TA), University of Iceland
+
+[Jordan Satler](/faculty-satler/), Department of Evolution, Ecology and Organismal Biology, The Ohio State University
 
 [Katie Taylor](/faculty-taylor/), Department of Ecology and Evolutionary Biology, University of Connecticut
 
-[George Tiley](/faculty-tiley/) (Instructor/Lead TA), Department of Biology, Duke University
+## 2022 Course Assistant
+
+[Alyssa McGurer](/course-assistant/), Department of Ecology and Evolutionary Biology, University of Connecticut
 
 ## Former recent faculty
 
@@ -92,6 +97,8 @@ Axel Meyer, Harold Zakon, Sara Sawyer, Shozo Yokoyama, Gavin Naylor
 {% endcomment %}
 
 ## Former recent TAs
+
+[George Tiley](http://yoderlab.org/people/current-lab-members/george-tiley/), Duke University
 
 [Peter Larsen](https://vetmed.umn.edu/bio/college-of-veterinary-medicine/peter-larsen), University of Minnesota
 

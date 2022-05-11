@@ -5,7 +5,7 @@ permalink: /group-photos/2019/
 ---
 ## Key to people in the 2019 group photo
 
-Mouse over faces to show names. Return to [group photos index](/group-photos/) page.
+Mouse over faces to show names. Return to [group photos index](/other/) page.
 
 <div id="arbitrary"></div>
 <script type="text/javascript">
@@ -14,7 +14,7 @@ Mouse over faces to show names. Return to [group photos index](/group-photos/) p
     // Usage:
     
     // 1. Set image_file_path
-    var image_file_path = "https://molevol.mbl.edu/images/f/f9/Group-photo-2019-cropped.png"
+    var image_file_path = "/assets/img/group-photos/group-photo-2019.png"
     
     // 2. Uncomment namedata object below and comment out later redefinition of namedata
     /*var namedata = [                                                                // Slack names

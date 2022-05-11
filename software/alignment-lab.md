@@ -46,7 +46,7 @@ data sets and are thus part of many phylogenomic pipelines (e.g. Yang
 and Smith 2014). The MAFFT algorithms and options can be viewed
 [here](http://mafft.cbrc.jp/alignment/software/algorithms/algorithms.
 html). The MUSCLE user guide is found at
-[here](http://www.drive5.com/muscle/muscle_userguide3.8.html).
+[here](https://drive5.com/muscle5/manual/commands.html).
 
 Both MAFFT and MUSCLE are available on your Jetsream node. You will
 transfer sequences to the Jetsream node using scp or cyberduck, run the
@@ -143,21 +143,25 @@ exercise 1. A new window with the aligned data will appear.
 
 Run a standard alignment in MUSCLE on the cluster by using the command:
 ~~~~~~
-muscle -verbose -log muscle_dna.log -in 1ped.fasta -out muscle_dna.fasta
+muscle -log muscle_dna.log -align 1ped.fasta -output muscle_dna.fasta
 ~~~~~~
 The breakdown of this command is:
 * `muscle` starts the program MUSCLE
-* `-verbose` is a flag that instructs MUSCLE to output a very thorough
-log. This allows us to see exactly what MUSCLE is doing. Note that the
-flags here are single dashes, not double dashes as with MAFFT.
 * `-log muscle_dna.log` instructs MUSCLE to place all the
 output except the alignment itself to the log file called
 *muscle_dna.log*. This file will then include things like the gap penalty
 used, etc.
-* `-in 1ped.fasta` specifies the input file to MUSCLE.
-* `-out muscle_dna.fasta` instructs MUSCLE to place the alignment
-in the file *muscle_dna.fasta*. Note that `-verbose` and `-log` are not always
+* `-align 1ped.fasta` specifies the input file to MUSCLE.
+* `-output muscle_dna.fasta` instructs MUSCLE to place the alignment
+in the file *muscle_dna.fasta*. Note that `-log` are not always
 needed but it allows you to see the default options in MUSCLE.
+
+{% comment %}
+This is old, verbose does not seem to be an option in recent versions of MUSCLE
+* `-verbose` is a flag that instructs MUSCLE to output a very thorough
+log. This allows us to see exactly what MUSCLE is doing. Note that the
+flags here are single dashes, not double dashes as with MAFFT.
+{% endcomment %}
 
 ### Compare MAFFT and MUSCLE alignments
 
@@ -235,7 +239,7 @@ changes the alignment.
 
 Run MUSCLE with a gap penalty of -20 using the command:
 ~~~~~~
-muscle -verbose -log muscle_gap-20.log -in 1ped_aa.fasta -out muscle_aa_gap-20.fasta -gapopen -20
+muscle -verbose -log muscle_gap-20.log -align 1ped_aa.fasta -output muscle_aa_gap-20.fasta -gapopen -20
 ~~~~~~
 A new flag has been added
 here (`-gapopen -20`) to instruct MUSCLE to set the gap opening penatly to
@@ -243,14 +247,14 @@ here (`-gapopen -20`) to instruct MUSCLE to set the gap opening penatly to
 
 Run MUSCLE with a gap penalty of -1 using the command:
 ~~~~~~
-muscle -verbose -log muscle_gap-1.log -in 1ped_aa.fasta -out muscle_aa_gap-1.fasta -gapopen -1
+muscle -verbose -log muscle_gap-1.log -align 1ped_aa.fasta -output muscle_aa_gap-1.fasta -gapopen -1
 ~~~~~~
 The flag (`-gapopen -1`) instructs MUSCLE to set the gap opening penatly to -1. Load the
 alignment into SeaView and build a tree as in exercise 3.
 
 Run MUSCLE with the default gap penalty using the command:
 ~~~~~~
-muscle -verbose -log muscle_defGap.log -in 1ped_aa.fasta -out muscle_aa.fasta
+muscle -verbose -log muscle_defGap.log -align 1ped_aa.fasta -output muscle_aa.fasta
 ~~~~~~
 
 Load the alignment into SeaView and build a tree as in exercise 3.
@@ -283,10 +287,12 @@ three (i.e. a full open reading frame).
 
 Another great option is to use PRANK (Löytynoja and Goldman 2005), which
 can use codon-aware data structures for alignment. Many people now write
-their own scripts for back-translation of aligned amino acids - here is
-a very ugly [Perl
-script](https://github.com/gtiley/Alignment_Tools/tree/master/
+their own scripts for back-translation of aligned amino acids.
+
+{% comment %}
+Here is a very ugly [Perl script](https://github.com/gtiley/Alignment_Tools/tree/master/
 Codon_Alignment) I (George Tiley) wrote when starting grad school.
+{% endcomment %}
 
 ## Filtering
 

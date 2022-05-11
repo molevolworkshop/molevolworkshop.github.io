@@ -28,8 +28,8 @@ Coalescence lecture (Tuesday, May 31 2022) I will introduce the coalescent and i
 ## Teaching Tools
 {% include figure.html description="Wright-Fisher Model" url="/faculty/beerli/img/Wf.png" css="image-right" %}
 
-* [Bugs_in_box](http://people.sc.fsu.edu/~pbeerli/mbl2015/bugsinbox.zip) is a program that visualizes coalescence of bugs (well they are ladybugs and beetles) in a box. They crawl like crazy until they hit another bug, devour it and move on. There is a help menu (press H) that displays all options. This application has a few shortcomings: (1) it does not adjust well for different screen size (for example presentation beamers make the bugs huge); (2) No way to save or print directly out of the app, but Dave Swofford contributed a fun spin when there are two bugs left (see help menu in bugsinbox.app).
-* [PopVizard](http://people.sc.fsu.edu/~pbeerli/popvizard.tar.gz) is a python program that allows to plot pictures of population genealogies like the ones on this page.
+* [Bugs_in_box](https://people.sc.fsu.edu/~pbeerli/mbl2015/bugsinbox.zip) is a program that visualizes coalescence of bugs (well they are ladybugs and beetles) in a box. They crawl like crazy until they hit another bug, devour it and move on. There is a help menu (press H) that displays all options. This application has a few shortcomings: (1) it does not adjust well for different screen size (for example presentation beamers make the bugs huge); (2) No way to save or print directly out of the app, but Dave Swofford contributed a fun spin when there are two bugs left (see help menu in bugsinbox.app).
+* [PopVizard](https://people.sc.fsu.edu/~pbeerli/popvizard.tar.gz) is a python program that allows to plot pictures of population genealogies like the ones on this page.
 
 ## Demo and Tutorials
 {% include figure.html description="Canning Model" url="/faculty/beerli/img/Canning.png" css="image-right" %}

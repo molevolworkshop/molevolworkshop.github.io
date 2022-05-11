@@ -3,23 +3,23 @@ layout: page
 title: Katie Taylor
 permalink: /faculty-taylor/
 ---
-{% include figure.html description="Katie Taylor" url="/faculty/taylor/img/klt14003.jpg" css="image-right" height="250px" %}
+{% include figure.html description="Katie Taylor" url="/faculty/taylor/img/katie-taylor.jpg" css="image-right" height="250px" %}
 
 
 ### About me
 
-I am currently a senior graduate student in the Henry Lab (Department of Ecology and Evolutionary Biology, University of Connecticut)
+I study evolution in insects, and I am interested in understanding how evolutionary processes shape the genome over time and in identifying the genomic basis of key traits.
 
-I study lacewing diversity and speciation.
+I recently completed my PhD in the Department of Ecology and Evolutionary Biology at University of Connecticut with Dr. Charles Henry as my major advisor. I am currently working as a postdoc in the lab of Dr. Megan Fritz in the Department of Entomology at the University of Maryland.
 
 ### Contact
 
-Department of Ecology and Evolutionary Biology <br/>
-University of Connecticut <br/>
-75 N. Eagleville Road, Unit 3043 <br/>
-Storrs, CT 06269
-
-_Email:_ [katherine.l.taylor@uconn.edu](mailto:katherine.l.taylor@uconn.edu)
+Department of Entomology<br/>
+University of Maryland <br/>
+4112 Plant Sciences Building<br/> 
+College Park, MD 20742-4454
+ 
+_Email:_ [taylork@umd.edu](mailto:taylork@umd.edu)
 
 {% comment %}
 ### Website

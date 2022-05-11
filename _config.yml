@@ -1,10 +1,10 @@
-title: Workshop in Molecular Evolution
+title: Workshop on Molecular Evolution
 director: Paul O. Lewis
 codirector: Peter Beerli
 logo_filename: tshirt-2019.png
 email: moledirector@mbl.edu
 description: >-
-  Since 1988, the Workshop in Molecular Evolution at Woods Hole has 
+  Since 1988, the Workshop on Molecular Evolution at Woods Hole has 
   provided essential training in the theory and methods of molecular evolution.
 
 baseurl: ""
@@ -12,7 +12,7 @@ baseurl: ""
 
 header_pages:
    - about.md
-   - faculty.md
+   - people.md
    - schedule.md
    - other.md
 
