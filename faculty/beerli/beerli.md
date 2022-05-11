@@ -18,11 +18,11 @@ May 26 - June 7, 2022
 Note: *The presentations may change up until the moment the lecture or lab begins. I will try to post the modified the PDF before the lecture but will post the actual talk-PDF after each talk.*
 <!-- , and Laura Kubatko will follow and talk about speciestrees/genetree estimation. -->
 
-Coalescence lecture (Tuesday, May 31 2022) I will introduce the coalescent and its use for population genetics inference, the first section of the lecture will discuss basics;  in the second part I will discuss extensions of the basic coalescent. I will focus on neutral population processes, such as population structure, population size changes through time, population divergence, multi-merger coalescence and problems and complications with inferences using the coalescence.
+Coalescence lecture (Tuesday, May 31 2022): I will introduce the coalescent and its use for population genetics inference. The first section of the lecture will discuss basics;  in the second part I will discuss extensions of the basic coalescent. I will focus on neutral population processes, such as population structure, population size changes through time, population divergence, multi-merger coalescence and problems and complications with inferences using the coalescence.
 <!-- Kelley Harris will talk about selection and the coalescent on June 9 2020.--> On June 3 we will work through a tutorial with my program *MIGRATE*.
 
-* May 31 (9-10:30): Introduction to the coalescent [Coalescence2019talk]({{ site.baseurl }}/assets/pdf/beerli/talk1-opt.pdf) (talk given in 2018: [Coalescence2018talk](https://peterbeerli.com/workshops/mbl/2018/talk1.pdf))
-* May 31 (10:30-12): extending the basic coalescent [Coalescence2018talk2]({{ site.baseurl }}/assets/pdf/beerli/talk2-opt.pdf) (this file will change)
+* May 31 (9-10:30): Introduction to the coalescent [Coalescence2022]({{ site.baseurl }}/faculty/beerli/pdf/talk1-opt.pdf) (talk given in 2018: [Coalescence2018talk](https://peterbeerli.com/workshops/mbl/2018/talk1.pdf))
+* May 31 (10:30-12): extending the basic coalescent [Coalescence2018talk2]({{ site.baseurl }}/faculty/beerli/pdf/talk2-opt.pdf) (this file will change)
 * June 3 (19:00-22:00) *MIGRATE* tutorial, specific tutorial instructions TBA.
 
 ## Teaching Tools
@@ -53,7 +53,7 @@ MIGRATE can run on many different operating systems and hardware, most efficient
 
 ### Software demonstrated in the course
 
-[Software](https://molevol.mbl.edu/index.php/Software)
+[Migrate software](https://peterbeerli.com/migrate-html5)
 
 ## Other things I like
 
