@@ -26,6 +26,8 @@ Depart:  07 June 2022 (Ts)
 
 The lab exercises (PAML demo) have been published to a small website (link below). The site contains some additional resources that are worth a look when you have time. Please note that slides may change a little prior to the lab. I will post modified PDFs as required. 
 
+{% include figure.html description="" url="/faculty/bielawski/img/MOLE_concept_map_v2.jpg" css="image-right" height="250px" %}
+
 **PAML demo**: [PAML Lab website](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html)
 
 **PAML demo resources**: [webpage](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.htm)
