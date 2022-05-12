@@ -41,9 +41,9 @@ symlink in your home directory named "moledata" to obtain the course data files*
 
 ## Lecture Materials
 
-{% include figure.html description="" url="/faculty/bielawski/img/MolEvol.jpg" css="image-right" height="200px" %}
-
 **Current slides**
+
+{% include figure.html description="" url="/faculty/bielawski/img/MolEvol.jpg" css="image-right" height="250px" %}
 
 I am changing the lecture content for 2022. This lecture provides a more general background on evolutionary forces, and the Neutral and Nearly-Neutral theories of molecular evolution. Some details about fitting codon models to real data, have been moved to the "PAML Lab" lecture.  
 
