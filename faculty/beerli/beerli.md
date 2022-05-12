@@ -28,13 +28,13 @@ Coalescence lecture (Tuesday, May 31 2022): I will introduce the coalescent and 
 ## Teaching Tools
 {% include figure.html description="Wright-Fisher Model" url="/faculty/beerli/img/Wf.png" css="image-right" %}
 
-* [Bugs_in_box](https://people.sc.fsu.edu/~pbeerli/mbl2015/bugsinbox.zip) is a program that visualizes coalescence of bugs (well they are ladybugs and beetles) in a box. They crawl like crazy until they hit another bug, devour it and move on. There is a help menu (press H) that displays all options. This application has a few shortcomings: (1) it does not adjust well for different screen size (for example presentation beamers make the bugs huge); (2) No way to save or print directly out of the app, but Dave Swofford contributed a fun spin when there are two bugs left (see help menu in bugsinbox.app).
-* [PopVizard](https://people.sc.fsu.edu/~pbeerli/popvizard.tar.gz) is a python program that allows to plot pictures of population genealogies like the ones on this page.
+* [Bugs_in_box](https://github.com/pbeerli/bugsinbox/zipball/master) is a python3 program that visualizes coalescence of bugs (well they are ladybugs and beetles) in a box. They crawl like crazy until they hit another bug, devour it and move on. There is a help menu (press H) that displays all options. This application has a few shortcomings: (1) it does not adjust well for different screen size (for example presentation beamers make the bugs huge); (2) No way to save or print directly out of the app, but Dave Swofford contributed a fun spin when there are two bugs left (see help menu in python bugsinbox.py).
+* [PopVizard/popsim](https://github.com/pbeerli/popsim/zipball/master) is a python program that allows to plot pictures of population genealogies like the ones on this page.
 
 ## Demo and Tutorials
 {% include figure.html description="Canning Model" url="/faculty/beerli/img/Canning.png" css="image-right" %}
 
-* [Population-model selection using MIGRATE on JUne 3 2022](http://peterbeerli.com/workshops/mbl/2018/tutorial). The tutorial guides you on estimating the most likely path of the Zika virus and discusses estimation of divergence times, gene flow, and model selection with MIGRATE 5.0.3. An older gene flow tutorial using the older version of migrate 3.x: [PDF](http://peterbeerli.com/workshops/mbl/2018/tutorial)).
+* [Population-model selection using MIGRATE on June 3 2022](http://peterbeerli.com/workshops/mbl/2018/tutorial). The tutorial guides you on estimating the most likely path of the Zika virus and discusses estimation of divergence times, gene flow, and model selection with MIGRATE 5.0.3. An older gene flow tutorial using the older version of migrate 3.x: [PDF](http://peterbeerli.com/workshops/mbl/2018/tutorial)).
 * If students are interested I am also happy to talk about LAMARC and give a [Lamarc tutorial](https://molevol.mbl.edu/index.php/Lamarc_tutorial): Recombination estimation with LAMARC
 
 ## Bayes factors and effect of parallel runs of MIGRATE
