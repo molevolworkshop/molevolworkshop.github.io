@@ -12,7 +12,7 @@ permalink: /faculty-bielawski/
 
 ## Arrival and Departure
 
-Not yet determined.
+Arrival: 27 May 2022
 
 ## Lecture Materials
 
