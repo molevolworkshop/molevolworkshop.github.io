@@ -132,6 +132,8 @@ Large-scale evolutionary surveys are now commonplace. But with the use of progre
 
 **ModL:**  a program for restoring regularity when testing for positive selection using codon models [https://github.com/jehops/codeml_modl](https://github.com/jehops/codeml_modl)
 
+<br>
+
 {% include figure.html description="The Kidd" url="/faculty/bielawski/img/TheKidd1b.jpg" css="image-center" height="250px" %}
 
-{% include figure.html description="" url="/faculty/bielawski/img/MOLE_concept_map_v2.jpg" css="image-center" height="250px" %}
+{% include figure.html description="Workshp concept map" url="/faculty/bielawski/img/MOLE_concept_map_v2.jpg" css="image-center" height="250px" %}
