@@ -12,7 +12,8 @@ permalink: /faculty-bielawski/
 
 ## Arrival and Departure
 
-Arrival: 27 May 2022
+Arrival: 27 May 2022 (Fri)
+Depart:  07 June 2022 (Ts)
 
 ## Lecture Materials
 
