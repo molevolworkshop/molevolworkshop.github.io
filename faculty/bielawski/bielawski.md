@@ -24,9 +24,7 @@ Depart:  07 June 2022 (Ts)
 
 ## PAML lab Materials
 
-The lab exercises (PAML demo) have been published to a small website (link below). The site contains some additional resources that are worth a look when you have time. Please note that slides may change a little prior to the lab. I will post modified PDFs as required. 
-
-{% include figure.html description="" url="/faculty/bielawski/img/MOLE_concept_map_v2.jpg" css="image-right" height="300px" %}
+The lab exercises (PAML demo) are available via small website (link below). The site contains some additional resources that are worth a look when you have time. Please note that slides may change a little prior to the lab. I will post modified PDFs as required. 
 
 **PAML demo**: [PAML Lab website](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html)
 
@@ -135,3 +133,5 @@ Large-scale evolutionary surveys are now commonplace. But with the use of progre
 **ModL:**  a program for restoring regularity when testing for positive selection using codon models [https://github.com/jehops/codeml_modl](https://github.com/jehops/codeml_modl)
 
 {% include figure.html description="The Kidd" url="/faculty/bielawski/img/TheKidd1b.jpg" css="image-center" height="250px" %}
+
+{% include figure.html description="" url="/faculty/bielawski/img/MOLE_concept_map_v2.jpg" css="image-center" height="250px" %}
