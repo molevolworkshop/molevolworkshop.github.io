@@ -41,7 +41,7 @@ symlink in your home directory named "moledata" to obtain the course data files*
 
 ## Lecture Materials
 
-{% include figure.html description="Joe Bielawski" url="/faculty/bielawski/img/MolEvol.jpg" css="image-right" height="200px" %}
+{% include figure.html description="" url="/faculty/bielawski/img/MolEvol.jpg" css="image-right" height="200px" %}
 
 **Current slides**
 
