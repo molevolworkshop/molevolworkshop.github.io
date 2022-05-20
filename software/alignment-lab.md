@@ -55,23 +55,25 @@ visualization on your own laptop. Remote nodes are great for analyses,
 but if this is your first time using one, you will need to get
 accustomed to using computers without a graphical user interface (GUI).
 
-For visualization we will use the program
-[SeaView](http://doua.prabi.fr/software/seaview). Seaview is an
-alignment viewer, but it also allows you to estimate simple
+For visualization we will use the programs
+[SeaView](http://doua.prabi.fr/software/seaview) or [MEGA](https://megasoftware.net/) (whichever works for you). Both programs are
+relatively simple alignment viewers, but also allows you to estimate simple
 distance-based trees and invoke alignment programs. You can access help
-files at any time within the program by clicking on ‘Help’ in the top
-right corner. A good alternative to SeaView is
+files at any time within the program by clicking on ‘Help’ in the top menu. Another good alternative is
 [AliView](http://www.ormbunkar.se/aliview/). AliView is great for
 looking at properties of very large alignments. Tree building options in
 alignment viewers are not publication quality, but they can be useful if
 checking for contamination or homology errors.
 
-If you have not downloaded SeaView, do so now using the following links:
+If you have not downloaded SeaView or MEGA, do so now using the following links:
 
-
+SeaView:
 * [Mac OS X](https://web.archive.org/web/20141011000249/http://doua.prabi.fr/software/seaview_data/seaview4.zip)
 * [Windows](https://web.archive.org/web/20141011000249/http://doua.prabi.fr/software/seaview_data/seaview4.exe)
 * [Linux](https://web.archive.org/web/20141011000249/http://doua.prabi.fr/software/seaview_data/seaview4-64.tgz)
+
+MEGA:
+* [Select your OS](https://megasoftware.net/)
 
 This activity is structured to be done either by yourself or with a
 partner. Working with a partner is a great idea!
@@ -87,7 +89,7 @@ Unzip the datafile using:
 unzip MSAlab.zip
 ~~~~~~
 
-## Exercise 1: basic functions in SeaView 
+## Exercise 1: basic functions in SeaView and MEGA
 
 Copy the _1ped.fasta_ file from your remote machine to your laptop. If you cannot
 remember how to use the scp command, take a look at the [computer lab intro](/labs/intro/).
@@ -95,7 +97,7 @@ The _1ped.fasta_ file contains alcohol dehydrogenase
 nucleotide sequences from a variety of organisms; modified from
 BAliBASE. 
 
-Start SeaView. Load the data set _1ped.fasta_ by going to _File > Open_. Have a look at the data. Is it aligned? Try some of the basic
+Start SeaView or MEGA. Load the data set _1ped.fasta_ by going to _File > Open_ (in MEGA, select _Align_ in the popup window after opening the file). Have a look at the data. Does it look like it's already been aligned? Try some of the basic
 commands. To select a taxon, click on any taxon name on the left side.
 You can copy the sequence using the _Copy selected sequences_ command in
 the edit menu. These can then be pasted into a text editor (e.g.
@@ -136,7 +138,7 @@ place the output. If the `>` symbol is unfamiliar to you, take a look
 back at the [advanced UNIX tutorial](/unix-tutorial/).
 
 Once the alignment process is completed, transfer the file to your own
-computer (through scp or Cyberduck) and open it in SeaView as in
+computer (through scp or Cyberduck) and open it in an alignment viewer (e.g. Seaview or MEGA) as in
 exercise 1. A new window with the aligned data will appear.
 
 ### Run MUSCLE
@@ -156,17 +158,10 @@ used, etc.
 in the file *muscle_dna.fasta*. Note that `-log` are not always
 needed but it allows you to see the default options in MUSCLE.
 
-{% comment %}
-This is old, verbose does not seem to be an option in recent versions of MUSCLE
-* `-verbose` is a flag that instructs MUSCLE to output a very thorough
-log. This allows us to see exactly what MUSCLE is doing. Note that the
-flags here are single dashes, not double dashes as with MAFFT.
-{% endcomment %}
-
 ### Compare MAFFT and MUSCLE alignments
 
 Once the MUSCLE alignment is done, transfer the aligned fasta file to
-your own computer (through scp or Cyberduck) and open it in SeaView. A
+your own computer (through scp or Cyberduck) and open it in your alignment viewer. A
 new window with the aligned data will appear.
 
 Compare the alignments resulting from MAFFT and MUSCLE. Are they
@@ -192,13 +187,13 @@ names to get an idea of the expected topology!)
 
 In this exercise we will convert the nucleotide sequences to their
 equivalent protein sequences and align these instead. Note that because
-we are running the alignment programs outside of SeaView, you will not
-be able to convert back to the original DNA sequences post alignment. If
-run through SeaView itself this can be done.
+we are running the alignment programs outside of our alignment viewers, you will not
+be able to convert back to the original DNA sequences post alignment. If this were to be
+run through SeaView or MEGA itself this could be done.
 
-* Return to the SeaView window with the unaligned 1ped.fasta sequences.
-* Click *Props > View as proteins*
-* Click *File > Save prot alignment* and save the file as
+* Return to the alignment viewer window with the unaligned 1ped.fasta sequences.
+* Click *Props > View as proteins* (SeaView) or select Translated Protein Sequences in the main alignment window (MEGA)
+* Click *File > Save prot alignment* (SeaView) or *Data > Export alignment* (MEGA) and save the file as
 *1ped_aa.fasta* with Fasta as the file format
 * Transfer this file to the _MSAlab_ folder on the remote machine
 * Run an iterative alignment in MAFFT by using the
@@ -210,10 +205,12 @@ Comparing the command to the MAFFT command in exercise 2, you will
 notice a new option, 
 `--maxiterate 1000`, which instructs MAFFT to run an iterative alignment
 with maximum 1000 cycles. 
-* Load the *mafft_aa_iter.fasta* file into SeaView
+* Load the *mafft_aa_iter.fasta* file into your alignment viewer
 * Build a tree using your protein alignment by selecting *Trees >
-Distance Methods > NJ* and use a Poisson distance metric. De-click
-ignore gaps and do a bootstrap test as above
+Distance Methods > NJ*, selecting a Poisson distance metric, de-clicking
+_ignore gaps_ and do a bootstrap test as above (SeaView) 
+or select *Phylogeny > Construct/Test Neighbor-Joining Tree*, choose the *mafft_aa_iter.fasta* file and then 
+select *Protein sequences*, followed by OK on the next window to choose the default Poisson distance metric (MEGA)
 * Using the same _1ped_aa.fasta_ file, employ the MAFFT automatic selection
 of alignment strategy by using the command: 
 ~~~~~~
@@ -222,10 +219,11 @@ mafft --auto 1ped_aa.fasta > mafft_aa_auto.fasta
 You can see that now we use the flag `--auto` to tell MAFFT to choose the
 best alignment strategy. Can you determine what strategy was employed? (hint MAFFT outputs
 data to the screen and the strategy should be listed near the end). Load
-this file into SeaView.
+this file into your alignment viewer.
 * Build a tree using your protein alignment by selecting *Trees >
-Distance Methods > NJ* and use a Poisson distance metric. De-select
-ignore gaps and use bootstrapping.
+Distance Methods > NJ*, select the Poisson distance metric, de-select
+ignore gaps and use bootstrapping (SeaView) or click *Phylogeny > Construct/Test Neighbor-Joining Tree*, choose the *mafft_aa_auto.fasta* file and then 
+select *Protein sequences*, followed by OK on the next window to choose the default Poisson distance metric (MEGA)
 
 Compare amino acid alignments and trees. Which one do you prefer? Does
 it make sense to align protein-coding sequences using the protein
@@ -243,21 +241,21 @@ muscle -verbose -log muscle_gap-20.log -align 1ped_aa.fasta -output muscle_aa_ga
 ~~~~~~
 A new flag has been added
 here (`-gapopen -20`) to instruct MUSCLE to set the gap opening penatly to
--20. Load the alignment into SeaView and build a tree as in exercise 3.
+-20. Load the alignment into your alignment viewer and build a tree as in exercise 3.
 
 Run MUSCLE with a gap penalty of -1 using the command:
 ~~~~~~
 muscle -verbose -log muscle_gap-1.log -align 1ped_aa.fasta -output muscle_aa_gap-1.fasta -gapopen -1
 ~~~~~~
 The flag (`-gapopen -1`) instructs MUSCLE to set the gap opening penatly to -1. Load the
-alignment into SeaView and build a tree as in exercise 3.
+alignment into your alignment viewer and build a tree as in exercise 3.
 
 Run MUSCLE with the default gap penalty using the command:
 ~~~~~~
 muscle -verbose -log muscle_defGap.log -align 1ped_aa.fasta -output muscle_aa.fasta
 ~~~~~~
 
-Load the alignment into SeaView and build a tree as in exercise 3.
+Load the alignment into your alignment viewer and build a tree as in exercise 3.
 
 How do the modified gap penalty alignments compare to the default one?
 Which alignment has the most gaps? The log files from MUSCLE will tell
