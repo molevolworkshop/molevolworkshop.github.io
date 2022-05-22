@@ -27,6 +27,7 @@ A [separate web page](/jetstream-setup/) documents how an image was built on Jet
 
 These have proven to be useful resources to have handy.
 
+* [Jetstream2 status](https://jetstream.status.io/)
 * [Jetstream2 home page](https://jetstream-cloud.org)
 * [Jetstream2 documentation](https://docs.jetstream-cloud.org)
 * [Exosphere](https://jetstream2.exosphere.app/)
@@ -154,8 +155,22 @@ To remove a package:
 ~~~~~~
 sudo apt-add-repository universe
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 ~~~~~~
+
+### Install apt-file
+This allows us to find out what files are installed by a package using "apt-file list packagename"
+~~~~~~
+sudo apt install -y apt-file
+~~~~~~
+Last updated 2022-05-22.
+
+### Install python-is-python3
+This ensures that whenever someone types python they are using python3
+~~~~~~
+sudo apt install python-is-python3
+~~~~~~
+Last updated 2022-05-22.
 
 ### Install mlocate
 This provides the locate command, useful for finding where libraries and other system files are installed.
@@ -313,7 +328,7 @@ Installed as _/usr/local/bin/find-cut-Linux-64_.
 Last updated 2022-03-18.
 
 ### Install [RAxML](https://github.com/stamatak/standard-RAxML)
-RAxML is used in the SNaQ tutorial. These instructions install the binary in _/usr/local/bin_.
+RAxML is used in the Solis-Lemus SNaQ and McTavish gene tree updating tutorial. These instructions install the binary in _/usr/local/bin_. Note: it is easier to just use "sudo apt-get install raxml" to do this install, but I didn't realize this at the time.
 ~~~~~~
 cd 
 git clone https://github.com/stamatak/standard-RAxML.git
@@ -322,10 +337,10 @@ make -f Makefile.AVX.PTHREADS.gcc
 sudo mv raxmlHPC-PTHREADS-AVX /usr/local/bin/raxml
 ~~~~~~
 Installed as _/usr/local/bin/raxml_. 
-Last updated 2022-03-18.
+Last updated 2022-05-22.
 
 ### Install [Java](https://www.java.com/en/)
-The Java Runtime Environment is needed for ASTRAL.
+The Java Runtime Environment is needed for ASTRAL and jModelTest.
 ~~~~~~
 cd
 sudo apt install default-jre 
@@ -347,14 +362,16 @@ sudo cp astral.5.7.1.jar /opt/astral
 sudo cp -r lib /opt/astral
 ~~~~~~
 
-Change ownership
+Change ownership (note: this is now handled by the [cloud init script](#boot-script-used))
 ~~~~~~
 sudo chown moleuser.moleuser /opt/astral/astral.5.7.1.jar
 sudo chown moleuser.moleuser /opt/astral/lib -R
 ~~~~~~
 You should now be able to start ASTRAL as follows:
     java -jar /opt/astral/astral.5.7.1.jar
-Last updated 2022-04-19.
+An alias will be created by the [cloud init script](#boot-script-used) to make this easier.
+    alias astral="java -jar /opt/astral/astral.5.7.1.jar"
+Last updated 2022-05-05.
 
 ### Create MOLE directory
 This directory will be used to store example data needed by students for tutorials.
@@ -416,6 +433,7 @@ Got error upon install having to do with installing man file:
 Last updated 2022-03-18.
 
 ### Install [MUSCLE](https://www.drive5.com/muscle/)
+MUSCLE is used in the alignment lab as well as the McTavish gene tree updating lab. Note: easier to just use "sudo apt-get install muscle" but didn't realize this at the time.
 ~~~~~~
 cd
 curl -LO https://github.com/rcedgar/muscle/releases/download/v5.1/muscle5.1.linux_intel64
@@ -423,7 +441,102 @@ sudo mv muscle5.1.linux_intel64 /usr/local/bin/muscle
 sudo chmod +x /usr/local/bin/muscle
 ~~~~~~
 Installed as _/usr/local/bin/muscle_. 
-Last updated 2022-03-18.
+Last updated 2022-05-22.
+
+### Install seqtk
+
+seqtk is used in the McTavish gene tree updating lab.
+~~~~~~
+sudo apt-get install seqtk 
+~~~~~~
+Last updated 2022-05-22.
+
+### Install samtools
+
+samtools is used in the McTavish gene tree updating lab.
+~~~~~~
+sudo apt-get install -y samtools 
+~~~~~~
+Last updated 2022-05-22.
+
+### Install bcftools
+
+bcftools is used in the McTavish gene tree updating lab.
+~~~~~~
+sudo apt-get install bcftools
+~~~~~~
+Last updated 2022-05-22.
+
+### Install dendropy
+
+dendropy is used in the McTavish gene tree updating lab.
+~~~~~~
+sudo apt-get install dendropy 
+~~~~~~
+Last updated 2022-05-22.
+
+### Install opentree
+
+opentree is used in the McTavish gene tree updating lab.
+~~~~~~
+sudo apt-get install opentree 
+~~~~~~
+Last updated 2022-05-22.
+
+### Install fastx
+
+The fastx toolkit is used in McTavish gene tree updating lab. fastx toolkit and bwa-mem are not available through apt-get.
+~~~~~~
+wget http://hannonlab.cshl.edu/fastx_toolkit/fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2
+tar -xjf fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2
+sudo cp bin/* /usr/local/bin/
+rm -rf bin
+mv fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2 TARs
+~~~~~~
+Installs the following executables in _/usr/local/bin_:
+~~~~~~
+fasta_clipping_histogram.pl
+fasta_formatter
+fasta_nucleotide_changer
+fastq_masker
+fastq_quality_boxplot_graph.sh
+fastq_quality_converter
+fastq_quality_filter
+fastq_quality_trimmer
+fastq_to_fasta
+fastx_artifacts_filter
+fastx_barcode_splitter.pl
+fastx_clipper
+fastx_collapser
+fastx_nucleotide_distribution_graph.sh
+fastx_nucleotide_distribution_line_graph.sh
+fastx_quality_stats
+fastx_renamer
+fastx_reverse_complement
+fastx_trimmer
+fastx_uncollapser
+~~~~~~
+Last updated 2022-05-22.
+
+### Install bwa-mem2
+
+bwa-mem2 is used in McTavish gene tree updating lab.
+~~~~~~
+git clone --recursive https://github.com/bwa-mem2/bwa-mem2
+cd bwa-mem2
+make
+sudo cp ./bwa-mem2* /usr/local/bin/
+~~~~~~
+This installs the following binaries in _/usr/local/bin/_:
+~~~~~~
+bwa-mem2
+bwa-mem2.avx
+bwa-mem2.avx2
+bwa-mem2.avx512bw
+bwa-mem2.sse41
+bwa-mem2.sse42
+~~~~~~
+Last updated 2022-05-22.
 
 ### Install [IQ-TREE](http://www.iqtree.org)
 ~~~~~~
@@ -477,12 +590,45 @@ sudo mv genetree /usr/local/share/examples/mole/revbayes/
 Last updated 2022-03-18.
 
 ### Install [libpython2.7.so.1.0 shared library](https://askubuntu.com/questions/1213461/cant-locate-libpython2-7-so-1-0)
+
 The file _libpython2.7.so.1.0_ is required for PAUP*. 
-~~~~~~
-sudo apt install -y libpython2.7
-~~~~~~
+
+    sudo apt install -y libpython2.7
+
 Installed as _/usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0_. 
 Last updated 2022-04-19.
+
+{% comment %}
+This section commented out because it turns out Apache ant is not needed after all. jModelTest.jar can be downloaded and does not need to be compiled.
+### Install [Apache ant](https://ant.apache.org)
+
+Apache ant is needed to compile jModelTest, which is, in turn, needed for the PAUP* tutorial. Note that there appear to be no instructions on the Ant web site about installing using apt on Ubuntu, which is how I installed it.
+
+    sudo apt install -y ant
+
+Version 1.10.7 installed as _/usr/bin/ant_.
+Last updated 2022-05-05.
+{% endcomment %}
+
+### Install [jModelTest](https://github.com/ddarriba/jmodeltest2/)
+
+    curl -LO https://github.com/ddarriba/jmodeltest2/files/157117/jmodeltest-2.1.10.tar.gz
+    tar zxvf jmodeltest-2.1.10.tar.gz
+    cd jmodeltest-2.1.10
+    sudo mkdir /opt/jModelTest
+    sudo cp jModelTest.jar /opt/jModelTest
+    sudo cp -r lib /opt/jModelTest
+
+Change ownership (note: this is now handled by the [cloud init script](#boot-script-used))
+~~~~~~
+sudo chown moleuser.moleuser /opt/jModelTest/jModelTest.jar
+sudo chown moleuser.moleuser /opt/jModelTest/lib -R
+~~~~~~
+You should now be able to start jModelTest as follows:
+    java -jar /opt/jModelTest/jModelTest.jar
+An alias will be created by the [cloud init script](#boot-script-used) to make this easier.
+    alias jmodeltest="java -jar /opt/jModelTest/jModelTest.jar"
+Last updated 2022-05-05.
 
 ### Install [PAUP*](http://phylosolutions.com/paup-test/)
 ~~~~~~
@@ -563,71 +709,80 @@ This is the default cloud-config boot script with some modifications for MOLE:
 
 :small_blue_diamond: One modification is the addition of the moleuser. Note that SSH public keys for the co-directors as well as the TAs are automatically saved to the _~moleuser/.ssh/authorized_keys_ directory on each instance, making it easy for the TAs to log in to any instance, even if the student has changed the moleuser password, which is not shown in the cloud-config script below for security reasons (you should replace <tt><not shown></tt> with a meaningful password that will be communicated to students in the first (intro) computer lab.
 
-:small_blue_diamond: Another modification is the addition of 5 lines to the runcmd section. These lines do the following:
+:small_blue_diamond: Another modification is the addition of 8 lines to the runcmd section. These lines do the following:
 
 1. makes moleuser the owner of _/opt/astral/astral.5.7.1.jar_ (needed for ASTRAL to be started without using sudo) 
 2. makes moleuser the owner of _/opt/astral/lib_ (ditto)
-3. creates an alias named _astral_ (makes it easier to start ASTRAL)
-4. creates an alias named _raxmlHPC_ (some tutorials use raxmlHPC rather than raxml)
-5. creates a symbolic link named _moledata_ (makes it easier to find example datasets)
+3. makes moleuser the owner of _/opt/jModelTest/jModelTest.jar_ (needed for jModelTest to be started without using sudo) 
+4. makes moleuser the owner of _/opt/jModelTest/lib_ (ditto)
+5. creates an alias named _astral_ (makes it easier to start ASTRAL)
+6. creates an alias named _jmodeltest_ (makes it easier to start jModelTest)
+7. creates an alias named _raxmlHPC_ (some tutorials use raxmlHPC rather than raxml)
+8. creates a symbolic link named _moledata_ (makes it easier to find example datasets)
 
-    #cloud-config
-    users:
-      - default                 # preserve the standard default user
-      - name: moleuser          # MOLE-specific: adds a user moleuser common to all
-        shell: /bin/bash        # VMs in addition to the exouser added by default
-        groups: sudo, admin    
-        sudo: ['ALL=(ALL) NOPASSWD:ALL']{ssh-authorized-keys}
-        ssh_authorized_keys:    # moleuser has public keys for directors and TAs allowing easy login
-            - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMpNe5iim6O1x93lNkJw5ZLF6f5Kd9KIMaNuifz3MY1K4+NIFQHgrbENAaimuvwNCQDCUDgOY2u4v92O2PQLmPjO5NR9Yl1vOhpzb3EFe1EM7lwFSIKNl6S2jNd4mghUXImaXT6vtS/V6X9HwB6/qhFwHrb3ic+7RPxUplMRhnflatIGWk7V+OaSBvC1AuswXqGAeBeOItJJKeGqerWDq8ytbeUbp3qFtzyHT+z08m0UnSYIIyPfV5lxztCpw22xmkReQ2pc1FtwJKmxCa3QxegsQ30X/r9fjiVS7K2CPJSTwqWbs33GfSnYgYyynjch0pQt0ByOPB1ncpfbLZWbw3 plewis@cormoran.local
-            - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCouLhDpekh1GQMpx1oyMKhAzbl2bINJMaW6N0G6Kp1kYuaQddK3TGHNhQ/BcIHli7uVHlGD1Q5ABuJI+X66bh4k02/DDDhGqbtqw18IfufMRTsSyOvrvZ2QWMw9xHNg5J+2n+hfuuCyXZuay+DYyXShq4FvMqBfd2c0GeMWBNqpyH6QicsfMc/JyNFZdCdm0G86E61Y9QLM1cgGe8oUA3/85AaT0X/yCUdkbX6QZPZEfrBtMilXDV9oCGqrLUR/ZBp/EdEmxz0a39aU6xzZamPbRC1gYeVvzg2QfQeM1t2zYRIGc8ssJ39AbI6Kk1ZDrNqYFRQUk5ywqjixyqXpWbL akijarl@Akis-MacBook.local
-            - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwLwDmVCAamrG+cUzsv93qNO83TBymqimSCF+q9CD0zVXve6oYcKqKWt+nJqwYfeP1iLzi0NAEVcYpu9u34De9ortuWflMEZoh+1R32q0zqOkULMBCol4yXC7ou0+t23DFwkiavTn7ggQtmFKZ06/TGMSHdILaiFptpkKdadg7/qEKnuXXL3BZ7Jw9ZYrCr2oIEJ0expAEmf3xURFUwS23DcsJJTH2UJcipq7yucjjb+5YvAaMBc5NaT+q3j4otBjc9/mEiJUFgFwtu8KmZ5czUgnVMUi4dIkxxjVgtDnmChTA9P150yZ0YMXipyQPpKRbQ17ZCWTAvR5mWGqi2UGQA+etXxtopLdGref9OqNUA/6szVMZsFAYT2gUgLobkWtsX17WSjM+G3py4Kl5EBdbGChtqlbFth3X9J3/yzyt+Q3NKpsxeSE9b5FTCn5zD1Sqsx34tOByyeGDIAVbUXqhGvDJLTXLqqqkMmbabzHYNcXOwJVFxYFvbyfIe6d8Wuk= beerli@cornelius.local
-            - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCzNnLX1WagNRL8pZaaB5zMrrSBmondVSKfAtiNGd7z++WT/2UonvDzxOEpfo61dvPqY/NP+wNdRJ2+gDxUuUNQsFZEVZpFWt+rAjtVbfKF7V+qfB4crKDVsPV92FlbzyD2Z8azc3rrJMl4Oxl16/d8vpZMSeM8q35cpqif75+Yyc0pPB/kCiwRfzifgCLouK23tUwuCLRTY0nK3Mwd41Jbvt+xoFlRhBbw1iou2SR0yhl6C+DrLwgcaEp1I9oUX8EBWR7Hp/Pfw3qESk4sEIInX3aEZQq1WJRxnKJynyo9E2WlBuL4eotF1en/ppCRDYLQw6ySn/fRncCRr6X9CNijoog7HZdjMiBMk1EteJaso7fHqsALeTcLonR9WnGoirNfFQJr2g6LYdNjrhYA5pWzgEwPuZrNnYaHZj1JW2Bj9XRx/SKFlkKE4oooAgdopZLA6AngjMXqFJ5pXVsrxRnqV+vWSKE25pyRzGJ7heahtHfzaB6U+QMB+wCUxxmaAy0= kate@Kates-MacBook-Air
-            - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOvS4hXxZfIIIxDiU0p5I7eazXO7MBeTJXI+wY2YPfnIwqSB7dr5pw98mocoqQAGiNdq7LD2lvtHOlAy3wlDhzs=
-    ssh_pwauth: true             # allow password authentication (for students)
-    chpasswd:
-        expire: false            # do not force user to change passwd on first login
-        list:
-            - moleuser: <not shown>  # specify starting password for moleuser
-    package_update: true
-    package_upgrade: {install-os-updates}
-    packages:
-      - python3-virtualenv
-      - git{write-files}
-    runcmd:
-      - chown moleuser.moleuser /opt/astral/astral.5.7.1.jar # first 5 lines of runcmd are
-      - chown moleuser.moleuser /opt/astral/lib -R           # MOLE-specific, rest is boiler-plate
-      - echo 'alias astral="java -jar /opt/astral/astral.5.7.1.jar"' >> /home/moleuser/.bash_profile
-      - echo 'alias raxmlHPC="/usr/local/bin/raxml"' >> /home/moleuser/.bash_profile
-      - ln -s /usr/local/share/examples/mole /home/moleuser/moledata
-      - echo on > /proc/sys/kernel/printk_devkmsg || true  # Disable console rate limiting for distros that use kmsg
-      - sleep 1  # Ensures that console log output from any previous command completes before the following command begins
-      - >-
-        echo '{"status":"running", "epoch": '$(date '+%s')'000}' | tee --append /dev/console > /dev/kmsg || true
-      - chmod 640 /var/log/cloud-init-output.log
-      - {create-cluster-command}
-      - |-
-        (which virtualenv && virtualenv /opt/ansible-venv) || (which virtualenv-3 && virtualenv-3 /opt/ansible-venv) || python3 -m virtualenv /opt/ansible-venv
-        . /opt/ansible-venv/bin/activate
-        pip install ansible-core
-        ansible-pull --url "{instance-config-mgt-repo-url}" --checkout "{instance-config-mgt-repo-checkout}" --directory /opt/instance-config-mgt -i /opt/instance-config-mgt/ansible/hosts -e "{ansible-extra-vars}" /opt/instance-config-mgt/ansible/playbook.yml
-      - ANSIBLE_RETURN_CODE=$?
-      - if [ $ANSIBLE_RETURN_CODE -eq 0 ]; then STATUS="complete"; else STATUS="error"; fi
-      - sleep 1  # Ensures that console log output from any previous commands complete before the following command begins
-      - >-
-        echo '{"status":"'$STATUS'", "epoch": '$(date '+%s')'000}' | tee --append /dev/console > /dev/kmsg || true
-    mount_default_fields: [None, None, "ext4", "user,exec,rw,auto,nofail,x-systemd.makefs,x-systemd.automount", "0", "2"]
-    mounts:
-      - [ /dev/sdb, /media/volume/sdb ]
-      - [ /dev/sdc, /media/volume/sdc ]
-      - [ /dev/sdd, /media/volume/sdd ]
-      - [ /dev/sde, /media/volume/sde ]
-      - [ /dev/sdf, /media/volume/sdf ]
-      - [ /dev/vdb, /media/volume/vdb ]
-      - [ /dev/vdc, /media/volume/vdc ]
-      - [ /dev/vdd, /media/volume/vdd ]
-      - [ /dev/vde, /media/volume/vde ]
-      - [ /dev/vdf, /media/volume/vdf ]
+~~~~~~
+#cloud-config
+users:
+  - default                 # preserve the standard default user
+  - name: moleuser          # MOLE-specific: adds a user moleuser common to all
+    shell: /bin/bash        # VMs in addition to the exouser added by default
+    groups: sudo, admin    
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']{ssh-authorized-keys}
+    ssh_authorized_keys:    # moleuser has public keys for directors and TAs allowing easy login
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMpNe5iim6O1x93lNkJw5ZLF6f5Kd9KIMaNuifz3MY1K4+NIFQHgrbENAaimuvwNCQDCUDgOY2u4v92O2PQLmPjO5NR9Yl1vOhpzb3EFe1EM7lwFSIKNl6S2jNd4mghUXImaXT6vtS/V6X9HwB6/qhFwHrb3ic+7RPxUplMRhnflatIGWk7V+OaSBvC1AuswXqGAeBeOItJJKeGqerWDq8ytbeUbp3qFtzyHT+z08m0UnSYIIyPfV5lxztCpw22xmkReQ2pc1FtwJKmxCa3QxegsQ30X/r9fjiVS7K2CPJSTwqWbs33GfSnYgYyynjch0pQt0ByOPB1ncpfbLZWbw3 plewis@cormoran.local
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCouLhDpekh1GQMpx1oyMKhAzbl2bINJMaW6N0G6Kp1kYuaQddK3TGHNhQ/BcIHli7uVHlGD1Q5ABuJI+X66bh4k02/DDDhGqbtqw18IfufMRTsSyOvrvZ2QWMw9xHNg5J+2n+hfuuCyXZuay+DYyXShq4FvMqBfd2c0GeMWBNqpyH6QicsfMc/JyNFZdCdm0G86E61Y9QLM1cgGe8oUA3/85AaT0X/yCUdkbX6QZPZEfrBtMilXDV9oCGqrLUR/ZBp/EdEmxz0a39aU6xzZamPbRC1gYeVvzg2QfQeM1t2zYRIGc8ssJ39AbI6Kk1ZDrNqYFRQUk5ywqjixyqXpWbL akijarl@Akis-MacBook.local
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwLwDmVCAamrG+cUzsv93qNO83TBymqimSCF+q9CD0zVXve6oYcKqKWt+nJqwYfeP1iLzi0NAEVcYpu9u34De9ortuWflMEZoh+1R32q0zqOkULMBCol4yXC7ou0+t23DFwkiavTn7ggQtmFKZ06/TGMSHdILaiFptpkKdadg7/qEKnuXXL3BZ7Jw9ZYrCr2oIEJ0expAEmf3xURFUwS23DcsJJTH2UJcipq7yucjjb+5YvAaMBc5NaT+q3j4otBjc9/mEiJUFgFwtu8KmZ5czUgnVMUi4dIkxxjVgtDnmChTA9P150yZ0YMXipyQPpKRbQ17ZCWTAvR5mWGqi2UGQA+etXxtopLdGref9OqNUA/6szVMZsFAYT2gUgLobkWtsX17WSjM+G3py4Kl5EBdbGChtqlbFth3X9J3/yzyt+Q3NKpsxeSE9b5FTCn5zD1Sqsx34tOByyeGDIAVbUXqhGvDJLTXLqqqkMmbabzHYNcXOwJVFxYFvbyfIe6d8Wuk= beerli@cornelius.local
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCzNnLX1WagNRL8pZaaB5zMrrSBmondVSKfAtiNGd7z++WT/2UonvDzxOEpfo61dvPqY/NP+wNdRJ2+gDxUuUNQsFZEVZpFWt+rAjtVbfKF7V+qfB4crKDVsPV92FlbzyD2Z8azc3rrJMl4Oxl16/d8vpZMSeM8q35cpqif75+Yyc0pPB/kCiwRfzifgCLouK23tUwuCLRTY0nK3Mwd41Jbvt+xoFlRhBbw1iou2SR0yhl6C+DrLwgcaEp1I9oUX8EBWR7Hp/Pfw3qESk4sEIInX3aEZQq1WJRxnKJynyo9E2WlBuL4eotF1en/ppCRDYLQw6ySn/fRncCRr6X9CNijoog7HZdjMiBMk1EteJaso7fHqsALeTcLonR9WnGoirNfFQJr2g6LYdNjrhYA5pWzgEwPuZrNnYaHZj1JW2Bj9XRx/SKFlkKE4oooAgdopZLA6AngjMXqFJ5pXVsrxRnqV+vWSKE25pyRzGJ7heahtHfzaB6U+QMB+wCUxxmaAy0= kate@Kates-MacBook-Air
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDF5GNcJcMm42xJSCCkI0w8pDNgGSXWEtBCJAFMEvrNDYxYOAl8W8fZvAxT7/1B/ZBXt8ASiDTtMuZkWHv/wPkywKPDa1dVyQ6aBa5uU7h6K3FaP1OM+c9xqHMN0H/54mXRFxSESfVuRpvxwiw9oOKZ2xSphs8+e+8pv4GziPeOuxrheat9jcjfY6EIm6zwVvNEM4rgaW+jCK2xn89tbmKlrT+wh7PwD9bzSwIvAHCpf8EaiJrdueNBILGYewmGykffIVVeH8GKIxqfSTLIUiyFwYnwQydGkT/ceXuty9ML+QQIw81FbYhTf9+1GfZC85UyXkfI35HujJfSMUrvhxq7 Jordan@Jordans-MacBook-Pro-7.local 
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqJeFU3sEcA72fyYD2LCzDsfHqPmZonnATiXDKYeutIzQ+iVREIG3EMUNjeps8JS9oWw11ojXLFDZCHdg/z87qBZn7ilGgXZ6/PRhGaDx3kjPr5Mek10bV3BwB0O9Gws9rmepD/akuXY7wTS5M++YqCkwU1Ia9oAEW4QWDuc1Bdj3L1DqSYbI+xg38EA5TpRL2N968OPuu1xhGT9cPkRgOQAcTbFyknoeEXKwSUKamii8q8Lv+Zi9nA1nRYa0xZdJSGZNxso41FJkEmNfF6o/IKMtAJ0DHcg1B3aJpS8o2+cgyR+L0NqVHrJeBIagm4n3H8xP40pUCj5PyphdZam5L jpbielawski@Josephs-MacBook-Air.local               
+        - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOvS4hXxZfIIIxDiU0p5I7eazXO7MBeTJXI+wY2YPfnIwqSB7dr5pw98mocoqQAGiNdq7LD2lvtHOlAy3wlDhzs=
+ssh_pwauth: true             # allow password authentication (for students)
+chpasswd:
+    expire: false            # do not force user to change passwd on first login
+    list:
+        - moleuser: <not shown>  # specify starting password for moleuser
+package_update: true
+package_upgrade: {install-os-updates}
+packages:
+  - python3-virtualenv
+  - git{write-files}
+runcmd:
+  - chown moleuser.moleuser /opt/astral -R              # MOLE
+  - chown moleuser.moleuser /opt/jModelTest -R          # MOLE
+  - echo 'alias astral="java -jar /opt/astral/astral.5.7.1.jar"' >> /home/moleuser/.bash_profile       # MOLE
+  - echo 'alias jmodeltest="java -jar /opt/jModelTest/jModelTest.jar"' >> /home/moleuser/.bash_profile # MOLE
+  - echo 'alias phyml="/opt/jModelTest/exe/phyml/PhyML_3.0_linux64"' >> /home/moleuser/.bash_profile # MOLE
+  - echo 'alias raxmlHPC="/usr/local/bin/raxml"' >> /home/moleuser/.bash_profile # MOLE
+  - ln -s /usr/local/share/examples/mole /home/moleuser/moledata                 # MOLE
+  - echo on > /proc/sys/kernel/printk_devkmsg || true  # Disable console rate limiting for distros that use kmsg
+  - sleep 1  # Ensures that console log output from any previous command completes before the following command begins
+  - >-
+    echo '{"status":"running", "epoch": '$(date '+%s')'000}' | tee --append /dev/console > /dev/kmsg || true
+  - chmod 640 /var/log/cloud-init-output.log
+  - {create-cluster-command}
+  - |-
+    (which virtualenv && virtualenv /opt/ansible-venv) || (which virtualenv-3 && virtualenv-3 /opt/ansible-venv) || python3 -m virtualenv /opt/ansible-venv
+    . /opt/ansible-venv/bin/activate
+    pip install ansible-core
+    ansible-pull --url "{instance-config-mgt-repo-url}" --checkout "{instance-config-mgt-repo-checkout}" --directory /opt/instance-config-mgt -i /opt/instance-config-mgt/ansible/hosts -e "{ansible-extra-vars}" /opt/instance-config-mgt/ansible/playbook.yml
+  - ANSIBLE_RETURN_CODE=$?
+  - if [ $ANSIBLE_RETURN_CODE -eq 0 ]; then STATUS="complete"; else STATUS="error"; fi
+  - sleep 1  # Ensures that console log output from any previous commands complete before the following command begins
+  - >-
+    echo '{"status":"'$STATUS'", "epoch": '$(date '+%s')'000}' | tee --append /dev/console > /dev/kmsg || true
+mount_default_fields: [None, None, "ext4", "user,exec,rw,auto,nofail,x-systemd.makefs,x-systemd.automount", "0", "2"]
+mounts:
+  - [ /dev/sdb, /media/volume/sdb ]
+  - [ /dev/sdc, /media/volume/sdc ]
+  - [ /dev/sdd, /media/volume/sdd ]
+  - [ /dev/sde, /media/volume/sde ]
+  - [ /dev/sdf, /media/volume/sdf ]
+  - [ /dev/vdb, /media/volume/vdb ]
+  - [ /dev/vdc, /media/volume/vdc ]
+  - [ /dev/vdd, /media/volume/vdd ]
+  - [ /dev/vde, /media/volume/vde ]
+  - [ /dev/vdf, /media/volume/vdf ]
+~~~~~~
 
 ## Command line client
 
@@ -693,6 +848,10 @@ To show a list of images:
 To show details for one particular image:
 
     openstack image show MOLE_2022_image --fit-width
+
+To show a list of instances:
+
+    openstack server list
 
 To create an launch an instance (see [Launch and Access Your Instance](https://docs.jetstream-cloud.org/ui/cli/launch/)):
 
