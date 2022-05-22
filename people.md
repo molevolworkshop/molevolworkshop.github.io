@@ -25,15 +25,15 @@ permalink: /people/
 |                 Bruno | do Rosario Petrucci |                                      Iowa State University |
 |                 Tope  |              Faleye |                                   Arizona State University |
 |                 Blake |             Fauskee |                                            Duke University |
-|                 Evim  |                 Fer |                                      University of Arizona |
+|                 Evrim |                 Fer |                                      University of Arizona |
 |                 Megan |              Garber |                         University of California, Berkeley |
 |                 David |           Goldstein |                      University of California, Los Angeles |
-|             Alexandra |               Grote |                         Broad Institute of Harvard and MIT |
+|                  Alex |               Grote |                         Broad Institute of Harvard and MIT |
 |               Lillian |            Hendrick |                                      University of Florida |
 |                  Erik |                 Hom |                                  University of Mississippi |
-|               Gabriel |             Johnson |                                    Smithsonian Institution |
+|                  Gabe |             Johnson |                                    Smithsonian Institution |
 |             Genevieve |             Johnson |                                       University of Guelph |
-|              Jennifer |               Jones |                                   University of Pittsburgh |
+|                 Jenny |               Jones |                                   University of Pittsburgh |
 |                Joshua |            Justison |                                      Iowa State university |
 |             Youngwook |                 Kim |                                    Sungkyunkwan University |
 |                Nathan |              Kolbow |                           University of Wisconsin, Madison |
@@ -46,8 +46,8 @@ permalink: /people/
 |              Fernando |    Melendez Vasquez |                                     University of Oklahoma |
 |               Analisa |              Milkey |                                  University of Connecticut |
 |                 Sarah |              Morris |                                                    RBG Kew |
+|                Isabel |              Novick |                                          Boston University |
 |                 Diego |      Paredes Burneo |                                 Louisiana State University |
-|                  Ruth |      Percino-Daniel |             Universidad Nacional Autonoma de Mexico (UNAM) |
 |                Taylor |              Sehein |                                              Smith College |
 |               Anthony |               Snead |                                      University of Alabama |
 |                  Mark |              Stukel |                                  University of Connecticut |
