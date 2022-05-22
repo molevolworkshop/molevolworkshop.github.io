@@ -14,13 +14,13 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Friday, May 27, 2022
 
 ---------------|--------------------------------------|-----------------------------------
- 18:00 - 21:00 |  Meigs Room, Swope                   | Opening Reception
+ 18:00 - 21:00 | Swope Terrace (overlooking Eel Pond) | Opening Reception
 {:.daily-schedule-std}
 
 ### Saturday, May 28, 2022
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 |                                      | Welcome and Introductions
+ 09:00 - 10:30 | [Lewis](/faculty-lewis/)             | Welcome, Introductions, and Workshop overview
  10:30 - 12:00 | [Lewis](/faculty-lewis/)             | Introduction to Phylogenetics ([Holder 2019 lecture]({{ site.baseurl }}/faculty/holder/pdf/Holder_phylo_intro_and_msa-opt.pdf))
  14:00 - 15:30 | [Huelsenbeck](/faculty-huelsenbeck/) | [Introduction to Likelihood]({{ site.baseurl }}/faculty/huelsenbeck/pdf/WoodsHole2012_1-opt.pdf)
  15:30 - 17:00 | [Huelsenbeck](/faculty-huelsenbeck/) | Simulating Molecular Evolution
