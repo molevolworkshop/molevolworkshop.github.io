@@ -5,9 +5,9 @@ permalink: /faculty-solis-lemus/
 ---
 {% include figure.html description="Claudia Solis-Lemus" url="/faculty/solis-lemus/img/claudiaSmall.png" css="image-right" height="250px" %}
 
-### Duration of Stay
+### Arrival and Departure
 
-Not yet determined.
+May 27 to June 7
 
 ### Lecture slides
 

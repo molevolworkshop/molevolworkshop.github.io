@@ -5,8 +5,9 @@ permalink: /faculty-susko/
 ---
 {% include figure.html description="Edward Susko" url="/faculty/susko/img/susko.jpg" css="image-right" height="200px" %}
 
-### Duration of Stay
-Not yet determined
+### Arrival and Departure
+
+May 31 to June 6
 
 ### Contact Info 
 E-mail: [edward.susko@gmail.com](mailto:edward.susko@gmail.com)

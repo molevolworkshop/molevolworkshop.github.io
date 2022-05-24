@@ -5,9 +5,9 @@ permalink: /faculty-edwards/
 ---
 {% include figure.html description="Scott Edwards" url="/faculty/edwards/img/Scott_Galapagos.jpg" css="image-right" %}
 
-## Arrival and Departure
+### Arrival and Departure
 
-Not yet determined.
+June 1 to June 6
 
 ### Institutional Website
 

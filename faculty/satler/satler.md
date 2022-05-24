@@ -5,6 +5,10 @@ permalink: /faculty-satler/
 ---
 {% include figure.html description="Jordan Satler" url="/faculty/satler/img/satler1.jpg" css="image-right" height="300px" %}
 
+### Arrival and Departure
+
+May 26 to June 7
+
 ### About me
 
 I am a postdoc in the [Carstens lab](https://carstenslab.osu.edu/).

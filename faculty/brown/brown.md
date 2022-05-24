@@ -5,8 +5,9 @@ permalink: /faculty-brown/
 ---
 {% include figure.html description="Jeremy Brown" url="/faculty/brown/img/Crepe_eating.jpg" css="image-right" height="200px" %}
 
-### Duration of Stay
-Not yet determined
+### Arrival and Departure
+
+May 27 to June 7
 
 ### Contact Info
 [Brown Lab website](http://www.phyleaux1.lsu.edu)

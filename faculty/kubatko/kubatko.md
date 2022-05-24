@@ -5,9 +5,9 @@ permalink: /faculty-kubatko/
 ---
 {% include figure.html description="Laura Kubatko" url="/faculty/kubatko/img/Kubatko.jpg" css="image-right" height="250px" %}
 
-### Duration of Stay 2019
+### Arrival and Departure
 
-Not yet determined.
+Due to unforseen circumstances, Laura will not be at the workshop this year (2022). Her lectures will be presented by David Swofford.
 
 ### Contact Info
 

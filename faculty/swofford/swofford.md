@@ -5,8 +5,9 @@ permalink: /faculty-swofford/
 ---
 {% include figure.html description="David Swofford" url="/faculty/swofford/img/David_swofford.jpg" css="image-right" %}
 
-### Duration of Stay
-I will be here for the entire course
+### Arrival and Departure
+
+I will be here for the entire course (May 26 to June 7)
 
 ### Contact Info
 [http://fds.duke.edu/db/aas/Biology/faculty/david.swofford](http://fds.duke.edu/db/aas/Biology/faculty/david.swofford)

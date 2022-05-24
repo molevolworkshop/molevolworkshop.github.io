@@ -5,6 +5,10 @@ permalink: /faculty-laruson/
 ---
 {% include figure.html description="Áki Láruson" url="/faculty/laruson/img/laruson.jpg" css="image-right" height="250px" %}
 
+### Arrival and Departure
+
+May 26 to June 7
+
 ### About me
 
 I am an evolutionary biologist who focuses on questions of adaptation in the sea. My research interests generally relate to molecular evolution (population genetics and phylogenetics), especially in the context of marine ecology. I'm inordinately fond of marine invertebrates, especially echinoderms.

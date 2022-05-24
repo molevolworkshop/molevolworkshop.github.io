@@ -866,30 +866,8 @@ To delete an instance (see [Deleting items in the CLI](https://docs.jetstream-cl
 
     TODO 
     
-## Open issues
+## Things to do differently in 2023 Workshop
 
-### Migrate-n-mpi
-
-Could not get migrate-n-mpi to install
-
-### Password access
-
-The [General FAQ page](https://docs.jetstream-cloud.org/faq/general-faq/) says that one must use 
-
-    sudo passwd username
-    
-to set a password for a user. It sounds like we will need to create 62+ passwords this way so that students can login the first time at least.
-
-### Passphrase
-
-What is the passphrase for an instance used for? Does not work as password when logging in.
-
-### Instance limits
-
-Exosphere says up to 25 instances can be run from one account. Can this be increased to, say, 75, or do we need three separate Xsede accounts?
-
-
-
-
+* By default, Julia packages are installed in the _~/.julia_ directory of a particular user, not globally. Find out how to install PhyloNetworks, PhyloPlots, and the other packages needed for the PhyloNetworks tutorial globally, or add the necessary setup to the cloud-init script. In 2022, I had to ssh into each VM separately and add Julia packages under the user moleuser. They were present in /home/exouser/.julia, but simply copying that directory to /home/moleuser and chown moleuser.moleuser did not do the trick.
 
 

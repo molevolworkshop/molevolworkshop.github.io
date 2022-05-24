@@ -5,6 +5,9 @@ permalink: /faculty-taylor/
 ---
 {% include figure.html description="Katie Taylor" url="/faculty/taylor/img/katie-taylor.jpg" css="image-right" height="250px" %}
 
+### Arrival and Departure
+
+May 26 to June 7
 
 ### About me
 

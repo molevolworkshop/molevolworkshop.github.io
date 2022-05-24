@@ -7,9 +7,9 @@ permalink: /faculty-bui/
 
 ## Minh Quang Bui
 
-### Duration of Stay 2019 
+### Arrival and Departure 
 
-Not yet determined.
+May 31 to June 6
 
 ### Contact Info
 

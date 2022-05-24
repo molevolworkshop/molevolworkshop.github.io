@@ -3,7 +3,12 @@ layout: page
 title: John Huelsenbeck
 permalink: /faculty-huelsenbeck/
 ---
-Time at course yet to be determined.
+
+### Arrival and Departure
+
+May 27 to June 7
+
+### From earlier appearances at the workshop
 
 [Scripts from 2017 morning programming sessions]({{ site.baseurl }}/faculty/huelsenbeck/data/WoodsHoleFour.zip)
 

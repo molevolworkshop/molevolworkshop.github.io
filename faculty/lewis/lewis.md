@@ -5,8 +5,9 @@ permalink: /faculty-lewis/
 ---
 {% include figure.html description="Paul Lewis" url="/faculty/lewis/img/300px-Irobot.jpg" height="300px" css="image-right" %}
 
-### Time at MBL 
-I will be present from July 31 to August 12, 2019.
+### Arrival and Departure
+
+May 26 to June 7
 
 ### Contact Info 
 E-mail: [paul.lewis@uconn.edu](mailto:paul.lewis@uconn.edu)

@@ -12,7 +12,7 @@ permalink: /faculty-chang/
 
 ### Arrival and Departure
 
-Not yet determined.
+June 2 to June 6
 
 ### Lecture Materials
 

@@ -5,6 +5,10 @@ permalink: /faculty-goncalves/
 ---
 {% include figure.html description="Deise Goncalves" url="/faculty/goncalves/img/Deise_Goncalves.jpg" css="image-right" height="250px" %}
 
+### Arrival and Departure
+
+May 24 to June 7
+
 ### About me
 
 I am currently a Ph.D. candidate at UT Austin. I am interested in Plant Systematics, Biogeography, and plastome evolution.

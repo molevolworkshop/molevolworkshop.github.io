@@ -8,6 +8,10 @@ Assistant Professor<br/>
 Dept. Ecology, Evolution, & Organismal Biology<br/>
 Iowa State University
 
+### Arrival and Departure
+
+June 26 to June 7
+
 ### Contact Information
 
 * Web page: [http://phyloworks.org/](http://phyloworks.org/)
@@ -18,10 +22,6 @@ Iowa State University
 {% include figure.html description="Tracy" url="/faculty/heath/img/tracy-lobster.jpg" css="image-right" %}
 
 I develop statistical models for use as priors in Bayesian methods for phylogenetic inference. In particular, I'm interested in divergence-time estimation -- e.g. modeling rate variation across the tree of life, diversification processes, and methods for incorporating information from the fossil record. 
-
-### Time at MBL
-
-Not yet determined.
 
 ### 2019 Course
 

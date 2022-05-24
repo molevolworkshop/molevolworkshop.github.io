@@ -9,9 +9,9 @@ permalink: /faculty-mctavish/
 
 Assistant professor, University of California, Merced
 
-### Time at MBL
+### Arrival and Departure
 
-Not yet determined.
+May 29 to June 2
 
 ### My Lab's Web Page
 

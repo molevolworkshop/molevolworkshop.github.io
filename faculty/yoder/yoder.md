@@ -5,9 +5,9 @@ permalink: /faculty-yoder/
 ---
 {% include figure.html description="Anne Yoder" url="/faculty/yoder/img/Yoder.jpg" css="image-right" height="350px" %}
 
-### Duration of Stay
+### Arrival and Departure
 
-Not yet determined.
+May 30 to June 3
 
 ### Institutional Website
 
