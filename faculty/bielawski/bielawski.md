@@ -47,9 +47,9 @@ symlink in your home directory named "moledata" to obtain the course data files*
 
 I am changing the lecture content for 2022. This lecture provides a more general background on evolutionary forces, and the Neutral and Nearly-Neutral theories of molecular evolution. Some details about fitting codon models to real data, have been moved to the "PAML Lab" lecture.  
 
-* **2022 Lecture slides, Part 1:** [2022 coming soon]() 
+* **2022 Lecture slides (Part 1), Intro to Neutral & Nearly Neutral Theories of Molecular Evolution:** [2022 slide set 1](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf) 
 
-* **2022 Lecture slides, Part 2:** [2022 coming soon]() 
+* **2022 Lecture slides (Part 2), Intro to Codon Models:** [2022 slide set 2](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_2.pdf) 
 
 <br>
 **Some material from previous workshops**
@@ -136,4 +136,4 @@ Large-scale evolutionary surveys are now commonplace. But with the use of progre
 
 {% include figure.html description="The Kidd" url="/faculty/bielawski/img/TheKidd1b.jpg" css="image-center" height="250px" %}
 
-{% include figure.html description="Workshp concept map" url="/faculty/bielawski/img/MOLE_concept_map_v2.jpg" css="image-center" height="250px" %}
+{% include figure.html description="Workshop concept map" url="/faculty/bielawski/img/MOLE_concept_map_v2.jpg" css="image-center" height="250px" %}
