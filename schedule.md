@@ -98,11 +98,11 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
- 09:00 - 10:30 | [Bielawski](/faculty-bielawski/)     | [Intro to Theories of Molecular Evol: 2022 Lecture slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf)
- 10:30 - 12:00 | [Bielawski](/faculty-bielawski/)     | [Intro to Codon Models: 2022 Lecture slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_2.pdf)
+ 09:00 - 10:30 | [Bielawski](/faculty-bielawski/)     | [Intro to Theories of Molecular Evol: **2022** Lecture slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf)
+ 10:30 - 12:00 | [Bielawski](/faculty-bielawski/)     | [Intro to Codon Models: **2022** Lecture slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_2.pdf)
  14:00 - 15:30 | [Chang](/faculty-chang/)             | [Protein evolution, anc. recon.]({{ site.baseurl }}/faculty/chang/pdf/Protein_Evolution_&_Ancestral_Reconstruction-opt.pdf)
  15:30 - 17:00 | [Chang](/faculty-chang/)             | [Adaptive protein evolution]({{ site.baseurl }}/faculty/chang/pdf/Adaptive_Protein_Evolution-opt.pdf)
- 19:00 - 20:30 | [Bielawski](/faculty-bielawski/)     | [PAML lab](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html), [2022 lab slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO_MOLE2022_v2.pdf)
+ 19:00 - 20:30 | [Bielawski](/faculty-bielawski/)     | [PAML lab](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html), [**2022** lab slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO_MOLE2022_v2.pdf)
  20:30 - 22:00 | [Bielawski](/faculty-bielawski/)     | [Additional resources](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html), [advanced lab](https://bitbucket.org/EvoWorks/protocol-inference-of-episodic-selection/downloads)
 {:.daily-schedule-cpp}
 
