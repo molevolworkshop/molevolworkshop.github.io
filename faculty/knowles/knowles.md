@@ -1,4 +1,4 @@
-6---
+---
 layout: page
 title: L. Lacey Knowles
 permalink: /faculty-knowles/
