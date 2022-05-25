@@ -28,14 +28,14 @@ The lab exercises (PAML demo) are available via small website (link below). The 
 
 **PAML demo**: [PAML Lab website](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html)
 
-**PAML demo resources**: [webpage](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.htm)
+**PAML demo resources**: [webpage](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html)
 
 **PAML demo slides**: [2022 slides (PDF)](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO_MOLE2022_v2.pdf)
 
 If you want doing the lab independently of the workshop (at home, on your own time and on your own computer), then you can do this by downloading all the necessary files from an archive [here](https://bitbucket.org/EvoWorks/protocol-paml-lab-at-mbl-workshop/downloads/), or you can download the files individually for each exercise as you need them [here](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/PAML_Lab_files.html).
 
-**NOTE:**. *If you are doing the PAML Lab at the workshop, then use the VM and the 
-symlink in your home directory named "moledata" to obtain the course data files*!!!
+**NOTE: If you are doing the PAML Lab at the workshop, then use the VM and the 
+symlink in your home directory named "moledata" to obtain the course data files!!!**
 
 <br>
 
@@ -74,6 +74,8 @@ I updated the lecture slides on codon models for 2017. Because the older slides 
 <br>
 **Key papers related to the lecture material:**
 
+* A novel phenotype+genotype codon-model (PG-BSM) formulated to test and identify sites within a gene involved in phenotypic adaptation.  This method does NOT require dN/dS>1 to infer adaptive molecular evolution!:<br>
+(_[Jones, C. T., Youssef, N., Susko, E., & Bielawski, J. P. (2020). A Phenotype–Genotype Codon Model for Detecting Adaptive Evolution. Systematic biology, 69(4), 722-738.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Jones_Susko_Bielawski-2020_PG-BSM.pdf)_)
 
 * Phenomenological load (PL) and biological conclusions under codon models:<br>
 (_[Jones C.T., Youssef N., Susko E., Bielawski J.P., 2018. Phenomenological Load on Model Parameters Can Lead to False Biological Conclusions. Mol Biol Evol. 35(6):1473-1488.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Jones_PL_MBE2018.pdf)_)
@@ -107,7 +109,7 @@ If you have some experience with codon models, and want to try out a tutorial fo
 
 **codeml_SBA:**  a program that implements Smoothed Bootstrap Aggregation (SBA) for assessing selection pressure at amino acid sites. [https://github.com/Jehops/codeml_sba](https://github.com/Jehops/codeml_sba)<br>
 
-**DendroCypher:** a program to assist labelling the branches of a Newick-formatted tree-file for use with a “branch model” or a “branch-site codon model": [Bitbucket repository] (https://bitbucket.org/EvoWorks/dendrocypher/downloads/)
+**DendroCypher:** a program to assist labelling the branches of a Newick-formatted tree-file for use with a “branch model” or a “branch-site codon model": [Bitbucket repository](https://bitbucket.org/EvoWorks/dendrocypher/downloads/)
 
 <br>
 
@@ -134,6 +136,6 @@ Large-scale evolutionary surveys are now commonplace. But with the use of progre
 
 <br>
 
-{% include figure.html description="The Kidd" url="/faculty/bielawski/img/TheKidd1b.jpg" css="image-center" height="250px" %}
+{% include figure.html description="At the Captain Kidd" url="/faculty/bielawski/img/TheKidd1b.jpg" css="image-center" height="250px" %}
 
 {% include figure.html description="Workshop concept map" url="/faculty/bielawski/img/MOLE_concept_map_v2.jpg" css="image-center" height="250px" %}
