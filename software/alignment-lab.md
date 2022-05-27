@@ -308,8 +308,8 @@ Figueiró et al. 2017; Rochette et al. 2019). This process is a little
 different than the progressive MSA discussed here, but a common short
 read aligner is bwa (Li and Durbin 2009). This type of reference-based
 alignment can then be followed by genotyping using various variant callers, including GATK (McKenna et al.
-2010, Poplin et al. 2017) and mpileup (Danecek et al. 2012) to name just two, which use the quality information from massively parallell high throughput sequencers to call variants and heterozygotes. Another genotype callers with a
-philosophically different approaches to variant calling are ANGSD
+2010, Poplin et al. 2017) and mpileup (Danecek et al. 2012) to name just two, which use the quality information from massively parallell high throughput sequencers to call variants and heterozygotes. Other genotype callers with a
+philosophically different approach to variant calling are ANGSD
 (Korneliussen et al. 2014) and graphtyper (Eggertson et al. 2017), which have many population genetic
 applications, but not many phylogenetic methods can leverage genotype
 likelihoods. These topics fall outside of the scope of our workshop, but
