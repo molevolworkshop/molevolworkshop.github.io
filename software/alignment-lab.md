@@ -307,25 +307,28 @@ in species-level phylogenetic studies (e.g. Grewe et al. 2017;
 Figueiró et al. 2017; Rochette et al. 2019). This process is a little
 different than the progressive MSA discussed here, but a common short
 read aligner is bwa (Li and Durbin 2009). This type of reference-based
-alignment can then be followed by genotyping with GATK (McKenna et al.
-2010), which uses the quality information of Illumina sequencers to call
-variants and heterozygotes. Another genotype caller with a
-philosophically different approach to variant calling is ANGSD
-(Korneliussen et al. 2014), which has many population genetic
-applications but not many phylogenetic methods can leverage genotype
+alignment can then be followed by genotyping using various variant callers, including GATK (McKenna et al.
+2010, Poplin et al. 2017) and mpileup (Danecek et al. 2012) to name just two, which use the quality information from massively parallell high throughput sequencers to call variants and heterozygotes. Another genotype callers with a
+philosophically different approaches to variant calling are ANGSD
+(Korneliussen et al. 2014) and graphtyper (Eggertson et al. 2017), which have many population genetic
+applications, but not many phylogenetic methods can leverage genotype
 likelihoods. These topics fall outside of the scope of our workshop, but
-the development teams for these software have fantastic tutorials that
+the development teams for many of these software have fantastic tutorials that
 you should be able to follow with skills developed here.
 
 ## References
 
 Castresana, J. 2000. Selection of conserved blocks from multiple alignments for their use in phylogenetic analysis. Molecular Biology and Evolution 17:540-552.
 
+Danecek P, Bonfield JK, Liddle J, Marshall J, Ohan V, Pollard MO, Whitwham A, Keane T, McCarthy SA, Davies RM, Li H. 2012. Twelve years of SAMtools and BCFtools, GigaScience 10(2):giab008
+
 {% comment %}
 DePristo M, Banks E, Poplin R, Garimella K, Maguire J, Hartl C, Philippakis A, del Angel G, Rivas MA, Hanna M, McKenna A, Fennell T, Kernytsky A, Sivachenko A, Cibulskis K, Gabriel S, Altshuler D, Daly M. 2011. A framework for variation discovery and genotyping using next-generation DNA sequencing data. Nature Genet. 43:491-498.
 {% endcomment %}
 
 Grewe F, Huang J-P, Leavitt SP, Lumbsch HT. 2017. Reference-based RADseq resolves robust relationships among closely related species of lichen-forming fungi using metagenomic DNA. Sci Rep. 7:9884
+
+Eggertsson HP, Jonsson H, Kristmundsdottir S, Hjartarson E, Kehr B, Masson G, Zink F, Hjorleifsson KE, Jonasdottir A, Jonasdottir A, Jonsdottir I, Gudbjartsson DF, Melsted P, Stefansson K, Halldorsson BV. 2017. Graphtyper enables population-scale genotyping using pangenome graphs. Nat Genet 49:1654–1660.
 
 Figueiró HV, et al. 2017. Genome-wide signatures of complex introgression and adaptive evolution in the big cats. Sci Adv. 7:1700299.
 
@@ -336,6 +339,8 @@ Li H, Durbin R. 2009. Fast and accurate short read alignment with Burrows–Whee
 Löytynoja A, Goldman N. 2005. An algorithm for progressive multiple alignment of sequences with insertions. Proc Natl Acad Sci USA. 102:10557-10562.
 
 McKenna A, Hanna M, Banks E, Sivachenko A, Cibulskis K, Kernytsky A, Garimella K, Altshuler D, Gabriel S, Daly M, DePristo MA. 2010. The Genome Analysis Toolkit: a MapReduce framework for analyzing next-generation DNA sequencing data. Genome Res. 20:1297-303.
+
+Poplin R, Ruano-Rubio V, DePristo MA, Fennell TJ, Carneiro MO, Van der Auwera GA, Kling DE, Gauthier LD, Levy-Moonshine A, Roazen D, Shakir K, Thibault J, Chandran S, Whelan C, Lek M, Gabriel S, Daly MJ, Neale B, MacArthur DG, Banks E. 2017. Scaling accurate genetic variant discovery to tens of thousands of samples. bioRxiv. doi:10.1101/201178. 
 
 Redelings BD, Suchard MA. 2005. Joint Bayesian estimation of alignment and phylogeny. Syst. Biol. 54:401-418.
 
