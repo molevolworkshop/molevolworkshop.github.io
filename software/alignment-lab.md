@@ -67,6 +67,10 @@ checking for contamination or homology errors.
 
 If you have not downloaded SeaView or MEGA, do so now using the following links:
 
+{% comment %}
+SeaView:
+* [Select your OS](http://doua.prabi.fr/software/seaview)
+{% endcomment %}
 SeaView:
 * [Mac OS X](https://web.archive.org/web/20141011000249/http://doua.prabi.fr/software/seaview_data/seaview4.zip)
 * [Windows](https://web.archive.org/web/20141011000249/http://doua.prabi.fr/software/seaview_data/seaview4.exe)
@@ -82,12 +86,15 @@ You will run the alignment software on your remote Jetstream node. Login to your
 
 Create a new, empty directory named _MSAlab_ and use the following command to copy the tutorial files there:
 ~~~~~~
-curl -O https://molevolworkshop.github.io/assets/data/MSAlab.zip
+cp moledata/MSAlab/* MSAlab
 ~~~~~~
+{% comment %}
+curl -O https://molevolworkshop.github.io/assets/data/MSAlab.zip
 Unzip the datafile using:
 ~~~~~~
 unzip MSAlab.zip
 ~~~~~~
+{% endcomment %}
 
 ## Exercise 1: basic functions in SeaView and MEGA
 
