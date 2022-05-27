@@ -15,23 +15,17 @@ By the end of this introduction, you should be able to:
 * Move files to the cluster.
 Ask for help if any of these things aren't working by the end!
 
-## Slack group
+## Slack workspace
 
 Slack is a messaging/discussion program that allows for large groups to interact as needed.<br/>
-There is a slack group set up for people to ask questions and to have discussions.<br/>
-The slack team is _MBL-MOLE-2022_<br/>
+There is a slack workspace set up for people to ask questions and to have discussions.<br/>
+The Slack Workspace is _MBL-MOLE-2022_<br/>
 You can use the Slack app on your laptop and your phone. <br/> 
-If you can't join through the app/website, you can click on 
-[this link](https://join.slack.com/t/mbl-mole-2022/shared_invite/zt-16fu8gilw-qo48O6c4egQKCJ4tZJplDA).
+If you've lost your invitation to join this workspace, ask one of us and we'll resend the invitation to your email address.
 
 ## WiFi Login
 
 You should have received instructions for connecting to wifi with your room key. If you have trouble connecting to the internet, let one of the TAs or course directors know and we'll help you get on the network. 
-
-{% comment %}
-Some people have been having trouble, if it isn't working find or email [George](mailto:george.tiley@gmail.com) or any TA, 
-or ask on the Slack group.
-{% endcomment %}
 
 ## Downloads
 
