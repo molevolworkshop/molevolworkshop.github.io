@@ -21,7 +21,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Lewis](/faculty-lewis/)             | Welcome, Introductions, and Workshop overview
- 10:30 - 12:00 | [Lewis](/faculty-lewis/)             | Introduction to Phylogenetics ([Holder 2019 lecture]({{ site.baseurl }}/faculty/holder/pdf/Holder_phylo_intro_and_msa-opt.pdf))
+ 10:30 - 12:00 | [Lewis](/faculty-lewis/)             | Introduction to Phylogenetics
  14:00 - 15:30 | [Huelsenbeck](/faculty-huelsenbeck/) | [Introduction to Likelihood]({{ site.baseurl }}/faculty/huelsenbeck/pdf/WoodsHole2012_1-opt.pdf)
  15:30 - 17:00 | [Huelsenbeck](/faculty-huelsenbeck/) | Simulating Molecular Evolution
  19:00 - 20:30 | TAs                                  | [Intro computer lab](/labs/intro/)
@@ -38,6 +38,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  15:30 - 17:00 | [Swofford](/faculty-swofford/)       | [PAUP* lab](http://phylosolutions.com/paup-tutorial/)
  19:00 - 20:30 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-part1-opt.pdf)
  20:30 - 22:00 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-part2-opt.pdf)
+ 22:00 - 23:59 | Loeb Quad                            | Evening social gathering
 {:.daily-schedule-cpp}
  
 ### Monday, May 30, 2022
@@ -74,6 +75,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  15:30 - 17:00 | [Yoder](/faculty-yoder/)             | [What are we even talking about when we say "species tree"? (cont.)]({{ site.baseurl }}/faculty/yoder/pdf/Yoder_MBL.8.2019-opt.pdf)
  19:00 - 20:30 | Swope Terrace                        | Course Dinner Party
  20:30 - 22:00 | Swope Terrace                        | Course Dinner Party
+ 22:00 - 23:59 | Loeb Quad                            | Post-dinner social gathering
 {:.daily-schedule-cpp}
 
 ### Thursday, June 2, 2022
@@ -116,6 +118,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  15:30 - 17:00 | [Susko](/faculty-susko/)             | Topology tests (KH, SH, AU)
  19:00 - 20:30 | [Knowles](/faculty-knowles/)         | Evolutionary applications of genomic data
  20:30 - 22:00 | [Knowles](/faculty-knowles/)         | Evolutionary applications of genomic data
+ 22:00 - 23:59 | Loeb Quad                            | Almost-the-end party
 {:.daily-schedule-cpp}
 
 ### Monday, June 6, 2022
