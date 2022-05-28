@@ -38,7 +38,7 @@ Please download and install the following programs if you haven't already:
 * [Notepad++](https://notepad-plus-plus.org/download/v7.7.1)
 After you have installed Notepad++, open it. 
 Go to Settings, Preferences, New Document, and set the line endings to Unix.
-* [Seaview](https://web.archive.org/web/20141007105432/http://pbil.univ-lyon1.fr/software/seaview_data/seaview4.exe)
+* [Seaview](http://doua.prabi.fr/software/seaview) (used to visualize small alignments)
 * [FigTree](https://github.com/rambaut/figtree/releases) (used to visualize phylogenetic trees)
 * [Tracer](https://github.com/beast-dev/tracer/releases/) (used for Bayesian divergence time analyses)
 
@@ -52,7 +52,7 @@ I don't think this is needed if people install Git for Windows (POL)
 * SCP and SSH installed by default
 * [Cyberduck](http://cyberduck.ch/) (file transfer via sFTP)
 * [BBEdit](https://www.barebones.com/products/bbedit/) (BBEdit is the 64 bit version of TextWrangler for contemporary macOS)
-* [Seaview](https://web.archive.org/web/20141007105432/http://pbil.univ-lyon1.fr/software/seaview_data/seaview4.zip)
+* [Seaview](http://doua.prabi.fr/software/seaview) (used to visualize small alignments)
 * [FigTree](https://github.com/rambaut/figtree/releases) (used to visualize phylogenetic trees)
 * [Tracer](https://github.com/beast-dev/tracer/releases/) (used for Bayesian divergence time analyses)
 * [iTerm2](https://iterm2.com/downloads.html) (optional, but many of us like this terminal program better than the one that comes with macOS)
@@ -60,7 +60,7 @@ I don't think this is needed if people install Git for Windows (POL)
 ### **Linux**
 
 * SCP and SSH installed by default
-* [Seaview](https://web.archive.org/web/20141007105432/http://pbil.univ-lyon1.fr/software/seaview_data/seaview4.tgz)
+* [Seaview](http://doua.prabi.fr/software/seaview) (used to visualize small alignments)
 * [FigTree](https://github.com/rambaut/figtree/releases) (used to visualize phylogenetic trees)
 * [Tracer](https://github.com/beast-dev/tracer/releases/) (used for Bayesian divergence time analyses)
 * You're set!
@@ -91,8 +91,6 @@ Login to your particular virtual machine (VM) using the IP address on the sticke
 
     ssh moleuser@123.456.789.321
 
-It will then ask for your password which is also on the sticker on the back of your name tag. Note: the terminal will not show your password as you type it, but you can trust that what you type is being entered.
-
 ### SSH on Windows
 
 On Windows you should use Git for Windows to access your virtual machine (VM). Assuming you've installed Git for Windows, choose **Git BASH** from the **All Programs** section of the **Start** menu. This will open a terminal running the shell program bash. 
@@ -100,8 +98,6 @@ On Windows you should use Git for Windows to access your virtual machine (VM). A
 Now login to your particular virtual machine (VM) using the IP address on the sticker attached to the back of your name tag. If, for example, your IP address was 123.456.789.321, you would type the following into the terminal on your local computer (i.e. your laptop) and press the enter key:
 
     ssh moleuser@123.456.789.321
-
-It will then ask for your password which is also on the sticker on the back of your name tag. Note: the terminal will not show your password as you type it, but you can trust that what you type is being entered.
 
 {% comment %}
 For example if my username is jbloggs and my server name is class-02 I type:<br>
