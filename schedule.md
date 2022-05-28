@@ -31,7 +31,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Sunday, May 29, 2022
 
 ---------------|--------------------------------------|-----------------------------------
- 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
+ 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional) ([Programming Book]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf))
  09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Maximum likelihood (cont.)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-part2-opt.pdf)
  10:30 - 12:00 | [Swofford](/faculty-swofford/)       | [Model Selection]({{ site.baseurl }}/faculty/swofford/pdf/Swofford_WH2018_modsel-opt.pdf)
  14:00 - 15:30 | [Swofford](/faculty-swofford/)       | Introduction to PAUP*
