@@ -21,7 +21,7 @@ permalink: /people/
 |                 Lucia |    [Bazan Williamson](/Intro_slides/LBW_intro_slide.pdf)|                           University of California, Merced |
 |                 Jaime |             [Cordova](/Intro_slides/CordovaJaimeIntroSlide.pdf) |                           University of Wisconsin, Madison |
 |             Theodoros |               [Danis](/Intro_slides/Tdanis_introSlide.pdf) |                 Hellenic Centre for Marine Research (HCMR) |
-|                  Sade |           [Davenport](/Intro_slides/Slide for MBL.pdf) |                        North Carolina A&T State University |
+|                  Sade |           [Davenport](/Intro_slides/Slide_for_MBL_Sade_Davenport.pdf) |                        North Carolina A&T State University |
 |                 Bruno | [do Rosario Petrucci](/Intro_slides/intro_bruno.pdf) |                                      Iowa State University |
 |                 Tope  |              [Faleye](/Intro_slides/FaleyeTOC-MBL-Intro-Slide-v3.pdf) |                                   Arizona State University |
 |                 Blake |             [Fauskee](/Intro_slides/Fauskee_intro_slide.pdf) |                                            Duke University |
@@ -31,13 +31,13 @@ permalink: /people/
 |                  Alex |               [Grote](/Intro_slides/AG_Slide.pdf) |                         Broad Institute of Harvard and MIT |
 |               Lillian |            [Hendrick](/Intro_slides/MBL_IntroSlide_Lhendrick.pdf) |                                      University of Florida |
 |                  Erik |                 [Hom](/Intro_slides/ErikHomIntro-MoleEvol2022.pdf) |                                  University of Mississippi |
-|                  Gabe |             [Johnson](/Intro_slides/Rasel_Intro.pdf) |                                    Smithsonian Institution |
-|             Genevieve |             [Johnson](/Intro_slides/Rasel_Intro.pdf) |                                       University of Guelph |
-|                 Jenny |               [Jones](/Intro_slides/Rasel_Intro.pdf) |                                   University of Pittsburgh |
-|                Joshua |            [Justison](/Intro_slides/Rasel_Intro.pdf)|                                      Iowa State university |
-|             Youngwook |                 [Kim](/Intro_slides/Rasel_Intro.pdf) |                                    Sungkyunkwan University |
-|                Nathan |              [Kolbow](/Intro_slides/Rasel_Intro.pdf) |                           University of Wisconsin, Madison |
-|                Zeynep |                [Kurt](/Intro_slides/Rasel_Intro.pdf) |                                         Uppsala University |
+|                  Gabe |             [Johnson](/Intro_slides/Bio_Slide_MBL.pdf) |                                    Smithsonian Institution |
+|             Genevieve |             [Johnson](/Intro_slides/Self-intro-slide_GMJ.pdf) |                                       University of Guelph |
+|                 Jenny |               [Jones](/Intro_slides/Jones_Intro_Slide.pdf) |                                   University of Pittsburgh |
+|                Joshua |            [Justison](/Intro_slides/Justison_intro_slide.pdf)|                                      Iowa State university |
+|             Youngwook |                 [Kim](/Intro_slides/Intro_youngwook_kim.pdf) |                                    Sungkyunkwan University |
+|                Nathan |              [Kolbow](/Intro_slides/MBL_Intro_Slide.pdf) |                           University of Wisconsin, Madison |
+|                Zeynep |                [Kurt](/Intro_slides/intro_zeynep.pdf) |                                         Uppsala University |
 |             Alexander |              [Lucaci](/Intro_slides/Rasel_Intro.pdf) |                                          Temple University |
 |                  Tara |       [Mahendrarajah](/Intro_slides/Rasel_Intro.pdf) |        Royal Netherlands Institute for Sea Research (NIOZ) |
 |           Maximillian |               [Marin](/Intro_slides/Rasel_Intro.pdf) |                                     Harvard Medical School |
