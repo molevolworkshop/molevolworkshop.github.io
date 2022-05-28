@@ -35,7 +35,7 @@ Please download and install the following programs if you haven't already:
 
 * [Cyberduck](http://cyberduck.ch/) (file transfer via sFTP)
 * [Git for Windows](https://git-for-windows.github.io/) (This is a UNIX emulator for running command-line programs)
-* [Notepad++](https://notepad-plus-plus.org/download/v7.7.1.html)
+* [Notepad++](https://notepad-plus-plus.org/download/v7.7.1)
 After you have installed Notepad++, open it. 
 Go to Settings, Preferences, New Document, and set the line endings to Unix.
 * [Seaview](https://web.archive.org/web/20141007105432/http://pbil.univ-lyon1.fr/software/seaview_data/seaview4.exe)
