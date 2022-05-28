@@ -21,13 +21,13 @@ Past course t-shirt designs.
 | 1999 | ![1999front](/assets/img/tshirts/1999F.jpg) | ![1999back](/assets/img/tshirts/1999B.jpg)  |
 | 2000 |                                             |                                             |
 | 2001 |                                             |                                             |
-| 2002 | ![2002front](/assets/img/tshirts/2002F.jpg) | ![2002back](/assets/img/tshirts/2002B.jpg)  |
+| 2002 | ![2002front](/assets/img/tshirts/2002F.JPG) | ![2002back](/assets/img/tshirts/2002B.jpg)  |
 | 2003 |                                             |                                             |
 | 2004 |                                             |                                             |
 | 2005 |                                             |                                             |
 | 2006 | ![2006front](/assets/img/tshirts/2006F.jpg) | ![2006back](/assets/img/tshirts/2006B.jpg)  |
-| 2007 | ![2007front](/assets/img/tshirts/2007F.jpg) | ![2006back](/assets/img/tshirts/2007B.jpg)  |
-| 2008 | ![2008front](/assets/img/tshirts/2008F.jpg) | ![2006back](/assets/img/tshirts/2008B.jpg)  |
+| 2007 | ![2007front](/assets/img/tshirts/2007F.jpg) | ![2007back](/assets/img/tshirts/2007B.jpg)  |
+| 2008 | ![2008front](/assets/img/tshirts/2008F.jpg) | ![2008back](/assets/img/tshirts/2008B.jpg)  |
 | 2009 |                                             |                                             |
 | 2010 |                                             |                                             |
 | 2011 | ![2011front](/assets/img/tshirts/2011F.png) | ![2011front](/assets/img/tshirts/2011B.png) |
