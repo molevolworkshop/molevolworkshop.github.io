@@ -44,8 +44,7 @@ going to focus on MAFFT and ‎MUSCLE. Alternatives may be more accurate
 on small data sets, but these programs perform well even on fairly large
 data sets and are thus part of many phylogenomic pipelines (e.g. Yang
 and Smith 2014). The MAFFT algorithms and options can be viewed
-[here](http://mafft.cbrc.jp/alignment/software/algorithms/algorithms.
-html). The MUSCLE user guide is found at
+[here](http://mafft.cbrc.jp/alignment/software/algorithms/algorithms.html). The MUSCLE user guide is found at
 [here](https://drive5.com/muscle5/manual/commands.html).
 
 Both MAFFT and MUSCLE are available on your Jetsream node. You will
