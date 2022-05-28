@@ -54,9 +54,9 @@ permalink: /people/
 |                   Tom |          [Theirlynck](/Intro_slides/TomTheirlynck_intro_MBL.pdf) |               Royal Netherlands Institute for Sea Research |
 |                 Laura |                [Timm](/Intro_slides/Timm_IntroSlide_MBL2022.pdf) |           University of Colorado - Anschutz Medical Campus |
 |                Astrid |            [Vilstrup](/Intro_slides/APV_introslide.pdf) |                                          Aarhus University |
-|                 James |            [Wainaina](/Intro_slides/Rasel_Intro.pdf) |                                      Ohio State University |
-|                 Britt |               [White](/Intro_slides/Rasel_Intro.pdf) |                              University of Texas at Austin |
-|                Qiaoji |                  [Xu](/Intro_slides/Rasel_Intro.pdf) |                                       University of Ottawa |
-|                 Grant |           [Yamashita](/Intro_slides/Rasel_Intro.pdf) |                                Kamehameha Schools Kapalama |
-|              Caroline |             [Zeidler](/Intro_slides/Rasel_Intro.pdf) |               Max-Planck Institute for Marine Microbiology |
-|                  Yong |                [Zhou](/Intro_slides/Rasel_Intro.pdf) |                        Center for Desert Agriculture (CDA) |
+|                 James |            [Wainaina](/Intro_slides/James_Wainaina_intro_slide.pdf) |                                      Ohio State University |
+|                 Britt |               White |                              University of Texas at Austin |
+|                Qiaoji |                  [Xu](/Intro_slides/QiaojiXu_intro_MBL.pdf) |                                       University of Ottawa |
+|                 Grant |           [Yamashita](/Intro_slides/MOLE2022 Intro-Yamashita.pdf) |                                Kamehameha Schools Kapalama |
+|              Caroline |             [Zeidler](/Intro_slides/Intro_CZeidler_MolEvol22.pdf) |               Max-Planck Institute for Marine Microbiology |
+|                  Yong |                [Zhou](/Intro_slides/Yong_Zhou_intro_slide.pdf) |                        Center for Desert Agriculture (CDA) |
