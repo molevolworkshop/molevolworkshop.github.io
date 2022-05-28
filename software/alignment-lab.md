@@ -223,6 +223,7 @@ it make sense to align protein-coding sequences using the protein
 translation, or should you instead build alignments from nucleotide
 sequences?
 
+{% comment %}
 ## Exercise 4: exploring the difference in gap penalties using MUSCLE
 
 We will now run MUSCLE with different gap penalties to observe how this
@@ -253,6 +254,8 @@ Load the alignment into your alignment viewer and build a tree as in exercise 3.
 How do the modified gap penalty alignments compare to the default one?
 Which alignment has the most gaps? The log files from MUSCLE will tell
 you the gap penalty used for each alignment?
+
+{% endcomment %}
 
 **Protip** Try moving all three MUSCLE amino acid alignments to your
 laptop with scp! Assuming that the IP address of your remote machine is 123.45.67.89:
