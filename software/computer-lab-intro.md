@@ -38,7 +38,7 @@ Please download and install the following programs if you haven't already:
 * [Notepad++](https://notepad-plus-plus.org/download/v7.7.1.html)
 After you have installed Notepad++, open it. 
 Go to Settings, Preferences, New Document, and set the line endings to Unix.
-* [Seaview](http://doua.prabi.fr/software/seaview)
+* [Seaview](http://doua.prabi.fr/software/seaview) (used to visualize small alignments)
 * [FigTree](https://github.com/rambaut/figtree/releases) (used to visualize phylogenetic trees)
 * [Tracer](https://github.com/beast-dev/tracer/releases/) (used for Bayesian divergence time analyses)
 
@@ -52,7 +52,7 @@ I don't think this is needed if people install Git for Windows (POL)
 * SCP and SSH installed by default
 * [Cyberduck](http://cyberduck.ch/) (file transfer via sFTP)
 * [BBEdit](https://www.barebones.com/products/bbedit/) (BBEdit is the 64 bit version of TextWrangler for contemporary macOS)
-* [Seaview](http://doua.prabi.fr/software/seaview)
+* [Seaview](http://doua.prabi.fr/software/seaview) (used to visualize small alignments)
 * [FigTree](https://github.com/rambaut/figtree/releases) (used to visualize phylogenetic trees)
 * [Tracer](https://github.com/beast-dev/tracer/releases/) (used for Bayesian divergence time analyses)
 * [iTerm2](https://iterm2.com/downloads.html) (optional, but many of us like this terminal program better than the one that comes with macOS)
@@ -60,7 +60,7 @@ I don't think this is needed if people install Git for Windows (POL)
 ### **Linux**
 
 * SCP and SSH installed by default
-* [Seaview](http://doua.prabi.fr/software/seaview)
+* [Seaview](http://doua.prabi.fr/software/seaview) (used to visualize small alignments)
 * [FigTree](https://github.com/rambaut/figtree/releases) (used to visualize phylogenetic trees)
 * [Tracer](https://github.com/beast-dev/tracer/releases/) (used for Bayesian divergence time analyses)
 * You're set!
