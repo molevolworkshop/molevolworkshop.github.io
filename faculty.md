@@ -44,13 +44,13 @@ permalink: /faculty/
 
 ## 2022 Course TAs
 
-[Deise Gonçalves](/faculty-goncalves/), Department of Integrative Biology, University of Texas at Austin - [Intro. slide](/Intro_slides/
+[Deise Gonçalves](/faculty-goncalves/), Department of Integrative Biology, University of Texas at Austin - [Intro. slide](/Intro_slides/DJPG_Intro_Slide.pdf)
 
-[Áki Láruson](/faculty-laruson/) (Lead TA), University of Iceland - [Intro. slide](/Intro_slides/
+[Áki Láruson](/faculty-laruson/) (Lead TA), University of Iceland - [Intro. slide](/Intro_slides/MolEvol_intro_AJL.pdf)
 
-[Jordan Satler](/faculty-satler/), Department of Evolution, Ecology and Organismal Biology, The Ohio State University - [Intro. slide](/Intro_slides/
+[Jordan Satler](/faculty-satler/), Department of Evolution, Ecology and Organismal Biology, The Ohio State University - [Intro. slide](/Intro_slides/satler.pdf)
 
-[Katie Taylor](/faculty-taylor/), Department of Ecology and Evolutionary Biology, University of Connecticut - [Intro. slide](/Intro_slides/
+[Katie Taylor](/faculty-taylor/), Department of Ecology and Evolutionary Biology, University of Connecticut - [Intro. slide](/Intro_slides/K_Taylor_intro.pdf)
 
 ## 2022 Course Assistant
 
