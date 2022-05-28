@@ -21,24 +21,24 @@ Past course t-shirt designs.
 | 1999 | ![1999front](/assets/img/tshirts/1999F.jpg) | ![1999back](/assets/img/tshirts/1999B.jpg)  |
 | 2000 |                                             |                                             |
 | 2001 |                                             |                                             |
-| 2002 | ![2002front](/assets/img/tshirts/2002F.jpg) | ![2002back](/assets/img/tshirts/2002B.jpg)  |
+| 2002 | ![2002front](/assets/img/tshirts/2002F.JPG) | ![2002back](/assets/img/tshirts/2002B.JPG)  |
 | 2003 |                                             |                                             |
 | 2004 |                                             |                                             |
 | 2005 |                                             |                                             |
-| 2006 | ![2006front](/assets/img/tshirts/2006F.jpg) | ![2006back](/assets/img/tshirts/2006B.jpg)  |
-| 2007 | ![2007front](/assets/img/tshirts/2007F.jpg) | ![2006back](/assets/img/tshirts/2007B.jpg)  |
-| 2008 | ![2008front](/assets/img/tshirts/2008F.jpg) | ![2006back](/assets/img/tshirts/2008B.jpg)  |
+| 2006 | ![2006front](/assets/img/tshirts/2006F.JPG) | ![2006back](/assets/img/tshirts/2006B.JPG)  |
+| 2007 | ![2007front](/assets/img/tshirts/2007F.JPG) | ![2006back](/assets/img/tshirts/2007B.JPG)  |
+| 2008 | ![2008front](/assets/img/tshirts/2008F.JPG) | ![2006back](/assets/img/tshirts/2008B.JPG)  |
 | 2009 |                                             |                                             |
 | 2010 |                                             |                                             |
 | 2011 | ![2011front](/assets/img/tshirts/2011F.png) | ![2011front](/assets/img/tshirts/2011B.png) |
 | 2012 | ![2012front](/assets/img/tshirts/2012F.jpg) | ![2012front](/assets/img/tshirts/2012B.jpg) |
-| 2013 | ![2013front](/assets/img/tshirts/2013F.jpg) | ![2013front](/assets/img/tshirts/2013B.jpg) |
+| 2013 | ![2013front](/assets/img/tshirts/2013F.JPG) | ![2013front](/assets/img/tshirts/2013B.JPG) |
 | 2014 |                                             |                                             |
-| 2015 | ![2015front](/assets/img/tshirts/2015F.jpg) | ![2015front](/assets/img/tshirts/2015B.jpg) |
-| 2016 | ![2016front](/assets/img/tshirts/2016F.jpg) | ![2016front](/assets/img/tshirts/2016B.jpg) |
-| 2017 | ![2017front](/assets/img/tshirts/2017F.jpg) | ![2017front](/assets/img/tshirts/2017B.jpg) |
-| 2018 | ![2018front](/assets/img/tshirts/2018F.jpg) | ![2018front](/assets/img/tshirts/2018B.jpg) |
-| 2019 | ![2019front](/assets/img/tshirts/2019F.jpg) |                                             |
+| 2015 | ![2015front](/assets/img/tshirts/2015F.JPG) | ![2015front](/assets/img/tshirts/2015B.JPG) |
+| 2016 | ![2016front](/assets/img/tshirts/2016F.JPG) | ![2016front](/assets/img/tshirts/2016B.JPG) |
+| 2017 | ![2017front](/assets/img/tshirts/2017F.JPG) | ![2017front](/assets/img/tshirts/2017B.JPG) |
+| 2018 | ![2018front](/assets/img/tshirts/2018F.JPG) | ![2018front](/assets/img/tshirts/2018B.JPG) |
+| 2019 | ![2019front](/assets/img/tshirts/2019F.JPG) |                                             |
 
 ## Credits for designed (where known)
 
