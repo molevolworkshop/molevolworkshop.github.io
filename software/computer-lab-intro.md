@@ -99,8 +99,6 @@ Now login to your particular virtual machine (VM) using the IP address on the st
 
     ssh moleuser@123.456.789.321
 
-It will then ask for your password which is also on the sticker on the back of your name tag. Note: the terminal will not show your password as you type it, but you can trust that what you type is being entered.
-
 {% comment %}
 For example if my username is jbloggs and my server name is class-02 I type:<br>
 ~~~~~~
