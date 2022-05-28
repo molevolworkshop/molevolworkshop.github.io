@@ -14,7 +14,7 @@ permalink: /people/
 
 |            First Name |           Last Name |                                                Institution |
 |     ----------------- |   ----------------- | ---------------------------------------------------------- |
-|                 Rasel |               [Ahmed]<a href="/Intro_slides/Rasel_Intro.pdf" target="_blank">New Tab</a>|                 Basic and Applied Research on Jute Project |
+|                 Rasel |               [Ahmed](<a href="/Intro_slides/Rasel_Intro.pdf" target="_blank">New Tab</a>)|                 Basic and Applied Research on Jute Project |
 |                 Ragib |               Ahsan |                                              Smith College |
 |                  Noor |             Albader | King Abdullah University of Science and Technology (KAUST) |
 |                  Toni |            Androski |                                   University of New Mexico |
