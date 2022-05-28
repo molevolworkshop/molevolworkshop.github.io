@@ -32,13 +32,13 @@ Past course t-shirt designs.
 | 2010 |                                             |                                             |
 | 2011 | ![2011front](/assets/img/tshirts/2011F.png) | ![2011front](/assets/img/tshirts/2011B.png) |
 | 2012 | ![2012front](/assets/img/tshirts/2012F.jpg) | ![2012front](/assets/img/tshirts/2012B.jpg) |
-| 2013 | ![2013front](/assets/img/tshirts/2013F.jpg) | ![2013front](/assets/img/tshirts/2013B.jpg) |
+| 2013 | ![2013front](/assets/img/tshirts/2013F.JPG) | ![2013front](/assets/img/tshirts/2013B.JPG) |
 | 2014 |                                             |                                             |
-| 2015 | ![2015front](/assets/img/tshirts/2015F.jpg) | ![2015front](/assets/img/tshirts/2015B.jpg) |
-| 2016 | ![2016front](/assets/img/tshirts/2016F.jpg) | ![2016front](/assets/img/tshirts/2016B.jpg) |
-| 2017 | ![2017front](/assets/img/tshirts/2017F.jpg) | ![2017front](/assets/img/tshirts/2017B.jpg) |
-| 2018 | ![2018front](/assets/img/tshirts/2018F.jpg) | ![2018front](/assets/img/tshirts/2018B.jpg) |
-| 2019 | ![2019front](/assets/img/tshirts/2019F.jpg) |                                             |
+| 2015 | ![2015front](/assets/img/tshirts/2015F.JPG) | ![2015front](/assets/img/tshirts/2015B.JPG) |
+| 2016 | ![2016front](/assets/img/tshirts/2016F.JPG) | ![2016front](/assets/img/tshirts/2016B.JPG) |
+| 2017 | ![2017front](/assets/img/tshirts/2017F.JPG) | ![2017front](/assets/img/tshirts/2017B.JPG) |
+| 2018 | ![2018front](/assets/img/tshirts/2018F.JPG) | ![2018front](/assets/img/tshirts/2018B.JPG) |
+| 2019 | ![2019front](/assets/img/tshirts/2019F.JPG) |                                             |
 
 ## Credits for designed (where known)
 

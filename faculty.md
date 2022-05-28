@@ -54,7 +54,7 @@ permalink: /faculty/
 
 ## 2022 Course Assistant
 
-[Alyssa McGurer](/course-assistant/), Department of Ecology and Evolutionary Biology, University of Connecticut
+[Alyssa McGurer](/course-assistant/), Department of Ecology and Evolutionary Biology, University of Connecticut - [Intro. slide](/Intro_slides/MBL_IntroSlide_AMcGurer.pdf)
 
 ## Former recent faculty
 
