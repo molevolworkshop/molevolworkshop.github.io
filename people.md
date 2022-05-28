@@ -38,15 +38,15 @@ permalink: /people/
 |             Youngwook |                 [Kim](/Intro_slides/Intro_youngwook_kim.pdf) |                                    Sungkyunkwan University |
 |                Nathan |              [Kolbow](/Intro_slides/MBL_Intro_Slide.pdf) |                           University of Wisconsin, Madison |
 |                Zeynep |                [Kurt](/Intro_slides/intro_zeynep.pdf) |                                         Uppsala University |
-|             Alexander |              [Lucaci](/Intro_slides/Rasel_Intro.pdf) |                                          Temple University |
-|                  Tara |       [Mahendrarajah](/Intro_slides/Rasel_Intro.pdf) |        Royal Netherlands Institute for Sea Research (NIOZ) |
-|           Maximillian |               [Marin](/Intro_slides/Rasel_Intro.pdf) |                                     Harvard Medical School |
-|                  Alix |            [Matthews](/Intro_slides/Rasel_Intro.pdf) |                                  Arkansas State University |
-|                 Hanon |              [McShea](/Intro_slides/Rasel_Intro.pdf) |                                        Stanford University |
-|              Fernando |    [Melendez Vasquez](/Intro_slides/Rasel_Intro.pdf) |                                     University of Oklahoma |
+|             Alexander |              [Lucaci](/Intro_slides/AGL_IntroSlide.pdf) |                                          Temple University |
+|                  Tara |       [Mahendrarajah](/Intro_slides/TMahendrarajah_Intro.pdf) |        Royal Netherlands Institute for Sea Research (NIOZ) |
+|           Maximillian |               [Marin](/Intro_slides/MaxMarin.IntroSlide.pdf) |                                     Harvard Medical School |
+|                  Alix |            [Matthews](/Intro_slides/MBL_IntroSlide_AEM.pdf) |                                  Arkansas State University |
+|                 Hanon |              [McShea](/Intro_slides/Mcshea_MOLEintro.pdf) |                                        Stanford University |
+|              Fernando |    [Melendez Vasquez](/Intro_slides/Fernando_Melendez_Intro.pdf) |                                     University of Oklahoma |
 |               Analisa |              [Milkey](/Intro_slides/AAM_IntroSlide.pdf) |                                  University of Connecticut |
-|                 Sarah |              [Morris](/Intro_slides/Rasel_Intro.pdf) |                                                    RBG Kew |
-|                Isabel |              [Novick](/Intro_slides/Rasel_Intro.pdf) |                                          Boston University |
+|                 Sarah |              [Morris](/Intro_slides/Morris_intro.pdf) |                                                    RBG Kew |
+|                Isabel |              [Novick](/Intro_slides/Introduction_slide.pdf) |                                          Boston University |
 |                 Diego |      [Paredes Burneo](/Intro_slides/Rasel_Intro.pdf) |                                 Louisiana State University |
 |                Taylor |              [Sehein](/Intro_slides/Rasel_Intro.pdf) |                                              Smith College |
 |               Anthony |               [Snead](/Intro_slides/Rasel_Intro.pdf) |                                      University of Alabama |
