@@ -47,13 +47,13 @@ permalink: /people/
 |               Analisa |              [Milkey](/Intro_slides/AAM_IntroSlide.pdf) |                                  University of Connecticut |
 |                 Sarah |              [Morris](/Intro_slides/Morris_intro.pdf) |                                                    RBG Kew |
 |                Isabel |              [Novick](/Intro_slides/Introduction_slide.pdf) |                                          Boston University |
-|                 Diego |      [Paredes Burneo](/Intro_slides/Rasel_Intro.pdf) |                                 Louisiana State University |
-|                Taylor |              [Sehein](/Intro_slides/Rasel_Intro.pdf) |                                              Smith College |
-|               Anthony |               [Snead](/Intro_slides/Rasel_Intro.pdf) |                                      University of Alabama |
-|                  Mark |              [Stukel](/Intro_slides/Rasel_Intro.pdf) |                                  University of Connecticut |
-|                   Tom |          [Theirlynck](/Intro_slides/Rasel_Intro.pdf) |               Royal Netherlands Institute for Sea Research |
-|                 Laura |                [Timm](/Intro_slides/Rasel_Intro.pdf) |           University of Colorado - Anschutz Medical Campus |
-|                Astrid |            [Vilstrup](/Intro_slides/Rasel_Intro.pdf) |                                          Aarhus University |
+|                 Diego |      [Paredes Burneo](/Intro_slides/Intro_slide_DPB.pdf) |                                 Louisiana State University |
+|                Taylor |              [Sehein](/Intro_slides/Sehein_intro.pdf) |                                              Smith College |
+|               Anthony |               [Snead](/Intro_slides/Snead_Intro.pdf) |                                      University of Alabama |
+|                  Mark |              [Stukel](/Intro_slides/Stukel_intro_slide.pdf) |                                  University of Connecticut |
+|                   Tom |          [Theirlynck](/Intro_slides/TomTheirlynck_intro_MBL.pdf) |               Royal Netherlands Institute for Sea Research |
+|                 Laura |                [Timm](/Intro_slides/Timm_IntroSlide_MBL2022.pdf) |           University of Colorado - Anschutz Medical Campus |
+|                Astrid |            [Vilstrup](/Intro_slides/APV_introslide.pdf) |                                          Aarhus University |
 |                 James |            [Wainaina](/Intro_slides/Rasel_Intro.pdf) |                                      Ohio State University |
 |                 Britt |               [White](/Intro_slides/Rasel_Intro.pdf) |                              University of Texas at Austin |
 |                Qiaoji |                  [Xu](/Intro_slides/Rasel_Intro.pdf) |                                       University of Ottawa |
