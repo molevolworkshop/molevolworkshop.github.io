@@ -14,7 +14,7 @@ permalink: /people/
 
 |            First Name |           Last Name |                                                Institution |
 |     ----------------- |   ----------------- | ---------------------------------------------------------- |
-|                 Rasel |               [Ahmed](/Intro_slides/AAM_IntroSlide.pdf) |                 Basic and Applied Research on Jute Project |
+|                 Rasel |               [Ahmed](/Intro_slides/AG_Slide.pdf) |                 Basic and Applied Research on Jute Project |
 |                 Ragib |               Ahsan |                                              Smith College |
 |                  Noor |             Albader | King Abdullah University of Science and Technology (KAUST) |
 |                  Toni |            Androski |                                   University of New Mexico |
@@ -44,7 +44,7 @@ permalink: /people/
 |                  Alix |            Matthews |                                  Arkansas State University |
 |                 Hanon |              McShea |                                        Stanford University |
 |              Fernando |    Melendez Vasquez |                                     University of Oklahoma |
-|               Analisa |              Milkey |                                  University of Connecticut |
+|               Analisa |              [Milkey](/Intro_slides/AAM_IntroSlide.pdf) |                                  University of Connecticut |
 |                 Sarah |              Morris |                                                    RBG Kew |
 |                Isabel |              Novick |                                          Boston University |
 |                 Diego |      Paredes Burneo |                                 Louisiana State University |
