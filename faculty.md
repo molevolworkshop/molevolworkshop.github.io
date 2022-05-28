@@ -32,7 +32,7 @@ permalink: /faculty/
 
 [Paul Lewis](/faculty-lewis/), University of Connecticut - [Intro. slide](/Intro_slides/paul.pdf)
 
-[Emily Jane McTavish](/faculty-mctavish/), University of California-Merced
+[Emily Jane McTavish](/faculty-mctavish/), University of California-Merced - [Intro. slide](/Intro_slides/EmilyJane.pdf)
 
 [Claudia Solís-Lemus](/faculty-solis-lemus/), University of Wisconsin-Madison - [Intro. slide](/Intro_slides/CSL_intro.pdf)
 
