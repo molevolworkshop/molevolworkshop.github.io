@@ -91,10 +91,6 @@ Login to your particular virtual machine (VM) using the IP address on the sticke
 
     ssh moleuser@123.456.789.321
 
-{% comment %}
-It will then ask for your password which is also on the sticker on the back of your name tag. Note: the terminal will not show your password as you type it, but you can trust that what you type is being entered.
-{% endcomment %}
-
 ### SSH on Windows
 
 On Windows you should use Git for Windows to access your virtual machine (VM). Assuming you've installed Git for Windows, choose **Git BASH** from the **All Programs** section of the **Start** menu. This will open a terminal running the shell program bash. 
