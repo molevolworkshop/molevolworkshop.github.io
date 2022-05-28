@@ -6,11 +6,11 @@ permalink: /faculty/
 {% include figure.html description="" url="/assets/img/fromback2018.jpg" css="image-center" height="250px" %}
 ## 2022 Course Faculty
 
-[Peter Beerli](/faculty-beerli/), Florida State University
+[Peter Beerli](/faculty-beerli/), Florida State University - [Intro. slide](/Intro_slides/beerli-mugshot-mbl2022.pdf)
 
-[Joseph Bielawski](/faculty-bielawski/), Dalhousie University
+[Joseph Bielawski](/faculty-bielawski/), Dalhousie University - [Intro. slide](/Intro_slides/JB_slide.pdf)
 
-[Jeremy Brown](/faculty-brown/), Louisiana State University
+[Jeremy Brown](/faculty-brown/), Louisiana State University - [Intro. slide](/Intro_slides/JMBrown.pdf)
 
 [Minh Quang Bui](/faculty-bui/), Australian National University
 
@@ -22,7 +22,7 @@ permalink: /faculty/
 [Kelley Harris](/faculty-harris/), University of Washington
 {% endcomment %}
 
-[Tracy Heath](/faculty-heath/), Iowa State University
+[Tracy Heath](/faculty-heath/), Iowa State University - [Intro. slide](/Intro_slides/Heath_Slide.pdf)
 
 [John Huelsenbeck](/faculty-huelsenbeck/), University of California-Berkeley
 
@@ -30,11 +30,11 @@ permalink: /faculty/
 
 [Laura Kubatko](/faculty-kubatko/), Ohio State University
 
-[Paul Lewis](/faculty-lewis/), University of Connecticut
+[Paul Lewis](/faculty-lewis/), University of Connecticut - [Intro. slide](/Intro_slides/paul.pdf)
 
 [Emily Jane McTavish](/faculty-mctavish/), University of California-Merced
 
-[Claudia Solís-Lemus](/faculty-solis-lemus/), University of Wisconsin-Madison
+[Claudia Solís-Lemus](/faculty-solis-lemus/), University of Wisconsin-Madison - [Intro. slide](/Intro_slides/CSL_intro.pdf)
 
 [Edward Susko](/faculty-susko/), Dalhousie University
 
@@ -44,13 +44,13 @@ permalink: /faculty/
 
 ## 2022 Course TAs
 
-[Deise Gonçalves](/faculty-goncalves/), Department of Integrative Biology, University of Texas at Austin
+[Deise Gonçalves](/faculty-goncalves/), Department of Integrative Biology, University of Texas at Austin - [Intro. slide](/Intro_slides/
 
-[Áki Láruson](/faculty-laruson/) (Lead TA), University of Iceland
+[Áki Láruson](/faculty-laruson/) (Lead TA), University of Iceland - [Intro. slide](/Intro_slides/
 
-[Jordan Satler](/faculty-satler/), Department of Evolution, Ecology and Organismal Biology, The Ohio State University
+[Jordan Satler](/faculty-satler/), Department of Evolution, Ecology and Organismal Biology, The Ohio State University - [Intro. slide](/Intro_slides/
 
-[Katie Taylor](/faculty-taylor/), Department of Ecology and Evolutionary Biology, University of Connecticut
+[Katie Taylor](/faculty-taylor/), Department of Ecology and Evolutionary Biology, University of Connecticut - [Intro. slide](/Intro_slides/
 
 ## 2022 Course Assistant
 
