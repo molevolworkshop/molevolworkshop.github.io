@@ -14,49 +14,49 @@ permalink: /people/
 
 |            First Name |           Last Name |                                                Institution |
 |     ----------------- |   ----------------- | ---------------------------------------------------------- |
-|                 Rasel |               [Ahmed](/Intro_slides/Rasel_Intro.pdf)|                 Basic and Applied Research on Jute Project |
-|                 Ragib |               [Ahsan](/Intro_slides/Intro_MBL_2022_Ragib.pdf) |                                              Smith College |
-|                  Noor |             [Albader](/Intro_slides/MBL_2022_Intro_Noor.pdf) | King Abdullah University of Science and Technology (KAUST) |
-|                  Toni |            [Androski](/Intro_slides/Androski_MBL_intro.pdf) |                                   University of New Mexico |
-|                 Lucia |    [Bazan Williamson](/Intro_slides/LBW_intro_slide.pdf)|                           University of California, Merced |
-|                 Jaime |             [Cordova](/Intro_slides/CordovaJaimeIntroSlide.pdf) |                           University of Wisconsin, Madison |
-|             Theodoros |               [Danis](/Intro_slides/Tdanis_introSlide.pdf) |                 Hellenic Centre for Marine Research (HCMR) |
-|                  Sade |           [Davenport](/Intro_slides/Slide_for_MBL_Sade_Davenport.pdf) |                        North Carolina A&T State University |
-|                 Bruno | [do Rosario Petrucci](/Intro_slides/intro_bruno.pdf) |                                      Iowa State University |
-|                 Tope  |              [Faleye](/Intro_slides/FaleyeTOC-MBL-Intro-Slide-v3.pdf) |                                   Arizona State University |
-|                 Blake |             [Fauskee](/Intro_slides/Fauskee_intro_slide.pdf) |                                            Duke University |
-|                 Evrim |                 [Fer](/Intro_slides/fer-intro.pdf) |                                      University of Arizona |
-|                 Megan |              [Garber](/Intro_slides/MBL_intro_MeganGarber.pdf) |                         University of California, Berkeley |
-|                 David |           [Goldstein](/Intro_slides/goldstein_intro.pdf) |                      University of California, Los Angeles |
-|                  Alex |               [Grote](/Intro_slides/AG_Slide.pdf) |                         Broad Institute of Harvard and MIT |
-|               Lillian |            [Hendrick](/Intro_slides/MBL_IntroSlide_Lhendrick.pdf) |                                      University of Florida |
-|                  Erik |                 [Hom](/Intro_slides/ErikHomIntro-MoleEvol2022.pdf) |                                  University of Mississippi |
-|                  Gabe |             [Johnson](/Intro_slides/Bio_Slide_MBL.pdf) |                                    Smithsonian Institution |
-|             Genevieve |             [Johnson](/Intro_slides/Self-intro-slide_GMJ.pdf) |                                       University of Guelph |
-|                 Jenny |               [Jones](/Intro_slides/Jones_Intro_Slide.pdf) |                                   University of Pittsburgh |
-|                Joshua |            [Justison](/Intro_slides/Justison_intro_slide.pdf)|                                      Iowa State university |
-|             Youngwook |                 [Kim](/Intro_slides/Intro_youngwook_kim.pdf) |                                    Sungkyunkwan University |
-|                Nathan |              [Kolbow](/Intro_slides/MBL_Intro_Slide.pdf) |                           University of Wisconsin, Madison |
-|                Zeynep |                [Kurt](/Intro_slides/intro_zeynep.pdf) |                                         Uppsala University |
-|             Alexander |              [Lucaci](/Intro_slides/AGL_IntroSlide.pdf) |                                          Temple University |
-|                  Tara |       [Mahendrarajah](/Intro_slides/TMahendrarajah_Intro.pdf) |        Royal Netherlands Institute for Sea Research (NIOZ) |
-|           Maximillian |               [Marin](/Intro_slides/MaxMarin.IntroSlide.pdf) |                                     Harvard Medical School |
-|                  Alix |            [Matthews](/Intro_slides/MBL_IntroSlide_AEM.pdf) |                                  Arkansas State University |
-|                 Hanon |              [McShea](/Intro_slides/Mcshea_MOLEintro.pdf) |                                        Stanford University |
-|              Fernando |    [Melendez Vasquez](/Intro_slides/Fernando_Melendez_Intro.pdf) |                                     University of Oklahoma |
-|               Analisa |              [Milkey](/Intro_slides/AAM_IntroSlide.pdf) |                                  University of Connecticut |
-|                 Sarah |              [Morris](/Intro_slides/Morris_intro.pdf) |                                                    RBG Kew |
-|                Isabel |              [Novick](/Intro_slides/Introduction_slide.pdf) |                                          Boston University |
-|                 Diego |      [Paredes Burneo](/Intro_slides/Intro_slide_DPB.pdf) |                                 Louisiana State University |
-|                Taylor |              [Sehein](/Intro_slides/Sehein_intro.pdf) |                                              Smith College |
-|               Anthony |               [Snead](/Intro_slides/Snead_Intro.pdf) |                                      University of Alabama |
-|                  Mark |              [Stukel](/Intro_slides/Stukel_intro_slide.pdf) |                                  University of Connecticut |
-|                   Tom |          [Theirlynck](/Intro_slides/TomTheirlynck_intro_MBL.pdf) |               Royal Netherlands Institute for Sea Research |
-|                 Laura |                [Timm](/Intro_slides/Timm_IntroSlide_MBL2022.pdf) |           University of Colorado - Anschutz Medical Campus |
-|                Astrid |            [Vilstrup](/Intro_slides/APV_introslide.pdf) |                                          Aarhus University |
-|                 James |            [Wainaina](/Intro_slides/James_Wainaina_intro_slide.pdf) |                                      Ohio State University |
-|                 Britt |               White |                              University of Texas at Austin |
-|                Qiaoji |                  [Xu](/Intro_slides/QiaojiXu_intro_MBL.pdf) |                                       University of Ottawa |
-|                 Grant |           [Yamashita](/Intro_slides/MOLE2022 Intro-Yamashita.pdf) |                                Kamehameha Schools Kapalama |
-|              Caroline |             [Zeidler](/Intro_slides/Intro_CZeidler_MolEvol22.pdf) |               Max-Planck Institute for Marine Microbiology |
-|                  Yong |                [Zhou](/Intro_slides/Yong_Zhou_intro_slide.pdf) |                        Center for Desert Agriculture (CDA) |
+|                 Rasel |               Ahmed |                 Basic and Applied Research on Jute Project |
+|                 Ragib |               Ahsan |                                              Smith College |
+|                  Noor |             Albader | King Abdullah University of Science and Technology (KAUST) |
+|                  Toni |            Androski |                                   University of New Mexico |
+|                 Lucia |    Bazan Williamson |                           University of California, Merced |
+|                 Jaime |             Cordova |                           University of Wisconsin, Madison |
+|             Theodoros |               Danis |                 Hellenic Centre for Marine Research (HCMR) |
+|                  Sade |           Davenport |                        North Carolina A&T State University |
+|                 Bruno | do Rosario Petrucci |                                      Iowa State University |
+|                 Tope  |              Faleye |                                   Arizona State University |
+|                 Blake |             Fauskee |                                            Duke University |
+|                 Evrim |                 Fer |                                      University of Arizona |
+|                 Megan |              Garber |                         University of California, Berkeley |
+|                 David |           Goldstein |                      University of California, Los Angeles |
+|                  Alex |               Grote |                         Broad Institute of Harvard and MIT |
+|               Lillian |            Hendrick |                                      University of Florida |
+|                  Erik |                 Hom |                                  University of Mississippi |
+|                  Gabe |             Johnson |                                    Smithsonian Institution |
+|             Genevieve |             Johnson |                                       University of Guelph |
+|                 Jenny |               Jones |                                   University of Pittsburgh |
+|                Joshua |            Justison |                                      Iowa State university |
+|             Youngwook |                 Kim |                                    Sungkyunkwan University |
+|                Nathan |              Kolbow |                           University of Wisconsin, Madison |
+|                Zeynep |                Kurt |                                         Uppsala University |
+|             Alexander |              Lucaci |                                          Temple University |
+|                  Tara |       Mahendrarajah |        Royal Netherlands Institute for Sea Research (NIOZ) |
+|           Maximillian |               Marin |                                     Harvard Medical School |
+|                  Alix |            Matthews |                                  Arkansas State University |
+|                 Hanon |              McShea |                                        Stanford University |
+|              Fernando |    Melendez Vasquez |                                     University of Oklahoma |
+|               Analisa |              Milkey |                                  University of Connecticut |
+|                 Sarah |              Morris |                                                    RBG Kew |
+|                Isabel |              Novick |                                          Boston University |
+|                 Diego |      Paredes Burneo |                                 Louisiana State University |
+|                Taylor |              Sehein |                                              Smith College |
+|               Anthony |               Snead |                                      University of Alabama |
+|                  Mark |              Stukel |                                  University of Connecticut |
+|                   Tom |          Theirlynck |               Royal Netherlands Institute for Sea Research |
+|                 Laura |                Timm |           University of Colorado - Anschutz Medical Campus |
+|                Astrid |            Vilstrup |                                          Aarhus University |
+|                 James |            Wainaina |                                      Ohio State University |
+|                 Britt |               White  |                              University of Texas at Austin |
+|                Qiaoji |                  Xu |                                       University of Ottawa |
+|                 Grant |           Yamashita |                                Kamehameha Schools Kapalama |
+|              Caroline |             Zeidler |               Max-Planck Institute for Marine Microbiology |
+|                  Yong |                Zhou |                        Center for Desert Agriculture (CDA) |
