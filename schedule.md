@@ -37,7 +37,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  14:00 - 15:30 | [Swofford](/faculty-swofford/)       | [Introduction to PAUP*](http://paup.phylosolutions.com/)
  15:30 - 17:00 | [Swofford](/faculty-swofford/)       | [PAUP* lab](/faculty/swofford/pdf/modsel-sim-tutorial.html)
  19:00 - 20:30 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-part1-2022-opt.pdf)
- 20:30 - 22:00 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-part1-2022-opt.pdf)
+ 20:30 - 22:00 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-part2-2022-opt.pdf)
  22:00 - 23:59 | Loeb Quad                            | Evening social gathering
 {:.daily-schedule-cpp}
  

@@ -33,8 +33,8 @@ Address: Department of Ecology and Evolutionary Biology, University of Connectic
 
 #### Bayesian lecture (29 May 2022)
 The link below leads to the 2019 version of the lecture. 
-* [Bayesian lecture slides (part 1)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-2022-part1.pdf)
-* [Bayesian lecture slides (part 2)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-2022-part2.pdf)
+* [Bayesian lecture slides (part 1)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-part1-2022-opt.pdf)
+* [Bayesian lecture slides (part 2)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-part2-2022-opt.pdf)
 
 Here are a few slides that I use to explain how the Poisson probability formula arises (they help explain how the constant e sneaks into the JC69 transition probability formula):
 * [Poisson slides](http://hydrodictyon.eeb.uconn.edu/people/plewis/downloads/wh2012/Poisson.pdf) (7 pages, 516 KB, PDF format)
