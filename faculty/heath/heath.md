@@ -31,16 +31,20 @@ Tutorial: [Estimating a Time-Calibrated Phylogeny of Fossil and Extant Taxa usin
 
 ### Suggested Reading
 
-#### Graphical Models
-* Höhna, Heath, Boussau, Landis, Ronquist, Huelsenbeck. 2014. [Probabilistic graphical model representation in phylogenetics](https://doi.org/10.1093/sysbio/syu039). Systematic Biology, 63:753–771.
+#### Graphical Models & RevBayes
+* Höhna, Landis, Heath, Boussau, Lartillot, Moore, Huelsenbeck, Ronquist. 2016. RevBayes: Bayesian phylogenetic inference using graphical models and an interactive model-specification language. _Systematic Biology_, 65:726-736. [[link](http://sysbio.oxfordjournals.org/content/65/4/726)]
+
+* Höhna, Heath, Boussau, Landis, Ronquist, Huelsenbeck. 2014. Probabilistic graphical model representation in phylogenetics. _Systematic Biology_, 63:753–771. [[link](https://doi.org/10.1093/sysbio/syu039)]
 
 #### Divergence-Time Estimation
 
-* Thorne and Kishino. 2005. Estimation of divergence times from molecular sequence data. In: Nielsen R, editor, Statistical Methods in Molecular Evolution. New York: Springer, pp. 235–256. ([PDF](ftp://statgen.ncsu.edu/pub/thorne/mypapers/clockreview1215wfigs.pdf))
+* Thorne and Kishino. 2005. Estimation of divergence times from molecular sequence data. In: Nielsen R, editor, _Statistical Methods in Molecular Evolution_. New York: Springer, pp. 235–256. [[PDF](ftp://statgen.ncsu.edu/pub/thorne/mypapers/clockreview1215wfigs.pdf)]
 
-* Pett, Heath. 2020. Inferring the timescale of phylogenetic trees from fossil data. Eds: C. Scornavacca, F. Delsuc, N. Galtier. Phylogenetics in the Genomic Era. No commercial publisher | Authors open access book, pp: 5.1:1-5.1:18. ([link](https://hal.inria.fr/PGE/hal-02536361))
+* Pett, Heath. 2020. Inferring the timescale of phylogenetic trees from fossil data. Eds: C. Scornavacca, F. Delsuc, N. Galtier. _Phylogenetics in the Genomic Era_. No commercial publisher \| Authors open access book, pp: 5.1:1-5.1:18. [[link](https://hal.inria.fr/PGE/hal-02536361)]
 
-* Barido-Sottani, Justison, Wright, Warnock, Pett, Heath. 2020. Estimating a time-calibrated phylogeny of fossil and extant taxa using RevBayes. Eds: C. Scornavacca, F. Delsuc, N. Galtier. Phylogenetics in the Genomic Era. No commercial publisher | Authors open access book, pp: 5.2:1-5.2:23. ([link](https://hal.inria.fr/PGE/hal-02536394))
+* Barido-Sottani, Justison, Wright, Warnock, Pett, Heath. 2020. Estimating a time-calibrated phylogeny of fossil and extant taxa using RevBayes. Eds: C. Scornavacca, F. Delsuc, N. Galtier. _Phylogenetics in the Genomic Era_. No commercial publisher \| Authors open access book, pp: 5.2:1-5.2:23. [[link](https://hal.inria.fr/PGE/hal-02536394)]
+
+* dos Reis, Donoghue, Yang. 2016. Bayesian molecular clock dating of species divergences in the genomics era. _Nature Reviews Genetics_, 17, pages 71–80. [[link](https://www.nature.com/articles/nrg.2015.8)]
 
 * also see references in [divergence-time tutorial](https://revbayes.github.io/tutorials/fbd_simple/)
 
