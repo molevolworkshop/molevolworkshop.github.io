@@ -10,7 +10,7 @@ Iowa State University
 
 ### Arrival and Departure
 
-June 26 to June 7
+June 27 to June 6
 
 ### Contact Information
 
