@@ -71,7 +71,7 @@ Past course t-shirt designs.
 | 2012 | Philip Chan (modified) | Joe Bielawski|
 | 2013 |  | Emily Jane McTavish |
 | 2014 |  | |
-| 2015 |  | |
+| 2015 | Tracy Heath, Michael Landis, & Emily Jane McTavish | |
 | 2016 | Joe Bielawski, Tracy Heath, Bill Pearson, Peter Beerli | Julie Baker Phillips |
 | 2017 |  | |
 | 2018 |  | |
