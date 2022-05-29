@@ -25,14 +25,16 @@ Address: Department of Ecology and Evolutionary Biology, University of Connectic
 #### Likelihood lecture (29 May 2022)
 * [Likelihood lecture slides (part 2)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-part2-2022-opt.pdf)
 
+{% comment %}
 #### Model selection lecture (3 Aug 2019)
 (Paul presented on this topic in the 2019 course; ordinarily this topic would be covered by David Swofford.)
 * [Model selection slides](http://hydrodictyon.eeb.uconn.edu/people/plewis/downloads/wh2019/models.pdf)
+{% endcomment %}
 
-#### Bayesian lecture (4 Aug 2019)
+#### Bayesian lecture (29 May 2022)
 The link below leads to the 2019 version of the lecture. 
-* [Bayesian lecture slides (part 1)](http://hydrodictyon.eeb.uconn.edu/people/plewis/downloads/wh2019/lewis-bayesian-part1.pdf)
-* [Bayesian lecture slides (part 2)](http://hydrodictyon.eeb.uconn.edu/people/plewis/downloads/wh2019/lewis-bayesian-part2.pdf)
+* [Bayesian lecture slides (part 1)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-2022-part1.pdf)
+* [Bayesian lecture slides (part 2)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-2022-part2.pdf)
 
 Here are a few slides that I use to explain how the Poisson probability formula arises (they help explain how the constant e sneaks into the JC69 transition probability formula):
 * [Poisson slides](http://hydrodictyon.eeb.uconn.edu/people/plewis/downloads/wh2012/Poisson.pdf) (7 pages, 516 KB, PDF format)
