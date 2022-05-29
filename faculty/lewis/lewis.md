@@ -19,11 +19,11 @@ Address: Department of Ecology and Evolutionary Biology, University of Connectic
 
 ### Lecture Materials 
 
-#### Likelihood lecture (2 Aug 2019)
-* [Likelihood lecture slides (part 1)](http://hydrodictyon.eeb.uconn.edu/people/plewis/downloads/wh2019/lewis-likelihood-part1.pdf)
+#### Likelihood lecture (28 May 2022)
+* [Likelihood lecture slides (part 1)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-part1-2022-opt.pdf)
 
-#### Likelihood lecture (3 Aug 2019)
-* [Likelihood lecture slides (part 2)](http://hydrodictyon.eeb.uconn.edu/people/plewis/downloads/wh2019/lewis-likelihood-part2.pdf)
+#### Likelihood lecture (29 May 2022)
+* [Likelihood lecture slides (part 2)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-part2-2022-opt.pdf)
 
 #### Model selection lecture (3 Aug 2019)
 (Paul presented on this topic in the 2019 course; ordinarily this topic would be covered by David Swofford.)

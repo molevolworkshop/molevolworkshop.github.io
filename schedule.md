@@ -32,7 +32,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional) ([Programming Book]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf))
- 09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Maximum likelihood (cont.)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-part2-opt.pdf)
+ 09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Maximum likelihood (cont.)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-part2-2022-opt.pdf)
  10:30 - 12:00 | [Swofford](/faculty-swofford/)       | [Model Selection]({{ site.baseurl }}/faculty/swofford/pdf/Swofford_WH2018_modsel-opt.pdf)
  14:00 - 15:30 | [Swofford](/faculty-swofford/)       | Introduction to PAUP*
  15:30 - 17:00 | [Swofford](/faculty-swofford/)       | [PAUP* lab](http://phylosolutions.com/paup-tutorial/)
