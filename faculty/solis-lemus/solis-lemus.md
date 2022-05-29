@@ -3,7 +3,7 @@ layout: page
 title: Claudia Solis-Lemus
 permalink: /faculty-solis-lemus/
 ---
-{% include figure.html description="Claudia Solis-Lemus" url="/faculty/solis-lemus/img/claudiaSmall.png" css="image-right" height="250px" %}
+{% include figure.html description="Claudia Solis-Lemus" url="/faculty/solis-lemus/img/ClaudiaSmall.png" css="image-right" height="250px" %}
 
 ### Arrival and Departure
 
