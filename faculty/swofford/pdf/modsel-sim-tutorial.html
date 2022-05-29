@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>modsel-sim-tutorial</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+  body {
+    padding: 2cm; 
+  }
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Part 1: Fundamentals of Model Selection</h1>
+
+<h2 id="toc_1">Preliminaries</h2>
+
+<p>Log in to your home directory on the XSEDE VM and copy the files to your home directory:</p>
+
+<div><pre><code class="language-none">cp -r moledata/modsel_sim_tutorial/ .
+cd modsel_sim_tutorial/</code></pre></div>
+
+<h2 id="toc_2">Model selection using jModelTest</h2>
+
+<p>jModelTest GitHub repository:
+<a href="https://github.com/ddarriba/jmodeltest2/blob/master/README.md">https://github.com/ddarriba/jmodeltest2</a></p>
+
+<p>Manual and installation archive is also at this <a href="https://drive.google.com/drive/folders/0ByrkKOPtF_n_OUs3d0dNcnJPYXM">Google drive link</a> (but we&#39;ll use the version installed on the server).</p>
+
+<p>For most of this tutorial we&#39;ll be using PAUP*, but we&#39;ll do one simple example with jModelTest here; refer to the manual at the link above for details on how to use the program.</p>
+
+<p>We&#39;ll use the <code>primate-mtdna.nex</code> data file.</p>
+
+<!---
+To make it easier to run jModelTest, first move the `run-jmodeltest` script to your `~/bin` directory and make it executable:
+
+```
+cd ~/paup-workshop-materials/modsel_sim
+mv run-jmodeltest ~/bin
+chmod a+x ~/bin/run-jmodeltest
+```
+--->
+
+<p>We will evaluate 56 models on a tree obtained using BioNJ with Jukes-Cantor distances.  We&#39;ll use both the corrected AIC (AICc) and the Bayesian Information Criterion (BIC):</p>
+
+<div><pre><code class="language-none">jmodeltest -d primate-mtdna.nex -s 7 -t fixed -g 4 -f -i -AICc -BIC -tr 2</code></pre></div>
+
+<p>(Pause while we discuss the output)</p>
+
+<h2 id="toc_3">Model selection using PAUP*</h2>
+
+<!---
+First, move the latest PAUP* executable into your ~/bin directory (this directory precedes the system directories in your PATH setting, and will therefore override the previously installed version).
+
+```
+cd ~/paup-workshop-materials/modsel_sim
+mv paup4a152_ubuntu64.gz ~/bin/paup.gz
+cd ~/bin
+gunzip paup.gz
+chmod a+x paup
+```
+While we're in the ~/bin directory, let's do one more thing that will simplify our subsequent work.  Create a "symlink" to the system's RAxML binary so that we can invoke RAxML simply by typing `raxml`.
+
+```
+ln -s /usr/local/bin/raxmlHPC raxml
+```
+
+Return to the modsel_sim directory:
+
+```
+cd ~/paup-workshop-materials/modsel_sim
+```
+--->
+
+<p>We will use the command-line version of PAUP* installed on the server.  GUI versions of PAUP* are also available for macOS and Windows.  If you want to install them on your laptop, you can download them from this page: <a href="http://phylosolutions.com/paup-test/">http://phylosolutions.com/paup-test/</a></p>
+
+<p>Load the <code>primate-mtdna.nex</code> file into your favorite editor (e.g., nano, vi, or emacs).  After I have made some comments, exit the editor without saving any changes.</p>
+
+<p>For the first run, we will type PAUP* input commands interactively.  Start the program and execute the <code>primate-mtdna.nex</code> data file:</p>
+
+<div><pre><code class="language-none">paup primate-mtdna.nex -L log.txt</code></pre></div>
+
+<p>The -L switch above opens a log file that will receive all output that is displayed on the screen during the run.</p>
+
+<p>Now, we will attempt to exactly reproduce the jModelTest analysis.  First, we need a tree, so we&#39;ll compute a BioNJ tree using Jukes-Cantor distances:</p>
+
+<div><pre><code class="language-none">dset distance=jc;
+nj bionj=y;</code></pre></div>
+
+<p>We&#39;ll use the <strong>automodel</strong> command to perform model selection.  First, let&#39;s see what the available options and current settings are:</p>
+
+<div><pre><code class="language-none">automodel ?</code></pre></div>
+
+<p>The current settings look fine, so let&#39;s start the run:</p>
+
+<div><pre><code class="language-none">automodel;</code></pre></div>
+
+<p>The AICc criterion chooses the Tamura-Nei+Gamma (TrN+G) model, and this model is automatically set up in PAUP* for subsequent analysis, using the fixed parameter values just estimated.  You can compare the output from PAUP* to the previously obtained jModelTest results.</p>
+
+<p>We can now search for a maximum likelihood tree in PAUP*.  First, we have to change the active optimality criterion to maximum likelihood (the default criterion is parsimony, not because I think parsimony is a good method, but because it can be used on any kind of character data).</p>
+
+<div><pre><code class="language-none">set criterion=likelihood;</code></pre></div>
+
+<p>Remember that you can always abbreviate commands and options as long as they remain unambiguous, so the above command could also have been entered as:</p>
+
+<div><pre><code class="language-none">set crit=l;</code></pre></div>
+
+<p><strong>IMPORTANT: Searches in PAUP* are extremely slow if model parameters are estimated during a tree search.  It is almost always better to estimate model parameters on a fixed tree, and then fix those parameters prior to initiating the tree search.</strong>  The &quot;automodel&quot; command does this for you.  However, if you estimate model parameters manually, you need to run the command <code>lset fixall;</code> to fix the model parameters to the estimated values.</p>
+
+<p>Initiate a heuristic search using the default search settings:</p>
+
+<div><pre><code class="language-none">hsearch;</code></pre></div>
+
+<p>Examine the tree that was found:</p>
+
+<div><pre><code class="language-none">describe/plot=phylogram;</code></pre></div>
+
+<p>A somewhat safer searching strategy is to use different starting points, similar to RAxML, Garli, and other programs.  The usual way to this in PAUP* is to use &quot;random addition sequences&quot; to generate different starting trees by stepwise addition.  For difficult data sets, many starting trees for branch swapping will be different, and the searches may land in different parts of &quot;tree space.&quot;  If all random-addition sequence starts end up finding the same tree, you can be reasonably confident that you have found the optimal tree(s).</p>
+
+<p>For the sake of completeness, let&#39;s do a random-addition-sequence search using the current model settings:</p>
+
+<div><pre><code class="language-none">hsearch addseq=random nreps=50;</code></pre></div>
+
+<p>Obviously, this is an &quot;easy&quot; data set: most, if not all, starting points end up finding the same tree.</p>
+
+<p>PAUP* now has the ability to initiate searches using RAxML, Garli, and FastTree2,  (and I plan to add PhyML, etc., as well).  The current PAUP* model settings are used to determine the option settings for these programs.  Input and/or config files are created, the program is invoked as an external command, and the resulting trees are imported back into PAUP*.  For example, let&#39;s look at the options available for the <code>raxml</code> command in PAUP*:</p>
+
+<div><pre><code class="language-none">raxml ?</code></pre></div>
+
+<p>(I will make a few comments here.)</p>
+
+<p>Start a RAxML search after changing the ML settings to optimize all parameters:</p>
+
+<div><pre><code class="language-none">lset estall;
+raxml;</code></pre></div>
+
+<p>Now let&#39;s optimize the tree from RAxML in PAUP*:</p>
+
+<div><pre><code class="language-none">lscores;</code></pre></div>
+
+<p>Note that the likelihood score from PAUP* is slightly worse than the one reported by RAxML.  This is because PAUP* is using the Tamura-Nei model rather than the more general GTR model, which RAxML does not support.  To validly compare likelihoods, we need to set up the model in PAUP* to match the one used by RAxML.  This involves undoing the restriction on the GTR substitution rates imposed by Tamura-Nei:</p>
+
+<div><pre><code class="language-none">lset rclass=(abcdef);
+lscores;</code></pre></div>
+
+<p>The previous (Tamura-Nei) model had set rclass=(abaaca), so that all 4 of the transversions are occurring at the same rate, but each of the transitions are potentially occurring at distinct rates.  After the change to &#39;rclass&#39; PAUP* gets a slightly better likelihood than RAxML.  Presumably, PAUP* just did a slightly better job at optimizing the model parameters and branch lengths (I have worked very hard on this aspect of the program).</p>
+
+<!--
+You can also use Garli to perform the search.  To illustrate this, we'll stick with the full GTR model we just set up, and start Garli using the command:
+
+```
+garli
+```
+
+When the Garli search completes, you'll see the best tree it found.  You can then run the command:
+
+```
+lscores;
+```
+
+to verify that PAUP* calculates the same likelihood and estimated model parameter values.
+-->
+
+<h2 id="toc_4">Partitioned analyses:</h2>
+
+<p>PAUP* can do &quot;partitioned&quot; analyses in which different models are assigned to different subsets of sites (e.g., genes, or codon positions, or a combination of these).  The easiest way to set up a partitioned analysis is to use the <strong>autopartition</strong> command.</p>
+
+<p>Partitioning begins by defining a set of basic &quot;blocks&quot;, which are the smallest divisions of sites.  The goal is to see if an adequate model can be achieved by combining some of these blocks into larger ones, thereby reducing model unnecessary model complexity (and speeding searches because fewer parameters need to be estimated).</p>
+
+<p>The <code>primate-mtdna.nex</code> data file defines a partition called <code>codons</code> that places sites into one of four categories: 1st, 2md, and 3rd positions, plus non-protein-coding (tRNA) sites. Let&#39;s first look at the options:</p>
+
+<div><pre><code class="language-none">autopartition ?</code></pre></div>
+
+<p>Now start an automated partitioned analysis (this may take a few minutes on a heavily loaded machine):</p>
+
+<div><pre><code class="language-none">autopartition partition=codons;</code></pre></div>
+
+<p>Partitioning by BIC combines 1st position and noncoding blocks into the same larger subset.</p>
+
+<p>You can evaluate the likelihood of the resulting model with the <strong>lscores</strong> command:</p>
+
+<div><pre><code class="language-none">lscores;</code></pre></div>
+
+<p>Before starting a search, you should fix all model parameters to the MLEs obtained above rather than optimizing parameters during the search (which is exceedingly slow!)</p>
+
+<div><pre><code class="language-none">lset fixall;
+lscores;</code></pre></div>
+
+<p>The second <strong>lscores</strong> command above verifies that the parameters have been fixed to the MLE values.  Now you can do a search as before:</p>
+
+<div><pre><code class="language-none">set crit=like;
+hsearch;
+describe/plot=p;</code></pre></div>
+
+<!--
+You can also use the Garli program to perform a search under exactly the same model (PAUP* writes a "config" file for Garli that sets up the same partitioned model.
+
+To do this, using Garli's default search settings, just do
+
+```
+garli;
+```
+
+In this case, the likelihood score and tree are identical for the two programs, and the PAUP* search is faster.  However, Garli will run much faster than PAUP* on large data sets.
+-->
+
+<p>Note that PAUP*&#39;s autopartition capability was inspired by Rob Lanfear&#39;s PartitionFinder program (<a href="http://www.robertlanfear.com/partitionfinder/">http://www.robertlanfear.com/partitionfinder/</a>), which has a few extra features.  There is a nice online tutorial at <a href="http://www.robertlanfear.com/partitionfinder/tutorial/">http://www.robertlanfear.com/partitionfinder/tutorial/</a>.</p>
+
+<h2 id="toc_5">Wrap-up</h2>
+
+<p>The above is intended to just give a flavor of how PAUP* works.  We&#39;ve barely scratched the surface with respect to what it can do.  PAUP* can perform parsimony analysis under a variety of cost schemes, neighbor-joining and criterion-based distance searches using a large number of distance transformations, exact tree searches for smaller numbers of taxa, consensus tree calculation, agreement subtrees, distances between trees, analysis of base frequency composition, likelihood under amino-acid models, likelihood for discrete character data, and much more.</p>
+
+<p>If you have time, you might also like to go through the tutorial I have used in previous versions of the course: <a href="https://molevol.mbl.edu/index.php/PAUP*_Exercise">https://molevol.mbl.edu/index.php/PAUP*_Exercise</a>.  This tutorial demonstrates additional capabilities and features of PAUP*, and provides more background on tree-searching, model selection, bootstrapping, etc.</p>
+
+<p>But now it&#39;s time to move on to simulations...</p>
+
+<h1 id="toc_6">Part 2: Exploring Models and Hypothesis Testing using Simulation</h1>
+
+<h3 id="toc_7">Why use simulation?</h3>
+
+<ul>
+<li>To ask whether you have enough data to solve a difficult problem</li>
+<li>To determine whether a result might be explained as an artifact (e.g., long-branch attraction; model misspecification)</li>
+<li>To test the sensitivity of a result to details of the model</li>
+<li>To prove that a method works for &quot;ideal&quot; data before it is applied to real data</li>
+</ul>
+
+<h3 id="toc_8">What simulation is not good for:</h3>
+
+<ul>
+<li>Showing that heuristic <em>B</em> works better than heuristic <em>A</em></li>
+<li>Proving that a result can <em>not</em> be explained as an artifact</li>
+</ul>
+
+<h2 id="toc_9">How simulation works (in a nutshell):</h2>
+
+<ul>
+<li><p>Uses <em>pseudorandom</em> numbers to draw:</p>
+
+<ul>
+<li>values from a set of discrete categories (e.g., base frequencies at the root)</li>
+<li>values from an exponential distribution (waiting times until the next event)</li>
+<li>a new state when the waiting time is reached (e.g., a new state that differs from the previous state)</li>
+<li>a continuous value from some other distribution (e.g., a rate from a gamma distribution of relative rates across sites)</li>
+</ul></li>
+<li><p>Simulating sequences on a tree:</p>
+
+<ul>
+<li>Choose a state (base or amino acid) at the root</li>
+<li>Choose a rate of evolution (unless assuming equal rates at all sites)</li>
+<li>Choose a waiting time until the next event</li>
+<li>At the end of the waiting time, choose a new state according to the instantaneous rate matrix</li>
+<li>If the waiting time exceeds the time of an internal node, assign the current state to that node; if it exceeds the time of a tip, assign the current state to the tip</li>
+<li>Repeat until the desired number of sites is obtained</li>
+</ul></li>
+</ul>
+
+<h2 id="toc_10">(Possibly) your first simulation</h2>
+
+<p>We&#39;ll use PAUP* as our simulator for this exercise.  There are other good simulators out there, notably:</p>
+
+<ul>
+<li><p>seq-gen (Andrew Rambaut): <a href="http://tree.bio.ed.ac.uk/software/seqgen/">http://tree.bio.ed.ac.uk/software/seqgen/</a></p></li>
+<li><p>SimPhy <a href="https://github.com/adamallo/SimPhy">https://github.com/adamallo/SimPhy</a></p></li>
+</ul>
+
+<p>The nice thing about PAUP*&#39;s (relatively new) simulation capability is that you don&#39;t have to write pipelines to pass simulated data to inference programs -- it&#39;s all internal!</p>
+
+<p>We&#39;ll start with a very simple 3-sequence simulation (sim-3taxa.nex):</p>
+
+<div><pre><code class="language-none">#nexus
+[ This example just simulates three sequences under the HKY model ]
+begin paup;
+    cd *;
+    set warntree=no notifybeep=no;
+end;
+
+begin taxa;
+    dimensions ntax=3;
+    taxlabels X Y Z;
+end;
+
+begin trees;
+    tree 1 = [&amp;R] ((X:0.05,Y:0.05):0.45,Z:0.5);
+end;
+
+begin dnasim;
+    simdata nchar=1000;
+    lset nst=6 basefreq=(.1 .2 .3 .4) rmatrix=(1 4 1 1 4 1);
+    truetree source=memory treenum=1 showtruetree=brlens;
+    beginsim nreps=1 seed=0 monitor=y;
+        [ Ordinarily, there will be commands in here, but we&#39;re just
+          getting started.  You don&#39;t have to include this comment,
+          but if you do don&#39;t forget to close the opening square
+          bracket with a closing square bracket! ]
+    endsim;
+end;
+</code></pre></div>
+
+<p>To avoid possible problems with settings left over from the previous analyses, let&#39;s restore PAUP&#39;s internal state to the settings in effect when it first launches:</p>
+
+<div><pre><code class="language-none">reset factory;</code></pre></div>
+
+<p>Now execute the file:</p>
+
+<div><pre><code class="language-none">execute sim-3taxa.nex;</code></pre></div>
+
+<p>Look at your simulated data by typing the command:</p>
+
+<div><pre><code class="language-none">showmatrix;</code></pre></div>
+
+<p>How can we get a sense of how well the simulated sequences correspond to our &quot;true&quot; tree and model?  One thing we can do is calculate model-based evolutionary distances (sometimes called &quot;corrected&quot; distances).  First, show the distances calculated without model-based correction:</p>
+
+<div><pre><code class="language-none">dset distance=p;
+showdist;</code></pre></div>
+
+<p>Do the distances correspond to the expected number of substitutions along the tree?  Are they underestimates or over-estimates of the number of substitutions?  Is the degree of underestimation related to the level of divergence implied on the true tree?</p>
+
+<p>Now let&#39;s try some model-based distance transformations.  Let&#39;s use the simplest model that attempts to account for unobserved substitutions, the Jukes-Cantor model.</p>
+
+<div><pre><code class="language-none">dset distance=jc;
+showdist;</code></pre></div>
+
+<p>The distances are closer to the expected values, but the larger distances are still substantially underestimated.  Next, we can into account the bias in transition/transversion rates using the Kimura 2-parameter distance:</p>
+
+<div><pre><code class="language-none">dset distance=k2p;
+showdist;</code></pre></div>
+
+<p>The distances are closer to the expected values, but the larger values are still too low.  This is because we are still assuming equal equilibrium base frequencies, but the true frequencies are unequal.  We can deal with the unequal frequencies (but not the transition bias) using the Felsenstein 1981 (F81) model.</p>
+
+<div><pre><code class="language-none">dset distance=f81;
+showdist;</code></pre></div>
+
+<p>The Hasegawa-Kishino-Yano HKY) model handles both the transition bias and unequal base frequencies:</p>
+
+<div><pre><code class="language-none">dset distance=hky;
+showdist;</code></pre></div>
+
+<p>Now the distances correspond closely to the expected values (and would be even closer if longer sequences were used).</p>
+
+<p>Finally, let&#39;s use a model that is more complex than the true process responsible for generating the data, the General Time Reversible (GTR) model:</p>
+
+<div><pre><code class="language-none">dset distance=gtr;
+showdist;</code></pre></div>
+
+<p>As you can see, the calculated distances are still very accurate (the model is correct, just more general than necessary).  However, the variance of the evolutionary distances estimates will be slightly higher in this case.</p>
+
+<h2 id="toc_11">Demonstrating the &quot;Felsenstein Zone&quot;</h2>
+
+<p>Now we will run a more complicated simulation that demonstrates the problem of long-branch attraction.  I&#39;ll keep it simple here, but you can modify the example if you like to see what the effect of other kinds of model misspecification might be, etc.</p>
+
+<p>Here is the file (sim-4taxa.nex)</p>
+
+<div><pre><code class="language-none">#nexus
+
+[ This example demonstrates the dreaded Felsenstein zone. ]
+
+begin paup;
+    cd *;
+    set storebrlens nostatus autoclose=yes warntree=no notifybeep=no;
+end;
+
+begin taxa;
+    dimensions ntax=4;
+    taxlabels A B C D;
+end;
+
+begin trees;
+    tree 1 = [&amp;R] ((A:1.0,B:0.1):0.1,(C:0.1,D:1.0):0.1);
+end;
+
+begin dnasim;
+    simdata nchar=(10 100 1000 10000);
+    lset model=jc nst=1 basefreq=eq;
+    sitemodels jc:1;
+    truetree source=memory treenum=1 showtruetree=brlens;
+    beginsim nreps=100 seed=0 monitor=y resultsfile=(name=sim4.results replace output=means);
+        [parsimony]
+            set criterion=parsimony;
+            alltrees;
+            tally parsimony;
+        [likelihood under JC]
+            set criterion=likelihood;
+            lset basefreq=equal nst=1;
+            alltrees;
+            tally &#39;ML-JC&#39;;
+        [NJ using P distances ]
+            set criterion=distance;
+            dset distance=p;
+            nj;
+            tally &#39;NJ-P&#39;;
+        [NJ using JC distances]
+            set criterion=distance;
+            dset distance=jc;
+            nj;
+            tally &#39;NJ-JC&#39;;
+    endsim;
+    set monitor=y;
+end;
+</code></pre></div>
+
+<p>The tree is a four taxon tree with two long branches and three short branches.
+The &quot;nchar&quot; option on the simdata command specifies the number of sites simulated in each replicate (we&#39;ll simulate four different sequence lengths).  The substitution model is Jukes-Cantor.  For each simulated sequence length we&#39;ll analyze the results using 4 methods: parsimony, likelihood (assuming the correct model), neighbor joining (using uncorrected P distances), and neighbor joining using Jukes-Cantor distances.  We&#39;ll do all of this 100 times.</p>
+
+<p>After the simulation completes, the sim4.results file will contain the output of the &quot;tally&quot; commands which keep track of how often the correct tree was obtained.  The results of one run of this simulation are shown in the figure below.</p>
+
+<p><img src="sim4-figure.png" alt=""></p>
+
+<h2 id="toc_12">Simulating data for model comparison</h2>
+
+<p>In our last exercise, we will simulate a data set under the Tamura-Nei model with gamma-distributed rates across sites, and evaluate the performance of various model selection criteria.</p>
+
+<p>First, execute a file which we&#39;ll use to simulate one data matrix (sim-6taxa.nex).</p>
+
+<div><pre><code class="language-none">execute sim-6taxa.nex;</code></pre></div>
+
+<p>Now get a starting tree and run an automated model selection:</p>
+
+<div><pre><code class="language-none">dset distance=logdet;
+nj;
+automodel;</code></pre></div>
+
+<p>After we discuss the results, let&#39;s also do a likelihood ratio test (LRT).  We will compare three models: the Jukes-Cantor model, the true model (TrN+G), and the most complex nucleotide model available in PAUP* (GTR+I+G).  I will show you how to set up and run these models.  We&#39;ll then do LRTs manually and compare our results (everyone will have simulated a different data set).  You can use the calculator <a href="http://www.socscistatistics.com/pvalues/chidistribution.aspx">here</a> to calculate P-values for the LRT.</p>
+
+
+
+
+</body>
+
+</html>
