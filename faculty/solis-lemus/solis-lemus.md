@@ -4,6 +4,9 @@ title: Claudia Solis-Lemus
 permalink: /faculty-solis-lemus/
 ---
 {% include figure.html description="Claudia Solis-Lemus" url="/faculty/solis-lemus/img/ClaudiaSmall.png" css="image-right" height="250px" %}
+## Institutional home pages
+
+* [Research group page](https://solislemuslab.github.io/)
 
 ### Arrival and Departure
 
