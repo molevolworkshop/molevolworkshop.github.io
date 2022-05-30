@@ -61,7 +61,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  10:30 - 12:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/talk2-opt.pdf) 
  14:00 - 15:30 | [McTavish](/faculty-mctavish/)       | [Open Tree of Life, gene tree updating slides]({{ site.baseurl }}/faculty/mctavish/pdf/Opentree_2019opt.pdf)
  15:30 - 17:00 | [McTavish](/faculty-mctavish/)       | [Open Tree of Life, gene tree updating lab](https://github.com/snacktavish/Mole2019/blob/master/TreeComparison.md)
- 19:00 - 20:30 | [McTavish](/faculty-mctavish/)       | [Phylogenomics]({{ site.baseurl }}/faculty/mctavish/pdf/Genomics_WH2019opt.pdf)
+ 19:00 - 20:30 | [McTavish](/faculty-mctavish/)       | [Phylogenomics]({{ site.baseurl }}/faculty/mctavish/pdf/Genomics_WH2019-opt.pdf)
  20:30 - 22:00 |                                      | Time to finish gene tree updating lab
 {:.daily-schedule-cpp}
 
