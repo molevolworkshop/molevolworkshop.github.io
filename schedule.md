@@ -59,10 +59,10 @@ All sessions are in Loeb G70 (basement of Loeb building)
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
  09:00 - 10:30 | [Beerli](/faculty-beerli/)           | [Introduction to The Coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2022.pdf)
  10:30 - 12:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2022.pdf) 
- 14:00 - 15:30 | [McTavish](/faculty-mctavish/)       | [Open Tree of Life, gene tree updating slides]({{ site.baseurl }}/faculty/mctavish/pdf/opentree_2022.pdf), [Demo](https://github.com/snacktavish/Mole2022/blob/master/TreeComparison.md) 
- 15:30 - 17:00 | [McTavish](/faculty-mctavish/)       | [Phylogenomics]({{ site.baseurl }}/faculty/mctavish/pdf/Genomics_WH2022.pdf)
- 19:00 - 20:30 | [McTavish](/faculty-mctavish/)       | [Open Tree of Life, gene tree updating lab](https://github.com/snacktavish/Mole2022/blob/master/TreeUpdating.md)
- 20:30 - 22:00 |                                      | Time to finish gene tree updating lab
+ 14:00 - 15:30 | [McTavish](/faculty-mctavish/)       | [Open Tree of Life, tree updating slides]({{ site.baseurl }}/faculty/mctavish/pdf/opentree_2022.pdf)
+ 15:30 - 17:00 | [McTavish](/faculty-mctavish/)       | [Tree comparison lab](https://github.com/snacktavish/Mole2022/blob/master/TreeComparison.md) 
+ 19:00 - 20:30 | [McTavish](/faculty-mctavish/)       | [Phylogenomics]({{ site.baseurl }}/faculty/mctavish/pdf/Genomics_WH2022.pdf)
+ 20:30 - 22:00 |                                      | [Tree updating lab](https://github.com/snacktavish/Mole2022/blob/master/TreeUpdating.md)
 {:.daily-schedule-cpp}
 
 ### Wednesday, June 1, 2022
