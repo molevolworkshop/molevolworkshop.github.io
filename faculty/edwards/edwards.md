@@ -15,11 +15,15 @@ June 1 to June 6
 
 ### Lecture Material 
 
+2022:[Lecture part I]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2022_opt.pdf)
+
+2022:[Lecture part II]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2019_partII-opt.pdf)
+
+#### Lab Material (not presented in class, but available for exploration)
+
 2019:[Lecture part I]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2019_partI-opt.pdf)
 
 2019:[Lecture part II]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2019_partII-opt.pdf)
-
-#### Lab Material (not presented in class, but available for exploration)
 
 2019: [Tutorial slides]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_tutorial_slides_2016-opt.pdf)
 
