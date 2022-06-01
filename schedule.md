@@ -69,8 +69,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
- 09:00 - 10:30 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics I]({{ site.baseurl }}/faculty/edwards/Edwards_MBL_2022_opt.pdf)
- 10:30 - 12:00 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics II]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2019_partII-opt.pdf)
+ 09:00 - 10:30 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics]({{ site.baseurl }}/faculty/edwards/Edwards_MBL_2022_opt.pdf)
+ 10:30 - 12:00 | [Edwards](/faculty-edwards/)         | [Pangenomes and evolution]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2019_partII-opt.pdf)
  12:00 - 12:15 | group photo (don't miss it!)         | (we still need to decide where: Lillie steps? Swope terrace?)
  14:00 - 15:30 | [Yoder](/faculty-yoder/)             | [What are we even talking about when we say "species tree"?]({{ site.baseurl }}/faculty/yoder/pdf/Yoder_MBL.8.2019-opt.pdf)
  15:30 - 17:00 | [Yoder](/faculty-yoder/)             | [What are we even talking about when we say "species tree"? (cont.)]({{ site.baseurl }}/faculty/yoder/pdf/Yoder_MBL.8.2019-opt.pdf)
