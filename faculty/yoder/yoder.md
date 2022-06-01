@@ -19,7 +19,7 @@ May 30 to June 3
 
 ### Lecture Material
 
-[Lecture slides 2019]({{ site.baseurl }}/faculty/yoder/pdf/Yoder_MBL.8.2019-opt.pdf)
+[Lecture slides 2022]({{ site.baseurl }}/faculty/yoder/pdf/MBL.6.2022-opt.pdf)
 
 ### References
 
