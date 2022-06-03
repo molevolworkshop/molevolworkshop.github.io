@@ -87,7 +87,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
- 09:00 - 10:30 | [Kubatko](/faculty-kubatko/)*         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2019-opt.pdf)
+ 09:00 - 10:30 | [Kubatko](/faculty-kubatko/)*         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2022-opt.pdf)
  10:30 - 12:00 | [Kubatko](/faculty-kubatko/)*/[Swofford](/faculty-swofford/) | [Species tree lab](http://phylosolutions.com/tutorials/wh2019-svdq-astral/species-trees-tutorial.html)
  14:00 - 15:30 | [Solís-Lemus](/faculty-solis-lemus/) | [Network models lecture (2022 version)]({{ site.baseurl }}/faculty/solis-lemus/pdf/talk-networks-mbl-opt.pdf)
  15:30 - 17:00 | [Solís-Lemus](/faculty-solis-lemus/) | [Network models tutorial](https://github.com/crsl4/PhyloNetworks.jl/wiki)

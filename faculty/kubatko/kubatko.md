@@ -17,21 +17,25 @@ E-mail: lkubatko (at) stat (dot) osu (dot) edu
 
 Twitter: [@Laura_Kubatko](https://twitter.com/Laura_Kubatko)
 
+### Additional material (added for 2022 workshop)
+
+[Swofford-Kubatko-chapter.pdf]({{ site.baseurl }}/faculty/swofford/pdf/Swofford-Kubatko-chapter.pdf)
+
 ### Lecture Material for 2019
 
-[Species Tree Estimation Lecture slides](http://www.stat.osu.edu/~lkubatko/SpeciesTreeEstimation2019.pdf)
+[Species Tree Estimation Lecture 2019 slides](http://www.stat.osu.edu/~lkubatko/SpeciesTreeEstimation2019.pdf)
 
 [Excel macro to look at gene tree distribution](http://www.stat.osu.edu/~lkubatko/distribution.xls)
 
-[Annotated Species Tree Estimation Lecture slides](http://www.stat.osu.edu/~lkubatko/SpeciesTreeEstimation2019_Annotated.pdf)
+[Annotated Species Tree Estimation Lecture 2019 slides](http://www.stat.osu.edu/~lkubatko/SpeciesTreeEstimation2019_Annotated.pdf)
 
 ### Lab Material for 2019
 
-[Species Trees Lab - slides](http://www.stat.osu.edu/~lkubatko/SpeciesTreesLab1_2019.pdf)
+[Species Trees Lab - 2019 slides](http://www.stat.osu.edu/~lkubatko/SpeciesTreesLab1_2019.pdf)
 
-[Tutorial link](http://phylosolutions.com/tutorials/wh2019-svdq-astral/species-trees-tutorial.html)
+[Tutorial link - 2019](http://phylosolutions.com/tutorials/wh2019-svdq-astral/species-trees-tutorial.html)
 
-[Annotated Species Trees Lab - slides](http://www.stat.osu.edu/~lkubatko/SpeciesTreesLab1_2019_Annotated.pdf)
+[Annotated Species Trees Lab - 2019 slides](http://www.stat.osu.edu/~lkubatko/SpeciesTreesLab1_2019_Annotated.pdf)
 
 ### Reading List 2019
 

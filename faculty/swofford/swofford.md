@@ -18,3 +18,8 @@ I will be here for the entire course (May 26 to June 7)
 ### Lecture slides
 
 [Swofford_WH2018_modsel-opt.pdf]({{ '/faculty/swofford/pdf/Swofford_WH2018_modsel-opt.pdf' | relative_url }})
+
+### Species trees and SVDQuartets (2022)
+
+* [SpeciesTreeEstimation2022-opt.pdf]({{ site.baseurl }}/faculty/swofford/pdf/SpeciesTreeEstimation2022-opt.pdf)
+* [Swofford-Kubatko-chapter.pdf]({{ site.baseurl }}/faculty/swofford/pdf/Swofford-Kubatko-chapter.pdf)
