@@ -17,9 +17,10 @@ E-mail: lkubatko (at) stat (dot) osu (dot) edu
 
 Twitter: [@Laura_Kubatko](https://twitter.com/Laura_Kubatko)
 
-### Additional material (added for 2022 workshop)
+### Species trees and SVDQuartets (2022)
 
-[Swofford-Kubatko-chapter.pdf]({{ site.baseurl }}/faculty/swofford/pdf/Swofford-Kubatko-chapter.pdf)
+* [SpeciesTreeEstimation2022-opt.pdf]({{ site.baseurl }}/faculty/swofford/pdf/SpeciesTreeEstimation2022-opt.pdf)
+* [Swofford-Kubatko-chapter.pdf]({{ site.baseurl }}/faculty/swofford/pdf/Swofford-Kubatko-chapter.pdf)
 
 ### Lecture Material for 2019
 
