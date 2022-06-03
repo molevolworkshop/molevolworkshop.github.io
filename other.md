@@ -19,3 +19,4 @@ Each year, workshop participants and faculty hold a competition to decide the t-
 Each year we take a group photo and create a key to people. Click the link below for the most recent group photo.
 
 [2019 group photo](/group-photos/2019/)
+[2022 group photo](/group-photos/2022/)

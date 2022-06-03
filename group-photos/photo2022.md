@@ -5,7 +5,7 @@ permalink: /group-photos/2022/
 ---
 ## Key to people in the 2022 group photo
 
-Mouse over faces to show names. Belinda Chang and Deise Gonçalves were not present for the group photo. 
+Mouse over faces to show names. Please contact [Paul Lewis](moledirector@mbl.edu) to report any errors in name assignment. (Belinda Chang and Deise Gonçalves were not present for the group photo.)
 
 Return to [group photos index](/other/) page.
 
