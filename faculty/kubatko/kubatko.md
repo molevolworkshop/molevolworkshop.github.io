@@ -20,6 +20,7 @@ Twitter: [@Laura_Kubatko](https://twitter.com/Laura_Kubatko)
 ### Species trees and SVDQuartets (2022)
 
 * [SpeciesTreeEstimation2022-opt.pdf]({{ site.baseurl }}/faculty/swofford/pdf/SpeciesTreeEstimation2022-opt.pdf)
+* [Species Tree lab](https://phylosolutions.com/tutorials/wh2022-svdq-astral/species-trees-tutorial.html)
 * [Swofford-Kubatko-chapter.pdf]({{ site.baseurl }}/faculty/swofford/pdf/Swofford-Kubatko-chapter.pdf)
 
 ### Lecture Material for 2019
