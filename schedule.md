@@ -88,7 +88,10 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
  09:00 - 10:30 | [Kubatko](/faculty-kubatko/)*         | [Species Tree Estimation]({{ site.baseurl }}/faculty/swofford/pdf/SpeciesTreeEstimation2022-opt.pdf)
- 10:30 - 12:00 | [Kubatko](/faculty-kubatko/)*/[Swofford](/faculty-swofford/) | [SVDQuartets vs. ASTRAL](https://www.asc.ohio-state.edu/kubatko.2//SpeciesTreesLab1_2019.pdf)
+ 10:30 - 12:00 | [Kubatko](/faculty-kubatko/)*/[Swofford](/faculty-swofford/) | [SVDQuartets vs. ASTRAL](https://www.asc.ohio-state.edu/kubatko.2/SpeciesTreesLab1_2019.pdf)
+{% comment %}
+ 10:30 - 12:00 | [Kubatko](/faculty-kubatko/)*/[Swofford](/faculty-swofford/) | [Species tree lab](https://phylosolutions.com/tutorials/wh2022-svdq-astral/species-trees-tutorial.html)
+{% endcomment %}
  14:00 - 15:30 | [Solís-Lemus](/faculty-solis-lemus/) | [Network models lecture (2022 version)]({{ site.baseurl }}/faculty/solis-lemus/pdf/talk-networks-mbl.pdf)
  15:30 - 17:00 | [Solís-Lemus](/faculty-solis-lemus/) | [Network models tutorial](https://github.com/crsl4/PhyloNetworks.jl/wiki)
  19:00 - 20:30 | [Beerli](/faculty-beerli/)           | [Population model estimation using MIGRATE](http://peterbeerli.com/workshops/mbl/2018/tutorial/)
