@@ -57,11 +57,13 @@ Weadick and Chang 2012 MBE [An improved likelihood ratio test for detecting site
 
 #### Experimental Models for Detecting Adaptive Evolution
 
+Van Nynatten et al. 2021 [Recreated ancestral opsin associated with marine to freshwater croaker invasion reveals kinetic and spectral adaptation]
+
 Elde et al. 2009 Nature [Protein kinase R reveals an evolutionary model for defeating viral mimicry](https://doi.org/10.1038/nature07529)
 
 Hauser et al. 2017 MBE [Accelerated evolution and functional divergence of the dim light visual pigment accompanies cichlid colonization of Central America](https://doi.org/10.1093/molbev/msx192)
 
-Van Nynatten et al. 2015 Biol Lett [Out of the blue: Adaptive visual pigment evolution accompanies Amaon invasion](https://doi.org/10.1098/rsbl.2015.0349)
+Van Nynatten et al. 2015 Biol Lett [Out of the blue: Adaptive visual pigment evolution accompanies Amaon invasion]({{ site.baseurl }}faculty/chang/pdf/Van%20Nynatten%202021%20MBE.pdf)
 
 Castiglione et al. 2017 PNAS [Evolution of nonspectral rhodopsin function at high altitudes](https://doi.org/10.1073/pnas.1705765114)
 
