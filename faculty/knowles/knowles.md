@@ -16,6 +16,7 @@ May 31 to June 7
 ### Lecture Materials
 
 Lecture slides 2022
+[Knowles-Woodshole-2022-Lect.pdf](https://github.com/molevolworkshop/molevolworkshop.github.io/files/8837808/Knowles-Woodshole-2022-Lect.pdf)
 {% endcomment %}
 
 ### Demo and Tutorials
