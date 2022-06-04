@@ -22,10 +22,9 @@ Lecture slides 2022
 No demos in class, but if your are interested in spatial coalescent simulations and iDDC modeling check out:
 https://becheler.github.io/quetzal-CRUMBS/index.html
 and https://becheler.github.io/who-am-i/
+This software package includes a test for the robustness of the MSC.
 
-This includes a test for the robustness of the MSC
-
-software for incorporating a speciation process into species delimitation, check out DELINEATE
+If you are interested in software for incorporating a speciation process into species delimitation, check out DELINEATE
 https://github.com/jeetsukumaran/delineate
 
 ### Lecture in Brief
