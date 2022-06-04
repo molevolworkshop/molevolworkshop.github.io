@@ -42,7 +42,7 @@ Here are some references for some papers I will hihglight as basckground reading
 
 #### Phylogeography
 
-Becheler A, Knowles LL (2022) Computational resources for simulating under a spatial coalescent model across heterogeneous landscapes and testing hypotheses about the geography of genetic variation: QUETZAL-EGGS, -CRUMBS, -NEST and DECRYPT. Mol. Ecol. Res., in review.
+[QUEZTAL___MER__submitted_.pdf](https://github.com/molevolworkshop/molevolworkshop.github.io/files/8837803/QUEZTAL___MER__submitted_.pdf) Computational resources for simulating under a spatial coalescent model across heterogeneous landscapes and testing hypotheses about the geography of genetic variation: QUETZAL-EGGS, -CRUMBS, -NEST and DECRYPT. Mol. Ecol. Res., in review.
 
 Carstens et al. (2017) Objective choice of phylogeographic models. Mol. Phylog. Evol. 116: 136-140.
 
@@ -56,7 +56,7 @@ Papadopoulou A, Knowles LL (2016) Towards a paradigm shift in comparative phylog
 
 #### Adadptive evolution
 
-Auteri GG, Knowles LL (2020) Decimated little brown bat population show potential for adaptive change. Scientific Reports. 10:3023. doi.org/10.1038/s41598-020-59797-4
+[Auteri&Knowles2020.pdf](https://github.com/molevolworkshop/molevolworkshop.github.io/files/8837801/Auteri.Knowles2020.pdf) Decimated little brown bat population show potential for adaptive change. Scientific Reports. 10:3023. doi.org/10.1038/s41598-020-59797-4
 
 #### Species delimitation
 
