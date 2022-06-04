@@ -19,7 +19,7 @@ Lecture slides 2022
 {% endcomment %}
 
 ### Demo and Tutorials
-No in class demos, but if your are interested in spatial coalescent simulations and iDDC modeling check out:
+No demos in class, but if your are interested in spatial coalescent simulations and iDDC modeling check out:
 https://becheler.github.io/quetzal-CRUMBS/index.html
 and https://becheler.github.io/who-am-i/
 
