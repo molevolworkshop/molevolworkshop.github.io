@@ -120,8 +120,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
  10:30 - 12:00 | [Bui](/faculty-bui/)                 | [IQ-TREE lab](http://www.iqtree.org/workshop/molevol2019) <!--, [tutorial solution]({{ site.baseurl }}/faculty/bui/pdf/Minh_2019_Tutorial-solutions-opt.pdf) -->
  14:00 - 15:30 | [Susko](/faculty-susko/)             | Amino acid models and deep-time phylogenetic inference <!-- ([Eme 2019 lecture]({{ site.baseurl }}/faculty/eme/pdf/Phylogenomics_EmeLaura_WoodsHole2019_4-opt.pdf)) -->
  15:30 - 17:00 | [Susko](/faculty-susko/)             | Topology tests (KH, SH, AU)
- 19:00 - 20:30 | [Knowles](/faculty-knowles/)         | Evolutionary applications of genomic data
- 20:30 - 22:00 | [Knowles](/faculty-knowles/)         | Evolutionary applications of genomic data
+ 19:00 - 20:30 | [Knowles](/faculty-knowles/)         | [Evolutionary applications of genomic data]({{ site.baseurl }}/faculty/knowles/pdf/Knowles-Woodshole-2022-Lect-opt.pdf)
+ 20:30 - 22:00 | [Knowles](/faculty-knowles/)         | Evolutionary applications of genomic data (cont.)
  22:00 - 23:59 | Loeb Quad                            | Almost-the-end party
 {:.daily-schedule-cpp}
 

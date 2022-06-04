@@ -12,13 +12,9 @@ permalink: /faculty-knowles/
 
 May 31 to June 7
 
-{% comment %}
-
 ### Lecture Materials
 
-Lecture slides 2022
-[Knowles-Woodshole-2022-Lect.pdf](https://github.com/molevolworkshop/molevolworkshop.github.io/files/8837808/Knowles-Woodshole-2022-Lect.pdf)
-{% endcomment %}
+[Lecture slides 2022]([Evolutionary applications of genomic data]({{ site.baseurl }}/faculty/knowles/pdf/Knowles-Woodshole-2022-Lect-opt.pdf))
 
 ### Demo and Tutorials
 No demos in class, but if your are interested in spatial coalescent simulations and iDDC modeling check out:
