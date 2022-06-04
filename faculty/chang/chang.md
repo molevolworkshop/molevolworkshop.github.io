@@ -14,11 +14,15 @@ permalink: /faculty-chang/
 
 June 2 to June 6
 
-### Lecture Materials
+### Lecture Materials (2022)
 
+* [Protein Evolution & Ancestral Reconstruction]({{ site.baseurl }}/faculty/chang/pdf/chang1-2022-opt.pdf)
+* [Adaptive Protein Evolution]({{ site.baseurl }}/faculty/chang/pdf/chang2-2022-opt.pdf)
+
+{% comment %}
 [Protein Evolution & Ancestral Reconstruction](https://molevol.mbl.edu/images/a/a3/Adaptive_Protein_Evolution.pdf)
-
 [Adaptive Protein Evolution](https://molevol.mbl.edu/images/3/33/Protein_Evolution_%26_Ancestral_Reconstruction.pdf)
+{% endcomment %}
 
 ### Demo and Tutorials
 
