@@ -3,7 +3,7 @@ layout: page
 title: L. Lacey Knowles
 permalink: /faculty-knowles/
 ---
-{% include figure.html description="Lacey Knowles" url="/faculty/knowles/img/Lacey-MOLjpg.jpg" css="image-right" height="250px" %}
+{% include figure.html description="Lacey Knowles" url="/faculty/knowles/img/Lacey-PICT2.jpg" css="image-right" height="250px" %}
 ### Institutional home page 
 
 [lsa.umich.edu/eeb/people/faculty/knowlesl.html](https://lsa.umich.edu/eeb/people/faculty/knowlesl.html)
