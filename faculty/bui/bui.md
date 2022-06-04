@@ -3,7 +3,7 @@ layout: page
 title: Minh Quang Bui
 permalink: /faculty-bui/
 ---
-{% include figure.html description="Minh Bui" url="/faculty/minh/img/B_Q_Minh.jpg" css="image-right" height="250px" %}
+{% include figure.html description="Minh Bui" url="faculty/bui/img/B_Q_Minh.jpg" css="image-right" height="250px" %}
 
 ## Minh Quang Bui
 
@@ -23,6 +23,12 @@ Canberra, Australia<br>
 E-mail: m.bui(AT)anu(dot)edu(dot)au
 
 Twitter: [@bq_minh](https://twitter.com/bq_minh)
+
+### Lecture Materials for 2022
+[Lecture Slides]()
+
+### Lab Materials for 2022
+[Lab tutorial](http://www.iqtree.org/workshop/molevol2022)
 
 ### Lecture Material for 2019 
 
