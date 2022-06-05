@@ -116,16 +116,10 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
-<<<<<<< HEAD
- 09:00 - 10:30 | [Bui](/faculty-bui/)                 | [IQ-TREE Introduction]({{ site.baseurl }}/faculty/minh/pdf/MOLE2022-IQ-TREE.pdf)
- 10:30 - 12:00 | [Bui](/faculty-bui/)                 | [IQ-TREE lab](http://www.iqtree.org/workshop/molevol2022)
- 14:00 - 15:30 | [Susko](/faculty-susko/)             | Amino acid models and deep-time phylogenetic inference
-=======
  09:00 - 10:30 | [Bui](/faculty-bui/)                 | [IQ-TREE Introduction]({{ site.baseurl }}/faculty/bui/pdf/MOLE2022-IQ-TREE.pdf)
  10:30 - 12:00 | [Bui](/faculty-bui/)                 | [IQ-TREE lab](http://www.iqtree.org/workshop/molevol2022) 
- 14:00 - 15:30 | [Susko](/faculty-susko/)             | Amino acid models and deep-time phylogenetic inference 
->>>>>>> cc3e6aa2acd5ff53c252df065803a4cdb52049ef
- 15:30 - 17:00 | [Susko](/faculty-susko/)             | Topology tests (KH, SH, AU)
+ 14:00 - 15:30 | [Susko](/faculty-susko/)             | [Amino acid models and deep-time phylogenetic inference]({{ site.baseurl }}/faculty/susko/pdf/ed-susko-amino-acid-models.pdf) 
+ 15:30 - 17:00 | [Susko](/faculty-susko/)             | [Topology tests (KH, SH, AU)]({{ site.baseurl }}/faculty/susko/pdf/ed-susko-topology-tests.pdf)
  19:00 - 20:30 | [Knowles](/faculty-knowles/)         | [Evolutionary applications of genomic data]({{ site.baseurl }}/faculty/knowles/pdf/Knowles-Woodshole-2022-Lect-opt.pdf)
  20:30 - 22:00 | [Knowles](/faculty-knowles/)         | Evolutionary applications of genomic data (cont.)
  22:00 - 23:59 | Loeb Quad                            | Almost-the-end party
