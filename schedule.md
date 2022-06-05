@@ -116,7 +116,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
- 09:00 - 10:30 | [Bui](/faculty-bui/)                 | [IQ-TREE Introduction]({{ site.baseurl }}/faculty/bui/pdf/MOLE2022-IQ-TREE.pdf)
+ 09:00 - 10:30 | [Bui](/faculty-bui/)                 | [IQ-TREE Introduction]({{ site.baseurl }}/faculty/bui/pdf/MOLE2022-IQ-TREE-cnv.pdf)
  10:30 - 12:00 | [Bui](/faculty-bui/)                 | [IQ-TREE lab](http://www.iqtree.org/workshop/molevol2022) 
  14:00 - 15:30 | [Susko](/faculty-susko/)             | [Amino acid models and deep-time phylogenetic inference]({{ site.baseurl }}/faculty/susko/pdf/ed-susko-amino-acid-models.pdf) 
  15:30 - 17:00 | [Susko](/faculty-susko/)             | [Topology tests (KH, SH, AU)]({{ site.baseurl }}/faculty/susko/pdf/ed-susko-topology-tests.pdf)
