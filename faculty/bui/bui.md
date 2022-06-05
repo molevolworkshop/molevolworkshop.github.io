@@ -3,7 +3,7 @@ layout: page
 title: Minh Quang Bui
 permalink: /faculty-bui/
 ---
-{% include figure.html description="Minh Bui" url="/faculty/minh/img/B_Q_Minh.jpg" css="image-right" height="250px" %}
+{% include figure.html description="Minh Bui" url="/faculty/minh/img/minh-bui.png" css="image-right" height="250px" %}
 
 ## Minh Quang Bui
 
@@ -24,16 +24,17 @@ E-mail: m.bui(AT)anu(dot)edu(dot)au
 
 Twitter: [@bq_minh](https://twitter.com/bq_minh)
 
-### Lecture Material for 2019 
+### Lecture Material for 2022
 
-[Lecture Slides]({{ site.baseurl }}/faculty/minh/pdf/Minh-2019-lecture-material-opt.pdf)
+[Lecture Slides]({{ site.baseurl }}/faculty/minh/pdf/MOLE2022-IQ-TREE.pdf)
 
-### Lab Material for 2019
+### Lab Material for 2022
 
-[Lab tutorial](http://www.iqtree.org/workshop/molevol2019)
+[Lab tutorial](http://www.iqtree.org/workshop/molevol2022)
 
 [IQ-TREE Tutorials and Manual](http://www.iqtree.org/doc)
 
+{% comment %}
 ### Reading List 2019
 
 [ModelFinder: model selection approach](https://doi.org/10.1038/nmeth.4285)
@@ -41,3 +42,4 @@ Twitter: [@bq_minh](https://twitter.com/bq_minh)
 [IQ-TREE search algorithm](https://doi.org/10.1093/molbev/msu300)
 
 [Ultrafast bootstrap approximation](https://doi.org/10.1093/molbev/mst024)
+{% endcomment %}
