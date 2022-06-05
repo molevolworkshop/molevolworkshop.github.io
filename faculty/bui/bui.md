@@ -26,7 +26,7 @@ Twitter: [@bq_minh](https://twitter.com/bq_minh)
 
 ### Lecture Material for 2022
 
-[Lecture Slides]({{ site.baseurl }}/faculty/minh/pdf/MOLE2022-IQ-TREE.pdf)
+[Lecture Slides]({{ site.baseurl }}/faculty/minh/pdf/MOLE2022-IQ-TREE-cnv.pdf)
 
 ### Lab Material for 2022
 
