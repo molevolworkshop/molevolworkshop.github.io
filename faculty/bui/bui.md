@@ -24,7 +24,17 @@ E-mail: m.bui(AT)anu(dot)edu(dot)au
 
 Twitter: [@bq_minh](https://twitter.com/bq_minh)
 
+<<<<<<< HEAD
 ### Lecture Material for 2022
+=======
+### Lecture Materials for 2022
+[Lecture Slides]({{ site.baseurl }}/faculty/minh/pdf/MOLE2022-IQ-TREE.pdf)
+
+### Lab Materials for 2022
+[Lab tutorial](http://www.iqtree.org/workshop/molevol2022)
+
+### Lecture Material for 2019 
+>>>>>>> cc3e6aa2acd5ff53c252df065803a4cdb52049ef
 
 [Lecture Slides]({{ site.baseurl }}/faculty/minh/pdf/MOLE2022-IQ-TREE.pdf)
 

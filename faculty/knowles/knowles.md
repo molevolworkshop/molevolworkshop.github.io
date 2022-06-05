@@ -3,7 +3,7 @@ layout: page
 title: L. Lacey Knowles
 permalink: /faculty-knowles/
 ---
-{% include figure.html description="Lacey Knowles" url="faculty/knowles/img/LaceyPICT2-2021.jpg" css="image-right" height="250px" %}
+{% include figure.html description="Lacey Knowles" url="/faculty/knowles/img/LaceyPICT2-2021.jpg" css="image-right" height="250px" %}
 ### Institutional home page 
 
 [lsa.umich.edu/eeb/people/faculty/knowlesl.html](https://lsa.umich.edu/eeb/people/faculty/knowlesl.html)
@@ -28,7 +28,7 @@ https://github.com/jeetsukumaran/delineate
 ### Lecture in Brief
 
 Capstone lecture: Evolutionary applications of genomic data 
-[Knowles-Woodshole-2022-Lect.pdf](https://github.com/molevolworkshop/molevolworkshop.github.io/files/8837822/Knowles-Woodshole-2022-Lect.pdf)
+[Knowles-Woodshole-2022-Lect.pdf](https://github.com/molevolworkshop/molevolworkshop.github.io/faculty/knowles/pdf/Knowles-Woodshole-2022-Lect-opt.pdf)
 
 
 I will highlight some common themes for model-based analyses with examples of a variety of evoltuionary applications of genomic data (e.g., phylogenetics, adaptive evolution, phylogeography, inferences about species boundaries): namely, 
