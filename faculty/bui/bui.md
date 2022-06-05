@@ -3,7 +3,7 @@ layout: page
 title: Minh Quang Bui
 permalink: /faculty-bui/
 ---
-{% include figure.html description="Minh Bui" url="/faculty/minh/img/minh-bui.png" css="image-right" height="250px" %}
+{% include figure.html description="Minh Bui" url="/faculty/bui/img/minh-bui.png" css="image-right" height="250px" %}
 
 ## Minh Quang Bui
 
