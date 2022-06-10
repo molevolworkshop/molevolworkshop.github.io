@@ -3,7 +3,7 @@ layout: page
 title: Minh Quang Bui
 permalink: /faculty-bui/
 ---
-{% include figure.html description="Minh Bui" url="/faculty/minh/img/minh-bui.png" css="image-right" height="250px" %}
+{% include figure.html description="Minh Bui" url="/faculty/bui/img/minh-bui.png" css="image-right" height="250px" %}
 
 ## Minh Quang Bui
 
@@ -26,7 +26,7 @@ Twitter: [@bq_minh](https://twitter.com/bq_minh)
 
 ### Lecture Material for 2022
 
-[Lecture Slides]({{ site.baseurl }}/faculty/minh/pdf/MOLE2022-IQ-TREE.pdf)
+[Lecture Slides]({{ site.baseurl }}/faculty/minh/pdf/MOLE2022-IQ-TREE-cnv.pdf)
 
 ### Lab Material for 2022
 
