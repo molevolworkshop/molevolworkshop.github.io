@@ -6,9 +6,6 @@ permalink: /schedule/
 ---
 {% include figure.html description="" url="/assets/img/eelpond2019.jpg" css="image-center" height="250px" %}
 
-IMPORTANT: this schedule is subject to change until this notice is removed just before the 2022 workshop begins. 
-Lectures linked here are those from the 2019 version of the workshop and may differ from the 2022 versions.
-
 All sessions are in Loeb G70 (basement of Loeb building)
 
 ### Friday, May 27, 2022
