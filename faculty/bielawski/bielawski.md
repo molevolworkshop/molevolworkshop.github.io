@@ -24,7 +24,7 @@ Depart:  07 June 2022 (Ts)
 
 ## Scientific ethics
 
-In the 2022 workshop, our discussion of scientific ethics touched on the many ways that science has “*unwritten rules*”.  Here I provide a few supplementary resoruces.
+In the 2022 workshop, our discussion of scientific ethics touched on the many ways that science has “*unwritten rules*”.  Here I provide a few supplementary resources.
 
 One way that unwritten rules impact who succeeds in science is sometimes referred to as the “*hidden curriculum*”. These are best practices for success in STEM that first-generation and underrepresented minority students must navigate but are not taught in classrooms. With this in mind, we recently wrote a paper called ["Ten simple rules for succeeding as an underrepresented STEM undergraduate"](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010101) to help make explicit the hidden curriculum of science.
 
