@@ -23,9 +23,9 @@ The Ohio State University<br/>
 1315 Kinnear Road<br/>
 Columbus, Ohio 43212<br/>
 
-_email:_ [jordansatler@gmail.com](mailto:jordansatler@gmail.com), [satler.1@osu.edu](mailto:satler.1@osu.edu)
-_twitter:_ [@jordandsatler](https://twitter.com/jordandsatler)
-_github:_ [https://github.com/jordansatler](https://github.com/jordansatler)
+_email:_ [jordansatler@gmail.com](mailto:jordansatler@gmail.com), [satler.1@osu.edu](mailto:satler.1@osu.edu)  
+_twitter:_ [@jordandsatler](https://twitter.com/jordandsatler)  
+_github:_ [https://github.com/jordansatler](https://github.com/jordansatler)  
 
 ### Website
 
