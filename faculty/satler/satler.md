@@ -33,8 +33,8 @@ _website:_ [https://jordansatler.github.io](https://jordansatler.github.io)
 
 ### Selected Publications
 
-**Satler JD**, Herre EA, Heath TA, Machado CA, Zuniga AG, Nason JD. 2022. Genome-wide sequence data show no evidence of admixture and introgression among pollinator wasps associated with a community of Panamanian strangler figs. *Molecular Ecology*, 31:2106–2123. (DOI: 10.1111/mec.16373) [link](https://onlinelibrary.wiley.com/doi/full/10.1111/mec.16373)  
+**Satler JD**, Herre EA, Heath TA, Machado CA, Zuniga AG, Nason JD. 2022. Genome-wide sequence data show no evidence of admixture and introgression among pollinator wasps associated with a community of Panamanian strangler figs. *Molecular Ecology*, 31:2106–2123. (DOI: 10.1111/mec.16373)  
 
-**Satler JD**, Carstens BC, Garrick RC, Espindola A. 2021. The phylogeographic shortfall in hexapods: a lot of leg work remaining. *Insect Systematics and Diversity*, 5:1–18. (DOI: 10.1093/isd/ixab015) [link](https://academic.oup.com/isd/article/5/5/1/6361054)  
+**Satler JD**, Carstens BC, Garrick RC, Espindola A. 2021. The phylogeographic shortfall in hexapods: a lot of leg work remaining. *Insect Systematics and Diversity*, 5:1–18. (DOI: 10.1093/isd/ixab015)  
 
-**Satler JD**, Herre EA, Jander KC, Eaton DAR, Machado CA, Heath TA, Nason JD. 2019. Inferring processes of coevolutionary diversification in a community of Panamanian strangler figs and associated pollinating wasps. *Evolution*, 73: 2295–2311. (DOI: 10.1111/evo.13809) [link](https://onlinelibrary.wiley.com/doi/abs/10.1111/evo.13809)
+**Satler JD**, Herre EA, Jander KC, Eaton DAR, Machado CA, Heath TA, Nason JD. 2019. Inferring processes of coevolutionary diversification in a community of Panamanian strangler figs and associated pollinating wasps. *Evolution*, 73: 2295–2311. (DOI: 10.1111/evo.13809)
