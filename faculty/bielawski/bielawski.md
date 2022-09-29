@@ -22,6 +22,16 @@ Depart:  07 June 2022 (Ts)
 
 <br>
 
+## Scientific ethics
+
+In the 2022 workshop, our discussion of scientific ethics touched on the many ways that science has “*unwritten rules*”.  Here I provide a few supplementary resources.
+
+One way that unwritten rules impact who succeeds in science is sometimes referred to as the “*hidden curriculum*”. These are best practices for success in STEM that first-generation and underrepresented minority students must navigate but are not taught in classrooms. With this in mind, we recently wrote a paper called ["Ten simple rules for succeeding as an underrepresented STEM undergraduate"](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010101) to help make explicit the hidden curriculum of science.
+
+Many of the *unwritten rules* of science are the same as those that operate in society at large, including racism operating within people who adhere to egalitarian attitudes. In the essay [“Science in the Belly of the Beast: my Career in the Academy”](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Belly_of_the_Beast_2012.pdf) Joseph L. Graves, Jr. describes his personal experience with the unwritten rules of the academy, including the "one and one-quarter rule".
+
+<br>
+
 ## PAML lab Materials
 
 The lab exercises (PAML demo) are available via small website (link below). The site contains some additional resources that are worth a look when you have time. Please note that slides may change a little prior to the lab. I will post modified PDFs as required. 
