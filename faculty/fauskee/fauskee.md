@@ -10,7 +10,7 @@ permalink: /faculty-fauskee/
 not yet determined
 
 ### Contact Info 
-E-mail: [blake.fauskee@duke.edu](mailto:blake.fauskee@duke.edu
+E-mail: [blake.fauskee@duke.edu](mailto:blake.fauskee@duke.edu)
 
 Address: Duke University
 

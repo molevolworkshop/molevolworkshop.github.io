@@ -15,5 +15,5 @@ E-mail: [sungsik.kong@gmail.com](mailto:sungsik.kong@gmail.com)
 Address: Ohio State University
 
 ### Institutional home page 
-[https://eeob.osu.edu/people/kong.362(https://eeob.osu.edu/people/kong.362)
+[https://eeob.osu.edu/people/kong.362](https://eeob.osu.edu/people/kong.362)
 

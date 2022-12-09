@@ -10,7 +10,7 @@ permalink: /faculty-milkey/
 not yet determined
 
 ### Contact Info 
-E-mail: [analisa.milkey@uconn.edu](mailto:analisa.milkey@uconn.edu
+E-mail: [analisa.milkey@uconn.edu](mailto:analisa.milkey@uconn.edu)
 
 Address: University of Connecticut
 
