@@ -110,8 +110,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
- 09:00 - 10:30 | [TBA](/faculty-tba/) | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/tba)
- 10:30 - 12:00 | [TBA](/faculty-tba/) | [Machine learning Nd Molecular Evolution]({{ site.baseurl }}/faculty/tba)
+ 09:00 - 10:30 | [Megan Smith](/faculty-smith/) | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith)
+ 10:30 - 12:00 | [Megan Smith](/faculty-smith/) | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith)
  14:00 - 15:30 | [Susko](/faculty-susko/)             | [Bootstrap and tree topology tests]({{ site.baseurl }}/faculty/susko/pdf/ed-susko-topology-tests.pdf)
  15:30 - 17:00 | [Susko](/faculty-susko/)             | [Bootstrap and tree topology tests]({{ site.baseurl }}/faculty/susko/pdf/ed-susko-topology-tests.pdf)
  19:00 - 20:30 | [Beerli](/faculty-beerli/)           | [Model comparison in biogeography/population genetics using MIGRATE](http://peterbeerli.com/workshops/mbl/2018/tutorial/)
@@ -135,7 +135,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Monday, June 5, 2023
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Swofford](/faculty-swofford/)       | Scientific ethics ([Holder 2019 lecture]({{ site.baseurl }}/faculty/holder/pdf/Holder_last_lecture_2019-opt.pdf))
+ 09:00 - 10:30 | [Swofford](/faculty-swofford/)/[Bielawski](/faculty-bielawski/)       | Scientific ethics panel discussion ([Holder 2019 lecture]({{ site.baseurl }}/faculty/holder/pdf/Holder_last_lecture_2019-opt.pdf))
  10:30 - 12:00 | Open lab                             |
 {:.daily-schedule-std}
      
