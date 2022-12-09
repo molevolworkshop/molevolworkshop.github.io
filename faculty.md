@@ -4,7 +4,7 @@ title: Faculty
 permalink: /faculty/
 ---
 {% include figure.html description="" url="/assets/img/fromback2018.jpg" css="image-center" height="250px" %}
-## 2022 Course Faculty
+## 2023 Course Faculty
 
 [Peter Beerli](/faculty-beerli/), Florida State University
 
@@ -36,25 +36,29 @@ permalink: /faculty/
 
 [Claudia Solís-Lemus](/faculty-solis-lemus/), University of Wisconsin-Madison
 
+[Megan Smith](/faculty-smith/), Indiana State University
+
 [Edward Susko](/faculty-susko/), Dalhousie University
 
 [David Swofford](/faculty-swofford/), Duke University
 
 [Anne Yoder](/faculty-yoder/), Duke University
 
-## 2022 Course TAs
+## 2023 Course TAs
 
-[Deise Gonçalves](/faculty-goncalves/), Department of Integrative Biology, University of Texas at Austin
+[Blake Fauskee](/faculty-fauskee/), Duke University
 
-[Áki Láruson](/faculty-laruson/) (Lead TA), University of Iceland
+[Kevin (Sungsik) Kong](/faculty-kong/), Ohio State University
 
-[Jordan Satler](/faculty-satler/), Department of Evolution, Ecology and Organismal Biology, The Ohio State University
+[Analisa Milkey](/faculty-milkey/), University of Connecticut
 
-[Katie Taylor](/faculty-taylor/), Department of Ecology and Evolutionary Biology, University of Connecticut
+[Jordan Satler](/faculty-satler/) (lead TA), Ohio State University
 
-## 2022 Course Assistant
+[Kate Taylor](/faculty-taylor/), University of Maryland
 
-[Alyssa McGurer](/course-assistant/), Department of Ecology and Evolutionary Biology, University of Connecticut
+## 2023 Course Assistant
+
+TBA
 
 ## Former recent faculty
 
@@ -98,6 +102,10 @@ Axel Meyer, Harold Zakon, Sara Sawyer, Shozo Yokoyama, Gavin Naylor
 
 ## Former recent TAs
 
+[Áki Láruson](/faculty-laruson/) (Lead TA), University of Iceland
+
+[Deise Gonçalves](/faculty-goncalves/), Department of Integrative Biology, University of Texas at Austin
+
 [George Tiley](http://yoderlab.org/people/current-lab-members/george-tiley/), Duke University
 
 [Peter Larsen](https://vetmed.umn.edu/bio/college-of-veterinary-medicine/peter-larsen), University of Minnesota
@@ -113,6 +121,8 @@ Axel Meyer, Harold Zakon, Sara Sawyer, Shozo Yokoyama, Gavin Naylor
 [April Wright](http://www.southeastern.edu/acad_research/depts/biol/faculty/directory/wright.html), Southeastern Louisiana University
 
 ## Former Recent Course Assistants
+
+[Alyssa McGurer](/course-assistant/), University of Connecticut
 
 [Marlene Abouaassi](https://j.p.gogarten.uconn.edu/personnel.htm#Current)
 
