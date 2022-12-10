@@ -11,19 +11,18 @@ permalink: /faculty-beerli/
 
 ## Arrival and Departure
 
-May 26 - June 7, 2022
+May 25 - June 7, 2023
 
 ## Lecture Materials
 
 Note: *The presentations may change up until the moment the lecture or lab begins. I will try to post the modified the PDF before the lecture but will post the actual talk-PDF after each talk.*
 <!-- , and Laura Kubatko will follow and talk about speciestrees/genetree estimation. -->
 
-Coalescence lecture (Tuesday, May 31 2022): I will introduce the coalescent and its use for population genetics inference. The first section of the lecture will discuss basics;  in the second part I will discuss extensions of the basic coalescent. I will focus on neutral population processes, such as population structure, population size changes through time, population divergence, multi-merger coalescence and problems and complications with inferences using the coalescence.
-<!-- Kelley Harris will talk about selection and the coalescent on June 9 2020.--> On June 3 we will work through a tutorial with my program *MIGRATE*.
+Coalescence lecture (Tuesday, May 30 2023): I will introduce the coalescent and its use for population genetics inference. The first section of the lecture will discuss basics;  in the second part I will discuss extensions of the basic coalescent. I will focus on neutral population processes, such as population structure, population size changes through time, population divergence, multi-merger coalescence and problems and complications with inferences using the coalescence.
 
-* May 31 (9-10:30): Introduction to the coalescent [Coalescence2022-talk1]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2022.pdf) (talk given earlier: [Coalescence2019talk]({{site.baseurl}}/faculty/beerli/pdf/talk1-opt.pdf)[Coalescence2018-talk](https://peterbeerli.com/workshops/mbl/2018/talk1.pdf))
-* May 31 (10:30-12): extending the basic coalescent [Coalescence2022-talk2]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2022.pdf)
-* June 3 (19:00-22:00) *MIGRATE* tutorial, specific tutorial instructions TBA.
+* May 30 (9-10:30): Introduction to the coalescent [Coalescence2022-talk1]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2022.pdf) (talk given earlier: [Coalescence2019talk]({{site.baseurl}}/faculty/beerli/pdf/talk1-opt.pdf)[Coalescence2018-talk](https://peterbeerli.com/workshops/mbl/2018/talk1.pdf))
+* May 30 (10:30-12): extending the basic coalescent [Coalescence2022-talk2]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2022.pdf)
+* June 3 (19:00-22:00) *MIGRATE* tutorial and evolutionary model selection beyond mutation models, specific tutorial instructions TBA.
 
 ## Teaching Tools
 {% include figure.html description="Wright-Fisher Model" url="/faculty/beerli/img/Wf.png" css="image-right" %}
