@@ -56,7 +56,7 @@ MIGRATE can run on many different operating systems and hardware, most efficient
 
 ## Other things I like
 
-{% include figure.html description="Frogs"     url="/faculty/beerli/img/Frogs.jpg"          css="image-left"  targeturl="http://waterfrogs.sc.fsu.edu/" %}
+{% include figure.html description="Frogs and Toads"     url="/faculty/beerli/img/Frogs.jpg"          css="image-left"  targeturl="https://www.instagram.com/polliwoggles/" %}
 {% include figure.html description="Mountains" url="/faculty/beerli/img/Mountains.jpg"      css="image-left"  targeturl="https://www.google.com/maps/place/S%C3%A4ntis,+9658+Schwende,+Switzerland/@47.2446468,9.343465,2611m/data=!3m1!1e3!4m2!3m1!1s0x479b264935825f1b:0x1df3ca80897719ba" %}
-{% include figure.html description="Cooking"   url="/faculty/beerli/img/Tatsch.jpg"         css="image-left"  targeturl="http://peterbeerli.com/downloads/misc/tatsch.pdf" %}
-{% include figure.html description="Art"       url="/faculty/beerli/img/Scherenschnitt.jpg" css="image-left"  targeturl="http://bieler-beerli.com" %}
+{% include figure.html description="Cooking"   url="/faculty/beerli/img/Tatsch.jpg"         css="image-left"  targeturl="https://peterbeerli.com/downloads/misc/tatsch.pdf" %}
+{% include figure.html description="Art"       url="/faculty/beerli/img/Scherenschnitt.jpg" css="image-left"  targeturl="https://lubieler.com" %}
