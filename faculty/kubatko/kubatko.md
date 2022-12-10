@@ -7,7 +7,7 @@ permalink: /faculty-kubatko/
 
 ### Arrival and Departure
 
-Due to unforseen circumstances, Laura will not be at the workshop this year (2022). Her lectures will be presented by David Swofford.
+May 5 - June 6, 2023
 
 ### Contact Info
 
