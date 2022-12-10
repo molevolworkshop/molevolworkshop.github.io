@@ -18,6 +18,8 @@ permalink: /faculty/
 
 [Scott Edwards](/faculty-edwards/), Harvard University
 
+[Laura Eme](/faculty-eme/), University Paris-Saclay
+
 {% comment %}
 [Kelley Harris](/faculty-harris/), University of Washington
 {% endcomment %}
