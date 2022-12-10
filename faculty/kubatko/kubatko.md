@@ -7,7 +7,7 @@ permalink: /faculty-kubatko/
 
 ### Arrival and Departure
 
-May 5 - June 6, 2023
+May 25 - June 6, 2023
 
 ### Contact Info
 
