@@ -60,7 +60,7 @@ permalink: /faculty/
 
 ## 2023 Course Assistant
 
-[Elena Korte](/course-assistant-korte/), University of Connecticut
+[Elena Korte](/course-assistant/), University of Connecticut
 
 ## Former recent faculty
 
