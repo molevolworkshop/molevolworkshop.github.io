@@ -10,53 +10,52 @@ permalink: /people/
 
 [List of current and recent faculty, TAs, and course assistants](/faculty/)
 
-## 2022 Participants
+## 2023 Participants
 
-|            First Name |           Last Name |                                                Institution |
-|     ----------------- |   ----------------- | ---------------------------------------------------------- |
-|                 Rasel |               Ahmed |                 Basic and Applied Research on Jute Project |
-|                 Ragib |               Ahsan |                                              Smith College |
-|                  Noor |             Albader | King Abdullah University of Science and Technology (KAUST) |
-|                  Toni |            Androski |                                   University of New Mexico |
-|                 Lucia |    Bazan Williamson |                           University of California, Merced |
-|                 Jaime |             Cordova |                           University of Wisconsin, Madison |
-|             Theodoros |               Danis |                 Hellenic Centre for Marine Research (HCMR) |
-|                  Sade |           Davenport |                        North Carolina A&T State University |
-|                 Bruno | do Rosario Petrucci |                                      Iowa State University |
-|                 Tope  |              Faleye |                                   Arizona State University |
-|                 Blake |             Fauskee |                                            Duke University |
-|                 Evrim |                 Fer |                                      University of Arizona |
-|                 Megan |              Garber |                         University of California, Berkeley |
-|                 David |           Goldstein |                      University of California, Los Angeles |
-|                  Alex |               Grote |                         Broad Institute of Harvard and MIT |
-|               Lillian |            Hendrick |                                      University of Florida |
-|                  Erik |                 Hom |                                  University of Mississippi |
-|                  Gabe |             Johnson |                                    Smithsonian Institution |
-|             Genevieve |             Johnson |                                       University of Guelph |
-|                 Jenny |               Jones |                                   University of Pittsburgh |
-|                Joshua |            Justison |                                      Iowa State university |
-|             Youngwook |                 Kim |                                    Sungkyunkwan University |
-|                Nathan |              Kolbow |                           University of Wisconsin, Madison |
-|                Zeynep |                Kurt |                                         Uppsala University |
-|             Alexander |              Lucaci |                                          Temple University |
-|                  Tara |       Mahendrarajah |        Royal Netherlands Institute for Sea Research (NIOZ) |
-|           Maximillian |               Marin |                                     Harvard Medical School |
-|                  Alix |            Matthews |                                  Arkansas State University |
-|                 Hanon |              McShea |                                        Stanford University |
-|              Fernando |    Melendez Vasquez |                                     University of Oklahoma |
-|               Analisa |              Milkey |                                  University of Connecticut |
-|                 Sarah |              Morris |                                                    RBG Kew |
-|                Isabel |              Novick |                                          Boston University |
-|                 Diego |      Paredes Burneo |                                 Louisiana State University |
-|                Taylor |              Sehein |                                              Smith College |
-|               Anthony |               Snead |                                      University of Alabama |
-|                  Mark |              Stukel |                                  University of Connecticut |
-|                   Tom |          Theirlynck |               Royal Netherlands Institute for Sea Research |
-|                 Laura |                Timm |           University of Colorado - Anschutz Medical Campus |
-|                Astrid |            Vilstrup |                                          Aarhus University |
-|                 James |            Wainaina |                                      Ohio State University |
-|                 Britt |               White  |                              University of Texas at Austin |
-|                Qiaoji |                  Xu |                                       University of Ottawa |
-|                 Grant |           Yamashita |                                Kamehameha Schools Kapalama |
-|              Caroline |             Zeidler |               Max-Planck Institute for Marine Microbiology |
-|                  Yong |                Zhou |                        Center for Desert Agriculture (CDA) |
+|               First Name |                Last Name |                                                 Institution |
+| ------------------------ | ------------------------ | ----------------------------------------------------------- |
+|                 Adetunji |                  Adesina |                              University of Colorado Boulder |
+|                   Avrami |                Aharonoff |                                         New York University |
+|                  Michael |                     Alam |                                       University of Arizona |
+|                  Aurelia |                 Balestra |                                  University of Pennsylvania |
+|                   Roland |                    Bamou |                         National Institutes of Health (NIH) |
+|                Charlotte |                 Benedict |                      Ohio State University: Columbus Campus |
+|                      Meg |                  Branine |                                          Cornell University |
+|                  Michael |                     Chen |                  Harvard University: Harvard Medical School |
+|                    Blair |              Christensen |                                       University of Vermont |
+|                   Joshua |                     Doby |                                       University of Florida |
+|                Elizabeth |                   Flesch |                                    Montana State University |
+|                     Alex |                  Franzen |                                      University of Oklahoma |
+|                  Keating |                  Godfrey |                                       University of Florida |
+|                    Emily |                 Griffith |                                           Drexel University |
+|                   Akacia |           Halliday-Isaac |                                   University of Mississippi |
+|                    Zihan |                    Huang |                                    University of Manchester |
+|                    Odion |               Ikhimiukor |                                   SUNY University at Albany |
+|                   Amanda |                  Ivanoff |                                  SUNY University at Buffalo |
+|                   Cedric |                Kamaleson |                             Georgia Institute of Technology |
+|                 Carlotta |                     Kück |                Max Planck Institute for Marine Microbiology |
+|                     Emma |                 Lehmberg |                                        Texas A&M University |
+|                   Polina |                      Len |                                       Nazarbayev University |
+|                   Yixuan |                       Li |                                Hong Kong Baptist University |
+|                   Giulia |                      Lin |                                                       EAWAG |
+|                    Carly |                       Lo |                              Texas A&M University-Galveston |
+|                  Leticia |    Magpali Moura Estevao |                                        Dalhousie University |
+|                    Nahui |            Medina-Chavez |                        University of Minnesota: Twin Cities |
+|                   Daniel |            Mendez Aranda |                  Max-Delbrück-Center for Molecular medicine |
+|                  Agustin |         Moreira Saporiti |                                Marine Biological Laboratory |
+|                    Lydia |                   Morley |                                        Texas A&M University |
+|                   Olivia |                 Morrison |                                            Emory University |
+|                   Shelby |                  Moshier |                      Ohio State University: Columbus Campus |
+|                  Susanne |                    Reier |                               Natural History Museum Vienna |
+|                    Chris |                 Robinson |                              Indiana University Bloomington |
+|                   Ulises |                    Rosas |                                      University of Oklahoma |
+|                    Mahdi |                Safarpour |                                       University of Antwerp |
+|                    Katie |              Sanbonmatsu |                                        Texas A&M University |
+|                    Avery |                  Selberg |                                           Temple University |
+|                Samyuktha |                  Senthil |                                       Universitat Hohenheim |
+|                 Cristian |                   Sharma |                                         Brandeis University |
+|                   Philip |                    Shirk |                  Centers for Disease Control and Prevention |
+|                   Daniel |                 Sultanov |                                         New York University |
+|                    Tommy |             Travers Cook |                                                  ETH Zürich |
+|                    Alexa |                   Tyszka |                           University of Illinois at Chicago |
+|                  Yee-Ann |                     Wong |                            University of Texas at Arlington |

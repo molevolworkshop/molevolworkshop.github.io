@@ -1,11 +1,17 @@
 ---
 layout: page
 title: Jetstream2 Setup Notes
-permalink: /jetstream2/
+permalink: /jetstream2022/
 ---
 {% comment %}
 https://www.webfx.com/tools/emoji-cheat-sheet/
 {% endcomment %}
+
+## These notes are obsolete
+
+The most recent setup notes (for the 2023 Workshop) are [Jetstream2 2023]({{ '/jetstream2023/' | relative_url }})
+
+## Jetstream2 notes (2022 Workshop)
 
 These are notes on setting up Jetstream2 virtual machines for the MOLE workshop. If you are a participant, these notes are not intended for you, but you are of course welcome to read them. They are intended for the current directors and head TA of the workshop, who must get the Jetstream virtual machines up and running before the workshop begins. 
 
