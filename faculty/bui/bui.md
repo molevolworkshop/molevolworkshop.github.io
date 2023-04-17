@@ -9,14 +9,14 @@ permalink: /faculty-bui/
 
 ### Arrival and Departure 
 
-May 31 to June 6
+May 26 to June 1
 
 ### Contact Info
 
 Institutional webpage: [The Australian National University](https://researchers.anu.edu.au/researchers/bui-m)
 
 The Australian National University<br>
-Research School of Biology<br>
+School of Computing<br>
 Acton ACT 2601<br>
 Canberra, Australia<br>
 
