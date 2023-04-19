@@ -1,5 +1,3 @@
-MEL HARD MAIN WACK BAWL TWIG LAMB WAS SWAY RACY WEB
-
 ---
 layout: page
 title: Jetstream2 Setup Notes
