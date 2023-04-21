@@ -1,5 +1,3 @@
-MEL HARD MAIN WACK BAWL TWIG LAMB WAS SWAY RACY WEB
-
 ---
 layout: page
 title: Jetstream2 Setup Notes
@@ -42,6 +40,7 @@ These have proven to be useful resources to have handy.
 * [Exosphere documentation](https://docs.jetstream-cloud.org/ui/exo/exo/)
 * [Horizon home page](https://js2.jetstream-cloud.org/)
 * [Jetstream2 API tutorial](https://github.com/jlf599/JetstreamAPITutorial)
+* [Cloud-init examples](https://cloudinit.readthedocs.io/en/latest/reference/examples.html)
 
 ## Most important!
 
@@ -272,6 +271,14 @@ sudo apt install -y python-is-python3
 ~~~~~~
 Last updated 2023-04-07.
 
+### Install whois
+
+This enables use of the mkpasswd command used to create the hashed password used in the cloud-init script.
+~~~~~~
+sudo apt install whois
+~~~~~~
+Last updated 2023-04-20.
+
 ### Install mlocate
 
 This provides the locate command, useful for finding where libraries and other system files are installed.
@@ -491,13 +498,24 @@ my $astral = '/opt/astral/astral.5.7.1.jar'; # adapt to your system
 ~~~~~~
 Last updated 2023-04-07.
 
-### Download datasets for alignment tutorial
+### Install datasets for alignment tutorial
 
 ~~~~~~
 cd 
 curl -LO https://molevolworkshop.github.io/assets/data/MSAlab.zip
 unzip MSAlab.zip
 sudo mv MSAlab /usr/local/share/examples/mole/
+sudo chown -R root.root /usr/local/share/examples/mole/MSAlab
+~~~~~~
+Last updated 2023-04-07.
+
+### Install datasets for the Model Selection/Simulation tutorial
+
+~~~~~~
+cd 
+curl -LO https://molevolworkshop.github.io/assets/data/modsel_sim_tutorial.zip
+sudo unzip modsel_sim_tutorial.zip -d /usr/local/share/examples/mole 
+sudo chmod 755 /usr/local/share/examples/mole/modsel_sim_tutorial
 ~~~~~~
 Last updated 2023-04-07.
 
@@ -673,16 +691,13 @@ Last updated 2023-04-08.
 
 ~~~~~~
 cd
-curl -O https://molevolworkshop.github.io/assets/data/rblabs.zip
-unzip rblabs.zip
-mv rblabs.zip TARs
-rm -rf __MACOSX
-cd rblabs
-sudo mkdir /usr/local/share/examples/mole/revbayes
-sudo mv divtime /usr/local/share/examples/mole/revbayes/
-sudo mv genetree /usr/local/share/examples/mole/revbayes/
+curl -O https://molevolworkshop.github.io/assets/data/revbayes.zip
+unzip revbayes.zip
+mv revbayes.zip TARs
+sudo mv revbayes /usr/local/share/examples/mole/
+sudo chown -R root.root /usr/local/share/examples/mole/revbayes
 ~~~~~~
-Last updated 2023-04-08.
+Last updated 2023-04-20.
 
 ### Install [libpython2.7.so.1.0 shared library](https://askubuntu.com/questions/1213461/cant-locate-libpython2-7-so-1-0)
 
@@ -744,7 +759,7 @@ sudo mv baseml basemlg chi2 codeml evolver infinitesites mcmctree pamp yn00 /usr
 Installed baseml, basemlg, chi2, codeml, evolver, infinitesites, mcmctree, pamp, and yn00in _/usr/local/bin_. 
 Last updated 2023-04-08.
 
-### Install data files for PAML lab
+### Install data files for the PAML lab
 
 ~~~~~~
 cd
@@ -753,8 +768,36 @@ unzip PamlLab.zip
 rm -rf __MACOSX/
 mv PamlLab.zip TARs
 sudo mv PamlLab /usr/local/share/examples/mole/
+sudo chown -R root.root /usr/local/share/examples/mole/PamlLab
 ~~~~~~
 Last updated 2023-04-08.
+
+### Install data files for the IQ-TREE lab
+
+~~~~~~
+cd
+curl -O https://molevolworkshop.github.io/assets/data/iqtreelab.zip
+unzip iqtreelab.zip
+rm -rf __MACOSX/
+mv iqtreelab.zip TARs
+sudo mv iqtreelab /usr/local/share/examples/mole/
+sudo chown -R root.root /usr/local/share/examples/mole/iqtreelab
+~~~~~~
+Last updated 2023-04-21.
+
+### Install data files for the phylogenomics lab
+
+TODO This section is not yet ready.
+
+~~~~~~
+cd
+curl -O TODO
+unzip TODO
+mv TODO TARs
+sudo mv TODO /usr/local/share/examples/mole/
+sudo chown -R root.root /usr/local/share/examples/mole/TODO
+~~~~~~
+Last updated 2023-04-21.
 
 ### Create alias to mole folder
 
@@ -799,7 +842,7 @@ Advanced Options:
 | Public IP Address                        | Automatic              | Yes      |
 | Boot Script                              | see below              | No       |
 
-Press the Create button to create the instances. The Exosphere GUI will say "Building" in orange, then "running Setup", then "Ready" in green. Clicking on "Instances" will take you to a screen that shows each instance created and its IP address.
+Be sure to change `<not shown>` to a real password in the boot script before pressing the Create button to create the instances. The Exosphere GUI will say "Building" in orange, then "running Setup", then "Ready" in green. Clicking on "Instances" will take you to a screen that shows each instance created and its IP address.
 
 You (or a student) can now log into an instance as **moleuser**.
 
@@ -807,7 +850,7 @@ You (or a student) can now log into an instance as **moleuser**.
 
 ### Boot script used
 
-This is the default cloud-config boot script with some modifications for MOLE: 
+This is the default cloud-config boot script with some modifications for MOLE. 
 
 :small_blue_diamond: One modification is the addition of the moleuser. Note that SSH public keys for the co-directors as well as the TAs are automatically saved to the _~moleuser/.ssh/authorized_keys_ directory on each instance, making it easy for the TAs to log in to any instance, even if the student has changed the moleuser password, which is not shown in the cloud-config script below for security reasons (you should replace <tt><not shown></tt> with a meaningful password that will be communicated to students in the first (intro) computer lab.
 
@@ -838,12 +881,13 @@ users:
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDF5GNcJcMm42xJSCCkI0w8pDNgGSXWEtBCJAFMEvrNDYxYOAl8W8fZvAxT7/1B/ZBXt8ASiDTtMuZkWHv/wPkywKPDa1dVyQ6aBa5uU7h6K3FaP1OM+c9xqHMN0H/54mXRFxSESfVuRpvxwiw9oOKZ2xSphs8+e+8pv4GziPeOuxrheat9jcjfY6EIm6zwVvNEM4rgaW+jCK2xn89tbmKlrT+wh7PwD9bzSwIvAHCpf8EaiJrdueNBILGYewmGykffIVVeH8GKIxqfSTLIUiyFwYnwQydGkT/ceXuty9ML+QQIw81FbYhTf9+1GfZC85UyXkfI35HujJfSMUrvhxq7 Jordan@Jordans-MacBook-Pro-7.local 
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDIulLE6a+QGh/JE9mjGmTwRWtmcK29mbB1MJEN728+gLRnHV8oRfE5ahZVp4k0+h0onBn3Br8hVTkqQqC3GJmRe2PMlocqIJULe3hFvtXZqGh+w8QUj//+C3kTg6Lptc2m4f9JimjUjFNPnfX5sioJp2mHOjNbYXYbXb0zx1Y5jKVmi6r0NifcuZ+ObfIFG5+o1kytAq/J+8f6evBUKlTR8Gsk7V9zuZmGcffGZe5HA+3ilkUGd2Uyx18nbgE4VZTXC9K7RA7AFPtkLRH/ivaMGESUteH5Wqe1Bj46ORjapRV+hmU1t/VeOmHVWknkaTM3/yZpMKAiFYxWADDXsSNSNck38zMmDmWxzW+wcrNcCysKUZU60DxD4Czvk4VEUgFSVg/YmN1tJDqVse7GfcvYxzgC9R5qDItXPY3YBjq9ykOIGmn9C30lVqh4nELu3LujrmHmf0VTDtexc/4T+YPJlmVxr64UP4YTInLw5wBgQ89Thj6ahx+QnfC6m5Uv+ws= blakefauskee@Blakes-MacBook-Pro-3.local               
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0lGJQrxeZ8wjpxwFvgAW+1gnHzB7cre8ejkAdBHR8rQjz+htA9U+nsgNvaSHoD4q0TzObhobdwOlkCVstJNYz1KKDH61Rbn61MToO5h1n4Ow1slHNl/Cy0NKwEg+YnyPULrMb1z5h+yzUUFgMpwzzQsutrcN9Im3HuAnRGD3giJFHKYhhEMl92EPgEf9/xs3b/0B1FdXIotFiuGkk3FkhZIA+1Ga+nNE6CEhjEHY2YQd3PsFRZWqo/FxujUQTS5hvy/5BOGpGo3LyRFiHiNWXcHXVLak+0SJzrDEcpoX1A1ezzJIvQbdGV3KNxxFPsX9T48oi5r50WRRiG3tmjUQjRm+tx41yUl/ZmZEISv8CQtn2p4h02sTLLOntIP3GBjiIok/zgTH2OHihMlqoahKbfoadWZLhkG05pnZ71YA0hFs8QQxPXNycf8zHxp8PmMAzKL9M4jtH+KRH+XVj9zoq9D0uU7WA5kyUVOjHYRMy8yvGBtFHbW3TH7BgMP7aYcM= khaosan@Sungsiks-MacBook-Pro.local
-        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDP4HuRdC0TfDLkIVSGjeg1rWGhz3sInKJC8Fg6/NC7ZLmWECXaZsfIBbFlrn/bp6Thq5KuCt4aThe3msBpU3b4ZbS10vy5wUUpL6epLO/b52eVnxzgSb4u8SSU5vQ8slcbHeuDB5ipMT/Icju2zWYO/3rGe78zw8fQyaiNbdf5UKt3XI7wNtmkeWawdql9dUs6w+Wspvop0Qa5s6u/tQisoiy6xS0YFHxrtVSlCqej9drKaddMEvSG8RmMbhaCw6AHRCg/OYh/L97h6MeO0g1aGE7EMUPrB8floiBw41KSykSUqZ7pgUnmc6m/AX1i/XvmufDJALlhjpy9cXy8rLoiANWP6BcUbNV9Che7zA/5mmUPvZq0j0JA4PJXCTdJBkT3fjOwp3IACZK+NfeeaPKnojv/jjTeANgC/PEvxryFT3MhUsnTFhZf82N+z/h9g1W2bpuVMURmIky1FuEDt5qY4Hun/JrdGPb7IpeYJJbmDBmF0Pq4ijCzjiQt22pFMNU= kubatko.2@STAT-NC247353
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCkpuLKyLQpqg8TF0iCRQXJg2z+/F/YBYnd4BVlupJhpZpbViLWulByYLMetC/7UT57CjX8i518CfpwbCP4dMEiQR+93AxZhBvKZM4Mtz0Me6SWmSnFV8cVF5c23UZoqOeVInABe14hLEZBdbyWck5QTy0k/CQrYSIToYqdZA6G/G8PKAk6db2rQuiwHi0Q5qE7RQ7S2qRgq4n9G0zPDelV8myyzduo7bOY3BaNMKwj5Yi/soMUBvOX7Do9R5+5XjpOuqnPbPX2NeMvIZJZ/ZwvBmbjQievhaX7COISWw77wUboaqpn2aEnewEc9Kt4gfx0gzDvznsCZRe+XCV1Q2xv3zVRut4FZfv0DhDEfL42vFEhahF728npFjyIo5cidMTBek9oCuqg58B3Umr/bFJEhjCaGhBJVqeDRERha8fbO7c8aAW3WdoTqaJJAIshztWhLotJaM77nt35dMrmOlOwRs3rHi4fxk5r+6tLxardNGKOBWHyQ4CneYPUkxWKcN0= kubatko.2@STAT-NC247353
 ssh_pwauth: true             # allow password authentication (for students)
 chpasswd:
     expire: false            # do not force user to change passwd on first login
-    list:
-        - moleuser: <not shown>  # specify starting password for moleuser
+    users:
+        - name: moleuser     # specify starting password for moleuser hashed using "mkpasswd --method=SHA-512 --rounds=4096 <passwd>"
+          password: $6$rounds=4096$/gyk3ST/YBZpL/wh$GbjLz08E2xaEky9eSTH/uVmui2K2ZCBHWPPGBi7cVEgrvNKzUTEPqhdgXK74wqi8WWqtwKDi3nxgUWzw8bFbJ/
 package_update: true
 package_upgrade: {install-os-updates}
 packages:
@@ -958,21 +1002,33 @@ To show a list of images:
 
 To show details for one particular image:
 
-    openstack image show MOLE_2023_image --fit-width
+    openstack image show MOLE-2023-master --fit-width
 
 To show a list of instances:
 
     openstack server list
+    
+To show details for one particular instance, provide the ID:
+
+    openstack server show 9a3b295c-eede-4930-8661-3003eb264ed9 --fit-width
 
 To create an launch an instance (see [Launch and Access Your Instance](https://docs.jetstream-cloud.org/ui/cli/launch/)):
 
     TODO
-        
-To shelve or unshelve an instance (see [Instance Management Actions in the CLI](https://docs.jetstream-cloud.org/ui/cli/manage/)):
 
-    TODO
-    
-    
+{% comment %}    
+openstack server create <my-server-name> \
+--flavor FLAVOR \
+--image IMAGE-NAME \
+--key-name <my-keypair-name> \
+--security-group <my-security-group-name> \
+--wait
+{% endcomment %}    
+        
+To shelve or unshelve an instance (see [Instance Management Actions in the CLI](https://docs.jetstream-cloud.org/ui/cli/manage/)), get ID using `openstack server list` and then issue a command like this:
+
+    openstack server unshelve ea2f87ea-3cce-4987-a489-e0b9850f743c
+      
 To delete an instance (see [Deleting items in the CLI](https://docs.jetstream-cloud.org/ui/cli/deleting/)):
 
     TODO 
