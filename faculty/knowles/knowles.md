@@ -10,7 +10,7 @@ permalink: /faculty-knowles/
 
 ### Arrival and Departure 
 
-May 31 to June 7
+May 28 to June 6
 
 ### Lecture Materials
 
