@@ -7,7 +7,7 @@ permalink: /faculty-smith/
 
 ### Arrival and Departure
 
-not yet determined
+May 26 - June 5, 2023
 
 ### Contact Info 
 E-mail: [ms4438@msstate.edu](mailto:ms4438@msstate.edu)
