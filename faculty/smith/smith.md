@@ -18,4 +18,4 @@ Address: Current: Indiana University Bloomington
 [https://www.meganlsmith.org](https://www.meganlsmith.org)
 
 ### Resources
-[Machine Learning Tutorial]({{ 'jupyter/Machine_Learning_for_Population_Genetics.ipynb' | relative_url }})
+[Machine Learning Tutorial]({{ 'tutorial/Machine_Learning_for_Population_Genetics.ipynb' | relative_url }})
