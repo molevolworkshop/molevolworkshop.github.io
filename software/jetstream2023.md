@@ -80,11 +80,11 @@ Now you can ssh into the instance using the _molevm_ host set up in _.ssh/config
 ssh molevm
 ~~~~~~
 
-## Creating the instance to be used as the master image
+## Creating the instance to be used as the base image
 
 To create a new instance, click the red Create button in the upper right corner of Exosphere. 
 
-I used the **Ubuntu 22.04 (latest)** image source and specified **MOLE_2023_image_basis** as the name. I chose **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **1** for number of instances, **no** for enable web desktop, **cormy** for SSH public key, and **Show** for Advanced Options.
+I used the **Ubuntu 22.04 (latest)** image source and specified **MOLE-2023-base** as the name. I chose **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **1** for number of instances, **no** for enable web desktop, **cormy** for SSH public key, and **Show** for Advanced Options.
 
 Advanced Options:
 
@@ -96,7 +96,7 @@ Advanced Options:
 | Public IP Address                        | Automatic              | Yes      |
 | Boot Script (see below)                  | used default           | Yes      |
 
-Press the Create button to create the instance. The Exosphere GUI will say "Building" in lemon yellow for about 5 minutes, then "running Setup" for another minute, then "Ready" in green. Clicking on "Instances" will take you to a screen that shows the MOLE_2023_image_basis instance and its IP address.
+Press the Create button to create the instance. The Exosphere GUI will say "Building" in lemon yellow for about 5 minutes, then "running Setup" for another minute, then "Ready" in green. Clicking on "Instances" will take you to a screen that shows the MOLE-2023-base instance and its IP address.
 
 You can now log into the instance as **exouser**.
 
@@ -104,7 +104,7 @@ You can now log into the instance as **exouser**.
     
 ### Default boot script
 
-For reference, here is the default boot script used to create MOLE_2023_image_basis. 
+For reference, here is the default boot script used to create MOLE-2023-base. 
 
 ~~~~~~
 #cloud-config
@@ -118,7 +118,6 @@ ssh_pwauth: true
 package_update: true
 package_upgrade: {install-os-updates}
 packages:
-  - python3-virtualenv
   - git{write-files}
 runcmd:
   - echo on > /proc/sys/kernel/printk_devkmsg || true  # Disable console rate limiting for distros that use kmsg
@@ -127,11 +126,20 @@ runcmd:
     echo '{"status":"running", "epoch": '$(date '+%s')'000}' | tee --append /dev/console > /dev/kmsg || true
   - chmod 640 /var/log/cloud-init-output.log
   - {create-cluster-command}
+  - (which apt-get && apt-get install -y python3-venv) # Install python3-venv on Debian-based platforms
+  - (which yum     && yum     install -y python3)      # Install python3 on RHEL-based platforms
   - |-
-    (which virtualenv && virtualenv /opt/ansible-venv) || (which virtualenv-3 && virtualenv-3 /opt/ansible-venv) || python3 -m virtualenv /opt/ansible-venv
+    python3 -m venv /opt/ansible-venv
     . /opt/ansible-venv/bin/activate
+    pip install --upgrade pip
     pip install ansible-core
-    ansible-pull --url "{instance-config-mgt-repo-url}" --checkout "{instance-config-mgt-repo-checkout}" --directory /opt/instance-config-mgt -i /opt/instance-config-mgt/ansible/hosts -e "{ansible-extra-vars}" /opt/instance-config-mgt/ansible/playbook.yml
+    ansible-pull \
+      --url "{instance-config-mgt-repo-url}" \
+      --checkout "{instance-config-mgt-repo-checkout}" \
+      --directory /opt/instance-config-mgt \
+      -i /opt/instance-config-mgt/ansible/hosts \
+      -e "{ansible-extra-vars}" \
+      /opt/instance-config-mgt/ansible/playbook.yml
   - ANSIBLE_RETURN_CODE=$?
   - if [ $ANSIBLE_RETURN_CODE -eq 0 ]; then STATUS="complete"; else STATUS="error"; fi
   - sleep 1  # Ensures that console log output from any previous commands complete before the following command begins
@@ -153,13 +161,14 @@ mounts:
 
 ### Setting up the new instance
 
-The newly created MOLE_2023_image_basis needs to be provisioned with the software and data files used during the workshop.
+The newly created MOLE-2023-base needs to be provisioned with the software and data files used during the workshop.
 
-First create a _TARs_ folder in which to store downloaded tar files (useful for backup purposes if, next year, some can't be downloaded)
+First create a _TARs_ folder in which to store downloaded tar files (useful for backup purposes if, next year, some can't be downloaded). Also, create a _clones_ folder for git working directories.
 
 ~~~~~~
 cd
 mkdir TARs
+mkdir clones
 ~~~~~~
 
 ### Finding basic information
@@ -167,7 +176,7 @@ mkdir TARs
 Get current date:
 
     $ TZ="EST5EDT" date
-    Fri Apr  7 10:12:38 EDT 2023
+    Sat Apr 29 12:48:00 EDT 2023
 
 Find processor info:
 
@@ -242,18 +251,19 @@ Find installed packages:
 
     $ sudo dpkg -l
     
-To remove a package:
+To remove a package (note: I didn't use this feature, but thought it good to keep the instructions):
 
     $ sudo dpkg -r packagename # remove package itself
     $ sudo dpkg -P packagename # purge files associated with package
 
-### Update operating system before doing any work
+### Update operating system before doing any work  
 
 ~~~~~~
 $ sudo apt-add-repository universe
 $ sudo apt update
 $ sudo apt upgrade -y
 ~~~~~~
+Last updated 2023-04-29.
 
 ### Install apt-file
 
@@ -261,7 +271,8 @@ This allows us to find out what files are installed by a package using "apt-file
 ~~~~~~
 sudo apt install -y apt-file
 ~~~~~~
-Last updated 2023-04-07.
+This may pop up a graphical interface: use tab and arrow keys to navigate.
+Last updated 2023-04-29.
 
 ### Install python-is-python3
 
@@ -269,15 +280,15 @@ This ensures that whenever someone types python they are using python3
 ~~~~~~
 sudo apt install -y python-is-python3
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install whois
 
 This enables use of the mkpasswd command used to create the hashed password used in the cloud-init script.
 ~~~~~~
-sudo apt install whois
+sudo apt install -y whois
 ~~~~~~
-Last updated 2023-04-20.
+Last updated 2023-04-29.
 
 ### Install mlocate
 
@@ -285,7 +296,7 @@ This provides the locate command, useful for finding where libraries and other s
 ~~~~~~
 sudo apt install -y mlocate
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install unzip
 
@@ -293,7 +304,7 @@ Not really necessary, already installed.
 ~~~~~~
 sudo apt install -y unzip
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install [R](https://www.r-project.org)
 
@@ -301,7 +312,7 @@ R is needed in order to precompile PhyloPlots.
 ~~~~~~
 sudo apt-get install -y r-base
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install zlib
 
@@ -309,7 +320,7 @@ Needed for migrate-n. Not really necessary, already installed.
 ~~~~~~
 sudo apt install -y zlib1g-dev
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install openmpi
 
@@ -319,7 +330,7 @@ sudo apt-get install -y openmpi-bin
 sudo apt-get install -y libopenmpi-dev
 sudo apt-get install -y openmpi-common
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install [migrate-n](https://peterbeerli.com/migrate-html5/index.html)
 
@@ -337,8 +348,8 @@ make clean
 make mpis
 sudo make installmpi
 ~~~~~~
-Installed as _/usr/local/bin/migrate-n_ and _/usr/local/bin/migrate-n-mpi_. 
-Last updated 2023-04-07.
+Installed as _/usr/local/bin/migrate-n_ and _/usr/local/bin/migrate-n-mpi_. Version 5.0.4 installed.
+Last updated 2023-04-29.
 
 ### Install [Julia](https://julialang.org)
 
@@ -355,7 +366,7 @@ cd /usr/local/bin
 sudo ln -s /opt/julia-1.8.5/bin/julia julia
 ~~~~~~
 This places the julia directory in _/opt_ and creates a symbolic link to the executable in _/usr/local/bin_.
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install Julia packages needed by the [PhyloNetworks tutorial](https://github.com/crsl4/PhyloNetworks.jl/wiki)
 
@@ -367,22 +378,37 @@ cd
 export JULIA_DEPOT_PATH=/opt/julia-1.8.5/usr/share/julia/site
 julia
 julia> using Pkg                # to use functions that manage packages
-julia> Pkg.add("PhyloNetworks") # to download and install package PhyloNetworks
-julia> Pkg.add("PhyloPlots")    # to download and install package PhyloPlots
+julia> Pkg.add("PhyloNetworks") # to download/install PhyloNetworks (precompiling takes a few minutes)
+julia> Pkg.add("PhyloPlots")    # to download/install PhyloPlots (precompiling takes a few minutes)
 julia> Pkg.add("RCall")         # package to call R from within julia
 julia> Pkg.add("CSV")           # to read from / write to text files, e.g. csv files
 julia> Pkg.add("DataFrames")    # to create & manipulate data frames
 julia> Pkg.add("StatsModels")   # for regression formulas
-julia> using PhyloNetworks      # may take some time: pre-compiles functions in the package
-julia> using PhyloPlots         # may take some time: pre-compiles functions in the package
+julia> using PhyloNetworks      # check whether it loads
+julia> using PhyloPlots         # check whether it loads
 # use Ctrl-d to quit julia
 ~~~~~~
-Last updated 2023-04-08.
+Last updated 2023-04-29.
+
+### Install [RevBayes](https://revbayes.github.io/compile-linux)
+
+This install takes a long time (30 minutes), so start it in one console and open another to work on other installs while this is running.
+~~~~~~
+cd ~/clones
+# not necessary to issue this command --> sudo apt install build-essential cmake libboost-all-dev
+git clone https://github.com/revbayes/revbayes.git
+cd revbayes/projects/cmake
+./build.sh 
+sudo mv rb /usr/local/bin
+~~~~~~
+Installed as _/usr/local/bin/rb_. This is RevBayes version 1.2.1.
+Last updated 2023-04-29.
 
 ### Install [MrBayes](https://nbisweden.github.io/MrBayes/)
 
 MrBayes is used in the SNaQ tutorial. These instructions install the binary in _/usr/local/bin_.
 ~~~~~~
+cd
 curl -LO https://github.com/NBISweden/MrBayes/archive/v3.2.7a.tar.gz
 tar zxvf v3.2.7a.tar.gz
 mv v3.2.7a.tar.gz TARs
@@ -393,16 +419,16 @@ make
 sudo make install
 ~~~~~~
 Installed as _/usr/local/bin/mb_. 
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install [Boost C++](https://www.boost.org)
 
 Needed in order to build RevBayes and BUCKy.
 ~~~~~~
 cd
-sudo apt-get install -y libboost-all-dev   # this takes awhile
+sudo apt install -y libboost-all-dev
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install [BUCKy](http://pages.stat.wisc.edu/~ane/bucky/index.html)
 
@@ -418,35 +444,36 @@ sudo mv bucky /usr/local/bin
 sudo mv mbsum /usr/local/bin
 ~~~~~~
 Note: in order to get BUCKy to compile, I had to qualify `unordered_map` as `boost::unordered_map` in two lines (line 163 and 357) in _TGM.h_ because an `unordered_map` template is defined in both _./boost/unordered/unordered_map_fwd.hpp_ and _/usr/include/c++/11/bits/unordered_map.h_.
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install [RAxML](https://github.com/stamatak/standard-RAxML)
 
 RAxML is used in the Solis-Lemus SNaQ and McTavish gene tree updating tutorial. These instructions install the binary in _/usr/local/bin_. Note: it is easier to just use "sudo apt-get install raxml" to do this install, but I didn't realize this at the time.
 ~~~~~~
-cd 
+cd ~/clones
 git clone https://github.com/stamatak/standard-RAxML.git
 cd standard-RAxML
 make -f Makefile.AVX.PTHREADS.gcc
-sudo mv raxmlHPC-PTHREADS-AVX /usr/local/bin/raxml
+sudo mv raxmlHPC-PTHREADS-AVX /usr/local/bin/raxmlHPC
+rm *.o  # no make clean available
 ~~~~~~
-Installed as _/usr/local/bin/raxml_. Created _RAxML.tar.gz_ file from the cloned directory and
-stored in _TARs_ directory. 
-Last updated 2023-04-07.
+Installed as _/usr/local/bin/raxmlHPC_.
+Last updated 2023-04-29.
 
 ### Install [Java](https://www.java.com/en/)
 
 The Java Runtime Environment is needed for ASTRAL and jModelTest.
 ~~~~~~
 cd
-sudo apt install default-jre 
+sudo apt install default-jre  # not really necessary, already installed
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install [ASTRAL](https://github.com/smirarab/ASTRAL)
 
 ASTRAL is used in the SNaQ tutorial. These instructions install the binary in _/opt/astral_. Note that the _/opt/astral/astral.5.7.3.jar_ jar file and the _/opt/astral/lib_ directory need to be owned by an ordinary user, otherwise the jar must be executed as root.
 ~~~~~~
+cd
 curl -LO https://github.com/smirarab/ASTRAL/archive/refs/tags/v5.7.1.tar.gz
 tar zxvf v5.7.1.tar.gz
 mv v5.7.1.tar.gz TARs
@@ -458,72 +485,113 @@ sudo cp astral.5.7.1.jar /opt/astral
 sudo cp -r lib /opt/astral
 ~~~~~~
 
-Change ownership (note: this is now handled by the [cloud init script](#boot-script-used))
-~~~~~~
-sudo chown moleuser.moleuser /opt/astral/astral.5.7.1.jar
-sudo chown moleuser.moleuser /opt/astral/lib -R
-~~~~~~
 You should now be able to start ASTRAL as follows:
-    java -jar /opt/astral/astral.5.7.1.jar
+    sudo java -jar /opt/astral/astral.5.7.1.jar
 An alias will be created by the [cloud init script](#boot-script-used) to make this easier.
     alias astral="java -jar /opt/astral/astral.5.7.1.jar"
-Last updated 2023-04-07.
+The [cloud init script](#boot-script-used) will also change ownership to moleuser:
+    sudo chown moleuser.moleuser /opt/astral/astral.5.7.1.jar
+    sudo chown moleuser.moleuser /opt/astral/lib -R
+Last updated 2023-04-29.
 
 ### Create MOLE directory
 
 This directory will be used to store example data needed by students for tutorials.
 ~~~~~~
-sudo mkdir /usr/local/share/examples/mole
+sudo mkdir /usr/local/share/mole
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install data for [PhyloNetworks](http://crsl4.github.io/PhyloNetworks.jl/latest/) tutorial
 
 ~~~~~~
-cd 
+cd ~/clones
 git clone https://github.com/crsl4/PhyloNetworks.jl.wiki.git
 cd PhyloNetworks.jl.wiki
-sudo mkdir /usr/local/share/examples/mole/phylo-networks
-sudo mv data_results /usr/local/share/examples/mole/phylo-networks
+sudo mkdir /usr/local/share/mole/phylonetworks
+sudo cp -R data_results /usr/local/share/mole/phylonetworks
 ~~~~~~
 
-Modify line 46 of /usr/local/share/examples/mole/phylo-networks/data_results/scripts/raxml.pl to say:
+Modify line 46 of /usr/local/share/mole/phylonetworks/data_results/scripts/raxml.pl to say:
 ~~~~~~
-my $raxml = '/usr/local/bin/raxml'; # executable
+my $raxml = '/usr/local/bin/raxmlHPC'; # executable
 ~~~~~~
 
-Modify line 47 of /usr/local/share/examples/mole/PhyloNetworks.jl.wiki/data_results/scripts/raxml.pl to say:
+Modify line 47 of /usr/local/share/mole/phylonetworks/data_results/scripts/raxml.pl to say:
 ~~~~~~
 my $astral = '/opt/astral/astral.5.7.1.jar'; # adapt to your system
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
+
+### Download and install various datasets used in tutorials
+
+The repository `github.com/molevolworkshop/moledata` stores many data sets used in the workshop.
+~~~~~~
+cd ~/clones
+git clone https://github.com/molevolworkshop/moledata.git
+~~~~~~
+Should add phylonetworks to this repository.
+Last updated 2023-04-29.
 
 ### Install datasets for alignment tutorial
 
 ~~~~~~
-cd 
-curl -LO https://molevolworkshop.github.io/assets/data/MSAlab.zip
-unzip MSAlab.zip
-sudo mv MSAlab /usr/local/share/examples/mole/
-sudo chown -R root.root /usr/local/share/examples/mole/MSAlab
+cd clones/moledata
+sudo unzip MSAlab.zip -d /usr/local/share/mole 
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install datasets for the Model Selection/Simulation tutorial
 
 ~~~~~~
-cd 
-curl -LO https://molevolworkshop.github.io/assets/data/modsel_sim_tutorial.zip
-sudo unzip modsel_sim_tutorial.zip -d /usr/local/share/examples/mole 
-sudo chmod 755 /usr/local/share/examples/mole/modsel_sim_tutorial
+cd clones/moledata
+sudo unzip modsel_sim_tutorial.zip -d /usr/local/share/mole
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
+
+### Install data files for the PAML lab
+
+~~~~~~
+cd clones/moledata
+sudo unzip PamlLab.zip -d /usr/local/share/mole
+~~~~~~
+Last updated 2023-04-29.
+
+### Install data files for the IQ-TREE lab
+
+~~~~~~
+cd clones/moledata
+sudo unzip iqtreelab.zip -d /usr/local/share/mole
+~~~~~~
+Last updated 2023-04-29.
+
+### Install dataset for RevBayes tutorial
+
+~~~~~~
+cd clones/moledata
+sudo unzip revbayes.zip -d /usr/local/share/mole
+~~~~~~
+Last updated 2023-04-29.
+
+### Install data files for the phylogenomics lab
+
+These files are used in the McTavish tree updating and tree comparison labs. They depend on opentree and RAxML. Note that the git repository cloned here may not actually be needed: the tutorial will be accessed by participants via the [Phylogenomics tutorial web site](https://github.com/snacktavish/Mole2023), which has them clone from the same git repostory. The setup below just provides a backup of these files on the virtual machines themselves.
+~~~~~~
+cd ~/clones
+git clone  https://github.com/snacktavish/Mole2023.git
+sudo cp -R Mole2023 /usr/local/share/mole/
+~~~~~~
+Last updated 2023-04-29.
+
+### Set permissions and remove mac-specific dir
+~~~~~~
+cd /usr/local/share/mole
+sudo rm -rf __MACOSX
+sudo chmod 755 modsel_sim_tutorial
+~~~~~~
 
 ### Install [MAFFT](https://mafft.cbrc.jp/alignment/software/)
 
-Instructions below work except the man page is not installed because the makefile
-tries to create the directory _/usr/local/share/man/man1_ and issues an error when it
-finds that that directory already exists. I didn't think the man page was all that important and thus did not try to fix the makefile.
 ~~~~~~
 cd
 curl -LO https://mafft.cbrc.jp/alignment/software/mafft-7.505-with-extensions-src.tgz    
@@ -534,57 +602,52 @@ make
 sudo make install
 ~~~~~~
 Installed into _/usr/local/bin/_. 
-
-Got error upon install having to do with installing man file:
-
-    mkdir -p /usr/local/share/man/man1
-    mkdir: cannot create directory ‘/usr/local/share/man/man1’: File exists
-    make: *** [Makefile:573: install] Error 1
-
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install [MUSCLE](https://www.drive5.com/muscle/)
 
 MUSCLE is used in the alignment lab as well as the McTavish gene tree updating lab. 
 ~~~~~~
-sudo apt-get install -y muscle
+sudo apt install -y muscle
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install seqtk
 
 seqtk is used in the McTavish gene tree updating lab.
 ~~~~~~
-sudo apt-get install -y seqtk 
+sudo apt install -y seqtk 
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install samtools
 
 samtools is used in the McTavish gene tree updating lab.
 ~~~~~~
-sudo apt-get install -y samtools 
+sudo apt install -y samtools 
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install bcftools
 
 bcftools is used in the McTavish gene tree updating lab.
 ~~~~~~
-sudo apt-get install -y bcftools
+sudo apt install -y bcftools
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install fastx
 
-The fastx toolkit is used in McTavish gene tree updating lab. fastx toolkit and bwa-mem are not available through apt-get.
+The fastx toolkit is used in McTavish gene tree updating lab. fastx toolkit and bwa-mem are not available through apt.
 ~~~~~~
-wget http://hannonlab.cshl.edu/fastx_toolkit/fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2
+cd
+curl -LO http://hannonlab.cshl.edu/fastx_toolkit/fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2
 tar -xjf fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2
-sudo cp bin/* /usr/local/bin/
-rm -rf bin
 mv fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2 TARs
+sudo mv bin/* /usr/local/bin/
+rm -rf bin
 ~~~~~~
+
 Installs the following executables in _/usr/local/bin_:
 ~~~~~~
 fasta_clipping_histogram.pl
@@ -608,16 +671,18 @@ fastx_reverse_complement
 fastx_trimmer
 fastx_uncollapser
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install bwa-mem2
 
 bwa-mem2 is used in McTavish gene tree updating lab.
 ~~~~~~
+cd ~/clones
 git clone --recursive https://github.com/bwa-mem2/bwa-mem2
 cd bwa-mem2
 make
-sudo cp ./bwa-mem2* /usr/local/bin/
+sudo mv ./bwa-mem2* /usr/local/bin/
+rm ./src/*.o
 ~~~~~~
 This installs the following binaries in _/usr/local/bin/_:
 ~~~~~~
@@ -628,76 +693,44 @@ bwa-mem2.avx512bw
 bwa-mem2.sse41
 bwa-mem2.sse42
 ~~~~~~
-Last updated 2023-04-07.
+Last updated 2023-04-29.
 
 ### Install [maxcut](https://sagi-snir.wixsite.com/snir-lab/maxcut)
 
 Sagi Snir's maxcut is used in the SNaQ tutorial. These instructions install the binary in _/usr/local/bin_.
+The software (v. 2.1) is no longer available from [here](http://research.haifa.ac.il/~ssagi/software/QMCN.tar.gz). Sagi suggested we use version 3.0 from [this dryad repository](https://datadryad.org/stash/dataset/doi:10.5061/dryad.r9k57). While that may work, the SNaQ tutorial has not been tested with this version of MaxCut, so this year we are using an archived copy of the `QMCN.tar.gz` file that I scp'd onto the virtual machine.
 ~~~~~~
-# Software is no longer available from here: http://research.haifa.ac.il/~ssagi/software/QMCN.tar.gz
-curl -LO https://molevolworkshop.github.io/assets/data/QMCN.tar.gz
 # caution! QMCN.tar.gz does not create its own directory, so create a directory for it before unpacking
+cd
 mkdir QMCN
-mv QMCN.tar.gz QMCN
+cp ./TARs/QMCN.tar.gz QMCN
 cd QMCN
 tar zxvf QMCN.tar.gz
-mv QMCN.tar.gz TARs
+rm QMCN.tar.gz
 sudo cp find-cut-Linux-64 /usr/local/bin 
 ~~~~~~
 Installed as _/usr/local/bin/find-cut-Linux-64_. 
-Last updated 2023-04-08.
-
-### Install DendroPy ([DendroPy](https://dendropy.org/downloading.html))
-
-DendroPy is used in the McTavish gene tree updating lab.
-~~~~~~
-python3 -m pip install git+https://github.com/jeetsukumaran/DendroPy.git
-~~~~~~
-Last updated 2023-04-08.
+Last updated 2023-04-29.
 
 ### Install [IQ-TREE](http://www.iqtree.org)
 
+Used for the IQ-TREE tutorial.
 ~~~~~~
 cd
 # install standard version
 curl -LO https://github.com/Cibiv/IQ-TREE/releases/download/v1.6.12/iqtree-1.6.12-Linux.tar.gz
 tar zxvf iqtree-1.6.12-Linux.tar.gz
 mv iqtree-1.6.12-Linux.tar.gz TARs
-sudo cp iqtree-1.6.12-Linux/bin/iqtree /usr/local/bin
+sudo mv iqtree-1.6.12-Linux/bin/iqtree /usr/local/bin
 
 # install beta version needed for computing concordance factors
 curl -LO https://github.com/iqtree/iqtree2/releases/download/v2.2.0/iqtree-2.2.0-Linux.tar.gz
 tar zxvf iqtree-2.2.0-Linux.tar.gz
 mv iqtree-2.2.0-Linux.tar.gz TARs
-sudo cp iqtree-2.2.0-Linux/bin/iqtree2 /usr/local/bin
+sudo mv iqtree-2.2.0-Linux/bin/iqtree2 /usr/local/bin
 ~~~~~~
 Installed 1.6.12 as _/usr/local/bin/iqtree_ and 2.0.6 as _/usr/local/bin/iqtree2_. 
-Last updated 2023-04-08.
-
-### Install [RevBayes](https://revbayes.github.io/compile-linux)
-
-~~~~~~
-cd
-# not necessary to issue this command --> sudo apt install build-essential cmake libboost-all-dev
-git clone https://github.com/revbayes/revbayes.git
-cd revbayes/projects/cmake
-./build.sh # this step takes a really long time (33 minutes: 1:55 to 2:27)
-sudo cp rb /usr/local/bin
-~~~~~~
-Installed as _/usr/local/bin/rb_. 
-Last updated 2023-04-08.
-
-### Install dataset for RevBayes tutorial
-
-~~~~~~
-cd
-curl -O https://molevolworkshop.github.io/assets/data/revbayes.zip
-unzip revbayes.zip
-mv revbayes.zip TARs
-sudo mv revbayes /usr/local/share/examples/mole/
-sudo chown -R root.root /usr/local/share/examples/mole/revbayes
-~~~~~~
-Last updated 2023-04-20.
+Last updated 2023-04-29.
 
 ### Install [libpython2.7.so.1.0 shared library](https://askubuntu.com/questions/1213461/cant-locate-libpython2-7-so-1-0)
 
@@ -707,11 +740,13 @@ sudo apt install -y libpython2.7
 ~~~~~~
 
 Installed as _/usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0_. 
-Last updated 2023-04-08.
+Last updated 2023-04-29.
 
 ### Install [jModelTest](https://github.com/ddarriba/jmodeltest2/)
 
+Is this used by any tutorials?
 ~~~~~~
+cd
 curl -LO https://github.com/ddarriba/jmodeltest2/files/157117/jmodeltest-2.1.10.tar.gz
 tar zxvf jmodeltest-2.1.10.tar.gz
 mv jmodeltest-2.1.10.tar.gz TARs
@@ -721,28 +756,27 @@ sudo cp jModelTest.jar /opt/jModelTest
 sudo cp -r lib /opt/jModelTest
 ~~~~~~
 
-Change ownership (note: this is now handled by the [cloud init script](#boot-script-used))
-~~~~~~
-sudo chown moleuser.moleuser /opt/jModelTest/jModelTest.jar
-sudo chown moleuser.moleuser /opt/jModelTest/lib -R
-~~~~~~
-You should now be able to start jModelTest as follows:
-    java -jar /opt/jModelTest/jModelTest.jar
+You should now be able to start jModelTest as follows, but will spit out error message `ERROR: You are trying to run a GUI interface in a headless server.`:
+    sudo java -jar /opt/jModelTest/jModelTest.jar    
 An alias will be created by the [cloud init script](#boot-script-used) to make this easier.
     alias jmodeltest="java -jar /opt/jModelTest/jModelTest.jar"
-Last updated 2023-04-08.
+The [cloud init script](#boot-script-used) will also change ownership
+    sudo chown moleuser.moleuser /opt/jModelTest/jModelTest.jar
+    sudo chown moleuser.moleuser /opt/jModelTest/lib -R
+Last updated 2023-04-29.
 
 ### Install [PAUP*](http://phylosolutions.com/paup-test/)
 
 ~~~~~~
 cd
 curl -LO http://phylosolutions.com/paup-test/paup4a168_ubuntu64.gz
+cp paup4a168_ubuntu64.gz TARs
 gunzip paup4a168_ubuntu64.gz
 sudo mv paup4a168_ubuntu64 /usr/local/bin/paup
 sudo chmod +x /usr/local/bin/paup
 ~~~~~~
 Installed as _/usr/local/bin/paup_. 
-Last updated 2023-04-08.
+Last updated 2023-04-29.
 
 ### Install [PAML](http://abacus.gene.ucl.ac.uk/software/paml.html)
 
@@ -757,78 +791,153 @@ make -f Makefile
 sudo mv baseml basemlg chi2 codeml evolver infinitesites mcmctree pamp yn00 /usr/local/bin
 ~~~~~~
 Installed baseml, basemlg, chi2, codeml, evolver, infinitesites, mcmctree, pamp, and yn00in _/usr/local/bin_. 
-Last updated 2023-04-08.
+Last updated 2023-04-29.
 
-### Install data files for the PAML lab
+### Create pyenv python virtual environment
 
+Python modules used in the McTavish tree comparison tutorial are installed into a virtual environment named pyenv. This may not be used, as the tutorial specify for the students to install python modules themselves (which will be installed in _~/.local_), but it is installed if we end up needing it.
 ~~~~~~
-cd
-curl -O https://molevolworkshop.github.io/assets/data/PamlLab.zip
-unzip PamlLab.zip
-rm -rf __MACOSX/
-mv PamlLab.zip TARs
-sudo mv PamlLab /usr/local/share/examples/mole/
-sudo chown -R root.root /usr/local/share/examples/mole/PamlLab
+sudo chown -R exouser.exouser /usr/local/share/mole/Mole2023
+cd /usr/local/share/mole/Mole2023
+python -m venv pyenv
 ~~~~~~
-Last updated 2023-04-08.
 
-### Install data files for the IQ-TREE lab
+### Install DendroPy ([DendroPy](https://dendropy.org/downloading.html))
 
+DendroPy is used in the McTavish gene tree updating lab.
 ~~~~~~
-cd
-curl -O https://molevolworkshop.github.io/assets/data/iqtreelab.zip
-unzip iqtreelab.zip
-rm -rf __MACOSX/
-mv iqtreelab.zip TARs
-sudo mv iqtreelab /usr/local/share/examples/mole/
-sudo chown -R root.root /usr/local/share/examples/mole/iqtreelab
+source /usr/local/share/mole/Mole2023/pyenv/bin/activate    # activate the python environment pyenv
+python -m pip install git+https://github.com/jeetsukumaran/DendroPy.git
+python -m pip list
+deactivate
 ~~~~~~
-Last updated 2023-04-21.
-
-### Install data files for the phylogenomics lab
-
-TODO This section is not yet ready.
-
-~~~~~~
-cd
-curl -O TODO
-unzip TODO
-mv TODO TARs
-sudo mv TODO /usr/local/share/examples/mole/
-sudo chown -R root.root /usr/local/share/examples/mole/TODO
-~~~~~~
-Last updated 2023-04-21.
-
-### Create alias to mole folder
-
-Allows students to type _moledir_ to go to the example data directory for the course.
-~~~~~~
-cd
-cat - > mole-setup.sh
-alias moledir="cd /usr/local/share/examples/mole"
-# Ctrl-d to close file
-sudo mv mole-setup.sh /etc/profile.d
-~~~~~~
-Last updated 2023-04-08.
+Last updated 2023-04-29.
 
 ### Install opentree
 
 opentree is used in the McTavish gene tree updating lab.
 ~~~~~~
-python3 -m pip install opentree
+source /usr/local/share/mole/Mole2023/pyenv/bin/activate    # activate the python environment pyenv
+python -m pip install opentree
+python -m pip list
+deactivate
 ~~~~~~
-Note: I actually used `sudo pip install opentree`, which resulted in warnings against using pip while su. So, next year, use the command above without `sudo`.
-Last updated 2023-04-18.
+Last updated 2023-04-29.
 
-## Create MOLE-2023-master snapshot
+### Install the machine learning Jupyter notebook
 
-Once the **MOLE_2023_image_basis** VM is set up and running, you can create a **snapshot** image using the Actions menu. I named this snapshot image **MOLE-2023-master** and will keep this image up-to-date (as changes are made to MOLE_2023_image_basis) by deleting the old snapshot and creating a new one.
+The machine learning tutorial is in the form of a Jupyter notebook. The notebook itself is saved to the `/usr/local/share/mole/machinelearning` directory (but is also available on Megan Smith's faculty page).
+~~~~~~
+cd
+curl -LO https://molevolworkshop.github.io/faculty/smith/tutorial/Machine_Learning_for_Population_Genetics.ipynb
+curl -LO https://molevolworkshop.github.io/faculty/smith/tutorial/Models-01.png
+sudo mkdir -p /usr/local/share/mole/machinelearning
+sudo mv Machine_Learning_for_Population_Genetics.ipynb /usr/local/share/mole/machinelearning
+sudo chown -R exouser.exouser /usr/local/share/examples/mole/machinelearning
+~~~~~~
 
-Note that MOLE-2023-master will show `0 B` initially when viewed in the Images list. Not to worry; the size will be updated when the image is fully created.
+#### Create a virtual python environment mlenv
 
-## Creating instances based on MOLE-2023-master
+The following installs the python packages required by the notebook. Just to be safe, I created a different virtual python environment (mlenv) for these installs. The specific versions of each module were specified in the Jupyter script used for the tutorial, so I stuck to those versions to make sure everything was compatible.
+~~~~~~
+module list   # ensure anaconda is not loaded
+cd /usr/local/share/mole/machinelearning
+python -m venv mlenv            # create python virtual environment mlenv
+source ./mlenv/bin/activate     # activate the python virtual environment mlenv
+python -m pip install msprime==1.2.0
+python -m pip install numpy==1.23.5
+python -m pip install scipy==1.9.3
+python -m pip install scikit-learn==1.2.0
+python -m pip install tensorflow==2.10.0
+python -m pip install keras==2.10.0   # not really needed; already installed by tensorflow
+python -m pip install ipykernel
+deactivate
+~~~~~~
 
-To create new instances, click the red _Create_ button in the upper right corner of Exosphere, then choose _Instance_ and then, in the _Choose an Image Source_ section, click the _By Image_ tab and hit the _Create Instance_ button beside MOLE-2023-master.
+While the mlenv is activated, calling
+    python -m pip freeze > mlmodules.txt
+will save the versions of all modules currently loaded to a file. If you need to recreate the environment later, you can install all of these at once using (again, while mlenv is activated)
+    python -m pip install -r mlmodules.txt
+You can use 
+    python -m pip list
+to list modules installed in the virtual environment.
+Last updated 2023-04-29.
+
+#### Create a Jupyter kernel that uses mlenv 
+
+Jupyter comes with the anaconda module, but the anaconda module specifies a default Jupiter kernel that does not have the modules needed by the machine learning tutorial installed. Thus, we need to create a Jupyter kernel that uses the python virtual environment mlenv that we set up in the previous step. The easiest way to create the new kernel is to copy the default one and change the name and path to the python interpreter.
+
+~~~~~~
+mkdir -p /usr/local/share/mole/machinelearning/jupyter/molekernel
+cd /usr/local/share/mole/machinelearning/jupyter/molekernel
+module load anaconda
+jupyter kernelspec list  # shows location of default kernel
+#Available kernels:
+#  python3       /software/u22/anaconda/python3.9/share/jupyter/kernels/python3
+cp -r /software/u22/anaconda/python3.9/share/jupyter/kernels/python3/* .
+# Edit the kernel.json file to look like this:
+{
+ "argv": [
+  "/usr/local/share/mole/machinelearning/mlenv/bin/python",
+  "-m",
+  "ipykernel_launcher",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "MOLE",
+ "language": "python",
+ "metadata": {
+  "debugger": true
+ }
+}
+~~~~~~
+
+#### Create setup.sh script to start Jupyter notebook
+
+Create a _setup.sh_ script to make it easier for students to start Jupyter. The `jupyter-ip.sh` script comes with the virtual machines and is available once anaconda is loaded. It starts a server and displays various ways to access the Jupyter notebook in your browser (I normally use the last URL listed).
+
+The students will have to be told to choose the **MOLE** kernel once Jupyter starts up and they have loaded the notebook (which they should see when Jupyter starts).
+
+I found that the sample sizes specified in the notebook were large enough that the kernel ran out of memory and crashed after the data was simulated and the analyses began. Cutting fragments to 10 (instead of 20), replicates to 500 (instead of 1000), and SNPs to 2000 (instead of 5000) was sufficient to allow it to run to completion.
+
+~~~~~~
+cd /usr/local/share/mole/machinelearning
+cat - > doof.sh << EOF
+#!/bin/bash
+
+echo "Ensuring anaconda is loaded (to make Jupyter available)..."
+module unload anaconda
+module load anaconda
+
+echo "Activating the python environment for this tutorial..."
+source /usr/local/share/mole/machinelearning/mlenv/bin/activate
+
+if [ ! -d "/home/moleuser/.local/share/jupyter/kernels/molekernel" ]
+then
+	echo "Installing molekernel for use with Jupyter..."
+	jupyter kernelspec install /usr/local/share/mole/machinelearning/jupyter/molekernel --user
+else
+	echo "No need to install molekernel because it already exists."
+fi
+
+echo "Starting up Jupyter server..."
+jupyter-ip.sh
+EOF
+~~~~~~
+
+## Locking an instance
+
+It is wise to lock the _MOLE-2023-base_ instance as soon as you are finished setting it up. To do this, choose **Lock** from the **Actions** menu when you are viewing the details of the _MOLE-2023-base_ instance. Locking prevents you from doing something stupid, like deleting this image accidentally. It is easy to unlock it any time you need to, but it is much harder to recreate it after accidentally deleting it! I tend to keep all instances locked unless I find there is some action that requires unlocking.
+
+## Create MOLE-2023-snapshot
+
+Once the **MOLE-2023-base** VM is set up and running, you can create a **snapshot** image using the Actions menu. I named this snapshot image **MOLE-2023-snapshot** and will keep this image up-to-date (as changes are made to MOLE-2023-base) by deleting the old snapshot and creating a new one.
+
+Note that MOLE-2023-snapshot will show `0 B` initially when viewed in the Images list. Not to worry; the size will be updated when the image is fully created.
+
+## Creating instances based on MOLE-2023-snapshot
+
+To create new instances, click the red _Create_ button in the upper right corner of Exosphere, then choose _Instance_ and then, in the _Choose an Image Source_ section, click the _By Image_ tab and hit the _Create Instance_ button beside MOLE-2023-snapshot.
 
 Choose a base name (e.g. "amphioxus"), **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **62** for number of instances, **no** for enable web desktop, and **Show** for Advanced Options.
 
@@ -852,18 +961,17 @@ You (or a student) can now log into an instance as **moleuser**.
 
 This is the default cloud-config boot script with some modifications for MOLE. 
 
-:small_blue_diamond: One modification is the addition of the moleuser. Note that SSH public keys for the co-directors as well as the TAs are automatically saved to the _~moleuser/.ssh/authorized_keys_ directory on each instance, making it easy for the TAs to log in to any instance, even if the student has changed the moleuser password, which is not shown in the cloud-config script below for security reasons (you should replace <tt><not shown></tt> with a meaningful password that will be communicated to students in the first (intro) computer lab.
+* One modification is the addition of the moleuser. Note that SSH public keys for the co-directors as well as the TAs are automatically saved to the _~moleuser/.ssh/authorized_keys_ directory on each instance, making it easy for the TAs to log in to any instance, even if the student has changed the moleuser password (will be communicated to students in the first (intro) computer lab).
 
-:small_blue_diamond: Another modification is the addition of 8 lines to the runcmd section. These lines do the following:
+* Another modification is the addition of 7 lines to the runcmd section. These lines do the following:
 
-1. makes moleuser the owner of _/opt/astral/astral.5.7.1.jar_ (needed for ASTRAL to be started without using sudo) 
-2. makes moleuser the owner of _/opt/astral/lib_ (ditto)
-3. makes moleuser the owner of _/opt/jModelTest/jModelTest.jar_ (needed for jModelTest to be started without using sudo) 
-4. makes moleuser the owner of _/opt/jModelTest/lib_ (ditto)
-5. creates an alias named _astral_ (makes it easier to start ASTRAL)
-6. creates an alias named _jmodeltest_ (makes it easier to start jModelTest)
-7. creates an alias named _raxmlHPC_ (some tutorials use raxmlHPC rather than raxml)
-8. creates a symbolic link named _moledata_ (makes it easier to find example datasets)
+1. makes moleuser the owner of everything inside _/usr/local/share/mole_ 
+2. makes moleuser the owner of everything inside _/opt/astral_ (needed for ASTRAL to be started without using sudo) 
+3. makes moleuser the owner of everything inside _/opt/jModelTest_ (needed for jModelTest to be started without using sudo) 
+4. creates an alias named _astral_ (makes it easier to start ASTRAL)
+5. creates an alias named _jmodeltest_ (makes it easier to start jModelTest)
+6. creates an alias named _phyml_ (which points to the phyml executable inside jModelTest)
+7. creates a symbolic link named _moledata_ (makes it easier to find example datasets)
 
 ~~~~~~
 #cloud-config
@@ -886,7 +994,7 @@ ssh_pwauth: true             # allow password authentication (for students)
 chpasswd:
     expire: false            # do not force user to change passwd on first login
     users:
-        - name: moleuser     # specify starting password for moleuser hashed using "mkpasswd --method=SHA-512 --rounds=4096 <passwd>"
+        - name: moleuser     # mkpasswd --method=SHA-512 --rounds=4096 <passwd> -s /gyk3ST/YBZpL/wh
           password: $6$rounds=4096$/gyk3ST/YBZpL/wh$GbjLz08E2xaEky9eSTH/uVmui2K2ZCBHWPPGBi7cVEgrvNKzUTEPqhdgXK74wqi8WWqtwKDi3nxgUWzw8bFbJ/
 package_update: true
 package_upgrade: {install-os-updates}
@@ -894,13 +1002,13 @@ packages:
   - python3-virtualenv
   - git{write-files}
 runcmd:
-  - chown moleuser.moleuser /opt/astral -R              # MOLE
-  - chown moleuser.moleuser /opt/jModelTest -R          # MOLE
+  - chown -R moleuser.moleuser /usr/local/share/mole     # MOLE
+  - chown -R moleuser.moleuser /opt/astral               # MOLE
+  - chown -R moleuser.moleuser /opt/jModelTest           # MOLE
   - echo 'alias astral="java -jar /opt/astral/astral.5.7.1.jar"' >> /home/moleuser/.bash_profile       # MOLE
   - echo 'alias jmodeltest="java -jar /opt/jModelTest/jModelTest.jar"' >> /home/moleuser/.bash_profile # MOLE
-  - echo 'alias phyml="/opt/jModelTest/exe/phyml/PhyML_3.0_linux64"' >> /home/moleuser/.bash_profile # MOLE
-  - echo 'alias raxmlHPC="/usr/local/bin/raxml"' >> /home/moleuser/.bash_profile # MOLE
-  - ln -s /usr/local/share/examples/mole /home/moleuser/moledata                 # MOLE
+  - echo 'alias phyml="/opt/jModelTest/exe/phyml/PhyML_3.0_linux64"' >> /home/moleuser/.bash_profile   # MOLE
+  - ln -s /usr/local/share/mole /home/moleuser/moledata  # MOLE
   - echo on > /proc/sys/kernel/printk_devkmsg || true  # Disable console rate limiting for distros that use kmsg
   - sleep 1  # Ensures that console log output from any previous command completes before the following command begins
   - >-
@@ -1002,7 +1110,7 @@ To show a list of images:
 
 To show details for one particular image:
 
-    openstack image show MOLE-2023-master --fit-width
+    openstack image show MOLE-2023-snapshot --fit-width
 
 To show a list of instances:
 
