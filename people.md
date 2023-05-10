@@ -14,7 +14,7 @@ permalink: /people/
 
 |               First Name |                Last Name |                                                 Institution |
 | ------------------------ | ------------------------ | ----------------------------------------------------------- |
-|                 Adetunji |                  Adesina |                              University of Colorado Boulder |
+|        Adetunji (Teejay) |                  Adesina |                              University of Colorado Boulder |
 |                   Avrami |                Aharonoff |                                         New York University |
 |                  Michael |                     Alam |                                       University of Arizona |
 |                  Aurelia |                 Balestra |                                  University of Pennsylvania |
@@ -37,7 +37,7 @@ permalink: /people/
 |                     Emma |                 Lehmberg |                                        Texas A&M University |
 |                   Polina |                      Len |                                       Nazarbayev University |
 |                   Yixuan |                       Li |                                Hong Kong Baptist University |
-|                   Giulia |                      Lin |                                                       EAWAG |
+|                   Giulia |                      Lin |                                                  ETH Zürich |
 |                    Carly |                       Lo |                              Texas A&M University-Galveston |
 |                  Leticia |    Magpali Moura Estevao |                                        Dalhousie University |
 |                    Nahui |            Medina-Chavez |                        University of Minnesota: Twin Cities |
