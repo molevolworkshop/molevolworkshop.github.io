@@ -274,6 +274,14 @@ sudo apt install -y apt-file
 This may pop up a graphical interface: use tab and arrow keys to navigate.
 Last updated 2023-04-29.
 
+### Install python2
+
+Some tutorials (e.g. SVDQuartets) still require python2.
+~~~~~~
+sudo apt install -y python2
+~~~~~~
+Last updated 2023-05-09.
+
 ### Install python-is-python3
 
 This ensures that whenever someone types python they are using python3
@@ -541,6 +549,14 @@ sudo unzip MSAlab.zip -d /usr/local/share/mole
 ~~~~~~
 Last updated 2023-04-29.
 
+### Install datasets for the migrate tutorial
+
+~~~~~~
+cd clones/moledata
+sudo unzip migrate_tutorial.zip -d /usr/local/share/mole
+~~~~~~
+Last updated 2023-05-09.
+
 ### Install datasets for the Model Selection/Simulation tutorial
 
 ~~~~~~
@@ -548,6 +564,14 @@ cd clones/moledata
 sudo unzip modsel_sim_tutorial.zip -d /usr/local/share/mole
 ~~~~~~
 Last updated 2023-04-29.
+
+### Install datasets for the SVDQuartets tutorial
+
+~~~~~~
+cd clones/moledata
+sudo unzip svdquartets_tutorial.zip -d /usr/local/share/mole
+~~~~~~
+Last updated 2023-05-09.
 
 ### Install data files for the PAML lab
 
@@ -744,26 +768,22 @@ Last updated 2023-04-29.
 
 ### Install [jModelTest](https://github.com/ddarriba/jmodeltest2/)
 
-Is this used by any tutorials?
+Used in the PAUP tutorial.
 ~~~~~~
 cd
 curl -LO https://github.com/ddarriba/jmodeltest2/files/157117/jmodeltest-2.1.10.tar.gz
 tar zxvf jmodeltest-2.1.10.tar.gz
 mv jmodeltest-2.1.10.tar.gz TARs
-cd jmodeltest-2.1.10
-sudo mkdir /opt/jModelTest
-sudo cp jModelTest.jar /opt/jModelTest
-sudo cp -r lib /opt/jModelTest
+cp -r jmodeltest-2.1.10 /opt
 ~~~~~~
 
 You should now be able to start jModelTest as follows, but will spit out error message `ERROR: You are trying to run a GUI interface in a headless server.`:
-    sudo java -jar /opt/jModelTest/jModelTest.jar    
+    sudo java -jar /opt/jmodeltest-2.1.10/jModelTest.jar    
 An alias will be created by the [cloud init script](#boot-script-used) to make this easier.
-    alias jmodeltest="java -jar /opt/jModelTest/jModelTest.jar"
+    alias jmodeltest="java -jar /opt/jmodeltest-2.1.10/jModelTest.jar"
 The [cloud init script](#boot-script-used) will also change ownership
-    sudo chown moleuser.moleuser /opt/jModelTest/jModelTest.jar
-    sudo chown moleuser.moleuser /opt/jModelTest/lib -R
-Last updated 2023-04-29.
+    sudo chown -R moleuser.moleuser /opt/jmodeltest-2.1.10
+Last updated 2023-05-06.
 
 ### Install [PAUP*](http://phylosolutions.com/paup-test/)
 
@@ -780,18 +800,22 @@ Last updated 2023-04-29.
 
 ### Install [PAML](http://abacus.gene.ucl.ac.uk/software/paml.html)
 
-Note: ignore the complicated instructions on the PAML web site that talk about downloading the windows version and just download the linux version from the downloads page.
+Downloaded the linux version 4.9j from the old-versions page. Hopefully next year we'll be
+able to use the most recent version on the github site. 
+
+Version 4.9j failed to link due to the inclusion of a couple of enum definitions (`SeqTypes` and `OutTreeOptions`) in _paml.h_. I copied those definitions to a new file _enums.c_, included that file in each target of the Makefile, and added `extern` in front of each of these in _paml.h_ and the build went smoothly.
 ~~~~~~
 cd
-curl -LO https://github.com/abacus-gene/paml/releases/download/v4.10.6/paml-4.10.6-linux-X86_64.tgz
-tar zxvf paml-4.10.6-linux-X86_64.tgz
-mv paml-4.10.6-linux-X86_64.tgz TARs
-cd paml-4.10.6/src
+#curl -LO https://github.com/abacus-gene/paml/releases/download/v4.10.6/paml-4.10.6-linux-X86_64.tgz
+curl -LO http://abacus.gene.ucl.ac.uk/software/SoftOld/paml4.9j.tgz
+tar zxvf paml4.9j.tgz
+mv paml4.9j.tgz TARs
+cd paml4.9j/src
 make -f Makefile
 sudo mv baseml basemlg chi2 codeml evolver infinitesites mcmctree pamp yn00 /usr/local/bin
 ~~~~~~
 Installed baseml, basemlg, chi2, codeml, evolver, infinitesites, mcmctree, pamp, and yn00in _/usr/local/bin_. 
-Last updated 2023-04-29.
+Last updated 2023-05-10.
 
 ### Create pyenv python virtual environment
 
@@ -925,6 +949,74 @@ jupyter-ip.sh
 EOF
 ~~~~~~
 
+### Creating a shared read-only volume for the python virtual environment
+
+**Note: need to remove instructions about creating mlenv above and will need a script to mount this volume on all VMs **
+
+The python virtual environment used in the machine learning tutorial is large (1.8GB) and thus locating it on each VM brings these machines 1.8GB closer to their 20GB maximum disk space. To save space on the individual VMs used by participants and faculty, I created a volume to hold just the python virtual environment that is used for both the machine learning and opentree labs. This volume is attached to MOLE-2023-base and shared with all other VMs via NFS.
+
+#### Creating and populating a volume
+
+In Exosphere, choose Create > Volume using the red Create button at the top right. Attach the volume to MOLE-2023-base using the Attach Volume button under the Volumes panel when viewing the details of the MOLE-2023-base instance. The volume will be mounted at _/media/volume/sdb_.
+
+Assuming you are logged into MOLE-2023-base as exouser, create a python virtual environment as follows:
+~~~~~~
+cd /media/volume/sdb
+python -m venv pyenv            # create python virtual environment
+source ./pyenv/bin/activate     # activate the python virtual environment
+python -m pip install msprime==1.2.0
+python -m pip install numpy==1.23.5
+python -m pip install scipy==1.9.3
+python -m pip install scikit-learn==1.2.0
+python -m pip install tensorflow==2.10.0
+python -m pip install keras==2.10.0   # not really needed; already installed by tensorflow
+python -m pip install ipykernel
+python -m pip install opentree
+python -m pip install git+https://github.com/jeetsukumaran/DendroPy.git
+deactivate
+sudo chown -R moleuser.moleuser pyenv
+~~~~~~
+
+#### Setting up the NFS server on MOLE-2023-base
+
+See [this explanation](https://bluexp.netapp.com/blog/azure-anf-blg-linux-nfs-server-how-to-set-up-server-and-client#H_H9) for basic NFS setup and [this one](https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking) for an explanation of specifying IP ranges.
+~~~~~~
+sudo apt install -y nfs-kernel-server
+sudo vi /etc/exports
+# The example below shows exporting to just one VM
+#   /media/volume/sdb/mole 149.165.173.134(ro,sync,no_subtree_check)
+# The example below exports to a range of IP addresses (specifically 149.165.173.132, 149.165.173.133, 149.165.173.134, 149.165.173.135)
+#   /media/volume/sdb/mole 149.165.173.134/30(ro,sync,no_subtree_check)
+# The same example as above but spread across 4 lines
+#   /media/volume/sdb/mole 149.165.173.132(ro,sync,no_subtree_check)
+#   /media/volume/sdb/mole 149.165.173.133(ro,sync,no_subtree_check)
+#   /media/volume/sdb/mole 149.165.173.134(ro,sync,no_subtree_check)
+#   /media/volume/sdb/mole 149.165.173.135(ro,sync,no_subtree_check)
+# The same example but on one long line:
+#   /media/volume/sdb/mole 149.165.173.132(ro,sync,no_subtree_check) 149.165.173.133(ro,sync,no_subtree_check) 149.165.173.134(ro,sync,no_subtree_check) 149.165.173.135(ro,sync,no_subtree_check)
+sudo systemctl restart nfs-kernel-server
+~~~~~~
+
+#### Setting up the NFS client
+
+Assuming 149.165.173.177 is the ip address of MOLE-2023-base:
+~~~~~~
+sudo mkdir /var/pyenv
+sudo chown moleuser.moleuser /var/pyenv
+sudo mount -t nfs 149.165.173.177:/media/volume/sdb/pyenv /var/pyenv
+# use the following command to unmount
+# sudo umount /var/pyenv  # can also use -f (force) and/or -l (lazy) switches
+~~~~~~
+
+(Not sure this is necessary or desirable.) The above mount command sets up NFS sharing temporarily. To automate this so that the share is mounted on startup:
+~~~~~~
+sudo vi /etc/fstab
+# Insert line similar to the following
+# 149.165.173.177:/media/volume/sdb/mole /var/mole nfs defaults 0 0
+sudo mount /var/mole
+sudo mount 149.165.173.177:/media/volume/sdb/mole
+~~~~~~
+
 ## Locking an instance
 
 It is wise to lock the _MOLE-2023-base_ instance as soon as you are finished setting it up. To do this, choose **Lock** from the **Actions** menu when you are viewing the details of the _MOLE-2023-base_ instance. Locking prevents you from doing something stupid, like deleting this image accidentally. It is easy to unlock it any time you need to, but it is much harder to recreate it after accidentally deleting it! I tend to keep all instances locked unless I find there is some action that requires unlocking.
@@ -963,15 +1055,20 @@ This is the default cloud-config boot script with some modifications for MOLE.
 
 * One modification is the addition of the moleuser. Note that SSH public keys for the co-directors as well as the TAs are automatically saved to the _~moleuser/.ssh/authorized_keys_ directory on each instance, making it easy for the TAs to log in to any instance, even if the student has changed the moleuser password (will be communicated to students in the first (intro) computer lab).
 
-* Another modification is the addition of 7 lines to the runcmd section. These lines do the following:
+* Another modification is the addition of 12 lines to the runcmd section. These lines do the following:
 
-1. makes moleuser the owner of everything inside _/usr/local/share/mole_ 
-2. makes moleuser the owner of everything inside _/opt/astral_ (needed for ASTRAL to be started without using sudo) 
-3. makes moleuser the owner of everything inside _/opt/jModelTest_ (needed for jModelTest to be started without using sudo) 
-4. creates an alias named _astral_ (makes it easier to start ASTRAL)
-5. creates an alias named _jmodeltest_ (makes it easier to start jModelTest)
-6. creates an alias named _phyml_ (which points to the phyml executable inside jModelTest)
-7. creates a symbolic link named _moledata_ (makes it easier to find example datasets)
+ 1. makes moleuser the owner of everything inside _/usr/local/share/mole_ 
+ 2. makes moleuser the owner of everything inside _/opt/astral_ (needed for ASTRAL to be started without using sudo) 
+ 3. makes moleuser the owner of everything inside _/opt/jmodeltest-2.1.10_ (needed for jModelTest to be started without using sudo) 
+ 4. makes moleuser the owner of everything inside _/opt/julia-1.8.5_  
+ 5. creates an alias named _astral_ (makes it easier to start ASTRAL)
+ 6. creates an alias named _jmodeltest_ (makes it easier to start jModelTest)
+ 7. creates an alias named _phyml_ (which points to the phyml executable inside jModelTest)
+ 8. creates a symlink named _raxml_ in /usr/local/bin that points to /usr/local/bin/raxmlHPC (the PAUP* tutorial specifies raxml rather than raxmlHPC)
+ 9. makes moleuser the owner of its own .bash_profile (created as a result of the alias definitions above)
+10. creates a symbolic link named _moledata_ (makes it easier to find example datasets)
+11. creates a directory /var/pyenv to use as a mount point for nfs
+12. makes moleuser the owner of /var/pyenv
 
 ~~~~~~
 #cloud-config
@@ -990,6 +1087,7 @@ users:
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDIulLE6a+QGh/JE9mjGmTwRWtmcK29mbB1MJEN728+gLRnHV8oRfE5ahZVp4k0+h0onBn3Br8hVTkqQqC3GJmRe2PMlocqIJULe3hFvtXZqGh+w8QUj//+C3kTg6Lptc2m4f9JimjUjFNPnfX5sioJp2mHOjNbYXYbXb0zx1Y5jKVmi6r0NifcuZ+ObfIFG5+o1kytAq/J+8f6evBUKlTR8Gsk7V9zuZmGcffGZe5HA+3ilkUGd2Uyx18nbgE4VZTXC9K7RA7AFPtkLRH/ivaMGESUteH5Wqe1Bj46ORjapRV+hmU1t/VeOmHVWknkaTM3/yZpMKAiFYxWADDXsSNSNck38zMmDmWxzW+wcrNcCysKUZU60DxD4Czvk4VEUgFSVg/YmN1tJDqVse7GfcvYxzgC9R5qDItXPY3YBjq9ykOIGmn9C30lVqh4nELu3LujrmHmf0VTDtexc/4T+YPJlmVxr64UP4YTInLw5wBgQ89Thj6ahx+QnfC6m5Uv+ws= blakefauskee@Blakes-MacBook-Pro-3.local               
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0lGJQrxeZ8wjpxwFvgAW+1gnHzB7cre8ejkAdBHR8rQjz+htA9U+nsgNvaSHoD4q0TzObhobdwOlkCVstJNYz1KKDH61Rbn61MToO5h1n4Ow1slHNl/Cy0NKwEg+YnyPULrMb1z5h+yzUUFgMpwzzQsutrcN9Im3HuAnRGD3giJFHKYhhEMl92EPgEf9/xs3b/0B1FdXIotFiuGkk3FkhZIA+1Ga+nNE6CEhjEHY2YQd3PsFRZWqo/FxujUQTS5hvy/5BOGpGo3LyRFiHiNWXcHXVLak+0SJzrDEcpoX1A1ezzJIvQbdGV3KNxxFPsX9T48oi5r50WRRiG3tmjUQjRm+tx41yUl/ZmZEISv8CQtn2p4h02sTLLOntIP3GBjiIok/zgTH2OHihMlqoahKbfoadWZLhkG05pnZ71YA0hFs8QQxPXNycf8zHxp8PmMAzKL9M4jtH+KRH+XVj9zoq9D0uU7WA5kyUVOjHYRMy8yvGBtFHbW3TH7BgMP7aYcM= khaosan@Sungsiks-MacBook-Pro.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCkpuLKyLQpqg8TF0iCRQXJg2z+/F/YBYnd4BVlupJhpZpbViLWulByYLMetC/7UT57CjX8i518CfpwbCP4dMEiQR+93AxZhBvKZM4Mtz0Me6SWmSnFV8cVF5c23UZoqOeVInABe14hLEZBdbyWck5QTy0k/CQrYSIToYqdZA6G/G8PKAk6db2rQuiwHi0Q5qE7RQ7S2qRgq4n9G0zPDelV8myyzduo7bOY3BaNMKwj5Yi/soMUBvOX7Do9R5+5XjpOuqnPbPX2NeMvIZJZ/ZwvBmbjQievhaX7COISWw77wUboaqpn2aEnewEc9Kt4gfx0gzDvznsCZRe+XCV1Q2xv3zVRut4FZfv0DhDEfL42vFEhahF728npFjyIo5cidMTBek9oCuqg58B3Umr/bFJEhjCaGhBJVqeDRERha8fbO7c8aAW3WdoTqaJJAIshztWhLotJaM77nt35dMrmOlOwRs3rHi4fxk5r+6tLxardNGKOBWHyQ4CneYPUkxWKcN0= kubatko.2@STAT-NC247353
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqJeFU3sEcA72fyYD2LCzDsfHqPmZonnATiXDKYeutIzQ+iVREIG3EMUNjeps8JS9oWw11ojXLFDZCHdg/z87qBZn7ilGgXZ6/PRhGaDx3kjPr5Mek10bV3BwB0O9Gws9rmepD/akuXY7wTS5M++YqCkwU1Ia9oAEW4QWDuc1Bdj3L1DqSYbI+xg38EA5TpRL2N968OPuu1xhGT9cPkRgOQAcTbFyknoeEXKwSUKamii8q8Lv+Zi9nA1nRYa0xZdJSGZNxso41FJkEmNfF6o/IKMtAJ0DHcg1B3aJpS8o2+cgyR+L0NqVHrJeBIagm4n3H8xP40pUCj5PyphdZam5L jpbielawski@Josephs-MacBook-Air.local
 ssh_pwauth: true             # allow password authentication (for students)
 chpasswd:
     expire: false            # do not force user to change passwd on first login
@@ -1002,13 +1100,18 @@ packages:
   - python3-virtualenv
   - git{write-files}
 runcmd:
-  - chown -R moleuser.moleuser /usr/local/share/mole     # MOLE
-  - chown -R moleuser.moleuser /opt/astral               # MOLE
-  - chown -R moleuser.moleuser /opt/jModelTest           # MOLE
-  - echo 'alias astral="java -jar /opt/astral/astral.5.7.1.jar"' >> /home/moleuser/.bash_profile       # MOLE
-  - echo 'alias jmodeltest="java -jar /opt/jModelTest/jModelTest.jar"' >> /home/moleuser/.bash_profile # MOLE
-  - echo 'alias phyml="/opt/jModelTest/exe/phyml/PhyML_3.0_linux64"' >> /home/moleuser/.bash_profile   # MOLE
-  - ln -s /usr/local/share/mole /home/moleuser/moledata  # MOLE
+  - chown -R moleuser.moleuser /usr/local/share/mole                                                          # MOLE
+  - chown -R moleuser.moleuser /opt/astral                                                                    # MOLE
+  - chown -R moleuser.moleuser /opt/jmodeltest-2.1.10                                                         # MOLE
+  - chown -R moleuser.moleuser /opt/julia-1.8.5                                                               # MOLE
+  - echo 'alias astral="java -jar /opt/astral/astral.5.7.1.jar"' >> /home/moleuser/.bash_profile              # MOLE
+  - echo 'alias jmodeltest="java -jar /opt/jmodeltest-2.1.10/jModelTest.jar"' >> /home/moleuser/.bash_profile # MOLE
+  - echo 'alias phyml="/opt/jmodeltest-2.1.10/exe/phyml/PhyML_3.0_linux64"' >> /home/moleuser/.bash_profile   # MOLE
+  - sudo ln -s /usr/local/bin/raxmlHPC /usr/local/bin/raxml                                                   # MOLE
+  - sudo chown -R moleuser.moleuser /home/moleuser/.bash_profile                                              # MOLE
+  - ln -s /usr/local/share/mole /home/moleuser/moledata                                                       # MOLE
+  - mkdir /var/pyenv                                                                                          # MOLE
+  - chown -R moleuser.moleuser /var/pyenv                                                                     # MOLE
   - echo on > /proc/sys/kernel/printk_devkmsg || true  # Disable console rate limiting for distros that use kmsg
   - sleep 1  # Ensures that console log output from any previous command completes before the following command begins
   - >-
