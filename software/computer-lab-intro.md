@@ -267,7 +267,7 @@ Enter the following text in this file:
         HostName 123.456.789.321
 	    User moleuser
 	    
-Use the tab character to indent the second and third lines. Now make sure that your config file has the propoer (very limited) permissions:
+Use the tab character to indent the second and third lines. Now make sure that your config file has the proper (very limited) permissions:
 
     chmod 600 ~/.ssh/config
     
