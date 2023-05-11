@@ -40,7 +40,7 @@ The lab exercises (PAML demo) are available via small website (link below). The 
 
 **PAML demo resources**: [webpage](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html)
 
-**PAML demo slides**: [slides (PDF)](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO_MOLE2022_v2.pdf)
+**PAML demo slides**: [slides (PDF)](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO_2023.pdf)
 
 If you want doing the lab independently of the workshop (at home, on your own time and on your own computer), then you can do this by downloading all the necessary files from an archive [here](https://bitbucket.org/EvoWorks/protocol-paml-lab-at-mbl-workshop/downloads/), or you can download the files individually for each exercise as you need them [here](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/PAML_Lab_files.html).
 
