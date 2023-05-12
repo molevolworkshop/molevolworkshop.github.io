@@ -1055,7 +1055,7 @@ This is the default cloud-config boot script with some modifications for MOLE.
 
 * One modification is the addition of the moleuser. Note that SSH public keys for the co-directors as well as the TAs are automatically saved to the _~moleuser/.ssh/authorized_keys_ directory on each instance, making it easy for the TAs to log in to any instance, even if the student has changed the moleuser password (will be communicated to students in the first (intro) computer lab).
 
-* Another modification is the addition of 12 lines to the runcmd section. These lines do the following:
+* Another modification is the addition of 13 lines to the runcmd section. These lines do the following:
 
  1. makes moleuser the owner of everything inside _/usr/local/share/mole_ 
  2. makes moleuser the owner of everything inside _/opt/astral_ (needed for ASTRAL to be started without using sudo) 
@@ -1064,11 +1064,12 @@ This is the default cloud-config boot script with some modifications for MOLE.
  5. creates an alias named _astral_ (makes it easier to start ASTRAL)
  6. creates an alias named _jmodeltest_ (makes it easier to start jModelTest)
  7. creates an alias named _phyml_ (which points to the phyml executable inside jModelTest)
- 8. creates a symlink named _raxml_ in /usr/local/bin that points to /usr/local/bin/raxmlHPC (the PAUP* tutorial specifies raxml rather than raxmlHPC)
- 9. makes moleuser the owner of its own .bash_profile (created as a result of the alias definitions above)
-10. creates a symbolic link named _moledata_ (makes it easier to find example datasets)
-11. creates a directory /var/pyenv to use as a mount point for nfs
-12. makes moleuser the owner of /var/pyenv
+ 8. creates a symlink named _iqtree-beta_ in /usr/local/bin that points to /usr/local/bin/iqtree2 (the IQTREE tutorial uses iqtree-beta rather than iqtree2)
+ 9. creates a symlink named _raxml_ in /usr/local/bin that points to /usr/local/bin/raxmlHPC (the PAUP* tutorial specifies raxml rather than raxmlHPC)
+10. makes moleuser the owner of its own .bash_profile (created as a result of the alias definitions above)
+11. creates a symbolic link named _moledata_ (makes it easier to find example datasets)
+12. creates a directory /var/pyenv to use as a mount point for nfs
+13. makes moleuser the owner of /var/pyenv
 
 ~~~~~~
 #cloud-config
@@ -1107,6 +1108,7 @@ runcmd:
   - echo 'alias astral="java -jar /opt/astral/astral.5.7.1.jar"' >> /home/moleuser/.bash_profile              # MOLE
   - echo 'alias jmodeltest="java -jar /opt/jmodeltest-2.1.10/jModelTest.jar"' >> /home/moleuser/.bash_profile # MOLE
   - echo 'alias phyml="/opt/jmodeltest-2.1.10/exe/phyml/PhyML_3.0_linux64"' >> /home/moleuser/.bash_profile   # MOLE
+  - sudo ln -s /usr/local/bin/iqtree2 /usr/local/bin/iqtree-beta                                              # MOLE
   - sudo ln -s /usr/local/bin/raxmlHPC /usr/local/bin/raxml                                                   # MOLE
   - sudo chown -R moleuser.moleuser /home/moleuser/.bash_profile                                              # MOLE
   - ln -s /usr/local/share/mole /home/moleuser/moledata                                                       # MOLE
