@@ -394,9 +394,11 @@ julia> Pkg.add("DataFrames")    # to create & manipulate data frames
 julia> Pkg.add("StatsModels")   # for regression formulas
 julia> using PhyloNetworks      # check whether it loads
 julia> using PhyloPlots         # check whether it loads
+julia> Pkg.status()             # useful for seeing what packages are installed
+julia> pathof(PhyloNetworks)    # useful for seeing where the package was installed
 # use Ctrl-d to quit julia
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2023-05-12.
 
 ### Install [RevBayes](https://revbayes.github.io/compile-linux)
 
@@ -516,29 +518,29 @@ Last updated 2023-04-29.
 cd ~/clones
 git clone https://github.com/crsl4/PhyloNetworks.jl.wiki.git
 cd PhyloNetworks.jl.wiki
-sudo mkdir /usr/local/share/mole/phylonetworks
-sudo cp -R data_results /usr/local/share/mole/phylonetworks
+sudo mkdir /usr/local/share/mole/phylo-networks
+sudo cp -R data_results /usr/local/share/mole/phylo-networks
 ~~~~~~
 
-Modify line 46 of /usr/local/share/mole/phylonetworks/data_results/scripts/raxml.pl to say:
+Modify line 46 of /usr/local/share/mole/phylo-networks/data_results/scripts/46G to say:
 ~~~~~~
 my $raxml = '/usr/local/bin/raxmlHPC'; # executable
 ~~~~~~
 
-Modify line 47 of /usr/local/share/mole/phylonetworks/data_results/scripts/raxml.pl to say:
+Modify line 47 of /usr/local/share/mole/phylo-networks/data_results/scripts/raxml.pl to say:
 ~~~~~~
 my $astral = '/opt/astral/astral.5.7.1.jar'; # adapt to your system
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2023-05-12.
 
 ### Download and install various datasets used in tutorials
 
-The repository `github.com/molevolworkshop/moledata` stores many data sets used in the workshop.
+The repository [github.com/molevolworkshop/moledata](https://github.com/molevolworkshop/moledata) stores many data sets used in the workshop.
 ~~~~~~
 cd ~/clones
 git clone https://github.com/molevolworkshop/moledata.git
 ~~~~~~
-Should add phylonetworks to this repository.
+Should add phylo-networks to this repository.
 Last updated 2023-04-29.
 
 ### Install datasets for alignment tutorial
@@ -1023,13 +1025,13 @@ It is wise to lock the _MOLE-2023-base_ instance as soon as you are finished set
 
 ## Create MOLE-2023-snapshot
 
-Once the **MOLE-2023-base** VM is set up and running, you can create a **snapshot** image using the Actions menu. I named this snapshot image **MOLE-2023-snapshot** and will keep this image up-to-date (as changes are made to MOLE-2023-base) by deleting the old snapshot and creating a new one.
+Once the **MOLE-2023-base** VM is set up and running, you can create a **snapshot** image using the Actions menu. I name these snapshot images something like **MOLE-2023-snapshot-05-12** (where the 05-12 part is the date) and make additional snapshots (deleting the really old ones) as changes are made to MOLE-2023-base.
 
-Note that MOLE-2023-snapshot will show `0 B` initially when viewed in the Images list. Not to worry; the size will be updated when the image is fully created.
+Note that MOLE-2023-snapshot-05-12 will show `0 B` initially when viewed in the Images list. Not to worry; the size will be updated when the image is fully created.
 
-## Creating instances based on MOLE-2023-snapshot
+## Creating instances based on MOLE-2023-snapshot-05-12
 
-To create new instances, click the red _Create_ button in the upper right corner of Exosphere, then choose _Instance_ and then, in the _Choose an Image Source_ section, click the _By Image_ tab and hit the _Create Instance_ button beside MOLE-2023-snapshot.
+To create new instances, click the red _Create_ button in the upper right corner of Exosphere, then choose _Instance_ and then, in the _Choose an Image Source_ section, click the _By Image_ tab and hit the _Create Instance_ button beside MOLE-2023-snapshot-05-12.
 
 Choose a base name (e.g. "amphioxus"), **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **62** for number of instances, **no** for enable web desktop, and **Show** for Advanced Options.
 
@@ -1045,9 +1047,34 @@ Advanced Options:
 
 Be sure to change `<not shown>` to a real password in the boot script before pressing the Create button to create the instances. The Exosphere GUI will say "Building" in orange, then "running Setup", then "Ready" in green. Clicking on "Instances" will take you to a screen that shows each instance created and its IP address.
 
-You (or a student) can now log into an instance as **moleuser**.
+You (or a student) can now log into an instance as **moleuser** with a command like this:
 
     ssh moleuser@149.165.159.178
+    
+### NFS
+
+You will need to mount the shared /var/pyenv directory on each instance. This involves:
+* adding a line to `/etc/exports` on MOLE-2023-base for each VM instance (allowing that VM instance to access the share);
+* restart the server on MOLE-2023-base (`sudo systemctl restart nfs-kernel-server`)
+* mount the folder `/var/pyenv` on each VM instance
+
+You can use a script such as the following to mount the folder on all VMs at once (assuming MOLE-2023-base is exporting to all of them):
+
+~~~~~~
+#!/bin/bash
+
+IPADDRESSES=(149.165.172.121)
+
+for ip in ${IPADDRESSES[@]}
+do
+    ssh -t moleuser@$ip "bash -c 'sudo mount -t nfs 149.165.173.177:/media/volume/sdb/pyenv /var/pyenv'"
+done
+~~~~~~
+
+For this to work, you will need to:
+* set up the array IPADDRESSES in this script to contain all the IP addresses beforehand;
+* change 149.165.173.177 to the IP address of the MOLE-2023-base machine
+* be set up for using openstack (see section entitled "Command line client" below).
 
 ### Boot script used
 
@@ -1055,7 +1082,7 @@ This is the default cloud-config boot script with some modifications for MOLE.
 
 * One modification is the addition of the moleuser. Note that SSH public keys for the co-directors as well as the TAs are automatically saved to the _~moleuser/.ssh/authorized_keys_ directory on each instance, making it easy for the TAs to log in to any instance, even if the student has changed the moleuser password (will be communicated to students in the first (intro) computer lab).
 
-* Another modification is the addition of 13 lines to the runcmd section. These lines do the following:
+* Another modification is the addition of 14 lines to the runcmd section. These lines do the following:
 
  1. makes moleuser the owner of everything inside _/usr/local/share/mole_ 
  2. makes moleuser the owner of everything inside _/opt/astral_ (needed for ASTRAL to be started without using sudo) 
@@ -1064,12 +1091,13 @@ This is the default cloud-config boot script with some modifications for MOLE.
  5. creates an alias named _astral_ (makes it easier to start ASTRAL)
  6. creates an alias named _jmodeltest_ (makes it easier to start jModelTest)
  7. creates an alias named _phyml_ (which points to the phyml executable inside jModelTest)
- 8. creates a symlink named _iqtree-beta_ in /usr/local/bin that points to /usr/local/bin/iqtree2 (the IQTREE tutorial uses iqtree-beta rather than iqtree2)
- 9. creates a symlink named _raxml_ in /usr/local/bin that points to /usr/local/bin/raxmlHPC (the PAUP* tutorial specifies raxml rather than raxmlHPC)
-10. makes moleuser the owner of its own .bash_profile (created as a result of the alias definitions above)
-11. creates a symbolic link named _moledata_ (makes it easier to find example datasets)
-12. creates a directory /var/pyenv to use as a mount point for nfs
-13. makes moleuser the owner of /var/pyenv
+ 8. adds a line exporting the environmental variable JULIA_DEPOT_PATH to moleuser's .bash_profile (this allows Julia to find the packages needed for the PhyloNetworks tutorial)
+ 9. creates a symlink named _iqtree-beta_ in /usr/local/bin that points to /usr/local/bin/iqtree2 (the IQTREE tutorial uses iqtree-beta rather than iqtree2)
+10. creates a symlink named _raxml_ in /usr/local/bin that points to /usr/local/bin/raxmlHPC (the PAUP* tutorial specifies raxml rather than raxmlHPC)
+11. makes moleuser the owner of its own .bash_profile (created as a result of the alias definitions above)
+12. creates a symbolic link named _moledata_ (makes it easier to find example datasets)
+13. creates a directory /var/pyenv to use as a mount point for nfs
+14. makes moleuser the owner of /var/pyenv
 
 ~~~~~~
 #cloud-config
@@ -1108,6 +1136,7 @@ runcmd:
   - echo 'alias astral="java -jar /opt/astral/astral.5.7.1.jar"' >> /home/moleuser/.bash_profile              # MOLE
   - echo 'alias jmodeltest="java -jar /opt/jmodeltest-2.1.10/jModelTest.jar"' >> /home/moleuser/.bash_profile # MOLE
   - echo 'alias phyml="/opt/jmodeltest-2.1.10/exe/phyml/PhyML_3.0_linux64"' >> /home/moleuser/.bash_profile   # MOLE
+  - echo 'export JULIA_DEPOT_PATH=/opt/julia-1.8.5/usr/share/julia/site' >> /home/moleuser/.bash_profile      # MOLE
   - sudo ln -s /usr/local/bin/iqtree2 /usr/local/bin/iqtree-beta                                              # MOLE
   - sudo ln -s /usr/local/bin/raxmlHPC /usr/local/bin/raxml                                                   # MOLE
   - sudo chown -R moleuser.moleuser /home/moleuser/.bash_profile                                              # MOLE
