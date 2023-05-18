@@ -42,7 +42,7 @@ permalink: /people/
 |                  Leticia |    Magpali Moura Estevao |                                        Dalhousie University |
 |                    Nahui |            Medina-Chavez |                        University of Minnesota: Twin Cities |
 |                   Daniel |            Mendez Aranda |                  Max-Delbrück-Center for Molecular medicine |
-|                  Agustin |         Moreira Saporiti |                                Marine Biological Laboratory |
+|                  Agustín |         Moreira-Saporiti |                                Marine Biological Laboratory |
 |                    Lydia |                   Morley |                                        Texas A&M University |
 |                   Olivia |                 Morrison |                                            Emory University |
 |                   Shelby |                  Moshier |                      Ohio State University: Columbus Campus |
@@ -53,7 +53,7 @@ permalink: /people/
 |                    Katie |              Sanbonmatsu |                                        Texas A&M University |
 |                    Avery |                  Selberg |                                           Temple University |
 |                Samyuktha |                  Senthil |                                       Universitat Hohenheim |
-|                 Cristian |                   Sharma |                                         Brandeis University |
+|                 Crístían |                   Sharma |                                         Brandeis University |
 |                   Philip |                    Shirk |                  Centers for Disease Control and Prevention |
 |                   Daniel |                 Sultanov |                                         New York University |
 |                    Tommy |             Travers Cook |                                                  ETH Zürich |
