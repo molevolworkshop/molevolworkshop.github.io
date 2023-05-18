@@ -27,7 +27,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Saturday, May 27, 2023
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Beerli](/faculty-beerli/)             | Welcome, Introductions, and [Workshop introduction]({{ site.baseurl }}/faculty/beerli/pdf/beerli-intro-2023-opt.pdf)
+ 09:00 - 10:30 | [Beerli](/faculty-beerli/)             | Welcome, Introductions, and [Workshop introduction]({{ site.baseurl }}/faculty/beerli/pdf/intro-peter-beerli.pdf)
  10:30 - 12:00 | [Lewis](/faculty-lewis/)             | [Introduction to Phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-part1-2023-opt.pdf)
  14:00 - 15:30 | [Huelsenbeck](/faculty-huelsenbeck/) | [Introduction to Likelihood]({{ site.baseurl }}/faculty/huelsenbeck/pdf/WoodsHole2012_1-opt.pdf)
  15:30 - 17:00 | [Huelsenbeck](/faculty-huelsenbeck/) | Simulating Molecular Evolution
