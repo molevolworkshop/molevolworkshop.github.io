@@ -21,6 +21,10 @@ Address: Department of Ecology and Evolutionary Biology, University of Connectic
 
 Lecture slides will be made available before the lecture, but maybe _just_ before.
 
+#### Intro to Phylogenetics (27 May 2022)
+
+* [slides]({{ site.baseurl }}/faculty/lewis/pdf/phylointro.pdf)
+
 #### Likelihood lecture (28 May 2022)
 {% comment %}
 * [Likelihood lecture slides (part 1)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-part1-2022-opt.pdf)

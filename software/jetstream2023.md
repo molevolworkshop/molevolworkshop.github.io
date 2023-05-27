@@ -1056,6 +1056,10 @@ You (or a student) can now log into an instance as **moleuser** with a command l
 You will need to mount the shared /var/pyenv directory on each instance. This involves:
 * adding a line to `/etc/exports` on MOLE-2023-base for each VM instance (allowing that VM instance to access the share);
 * restart the server on MOLE-2023-base (`sudo systemctl restart nfs-kernel-server`)
+* you will probably want to add each VM to the known_hosts file on your local laptop to avoid getting asked it is OK to connect for each:
+
+    ssh-keyscan 149.165.172.121 >> ~/.ssh/known_hosts
+    
 * mount the folder `/var/pyenv` on each VM instance
 
 You can use a script such as the following to mount the folder on all VMs at once (assuming MOLE-2023-base is exporting to all of them):
@@ -1118,6 +1122,7 @@ users:
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCkpuLKyLQpqg8TF0iCRQXJg2z+/F/YBYnd4BVlupJhpZpbViLWulByYLMetC/7UT57CjX8i518CfpwbCP4dMEiQR+93AxZhBvKZM4Mtz0Me6SWmSnFV8cVF5c23UZoqOeVInABe14hLEZBdbyWck5QTy0k/CQrYSIToYqdZA6G/G8PKAk6db2rQuiwHi0Q5qE7RQ7S2qRgq4n9G0zPDelV8myyzduo7bOY3BaNMKwj5Yi/soMUBvOX7Do9R5+5XjpOuqnPbPX2NeMvIZJZ/ZwvBmbjQievhaX7COISWw77wUboaqpn2aEnewEc9Kt4gfx0gzDvznsCZRe+XCV1Q2xv3zVRut4FZfv0DhDEfL42vFEhahF728npFjyIo5cidMTBek9oCuqg58B3Umr/bFJEhjCaGhBJVqeDRERha8fbO7c8aAW3WdoTqaJJAIshztWhLotJaM77nt35dMrmOlOwRs3rHi4fxk5r+6tLxardNGKOBWHyQ4CneYPUkxWKcN0= kubatko.2@STAT-NC247353
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqJeFU3sEcA72fyYD2LCzDsfHqPmZonnATiXDKYeutIzQ+iVREIG3EMUNjeps8JS9oWw11ojXLFDZCHdg/z87qBZn7ilGgXZ6/PRhGaDx3kjPr5Mek10bV3BwB0O9Gws9rmepD/akuXY7wTS5M++YqCkwU1Ia9oAEW4QWDuc1Bdj3L1DqSYbI+xg38EA5TpRL2N968OPuu1xhGT9cPkRgOQAcTbFyknoeEXKwSUKamii8q8Lv+Zi9nA1nRYa0xZdJSGZNxso41FJkEmNfF6o/IKMtAJ0DHcg1B3aJpS8o2+cgyR+L0NqVHrJeBIagm4n3H8xP40pUCj5PyphdZam5L jpbielawski@Josephs-MacBook-Air.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1D6eflrh3q3daop2orqL0pXrAqOUt8AaYWaC/d+iZQutHiroByNjpSETkmEd1yw8NpF6gVkh8oNqvTH1ERlJtX1BETipUvJAlvV67ZwWDSoYVqM+RwFiUT4cIC2No0V3ETI9pd4D0Dnq/9l4V9pYaunnbvIaAUsQiDRPMcRq+aOZRB/fH9nTQ5jfWKWEAu2m77T6esXe0bFX6cMhoZdk4HQSc+Wdsfn5TZEoi7+0YVK7973ZmIHYRRl9a/80NtIIHQVOOjPve3mUxv5/dlFBvPVLVHe91XqD4DnXnjXytBgNpqjPHNY28yy/UZ7Ba8XXIxGzWEDy3p1+dJzXni/hOQ== DavidSwofford
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD1TZ9T5riI5S5q+kxO6LDJ/WIyVorYkHA3QxgIHXaE04xg4nnFF11yFfaXlzNZrd5Qwn1fMxJLiG6aGyB1Em1SDmPiY1FYKSO+Nh4BIl4iMrq6dSMAJt5gMSS1v3CEF5BYR+pS3qYViqLO430/QMJGqyOhbfSjOKGhwouSexPR11ey+uS449nHhZr55pU0NJqlC0pt6JOgVQZqLDvnw5dQ7gfpyHydwq9+jITMdMtrPrXX//gUkYZtZtOifq8asMoyP5hYo9EMxVU38khERlDYQBxq6fg/rGzdnkqDDWnS+PLc5lEzUy3dXKKKW0GlQ4sK6LJ2meNF1QMfY8z4y9WGhHgp5MbbzYammTpZePCgXOO6C3R0R6hpk1qVLse3F6jfRMsbZTwWud4RSHguI0LzdTqseDVkNAZ4WYrWnBDBOLVHu7HRmSabtARCP5R9ogF53huzmHya0/+Z66bJWEct7cFyCWoeYRwwm/hsPHnK8zsMgQSdqfTgYm/7hgu+gc5vbuuD1NfkcFXhrYxYDjBD1rAIKAVM6sby+WUar8F/Y55FHi3fJlFtx4TalmqCROjJ3W/pYcGH1wHZ8iJxCtDXOYDPESPEgKE2PEcVlo4cVgWX/ugW9XvAUTtYYW3dRy8F+mx6shjm8HyhtdIEKXtz3A9ighn92N5Di90UKwt0YQ== m.bui@anu.edu.au
 ssh_pwauth: true             # allow password authentication (for students)
 chpasswd:
     expire: false            # do not force user to change passwd on first login
