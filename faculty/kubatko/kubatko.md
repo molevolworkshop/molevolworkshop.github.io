@@ -38,7 +38,7 @@ Twitter: [@Laura_Kubatko](https://twitter.com/Laura_Kubatko)
 
 [Chifman, J and L Kubatko. 2014. Quartet inference from SNP data under the coalescent model, Bioinformatics  30(23): 3317-3324](http://www.stat.osu.edu/~lkubatko/Chifman_Kubatko2014.pdf)
 
-[Peng, J., D. Swofford, and L. Kubatko. 2022. Estimation of speciation times under the multispecies coalescent, Bioinformatics 38(23): 5182-5190]({{ site.baseurl }}/faculty/kubatko/pdf/Peng-Swofford-Kubatko2022.pdf)
+[Peng, J., D. Swofford, and L. Kubatko. 2022. Estimation of speciation times under the multispecies coalescent, Bioinformatics 38(23): 5182-5190]({{ site.baseurl }}/faculty/kubatko/pdf/PengSwoffordKubatko2022.pdf)
 
 [Swofford, D. L. and L. S. Kubatko. Species tree estimation using site pattern frequencies, Chapter 4, pgs. 68-88, in Species Tree Inference: A Guide to Methods and Applications, edited by L. S. Kubatko and L. L. Knowles.]({{ site.baseurl }}/faculty/swofford/pdf/Swofford-Kubatko-chapter.pdf)
 
