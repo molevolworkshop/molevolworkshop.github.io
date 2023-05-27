@@ -17,11 +17,6 @@ E-mail: kubatko.2 (at) osu (dot) edu
 
 Twitter: [@Laura_Kubatko](https://twitter.com/Laura_Kubatko)
 
-### Species trees and SVDQuartets (2022)
-
-* [SpeciesTreeEstimation2022-opt.pdf]({{ site.baseurl }}/faculty/swofford/pdf/SpeciesTreeEstimation2022-opt.pdf)
-* [Species Tree lab](https://phylosolutions.com/tutorials/wh2022-svdq-astral/species-trees-tutorial.html)
-* [Swofford-Kubatko-chapter.pdf]({{ site.baseurl }}/faculty/swofford/pdf/Swofford-Kubatko-chapter.pdf)
 
 ### Lecture Material for 2023
 
@@ -31,6 +26,7 @@ Twitter: [@Laura_Kubatko](https://twitter.com/Laura_Kubatko)
 ### Lab Material for 2023
 
 [Coming soon!]
+
 
 ### Reading List 2023
 
@@ -42,8 +38,16 @@ Twitter: [@Laura_Kubatko](https://twitter.com/Laura_Kubatko)
 
 [Chifman, J and L Kubatko. 2014. Quartet inference from SNP data under the coalescent model, Bioinformatics  30(23): 3317-3324](http://www.stat.osu.edu/~lkubatko/Chifman_Kubatko2014.pdf)
 
-[Swofford-Kubatko-chapter.pdf]({{ site.baseurl }}/faculty/swofford/pdf/Swofford-Kubatko-chapter.pdf)
+[Peng, J., D. Swofford, and L. Kubatko. 2022. Estimation of speciation times under the multispecies coalescent, Bioinformatics 38(23): 5182-5190]({{ site.baseurl }}/faculty/kubatko/pdf/Peng-Swofford-Kubatko2022.pdf)
 
-### Links to resources from the lecture and lab
+[Swofford, D. L. and L. S. Kubatko. Species tree estimation using site pattern frequencies, Chapter 4, pgs. 68-88, in Species Tree Inference: A Guide to Methods and Applications, edited by L. S. Kubatko and L. L. Knowles.]({{ site.baseurl }}/faculty/swofford/pdf/Swofford-Kubatko-chapter.pdf)
 
+
+### Links to resources from the workshop
+
+[Gene tree probability calculator](https://lkubatko.shinyapps.io/GeneTreeProbs/)
+
+[Site pattern probability calculator](https://lkubatko.shinyapps.io/SitePatternsProbs/)
+
+[My intro slide]({{ site.baseurl }}/faculty/kubatko/pdf/Kubatko_Intro.pdf)
 
