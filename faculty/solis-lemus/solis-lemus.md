@@ -12,9 +12,9 @@ permalink: /faculty-solis-lemus/
 
 May 27 to June 7
 
-### Lecture slides (updated for 2022)
+### Lecture slides (updated for 2023)
 
-[Slides]({{ site.baseurl }}/faculty/solis-lemus/pdf/talk-networks-mbl-opt.pdf)
+[Slides]({{ site.baseurl }}/faculty/solis-lemus/pdf/talk-networks-mbl-2023-opt.pdf)
 
 ### PhyloNetworks
 
