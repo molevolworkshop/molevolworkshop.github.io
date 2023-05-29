@@ -45,6 +45,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  15:30 - 17:00 | [Swofford](/faculty-swofford/)       | [PAUP* lab](/faculty/swofford/pdf/modsel-sim-tutorial.html)
  19:00 - 20:30 | [Minh](/faculty-minh/)               | [IQ-TREE Introduction]({{ site.baseurl }}/faculty/bui/pdf/MOLE2023-IQ-TREE.pdf)
  20:30 - 22:00 | [Minh](/faculty-minh/)               | [IQ-TREE lab](http://www.iqtree.org/workshop/molevol2023) [IQ-TREE quiz](https://docs.google.com/forms/d/e/1FAIpQLScOaOwUZMof9GxTVzE0zDoqr9xWNUWRtNHUmQgZExU2hIEi0w/formResponse)
+               | [Minh](/faculty-minh/)               | [IQ-TREE Solutions]({{ site.baseurl }}/faculty/bui/pdf/MOLE2023-Tutorial.pdf)
  22:00 - 23:59 | Loeb Quad                            | Evening social gathering
 {:.daily-schedule-cpp}
  
