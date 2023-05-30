@@ -25,7 +25,7 @@ Twitter: [@Laura_Kubatko](https://twitter.com/Laura_Kubatko)
 
 ### Lab Material for 2023
 
-[Species Tree Lab 2023 slides]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeLab1_2023.pdf)
+[Species Tree Lab 2023 slides]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreesLab1_2023.pdf)
 
 [Species Tree 2023 Tutorial]({{ site.baseurl }}/faculty/kubatko/pdf/species-trees-tutorial-2023.html)
 
