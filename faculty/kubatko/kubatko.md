@@ -25,7 +25,9 @@ Twitter: [@Laura_Kubatko](https://twitter.com/Laura_Kubatko)
 
 ### Lab Material for 2023
 
-[Coming soon!]
+[Species Tree Lab 2023 slides]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeLab1_2023.pdf)
+
+[Species Tree 2023 Tutorial]({{ site.baseurl }}/faculty/kubatko/pdf/species-trees-tutorial-2023.html)
 
 
 ### Reading List 2023
@@ -50,4 +52,13 @@ Twitter: [@Laura_Kubatko](https://twitter.com/Laura_Kubatko)
 [Site pattern probability calculator](https://lkubatko.shinyapps.io/SitePatternsProbs/)
 
 [My intro slide]({{ site.baseurl }}/faculty/kubatko/pdf/Kubatko_Intro.pdf)
+
+
+### Links to fun personal stuff
+
+[Biking Cincy to Cleveland, 2021 (Longgg video)](https://www.youtube.com/watch?v=OpgekuVY9jQ&list=PLaXY65TaQNaby4sMi-s64RrfolroW2bCp)
+
+[Appalachian Trail, 2022](https://www.youtube.com/watch?v=cgd3U9HGnDc&list=PLaXY65TaQNaby4sMi-s64RrfolroW2bCp&index=2)
+
+[SSB Presidential Address, 2022](https://www.youtube.com/watch?v=PYEQdeNu51k)
 
