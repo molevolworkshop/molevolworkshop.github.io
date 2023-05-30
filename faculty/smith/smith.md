@@ -14,6 +14,10 @@ E-mail: [ms4438@msstate.edu](mailto:ms4438@msstate.edu)
 
 Address: Current: Indiana University Bloomington
 
+### Lecture slides (2023)
+Machine Learning Part 1 [MLPart1]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_Part1.pdf)
+Machine Learning Part 2 [MLPart2]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_Part2.pdf)
+
 ### Institutional home page 
 [https://www.meganlsmith.org](https://www.meganlsmith.org)
 
