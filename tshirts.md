@@ -39,41 +39,44 @@ Past course t-shirt designs.
 | 2017 | ![2017front](/assets/img/tshirts/2017F.JPG) | ![2017front](/assets/img/tshirts/2017B.JPG) |
 | 2018 | ![2018front](/assets/img/tshirts/2018F.JPG) | ![2018front](/assets/img/tshirts/2018B.JPG) |
 | 2019 | ![2019front](/assets/img/tshirts/2019F.JPG) |                                             |
+| 2023 | ![2023front](/assets/img/tshirts/2023F.png) | ![2023back](/assets/img/tshirts/2023B.png)  |
 
 ## Credits for designed (where known)
 
-| Year |              Front                          |                    Back                     |
-| ---- | ------------------------------------------- | ------------------------------------------- |
-| 1988 |  | |
-| 1989 |  | |
-| 1990 |  | |
-| 1991 |  | |
-| 1992 |  | |
-| 1993 |  | |
-| 1994 |  | |
-| 1995 |  | |
-| 1996 |  | |
-| 1997 |  | |
-| 1998 |  | |
-| 1999 |  | |
-| 2000 |  | |
-| 2001 |  | |
-| 2002 |  | |
-| 2003 |  | |
-| 2004 |  | |
-| 2005 |  | |
-| 2006 |  | |
-| 2007 |  | |
-| 2008 |  | |
-| 2009 |  | |
-| 2010 |  | |
-| 2011 | Joe Bielawski | |
-| 2012 | Philip Chan (modified) | Joe Bielawski|
-| 2013 |  | Emily Jane McTavish |
-| 2014 |  | |
-| 2015 | Tracy Heath, Michael Landis, & Emily Jane McTavish | |
-| 2016 | Joe Bielawski, Tracy Heath, Bill Pearson, Peter Beerli | Julie Baker Phillips |
-| 2017 |  | |
-| 2018 |  | |
-| 2019 | Lisa Byrne |                                             |
+| Year |              Front                                     |                    Back                      |
+| ---- | ------------------------------------------------------ | -------------------------------------------- |
+| 1988 |                                                        |                                              |
+| 1989 |                                                        |                                              |
+| 1990 |                                                        |                                              |
+| 1991 |                                                        |                                              |
+| 1992 |                                                        |                                              |
+| 1993 |                                                        |                                              |
+| 1994 |                                                        |                                              |
+| 1995 |                                                        |                                              |
+| 1996 |                                                        |                                              |
+| 1997 |                                                        |                                              |
+| 1998 |                                                        |                                              |
+| 1999 |                                                        |                                              |
+| 2000 |                                                        |                                              |
+| 2001 |                                                        |                                              |
+| 2002 |                                                        |                                              |
+| 2003 |                                                        |                                              |
+| 2004 |                                                        |                                              |
+| 2005 |                                                        |                                              |
+| 2006 |                                                        |                                              |
+| 2007 |                                                        |                                              |
+| 2008 |                                                        |                                              |
+| 2009 |                                                        |                                              |
+| 2010 |                                                        |                                              |
+| 2011 | Joe Bielawski                                          |                                              |
+| 2012 | Philip Chan (modified)                                 | Joe Bielawski                                |
+| 2013 |                                                        | Emily Jane McTavish                          |
+| 2014 |                                                        |                                              |
+| 2015 | Tracy Heath, Michael Landis, & Emily Jane McTavish     |                                              |
+| 2016 | Joe Bielawski, Tracy Heath, Bill Pearson, Peter Beerli | Julie Baker Phillips                         |
+| 2017 |                                                        |                                              |
+| 2018 |                                                        |                                              |
+| 2019 | Lisa Byrne                                             |                                              |
+| 2022 |                                                        |                                              |
+| 2023 | Carly Lo, Charlotte Benedict, Shelby Moshier           | Carly Lo, Charlotte Benedict, Shelby Moshier |
 
