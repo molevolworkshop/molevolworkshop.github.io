@@ -39,6 +39,9 @@ Past course t-shirt designs.
 | 2017 | ![2017front](/assets/img/tshirts/2017F.JPG) | ![2017front](/assets/img/tshirts/2017B.JPG) |
 | 2018 | ![2018front](/assets/img/tshirts/2018F.JPG) | ![2018front](/assets/img/tshirts/2018B.JPG) |
 | 2019 | ![2019front](/assets/img/tshirts/2019F.JPG) |                                             |
+| 2020 | no workshop due to COVID-19 pandemic        |                                             |
+| 2021 | no workshop due to COVID-19 pandemic        |                                             |
+| 2022 | ![2023front](/assets/img/tshirts/2022F.png) |                                             |
 | 2023 | ![2023front](/assets/img/tshirts/2023F.png) | ![2023back](/assets/img/tshirts/2023B.png)  |
 
 ## Credits for designed (where known)
@@ -77,6 +80,8 @@ Past course t-shirt designs.
 | 2017 |                                                        |                                              |
 | 2018 |                                                        |                                              |
 | 2019 | Lisa Byrne                                             |                                              |
+| 2020 |                                                        |                                              |
+| 2021 |                                                        |                                              |
 | 2022 |                                                        |                                              |
 | 2023 | Carly Lo, Charlotte Benedict, Shelby Moshier           | Carly Lo, Charlotte Benedict, Shelby Moshier |
 

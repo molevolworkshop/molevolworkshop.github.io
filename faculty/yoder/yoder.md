@@ -7,7 +7,7 @@ permalink: /faculty-yoder/
 
 ### Arrival and Departure
 
-May 30 to June 3
+May 30 to June 1
 
 ### Institutional Website
 
@@ -19,7 +19,7 @@ May 30 to June 3
 
 ### Lecture Material
 
-[Lecture slides 2022]({{ site.baseurl }}/faculty/yoder/pdf/MBL.6.2022-opt.pdf)
+[Lecture slides 2023]({{ site.baseurl }}/faculty/yoder/pdf/Yoder_MOLE.6.2023.pdf)
 
 ### References
 
