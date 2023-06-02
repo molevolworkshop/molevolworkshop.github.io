@@ -24,67 +24,78 @@ var image_file_path = "https://molevolworkshop.github.io/assets/img/group-photos
 
 // 2. Specify {"id":0, "first":xxx, "last":yyy, "hide":false, "cx":0, "cy":0} for each person, supplying xxx and yyy
 var namedata = [
-  {"id":0    , "first":"Peter                                              ", "last":"Beerli                                                ", "hide":false     , "cx":777.0     , "cy":143.0     },
-  {"id":1    , "first":"Joseph                                             ", "last":"Bielawski                                             ", "hide":false     , "cx":710.5     , "cy":107.0     },
-  {"id":2    , "first":"Jeremy                                             ", "last":"Brown                                                 ", "hide":false     , "cx":730.5     , "cy":122.0     },
-  {"id":3    , "first":"Minh                                               ", "last":"Bui                                                   ", "hide":false     , "cx":349.0     , "cy":127.0     },
-  {"id":5    , "first":"Scott                                              ", "last":"Edwards                                               ", "hide":false     , "cx":935.0     , "cy":125.0     },
-  {"id":6    , "first":"Laura                                              ", "last":"Eme                                                   ", "hide":false     , "cx":313.0     , "cy":152.0     },
-  {"id":7    , "first":"Tracy                                              ", "last":"Heath                                                 ", "hide":false     , "cx":325.0     , "cy":268.0     },
-  {"id":9    , "first":"Lacey                                              ", "last":"Knowles                                               ", "hide":false     , "cx":253.0     , "cy":145.5     },
-  {"id":10   , "first":"Laura                                              ", "last":"Kubatko                                               ", "hide":false     , "cx":746.9     , "cy":161.0     },
-  {"id":11   , "first":"Paul                                               ", "last":"Lewis                                                 ", "hide":false     , "cx":89.0      , "cy":252.0     },
-  {"id":13   , "first":"Claudia                                            ", "last":"Solís-Lemus                                           ", "hide":false     , "cx":173.0     , "cy":262.0     },
-  {"id":14   , "first":"Megan                                              ", "last":"Smith                                                 ", "hide":false     , "cx":584.0     , "cy":121.0     },
-  {"id":15   , "first":"Edward                                             ", "last":"Susko                                                 ", "hide":false     , "cx":292.0     , "cy":107.0     },
-  {"id":16   , "first":"David                                              ", "last":"Swofford                                              ", "hide":false     , "cx":858.0     , "cy":138.0     },
-  {"id":17   , "first":"Anne                                               ", "last":"Yoder                                                 ", "hide":false     , "cx":953.0     , "cy":150.0     },
-  {"id":18   , "first":"Blake                                              ", "last":"Fauskee                                               ", "hide":false     , "cx":539.0     , "cy":92.0      },
-  {"id":19   , "first":"Kevin (Sungsik)                                    ", "last":"Kong                                                  ", "hide":false     , "cx":655.0     , "cy":113.0     },
-  {"id":20   , "first":"Analisa                                            ", "last":"Milkey                                                ", "hide":false     , "cx":656.0     , "cy":152.0     },
-  {"id":21   , "first":"Jordan                                             ", "last":"Satler                                                ", "hide":false     , "cx":787.0     , "cy":101.0     },
-  {"id":22   , "first":"Kate                                               ", "last":"Taylor                                                ", "hide":false     , "cx":396.0     , "cy":262.0     },
-  {"id":23   , "first":"Elena                                              ", "last":"Korte                                                 ", "hide":false     , "cx":715.5     , "cy":155.5     },
-  {"id":24   , "first":"Adetunji(Teejay)                                   ", "last":"Adesina                                               ", "hide":false     , "cx":130.0     , "cy":147.0     },
-  {"id":25   , "first":"Avrami                                             ", "last":"Aharonoff                                             ", "hide":false     , "cx":686.0     , "cy":147.0     },
-  {"id":26   , "first":"Michael                                            ", "last":"Alam                                                  ", "hide":false     , "cx":106.0     , "cy":120.0     },
-  {"id":27   , "first":"Aurelia                                            ", "last":"Balestra                                              ", "hide":false     , "cx":456.0     , "cy":216.0     },
-  {"id":28   , "first":"Roland                                             ", "last":"Bamou                                                 ", "hide":false     , "cx":249.0     , "cy":270.0     },
-  {"id":29   , "first":"Charlotte                                          ", "last":"Benedict                                              ", "hide":false     , "cx":535.5     , "cy":154.2     },
-  {"id":30   , "first":"Meg                                                ", "last":"Branine                                               ", "hide":false     , "cx":189.0     , "cy":130.0     },
-  {"id":31   , "first":"Michael                                            ", "last":"Chen                                                  ", "hide":false     , "cx":217.0     , "cy":113.5     },
-  {"id":32   , "first":"Blair                                              ", "last":"Christensen                                           ", "hide":false     , "cx":381.0     , "cy":213.0     },
-  {"id":34   , "first":"Elizabeth                                          ", "last":"Flesch                                                ", "hide":false     , "cx":366.0     , "cy":151.0     },
-  {"id":35   , "first":"Alex                                               ", "last":"Franzen                                               ", "hide":false     , "cx":466.0     , "cy":124.0     },
-  {"id":36   , "first":"Keating                                            ", "last":"Godfrey                                               ", "hide":false     , "cx":236.5     , "cy":98.0      },
-  {"id":37   , "first":"Emily                                              ", "last":"Griffith                                              ", "hide":false     , "cx":820.0     , "cy":140.0     },
-  {"id":39   , "first":"Zihan                                              ", "last":"Huang                                                 ", "hide":false     , "cx":369.2     , "cy":83.4      },
-  {"id":40   , "first":"Odion                                              ", "last":"Ikhimiukor                                            ", "hide":false     , "cx":894.0     , "cy":147.0     },
-  {"id":41   , "first":"Amanda                                             ", "last":"Ivanoff                                               ", "hide":false     , "cx":230.0     , "cy":202.0     },
-  {"id":42   , "first":"Cedric                                             ", "last":"Kamaleson                                             ", "hide":false     , "cx":699.0     , "cy":74.7      },
-  {"id":43   , "first":"Carlotta                                           ", "last":"Kück                                                  ", "hide":false     , "cx":542.0     , "cy":264.0     },
-  {"id":44   , "first":"Emma                                               ", "last":"Lehmberg                                              ", "hide":false     , "cx":422.0     , "cy":119.0     },
-  {"id":45   , "first":"Polina                                             ", "last":"Len                                                   ", "hide":false     , "cx":802.0     , "cy":282.0     },
-  {"id":46   , "first":"Yixuan                                             ", "last":"Li                                                    ", "hide":false     , "cx":446.0     , "cy":114.0     },
-  {"id":47   , "first":"Giulia                                             ", "last":"Lin                                                   ", "hide":false     , "cx":607.0     , "cy":273.0     },
-  {"id":48   , "first":"Carly                                              ", "last":"Lo                                                    ", "hide":false     , "cx":478.0     , "cy":155.0     },
-  {"id":50   , "first":"Nahui                                              ", "last":"Medina-Chavez                                         ", "hide":false     , "cx":499.0     , "cy":101.0     },
-  {"id":52   , "first":"Agustín                                            ", "last":"Moreira-Saporiti                                      ", "hide":false     , "cx":302.0     , "cy":76.5      },
-  {"id":53   , "first":"Lydia                                              ", "last":"Morley                                                ", "hide":false     , "cx":163.0     , "cy":203.0     },
-  {"id":54   , "first":"Olivia                                             ", "last":"Morrison                                              ", "hide":false     , "cx":308.3     , "cy":204.7     },
-  {"id":55   , "first":"Shelby                                             ", "last":"Moshier                                               ", "hide":false     , "cx":558.0     , "cy":145.0     },
-  {"id":56   , "first":"Susanne                                            ", "last":"Reier                                                 ", "hide":false     , "cx":666.0     , "cy":279.0     },
-  {"id":57   , "first":"Chris                                              ", "last":"Robinson                                              ", "hide":false     , "cx":632.0     , "cy":82.0      },
-  {"id":58   , "first":"Ulises                                             ", "last":"Rosas                                                 ", "hide":false     , "cx":64.0      , "cy":137.0     },
-  {"id":60   , "first":"Katie                                              ", "last":"Sanbonmatsu                                           ", "hide":false     , "cx":735.0     , "cy":281.5     },
-  {"id":61   , "first":"Avery                                              ", "last":"Selberg                                               ", "hide":false     , "cx":423.0     , "cy":151.0     },
-  {"id":62   , "first":"Samyuktha                                          ", "last":"Senthil                                               ", "hide":false     , "cx":53.0      , "cy":245.9     },
-  {"id":63   , "first":"Crístían                                           ", "last":"Sharma                                                ", "hide":false     , "cx":168.0     , "cy":95.0      },
-  {"id":65   , "first":"Daniel                                             ", "last":"Sultanov                                              ", "hide":false     , "cx":625.5     , "cy":146.7     },
-  {"id":66   , "first":"Tommy                                              ", "last":"TraversCook                                           ", "hide":false     , "cx":574.0     , "cy":83.0      },
-  {"id":67   , "first":"Alexa                                              ", "last":"Tyszka                                                ", "hide":false     , "cx":604.0     , "cy":155.0     },
-  {"id":68   , "first":"Yee-Ann                                            ", "last":"Wong                                                  ", "hide":false     , "cx":457.0     , "cy":268.0     }
+{"id":0    , "first":"Peter"              , "last":"Beerli"             , "hide":false     , "cx":777.0     , "cy":143.0     , "xoffset":0.0       },
+{"id":1    , "first":"Joseph"             , "last":"Bielawski"          , "hide":false     , "cx":710.5     , "cy":107.0     , "xoffset":0.0       },
+{"id":2    , "first":"Jeremy"             , "last":"Brown"              , "hide":false     , "cx":730.5     , "cy":122.0     , "xoffset":0.0       },
+{"id":3    , "first":"Minh"               , "last":"Bui"                , "hide":false     , "cx":349.0     , "cy":127.0     , "xoffset":0.0       },
+{"id":4    , "first":"Scott"              , "last":"Edwards"            , "hide":false     , "cx":935.0     , "cy":125.0     , "xoffset":0.0       },
+{"id":5    , "first":"Laura"              , "last":"Eme"                , "hide":false     , "cx":313.0     , "cy":152.0     , "xoffset":0.0       },
+{"id":6    , "first":"Tracy"              , "last":"Heath"              , "hide":false     , "cx":325.0     , "cy":268.0     , "xoffset":0.0       },
+{"id":7    , "first":"Lacey"              , "last":"Knowles"            , "hide":false     , "cx":253.0     , "cy":145.5     , "xoffset":0.0       },
+{"id":8    , "first":"Laura"              , "last":"Kubatko"            , "hide":false     , "cx":746.9     , "cy":161.0     , "xoffset":0.0       },
+{"id":9    , "first":"Paul"               , "last":"Lewis"              , "hide":false     , "cx":89.0      , "cy":252.0     , "xoffset":0.0       },
+{"id":10   , "first":"Claudia"            , "last":"Solís-Lemus"        , "hide":false     , "cx":173.0     , "cy":262.0     , "xoffset":0.0       },
+{"id":11   , "first":"Megan"              , "last":"Smith"              , "hide":false     , "cx":584.0     , "cy":121.0     , "xoffset":0.0       },
+{"id":12   , "first":"Edward"             , "last":"Susko"              , "hide":false     , "cx":292.0     , "cy":107.0     , "xoffset":0.0       },
+{"id":13   , "first":"David"              , "last":"Swofford"           , "hide":false     , "cx":858.0     , "cy":138.0     , "xoffset":0.0       },
+{"id":14   , "first":"Anne"               , "last":"Yoder"              , "hide":false     , "cx":953.0     , "cy":150.0     , "xoffset":0.0       },
+{"id":15   , "first":"Blake"              , "last":"Fauskee"            , "hide":false     , "cx":539.0     , "cy":92.0      , "xoffset":0.0       },
+{"id":16   , "first":"Kevin (Sungsik)"    , "last":"Kong"               , "hide":false     , "cx":655.0     , "cy":113.0     , "xoffset":0.0       },
+{"id":17   , "first":"Analisa"            , "last":"Milkey"             , "hide":false     , "cx":656.0     , "cy":152.0     , "xoffset":0.0       },
+{"id":18   , "first":"Jordan"             , "last":"Satler"             , "hide":false     , "cx":787.0     , "cy":101.0     , "xoffset":0.0       },
+{"id":19   , "first":"Kate"               , "last":"Taylor"             , "hide":false     , "cx":396.0     , "cy":262.0     , "xoffset":0.0       },
+{"id":20   , "first":"Elena"              , "last":"Korte"              , "hide":false     , "cx":715.5     , "cy":155.5     , "xoffset":0.0       },
+{"id":21   , "first":"Adetunji(Teejay)"   , "last":"Adesina"            , "hide":false     , "cx":130.0     , "cy":147.0     , "xoffset":0.0       },
+{"id":22   , "first":"Avrami"             , "last":"Aharonoff"          , "hide":false     , "cx":686.0     , "cy":147.0     , "xoffset":0.0       },
+{"id":23   , "first":"Michael"            , "last":"Alam"               , "hide":false     , "cx":106.0     , "cy":120.0     , "xoffset":0.0       },
+{"id":24   , "first":"Aurelia"            , "last":"Balestra"           , "hide":false     , "cx":456.0     , "cy":216.0     , "xoffset":0.0       },
+{"id":25   , "first":"Roland"             , "last":"Bamou"              , "hide":false     , "cx":249.0     , "cy":270.0     , "xoffset":0.0       },
+{"id":26   , "first":"Charlotte"          , "last":"Benedict"           , "hide":false     , "cx":535.5     , "cy":154.2     , "xoffset":0.0       },
+{"id":27   , "first":"Meg"                , "last":"Branine"            , "hide":false     , "cx":189.0     , "cy":130.0     , "xoffset":0.0       },
+{"id":28   , "first":"Michael"            , "last":"Chen"               , "hide":false     , "cx":217.0     , "cy":113.5     , "xoffset":0.0       },
+{"id":29   , "first":"Blair"              , "last":"Christensen"        , "hide":false     , "cx":381.0     , "cy":213.0     , "xoffset":0.0       },
+{"id":30   , "first":"Elizabeth"          , "last":"Flesch"             , "hide":false     , "cx":366.0     , "cy":151.0     , "xoffset":0.0       },
+{"id":31   , "first":"Alex"               , "last":"Franzen"            , "hide":false     , "cx":466.0     , "cy":124.0     , "xoffset":0.0       },
+{"id":32   , "first":"Keating"            , "last":"Godfrey"            , "hide":false     , "cx":236.5     , "cy":98.0      , "xoffset":0.0       },
+{"id":33   , "first":"Emily"              , "last":"Griffith"           , "hide":false     , "cx":820.0     , "cy":140.0     , "xoffset":0.0       },
+{"id":34   , "first":"Zihan"              , "last":"Huang"              , "hide":false     , "cx":369.2     , "cy":83.4      , "xoffset":0.0       },
+{"id":35   , "first":"Odion"              , "last":"Ikhimiukor"         , "hide":false     , "cx":894.0     , "cy":147.0     , "xoffset":0.0       },
+{"id":36   , "first":"Amanda"             , "last":"Ivanoff"            , "hide":false     , "cx":230.0     , "cy":202.0     , "xoffset":0.0       },
+{"id":37   , "first":"Cedric"             , "last":"Kamaleson"          , "hide":false     , "cx":699.0     , "cy":74.7      , "xoffset":0.0       },
+{"id":38   , "first":"Carlotta"           , "last":"Kück"               , "hide":false     , "cx":542.0     , "cy":264.0     , "xoffset":0.0       },
+{"id":39   , "first":"Emma"               , "last":"Lehmberg"           , "hide":false     , "cx":422.0     , "cy":119.0     , "xoffset":0.0       },
+{"id":40   , "first":"Polina"             , "last":"Len"                , "hide":false     , "cx":802.0     , "cy":282.0     , "xoffset":0.0       },
+{"id":41   , "first":"Yixuan"             , "last":"Li"                 , "hide":false     , "cx":446.0     , "cy":114.0     , "xoffset":0.0       },
+{"id":42   , "first":"Giulia"             , "last":"Lin"                , "hide":false     , "cx":607.0     , "cy":273.0     , "xoffset":0.0       },
+{"id":43   , "first":"Carly"              , "last":"Lo"                 , "hide":false     , "cx":478.0     , "cy":155.0     , "xoffset":0.0       },
+{"id":44   , "first":"Nahui"              , "last":"Medina-Chavez"      , "hide":false     , "cx":499.0     , "cy":101.0     , "xoffset":0.0       },
+{"id":45   , "first":"Agustín"            , "last":"Moreira-Saporiti"   , "hide":false     , "cx":302.0     , "cy":76.5      , "xoffset":0.0       },
+{"id":46   , "first":"Lydia"              , "last":"Morley"             , "hide":false     , "cx":163.0     , "cy":203.0     , "xoffset":0.0       },
+{"id":47   , "first":"Olivia"             , "last":"Morrison"           , "hide":false     , "cx":308.3     , "cy":204.7     , "xoffset":0.0       },
+{"id":48   , "first":"Shelby"             , "last":"Moshier"            , "hide":false     , "cx":558.0     , "cy":145.0     , "xoffset":0.0       },
+{"id":49   , "first":"Susanne"            , "last":"Reier"              , "hide":false     , "cx":666.0     , "cy":279.0     , "xoffset":0.0       },
+{"id":50   , "first":"Chris"              , "last":"Robinson"           , "hide":false     , "cx":632.0     , "cy":82.0      , "xoffset":0.0       },
+{"id":51   , "first":"Ulises"             , "last":"Rosas"              , "hide":false     , "cx":64.0      , "cy":137.0     , "xoffset":0.0       },
+{"id":52   , "first":"Katie"              , "last":"Sanbonmatsu"        , "hide":false     , "cx":735.0     , "cy":281.5     , "xoffset":0.0       },
+{"id":53   , "first":"Avery"              , "last":"Selberg"            , "hide":false     , "cx":423.0     , "cy":151.0     , "xoffset":0.0       },
+{"id":54   , "first":"Samyuktha"          , "last":"Senthil"            , "hide":false     , "cx":52.0      , "cy":241.0     , "xoffset":20.0      },
+{"id":55   , "first":"Crístían"           , "last":"Sharma"             , "hide":false     , "cx":168.0     , "cy":95.0      , "xoffset":0.0       },
+{"id":56   , "first":"Daniel"             , "last":"Sultanov"           , "hide":false     , "cx":625.5     , "cy":146.7     , "xoffset":0.0       },
+{"id":57   , "first":"Tommy"              , "last":"TraversCook"        , "hide":false     , "cx":574.0     , "cy":83.0      , "xoffset":0.0       },
+{"id":58   , "first":"Alexa"              , "last":"Tyszka"             , "hide":false     , "cx":601.3     , "cy":145.0     , "xoffset":0.0       },
+{"id":59   , "first":"Yee-Ann"            , "last":"Wong"               , "hide":false     , "cx":457.0     , "cy":268.0     , "xoffset":0.0       }
 ];
+
+// {"id":33   , "first":"Joshua                                             ", "last":"Doby                                                  ", "hide":false     , "cx":64.0      , "cy":359.0     },
+//  {"id":38   , "first":"Akacia                                             ", "last":"Halliday-Isaac                                        ", "hide":false     , "cx":88.0      , "cy":404.0     },
+//  {"id":49   , "first":"Leticia                                            ", "last":"MagpaliMouraEstevao                                   ", "hide":false     , "cx":224.0     , "cy":363.0     },
+//  {"id":51   , "first":"Daniel                                             ", "last":"MendezAranda                                          ", "hide":false     , "cx":246.0     , "cy":401.7     },
+//  {"id":59   , "first":"Mahdi                                              ", "last":"Safarpour                                             ", "hide":false     , "cx":411.3     , "cy":361.7     },
+//  {"id":64   , "first":"Philip                                             ", "last":"Shirk                                                 ", "hide":false     , "cx":407.3     , "cy":403.7     },
+//  {"id":8    , "first":"John                                               ", "last":"Huelsenbeck                                           ", "hide":false     , "cx":936.5     , "cy":431.5     },
+//  {"id":4    , "first":"Belinda                                            ", "last":"Chang                                                 ", "hide":false     , "cx":937.0     , "cy":388.0     },
+//  {"id":12   , "first":"Emily Jane                                         ", "last":"McTavish                                              ", "hide":false     , "cx":935.0     , "cy":349.0     },
+
 
 let nnames = namedata.length;
 console.log("Number of names: " + nnames);
@@ -182,13 +193,14 @@ function saveCoordinates() {
     
     var s = "var namedata = [\n";
     for (i = 0; i < namedata.length; i++) {
-        let idstr    = namedata[i].id.toFixed(0);
-        let firststr = namedata[i].first;
-        let laststr  = namedata[i].last;
-        let hidestr  = namedata[i].hide ? "true" : "false";
-        let cxstr    = namedata[i].cx.toFixed(1);
-        let cystr    = namedata[i].cy.toFixed(1);
-        s += "  {" + "\"id\":" + idstr.padEnd(5, " ") + ", \"first\":\"" + firststr.padEnd(max_first, " ") + "\", \"last\":\"" + laststr.padEnd(max_last, " ") + "\", \"hide\":" + hidestr.padEnd(10, " ") + ", \"cx\":" + cxstr.padEnd(10, " ") + ", \"cy\":" + cystr.padEnd(10, " ") + "}";
+        let idstr      = namedata[i].id.toFixed(0);
+        let firststr   = "\"" + namedata[i].first + "\"";
+        let laststr    = "\"" + namedata[i].last + "\"";
+        let hidestr    = namedata[i].hide ? "true" : "false";
+        let cxstr      = namedata[i].cx.toFixed(1);
+        let cystr      = namedata[i].cy.toFixed(1);
+        let xoffsetstr = namedata[i].xoffset.toFixed(1);
+        s += "  {" + "\"id\":" + idstr.padEnd(5, " ") + ", \"first\":" + firststr.padEnd(max_first, " ") + ", \"last\":" + laststr.padEnd(max_last, " ") + ", \"hide\":" + hidestr.padEnd(10, " ") + ", \"cx\":" + cxstr.padEnd(10, " ") + ", \"cy\":" + cystr.padEnd(10, " ") + ", \"xoffset\":" + xoffsetstr.padEnd(10, " ") + "}";
         if (i < namedata.length - 1)
             s += ",\n";
         else
@@ -227,8 +239,12 @@ var drag = d3.drag()
         var id = parseInt(d3.select(this).attr("id"));
         namedata[id].cx = cx;
         namedata[id].cy = cy;
-        d3.select(this).attr("cx", cx).attr("cy", cy);
-        d3.select("text#person"+id).attr("x", cx).attr("y", cy - label_spacer);
+        d3.select(this)
+            .attr("cx", cx)
+            .attr("cy", cy);
+        d3.select("text#person"+id)
+            .attr("x", cx + d.xoffset)
+            .attr("y", cy - label_spacer);
     })
     .on("end", function(d) {
         var cx = d3.event.x;
@@ -238,7 +254,7 @@ var drag = d3.drag()
         namedata[id].cx = cx;
         namedata[id].cy = cy;
         d3.select(this).attr("cx", cx).attr("cy", cy);
-        d3.select("text#person"+id).attr("x", cx).attr("y", cy - label_spacer);
+        d3.select("text#person"+id).attr("x", cx + d.xoffset).attr("y", cy - label_spacer);
     });
     
 // Listen and react to keystrokes
@@ -299,7 +315,7 @@ var labels = plot_svg.selectAll("text.label")
     .append("text")
     .attr("id", function(d,i) {return "person" + d.id;})
     .attr("class", "label")
-    .attr("x", function(d,i) {return namedata[i].cx;})
+    .attr("x", function(d,i) {return namedata[i].cx + namedata[i].xoffset;})
     .attr("y", function(d,i) {return namedata[i].cy - label_spacer;})
     .attr("fill", "white")
     .style("text-anchor", "middle")
