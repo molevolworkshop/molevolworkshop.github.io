@@ -7,8 +7,6 @@ permalink: /group-photos/2023/
 
 Mouse-over faces to show names. Please contact [Paul Lewis](paul.lewis@uconn.edu) to report any errors.
 
-Return to [group photos index](/other/) page.
-
 <div id="arbitrary"></div>
 <script type="text/javascript">
 // written by Paul O. Lewis 10-Aug-2019, last updated 2-June-2023
@@ -324,3 +322,6 @@ function handleMouseOut(d, i) {
     d3.select("text#person" + id).style("visibility", (production || d.hide) ? "hidden" : "visible");
 }
 </script>
+
+Go to [group photos index](/other/) page.
+
