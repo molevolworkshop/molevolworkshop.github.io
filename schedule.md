@@ -109,8 +109,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
- 09:00 - 10:30 | [Smith](/faculty-smith/) | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith)
- 10:30 - 12:00 | [Smith](/faculty-smith/) | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith)
+ 09:00 - 10:30 | [Smith](/faculty-smith/) | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_Part1.pdf)
+ 10:30 - 12:00 | [Smith](/faculty-smith/) | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_Part2.pdf)
  14:00 - 15:30 | [Susko](/faculty-susko/)             | [Bootstrap and tree topology tests]({{ site.baseurl }}/faculty/susko/pdf/ed-susko-topology-tests.pdf)
  15:30 - 17:00 | [Susko](/faculty-susko/)             | [Bootstrap and tree topology tests]({{ site.baseurl }}/faculty/susko/pdf/ed-susko-topology-tests.pdf)
  19:00 - 20:30 | [Beerli](/faculty-beerli/)           | [Model comparison in biogeography/population genetics using MIGRATE](http://peterbeerli.com/workshops/mbl/2018/tutorial/)
