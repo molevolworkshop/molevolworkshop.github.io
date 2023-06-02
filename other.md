@@ -20,3 +20,4 @@ Each year we take a group photo and create a key to people. Click the link below
 
 * [2019 group photo](/group-photos/2019/)
 * [2022 group photo](/group-photos/2022/)
+* [2023 group photo](/group-photos/2023/)
