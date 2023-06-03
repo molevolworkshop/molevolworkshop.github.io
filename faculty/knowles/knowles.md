@@ -14,7 +14,7 @@ May 28 to June 6
 
 ### Lecture Materials
 
-[Lecture slides 2022]([Evolutionary applications of genomic data]({{ site.baseurl }}/faculty/knowles/pdf/Knowles-Woodshole-2022-Lect-opt.pdf))
+[Lecture slides 2023]([Evolutionary applications of genomic data]({{ site.baseurl }}/faculty/knowles/pdf/Knowles-Woodshole-2023-Lect-opt.pdf))
 
 ### Demo and Tutorials
 No demos in class, but if your are interested in spatial coalescent simulations and iDDC modeling check out:
@@ -28,7 +28,7 @@ https://github.com/jeetsukumaran/delineate
 ### Lecture in Brief
 
 Capstone lecture: Evolutionary applications of genomic data 
-[Knowles-Woodshole-2022-Lect.pdf](https://github.com/molevolworkshop/molevolworkshop.github.io/faculty/knowles/pdf/Knowles-Woodshole-2022-Lect-opt.pdf)
+[Knowles-Woodshole-2022-Lect.pdf](https://github.com/molevolworkshop/molevolworkshop.github.io/faculty/knowles/pdf/Knowles-Woodshole-2023-Lect-opt.pdf)
 
 
 I will highlight some common themes for model-based analyses with examples of a variety of evoltuionary applications of genomic data (e.g., phylogenetics, adaptive evolution, phylogeography, inferences about species boundaries): namely, 
