@@ -28,7 +28,7 @@ https://github.com/jeetsukumaran/delineate
 ### Lecture in Brief
 
 Capstone lecture: Evolutionary applications of genomic data 
-[Knowles-Woodshole-2022-Lect.pdf](https://github.com/molevolworkshop/molevolworkshop.github.io/faculty/knowles/pdf/Knowles-Woodshole-2023-Lect-opt.pdf)
+[Knowles-Woodshole-2023-Lect.pdf](https://github.com/molevolworkshop/molevolworkshop.github.io/faculty/knowles/pdf/Knowles-Woodshole-2023-Lect-opt.pdf)
 
 
 I will highlight some common themes for model-based analyses with examples of a variety of evoltuionary applications of genomic data (e.g., phylogenetics, adaptive evolution, phylogeography, inferences about species boundaries): namely, 
