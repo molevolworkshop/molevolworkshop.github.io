@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>MIGRATEtutorial2023</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">MIGRATE tutorial</h1>
+
+<p><em>Peter Beerli, Florida State University, October 2021</em></p>
+
+<p><img style="float: right;" height="300" src="migrate_logo.jpg"><br>
+This tutorial has three sections:</p>
+
+<ol>
+<li>Short overview of the program </li>
+<li>How do we specify models</li>
+<li>Run a model selection exercise</li>
+</ol>
+
+<p>If you are in the course: all material is available in the folder<br>
+ <strong>moledata/migrate_tutorial</strong></p>
+
+<p><mark>If you are not in the course: Download the necessary files from <a href="http://www.peterbeerli.com/workshops/mbl/2018/tutorial_material.zip">here</a> and unpack the <em>tutorial_material.zip</em> file; you have now a directory <em>migrate_tutorial</em></mark></p>
+
+<p>Or you can use <em>wget</em> to download the package directly to your homedirectory using this command:</p>
+
+<div><pre><code class="language-none">wget http://www.peterbeerli.com/workshops/mbl/2018/tutorial_material.zip
+unzip tutorial_material.zip
+cd migrate_tutorial</code></pre></div>
+
+<h2 id="toc_1">Overview of the program</h2>
+
+<p>[<em>first 30 minutes</em>]<br>
+<strong>migrate</strong> is a Bayesian population genetics inference program that is based on the structured coalescence. It uses DNA/RNA sequence data or microsatellite data. It can run on computer clusters (using parallel software tools based on the MPI standard). It is distributed as Opensource (MIT license) from <a href="http://peterbeerli.com/migrate-html5">Migrate&rsquo;s main website </a>.</p>
+
+<p><strong>migrate</strong> can estimate parameters, such as population sizes, immigration rates, and divergence times of fairly complex models. Originally, it was a pure population genetics program, but with the introduction of divergence, it can handle closely related species, admixed populations, including potential hybrids as long as your data include multiple individuals of the same group. This tutorial will introduce you to these models.</p>
+
+<h3 id="toc_2">Efficient running on your system</h3>
+
+<p><strong>migrate</strong> is distributed in source code and binaries for Mac and Windows computers. To run <strong>migrate</strong> efficiently on Linux clusters compile it yourself using the MPI libraries openmpi or mvapich2.<br>
+The Windows binary can run on Windows 7-11, although it may not be the most efficient way to run the program. If you have multiple loci and a computer with multiple cores (&gt;4) use the parallel version.</p>
+
+<h3 id="toc_3">Menu and starting the program</h3>
+
+<p><strong>migrate</strong> uses a menu to operate. The menu can save all options into a file which is called by default <em>parmfile</em>. The parmfile is a textfile that can be edited with a text editor; all lines starting with a <strong>#</strong> are comments and try to explain the options. You can write your own comments into the parmfile, but these will be overwritten when the <em>parmfile</em> is saved again through the menu. Starting the program can be done like this</p>
+
+<div><pre><code class="language-none">migrate-n 
+migrate-n parmfile
+migrate-n parmfile -nomenu
+migrate-n -version
+migrate-n -help</code></pre></div>
+
+<p>If the program is started without the <em>-nomenu</em> option it displays the main menu</p>
+
+<div><pre><code class="language-none">++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++                                                                +
++   POPULATION SIZE, MIGRATION, DIVERGENCE, ASSIGNMENT, HISTORY  +
++   Bayesian inference using the structured coalescent           +
++                                                                +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+PDF output enabled [Letter-size]
+Version 5.0(git:v5.0-30-g634f887)   [March-20-2021]
+Program started at   Tue Oct 26 09:14:24 2021
+
+
+=============================================================
+MAIN MENU
+=============================================================
+
+  D       Data type currently set to: DNA sequence model            
+  I       Input/Output formats and Event reporting
+  P       Parameters  [start, migration model]
+  S       Search strategy
+  W       Write a parmfile
+  Q       Quit the program
+
+  To change the settings type the letter for the menu to change
+  Start the program with typing Yes or Y
+===&gt; </code></pre></div>
+
+<p>Each submenu will handle options concerning Data, Run parameters, and Population model among other things. </p>
+
+<h3 id="toc_4">Running</h3>
+
+<p>The MPI version is printing out less information than the single computer version, here an example of a log while running:</p>
+
+<div><pre><code class="language-none">23:38:13   Burn-in of 200000 steps (Locus: 1/2, Replicate: 1/5) 
+23:38:15   Burn-in complete  in 22 seconds
+23:39:00   Sampling of 100000 steps (Locus: 1/2, Replicate: 1/5) 
+23:39:15   Sampling complete  in 181 seconds
+23:39:33   Sampling: prognosed end of run is 23:55 July 08 2016 [0.077777 done])
+           Parameter     Acceptance Current      PropWindow AutoCorr ESS
+           ------------  ---------- ------------ ---------- -------- --------   
+           Theta_1           0.085       0.00008      0.016    0.520   211.18
+           Theta_2           0.110       0.00211      0.024    0.515   214.11
+           M_2-&gt;1            0.759     982.58556     85.061    0.956    15.08
+           Genealogies       0.100   -3210.29272      ---      0.781    82.36</code></pre></div>
+
+<h3 id="toc_5">Output</h3>
+
+<p>The output will be printed into two files that are called by default <em>outfile</em> and <em>outfile.pdf</em> (the name can be changed through the menu). There is an example outfile.pdf <a href="http://peterbeerli.com/example/outfile_example.pdf">here</a>.</p>
+
+<h2 id="toc_6">How do we specify models</h2>
+
+<p>[<em>about 15 minutes</em>]<br>
+<strong>migrate</strong> uses an adjacancy matrix to define the interactions among populations. </p>
+
+<h3 id="toc_7">Defaults</h3>
+
+<p>The defaults in <strong>migrate</strong> are to estimate all population sizes \(\Theta\) and all immigration rates \(M\) independently.</p>
+
+<p>For example a 3-population model where all populations A, B, and C exchange migrants at individual rates can be specified like this:<br>
+ <img style="float: right;" height="200" src="ring_population_nisland.jpg"></p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
+
+<p>Of course, this is not all that informative, but it is the default.</p>
+
+<h3 id="toc_8">Specifying models without divergence</h3>
+
+<p>There are many ways to specify different structured models,<br>
+<strong>migrate</strong> has a set of options to help with that:</p>
+
+<ul>
+<li>x or &lsquo;*&rsquo; means that this parameter is estimated </li>
+<li>0 means that this parameter is not estimated (works only on off-diagonal elements)</li>
+<li>s means the migration parameter is symmetric, this implies that \(M_{1\rightarrow 2} = M_{2\rightarrow 1}\)</li>
+<li>c means that the value is constant and not estimated, the values needs to be specified in the the start-parameter option</li>
+<li>m means take the average of all parameters labeled m, \(\Theta\) and \(M\) will be treated separately. A matrix full of m will be a two- parameter model (all populations share the same values for 1 \(\Theta\) and 1 \(M\)).</li>
+<li>there are upper case variants for s and m (S, M) that use instead of the migraiton parameter \(M\) the number of immigrants \(Nm\). I n most cases this is not a good choice because \(\Theta\) and \(Nm\) are more strongly correlated than \(\Theta\) and \(M\).</li>
+<li>all other lower alphabet letters except c, d, t, m, s, t, and x can be used to form groups of parameters (similar to m but more flexible), see example.</li>
+</ul>
+
+<p>More examples: <br>
+<img style="float: right;" height="160" src="ring_population.jpg"></p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>x</td>
+<td>0</td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>x</td>
+<td>x</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>0</td>
+<td>x</td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
+
+<p><img style="float: right;" height="160" src="ring_populationplus.jpg"> </p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>e</td>
+<td>b</td>
+<td>a</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>a</td>
+<td>e</td>
+<td>b</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>0</td>
+<td>a</td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>REMINDER</strong>: the populations specified on the row of the adjacency matrix are the receiving populations; populations on the columns are the sending populations; thus in the circular unidirectional stepping stone example above, population A receives migrants from population C and we estimate the parameter \(M_{C\rightarrow A}\), population B receives migrants from population A and we estimate \(M_{A\rightarrow B}\) etc.</p>
+
+<h5 id="toc_9">Answer these questions</h5>
+
+<p>Click on the question to reveal the answer, but write down the answer before you peek :-).<br>
+<details> <br>
+  <summary>1. specify the matrix for a 2-population system with unidirectional migration from 2 \(\rightarrow\) 1<br><br>
+ </summary><br>
+   custom-migration={** 0*}<br>
+</details><br>
+<details> <br>
+  <summary>2. specify a migration matrix for a 5-population system where population 1 and 5 are on a mainland, population 2 is an island close to 1, population 4 is close to 5, and population 3 is far out in the sea but closest to 2. &lsquo;Close&rsquo; means reachable by rafting, and once on an island, it will be difficult to get off again.<br><br>
+ </summary><br>
+   custom-migration={*000* **000 0**00 000** *000*}<br>
+   <img style="float: right;" height="90" src="5pop.jpg"> <br>
+</details></p>
+
+<h3 id="toc_10">Specifying models with divergence</h3>
+
+<p>For the divergence specification, we also use the adjacency matrix. For example, if we have a model where the populations do not exchange migrants, we could specify the matrix like this<br>
+<img style="float: right;" height="190" src="threepop_divcolor.jpg"> </p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>x</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>d</td>
+<td>x</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>0</td>
+<td>d</td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>d means divergence from the ancestral column population</li>
+<li>D means divergence from the ancestral column population with ongoing immigration</li>
+<li>t means divergence time is the same for all the matrix elements with the t.</li>
+</ul>
+
+<p><img style="float: right;" height="190" src="threepop_divcolormigoneway.jpg"> </p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>x</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>D</td>
+<td>x</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>0</td>
+<td>D</td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
+
+<p>Migration is problematic, and models with immigration and divergence may need additional ancestral populations to allow the estimation to be identifiable. Here is an example that needs ancestral population to get better estimates of divergence and migration.</p>
+
+<p><img style="float: right;" height="190" src="threepop_divcomplex.jpg"> </p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>x</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>0</td>
+<td>x</td>
+<td>x</td>
+<td>t</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>0</td>
+<td>x</td>
+<td>x</td>
+<td>t</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>d</td>
+<td>0</td>
+<td>0</td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>migrate</strong> has a menu to enter this adjacency matrix, but given the many options, it may seem easier for complex scenarios to edit the parameter file (it is a text file) directly. the option is named <br>
+<em>custom-migration</em> and contains the adjacency matrix, for example, the example from above looks like this</p>
+
+<div><pre><code class="language-none">custom-migration={ x000 0xxt 0xxt d00x}</code></pre></div>
+
+<p>If a diagonal element is set to zero, the program will crash! There are also models that will not work well or fail. All models essentially need to be able to end in one common ancestor; for example, we may be tempted to code an admixture example like this</p>
+
+<p><img style="float: right;" height="190" src="threepop_admixwrong.jpg"> </p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>x</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>d</td>
+<td>x</td>
+<td>d</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>0</td>
+<td>0</td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
+
+<p>but this will not work well because we force <strong>to have two roots</strong>, and this can lead to failures during the run, and one can code this better as this (a) or this (b)<br>
+<img style="float: right;" height="190" src="threepop_admix.jpg"> </p>
+
+<table>
+<thead>
+<tr>
+<th>(a)</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>x</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>d</td>
+<td>x</td>
+<td>d</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>d</td>
+<td>0</td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
+
+<p>More complicated than (a) is this (b) model that forces a sequence of divergences. Both models should deliver similar values so, although (b) will estimate population size for population D.<br>
+<img style="float: right;" height="190" src="threepop_admix2.jpg"> </p>
+
+<table>
+<thead>
+<tr>
+<th>(b)</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>x</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>d</td>
+<td>x</td>
+<td>d</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>0</td>
+<td>0</td>
+<td>x</td>
+<td>d</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>d</td>
+<td>0</td>
+<td>0</td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_11">Answer these questions</h4>
+
+<p><details> <br>
+  <summary>1. specify the matrix for two current populations A, B that share a common ancestor C<br><br>
+ </summary><br>
+   custom-migration={*0d 0*d 00*} or custom-migration={*0t 0*t 00*} <br>
+</details><br>
+<details> <br>
+  <summary>2. If the first questions is answered using &rsquo;d&#39; what does that mean for the divergence times?<br><br>
+ </summary><br>
+   Specifying &rsquo;d&#39; instead of &rsquo;t&#39; allows the two current populations to have splits from the ancestor at different times. <br>
+   <img style="float: right;" height="90" src="threepop_answer.jpg"><br>
+</details></p>
+
+<h2 id="toc_12">Run a model selection exercise</h2>
+
+<p>[<em>about 1.5 hours</em>] We use a real dataset of the zika virus, the data was gathered from the <a href="http://www.viprbrc.org">VIPR database</a>. The localities include Africa, China, Brazil, Panama, Guatemala, Mexico, and Puerto Rico. There are only few sequences in some of the populations so they will be pooled in our analysis. To simplify we pool Panama, Guatemala, Mexico, and Puerto Rico into a population labeled &lsquo;Mexico&rsquo;. The general consensus about the spread of zika is from Africa to Asia to the Americas. They mainly used incidence data to come to that conclusion. Here we use complete genomic data of the viruses to select among models that represent alternative hypotheses. <br>
+<img src="chartoftheday_4322_the_spread_of_the_zika_virus_n.jpg" alt=""></p>
+
+<p>[//]: # <a href="https://www.statista.com/chart/4322/the-spread-of-the-zika-virus/" title="Infographic: <br>
+[//]: # The Spread Of The Zika Virus | Statista&quot;><img src="https://d28wbuch0jlv7v.cloudfront.net/images/<br>
+[//]: # infografik/normal/chartoftheday_4322_the_spread_of_the_zika_virus_n.jpg&quot; alt=&ldquo;Infographic: The <br>
+[//]: # Spread Of The Zika Virus | Statista&rdquo; style=&ldquo;width: 100%; height: auto !important; max-<br>
+[//]: # width:960px;-ms-interpolation-mode: bicubic;&rdquo;/></a><br /> </p>
+
+<ol>
+<li>[<strong>to the east and north</strong>] Zika spread from Africa \(\rightarrow\) Asia \(\rightarrow\) Brazil \(\rightarrow\) Mexico</li>
+<li>[<strong>to the east and north with migration</strong>] Zika spread from Africa \(\rightarrow\) Asia \(\rightarrow\) Brazil \(\rightarrow\) Mexico with recurrent migration from the source after the population split</li>
+<li>[<strong>panmictic</strong>] The spread of Zika so fast and ubiquitous that we can treat Zika as a single panmictic population</li>
+<li>[<strong>to the west</strong>] Zika spread from Africa \(\rightarrow\) Asia and independently from Africa \(\rightarrow\) Brazil \(\rightarrow\) Mexico</li>
+<li>[<strong>migration</strong>]Zika follows an <em>n-island model</em></li>
+<li>[<strong>to the east and splam</strong>]Zika spread from Africa \(\rightarrow\) Asia \(\rightarrow\) Americas (and we treat all new world locations as a panmictic unit.</li>
+<li>[<strong>twoways</strong>] The population in the Americas is a &lsquo;hybrid&rsquo; from Africa and Asia.</li>
+<li>Your own model</li>
+</ol>
+
+<p>For each of the models you will need to edit a parmfile. I suggest that you follow the naming schemes in this tutorial.</p>
+
+<p>There is a <em>parmfile.template</em> that specifies model 1 [<strong>to the east and north</strong>]. Use this template to form all the other models, for each these new models you will need to do the following steps:</p>
+
+<ol>
+<li><strong>copy the parmfile.template to a new parmfile</strong></li>
+<li><strong>check and fix the population relabel option</strong></li>
+<li><strong>and/or check the custom-migration option</strong></li>
+</ol>
+
+<h3 id="toc_13">Model 1 to the east and north</h3>
+
+<div><pre><code class="language-none">cp parmfile.template parmfile_eastnorth
+perl -p -i -e &#39;s/template/eastnorth/g;&#39; parmfile_eastnorth
+# the parmfile_eastnorth does not need any editing! then execute
+migrate-n parmfile_eastnorth  -nomenu</code></pre></div>
+
+<p>For all other models you will use the same approach to change the template and generate the specific models. If you follow the instructions to the dot then all files will be set up correctly, if you insist on doing this by hand, you almost certainly will overwrite things and also use incorrect options.   </p>
+
+<h3 id="toc_14">Model 2 to the east and north with migration</h3>
+
+<div><pre><code class="language-none">cp parmfile.template parmfile_eastnorthmig
+perl -p -i -e &#39;s/template/eastnorthmig/g;&#39; parmfile_eastnorthmig
+&lt;edit the parmfile_eastnorthmig: see instructions below&gt; 
+migrate-n parmfile_eastnorthmig  -nomenu</code></pre></div>
+
+<p>the parmfile needs to have a different <em>custom-migration</em> setting, search for the option, the current setting that does not include migration, edit it accordingly (using the example in the beginning of the tutorial, but recognize that we have a total of 4 population now, not three.<br>
+<details> <br>
+  <summary>Once you have edited your copy compare with this </summary><br>
+   custom-migration={*000 D*00 0D*0 00D*}<br>
+</details></p>
+
+<h3 id="toc_15">Model 3 panmictic</h3>
+
+<div><pre><code class="language-none">cp parmfile.template parmfile_panmictic
+perl -p -i -e &#39;s/template/panmictic/g;&#39; parmfile_panmictic
+&lt;edit the parmfile_panmictic, see below!&gt; 
+migrate-n parmfile_panmictic  -nomenu</code></pre></div>
+
+<p>In your editor search for the option <strong>population-relabel</strong><br>
+it should look like this</p>
+
+<div><pre><code class="language-none"># MBL tutorial dataset zika
+# in the data file the order of the population is this:
+# Africa
+# Asia
+# Brazil
+# Mexico
+# Puerto Rico
+#
+#    population-relabel={assignment for each location in the infile}
+#    example is population-relabel={1 2 2}
+#
+population-relabel={1, 2, 3, 4, 4}
+#</code></pre></div>
+
+<p>For model 3 you need to reset to model to a single population, edit the option <br>
+<details> <br>
+  <summary>Once you have edited your copy compare with this </summary><br>
+  population-relabel={1, 1, 1, 1, 1} <br>
+</details></p>
+
+<h3 id="toc_16">Model 4 to the west</h3>
+
+<div><pre><code class="language-none">cp parmfile.template parmfile_west
+perl -p -i -e &#39;s/template/west/g;&#39; parmfile_west
+&lt;edit the parmfile_west&gt; 
+migrate-n parmfile_west  -nomenu</code></pre></div>
+
+<p>the parmfile needs to have a different <em>custom-migration</em> setting, adjust it so so that we have population splits like this Africa \(\rightarrow\) Asia, Africa \(\rightarrow\) Brazil \(\rightarrow\) &lsquo;Mexico&rsquo;.<br>
+<details> <br>
+  <summary>Once you have edited your copy compare with this </summary><br>
+   custom-migration={*000 d*00 d0*0 00d*}<br>
+</details></p>
+
+<h3 id="toc_17">Model 5 migration only (and not divergence)</h3>
+
+<div><pre><code class="language-none">cp parmfile.template parmfile_migration
+perl -p -i -e &#39;s/template/migration/g;&#39; parmfile_migration
+&lt;edit the parmfile_migration&gt; 
+migrate-n parmfile_migration  -nomenu</code></pre></div>
+
+<p>the parmfile needs to have a different <em>custom-migration</em> setting, adjust to the <em>n-island</em> model with migration among all [!]  populations<br>
+<details> <br>
+  <summary>Once you edited your copy compare with this </summary><br>
+   custom-migration={**** **** **** ****}<br>
+</details></p>
+
+<h3 id="toc_18">Model 6 to the east and splam</h3>
+
+<div><pre><code class="language-none">cp parmfile.template parmfile_eastsplam
+perl -p -i -e &#39;s/template/eastsplam/g;&#39; parmfile_eastsplam
+&lt;edit the parmfile_eastsplam&gt; 
+migrate-n parmfile_eastsplam  -nomenu</code></pre></div>
+
+<p>the parmfile needs to have a different <em>custom-migration</em> setting and a change of the <em>population-relabel</em> option. Change it so that we have Africa \(\rightarrow\) Asia \(\rightarrow\) Americas<br>
+the custom migration matrix should be a 3x3 matrix; in addition you will need to change the <em>population-relabel</em> option to pool Brazil and Mexico and Puerto Rico. </p>
+
+<p><details> <br>
+  <summary>Once you edited your copy compare with this </summary><br>
+   population-relabel={1 2 3 3 3}<br><br>
+   #&hellip; many options not shown here &hellip;<br><br>
+   custom-migration={*00 d*0 0d*}<br>
+</details></p>
+
+<h3 id="toc_19">Model 7 to the west, to the east and splam</h3>
+
+<div><pre><code class="language-none">cp parmfile.template parmfile_twoways
+perl -p -i -e &#39;s/template/twoways/g;&#39; parmfile_twoways
+&lt;edit the parmfile_twoways&gt; 
+migrate-n parmfile_twoways  -nomenu</code></pre></div>
+
+<p>the parmfile needs to have a different <em>custom-migration</em> setting and a change of the <em>population-relabel</em> option. Change it so that we have Africa \(\rightarrow\) Asia \(\rightarrow\) Americas <strong>and</strong> Africa \(\rightarrow\) Americas<br>
+the custom migration matrix should be a 3x3 matrix; in addition you will need to change the <em>population-relabel</em> option to pool Brazil and Mexico and Puerto Rico. </p>
+
+<p><details> <br>
+  <summary>Once you edited your copy compare with this </summary><br>
+   population-relabel={1 2 3 3 3}<br><br>
+   #&hellip; many options not shown here &hellip;<br><br>
+   custom-migration={*00 d*0 dd*}<br>
+</details></p>
+
+<h3 id="toc_20">Model 8 pick your own model if you have time</h3>
+
+<div><pre><code class="language-none">cp parmfile.template parmfile_own
+perl -p -i -e &#39;s/template/own/g;&#39; parmfile_own
+&lt;edit the parmfile_own&gt; 
+migrate-n parmfile_own  -nomenu</code></pre></div>
+
+<p>Design your own model!</p>
+
+<h2 id="toc_21">Reporting</h2>
+
+<p>You have run several models and since we ran them not really long enough we wnat to see whether an average estimate of all students may give som intuition what is going on with the Zika virus. Each of the outfiles has a table of the marginal likelihoods. Report the value for your output files (you can report these before you have run all of them)<br>
+Report the number circled in <strong>RED</strong>. We will run an excel sheet to look at the model probabilities and marginal likelihoods reported by the class. [<em>last 30 minutes</em>]</p>
+
+<p><img style="float: center;" src="mL_example.png"> </p>
+
+<p>I have added a script that allows you to generate a table of the marginal likelihoods, the Bayes factors compared to the best model, and the model probabilities (probability weight). The script uses <em>grep</em> and a small <em>python</em> script that is doing the calculations. It will generate a table by extracting the marginal likelihoods from all <strong>outfiles</strong> in the directory. Call the script like this</p>
+
+<div><pre><code class="language-none">./modelprobtable</code></pre></div>
+
+<p><details> <br>
+  <summary>Spoiler ALERT, if you click me before you have done the tutorial, you will see the order of the models and thus lose all the excitement about which model wins </summary></p>
+
+<div><pre><code class="language-none">Model                       Log(mL)   LBF     Model-probability
+---------------------------------------------------------------
+1:outfile_panmictic:            -26722.61  -751.10       0.0000 
+2:outfile_migration:            -26581.65  -610.14       0.0000 
+3:outfile_eastnorthmig:         -26475.24  -503.73       0.0000 
+4:outfile_west:                 -26221.24  -249.73       0.0000 
+5:outfile_eastnorth:            -26038.31   -66.80       0.0000 
+6:outfile_eastsplam:            -25971.51     0.00       1.0000 </code></pre></div>
+
+<p></details><img src="!%5B%5D(!%5B%5D(!%5B%5D()))" alt=""></p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/x-mathjax-config">
+(function () {
+
+MathJax.Hub.Config({
+	'showProcessingMessages': false,
+	'messageStyle': 'none'
+});
+
+if (typeof MathJaxListener !== 'undefined') {
+	MathJax.Hub.Register.StartupHook('End', function () {
+		MathJaxListener.invokeCallbackForKey_('End');
+	});
+}
+
+})();
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>
