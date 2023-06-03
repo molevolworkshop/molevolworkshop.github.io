@@ -40,7 +40,7 @@ The lab exercises (PAML demo) are available via small website (link below). The 
 
 **PAML demo resources**: [webpage](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html)
 
-**PAML demo slides**: [slides (PDF)](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO_2023.pdf)
+**PAML demo slides**: [slides (PDF)](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO_2023.pdf) (updated for 2023)
 
 If you want doing the lab independently of the workshop (at home, on your own time and on your own computer), then you can do this by downloading all the necessary files from an archive [here](https://bitbucket.org/EvoWorks/protocol-paml-lab-at-mbl-workshop/downloads/), or you can download the files individually for each exercise as you need them [here](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/PAML_Lab_files.html).
 
@@ -57,9 +57,9 @@ symlink in your home directory named "moledata" to obtain the course data files!
 
 I am changing the lecture content for 2022 and beyond. This lecture will provide a more general background on evolutionary forces, and the Neutral and Nearly-Neutral theories of molecular evolution. Some details about fitting codon models to real data, have been moved to the "PAML Lab" lecture.  
 
-* **2022/2023 Lecture slides (Part 1), Intro to Neutral & Nearly Neutral Theories of Molecular Evolution:** [slide set 1](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf) 
+* **2023 Lecture slides (Part 1), Intro to Neutral & Nearly Neutral Theories of Molecular Evolution:** [slide set 1](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf) (updated)
 
-* **2022/2023 Lecture slides (Part 2), Intro to Codon Models:** [slide set 2](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_2.pdf) 
+* **2023 Lecture slides (Part 2), Intro to Codon Models:** [slide set 2](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_2.pdf) (updated)
 
 <br>
 **Some material from previous workshops**
