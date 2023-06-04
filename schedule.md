@@ -121,7 +121,6 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Sunday, June 4, 2023
 
 ---------------|--------------------------------------|-----------------------------------
- 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
  09:00 - 10:30 | [Eme](/faculty-eme/)                 | [Amino acid models and deep time phylogenetics]({{ site.baseurl }}/faculty/eme/pdf/Phylogenomics_EmeLaura_WoodsHole2019_4-opt.pdf)
  10:30 - 12:00 | [Eme](/faculty-eme/)                 |  [Amino acid models and deep time phylogenetics]({{ site.baseurl }}/faculty/eme/pdf/Phylogenomics_EmeLaura_WoodsHole2019_4-opt.pdf)
  14:00 - 15:30 | [McTavish](/faculty-mctavish/)       | [Phylogenomics slides]({{ site.baseurl }}/faculty/mctavish/pdf/Genomics_WH2023.pdf), [Tree updating lab](https://github.com/snacktavish/Mole2023/blob/master/TreeUpdating.md)
