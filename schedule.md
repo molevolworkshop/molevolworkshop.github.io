@@ -128,7 +128,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  19:00 - 20:30 | [Knowles](/faculty-knowles/)         | [Evolutionary applications of genomic data]({{ site.baseurl }}/faculty/knowles/pdf/Knowles-Woodshole-2023-Lect-opt.pdf)
  20:30 - 22:00 | [Knowles](/faculty-knowles/)         | Evolutionary applications of genomic data (cont.)
  22:00 - 23:59 | Loeb Quad                            | Almost-the-end party
-{:.daily-schedule-cpp}
+{:.daily-schedule-std}
 
 ### Monday, June 5, 2023
 
