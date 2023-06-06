@@ -24,3 +24,4 @@ Machine Learning Part 2 [MLPart2]({{ site.baseurl }}/faculty/smith/pdf/MachineLe
 
 ### Resources
 [Machine Learning Tutorial](/faculty/smith/tutorial/Machine_Learning_for_Population_Genetics.ipynb)
+[Machine Learning References](/faculty/smith/pdf/References.pdf)
