@@ -8,26 +8,16 @@ permalink: /schedule/
 
 All sessions are in Loeb G70 (basement of Loeb building)
 
-[//]: <> Intro [beerli]
-[//]: <> Basics: ML, Bayesian lewis, huelsenbeck, lewis 
-[//]: <> Model selection [mutation models, partitions Swofford]
-[//]: <> Ref-bayes divergence  brown heath
-[//]: <> adaptation bielawksi chang         where to put McTavish?
-[//]: <> IQ-TREE and aminoacid model/topology Minh Susko
-[//]: <> coalescent beerli
-[//]: <> species trees kubatko, 
-[//]: <> species trees solis-lemus, edwards yoder knowles
-
-### Friday, May 26, 2023
+### Friday, May 24, 2024
 
 ---------------|--------------------------------------|-----------------------------------
  18:00 - 21:00 | Swope Terrace (overlooking Eel Pond) | Opening Reception
 {:.daily-schedule-std}
 
-### Saturday, May 27, 2023
+### Saturday, May 25, 2024
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Beerli](/faculty-beerli/)           | Welcome, Introductions, and [Workshop introduction]({{ site.baseurl }}/faculty/beerli/pdf/MOLE-2023-intro-slides.pdf)
+ 09:00 - 10:30 | [Kubatko](/faculty-beerli/)           | Welcome, Introductions, and [Workshop introduction]({{ site.baseurl }}/faculty/beerli/pdf/MOLE-2023-intro-slides.pdf)
  10:30 - 12:00 | [Lewis](/faculty-lewis/)             | [Introduction to Phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/phylointro.pdf)
  14:00 - 15:30 | [Huelsenbeck](/faculty-huelsenbeck/) | [Introduction to Likelihood]({{ site.baseurl }}/faculty/huelsenbeck/pdf/WoodsHole2012_1-opt.pdf)
  15:30 - 17:00 | [Huelsenbeck](/faculty-huelsenbeck/) | Simulating Molecular Evolution
@@ -35,7 +25,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  20:30 - 22:00 | TAs                                  | [Alignment lab](/labs/alignment/)
 {: .daily-schedule-std}
 
-### Sunday, May 28, 2023
+### Sunday, May 26, 2024
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional) ([Programming Book]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf))
@@ -43,13 +33,12 @@ All sessions are in Loeb G70 (basement of Loeb building)
  10:30 - 12:00 | [Swofford](/faculty-swofford/)       | [Model Selection]({{ site.baseurl }}/faculty/swofford/pdf/swofford_WH2023_modsel.pdf)
  14:00 - 15:30 | [Swofford](/faculty-swofford/)       | [Introduction to PAUP*](http://paup.phylosolutions.com/)
  15:30 - 17:00 | [Swofford](/faculty-swofford/)       | [PAUP* lab](/faculty/swofford/pdf/modsel-sim-tutorial.html)
- 19:00 - 20:30 | [Minh](/faculty-minh/)               | [IQ-TREE Introduction]({{ site.baseurl }}/faculty/bui/pdf/MOLE2023-IQ-TREE.pdf)
- 20:30 - 22:00 | [Minh](/faculty-minh/)               | [IQ-TREE lab](http://www.iqtree.org/workshop/molevol2023) [IQ-TREE quiz](https://docs.google.com/forms/d/e/1FAIpQLScOaOwUZMof9GxTVzE0zDoqr9xWNUWRtNHUmQgZExU2hIEi0w/formResponse)
-               | [Minh](/faculty-minh/)               | [IQ-TREE Solutions]({{ site.baseurl }}/faculty/bui/pdf/MOLE2023-Tutorial.pdf)
+ 19:00 - 20:30 | [TAs]                                | [IQ-TREE Introduction]({{ site.baseurl }}/faculty/bui/pdf/MOLE2023-IQ-TREE.pdf)
+ 20:30 - 22:00 | [Minh]                               | [IQ-TREE lab](http://www.iqtree.org/workshop/molevol2023) [IQ-TREE quiz](https://docs.google.com/forms/d/e/1FAIpQLScOaOwUZMof9GxTVzE0zDoqr9xWNUWRtNHUmQgZExU2hIEi0w/formResponse)
  22:00 - 23:59 | Loeb Quad                            | Evening social gathering
 {:.daily-schedule-cpp}
  
-### Monday, May 29, 2023
+### Monday, May 27, 2024
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck)  | C++ Programming Workshop (optional)
@@ -61,7 +50,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  20:30 - 22:00 | [Heath](/faculty-heath/)             | [Divergence time estimation Lab](https://revbayes.github.io/tutorials/fbd_simple)
 {:.daily-schedule-cpp}
 
-### Tuesday, May 30, 2023
+### Tuesday, May 28, 2024
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
@@ -69,29 +58,29 @@ All sessions are in Loeb G70 (basement of Loeb building)
  10:30 - 12:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2023.pdf)
  14:00 - 15:30 | [Kubatko](/faculty-kubatko/)         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2023.pdf)
  15:30 - 17:00 | [Kubatko](/faculty-kubatko/), [Swofford](/faculty-swofford/) | [Species Tree Lab Slides]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreesLab1_2023.pdf), [Species Tree Lab Tutorial]({{ site.baseurl }}/faculty/kubatko/pdf/species-trees-tutorial-2023.html)
- 19:00 - 20:30 | [Solís-Lemus](/faculty-solis-lemus/) | [Network models lecture (2023 version)]({{ site.baseurl }}/faculty/solis-lemus/pdf/talk-networks-mbl.pdf)
- 20:30 - 22:00 | [Solís-Lemus](/faculty-solis-lemus/) | [Network models tutorial](https://github.com/crsl4/PhyloNetworks.jl/wiki)
+ 19:00 - 20:30 | [Kubatko](/faculty-kubatko/), [Swofford](/faculty-swofford/) | [Species Tree Lab Slides]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreesLab1_2023.pdf), [Species Tree Lab Tutorial]({{ site.baseurl }}/faculty/kubatko/pdf/species-trees-tutorial-2023.html)
+ 20:30 - 22:00 | Open Lab                              | 
 {:.daily-schedule-cpp}
 
-### Wednesday, May 31, 2023
+### Wednesday, May 29, 2024
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
- 09:00 - 10:30 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2023_partI.pdf)
- 10:30 - 12:00 | [Edwards](/faculty-edwards/)         | [Pangenomes and evolution]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2023_partII.pdf)
+ 09:00 - 10:30 | [Beerli](/faculty-beerli/)           | [Model comparison in biogeography/population genetics using MIGRATE]({{ site.baseurl }}/faculty/beerli/migrate-tutorial-html/MIGRATEtutorial2023.html)
+ 10:30 - 12:00 | [Beerli](/faculty-beerli/)           | [Model comparison in biogeography/population genetics using MIGRATE]({{ site.baseurl }}/faculty/beerli/migrate-tutorial-html/MIGRATEtutorial2023.html)
  12:00 - 12:15 | group photo (don't miss it!)         | (we still need to decide where: Lillie steps? Swope terrace?)
- 14:00 - 15:30 | [Yoder](/faculty-yoder/)             | [What are we even talking about when we say "species tree"?]({{ site.baseurl }}/faculty/yoder/pdf/MBL.6.2023-opt.pdf)
- 15:30 - 17:00 | [Yoder](/faculty-yoder/)             | What are we even talking about when we say "species tree"? (cont.)
+ 14:00 - 15:30 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2023_partI.pdf)
+ 15:30 - 17:00 | [Edwards](/faculty-edwards/)         | [Pangenomes and evolution]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2023_partII.pdf)
  19:00 - 20:30 | Swope Terrace                        | Course Dinner Party
  20:30 - 22:00 | Swope Terrace                        | Course Dinner Party
  22:00 - 23:59 | Loeb Quad                            | Post-dinner social gathering
 {:.daily-schedule-cpp}
 
-### Thursday, June 1, 2023
+### Thursday, May 30, 2024
 
 **Free Day** (sleep in, catch up on email, visit [Martha's Vineyard](https://mvol.com), go [whale watching in Hyannis](https://www.whales.net), etc.)
 
-### Friday, June 2, 2023
+### Friday, May 31, 2024
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
@@ -105,24 +94,23 @@ All sessions are in Loeb G70 (basement of Loeb building)
 {:.daily-schedule-cpp}
 
 
-### Saturday, June 3, 2023
+### Saturday, June 1, 2024
 
 ---------------|--------------------------------------|-----------------------------------
- 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
- 09:00 - 10:30 | [Smith](/faculty-smith/) | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_Part1.pdf)
- 10:30 - 12:00 | [Smith](/faculty-smith/) | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_Part2.pdf)
- 14:00 - 15:30 | [Susko](/faculty-susko/)             | [Bootstrap and tree topology tests]({{ site.baseurl }}/faculty/susko/pdf/ed-susko-topology-tests.pdf)
- 15:30 - 17:00 | [Susko](/faculty-susko/)             | [Bootstrap and tree topology tests]({{ site.baseurl }}/faculty/susko/pdf/ed-susko-topology-tests.pdf)
- 19:00 - 20:30 |  [Beerli](/faculty-beerli/)           | [Model comparison in biogeography/population genetics using MIGRATE]({{ site.baseurl }}/faculty/beerli/migrate-tutorial-html/MIGRATEtutorial2023.html)
- 20:30 - 22:00 | [Beerli](/faculty-beerli/)           | [Model comparison in biogeography/population genetics using MIGRATE]({{ site.baseurl }}/faculty/beerli/migrate-tutorial-html/MIGRATEtutorial2023.html)
+ 09:00 - 10:30 | [Smith](/faculty-smith/)             | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_Part1.pdf)
+ 10:30 - 12:00 | [Smith](/faculty-smith/)             | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_Part2.pdf)
+ 14:00 - 15:30 | [Gill]                               | Phylodynamics of Infectious Disease
+ 15:30 - 17:00 | [Gill]                               | Phylodynamics of Infectious Disease
+ 19:00 - 20:30 | [Solís-Lemus](/faculty-solis-lemus/) | [Network models lecture (2023 version)]({{ site.baseurl }}/faculty/solis-lemus/pdf/talk-networks-mbl.pdf)
+ 20:30 - 22:00 | [Solís-Lemus](/faculty-solis-lemus/) | [Network models tutorial](https://github.com/crsl4/PhyloNetworks.jl/wiki)
  22:00 - 23:59 | Loeb Quad                            | Social
  {:.daily-schedule-cpp}
 
-### Sunday, June 4, 2023
+### Sunday, June 2, 2024
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Eme](/faculty-eme/)                 | [Amino acid models and deep time phylogenetics]({{ site.baseurl }}/faculty/eme/pdf/Phylogenomics_EmeLaura_WoodsHole2019_4-opt.pdf)
- 10:30 - 12:00 | [Eme](/faculty-eme/)                 |  [Amino acid models and deep time phylogenetics]({{ site.baseurl }}/faculty/eme/pdf/Phylogenomics_EmeLaura_WoodsHole2019_4-opt.pdf)
+ 09:00 - 10:30 | [Moreau](https://www.moreaulab.entomology.cornell.edu/team/corrie-moreau/)                 | [Phylogenomics and the evolution of ants]()
+ 10:30 - 12:00 | [Moreau](https://www.moreaulab.entomology.cornell.edu/team/corrie-moreau/)                 |  [Phylogenomics and the evolution of ants]()
  14:00 - 15:30 | [McTavish](/faculty-mctavish/)       | [Phylogenomics slides]({{ site.baseurl }}/faculty/mctavish/pdf/Genomics_MOLE2023-opt.pdf), [Tree updating lab](https://github.com/snacktavish/Mole2023/blob/master/TreeUpdating.md)
  15:30 - 17:00 | [McTavish](/faculty-mctavish/)       | [Open Tree slides]({{ site.baseurl }}/faculty/mctavish/pdf/OpenTree_MOLE2023-opt.pdf), [Tree comparison lab](https://github.com/snacktavish/Mole2023/blob/master/TreeComparison.md) 
  19:00 - 20:30 | [Knowles](/faculty-knowles/)         | [Evolutionary applications of genomic data]({{ site.baseurl }}/faculty/knowles/pdf/Knowles-Woodshole-2023-Lect-opt.pdf)
@@ -130,7 +118,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  22:00 - 23:59 | Loeb Quad                            | Almost-the-end party
 {:.daily-schedule-std}
 
-### Monday, June 5, 2023
+### Monday, June 3, 2024
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Swofford](/faculty-swofford/)/[Bielawski](/faculty-bielawski/)       | Scientific ethics panel discussion ([Holder 2019 lecture]({{ site.baseurl }}/faculty/holder/pdf/Holder_last_lecture_2019-opt.pdf))
