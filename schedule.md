@@ -72,7 +72,6 @@ All sessions are in Loeb G70 (basement of Loeb building)
  14:00 - 15:30 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2023_partI.pdf)
  15:30 - 17:00 | [Edwards](/faculty-edwards/)         | [Pangenomes and evolution]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2023_partII.pdf)
  19:00 - 22:00 | Swope Terrace                        | Course Dinner Party
- <!-- 20:30 - 22:00 | Swope Terrace                        | Course Dinner Party -->
  22:00 - 23:59 | Loeb Quad                            | Post-dinner social gathering
 {:.daily-schedule-cpp}
 
