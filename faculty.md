@@ -32,7 +32,7 @@ permalink: /faculty/
 
 [Emily Jane McTavish](/faculty-mctavish/), University of California-Merced
 
-[Corrie Moreau](/faculty-moreau/), University of California-Merced
+[Corrie Moreau](/faculty-moreau/), Cornell University
 
 [Claudia Solís-Lemus](/faculty-solis-lemus/), University of Wisconsin-Madison
 
