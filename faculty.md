@@ -12,17 +12,13 @@ permalink: /faculty/
 
 [Jeremy Brown](/faculty-brown/), Louisiana State University
 
-[Minh Quang Bui](/faculty-bui/), Australian National University
-
 [Belinda Chang](/faculty-chang/), University of Toronto
 
 [Scott Edwards](/faculty-edwards/), Harvard University
 
-[Laura Eme](/faculty-eme/), University Paris-Saclay
+<!-- [Laura Eme](/faculty-eme/), University Paris-Saclay -->
 
-{% comment %}
-[Kelley Harris](/faculty-harris/), University of Washington
-{% endcomment %}
+[Mandev Gill](/faculty-gill/), University of Georgia
 
 [Tracy Heath](/faculty-heath/), Iowa State University
 
@@ -36,17 +32,17 @@ permalink: /faculty/
 
 [Emily Jane McTavish](/faculty-mctavish/), University of California-Merced
 
+[Corrie Moreau](/faculty-moreau/), University of California-Merced
+
 [Claudia Solís-Lemus](/faculty-solis-lemus/), University of Wisconsin-Madison
 
 [Megan Smith](/faculty-smith/), Indiana State University
 
-[Edward Susko](/faculty-susko/), Dalhousie University
-
 [David Swofford](/faculty-swofford/), Duke University
 
-[Anne Yoder](/faculty-yoder/), Duke University
+<!-- [Anne Yoder](/faculty-yoder/), Duke University -->
 
-## 2023 Course TAs
+## 2024 Course TAs
 
 [Blake Fauskee](/faculty-fauskee/), Duke University
 
@@ -54,17 +50,15 @@ permalink: /faculty/
 
 [Analisa Milkey](/faculty-milkey/), University of Connecticut
 
-[Jordan Satler](/faculty-satler/) (lead TA), Ohio State University
-
-[Kate Taylor](/faculty-taylor/), University of Maryland
-
-## 2023 Course Assistant
+## 2024 Course Assistant
 
 [Elena Korte](/course-assistant/), University of Connecticut
 
 ## Former recent faculty
 
 Cécile Ané, University of Wisconsin-Madison
+
+Minh Quang Bui, Australian National University
 
 Mario dos Reis, Queen Mary University London
 
@@ -92,6 +86,8 @@ William Pearson, University of Virginia
 
 Antonis Rokas, Vanderbilt University
 
+Edward Susko, Dalhousie University
+
 David Weisrock, University of Kentucky
 
 Rachel Williams, Duke University
@@ -103,6 +99,10 @@ Axel Meyer, Harold Zakon, Sara Sawyer, Shozo Yokoyama, Gavin Naylor
 {% endcomment %}
 
 ## Former recent TAs
+
+[Jordan Satler](/faculty-satler/) (lead TA), Ohio State University
+
+[Kate Taylor](/faculty-taylor/), University of Maryland
 
 [Áki Láruson](/faculty-laruson/) (Lead TA), University of Iceland
 
