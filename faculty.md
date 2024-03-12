@@ -44,15 +44,20 @@ permalink: /faculty/
 
 ## 2024 Course TAs
 
-[Blake Fauskee](/faculty-fauskee/), Duke University
-
 [Kevin (Sungsik) Kong](/faculty-kong/), Ohio State University
+
+[Blake Fauskee](/faculty-fauskee/), Duke University
 
 [Analisa Milkey](/faculty-milkey/), University of Connecticut
 
+[Adetunji "Teejay" Adesina](/faculty-adesina/), University of Colorado Boulder
+
+[Bruno do Rosario Petrucci](/faculty-petrucci/), Iowa State University
+
 ## 2024 Course Assistant
 
-[Elena Korte](/course-assistant/), University of Connecticut
+[TBD](/course-assistant/)
+
 
 ## Former recent faculty
 
@@ -123,6 +128,8 @@ Axel Meyer, Harold Zakon, Sara Sawyer, Shozo Yokoyama, Gavin Naylor
 [April Wright](http://www.southeastern.edu/acad_research/depts/biol/faculty/directory/wright.html), Southeastern Louisiana University
 
 ## Former Recent Course Assistants
+
+[Elena Korte](/course-assistant/), University of Connecticut
 
 [Alyssa McGurer](/course-assistant/), University of Connecticut
 

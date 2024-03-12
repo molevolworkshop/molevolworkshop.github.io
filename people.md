@@ -12,5 +12,6 @@ permalink: /people/
 
 ## 2024 Participants
 
-|               First Name |                Last Name |                                                 Institution |
+<!-- |               First Name |                Last Name |                                                 Institution |
 | ------------------------ | ------------------------ | ----------------------------------------------------------- |
+ -->
