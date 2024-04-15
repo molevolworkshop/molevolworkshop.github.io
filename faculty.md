@@ -4,7 +4,7 @@ title: Faculty
 permalink: /faculty/
 ---
 {% include figure.html description="" url="/assets/img/fromback2018.jpg" css="image-center" height="250px" %}
-## 2023 Course Faculty
+## 2024 Course Faculty
 
 [Peter Beerli](/faculty-beerli/), Florida State University
 
@@ -56,7 +56,7 @@ permalink: /faculty/
 
 ## 2024 Course Assistant
 
-[TBD](/course-assistant/)
+[Camryn Ford](/course-assistant/)
 
 
 ## Former recent faculty
