@@ -36,17 +36,13 @@ Many of the *unwritten rules* of science are the same as those that operate in s
 
 There is a lot of material (here, and in the general scientific literature) devoted to methods for detecting adaptive evolution.  If you are new to this, you might be feeling a little overwhelmed and wondering where to start.  Here I provide two general reviews (chapters in the Encyclopaedia of Evolutionary Biology) that could provide a good starting point, depending on your background.
 
-Are you completely new to models of sequence evolution?  Then [this review](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00209.PUBLISHED.pdf) might be good for you.  Section 2 provides a great introduction to Markov models, but it can be skipped without any loss of continuity by readers in a hurry or who do not need to know the nitty-gritty details of the models.
+**Are you completely new to models of sequence evolution?**  Then [this review](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00209.PUBLISHED.pdf) might be good for you.  Section 2 provides a great introduction to Markov models, but it can be skipped without any loss of continuity by readers in a hurry or who do not need to know the nitty-gritty details of the models.
 
+* **Citation:** Bielawski, J. P. (2016). Molecular Evolution, Models of In Kliman, R.M. (ed.) Encyclopedia of Evolutionary Biology. Vol 1, pp. 61-70. Oxford: Academic Press.
 
-Citation: Bielawski, J. P. (2016). Molecular Evolution, Models of In Kliman, R.M. (ed.) Encyclopedia of Evolutionary Biology. Vol 1, pp. 61-70. Oxford: Academic Press.
+**Do you some background in phylogenetics and DNA sequence models, but you are new to the are of detecting adaptive sequence evolution?**  Then [this review](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00171.PUBLISHED.pdf) will give you a very broad starting point (population genetics, non-coding, codon and amino-acid-based methods are all covered).  After reading this, your next steps would be to get started on the papers presented below.
 
-Do you some background in phylogenetics and DNA sequence models, but you are new to the are of detecting adaptive sequence evolution?  Then [this review](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00171.PUBLISHED.pdf) will give you a very broad starting point (population genetics, non-coding, codon and amino-acid-based methods are all covered).  After reading this, your next steps would be to get started on the papers presented below.
-
-
-
-
-Citation:  Bielawski, Joseph & Jones, Chris. (2016). Adaptive Molecular Evolution: Detection Methods. In Kliman, R.M. (ed.) Encyclopedia of Evolutionary Biology. Vol 1, pp. 16-25. Oxford: Academic Press.
+* **Citation:**  Bielawski, Joseph & Jones, Chris. (2016). Adaptive Molecular Evolution: Detection Methods. In Kliman, R.M. (ed.) Encyclopedia of Evolutionary Biology. Vol 1, pp. 16-25. Oxford: Academic Press.
 
 <br>
 
