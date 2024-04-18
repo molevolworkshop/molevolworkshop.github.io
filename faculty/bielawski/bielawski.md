@@ -18,7 +18,7 @@ permalink: /faculty-bielawski/
 
 Arrival: 24 May 2024 (Fri)
 
-Depart:  04 June 2023 (Ts)
+Depart:  04 June 2024 (Ts)
 
 <br>
 
