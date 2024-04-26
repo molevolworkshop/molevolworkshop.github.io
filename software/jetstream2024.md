@@ -11,7 +11,7 @@ https://www.webfx.com/tools/emoji-cheat-sheet/
 
 These are notes on setting up Jetstream2 virtual machines for the 2023 MOLE workshop. If you are a participant, these notes are not intended for you, but you are of course welcome to read them. They are intended for the current directors and head TA of the workshop, who must get the Jetstream virtual machines up and running before the workshop begins. 
 
-[Paul Lewis](mailto:paul.lewis@uconn.edu) created this document 26-Apr-2024. Whenever "I" or "me" appears in this document, it is Paul speaking.
+[Paul Lewis](mailto:paul.lewis@uconn.edu) created this document 26-Apr-2024 with the help of Analisa Milkey.
 
 This document supersedes the original [Jetstream Setup Notes](/jetstream-setup/) and the later [Jetstream2 Setup Notes](/jetstream2022/).
 
