@@ -1,17 +1,17 @@
 ---
 layout: page
 title: Jetstream2 Setup Notes
-permalink: /jetstream2023/
+permalink: /jetstream2024/
 ---
 {% comment %}
 https://www.webfx.com/tools/emoji-cheat-sheet/
 {% endcomment %}
 
-## Jetstream2 notes (2023 Workshop)
+## Jetstream2 notes (2024 Workshop)
 
 These are notes on setting up Jetstream2 virtual machines for the 2023 MOLE workshop. If you are a participant, these notes are not intended for you, but you are of course welcome to read them. They are intended for the current directors and head TA of the workshop, who must get the Jetstream virtual machines up and running before the workshop begins. 
 
-[Paul Lewis](mailto:paul.lewis@uconn.edu) created this document 1-Apr-2023. Whenever "I" or "me" appears in this document, it is Paul speaking.
+[Paul Lewis](mailto:paul.lewis@uconn.edu) created this document 26-Apr-2024. Whenever "I" or "me" appears in this document, it is Paul speaking.
 
 This document supersedes the original [Jetstream Setup Notes](/jetstream-setup/) and the later [Jetstream2 Setup Notes](/jetstream2022/).
 
@@ -28,6 +28,8 @@ Peter Beerli and I applied to Xsede for an educational **allocation** to provide
 [Jetstream2](https://jetstream-cloud.org) was just coming online in the spring of 2022 and, while we could have continued to use Jetstream through the 2022 workshop, we were encouraged to go ahead and switch over to Jetstream2, which had the benefit of being better prepared for the 2023 Workshop when Jetstream2 is the only version available.
 
 Between the 2022 and 2023 Workshops, Xsede was replaced by [Access](https://access-ci.org). The Workshop directors (Peter Beerli, Laura Kubatko) and I submitted an [Explore ACCESS proposal](/assets/pdf/2022-11-24-ACCESS-proposal.pdf) in November 2022 asking for 68,080 SUs for the 2023 Workshop. We were actually granted 100,000 SUs.
+
+For the 2024 workshop, we were granted an extension because we had used less than half of the SUs allocated for the 2023 workshop.
 
 ### Helful links
 
