@@ -128,7 +128,7 @@ MAFFT webpage linked above.
 * `mafft_dna.fasta` tells MAFFT to place the output alignment in the
 file _mafft_dna.fasta_. For many programs a `>` designates where to
 place the output. If the `>` symbol is unfamiliar to you, take a look
-back at the [advanced UNIX tutorial](/unix-tutorial/).
+back at the [advanced UNIX tutorial](/linux-tutorial/).
 
 Once the alignment process is completed, transfer the file to your own
 computer (through scp or Cyberduck) and open it in an alignment viewer (e.g. Seaview or MEGA) as in
