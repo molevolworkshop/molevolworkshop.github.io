@@ -145,18 +145,6 @@ runcmd:
   - sleep 1  # Ensures that console log output from any previous commands complete before the following command begins
   - >-
     echo '{"status":"'$STATUS'", "epoch": '$(date '+%s')'000}' | tee --append /dev/console > /dev/kmsg || true
-mount_default_fields: [None, None, "ext4", "user,exec,rw,auto,nofail,x-systemd.makefs,x-systemd.automount", "0", "2"]
-mounts:
-  - [ /dev/sdb, /media/volume/sdb ]
-  - [ /dev/sdc, /media/volume/sdc ]
-  - [ /dev/sdd, /media/volume/sdd ]
-  - [ /dev/sde, /media/volume/sde ]
-  - [ /dev/sdf, /media/volume/sdf ]
-  - [ /dev/vdb, /media/volume/vdb ]
-  - [ /dev/vdc, /media/volume/vdc ]
-  - [ /dev/vdd, /media/volume/vdd ]
-  - [ /dev/vde, /media/volume/vde ]
-  - [ /dev/vdf, /media/volume/vdf ]
 ~~~~~~
 
 ### Setting up the new instance
@@ -263,7 +251,7 @@ $ sudo apt-add-repository universe
 $ sudo apt update
 $ sudo apt upgrade -y
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install apt-file
 
@@ -271,8 +259,8 @@ This allows us to find out what files are installed by a package using "apt-file
 ~~~~~~
 sudo apt install -y apt-file
 ~~~~~~
-This may pop up a graphical interface: use tab and arrow keys to navigate.
-Last updated 2023-04-29.
+This may pop up a graphical interface: use tab and arrow keys to navigate. May need to reboot, which can be done from the Exosphere interface.
+Last updated 2024-04-19.
 
 ### Install python2
 
@@ -280,7 +268,7 @@ Some tutorials (e.g. SVDQuartets) still require python2.
 ~~~~~~
 sudo apt install -y python2
 ~~~~~~
-Last updated 2023-05-09.
+Last updated 2024-04-19.
 
 ### Install python-is-python3
 
@@ -288,7 +276,7 @@ This ensures that whenever someone types python they are using python3
 ~~~~~~
 sudo apt install -y python-is-python3
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install whois
 
@@ -296,7 +284,7 @@ This enables use of the mkpasswd command used to create the hashed password used
 ~~~~~~
 sudo apt install -y whois
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install mlocate
 
@@ -304,7 +292,7 @@ This provides the locate command, useful for finding where libraries and other s
 ~~~~~~
 sudo apt install -y mlocate
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install unzip
 
@@ -312,7 +300,7 @@ Not really necessary, already installed.
 ~~~~~~
 sudo apt install -y unzip
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install [R](https://www.r-project.org)
 
@@ -320,7 +308,7 @@ R is needed in order to precompile PhyloPlots.
 ~~~~~~
 sudo apt-get install -y r-base
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install zlib
 
@@ -328,7 +316,7 @@ Needed for migrate-n. Not really necessary, already installed.
 ~~~~~~
 sudo apt install -y zlib1g-dev
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install openmpi
 
@@ -338,15 +326,15 @@ sudo apt-get install -y openmpi-bin
 sudo apt-get install -y libopenmpi-dev
 sudo apt-get install -y openmpi-common
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install [migrate-n](https://peterbeerli.com/migrate-html5/index.html)
 
 Migrate has its own lab in the workshop.
 ~~~~~~
 cd
-curl -LO https://peterbeerli.com/migrate/download_version4/migrate-5.0.4.src.tar.gz
-tar zxvf migrate-5.0.4.src.tar.gz
+curl -LO https://peterbeerli.com/migrate-html5/download_version4/migrate-newest.src.tar.gz
+tar xvf migrate-newest.src.tar.gz  # note had to leave off z even though file ends in .gz
 mv migrate-5.0.4.src.tar.gz TARs
 cd migrate-5.0.4/src
 ./configure
@@ -357,7 +345,7 @@ make mpis
 sudo make installmpi
 ~~~~~~
 Installed as _/usr/local/bin/migrate-n_ and _/usr/local/bin/migrate-n-mpi_. Version 5.0.4 installed.
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install [Julia](https://julialang.org)
 
@@ -366,15 +354,15 @@ Julia is needed for Claudia's PhyloNetworks tutorial.
 From [Julia downloads](https://julialang.org/downloads/) web site, select the Generic Linux and x86 64-bit (glibc) version.
 ~~~~~~
 cd
-curl -LO https://julialang-s3.julialang.org/bin/linux/x64/1.8/julia-1.8.5-linux-x86_64.tar.gz
-tar zxvf julia-1.8.5-linux-x86_64.tar.gz
-mv julia-1.8.5-linux-x86_64.tar.gz TARs
-sudo mv julia-1.8.5 /opt/
+curl -LO https://julialang-s3.julialang.org/bin/linux/x64/1.10/julia-1.10.2-linux-x86_64.tar.gz
+tar zxvf julia-1.10.2-linux-x86_64.tar.gz
+mv julia-1.10.2-linux-x86_64.tar.gz TARs
+sudo mv julia-1.10.2 /opt/
 cd /usr/local/bin
-sudo ln -s /opt/julia-1.8.5/bin/julia julia
+sudo ln -s /opt/julia-1.10.2/bin/julia julia
 ~~~~~~
 This places the julia directory in _/opt_ and creates a symbolic link to the executable in _/usr/local/bin_.
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install Julia packages needed by the [PhyloNetworks tutorial](https://github.com/crsl4/PhyloNetworks.jl/wiki)
 
@@ -398,7 +386,16 @@ julia> Pkg.status()             # useful for seeing what packages are installed
 julia> pathof(PhyloNetworks)    # useful for seeing where the package was installed
 # use Ctrl-d to quit julia
 ~~~~~~
-Last updated 2023-05-12.
+Last updated 2024-04-19.
+
+### Install [Boost C++](https://www.boost.org)
+
+Needed in order to build RevBayes and BUCKy.
+~~~~~~
+cd
+sudo apt install -y libboost-all-dev
+~~~~~~
+Last updated 2024-04-19.
 
 ### Install [RevBayes](https://revbayes.github.io/compile-linux)
 
@@ -412,7 +409,7 @@ cd revbayes/projects/cmake
 sudo mv rb /usr/local/bin
 ~~~~~~
 Installed as _/usr/local/bin/rb_. This is RevBayes version 1.2.1.
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install [MrBayes](https://nbisweden.github.io/MrBayes/)
 
@@ -429,16 +426,7 @@ make
 sudo make install
 ~~~~~~
 Installed as _/usr/local/bin/mb_. 
-Last updated 2023-04-29.
-
-### Install [Boost C++](https://www.boost.org)
-
-Needed in order to build RevBayes and BUCKy.
-~~~~~~
-cd
-sudo apt install -y libboost-all-dev
-~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install [BUCKy](http://pages.stat.wisc.edu/~ane/bucky/index.html)
 
@@ -454,7 +442,7 @@ sudo mv bucky /usr/local/bin
 sudo mv mbsum /usr/local/bin
 ~~~~~~
 Note: in order to get BUCKy to compile, I had to qualify `unordered_map` as `boost::unordered_map` in two lines (line 163 and 357) in _TGM.h_ because an `unordered_map` template is defined in both _./boost/unordered/unordered_map_fwd.hpp_ and _/usr/include/c++/11/bits/unordered_map.h_.
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install [RAxML](https://github.com/stamatak/standard-RAxML)
 
@@ -468,7 +456,7 @@ sudo mv raxmlHPC-PTHREADS-AVX /usr/local/bin/raxmlHPC
 rm *.o  # no make clean available
 ~~~~~~
 Installed as _/usr/local/bin/raxmlHPC_.
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install [Java](https://www.java.com/en/)
 
@@ -477,7 +465,7 @@ The Java Runtime Environment is needed for ASTRAL and jModelTest.
 cd
 sudo apt install default-jre  # not really necessary, already installed
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install [ASTRAL](https://github.com/smirarab/ASTRAL)
 
@@ -502,15 +490,15 @@ An alias will be created by the [cloud init script](#boot-script-used) to make t
 The [cloud init script](#boot-script-used) will also change ownership to moleuser:
     sudo chown moleuser.moleuser /opt/astral/astral.5.7.1.jar
     sudo chown moleuser.moleuser /opt/astral/lib -R
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Create MOLE directory
 
 This directory will be used to store example data needed by students for tutorials.
 ~~~~~~
-sudo mkdir /usr/local/share/mole
+sudo mkdir /usr/local/share/examples/mole
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install data for [PhyloNetworks](http://crsl4.github.io/PhyloNetworks.jl/latest/) tutorial
 
@@ -518,20 +506,20 @@ Last updated 2023-04-29.
 cd ~/clones
 git clone https://github.com/crsl4/PhyloNetworks.jl.wiki.git
 cd PhyloNetworks.jl.wiki
-sudo mkdir /usr/local/share/mole/phylo-networks
-sudo cp -R data_results /usr/local/share/mole/phylo-networks
+sudo mkdir /usr/local/share/examples/mole/phylo-networks
+sudo cp -R data_results /usr/local/share/examples/mole/phylo-networks
 ~~~~~~
 
-Modify line 46 of /usr/local/share/mole/phylo-networks/data_results/scripts/46G to say:
+Modify line 46 of /usr/local/share/examples/mole/phylo-networks/data_results/scripts/raxml.pl to say:
 ~~~~~~
 my $raxml = '/usr/local/bin/raxmlHPC'; # executable
 ~~~~~~
 
-Modify line 47 of /usr/local/share/mole/phylo-networks/data_results/scripts/raxml.pl to say:
+Modify line 47 of /usr/local/share/examples/mole/phylo-networks/data_results/scripts/raxml.pl to say:
 ~~~~~~
 my $astral = '/opt/astral/astral.5.7.1.jar'; # adapt to your system
 ~~~~~~
-Last updated 2023-05-12.
+Last updated 2024-04-19.
 
 ### Download and install various datasets used in tutorials
 
@@ -541,63 +529,63 @@ cd ~/clones
 git clone https://github.com/molevolworkshop/moledata.git
 ~~~~~~
 Should add phylo-networks to this repository.
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install datasets for alignment tutorial
 
 ~~~~~~
 cd clones/moledata
-sudo unzip MSAlab.zip -d /usr/local/share/mole 
+sudo unzip MSAlab.zip -d /usr/local/share/examples/mole 
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install datasets for the migrate tutorial
 
 ~~~~~~
 cd clones/moledata
-sudo unzip migrate_tutorial.zip -d /usr/local/share/mole
+sudo unzip migrate_tutorial.zip -d /usr/local/share/examples/mole
 ~~~~~~
-Last updated 2023-05-09.
+Last updated 2024-04-19.
 
 ### Install datasets for the Model Selection/Simulation tutorial
 
 ~~~~~~
 cd clones/moledata
-sudo unzip modsel_sim_tutorial.zip -d /usr/local/share/mole
+sudo unzip modsel_sim_tutorial.zip -d /usr/local/share/examples/mole
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install datasets for the SVDQuartets tutorial
 
 ~~~~~~
 cd clones/moledata
-sudo unzip svdquartets_tutorial.zip -d /usr/local/share/mole
+sudo unzip svdquartets_tutorial.zip -d /usr/local/share/examples/mole
 ~~~~~~
-Last updated 2023-05-09.
+Last updated 2024-04-19.
 
 ### Install data files for the PAML lab
 
 ~~~~~~
 cd clones/moledata
-sudo unzip PamlLab.zip -d /usr/local/share/mole
+sudo unzip PamlLab.zip -d /usr/local/share/examples/mole
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install data files for the IQ-TREE lab
 
 ~~~~~~
 cd clones/moledata
-sudo unzip iqtreelab.zip -d /usr/local/share/mole
+sudo unzip iqtreelab.zip -d /usr/local/share/examples/mole
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install dataset for RevBayes tutorial
 
 ~~~~~~
 cd clones/moledata
-sudo unzip revbayes.zip -d /usr/local/share/mole
+sudo unzip revbayes.zip -d /usr/local/share/examples/mole
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install data files for the phylogenomics lab
 
@@ -605,13 +593,13 @@ These files are used in the McTavish tree updating and tree comparison labs. The
 ~~~~~~
 cd ~/clones
 git clone  https://github.com/snacktavish/Mole2023.git
-sudo cp -R Mole2023 /usr/local/share/mole/
+sudo cp -R Mole2023 /usr/local/share/examples/mole/
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Set permissions and remove mac-specific dir
 ~~~~~~
-cd /usr/local/share/mole
+cd /usr/local/share/examples/mole
 sudo rm -rf __MACOSX
 sudo chmod 755 modsel_sim_tutorial
 ~~~~~~
@@ -628,7 +616,7 @@ make
 sudo make install
 ~~~~~~
 Installed into _/usr/local/bin/_. 
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install [MUSCLE](https://www.drive5.com/muscle/)
 
@@ -636,7 +624,7 @@ MUSCLE is used in the alignment lab as well as the McTavish gene tree updating l
 ~~~~~~
 sudo apt install -y muscle
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install seqtk
 
@@ -644,7 +632,7 @@ seqtk is used in the McTavish gene tree updating lab.
 ~~~~~~
 sudo apt install -y seqtk 
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install samtools
 
@@ -652,7 +640,7 @@ samtools is used in the McTavish gene tree updating lab.
 ~~~~~~
 sudo apt install -y samtools 
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install bcftools
 
@@ -660,7 +648,7 @@ bcftools is used in the McTavish gene tree updating lab.
 ~~~~~~
 sudo apt install -y bcftools
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install fastx
 
@@ -723,6 +711,8 @@ Last updated 2023-04-29.
 
 ### Install [maxcut](https://sagi-snir.wixsite.com/snir-lab/maxcut)
 
+#### TODO
+
 Sagi Snir's maxcut is used in the SNaQ tutorial. These instructions install the binary in _/usr/local/bin_.
 The software (v. 2.1) is no longer available from [here](http://research.haifa.ac.il/~ssagi/software/QMCN.tar.gz). Sagi suggested we use version 3.0 from [this dryad repository](https://datadryad.org/stash/dataset/doi:10.5061/dryad.r9k57). While that may work, the SNaQ tutorial has not been tested with this version of MaxCut, so this year we are using an archived copy of the `QMCN.tar.gz` file that I scp'd onto the virtual machine.
 ~~~~~~
@@ -776,7 +766,7 @@ cd
 curl -LO https://github.com/ddarriba/jmodeltest2/files/157117/jmodeltest-2.1.10.tar.gz
 tar zxvf jmodeltest-2.1.10.tar.gz
 mv jmodeltest-2.1.10.tar.gz TARs
-cp -r jmodeltest-2.1.10 /opt
+sudo cp -r jmodeltest-2.1.10 /opt
 ~~~~~~
 
 You should now be able to start jModelTest as follows, but will spit out error message `ERROR: You are trying to run a GUI interface in a headless server.`:
@@ -808,8 +798,7 @@ able to use the most recent version on the github site.
 Version 4.9j failed to link due to the inclusion of a couple of enum definitions (`SeqTypes` and `OutTreeOptions`) in _paml.h_. I copied those definitions to a new file _enums.c_, included that file in each target of the Makefile, and added `extern` in front of each of these in _paml.h_ and the build went smoothly.
 ~~~~~~
 cd
-#curl -LO https://github.com/abacus-gene/paml/releases/download/v4.10.6/paml-4.10.6-linux-X86_64.tgz
-curl -LO http://abacus.gene.ucl.ac.uk/software/SoftOld/paml4.9j.tgz
+#curl -LO https://github.com/abacus-gene/paml/releases/download/v4.10.7/paml-4.10.7-linux-X86_64.tgz
 tar zxvf paml4.9j.tgz
 mv paml4.9j.tgz TARs
 cd paml4.9j/src
@@ -823,8 +812,8 @@ Last updated 2023-05-10.
 
 Python modules used in the McTavish tree comparison tutorial are installed into a virtual environment named pyenv. This may not be used, as the tutorial specify for the students to install python modules themselves (which will be installed in _~/.local_), but it is installed if we end up needing it.
 ~~~~~~
-sudo chown -R exouser.exouser /usr/local/share/mole/Mole2023
-cd /usr/local/share/mole/Mole2023
+sudo chown -R exouser.exouser /usr/local/share/examples/mole/Mole2024
+cd /usr/local/share/examples/mole/Mole2024
 python -m venv pyenv
 ~~~~~~
 
@@ -832,7 +821,7 @@ python -m venv pyenv
 
 DendroPy is used in the McTavish gene tree updating lab.
 ~~~~~~
-source /usr/local/share/mole/Mole2023/pyenv/bin/activate    # activate the python environment pyenv
+source /usr/local/share/examples/mole/Mole2023/pyenv/bin/activate    # activate the python environment pyenv
 python -m pip install git+https://github.com/jeetsukumaran/DendroPy.git
 python -m pip list
 deactivate
@@ -843,7 +832,7 @@ Last updated 2023-04-29.
 
 opentree is used in the McTavish gene tree updating lab.
 ~~~~~~
-source /usr/local/share/mole/Mole2023/pyenv/bin/activate    # activate the python environment pyenv
+source /usr/local/share/examples/mole/Mole2023/pyenv/bin/activate    # activate the python environment pyenv
 python -m pip install opentree
 python -m pip list
 deactivate
@@ -852,22 +841,23 @@ Last updated 2023-04-29.
 
 ### Install the machine learning Jupyter notebook
 
-The machine learning tutorial is in the form of a Jupyter notebook. The notebook itself is saved to the `/usr/local/share/mole/machinelearning` directory (but is also available on Megan Smith's faculty page).
+The machine learning tutorial is in the form of a Jupyter notebook. The notebook itself is saved to the `/usr/local/share/examples/mole/machinelearning` directory (but is also available on Megan Smith's faculty page).
 ~~~~~~
 cd
 curl -LO https://molevolworkshop.github.io/faculty/smith/tutorial/Machine_Learning_for_Population_Genetics.ipynb
 curl -LO https://molevolworkshop.github.io/faculty/smith/tutorial/Models-01.png
-sudo mkdir -p /usr/local/share/mole/machinelearning
-sudo mv Machine_Learning_for_Population_Genetics.ipynb /usr/local/share/mole/machinelearning
+sudo mkdir -p /usr/local/share/examples/mole/machinelearning
+sudo mv Machine_Learning_for_Population_Genetics.ipynb /usr/local/share/examples/mole/machinelearning
 sudo chown -R exouser.exouser /usr/local/share/examples/mole/machinelearning
 ~~~~~~
+Last updated 2024-04-25.
 
 #### Create a virtual python environment mlenv
 
 The following installs the python packages required by the notebook. Just to be safe, I created a different virtual python environment (mlenv) for these installs. The specific versions of each module were specified in the Jupyter script used for the tutorial, so I stuck to those versions to make sure everything was compatible.
 ~~~~~~
 module list   # ensure anaconda is not loaded
-cd /usr/local/share/mole/machinelearning
+cd /usr/local/share/examples/mole/machinelearning
 python -m venv mlenv            # create python virtual environment mlenv
 source ./mlenv/bin/activate     # activate the python virtual environment mlenv
 python -m pip install msprime==1.2.0
@@ -879,6 +869,7 @@ python -m pip install keras==2.10.0   # not really needed; already installed by 
 python -m pip install ipykernel
 deactivate
 ~~~~~~
+Last updated 2024-04-25.
 
 While the mlenv is activated, calling
     python -m pip freeze > mlmodules.txt
@@ -887,15 +878,16 @@ will save the versions of all modules currently loaded to a file. If you need to
 You can use 
     python -m pip list
 to list modules installed in the virtual environment.
-Last updated 2023-04-29.
+
+Last updated 2024-04-25.
 
 #### Create a Jupyter kernel that uses mlenv 
 
 Jupyter comes with the anaconda module, but the anaconda module specifies a default Jupiter kernel that does not have the modules needed by the machine learning tutorial installed. Thus, we need to create a Jupyter kernel that uses the python virtual environment mlenv that we set up in the previous step. The easiest way to create the new kernel is to copy the default one and change the name and path to the python interpreter.
 
 ~~~~~~
-mkdir -p /usr/local/share/mole/machinelearning/jupyter/molekernel
-cd /usr/local/share/mole/machinelearning/jupyter/molekernel
+mkdir -p /usr/local/share/examples/mole/machinelearning/jupyter/molekernel
+cd /usr/local/share/examples/mole/machinelearning/jupyter/molekernel
 module load anaconda
 jupyter kernelspec list  # shows location of default kernel
 #Available kernels:
@@ -904,7 +896,7 @@ cp -r /software/u22/anaconda/python3.9/share/jupyter/kernels/python3/* .
 # Edit the kernel.json file to look like this:
 {
  "argv": [
-  "/usr/local/share/mole/machinelearning/mlenv/bin/python",
+  "/usr/local/share/examples/mole/machinelearning/mlenv/bin/python",
   "-m",
   "ipykernel_launcher",
   "-f",
@@ -927,7 +919,7 @@ The students will have to be told to choose the **MOLE** kernel once Jupyter sta
 I found that the sample sizes specified in the notebook were large enough that the kernel ran out of memory and crashed after the data was simulated and the analyses began. Cutting fragments to 10 (instead of 20), replicates to 500 (instead of 1000), and SNPs to 2000 (instead of 5000) was sufficient to allow it to run to completion.
 
 ~~~~~~
-cd /usr/local/share/mole/machinelearning
+cd /usr/local/share/examples/mole/machinelearning
 cat - > doof.sh << EOF
 #!/bin/bash
 
@@ -936,12 +928,12 @@ module unload anaconda
 module load anaconda
 
 echo "Activating the python environment for this tutorial..."
-source /usr/local/share/mole/machinelearning/mlenv/bin/activate
+source /usr/local/share/examples/mole/machinelearning/mlenv/bin/activate
 
 if [ ! -d "/home/moleuser/.local/share/jupyter/kernels/molekernel" ]
 then
 	echo "Installing molekernel for use with Jupyter..."
-	jupyter kernelspec install /usr/local/share/mole/machinelearning/jupyter/molekernel --user
+	jupyter kernelspec install /usr/local/share/examples/mole/machinelearning/jupyter/molekernel --user
 else
 	echo "No need to install molekernel because it already exists."
 fi
@@ -1031,7 +1023,7 @@ Note that MOLE-2023-snapshot-05-12 will show `0 B` initially when viewed in the 
 
 ## Creating instances based on MOLE-2023-snapshot-05-12
 
-To create new instances, click the red _Create_ button in the upper right corner of Exosphere, then choose _Instance_ and then, in the _Choose an Image Source_ section, click the _By Image_ tab and hit the _Create Instance_ button beside MOLE-2023-snapshot-05-12.
+To create new instances, click the red _Create_ button in the upper right corner of Exosphere, then choose _Instance_ and then, in the _Choose an Instance Source_ section, click the _By Image_ tab and hit the _Create Instance_ button beside MOLE-2023-snapshot-05-12.
 
 Choose a base name (e.g. "amphioxus"), **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **62** for number of instances, **no** for enable web desktop, and **Show** for Advanced Options.
 
@@ -1088,7 +1080,7 @@ This is the default cloud-config boot script with some modifications for MOLE.
 
 * Another modification is the addition of 14 lines to the runcmd section. These lines do the following:
 
- 1. makes moleuser the owner of everything inside _/usr/local/share/mole_ 
+ 1. makes moleuser the owner of everything inside _/usr/local/share/examples/mole_ 
  2. makes moleuser the owner of everything inside _/opt/astral_ (needed for ASTRAL to be started without using sudo) 
  3. makes moleuser the owner of everything inside _/opt/jmodeltest-2.1.10_ (needed for jModelTest to be started without using sudo) 
  4. makes moleuser the owner of everything inside _/opt/julia-1.8.5_  
@@ -1112,17 +1104,14 @@ users:
     groups: sudo, admin    
     sudo: ['ALL=(ALL) NOPASSWD:ALL']{ssh-authorized-keys}
     ssh_authorized_keys:    # moleuser has public keys for directors and TAs allowing easy login
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpAtnEa/ULxAsa7HWP9puJfq8iTaMmkMxqEsu7f+psbmYTSmxH3QmAgWmPraNR0GQ+TG0uZUw9dR30jGn4e4+J6NCQ0H/qvoB3KIyIaFJzeg48skz0paGX+SfrdM2IEGd3ciIoKPnvx0xUZQot0DZfT6KTRm341G/u9tXzmMz/KIRmOokFmfNh4Bwt+qna5YLLBQs8GDyaLP6Sz/uabDi+k8S2BpVTV8OIGT0pFDkZ1Og8S5eJ0Rc7QHsrLfBijmB/XRtXmfMEuT7xNcvtKtQm7T/pGSy8eNhogJZX72GFCLAv/mHInBKk6qtU4wuHxan8yE2zGNhno7T8N87D0l4pxvev+kMfeUK7QvUKvxJuzGBY7SyiLlrPC3sfFTqLriOZvQg7d/o3BFyWFDFvfH3jTXe1rRdK9iHNwt9Qd7ARtKyVSKD3ZeQ3x33x9RPtDppOSEVY4oGAQ0YKVat1GmVVhiklDBoQYs13arIwHlEWoPr7xXqUlW8kQeRTn2epLAk= adetunjiadesina@BIOF-SAWYER-AA.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMpNe5iim6O1x93lNkJw5ZLF6f5Kd9KIMaNuifz3MY1K4+NIFQHgrbENAaimuvwNCQDCUDgOY2u4v92O2PQLmPjO5NR9Yl1vOhpzb3EFe1EM7lwFSIKNl6S2jNd4mghUXImaXT6vtS/V6X9HwB6/qhFwHrb3ic+7RPxUplMRhnflatIGWk7V+OaSBvC1AuswXqGAeBeOItJJKeGqerWDq8ytbeUbp3qFtzyHT+z08m0UnSYIIyPfV5lxztCpw22xmkReQ2pc1FtwJKmxCa3QxegsQ30X/r9fjiVS7K2CPJSTwqWbs33GfSnYgYyynjch0pQt0ByOPB1ncpfbLZWbw3 plewis@cormoran.local
-        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDMUVW9qzkBDpFMhFWN7ATBqrX3HL6L0vjMzq2cILsE/dC8PXZpVBduNP/JvSvn7afLei/UHWrmA3DoGCoXWYeIVkawWU1hk5+k0mR33HBuVdgig5W4kGJE1eflx+cgm0VCK9XnAVI1eX2gqIZLAZLuBNiEYl/KdZAdDWtiebz+7SoWGiTyrFq3f0fKAtRkH2ymjm7E7M/16LJsUpQMfCViE9DmwomNybriA21Xaap1+9FJQ1+3O4hAax/s6XyVjN3SADRwFen+MMRn/oyczDcpxGNcTTul90d9H0H72CR0BZEIMZppxvYACISnsiaC7b58l0wqLI1NDa3kUcCYojUwB7T4nDbsj+ST4wptQBuNlQ/Gjwd1cpPnVRtMhHeAnSH3Lft0VRAJnnoBCTLSyIqz48Sp7QU1604kDc+8QmD8PWGGaqIQHWpBgTrrWbgjEZcRfTWGrE2y6QmYHvzixx05q9SzaGSC51QzHrRsl0y1rPk1FM5hW3cUdbfVHB3UVYc= analisamilkey@MacBook-Air.local
-        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwLwDmVCAamrG+cUzsv93qNO83TBymqimSCF+q9CD0zVXve6oYcKqKWt+nJqwYfeP1iLzi0NAEVcYpu9u34De9ortuWflMEZoh+1R32q0zqOkULMBCol4yXC7ou0+t23DFwkiavTn7ggQtmFKZ06/TGMSHdILaiFptpkKdadg7/qEKnuXXL3BZ7Jw9ZYrCr2oIEJ0expAEmf3xURFUwS23DcsJJTH2UJcipq7yucjjb+5YvAaMBc5NaT+q3j4otBjc9/mEiJUFgFwtu8KmZ5czUgnVMUi4dIkxxjVgtDnmChTA9P150yZ0YMXipyQPpKRbQ17ZCWTAvR5mWGqi2UGQA+etXxtopLdGref9OqNUA/6szVMZsFAYT2gUgLobkWtsX17WSjM+G3py4Kl5EBdbGChtqlbFth3X9J3/yzyt+Q3NKpsxeSE9b5FTCn5zD1Sqsx34tOByyeGDIAVbUXqhGvDJLTXLqqqkMmbabzHYNcXOwJVFxYFvbyfIe6d8Wuk= beerli@cornelius.local
-        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCzNnLX1WagNRL8pZaaB5zMrrSBmondVSKfAtiNGd7z++WT/2UonvDzxOEpfo61dvPqY/NP+wNdRJ2+gDxUuUNQsFZEVZpFWt+rAjtVbfKF7V+qfB4crKDVsPV92FlbzyD2Z8azc3rrJMl4Oxl16/d8vpZMSeM8q35cpqif75+Yyc0pPB/kCiwRfzifgCLouK23tUwuCLRTY0nK3Mwd41Jbvt+xoFlRhBbw1iou2SR0yhl6C+DrLwgcaEp1I9oUX8EBWR7Hp/Pfw3qESk4sEIInX3aEZQq1WJRxnKJynyo9E2WlBuL4eotF1en/ppCRDYLQw6ySn/fRncCRr6X9CNijoog7HZdjMiBMk1EteJaso7fHqsALeTcLonR9WnGoirNfFQJr2g6LYdNjrhYA5pWzgEwPuZrNnYaHZj1JW2Bj9XRx/SKFlkKE4oooAgdopZLA6AngjMXqFJ5pXVsrxRnqV+vWSKE25pyRzGJ7heahtHfzaB6U+QMB+wCUxxmaAy0= kate@Kates-MacBook-Air
-        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDF5GNcJcMm42xJSCCkI0w8pDNgGSXWEtBCJAFMEvrNDYxYOAl8W8fZvAxT7/1B/ZBXt8ASiDTtMuZkWHv/wPkywKPDa1dVyQ6aBa5uU7h6K3FaP1OM+c9xqHMN0H/54mXRFxSESfVuRpvxwiw9oOKZ2xSphs8+e+8pv4GziPeOuxrheat9jcjfY6EIm6zwVvNEM4rgaW+jCK2xn89tbmKlrT+wh7PwD9bzSwIvAHCpf8EaiJrdueNBILGYewmGykffIVVeH8GKIxqfSTLIUiyFwYnwQydGkT/ceXuty9ML+QQIw81FbYhTf9+1GfZC85UyXkfI35HujJfSMUrvhxq7 Jordan@Jordans-MacBook-Pro-7.local 
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC6StAassFQ415BcyUxfTMG5cbziIxVn/E+KCbhx4/Csm1GjJmpCwSgxDqp2gXjQLprElASMIygnQMdZ1m6U8/CcbEPzviZdWeM+NHn/ELCa4OxL0MTPDLpnHC2Dyvi6RnM9UJYwnCIT1/U/R7ZVMXRtPU5xBhf+087HTLdMZ4gXx6yWWCynmrXpwbwJULhodDxkY9kouLudLHSNDjEfbI7PErvFLslOvCPnivgeEueJoJwpIvatpWFykohOn5UwXzZNmI9GWCQ1wtliZzhROKre1AnVfmHW8oO7QVQOGNxPfqSV6zKLnTpBfWsykqOYEVqR6M1kV+QjQHThxLCvLzrKoyLayuE0xdY8lbMzuw2LbWmsDv2rLKWiorH3rZRRH2NWi5EZEuNrQqPUug/kxCjAY5/jPHeavX6PdnyS2PwW4N7et1gRPcI64RwaQNofPUqbPrEFP+PYxEjJQw4B36tFRXvV+qs95TiMZ4Zuy7IUI/12phZqz5tvClI8i3O6sE= analisamilkey@MacBook-Air.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDIulLE6a+QGh/JE9mjGmTwRWtmcK29mbB1MJEN728+gLRnHV8oRfE5ahZVp4k0+h0onBn3Br8hVTkqQqC3GJmRe2PMlocqIJULe3hFvtXZqGh+w8QUj//+C3kTg6Lptc2m4f9JimjUjFNPnfX5sioJp2mHOjNbYXYbXb0zx1Y5jKVmi6r0NifcuZ+ObfIFG5+o1kytAq/J+8f6evBUKlTR8Gsk7V9zuZmGcffGZe5HA+3ilkUGd2Uyx18nbgE4VZTXC9K7RA7AFPtkLRH/ivaMGESUteH5Wqe1Bj46ORjapRV+hmU1t/VeOmHVWknkaTM3/yZpMKAiFYxWADDXsSNSNck38zMmDmWxzW+wcrNcCysKUZU60DxD4Czvk4VEUgFSVg/YmN1tJDqVse7GfcvYxzgC9R5qDItXPY3YBjq9ykOIGmn9C30lVqh4nELu3LujrmHmf0VTDtexc/4T+YPJlmVxr64UP4YTInLw5wBgQ89Thj6ahx+QnfC6m5Uv+ws= blakefauskee@Blakes-MacBook-Pro-3.local               
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0lGJQrxeZ8wjpxwFvgAW+1gnHzB7cre8ejkAdBHR8rQjz+htA9U+nsgNvaSHoD4q0TzObhobdwOlkCVstJNYz1KKDH61Rbn61MToO5h1n4Ow1slHNl/Cy0NKwEg+YnyPULrMb1z5h+yzUUFgMpwzzQsutrcN9Im3HuAnRGD3giJFHKYhhEMl92EPgEf9/xs3b/0B1FdXIotFiuGkk3FkhZIA+1Ga+nNE6CEhjEHY2YQd3PsFRZWqo/FxujUQTS5hvy/5BOGpGo3LyRFiHiNWXcHXVLak+0SJzrDEcpoX1A1ezzJIvQbdGV3KNxxFPsX9T48oi5r50WRRiG3tmjUQjRm+tx41yUl/ZmZEISv8CQtn2p4h02sTLLOntIP3GBjiIok/zgTH2OHihMlqoahKbfoadWZLhkG05pnZ71YA0hFs8QQxPXNycf8zHxp8PmMAzKL9M4jtH+KRH+XVj9zoq9D0uU7WA5kyUVOjHYRMy8yvGBtFHbW3TH7BgMP7aYcM= khaosan@Sungsiks-MacBook-Pro.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCkpuLKyLQpqg8TF0iCRQXJg2z+/F/YBYnd4BVlupJhpZpbViLWulByYLMetC/7UT57CjX8i518CfpwbCP4dMEiQR+93AxZhBvKZM4Mtz0Me6SWmSnFV8cVF5c23UZoqOeVInABe14hLEZBdbyWck5QTy0k/CQrYSIToYqdZA6G/G8PKAk6db2rQuiwHi0Q5qE7RQ7S2qRgq4n9G0zPDelV8myyzduo7bOY3BaNMKwj5Yi/soMUBvOX7Do9R5+5XjpOuqnPbPX2NeMvIZJZ/ZwvBmbjQievhaX7COISWw77wUboaqpn2aEnewEc9Kt4gfx0gzDvznsCZRe+XCV1Q2xv3zVRut4FZfv0DhDEfL42vFEhahF728npFjyIo5cidMTBek9oCuqg58B3Umr/bFJEhjCaGhBJVqeDRERha8fbO7c8aAW3WdoTqaJJAIshztWhLotJaM77nt35dMrmOlOwRs3rHi4fxk5r+6tLxardNGKOBWHyQ4CneYPUkxWKcN0= kubatko.2@STAT-NC247353
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqJeFU3sEcA72fyYD2LCzDsfHqPmZonnATiXDKYeutIzQ+iVREIG3EMUNjeps8JS9oWw11ojXLFDZCHdg/z87qBZn7ilGgXZ6/PRhGaDx3kjPr5Mek10bV3BwB0O9Gws9rmepD/akuXY7wTS5M++YqCkwU1Ia9oAEW4QWDuc1Bdj3L1DqSYbI+xg38EA5TpRL2N968OPuu1xhGT9cPkRgOQAcTbFyknoeEXKwSUKamii8q8Lv+Zi9nA1nRYa0xZdJSGZNxso41FJkEmNfF6o/IKMtAJ0DHcg1B3aJpS8o2+cgyR+L0NqVHrJeBIagm4n3H8xP40pUCj5PyphdZam5L jpbielawski@Josephs-MacBook-Air.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1D6eflrh3q3daop2orqL0pXrAqOUt8AaYWaC/d+iZQutHiroByNjpSETkmEd1yw8NpF6gVkh8oNqvTH1ERlJtX1BETipUvJAlvV67ZwWDSoYVqM+RwFiUT4cIC2No0V3ETI9pd4D0Dnq/9l4V9pYaunnbvIaAUsQiDRPMcRq+aOZRB/fH9nTQ5jfWKWEAu2m77T6esXe0bFX6cMhoZdk4HQSc+Wdsfn5TZEoi7+0YVK7973ZmIHYRRl9a/80NtIIHQVOOjPve3mUxv5/dlFBvPVLVHe91XqD4DnXnjXytBgNpqjPHNY28yy/UZ7Ba8XXIxGzWEDy3p1+dJzXni/hOQ== DavidSwofford
-        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD1TZ9T5riI5S5q+kxO6LDJ/WIyVorYkHA3QxgIHXaE04xg4nnFF11yFfaXlzNZrd5Qwn1fMxJLiG6aGyB1Em1SDmPiY1FYKSO+Nh4BIl4iMrq6dSMAJt5gMSS1v3CEF5BYR+pS3qYViqLO430/QMJGqyOhbfSjOKGhwouSexPR11ey+uS449nHhZr55pU0NJqlC0pt6JOgVQZqLDvnw5dQ7gfpyHydwq9+jITMdMtrPrXX//gUkYZtZtOifq8asMoyP5hYo9EMxVU38khERlDYQBxq6fg/rGzdnkqDDWnS+PLc5lEzUy3dXKKKW0GlQ4sK6LJ2meNF1QMfY8z4y9WGhHgp5MbbzYammTpZePCgXOO6C3R0R6hpk1qVLse3F6jfRMsbZTwWud4RSHguI0LzdTqseDVkNAZ4WYrWnBDBOLVHu7HRmSabtARCP5R9ogF53huzmHya0/+Z66bJWEct7cFyCWoeYRwwm/hsPHnK8zsMgQSdqfTgYm/7hgu+gc5vbuuD1NfkcFXhrYxYDjBD1rAIKAVM6sby+WUar8F/Y55FHi3fJlFtx4TalmqCROjJ3W/pYcGH1wHZ8iJxCtDXOYDPESPEgKE2PEcVlo4cVgWX/ugW9XvAUTtYYW3dRy8F+mx6shjm8HyhtdIEKXtz3A9ighn92N5Di90UKwt0YQ== m.bui@anu.edu.au
 ssh_pwauth: true             # allow password authentication (for students)
 chpasswd:
     expire: false            # do not force user to change passwd on first login
@@ -1135,7 +1124,7 @@ packages:
   - python3-virtualenv
   - git{write-files}
 runcmd:
-  - chown -R moleuser.moleuser /usr/local/share/mole                                                          # MOLE
+  - chown -R moleuser.moleuser /usr/local/share/examples/mole                                                 # MOLE
   - chown -R moleuser.moleuser /opt/astral                                                                    # MOLE
   - chown -R moleuser.moleuser /opt/jmodeltest-2.1.10                                                         # MOLE
   - chown -R moleuser.moleuser /opt/julia-1.8.5                                                               # MOLE
@@ -1146,7 +1135,7 @@ runcmd:
   - sudo ln -s /usr/local/bin/iqtree2 /usr/local/bin/iqtree-beta                                              # MOLE
   - sudo ln -s /usr/local/bin/raxmlHPC /usr/local/bin/raxml                                                   # MOLE
   - sudo chown -R moleuser.moleuser /home/moleuser/.bash_profile                                              # MOLE
-  - ln -s /usr/local/share/mole /home/moleuser/moledata                                                       # MOLE
+  - ln -s /usr/local/share/examples/mole /home/moleuser/moledata                                              # MOLE
   - mkdir /var/pyenv                                                                                          # MOLE
   - chown -R moleuser.moleuser /var/pyenv                                                                     # MOLE
   - echo on > /proc/sys/kernel/printk_devkmsg || true  # Disable console rate limiting for distros that use kmsg
@@ -1155,28 +1144,25 @@ runcmd:
     echo '{"status":"running", "epoch": '$(date '+%s')'000}' | tee --append /dev/console > /dev/kmsg || true
   - chmod 640 /var/log/cloud-init-output.log
   - {create-cluster-command}
+  - (which apt-get && apt-get install -y python3-venv) # Install python3-venv on Debian-based platforms
+  - (which yum     && yum     install -y python3)      # Install python3 on RHEL-based platforms
   - |-
-    (which virtualenv && virtualenv /opt/ansible-venv) || (which virtualenv-3 && virtualenv-3 /opt/ansible-venv) || python3 -m virtualenv /opt/ansible-venv
+    python3 -m venv /opt/ansible-venv
     . /opt/ansible-venv/bin/activate
+    pip install --upgrade pip
     pip install ansible-core
-    ansible-pull --url "{instance-config-mgt-repo-url}" --checkout "{instance-config-mgt-repo-checkout}" --directory /opt/instance-config-mgt -i /opt/instance-config-mgt/ansible/hosts -e "{ansible-extra-vars}" /opt/instance-config-mgt/ansible/playbook.yml
+    ansible-pull \
+      --url "{instance-config-mgt-repo-url}" \
+      --checkout "{instance-config-mgt-repo-checkout}" \
+      --directory /opt/instance-config-mgt \
+      -i /opt/instance-config-mgt/ansible/hosts \
+      -e "{ansible-extra-vars}" \
+      /opt/instance-config-mgt/ansible/playbook.yml
   - ANSIBLE_RETURN_CODE=$?
   - if [ $ANSIBLE_RETURN_CODE -eq 0 ]; then STATUS="complete"; else STATUS="error"; fi
   - sleep 1  # Ensures that console log output from any previous commands complete before the following command begins
   - >-
     echo '{"status":"'$STATUS'", "epoch": '$(date '+%s')'000}' | tee --append /dev/console > /dev/kmsg || true
-mount_default_fields: [None, None, "ext4", "user,exec,rw,auto,nofail,x-systemd.makefs,x-systemd.automount", "0", "2"]
-mounts:
-  - [ /dev/sdb, /media/volume/sdb ]
-  - [ /dev/sdc, /media/volume/sdc ]
-  - [ /dev/sdd, /media/volume/sdd ]
-  - [ /dev/sde, /media/volume/sde ]
-  - [ /dev/sdf, /media/volume/sdf ]
-  - [ /dev/vdb, /media/volume/vdb ]
-  - [ /dev/vdc, /media/volume/vdc ]
-  - [ /dev/vdd, /media/volume/vdd ]
-  - [ /dev/vde, /media/volume/vde ]
-  - [ /dev/vdf, /media/volume/vdf ]
 ~~~~~~
 
 {% comment %}
@@ -1281,4 +1267,412 @@ To delete an instance (see [Deleting items in the CLI](https://docs.jetstream-cl
 
     openstack server delete ea2f87ea-3cce-4987-a489-e0b9850f743c
     
-
+{% comment %}
+    1  cd .ssh
+    2  ls
+    3  cat - >> authorized_keys
+    4  ls -la
+    5  cd .ssh
+    6  ls
+    7  cat - > authorized_keys
+    8  vi authorized_keys
+    9  cat - > authorized_keys
+   10  ls
+   11  cat authorized_keys
+   12  vi authorized_keys
+   13  cd
+   14  mkdir TARs
+   15  mkdir clones
+   16  ls
+   17  TZ="EST5EDT" date
+   18  more /proc/cpuinfo
+   19  uname -m x86_64
+   20  sudo dpkg -l
+   21  !
+   22  sudo apt-add-repository universe
+   23  sudo apt update
+   24  sudo apt upgrade -y
+   25  sudo apt install -y apt-file
+   26  sudo apt install -y python2
+   27  ls
+   28  uname -m x86_64
+   29  uname --help
+   30  sudo apt install -y apt-file
+   31  sudo apt install -y python2
+   32  sudo apt install -y python-is-python3
+   33  sudo apt install -y whois
+   34  whois
+   35  whoami
+   36  sudo apt install -y mlocate
+   37  sudo apt install -y unzip
+   38  sudo apt-get install -y r-base
+   39  sudo apt install -y zlib1g-dev
+   40  sudo apt-get install -y openmpi-bin
+   41  sudo apt-get install -y libopenmpi-dev
+   42  sudo apt-get install -y openmpi-common
+   43  curl -LO https://peterbeerli.com/migrate-html5/download_version4/migrate-newest.src.tar.gz
+   44  ls
+   45  tar zxvf migrate-newest.src.tar.gz
+   46  ls
+   47  curl -LO https://peterbeerli.com/migrate/download_version4/migrate-5.0.6.src.tar.gz
+   48  ls
+   49  tar zxvf migrate-5.0.6.src.tar.gz
+   50  ls
+   51  rm migrate-newest.src.tar.gz
+   52  tar zxvf migrate-5.0.6.src.tar.gz
+   53  file migrate-5.0.6.src.tar.gz
+   54  tar xvf migrate-5.0.6.src.tar.gz
+   55  ls
+   56  mv migrate-5.0.6.src.tar.gz TARs/
+   57  ls
+   58  cd migrate-5.0.6/
+   59  ls
+   60  cd src
+   61  ./configure
+   62  make
+   63  sudo make install
+   64  make clean
+   65  make mpis
+   66  sudo make installmpi
+   67  ls -la /usr/local/bin/
+   68  cd
+   69  curl -LO https://julialang-s3.julialang.org/bin/linux/x64/1.8/julia-1.8.5-linux-x86_64.tar.gz
+   70  tar zxvf julia-1.8.5-linux-x86_64.tar.gz
+   71  mv julia-1.8.5-linux-x86_64.tar.gz TARs
+   72  sudo mv julia-1.8.5 /opt/
+   73  cd /usr/local/bin
+   74  sudo ln -s /opt/julia-1.8.5/bin/julia julia
+   75  cd
+   76  ls
+   77  cd ~/usr/local/bin
+   78  cd /usr/local/bin/
+   79  ls
+   80  rm julia
+   81  sudo rm julia
+   82  cd /opt
+   83  ls
+   84  sudo rm -rf julia-1.8.5/
+   85  cd
+   86  curl -fsSL https://install.julialang.org | sh
+   87  vi .bashrc
+   88  vi .profile
+   89  curl -LO https://julialang-s3.julialang.org/bin/linux/x64/1.10/julia-1.10.2-linux-x86_64.tar.gz
+   90  ls
+   91  tar zxvf julia-1.10.2-linux-x86_64.tar.gz
+   92  mv julia-1.10.2-linux-x86_64.tar.gz TARs/
+   93  sudo mv julia-1.10.2 /opt/
+   94  cd /usr/local/bin
+   95  sudo ln -s /opt/julia-1.10.2/bin/julia julia
+   96  julia
+   97  cd
+   98  export JULIA_DEPOT_PATH=/opt/julia-1.10.2/usr/share/julia/site
+   99  julia
+  100  cd ~/clones/
+  101  git clone https://github.com/revbayes/revbayes.git
+  102  cd revbayes/projects/cmake/
+  103  ./build.sh
+  104  cd
+  105  sudo apt install -y libboost-all-dev
+  106  cd clones/
+  107  cd revbayes/projects/cmake/
+  108  ./build.sh
+  109  sudo mv rb /usr/local/bin
+  110  curl -LO https://github.com/NBISweden/MrBayes/archive/v3.2.7a.tar.gz
+  111  tar zxvf v3.2.7a.tar.gz
+  112  mv v3.2.7a.tar.gz TARs
+  113  cd MrBayes-3.2.7a/
+  114  ./configure
+  115  make
+  116  sudo make install
+  117  cd
+  118  curl -LO http://dstats.net/download/http://www.stat.wisc.edu/~ane/bucky/v1.4/bucky-1.4.4.tgz
+  119  tar zxvf bucky-1.4.4.tgz
+  120  mv bucky-1.4.4.tgz TARs/
+  121  cd bucky-1.4.4/src/
+  122  make
+  123  ls
+  124  make
+  125  sudo mv bucky /usr/local/bin/
+  126  sudo mv mbsum /usr/local/bin/
+  127  cd
+  128  cd clones/
+  129  git clone https://github.com/stamatak/standard-RAxML.git
+  130  cd standard-RAxML/
+  131  make -f Makefile.AVX.PTHREADS.gcc
+  132  sudo mv raxmlHPC-PTHREADS-AVX /usr/local/bin/raxmlHPC
+  133  rm *.o
+  134  cd
+  135  sudo apt install default-jre
+  136  curl -LO https://github.com/smirarab/ASTRAL/archive/refs/tags/v5.7.1.tar.gz
+  137  tar zxvf v5.7.1.tar.gz
+  138  mv v5.7.1.tar.gz TARs
+  139  sudo mkdir /opt/astral
+  140  cd ASTRAL-5.7.1
+  141  unzip Astral.5.7.1.zip
+  142  cd Astral/
+  143  sudo cp astral.5.7.1.jar /opt/astral
+  144  sudo cp -r lib /opt/astral
+  145  sudo java -jar /opt/astral/astral.5.7.1.jar
+  146  cd
+  147  sudo mkdir /usr/local/share/mole
+  148  cd clones/
+  149  git clone https://github.com/crsl4/PhyloNetworks.jl.wiki.git
+  150  cd PhyloNetworks.jl.wiki/
+  151  sudo mkdir /usr/local/share/mole/phylo-networks
+  152  sudo cp -R data_results /usr/local/share/mole/phylo-networks
+  153  cd /usr/local/share/mole/phylo-networks/data_results/scripts/
+  154  ls
+  155  nano raxml.pl
+  156  sudo nano raxml.pl
+  157  nano raxml.pl
+  158  cd ~/clones/
+  159  git clone https://github.com/molevolworkshop/moledata.git
+  160  cd moledata/
+  161  sudo unzip MSAlab.zip -d /usr/local/share/mole
+  162  sudo unzip migrate_tutorial.zip -d /usr/local/share/mole
+  163  sudo unzip modsel_sim_tutorial.zip -d /usr/local/share/mole
+  164  sudo unzip svdquartets_tutorial.zip -d /usr/local/share/mole
+  165  sudo unzip PamlLab.zip -d /usr/local/share/mole
+  166  sudo unzip iqtreelab.zip -d /usr/local/share/mole
+  167  sudo unzip revbayes.zip -d /usr/local/share/mole
+  168  cd ..
+  169  git clone  https://github.com/snacktavish/Mole2023.git
+  170  sudo cp -R Mole2023 /usr/local/share/mole/
+  171  cd /usr/local/share/mole
+  172  sudo rm -rf __MACOSX
+  173  sudo chmod 755 modsel_sim_tutorial
+  174  cd
+  175  curl -LO https://mafft.cbrc.jp/alignment/software/mafft-7.505-with-extensions-src.tgz
+  176  tar zxvf mafft-7.505-with-extensions-src.tgz
+  177  mv mafft-7.505-with-extensions-src.tgz TARs
+  178  cd mafft-7.505-with-extensions/core
+  179  make
+  180  sudo make install
+  181  sudo apt install -y muscle
+  182  sudo apt install -y seqtk
+  183  sudo apt install -y samtools
+  184  sudo apt install -y bcftools
+  185  cd
+  186  curl -LO http://hannonlab.cshl.edu/fastx_toolkit/fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2
+  187  tar -xjf fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2
+  188  mv fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2 TARs
+  189  sudo mv bin/* /usr/local/bin/
+  190  pwd
+  191  ls
+  192  cd bin/
+  193  ls
+  194  cd ..
+  195  rm -rf bin
+  196  ls /usr/local/bin
+  197  cd clones/
+  198  git clone --recursive https://github.com/bwa-mem2/bwa-mem2
+  199  cd bwa-mem2/
+  200  make
+  201  sudo mv ./bwa-mem2* /usr/local/bin/
+  202  rm ./src/*.o
+  203  ls /usr/local/bin/
+  204  cd
+  205  curl -LO https://github.com/Cibiv/IQ-TREE/releases/download/v1.6.12/iqtree-1.6.12-Linux.tar.gz
+  206  tar zxvf iqtree-1.6.12-Linux.tar.gz
+  207  mv iqtree-1.6.12-Linux.tar.gz TARs
+  208  sudo mv iqtree-1.6.12-Linux/bin/iqtree /usr/local/bin
+  209  curl -LO https://github.com/iqtree/iqtree2/releases/download/v2.2.0/iqtree-2.2.0-Linux.tar.gz
+  210  tar zxvf iqtree-2.2.0-Linux.tar.gz
+  211  mv iqtree-2.2.0-Linux.tar.gz TARs
+  212  sudo mv iqtree-2.2.0-Linux/bin/iqtree2 /usr/local/bin
+  213  ls /usr/local/bin
+  214  sudo apt install -y libpython2.7
+  215  cd
+  216  curl -LO https://github.com/ddarriba/jmodeltest2/files/157117/jmodeltest-2.1.10.tar.gz
+  217  tar zxvf jmodeltest-2.1.10.tar.gz
+  218  mv jmodeltest-2.1.10.tar.gz TARs
+  219  cp -r jmodeltest-2.1.10 /opt
+  220  sudo cp-r jmodeltest-2.1.10 /opt
+  221  sudo cp -r jmodeltest-2.1.10 /opt
+  222  sudo java -jar /opt/jmodeltest-2.1.10/jModelTest.jar
+  223  ls
+  224  mkdir QMCN
+  225  cp wQMC.tar.gz QMCN/
+  226  cd QMCN/
+  227  ls
+  228  tar zxvf wQMC.tar.gz
+  229  rm wQMC.tar.gz
+  230  ls
+  231  cd
+  232  ls
+  233  cp wQMC.tar.gz TARs/
+  234  cd QMCN/
+  235  sudo cp find-cut-Linux-64 /usr/local/bin
+  236  ls
+  237  sudo cp max-cut-tree /usr/local/bin/
+  238  max-cut-tree
+  239  sudo max-cut-tree
+  240  ls /usr/local/bin/
+  241  cd /usr/local/bin
+  242  ls -la
+  243  sudo chmod +x max-cut-tree
+  244  max-cut-tree
+  245  pwd
+  246  ./max-cut-tree
+  247  ls
+  248  ./max-cut-tree
+  249  cd
+  250  curl -LO http://phylosolutions.com/paup-test/paup4a168_ubuntu64.gz
+  251  cp paup4a168_ubuntu64.gz TARs
+  252  gunzip paup4a168_ubuntu64.gz
+  253  sudo mv paup4a168_ubuntu64 /usr/local/bin/paup
+  254  sudo chmod +x /usr/local/bin/paup
+  255  curl -LO https://github.com/abacus-gene/paml/releases/download/4.10.7/paml-4.10.7-linux-X86_64.tgz
+  256  ls
+  257  tar zxvf paml-4.10.7-linux-X86_64.tgz
+  258  ls
+  259  cd paml-4.10.7/
+  260  ls
+  261  cd src
+  262  make -f Makefile
+  263  ls
+  264  nano Makefile
+  265  make -f Makefile
+  266  sudo mv baseml basemlg chi2 codeml evolver infinitesites mcmctree pamp yn00 /usr/local/bin
+  267  cd
+  268  ls
+  269  mv paml-4.10.7-linux-X86_64.tgz TARs/
+  270  ls
+  271  mv wQMC.tar.gz TARs/
+  272  ls
+  273  cd /usr/local/share/mole/
+  274  ls
+  275  sudo mv Mole2023/ Mole2024
+  276  ls
+  277  sudo chown -R exouser.exouser /usr/local/share/mole/Mole2024
+  278  cd Mole2024/
+  279  python -m venv pyenv
+  280  source /usr/local/share/mole/Mole2024/pyenv/bin/activate
+  281  python -m pip install git+https://github.com/jeetsukumaran/DendroPy.git
+  282  python -m pip list
+  283  deactivate
+  284  source /usr/local/share/mole/Mole2024/pyenv/bin/activate
+  285  python -m pip install opentree
+  286  python -m pip list
+  287  deactivate
+  288  cd
+  289  curl -LO https://molevolworkshop.github.io/faculty/smith/tutorial/Machine_Learning_for_Population_Genetics.ipynb
+  290  curl -LO https://molevolworkshop.github.io/faculty/smith/tutorial/Models-01.png
+  291  sudo mkdir -p /usr/local/share/mole/machinelearning
+  292  sudo mv Machine_Learning_for_Population_Genetics.ipynb /usr/local/share/mole/machinelearning
+  293  sudo chown -R exouser.exouser /usr/local/share/examples/mole/machinelearning
+  294  cd /usr/local/share/
+  295  ls
+  296  cd examples/
+  297  ls
+  298  cd ..
+  299  cd mole/
+  300  ls
+  301  cd ..
+  302  ls
+  303  sudo mv mole/ examples/
+  304  ls
+  305  cd examples/
+  306  ls
+  307  ls -la
+  308  cd mrbayes/
+  309  ls
+  310  vi .bashrc
+  311  man history
+  312  history
+  313  ls
+  314  cd /usr/local/share/examples/
+  315  ls
+  316  cd mole
+  317  ls
+  318  cd ..
+  319  ls
+  320  ls -la
+  321  cd mrbayes/
+  322  ls
+  323  cd ..
+  324  ls
+  325  cd examples/
+  326  ls
+  327  cd mole
+  328  ls
+  329  cd phylo-networks/
+  330  ls
+  331  cd data_results/
+  332  ls
+  333  cd ..
+  334  ls
+  335  cd ..
+  336  ls
+  337  cd ..
+  338  ls
+  339  pwd
+  340  sudo mv mrbayes mole
+  341  cd mole
+  342  ls
+  343  ifconfig
+  344  ls
+  345  cd /usr/local/share/
+  346  ls
+  347  cd examples/
+  348  ls
+  349  cd mole/
+  350  ls
+  351  cd Mole2024/
+  352  ls
+  353  cd ..
+  354  ls
+  355  cd
+  356  ls
+  357  curl -LO https://molevolworkshop.github.io/faculty/smith/tutorial/Machine_Learning_for_Population_Genetics.ipynb
+  358  ls
+  359  ls -la Models-01.png
+  360  mkdir temp
+  361  mv Models-01.png temp
+  362  curl -LO https://molevolworkshop.github.io/faculty/smith/tutorial/Models-01.png
+  363  ls
+  364  diff Models-01.png temp/Models-01.png
+  365  rm -rf temp
+  366  ls
+  367  sudo mkdir -p /usr/local/share/examples/mole/machinelearning
+  368  sudo mv Machine_Learning_for_Population_Genetics.ipynb /usr/local/share/examples/mole/machinelearning/
+  369  sudo chown -R exouser.exouser /usr/local/share/examples/mole/machinelearning
+  370  module list
+  371  cd /usr/local/share/examples/mole/machinelearning/
+  372  python -m venv mlenv
+  373  source ./mlenv/bin/activate
+  374  python -m pip install msprime==1.2.0
+  375  python -m pip install numpy==1.23.5
+  376  python -m pip install scipy==1.9.3
+  377  python -m pip install scikit-learn==1.2.0
+  378  python -m pip install tensorflow==2.10.0
+  379  python -m pip install keras==2.10.0
+  380  python -m pip install ipykernel
+  381  deactivate
+  382  mkdir -p /usr/local/share/examples/mole/machinelearning/jupyter/molekernel
+  383  cd /usr/local/share/examples/mole/machinelearning/jupyter/molekernel/
+  384  module load anaconda
+  385  jupyter kernelspec list
+  386  cp -r /software/u22/anaconda/python3.9/share/jupyter/kernels/python3
+  387  cp -r /software/u22/anaconda/python3.9/share/jupyter/kernels/python3/* .
+  388  nano kernel.json
+  389  cd /usr/local/share/examples/mole/machinelearning/
+  390  cat - > doof.sh << EOF
+  391  nano doof.sh
+  392  sudo apt install -y nfs-kernel-server
+  393  sudo vi /etc/exports
+  394  sudo systemctl restart nfs-kernel-server
+  395  cd /media/volume
+  396  cd /media/volume/moledata
+  397  ls
+  398  sudo systemctl restart nfs-kernel-server
+  399  cat /etc/exports
+  400  ls -la /media/volume/sdb/mole
+  401  cd /media/volume/
+  402  ls
+  403  cd moledata/
+  404  ls
+  405  sudo nano /etc/exports
+  406  sudo systemctl restart nfs-kernel-server
+  407  history
+{% endcomment %}
