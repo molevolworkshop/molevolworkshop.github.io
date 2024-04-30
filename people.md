@@ -53,7 +53,7 @@ Jhan Carlos | Salazar | Washington University in St. Louis
 Philip | Shirk | Centers for Disease Control and Prevention
 Eva | Stewart | The Natural History Museum
 Helen | Stott | Rutgers University, Camden
-Neha | Tiwari | Louisiana State University and Agricultural and Mechanical College
+Neha | Tiwari | Louisiana State University
 Caitlin Emma | Tribelhorn | University of Arizona
 Claudia Francesca | Vaga | Smithsonian Institution
 Hannah Elaine | Verdonk | Temple University
