@@ -373,7 +373,7 @@ This follows the [instructions](https://github.com/crsl4/PhyloNetworks.jl/wiki) 
 To 
 ~~~~~~
 cd
-export JULIA_DEPOT_PATH=/opt/julia-1.8.5/usr/share/julia/site
+export JULIA_DEPOT_PATH=/opt/julia-1.10.2/usr/share/julia/site
 julia
 julia> using Pkg                # to use functions that manage packages
 julia> Pkg.add("PhyloNetworks") # to download/install PhyloNetworks (precompiling takes a few minutes)
@@ -1111,9 +1111,11 @@ users:
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC6StAassFQ415BcyUxfTMG5cbziIxVn/E+KCbhx4/Csm1GjJmpCwSgxDqp2gXjQLprElASMIygnQMdZ1m6U8/CcbEPzviZdWeM+NHn/ELCa4OxL0MTPDLpnHC2Dyvi6RnM9UJYwnCIT1/U/R7ZVMXRtPU5xBhf+087HTLdMZ4gXx6yWWCynmrXpwbwJULhodDxkY9kouLudLHSNDjEfbI7PErvFLslOvCPnivgeEueJoJwpIvatpWFykohOn5UwXzZNmI9GWCQ1wtliZzhROKre1AnVfmHW8oO7QVQOGNxPfqSV6zKLnTpBfWsykqOYEVqR6M1kV+QjQHThxLCvLzrKoyLayuE0xdY8lbMzuw2LbWmsDv2rLKWiorH3rZRRH2NWi5EZEuNrQqPUug/kxCjAY5/jPHeavX6PdnyS2PwW4N7et1gRPcI64RwaQNofPUqbPrEFP+PYxEjJQw4B36tFRXvV+qs95TiMZ4Zuy7IUI/12phZqz5tvClI8i3O6sE= analisamilkey@MacBook-Air.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDIulLE6a+QGh/JE9mjGmTwRWtmcK29mbB1MJEN728+gLRnHV8oRfE5ahZVp4k0+h0onBn3Br8hVTkqQqC3GJmRe2PMlocqIJULe3hFvtXZqGh+w8QUj//+C3kTg6Lptc2m4f9JimjUjFNPnfX5sioJp2mHOjNbYXYbXb0zx1Y5jKVmi6r0NifcuZ+ObfIFG5+o1kytAq/J+8f6evBUKlTR8Gsk7V9zuZmGcffGZe5HA+3ilkUGd2Uyx18nbgE4VZTXC9K7RA7AFPtkLRH/ivaMGESUteH5Wqe1Bj46ORjapRV+hmU1t/VeOmHVWknkaTM3/yZpMKAiFYxWADDXsSNSNck38zMmDmWxzW+wcrNcCysKUZU60DxD4Czvk4VEUgFSVg/YmN1tJDqVse7GfcvYxzgC9R5qDItXPY3YBjq9ykOIGmn9C30lVqh4nELu3LujrmHmf0VTDtexc/4T+YPJlmVxr64UP4YTInLw5wBgQ89Thj6ahx+QnfC6m5Uv+ws= blakefauskee@Blakes-MacBook-Pro-3.local               
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0lGJQrxeZ8wjpxwFvgAW+1gnHzB7cre8ejkAdBHR8rQjz+htA9U+nsgNvaSHoD4q0TzObhobdwOlkCVstJNYz1KKDH61Rbn61MToO5h1n4Ow1slHNl/Cy0NKwEg+YnyPULrMb1z5h+yzUUFgMpwzzQsutrcN9Im3HuAnRGD3giJFHKYhhEMl92EPgEf9/xs3b/0B1FdXIotFiuGkk3FkhZIA+1Ga+nNE6CEhjEHY2YQd3PsFRZWqo/FxujUQTS5hvy/5BOGpGo3LyRFiHiNWXcHXVLak+0SJzrDEcpoX1A1ezzJIvQbdGV3KNxxFPsX9T48oi5r50WRRiG3tmjUQjRm+tx41yUl/ZmZEISv8CQtn2p4h02sTLLOntIP3GBjiIok/zgTH2OHihMlqoahKbfoadWZLhkG05pnZ71YA0hFs8QQxPXNycf8zHxp8PmMAzKL9M4jtH+KRH+XVj9zoq9D0uU7WA5kyUVOjHYRMy8yvGBtFHbW3TH7BgMP7aYcM= khaosan@Sungsiks-MacBook-Pro.local
+        - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAXqA3oZ9t7u+MS7YPOjKQRrqR5Ti2KcsxRzq+MhsSQp petrucci@iastate.edu
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCkpuLKyLQpqg8TF0iCRQXJg2z+/F/YBYnd4BVlupJhpZpbViLWulByYLMetC/7UT57CjX8i518CfpwbCP4dMEiQR+93AxZhBvKZM4Mtz0Me6SWmSnFV8cVF5c23UZoqOeVInABe14hLEZBdbyWck5QTy0k/CQrYSIToYqdZA6G/G8PKAk6db2rQuiwHi0Q5qE7RQ7S2qRgq4n9G0zPDelV8myyzduo7bOY3BaNMKwj5Yi/soMUBvOX7Do9R5+5XjpOuqnPbPX2NeMvIZJZ/ZwvBmbjQievhaX7COISWw77wUboaqpn2aEnewEc9Kt4gfx0gzDvznsCZRe+XCV1Q2xv3zVRut4FZfv0DhDEfL42vFEhahF728npFjyIo5cidMTBek9oCuqg58B3Umr/bFJEhjCaGhBJVqeDRERha8fbO7c8aAW3WdoTqaJJAIshztWhLotJaM77nt35dMrmOlOwRs3rHi4fxk5r+6tLxardNGKOBWHyQ4CneYPUkxWKcN0= kubatko.2@STAT-NC247353
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqJeFU3sEcA72fyYD2LCzDsfHqPmZonnATiXDKYeutIzQ+iVREIG3EMUNjeps8JS9oWw11ojXLFDZCHdg/z87qBZn7ilGgXZ6/PRhGaDx3kjPr5Mek10bV3BwB0O9Gws9rmepD/akuXY7wTS5M++YqCkwU1Ia9oAEW4QWDuc1Bdj3L1DqSYbI+xg38EA5TpRL2N968OPuu1xhGT9cPkRgOQAcTbFyknoeEXKwSUKamii8q8Lv+Zi9nA1nRYa0xZdJSGZNxso41FJkEmNfF6o/IKMtAJ0DHcg1B3aJpS8o2+cgyR+L0NqVHrJeBIagm4n3H8xP40pUCj5PyphdZam5L jpbielawski@Josephs-MacBook-Air.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1D6eflrh3q3daop2orqL0pXrAqOUt8AaYWaC/d+iZQutHiroByNjpSETkmEd1yw8NpF6gVkh8oNqvTH1ERlJtX1BETipUvJAlvV67ZwWDSoYVqM+RwFiUT4cIC2No0V3ETI9pd4D0Dnq/9l4V9pYaunnbvIaAUsQiDRPMcRq+aOZRB/fH9nTQ5jfWKWEAu2m77T6esXe0bFX6cMhoZdk4HQSc+Wdsfn5TZEoi7+0YVK7973ZmIHYRRl9a/80NtIIHQVOOjPve3mUxv5/dlFBvPVLVHe91XqD4DnXnjXytBgNpqjPHNY28yy/UZ7Ba8XXIxGzWEDy3p1+dJzXni/hOQ== DavidSwofford
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDV/XPzswM4seTioKLp01l4yzoaxRgK1Hx0yQQpr/HlokC0hSCuACQSaA6ULMqgsoAd4S1EhI9rujdpf8N7yKKsNIrwpGSX9UL5bUsCE8xh5n500iu2YUTkBuWDgZvGPqKWwMu9L9v5AxH/bk2l4EqfbPUyzgcQRX6w5OJoz7pYvEBD8BGc5y/V3VfW3BaQARdXQqvc6Eqg5wEewsLjBrkNwc0nVQHTxIuz3MP1eRybbsB44N6JuqyVlogdy8DzSI96Za/yVPCeVcGfl44N9rOa8+/7t2AsE+ycGuTM3tOeWJBUE5FOzFbEpk3SppcwKkOwTt+nnLMcCRpovHJOmSSHdptq7HJptm49FDChX/AYQy91EObHLqOkbciueHlTRNYjeye2+rnYS83kNi3f0iYr01HeUtK85GcvCGxbEpinPEVbSUFDI9inbkYVvSkL6T5JK9NWXgDpqFvGU1fESMaaZCtXDgDuFZI0T83k/tsRLvD8woxqCSsZPIvbz/UPUwM= tracyh@Indigo.local
 ssh_pwauth: true             # allow password authentication (for students)
 chpasswd:
     expire: false            # do not force user to change passwd on first login
@@ -1133,7 +1135,7 @@ runcmd:
   - echo 'alias astral="java -jar /opt/astral/astral.5.7.1.jar"' >> /home/moleuser/.bash_profile              # MOLE
   - echo 'alias jmodeltest="java -jar /opt/jmodeltest-2.1.10/jModelTest.jar"' >> /home/moleuser/.bash_profile # MOLE
   - echo 'alias phyml="/opt/jmodeltest-2.1.10/exe/phyml/PhyML_3.0_linux64"' >> /home/moleuser/.bash_profile   # MOLE
-  - echo 'export JULIA_DEPOT_PATH=/opt/julia-1.8.5/usr/share/julia/site' >> /home/moleuser/.bash_profile      # MOLE
+  - echo 'export JULIA_DEPOT_PATH=/opt/julia-1.10.2/usr/share/julia/site' >> /home/moleuser/.bash_profile     # MOLE
   - sudo ln -s /usr/local/bin/iqtree2 /usr/local/bin/iqtree-beta                                              # MOLE
   - sudo ln -s /usr/local/bin/raxmlHPC /usr/local/bin/raxml                                                   # MOLE
   - sudo chown -R moleuser.moleuser /home/moleuser/.bash_profile                                              # MOLE
@@ -1173,38 +1175,60 @@ runcmd:
 * (done in 2023) By default, Julia packages are installed in the _~/.julia_ directory of a particular user, not globally. Find out how to install PhyloNetworks, PhyloPlots, and the other packages needed for the PhyloNetworks tutorial globally, or add the necessary setup to the cloud-init script. In 2022, I had to ssh into each VM separately and add Julia packages under the user moleuser. They were present in /home/exouser/.julia, but simply copying that directory to /home/moleuser and chown moleuser.moleuser did not do the trick.
 {% endcomment %}
 
+## Late additions
+
+There are always modifications that need to be made to all VMs after they have been created. For each of these tasks, I use the following basic procedure. I illustrate with an actual case. I had to modify a symbolic link on the 6 test VMs in the early testing stage in late April, 2024.
+
+* Create a folder named _2024-04-29-molelink_ under my _late-additions_ folder
+* Create a bash script named _molelink.sh_ in _late-additions/2024-04-29-molelink_ with these contents:
+        #!/bin/bash
+        IPADDRESSES=(149.165.172.51 149.165.169.200 149.165.170.188 149.165.174.163 149.165.168.150 149.165.175.105)
+        for ip in ${IPADDRESSES[@]}
+        do
+            ssh -t moleuser@$ip "bash -c 'rm moledata; ln -s /usr/local/share/examples/mole moledata'"
+        done
+* Create a *_readme.txt* file in _late-additions/2024-04-29-molelink_ explaining what the task was about
+        Fixes ~/moledata symbolic link on each test VM
+        
+        Incorrect: /usr/local/share/mole
+        Correct:   /usr/local/share/examples/mole
+* Run the script (assuming you are in _late-additions/2024-04-29-molelink_)
+        . molelink.sh
+
+You should see IP addresses listed as the script finished with each one.
+
+And, yes, you will need to list the IP addresses of all virtual machines in the `IPADDRESSES` variable.
+
 ## Command line client
 
 ### Obtaining CLI credentials
 
-Beware: these instructions have not been tested in 2023.
-
 These instructions copied from the illustrated and more complete instructions at the [Setting up application credentials and openrc.sh for the Jetstream2 CLI](https://docs.jetstream-cloud.org/ui/cli/openrc/) page.
 
-* Login to [Horizon](https://js2.jetstream-cloud.org/) using Xsede credentials
-* Be sure it says xsede * TG-DEB190022 at the top dropdown box
-* Choose Identity, then Application Credentials from the left sidebar menu
+* Login to [Horizon](https://js2.jetstream-cloud.org/) using Xsede credentials, ensuring that "ACCESS CILogon" is displayed
+* Be sure it says ACCESS * DEB190022 at the top dropdown box
+* Choose "Identity", then "Application Credentials" from the left sidebar menu
 * Click "Create Application Credential" towards the top right
 * Filled out form using entries below, then pressed the Create Application Credential button
 
-| Field                    | Value                                       |
-| ------------------------ | ------------------------------------------- |
-| Name                     | POL-CLI-MOLE-credential                     |
-| Description              | For Woods Hole MOLE project                 |
-| Secret                   | not shown here, stored in password manager  |
-| Expiration Date          |  07/01/2023                                 |
-| Expiration Time          | left blank                                  |
-| Roles                    | left blank                                  |
-| Access Rules             | left blan                                   |
-| Unrestricted (dangerous) | left unchecked                              |
+| Field                    | Value                                                            |
+| ------------------------ | ---------------------------------------------------------------- |
+| Name                     | POL-CLI-MOLE-credentials-2024                                    |
+| Description              | Woods Hole Molecular Evolution Workshop at MBL                   |
+| Secret                   | not shown here, stored in password manager                       |
+| Expiration Date          |  07/01/2024                                                      |
+| Expiration Time          | left blank                                                       |
+| Roles                    | left blank  (defaults to "reader, load-balancer_member, member") |
+| Access Rules             | left blank                                                       |
+| Unrestricted (dangerous) | left unchecked                                                   |
 
-Copied the ID provided in my password manager. 
+Copied the password generated by my password manager into the Secret field.
 
 The file _clounds.yaml_ was generated and placed here on my local laptop:
 
     ~/.config/openstack/clouds.yaml
 
-The file _app-cred-POL-CLI-MOLE-credential-openrc.sh_ was generated and saved on my local hard drive. This file can be sourced to provide these environmental variables needed for authentication:
+The file _app-cred-POL-CLI-MOLE-credentials-2024-openrc.sh_ was generated and saved on my local hard drive. This file can be sourced to provide these environmental variables needed for authentication:
 
     OS_AUTH_TYPE
     OS_AUTH_URL
@@ -1216,7 +1240,7 @@ The file _app-cred-POL-CLI-MOLE-credential-openrc.sh_ was generated and saved on
 
 ### Using CLI
 
-I have not put a lot of effort into learning how to control things using the API from scripts because Exosphere makes all these operations pretty simple. Thus, there are still a lot of TODO entries below.
+I have not put a lot of effort into learning how to control things using the API from scripts because Exosphere makes many of these operations pretty simple. Thus, there are still a lot of TODO entries below.
 
 Most of these instructions come from the [Jetstream2 API tutorial](https://github.com/jlf599/JetstreamAPITutorial).
 
@@ -1238,7 +1262,7 @@ To show a list of images:
 
 To show details for one particular image:
 
-    openstack image show MOLE-2023-snapshot --fit-width
+    openstack image show MOLE-2024-snapshot-04-25 --fit-width
 
 To show a list of instances:
 
@@ -1246,7 +1270,7 @@ To show a list of instances:
     
 To show details for one particular instance, provide the ID:
 
-    openstack server show 9a3b295c-eede-4930-8661-3003eb264ed9 --fit-width
+    openstack server show a6e3ec6f-3e1a-42ed-a45a-3375af4146a5 --fit-width
 
 To create an launch an instance (see [Launch and Access Your Instance](https://docs.jetstream-cloud.org/ui/cli/launch/)):
 
