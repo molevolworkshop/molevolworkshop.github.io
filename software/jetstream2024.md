@@ -1085,7 +1085,7 @@ This is the default cloud-config boot script with some modifications for MOLE.
  1. makes moleuser the owner of everything inside _/usr/local/share/examples/mole_ 
  2. makes moleuser the owner of everything inside _/opt/astral_ (needed for ASTRAL to be started without using sudo) 
  3. makes moleuser the owner of everything inside _/opt/jmodeltest-2.1.10_ (needed for jModelTest to be started without using sudo) 
- 4. makes moleuser the owner of everything inside _/opt/julia-1.8.5_  
+ 4. makes moleuser the owner of everything inside _/opt/julia-1.10.2_  
  5. creates an alias named _astral_ (makes it easier to start ASTRAL)
  6. creates an alias named _jmodeltest_ (makes it easier to start jModelTest)
  7. creates an alias named _phyml_ (which points to the phyml executable inside jModelTest)
@@ -1131,7 +1131,7 @@ runcmd:
   - chown -R moleuser.moleuser /usr/local/share/examples/mole                                                 # MOLE
   - chown -R moleuser.moleuser /opt/astral                                                                    # MOLE
   - chown -R moleuser.moleuser /opt/jmodeltest-2.1.10                                                         # MOLE
-  - chown -R moleuser.moleuser /opt/julia-1.8.5                                                               # MOLE
+  - chown -R moleuser.moleuser /opt/julia-1.10.2                                                              # MOLE
   - echo 'alias astral="java -jar /opt/astral/astral.5.7.1.jar"' >> /home/moleuser/.bash_profile              # MOLE
   - echo 'alias jmodeltest="java -jar /opt/jmodeltest-2.1.10/jModelTest.jar"' >> /home/moleuser/.bash_profile # MOLE
   - echo 'alias phyml="/opt/jmodeltest-2.1.10/exe/phyml/PhyML_3.0_linux64"' >> /home/moleuser/.bash_profile   # MOLE
