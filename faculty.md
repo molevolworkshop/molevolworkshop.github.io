@@ -44,7 +44,7 @@ permalink: /faculty/
 
 ## 2024 Course TAs
 
-[Kevin (Sungsik) Kong](/faculty-kong/), Ohio State University
+[Sungsik (Kevin) Kong](/faculty-kong/), University of Wisconsin-Madison
 
 [Blake Fauskee](/faculty-fauskee/), Duke University
 
