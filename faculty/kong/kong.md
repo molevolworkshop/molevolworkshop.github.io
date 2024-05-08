@@ -7,13 +7,12 @@ permalink: /faculty-kong/
 
 ### Arrival and Departure
 
-not yet determined
+May 24 - June 4
 
 ### Contact Info 
+
+Address: University of Wisconsin-Madison
 E-mail: [sungsik.kong@gmail.com](mailto:sungsik.kong@gmail.com)
-
-Address: Ohio State University
-
-### Institutional home page 
-[https://eeob.osu.edu/people/kong.362](https://eeob.osu.edu/people/kong.362)
+[Personal website](https://sungsik-kong.github.io)
+[Institutional homepage](https://wid.wisc.edu/people/sungsik-kong/)
 
