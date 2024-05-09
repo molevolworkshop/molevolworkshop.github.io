@@ -9,7 +9,7 @@ https://www.webfx.com/tools/emoji-cheat-sheet/
 
 ## Jetstream2 notes (2024 Workshop)
 
-These are notes on setting up Jetstream2 virtual machines for the 2023 MOLE workshop. If you are a participant, these notes are not intended for you, but you are of course welcome to read them. They are intended for the current directors and head TA of the workshop, who must get the Jetstream virtual machines up and running before the workshop begins. 
+These are notes on setting up Jetstream2 virtual machines for the 2024 MOLE workshop. If you are a participant, these notes are not intended for you, but you are of course welcome to read them. They are intended for the current directors and head TA of the workshop, who must get the Jetstream virtual machines up and running before the workshop begins. 
 
 [Paul Lewis](mailto:paul.lewis@uconn.edu) created this document 26-Apr-2024 with the help of Analisa Milkey.
 
@@ -86,7 +86,7 @@ ssh molevm
 
 To create a new instance, click the red Create button in the upper right corner of Exosphere. 
 
-I used the **Ubuntu 22.04 (latest)** image source and specified **MOLE-2023-base** as the name. I chose **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **1** for number of instances, **no** for enable web desktop, **cormy** for SSH public key, and **Show** for Advanced Options.
+I used the **Ubuntu 22.04 (latest)** image source and specified **MOLE-2024-base** as the name. I chose **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **1** for number of instances, **no** for enable web desktop, **cormy** for SSH public key, and **Show** for Advanced Options.
 
 Advanced Options:
 
@@ -98,7 +98,7 @@ Advanced Options:
 | Public IP Address                        | Automatic              | Yes      |
 | Boot Script (see below)                  | used default           | Yes      |
 
-Press the Create button to create the instance. The Exosphere GUI will say "Building" in lemon yellow for about 5 minutes, then "running Setup" for another minute, then "Ready" in green. Clicking on "Instances" will take you to a screen that shows the MOLE-2023-base instance and its IP address.
+Press the Create button to create the instance. The Exosphere GUI will say "Building" in lemon yellow for about 5 minutes, then "running Setup" for another minute, then "Ready" in green. Clicking on "Instances" will take you to a screen that shows the MOLE-2024-base instance and its IP address.
 
 You can now log into the instance as **exouser**.
 
@@ -106,7 +106,7 @@ You can now log into the instance as **exouser**.
     
 ### Default boot script
 
-For reference, here is the default boot script used to create MOLE-2023-base. 
+For reference, here is the default boot script used to create MOLE-2024-base. 
 
 ~~~~~~
 #cloud-config
@@ -151,7 +151,7 @@ runcmd:
 
 ### Setting up the new instance
 
-The newly created MOLE-2023-base needs to be provisioned with the software and data files used during the workshop.
+The newly created MOLE-2025-base needs to be provisioned with the software and data files used during the workshop.
 
 First create a _TARs_ folder in which to store downloaded tar files (useful for backup purposes if, next year, some can't be downloaded). Also, create a _clones_ folder for git working directories.
 
@@ -166,7 +166,7 @@ mkdir clones
 Get current date:
 
     $ TZ="EST5EDT" date
-    Sat Apr 29 12:48:00 EDT 2023
+    Wed May  8 10:21:12 EDT 2024
 
 Find processor info:
 
@@ -263,6 +263,24 @@ sudo apt install -y apt-file
 ~~~~~~
 This may pop up a graphical interface: use tab and arrow keys to navigate. May need to reboot, which can be done from the Exosphere interface.
 Last updated 2024-04-19.
+
+### Install net-tools
+
+Provides ifconfig command.
+~~~~~~
+sudo apt install net-tools
+~~~~~~
+
+Got this message with title "Pending kernel upgrade":
+Newer kernel available
+The currently running kernel version is 5.15.0-105-generic which is not the expected kernel version 5.15.0-106-generic.
+Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting.
+
+Upon pressing Ok, got this message entitled "Daemons using outdated libraries"
+Which services should be restarted?
+[*] packagekit.service
+    
+Last updated 2024-05-09.
 
 ### Install python2
 
@@ -687,7 +705,7 @@ fastx_reverse_complement
 fastx_trimmer
 fastx_uncollapser
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install bwa-mem2
 
@@ -709,7 +727,7 @@ bwa-mem2.avx512bw
 bwa-mem2.sse41
 bwa-mem2.sse42
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install [maxcut](https://sagi-snir.wixsite.com/snir-lab/maxcut)
 
@@ -728,7 +746,7 @@ rm QMCN.tar.gz
 sudo cp find-cut-Linux-64 /usr/local/bin 
 ~~~~~~
 Installed as _/usr/local/bin/find-cut-Linux-64_. 
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install [IQ-TREE](http://www.iqtree.org)
 
@@ -748,7 +766,7 @@ mv iqtree-2.2.0-Linux.tar.gz TARs
 sudo mv iqtree-2.2.0-Linux/bin/iqtree2 /usr/local/bin
 ~~~~~~
 Installed 1.6.12 as _/usr/local/bin/iqtree_ and 2.0.6 as _/usr/local/bin/iqtree2_. 
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install [libpython2.7.so.1.0 shared library](https://askubuntu.com/questions/1213461/cant-locate-libpython2-7-so-1-0)
 
@@ -758,7 +776,7 @@ sudo apt install -y libpython2.7
 ~~~~~~
 
 Installed as _/usr/lib/x86_64-linux-gnu/libpython2.7.so.1.0_. 
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install [jModelTest](https://github.com/ddarriba/jmodeltest2/)
 
@@ -777,7 +795,7 @@ An alias will be created by the [cloud init script](#boot-script-used) to make t
     alias jmodeltest="java -jar /opt/jmodeltest-2.1.10/jModelTest.jar"
 The [cloud init script](#boot-script-used) will also change ownership
     sudo chown -R moleuser.moleuser /opt/jmodeltest-2.1.10
-Last updated 2023-05-06.
+Last updated 2024-04-19.
 
 ### Install [PAUP*](http://phylosolutions.com/paup-test/)
 
@@ -790,7 +808,7 @@ sudo mv paup4a168_ubuntu64 /usr/local/bin/paup
 sudo chmod +x /usr/local/bin/paup
 ~~~~~~
 Installed as _/usr/local/bin/paup_. 
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install [PAML](http://abacus.gene.ucl.ac.uk/software/paml.html)
 
@@ -808,7 +826,7 @@ make -f Makefile
 sudo mv baseml basemlg chi2 codeml evolver infinitesites mcmctree pamp yn00 /usr/local/bin
 ~~~~~~
 Installed baseml, basemlg, chi2, codeml, evolver, infinitesites, mcmctree, pamp, and yn00in _/usr/local/bin_. 
-Last updated 2023-05-10.
+Last updated 2024-04-19.
 
 ### Create pyenv python virtual environment
 
@@ -823,141 +841,54 @@ python -m venv pyenv
 
 DendroPy is used in the McTavish gene tree updating lab.
 ~~~~~~
-source /usr/local/share/examples/mole/Mole2023/pyenv/bin/activate    # activate the python environment pyenv
+source /usr/local/share/examples/mole/Mole2024/pyenv/bin/activate    # activate the python environment pyenv
 python -m pip install git+https://github.com/jeetsukumaran/DendroPy.git
 python -m pip list
 deactivate
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install opentree
 
 opentree is used in the McTavish gene tree updating lab.
 ~~~~~~
-source /usr/local/share/examples/mole/Mole2023/pyenv/bin/activate    # activate the python environment pyenv
+source /usr/local/share/examples/mole/Mole2024/pyenv/bin/activate    # activate the python environment pyenv
 python -m pip install opentree
 python -m pip list
 deactivate
 ~~~~~~
-Last updated 2023-04-29.
+Last updated 2024-04-19.
 
 ### Install the machine learning Jupyter notebook
 
-The machine learning tutorial is in the form of a Jupyter notebook. The notebook itself is saved to the `/usr/local/share/examples/mole/machinelearning` directory (but is also available on Megan Smith's faculty page).
+The machine learning tutorial is in the form of a Jupyter notebook. The notebook itself (_Machine_Learning_for_Population_Genetics_V2.ipynb_) is saved to the `/usr/local/share/examples/mole/machinelearning` directory along with the files _Models-01.png_, _simulated_responses.npy_, and _simulated_sfs.npy_.
 ~~~~~~
 cd
-curl -LO https://molevolworkshop.github.io/faculty/smith/tutorial/Machine_Learning_for_Population_Genetics.ipynb
-curl -LO https://molevolworkshop.github.io/faculty/smith/tutorial/Models-01.png
+curl -LO https://github.com/molevolworkshop/moledata/machine-learning/Machine_Learning_for_Population_Genetics_V2.ipynb
+curl -LO https://github.com/molevolworkshop/moledata/machine-learning/Models-01.png
+curl -LO https://github.com/molevolworkshop/moledata/machine-learning/simulated_responses.npy
+curl -LO https://github.com/molevolworkshop/moledata/machine-learning/simulated_sfs.npy
 sudo mkdir -p /usr/local/share/examples/mole/machinelearning
-sudo mv Machine_Learning_for_Population_Genetics.ipynb /usr/local/share/examples/mole/machinelearning
+sudo mv Machine_Learning_for_Population_Genetics_V2.ipynb /usr/local/share/examples/mole/machinelearning
+sudo mv Models-01.png /usr/local/share/examples/mole/machinelearning
+sudo mv simulated_responses.npy /usr/local/share/examples/mole/machinelearning
+sudo mv simulated_sfs.npy /usr/local/share/examples/mole/machinelearning
 sudo chown -R exouser.exouser /usr/local/share/examples/mole/machinelearning
 ~~~~~~
-Last updated 2024-04-25.
-
-#### Create a virtual python environment mlenv
-
-The following installs the python packages required by the notebook. Just to be safe, I created a different virtual python environment (mlenv) for these installs. The specific versions of each module were specified in the Jupyter script used for the tutorial, so I stuck to those versions to make sure everything was compatible.
-~~~~~~
-module list   # ensure anaconda is not loaded
-cd /usr/local/share/examples/mole/machinelearning
-python -m venv mlenv            # create python virtual environment mlenv
-source ./mlenv/bin/activate     # activate the python virtual environment mlenv
-python -m pip install msprime==1.2.0
-python -m pip install numpy==1.23.5
-python -m pip install scipy==1.9.3
-python -m pip install scikit-learn==1.2.0
-python -m pip install tensorflow==2.10.0
-python -m pip install keras==2.10.0   # not really needed; already installed by tensorflow
-python -m pip install ipykernel
-deactivate
-~~~~~~
-Last updated 2024-04-25.
-
-While the mlenv is activated, calling
-    python -m pip freeze > mlmodules.txt
-will save the versions of all modules currently loaded to a file. If you need to recreate the environment later, you can install all of these at once using (again, while mlenv is activated)
-    python -m pip install -r mlmodules.txt
-You can use 
-    python -m pip list
-to list modules installed in the virtual environment.
-
-Last updated 2024-04-25.
-
-#### Create a Jupyter kernel that uses mlenv 
-
-Jupyter comes with the anaconda module, but the anaconda module specifies a default Jupiter kernel that does not have the modules needed by the machine learning tutorial installed. Thus, we need to create a Jupyter kernel that uses the python virtual environment mlenv that we set up in the previous step. The easiest way to create the new kernel is to copy the default one and change the name and path to the python interpreter.
-
-~~~~~~
-mkdir -p /usr/local/share/examples/mole/machinelearning/jupyter/molekernel
-cd /usr/local/share/examples/mole/machinelearning/jupyter/molekernel
-module load anaconda
-jupyter kernelspec list  # shows location of default kernel
-#Available kernels:
-#  python3       /software/u22/anaconda/python3.9/share/jupyter/kernels/python3
-cp -r /software/u22/anaconda/python3.9/share/jupyter/kernels/python3/* .
-# Edit the kernel.json file to look like this:
-{
- "argv": [
-  "/usr/local/share/examples/mole/machinelearning/mlenv/bin/python",
-  "-m",
-  "ipykernel_launcher",
-  "-f",
-  "{connection_file}"
- ],
- "display_name": "MOLE",
- "language": "python",
- "metadata": {
-  "debugger": true
- }
-}
-~~~~~~
-
-#### Create setup.sh script to start Jupyter notebook
-
-Create a _setup.sh_ script to make it easier for students to start Jupyter. The `jupyter-ip.sh` script comes with the virtual machines and is available once anaconda is loaded. It starts a server and displays various ways to access the Jupyter notebook in your browser (I normally use the last URL listed).
-
-The students will have to be told to choose the **MOLE** kernel once Jupyter starts up and they have loaded the notebook (which they should see when Jupyter starts).
-
-I found that the sample sizes specified in the notebook were large enough that the kernel ran out of memory and crashed after the data was simulated and the analyses began. Cutting fragments to 10 (instead of 20), replicates to 500 (instead of 1000), and SNPs to 2000 (instead of 5000) was sufficient to allow it to run to completion.
-
-~~~~~~
-cd /usr/local/share/examples/mole/machinelearning
-cat - > doof.sh << EOF
-#!/bin/bash
-
-echo "Ensuring anaconda is loaded (to make Jupyter available)..."
-module unload anaconda
-module load anaconda
-
-echo "Activating the python environment for this tutorial..."
-source /usr/local/share/examples/mole/machinelearning/mlenv/bin/activate
-
-if [ ! -d "/home/moleuser/.local/share/jupyter/kernels/molekernel" ]
-then
-	echo "Installing molekernel for use with Jupyter..."
-	jupyter kernelspec install /usr/local/share/examples/mole/machinelearning/jupyter/molekernel --user
-else
-	echo "No need to install molekernel because it already exists."
-fi
-
-echo "Starting up Jupyter server..."
-jupyter-ip.sh
-EOF
-~~~~~~
+Last updated 2024-05-09.
 
 ### Creating a shared read-only volume for the python virtual environment
 
-**Note: need to remove instructions about creating mlenv above and will need a script to mount this volume on all VMs **
-
-The python virtual environment used in the machine learning tutorial is large (1.8GB) and thus locating it on each VM brings these machines 1.8GB closer to their 20GB maximum disk space. To save space on the individual VMs used by participants and faculty, I created a volume to hold just the python virtual environment that is used for both the machine learning and opentree labs. This volume is attached to MOLE-2023-base and shared with all other VMs via NFS.
+The python virtual environment used in the machine learning tutorial is large (1.8GB) and thus locating it on each VM brings these machines 1.8GB closer to their 20GB maximum disk space. To save space on the individual VMs used by participants and faculty, it is better to create a volume to hold just the python virtual environment that is used for both the machine learning and opentree labs. This volume is attached to MOLE-2024-base and shared with all other VMs via NFS.
 
 #### Creating and populating a volume
 
-In Exosphere, choose Create > Volume using the red Create button at the top right. Attach the volume to MOLE-2023-base using the Attach Volume button under the Volumes panel when viewing the details of the MOLE-2023-base instance. The volume will be mounted at _/media/volume/sdb_.
+In Exosphere, choose Create > Volume using the red Create button at the top right. Attach the volume to MOLE-2024-base using the Attach Volume button under the Volumes panel when viewing the details of the MOLE-2024-base instance. Mount the volume at _/media/volume/moledata_.
 
-Assuming you are logged into MOLE-2023-base as exouser, create a python virtual environment as follows:
+Assuming you are logged into MOLE-2024-base as exouser, create a python virtual environment as follows:
 ~~~~~~
-cd /media/volume/sdb
+module list                     # ensure anaconda is not loaded
+cd /media/volume/moledata
 python -m venv pyenv            # create python virtual environment
 source ./pyenv/bin/activate     # activate the python virtual environment
 python -m pip install msprime==1.2.0
@@ -973,7 +904,75 @@ deactivate
 sudo chown -R moleuser.moleuser pyenv
 ~~~~~~
 
-#### Setting up the NFS server on MOLE-2023-base
+While pyenv is activated, calling
+    python -m pip freeze > mlmodules.txt
+will save the versions of all modules currently loaded to a file. If you need to recreate the environment later, you can install all of these at once using (again, while pyenv is activated)
+    python -m pip install -r mlmodules.txt
+You can use 
+    python -m pip list
+to list modules installed in the virtual environment.
+
+#### Create a Jupyter kernel that uses pyenv 
+
+Jupyter comes with the anaconda module, but the anaconda module specifies a default Jupyter kernel that does not have the modules needed by the machine learning tutorial installed. Thus, we need to create a Jupyter kernel that uses the python virtual environment pyenv that we set up in the previous step. The easiest way to create the new kernel is to copy the default one and change the name and path to the python interpreter.
+
+~~~~~~
+mkdir -p /usr/local/share/examples/mole/machinelearning/jupyter/molekernel
+cd /usr/local/share/examples/mole/machinelearning/jupyter/molekernel
+module load anaconda
+jupyter kernelspec list  # shows location of default kernel
+#Available kernels:
+#  python3       /software/u22/anaconda/python3.9/share/jupyter/kernels/python3
+cp -r /software/u22/anaconda/python3.9/share/jupyter/kernels/python3/* .
+# Edit the kernel.json file to look like this:
+{
+ "argv": [
+  "/var/pyenv/bin/python",
+  "-m",
+  "ipykernel_launcher",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "MOLE",
+ "language": "python",
+ "metadata": {
+  "debugger": true
+ }
+}
+~~~~~~
+
+#### Create go.sh script to start Jupyter notebook
+
+Create a _go.sh_ script to make it easier for students to start Jupyter. The _go.sh_ script loads the anaconda module and calls the _jupyter-ip.sh_ script, which starts a server and displays various ways to access the Jupyter notebook in your local browser (I normally use the last URL listed).
+
+The students will have to be told to choose the **MOLE** kernel from the _Kernels > Choose kernel_ menu once Jupyter starts up and they have clicked on the Jupyter notebook (i.e. the file _Machine_Learning_for_Population_Genetics_V2.ipynb_), which they should see when Jupyter starts.
+
+~~~~~~
+cd /usr/local/share/examples/mole/machinelearning
+cat - > go.sh << EOF
+#!/bin/bash
+
+echo "Ensuring anaconda is loaded (to make Jupyter available)..."
+module unload anaconda
+module load anaconda
+
+echo "Activating the python environment for this tutorial..."
+source /var/pyenv/bin/activate
+
+if [ ! -d "/home/moleuser/.local/share/jupyter/kernels/molekernel" ]
+then
+	echo "Installing molekernel for use with Jupyter..."
+	jupyter kernelspec install /usr/local/share/examples/mole/machinelearning/jupyter/molekernel --user
+else
+	echo "No need to install molekernel because it already exists."
+fi
+
+echo "Starting up Jupyter server..."
+jupyter-ip.sh
+EOF
+~~~~~~
+
+#### Setting up the NFS server on MOLE-2024-base
 
 See [this explanation](https://bluexp.netapp.com/blog/azure-anf-blg-linux-nfs-server-how-to-set-up-server-and-client#H_H9) for basic NFS setup and [this one](https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking) for an explanation of specifying IP ranges.
 ~~~~~~
@@ -995,37 +994,65 @@ sudo systemctl restart nfs-kernel-server
 
 #### Setting up the NFS client
 
-Assuming 149.165.173.177 is the ip address of MOLE-2023-base:
+Assuming 149.165.172.151 is the ip address of MOLE-2024-base:
 ~~~~~~
 sudo mkdir /var/pyenv
 sudo chown moleuser.moleuser /var/pyenv
-sudo mount -t nfs 149.165.173.177:/media/volume/sdb/pyenv /var/pyenv
+sudo mount -t nfs 149.165.172.151:/media/volume/moledata/pyenv /var/pyenv
 # use the following command to unmount
 # sudo umount /var/pyenv  # can also use -f (force) and/or -l (lazy) switches
 ~~~~~~
 
-(Not sure this is necessary or desirable.) The above mount command sets up NFS sharing temporarily. To automate this so that the share is mounted on startup:
+(Not sure the following is necessary or desirable or even correct!) The above mount command sets up NFS sharing temporarily. To automate this so that the share is mounted on startup:
 ~~~~~~
 sudo vi /etc/fstab
 # Insert line similar to the following
-# 149.165.173.177:/media/volume/sdb/mole /var/mole nfs defaults 0 0
-sudo mount /var/mole
-sudo mount 149.165.173.177:/media/volume/sdb/mole
+# 149.165.172.151:/media/volume/moledata/pyenv /var/pyenv nfs defaults 0 0
+sudo mount /var/pyenv
+sudo mount 149.165.172.151:/media/volume/moledata/pyenv
 ~~~~~~
+
+### NFS
+
+You will need to mount the shared /var/pyenv directory on each instance. This involves:
+* adding a line to `/etc/exports` on MOLE-2024-base for each VM instance (allowing that VM instance to access the share);
+* restart the server on MOLE-2024-base (`sudo systemctl restart nfs-kernel-server`)
+* you will probably want to add each VM to the known_hosts file on your local laptop to avoid getting asked it is OK to connect for each:
+
+    ssh-keyscan 149.165.172.121 >> ~/.ssh/known_hosts
+    
+* mount the folder `/var/pyenv` on each VM instance
+
+You can use a script such as the following to mount the folder on all VMs at once (assuming MOLE-2024-base is exporting to all of them):
+
+~~~~~~
+#!/bin/bash
+
+IPADDRESSES=(149.165.172.121)
+
+for ip in ${IPADDRESSES[@]}
+do
+    ssh -t moleuser@$ip "bash -c 'sudo mount -t nfs 149.165.172.151:/media/volume/moledata/pyenv /var/pyenv'"
+done
+~~~~~~
+
+For this to work, you will need to:
+* set up the array IPADDRESSES in this script to contain all the virtual machine IP addresses beforehand;
+* change 149.165.172.151 to the IP address of the MOLE-2024-base machine
 
 ## Locking an instance
 
-It is wise to lock the _MOLE-2023-base_ instance as soon as you are finished setting it up. To do this, choose **Lock** from the **Actions** menu when you are viewing the details of the _MOLE-2023-base_ instance. Locking prevents you from doing something stupid, like deleting this image accidentally. It is easy to unlock it any time you need to, but it is much harder to recreate it after accidentally deleting it! I tend to keep all instances locked unless I find there is some action that requires unlocking.
+It is wise to lock the _MOLE-2024-base_ instance as soon as you are finished setting it up. To do this, choose **Lock** from the **Actions** menu when you are viewing the details of the _MOLE-2024-base_ instance. Locking prevents you from doing something stupid, like deleting this image accidentally. It is easy to unlock it any time you need to, but it is much harder to recreate it after accidentally deleting it! I tend to keep all instances locked unless I find there is some action that requires unlocking.
 
-## Create MOLE-2023-snapshot
+## Create MOLE-2024-snapshot
 
-Once the **MOLE-2023-base** VM is set up and running, you can create a **snapshot** image using the Actions menu. I name these snapshot images something like **MOLE-2023-snapshot-05-12** (where the 05-12 part is the date) and make additional snapshots (deleting the really old ones) as changes are made to MOLE-2023-base.
+Once the **MOLE-2024-base** VM is set up and running, you can create a **snapshot** image using the Actions menu. I name these snapshot images something like **MOLE-2024-snapshot-04-25** (where the 04-25 part is the date) and make additional snapshots (deleting the really old ones) as changes are made to MOLE-2024-base.
 
-Note that MOLE-2023-snapshot-05-12 will show `0 B` initially when viewed in the Images list. Not to worry; the size will be updated when the image is fully created.
+Note that MOLE-2024-snapshot-05-25 will show `0 B` initially when viewed in the Images list. Not to worry; the size will be updated when the image is fully created.
 
-## Creating instances based on MOLE-2023-snapshot-05-12
+## Creating instances based on MOLE-2024-snapshot-04-25
 
-To create new instances, click the red _Create_ button in the upper right corner of Exosphere, then choose _Instance_ and then, in the _Choose an Instance Source_ section, click the _By Image_ tab and hit the _Create Instance_ button beside MOLE-2023-snapshot-05-12.
+To create new instances, click the red _Create_ button in the upper right corner of Exosphere, then choose _Instance_ and then, in the _Choose an Instance Source_ section, click the _By Image_ tab and hit the _Create Instance_ button beside MOLE-2024-snapshot-04-25.
 
 Choose a base name (e.g. "amphioxus"), **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **62** for number of instances, **no** for enable web desktop, and **Show** for Advanced Options.
 
@@ -1045,42 +1072,13 @@ You (or a student) can now log into an instance as **moleuser** with a command l
 
     ssh moleuser@149.165.159.178
     
-### NFS
-
-You will need to mount the shared /var/pyenv directory on each instance. This involves:
-* adding a line to `/etc/exports` on MOLE-2023-base for each VM instance (allowing that VM instance to access the share);
-* restart the server on MOLE-2023-base (`sudo systemctl restart nfs-kernel-server`)
-* you will probably want to add each VM to the known_hosts file on your local laptop to avoid getting asked it is OK to connect for each:
-
-    ssh-keyscan 149.165.172.121 >> ~/.ssh/known_hosts
-    
-* mount the folder `/var/pyenv` on each VM instance
-
-You can use a script such as the following to mount the folder on all VMs at once (assuming MOLE-2023-base is exporting to all of them):
-
-~~~~~~
-#!/bin/bash
-
-IPADDRESSES=(149.165.172.121)
-
-for ip in ${IPADDRESSES[@]}
-do
-    ssh -t moleuser@$ip "bash -c 'sudo mount -t nfs 149.165.173.177:/media/volume/sdb/pyenv /var/pyenv'"
-done
-~~~~~~
-
-For this to work, you will need to:
-* set up the array IPADDRESSES in this script to contain all the IP addresses beforehand;
-* change 149.165.173.177 to the IP address of the MOLE-2023-base machine
-* be set up for using openstack (see section entitled "Command line client" below).
-
 ### Boot script used
 
 This is the default cloud-config boot script with some modifications for MOLE. 
 
 * One modification is the addition of the moleuser. Note that SSH public keys for the co-directors as well as the TAs are automatically saved to the _~moleuser/.ssh/authorized_keys_ directory on each instance, making it easy for the TAs to log in to any instance, even if the student has changed the moleuser password (will be communicated to students in the first (intro) computer lab).
 
-* Another modification is the addition of 14 lines to the runcmd section. These lines do the following:
+* Another modification is the addition of 15 lines to the runcmd section. These lines do the following:
 
  1. makes moleuser the owner of everything inside _/usr/local/share/examples/mole_ 
  2. makes moleuser the owner of everything inside _/opt/astral_ (needed for ASTRAL to be started without using sudo) 
@@ -1092,10 +1090,11 @@ This is the default cloud-config boot script with some modifications for MOLE.
  8. adds a line exporting the environmental variable JULIA_DEPOT_PATH to moleuser's .bash_profile (this allows Julia to find the packages needed for the PhyloNetworks tutorial)
  9. creates a symlink named _iqtree-beta_ in /usr/local/bin that points to /usr/local/bin/iqtree2 (the IQTREE tutorial uses iqtree-beta rather than iqtree2)
 10. creates a symlink named _raxml_ in /usr/local/bin that points to /usr/local/bin/raxmlHPC (the PAUP* tutorial specifies raxml rather than raxmlHPC)
-11. makes moleuser the owner of its own .bash_profile (created as a result of the alias definitions above)
-12. creates a symbolic link named _moledata_ (makes it easier to find example datasets)
-13. creates a directory /var/pyenv to use as a mount point for nfs
-14. makes moleuser the owner of /var/pyenv
+11. creates a symlink named _raxmlHPC-PTHREADS-AVX_ in /usr/local/bin that points to /usr/local/bin/raxmlHPC (the SNaQ tutorial uses raxmlHPC-PTHREADS-AVX at some point)
+12. makes moleuser the owner of its own .bash_profile (created as a result of the alias definitions above)
+13. creates a symbolic link named _moledata_ (makes it easier to find example datasets)
+14. creates a directory /var/pyenv to use as a mount point for nfs
+15. makes moleuser the owner of /var/pyenv
 
 ~~~~~~
 #cloud-config
@@ -1138,6 +1137,7 @@ runcmd:
   - echo 'export JULIA_DEPOT_PATH=/opt/julia-1.10.2/usr/share/julia/site' >> /home/moleuser/.bash_profile     # MOLE
   - sudo ln -s /usr/local/bin/iqtree2 /usr/local/bin/iqtree-beta                                              # MOLE
   - sudo ln -s /usr/local/bin/raxmlHPC /usr/local/bin/raxml                                                   # MOLE
+  - sudo ln -s /usr/local/bin/raxmlHPC /usr/local/bin/raxmlHPC-PTHREADS-AVX                                   # MOLE
   - sudo chown -R moleuser.moleuser /home/moleuser/.bash_profile                                              # MOLE
   - ln -s /usr/local/share/examples/mole /home/moleuser/moledata                                              # MOLE
   - mkdir /var/pyenv                                                                                          # MOLE
@@ -1170,7 +1170,7 @@ runcmd:
 ~~~~~~
 
 {% comment %}
-## Things to do differently in 2023 Workshop
+## Things to do differently in 2025 Workshop
 
 * (done in 2023) By default, Julia packages are installed in the _~/.julia_ directory of a particular user, not globally. Find out how to install PhyloNetworks, PhyloPlots, and the other packages needed for the PhyloNetworks tutorial globally, or add the necessary setup to the cloud-init script. In 2022, I had to ssh into each VM separately and add Julia packages under the user moleuser. They were present in /home/exouser/.julia, but simply copying that directory to /home/moleuser and chown moleuser.moleuser did not do the trick.
 {% endcomment %}
