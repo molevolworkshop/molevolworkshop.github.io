@@ -417,8 +417,19 @@ sudo apt install -y libboost-all-dev
 ~~~~~~
 Last updated 2024-04-19.
 
-### Install [RevBayes](https://revbayes.github.io/compile-linux)
+### Install [RevBayes](https://revbayes.github.io/download)
 
+Downloaded v1.2.3 Linux executable from the [RevBayes Download web page](https://revbayes.github.io/download) and installed as follows:
+~~~~~~
+cd
+curl -LO https://github.com/revbayes/revbayes/releases/download/v1.2.3/revbayes-v1.2.3-linux64.tar.gz
+tar zxvf revbayes-v1.2.3-linux64.tar.gz
+cd revbayes-v1.2.3/bin
+sudo mv rb /usr/local/bin
+~~~~~~
+Last updated 2024-05-09.
+
+{% comment %}
 This install takes a long time (30 minutes), so start it in one console and open another to work on other installs while this is running.
 ~~~~~~
 cd ~/clones
@@ -430,6 +441,7 @@ sudo mv rb /usr/local/bin
 ~~~~~~
 Installed as _/usr/local/bin/rb_. This is RevBayes version 1.2.1.
 Last updated 2024-04-19.
+{% endcomment %}
 
 ### Install [MrBayes](https://nbisweden.github.io/MrBayes/)
 
