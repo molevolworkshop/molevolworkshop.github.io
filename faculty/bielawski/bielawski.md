@@ -28,9 +28,9 @@ UPDATING TOC LINKS
 
 ## Content for workshop
 
-* [Quick start: models & methods](#Quick-start-(models-&-methods))
+* [Quick start: models & methods](#Quick-start-for-models-&-methods)
 
-* [Quick start: codon models](#Quick-start-(codon-models))
+* [Quick start: codon models](#Quick-start-for-codon-models)
 
 * [Lecture slides](#Lecture-slides)
 
@@ -57,7 +57,7 @@ UPDATING TOC LINKS
 <br>
 
 # Content for workshop
-## Quick start (models & methods)
+## Quick start for models & methods
 
 **Are you completely new to models of sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00209.PUBLISHED.pdf) might be good for you.  Section 2 provides a great introduction to Markov models, but it can be skipped without any loss of continuity.
 
@@ -69,7 +69,7 @@ UPDATING TOC LINKS
 
 <br>
 
-## Quick start (codon models)
+## Quick start for codon models
 
 **Are you completely new to codon models?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/XXXXXXXXX.pdf) will give an accessible review of the theory of codon models and how they are used to investigate how protein coding genes evolve. 
 
