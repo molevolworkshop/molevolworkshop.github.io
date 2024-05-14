@@ -59,11 +59,11 @@ UPDATING TOC LINKS
 # Content for workshop
 ## Quick start: models & methods
 
-**Are you completely new to models of sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00209.PUBLISHED.pdf) might be good for you.  Section 2 provides a great introduction to Markov models, but it can be skipped without any loss of continuity by readers in a hurry or who do not need to know the nitty-gritty details of the models.
+**Are you completely new to models of sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00209.PUBLISHED.pdf) might be good for you.  Section 2 provides a great introduction to Markov models, but it can be skipped without any loss of continuity.
 
 * **Citation:** Bielawski, J. P. (2016). Molecular Evolution, Models of. In Kliman, R.M. (ed.) Encyclopedia of Evolutionary Biology. Vol 1, pp. 61-70. Oxford: Academic Press.
 
-**Do you some background in phylogenetics and DNA sequence models, but you are new to the are of detecting adaptive sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00171.PUBLISHED.pdf) will give you a very broad starting point (population genetics, non-coding, codon and amino-acid-based methods are all covered).  After reading this, your next steps would be to get started on the papers presented below.
+**Do you some background in phylogenetics and DNA sequence models, but you are new to the are of detecting adaptive sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00171.PUBLISHED.pdf) will give you a very broad starting point (population genetics, non-coding, codon and amino-acid-based methods).  
 
 * **Citation:**  Bielawski, Joseph & Jones, Chris. (2016). Adaptive Molecular Evolution: Detection Methods. In Kliman, R.M. (ed.) Encyclopedia of Evolutionary Biology. Vol 1, pp. 16-25. Oxford: Academic Press.
 
@@ -71,12 +71,12 @@ UPDATING TOC LINKS
 
 ## Quick start: codon models
 
-**Are you completely new to codon models?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/XXXXXXXXX.pdf) will give an accessible review of the theory of codon models and how they are used to investigate how protein coding genes evolve. While it is not the most recent summary, it is a good introduction and it highlights some of the issues that have dominated subsequent development of codon models.
+**Are you completely new to codon models?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/XXXXXXXXX.pdf) will give an accessible review of the theory of codon models and how they are used to investigate how protein coding genes evolve. 
 
 * **Citation:**
 
 
-**Do you want to take a deep dive into the theory and legitimate interpretation of codon models?** Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Jones_etal_2019_Chapter13.pdf)starts with the history of codon model development and interpretation. It then combined evolutionary theory and statistical theory to explain the major inference challenges under codon models.  The paper concludes with a strong critique of the canonical interpretation of the dN/dS ratio (omega parameter) as a measure of adaptive change in protein function.
+**Do you want to take a deep dive into the theory and legitimate interpretation of codon models?** [This review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Jones_etal_2019_Chapter13.pdf) combines evolutionary theory and statistical theory to explain the major inference challenges under codon models.  The paper concludes with a strong critique of the canonical interpretation of the dN/dS ratio (omega parameter) as a measure of adaptive change in protein function.
 
 * **Citation:** Jones C.T., Susko E., Bielawski J.P.,  2019. Looking for Darwin in genomic sequences: validity and success depends on the relationship between model and data. In Evolutionary Genomics: Statistical and Computational Methods. Maria Anisimova (ed.) 2nd edition, Human press.]
   
@@ -84,9 +84,7 @@ UPDATING TOC LINKS
 
 ## Lecture Slides
 
-In 2022 I changed the lecture content. 
-
-The lecture will provide a more general background on evolutionary forces, and the Neutral and Nearly-Neutral theories of molecular evolution. Some details about fitting codon models to real data, have been moved to the "PAML Lab" lecture.  
+From 2022 this lecture will provide a more general background on evolutionary forces, and the Neutral and Nearly-Neutral theories of molecular evolution. 
 
 * **2023 Lecture slides (Part 1), Intro to Neutral & Nearly Neutral Theories of Molecular Evolution:** [slide set 1](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf) (updated)
 
@@ -94,14 +92,10 @@ The lecture will provide a more general background on evolutionary forces, and t
 
 There will be minor updates to the slides in 2024, which will be posted soon.
 
-Since 2022, the lecture provides less information on advanced statistical topics such as "phenomenological load" on ML estimates of parameters. I now provide this information in the next section on **advanced topics**, which provide links to papers that cover a wide variety of topics relating to codon models.
-
 <br>
 
 
-
-
-## PAML lab: English
+## PAML lab (English)
 
 The lab exercises (PAML demo) are available via small website (link below). The site contains some additional resources that are worth a look when you have time. Please note that slides may change a little prior to the lab. I will post modified PDFs as required. 
 
@@ -111,7 +105,7 @@ The lab exercises (PAML demo) are available via small website (link below). The 
 
 **PAML demo slides**: [slides (PDF)](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO_2023.pdf) (updated for 2023)
 
-If you want doing the lab independently of the workshop (at home, on your own time and on your own computer), then you can do this by downloading all the necessary files from an archive [here](https://bitbucket.org/EvoWorks/protocol-paml-lab-at-mbl-workshop/downloads/), or you can download the files individually for each exercise as you need them [here](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/PAML_Lab_files.html).
+If you want doing the lab independently (at home, on your own time and on your own computer), then you can download all necessary files from an archive [here](https://bitbucket.org/EvoWorks/protocol-paml-lab-at-mbl-workshop/downloads/), or you can download the files individually [here](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/PAML_Lab_files.html).
 
 **NOTE: If you are doing the PAML Lab at the workshop, then use the VM and the 
 symlink in your home directory named "moledata" to obtain the course data files!!!**
@@ -178,7 +172,7 @@ If you have some experience with codon models, and want to try out a tutorial fo
 <br>
 
 
-## "Best practices" in large-scale evolutionary surveys
+## Best practices in large-scale evolutionary surveys
 
 Large-scale evolutionary surveys are now commonplace. But with the use of progressively more complex codon models, these surveys are fraught with perils. Complex models are more prone to statistical problems such as MLE irregularities, and some can be quite sensitive to model misspecification.  UNIT 6.16 (see above) provides some recommended "best practices" for a **2-phase approach** to quality control and robustness in evolutionary surveys.  We have applied these to a large scale survey for functional divergence in nuclear receptors during homing evolution, and we used experimental approaches to investigate hypotheses about the role of a particular nuclear receptor (NR2C1) as a key modulator of developmental pluripotnetiality during hominid evolution. The paper that illustrates the power of such an evolutionary surgery, and the importance of an experimental design having explicit protocols for "best practices", is given below.
 
