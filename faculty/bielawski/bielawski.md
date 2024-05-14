@@ -16,17 +16,17 @@ permalink: /faculty-bielawski/
 
 ## Arrival and Departure
 
-Arrival: 25 May 2024 (Sat)
+* Arrival: 25 May 2024 (Sat)
 
-Depart:  04 June 2024 (Ts)
+* Depart:  04 June 2024 (Ts)
 
 <br>
 
 ## Contents
 
-* [Getting started 1: two reviews on models in molecule evolution](#Getting-started)
+* [Quick start: models & methods](#Getting-started)
 
-* [Getting started 2: two reviews on codon models](#Getting-started)
+* [Quick start: codon models](#Getting-started)
 
 * [Lecture slides](#Getting-started)
 
@@ -42,30 +42,53 @@ Depart:  04 June 2024 (Ts)
 
 * [Alternative software for codon models in the ML framework](#foo)
 
+* [Scientific ethics](#foo)
+
 
 <br>
 
-## Scientific ethics
 
-Beginning in 2022 we added a session dedicated to scientific ethics. Our discussions often touch on the many ways that science has “*unwritten rules*”, and how such rules can privilege members of some groups and serve as a barrier to members of other groups. If this is new to you, or if you just want to know more, here are a few resources.
+## Quick start: models & methods
 
-One way that unwritten rules impact who succeeds in science is sometimes referred to as the “*hidden curriculum*”. These are best practices for success in STEM that first-generation and underrepresented minority students must navigate but are not taught in classrooms. With this in mind, we recently wrote a paper called ["Ten simple rules for succeeding as an underrepresented STEM undergraduate"](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010101) to help make explicit the hidden curriculum of science.
-
-Many of the *unwritten rules* of science are the same as those that operate in society at large, including racism operating within people who adhere to egalitarian attitudes. In the essay [“Science in the Belly of the Beast: my Career in the Academy”](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Belly_of_the_Beast_2012.pdf) Joseph L. Graves, Jr. describes his personal experience with the unwritten rules of the academy, including the "one and one-quarter rule".
-
-<br>
-
-## Getting started
-
-**Are you completely new to models of sequence evolution?**  Then [this review](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00209.PUBLISHED.pdf) might be good for you.  Section 2 provides a great introduction to Markov models, but it can be skipped without any loss of continuity by readers in a hurry or who do not need to know the nitty-gritty details of the models.
+**Are you completely new to models of sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00209.PUBLISHED.pdf) might be good for you.  Section 2 provides a great introduction to Markov models, but it can be skipped without any loss of continuity by readers in a hurry or who do not need to know the nitty-gritty details of the models.
 
 * **Citation:** Bielawski, J. P. (2016). Molecular Evolution, Models of. In Kliman, R.M. (ed.) Encyclopedia of Evolutionary Biology. Vol 1, pp. 61-70. Oxford: Academic Press.
 
-**Do you some background in phylogenetics and DNA sequence models, but you are new to the are of detecting adaptive sequence evolution?**  Then [this review](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00171.PUBLISHED.pdf) will give you a very broad starting point (population genetics, non-coding, codon and amino-acid-based methods are all covered).  After reading this, your next steps would be to get started on the papers presented below.
+**Do you some background in phylogenetics and DNA sequence models, but you are new to the are of detecting adaptive sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00171.PUBLISHED.pdf) will give you a very broad starting point (population genetics, non-coding, codon and amino-acid-based methods are all covered).  After reading this, your next steps would be to get started on the papers presented below.
 
 * **Citation:**  Bielawski, Joseph & Jones, Chris. (2016). Adaptive Molecular Evolution: Detection Methods. In Kliman, R.M. (ed.) Encyclopedia of Evolutionary Biology. Vol 1, pp. 16-25. Oxford: Academic Press.
 
 <br>
+
+## Quick start: codon models
+
+**Are you completely new to codon models?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/XXXXXXXXX.pdf) will give an accessible review of the theory of codon models and how they are used to investigate how protein coding genes evolve. While it is not the most recent summary, it is a good introduction and it highlights some of the issues that have dominated subsequent development of codon models.
+
+* **Citation:**
+
+
+**Do you want to take a deep dive into the theory and legitimate interpretation of codon models?** Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Jones_etal_2019_Chapter13.pdf)starts with the history of codon model development and interpretation. It then combined evolutionary theory and statistical theory to explain the major inference challenges under codon models.  The paper concludes with a strong critique of the canonical interpretation of the dN/dS ratio (omega parameter) as a measure of adaptive change in protein function.
+
+* **Citation:** Jones C.T., Susko E., Bielawski J.P.,  2019. Looking for Darwin in genomic sequences: validity and success depends on the relationship between model and data. In Evolutionary Genomics: Statistical and Computational Methods. Maria Anisimova (ed.) 2nd edition, Human press.]
+  
+<br>
+
+## Lecture Slides
+
+In 2022 I changed the lecture content. 
+
+The lecture will provide a more general background on evolutionary forces, and the Neutral and Nearly-Neutral theories of molecular evolution. Some details about fitting codon models to real data, have been moved to the "PAML Lab" lecture.  
+
+* **2023 Lecture slides (Part 1), Intro to Neutral & Nearly Neutral Theories of Molecular Evolution:** [slide set 1](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf) (updated)
+
+* **2023 Lecture slides (Part 2), Intro to Codon Models:** [slide set 2](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_2.pdf) (updated)
+
+There will be minor updates to the slides in 2024, which will be posted soon.
+
+Since 2022, the lecture provides less information on advanced statistical topics such as "phenomenological load" on ML estimates of parameters. I now provide this information in the next section on **advanced topics**, which provide links to papers that cover a wide variety of topics relating to codon models.
+
+<br>
+
 
 ## PAML lab Materials
 
@@ -90,39 +113,8 @@ symlink in your home directory named "moledata" to obtain the course data files!
 
 <br>
 
-## Lecture Materials
-
-**Current slides**
-
-{% include figure.html description="" url="/faculty/bielawski/img/MolEvol.jpg" css="image-right" height="250px" %}
-
-I am changing the lecture content for 2022 and beyond. This lecture will provide a more general background on evolutionary forces, and the Neutral and Nearly-Neutral theories of molecular evolution. Some details about fitting codon models to real data, have been moved to the "PAML Lab" lecture.  
-
-* **2023 Lecture slides (Part 1), Intro to Neutral & Nearly Neutral Theories of Molecular Evolution:** [slide set 1](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf) (updated)
-
-* **2023 Lecture slides (Part 2), Intro to Codon Models:** [slide set 2](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_2.pdf) (updated)
-
-<br>
-**Some material from previous workshops**
-
-I have included links to the 2019 slides below. This update includes more information on mechanistic processes of codon evolution (via the MutSel framework). Also, some might be interested in parts 3 and 4, which cover more advanced statistical topics, such as the requirements for likelihood inference and "phenomenological load" on parameter estimates. These topics will not be covered in 2022.
-
-* **2019 Lecture slides, Parts 1 & 2**: [2019 PDF file1](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/WH2019_Parts1and2_handouts.pdf)
-
-* **2019 Lecture slides, Parts 3 & 4**: [2019 PDF file2](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/WH2019_Parts3and4_handouts.pdf)
 
 
-I updated the lecture slides on codon models for 2017. Because the older slides tend to have more details about fitting codon models to real data, I have included links to the 2015 and 2016 slides below; these slides provide more information about the powers and pitfalls of inference under codon models.
-
-* **2016 Lecture slides, Part 1**: [2016 PDF file1](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/WH2016_lecture_Parts1and2_FullPage.pdf)
-
-* **2016 Lecture slides, Part 2**: [2016 PDF file2](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/WH2016_lecture_Part3.pdf)
-
-* **2015 Lecture slides, Part 1**: [2015 PDF file1](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Lecture_WH2015_Part1_2slidePage.pdf)
-
-* **2015 Lecture slides, Part 2**: [2015 PDF file2](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/ecture_WH2015_Part2_2slidePage.pdf)
-
-<br>
 **Key papers related to the lecture material:**
 
 * A novel phenotype+genotype codon-model (PG-BSM) formulated to test and identify sites within a gene involved in phenotypic adaptation.  This method does NOT require dN/dS>1 to infer adaptive molecular evolution!:<br>
@@ -184,6 +176,16 @@ Large-scale evolutionary surveys are now commonplace. But with the use of progre
 **codeml_SBA:**  a program that implements smoothed Bootstrap Aggregation for Assessing Selection Pressure at Amino Acid Sites.[https://github.com/Jehops/codeml_sba](https://github.com/Jehops/codeml_sba)
 
 **ModL:**  a program for restoring regularity when testing for positive selection using codon models [https://github.com/jehops/codeml_modl](https://github.com/jehops/codeml_modl)
+
+<br>
+
+## Scientific ethics
+
+Beginning in 2022 we added a session dedicated to scientific ethics. Our discussions often touch on the many ways that science has “*unwritten rules*”, and how such rules can privilege members of some groups and serve as a barrier to members of other groups. If this is new to you, or if you just want to know more, here are a few resources.
+
+One way that unwritten rules impact who succeeds in science is sometimes referred to as the “*hidden curriculum*”. These are best practices for success in STEM that first-generation and underrepresented minority students must navigate but are not taught in classrooms. With this in mind, we recently wrote a paper called ["Ten simple rules for succeeding as an underrepresented STEM undergraduate"](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010101) to help make explicit the hidden curriculum of science.
+
+Many of the *unwritten rules* of science are the same as those that operate in society at large, including racism operating within people who adhere to egalitarian attitudes. In the essay [“Science in the Belly of the Beast: my Career in the Academy”](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Belly_of_the_Beast_2012.pdf) Joseph L. Graves, Jr. describes his personal experience with the unwritten rules of the academy, including the "one and one-quarter rule".
 
 <br>
 
