@@ -44,13 +44,13 @@ UPDATING TOC LINKS
 
 ## Content for additional activties
 
-* [Additional reading on codon models](#Getting-started)
+* [Additional reading on codon models](#Additional-readings-and-advanced-topics)
   
-* [Advanced PAML lab](#foo)
+* [Advanced PAML lab](#Alternative-lab-and-advanced-inferences)
 
-* [Best practices in genome scans](#foo)
+* [Best practices in genome scans](#Best-practices-in-large-scale-evolutionary-surveys)
 
-* [Alternative software for codon models in the ML framework](#foo)
+* [Alternative software for codon models in the ML framework](#Alternative-software-for-codon-models-in-the-ML-framework)
 
 
 <br>
@@ -159,7 +159,7 @@ Many of the *unwritten rules* of science are the same as those that operate in s
 
 <br>
 
-## Alternative Lab (advanced inferences)
+## Alternative lab and advanced inferences
 
 If you have some experience with codon models, and want to try out a tutorial for more advanced materials then use the link below to download an archive for a complete different set of PAML activities.  This tutorial focuses on detecting episodic protein evolution via **Branch-Site Model A**.  The tutorial also includes activities about (i) detecting **MLE instabilities**, (ii) carrying out **robustness analyses**, and (iii) use of **smoothed bootstrap aggregation (SBA)**.  The protocols for each activity are presented in Protocols in Bioinformatics UNIT 6.15.  The included PDF file for UNIT 6.16 also presents recommendations for "best practices" when carrying out a large-scale evolutionary survey for episodic adaptive evolution by using PAML.  The files required for this "alternative lab" are available via Bitbucket repository.  The repository link is given below.
 
