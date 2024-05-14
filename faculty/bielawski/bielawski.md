@@ -28,17 +28,17 @@ UPDATING TOC LINKS
 
 ## Content for workshop
 
-* [Quick start: models & methods](#Getting-started)
+* [Quick start: models & methods](#Quick-start-(models-&-methods))
 
-* [Quick start: codon models](#Getting-started)
+* [Quick start: codon models](#Quick-start-(codon-models))
 
-* [Lecture slides](#Getting-started)
+* [Lecture slides](#Lecture-slides)
 
-* [PAML lab: English](#Getting-started)
+* [PAML lab: English](#PAML-lab-(English))
 
-* [PAML lab: Translated](#Getting-started)
+* [PAML lab: Translated](#Translated-PAML-Tutorials)
   
-* [Scientific ethics](#foo)
+* [Scientific ethics](#Scientific-ethics)
 
 <br>
 
@@ -57,7 +57,7 @@ UPDATING TOC LINKS
 <br>
 
 # Content for workshop
-## Quick start: models & methods
+## Quick start (models & methods)
 
 **Are you completely new to models of sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00209.PUBLISHED.pdf) might be good for you.  Section 2 provides a great introduction to Markov models, but it can be skipped without any loss of continuity.
 
@@ -69,7 +69,7 @@ UPDATING TOC LINKS
 
 <br>
 
-## Quick start: codon models
+## Quick start (codon models)
 
 **Are you completely new to codon models?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/XXXXXXXXX.pdf) will give an accessible review of the theory of codon models and how they are used to investigate how protein coding genes evolve. 
 
@@ -82,7 +82,7 @@ UPDATING TOC LINKS
   
 <br>
 
-## Lecture Slides
+## Lecture slides
 
 From 2022 this lecture will provide a more general background on evolutionary forces, and the Neutral and Nearly-Neutral theories of molecular evolution. 
 
