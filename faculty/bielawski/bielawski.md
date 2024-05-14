@@ -16,15 +16,27 @@ permalink: /faculty-bielawski/
 
 ## Arrival and Departure
 
-Arrival: 24 May 2024 (Fri)
+Arrival: 25 May 2024 (Sat)
 
 Depart:  04 June 2024 (Ts)
 
 <br>
 
+## Contents
+
+[1. Gettings started: two reviews to get you going](#Getting-started)
+
+[1. Gettings started: two reviews to get you going](#Getting-started)
+
+[1. Gettings started: two reviews to get you going](#Getting-started)
+
+
+
+<br>
+
 ## Scientific ethics
 
-In the 2022 workshop, our discussion of scientific ethics touched on the many ways that science has “*unwritten rules*”.  Here I provide a few supplementary resources.
+Beginning in 2022 we added a session dedicated to scientific ethics. Our discussions often touch on the many ways that science has “*unwritten rules*”, and how such rules can privilege members of some groups and serve as a barrier to members of other groups. If this is new to you, or if you just want to know more, here are a few resources.
 
 One way that unwritten rules impact who succeeds in science is sometimes referred to as the “*hidden curriculum*”. These are best practices for success in STEM that first-generation and underrepresented minority students must navigate but are not taught in classrooms. With this in mind, we recently wrote a paper called ["Ten simple rules for succeeding as an underrepresented STEM undergraduate"](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010101) to help make explicit the hidden curriculum of science.
 
