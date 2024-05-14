@@ -56,7 +56,7 @@ UPDATING TOC LINKS
 <br>
 <br>
 
-# Content for workshop
+### Content for workshop
 ## Quick start for models and methods
 
 **Are you completely new to models of sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00209.PUBLISHED.pdf) might be good for you.  Section 2 provides a great introduction to Markov models, but it can be skipped without any loss of continuity.
