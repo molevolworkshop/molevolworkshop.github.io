@@ -34,7 +34,7 @@ UPDATING TOC LINKS
 
 * [Lecture slides](#Lecture-slides)
 
-* [PAML lab: English](#PAML-lab-in English)
+* [PAML lab: English](#PAML-lab-in-English)
 
 * [PAML lab: Translated](#Translated-PAML-Tutorials)
   
