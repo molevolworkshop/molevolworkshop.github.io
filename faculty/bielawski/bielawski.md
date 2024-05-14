@@ -24,12 +24,23 @@ Depart:  04 June 2024 (Ts)
 
 ## Contents
 
-[1. Gettings started: two reviews to get you going](#Getting-started)
+* [Getting started 1: two reviews on models in molecule evolution](#Getting-started)
 
-[1. Gettings started: two reviews to get you going](#Getting-started)
+* [Getting started 2: two reviews on codon models](#Getting-started)
 
-[1. Gettings started: two reviews to get you going](#Getting-started)
+* [Lecture slides](#Getting-started)
 
+* [Additional reading on codon models](#Getting-started)
+
+* [PAML lab: English](#Getting-started)
+
+* [PAML lab: Translated](#Getting-started)
+
+* [Advanced PAML lab](#foo)
+
+* [Best practices in genome scans](#foo)
+
+* [Alternative software for codon models in the ML framework](#foo)
 
 
 <br>
