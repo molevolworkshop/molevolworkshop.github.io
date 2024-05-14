@@ -28,13 +28,13 @@ UPDATING TOC LINKS
 
 ## Content for workshop
 
-* [Quick start: models & methods](#Quick-start-for-models-&-methods)
+* [Quick start: models & methods](#Quick-start-for-models-and-methods)
 
 * [Quick start: codon models](#Quick-start-for-codon-models)
 
 * [Lecture slides](#Lecture-slides)
 
-* [PAML lab: English](#PAML-lab-(English))
+* [PAML lab: English](#PAML-lab-in English)
 
 * [PAML lab: Translated](#Translated-PAML-Tutorials)
   
@@ -57,7 +57,7 @@ UPDATING TOC LINKS
 <br>
 
 # Content for workshop
-## Quick start for models & methods
+## Quick start for models and methods
 
 **Are you completely new to models of sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00209.PUBLISHED.pdf) might be good for you.  Section 2 provides a great introduction to Markov models, but it can be skipped without any loss of continuity.
 
@@ -95,7 +95,7 @@ There will be minor updates to the slides in 2024, which will be posted soon.
 <br>
 
 
-## PAML lab (English)
+## PAML lab in English
 
 The lab exercises (PAML demo) are available via small website (link below). The site contains some additional resources that are worth a look when you have time. Please note that slides may change a little prior to the lab. I will post modified PDFs as required. 
 
