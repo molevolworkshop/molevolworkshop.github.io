@@ -10,7 +10,9 @@ permalink: /faculty-bielawski/
 
 * [Dept of Mathematics & Statistics](https://www.dal.ca/faculty/science/math-stats/faculty-staff/our-faculty.html)
 
-* [Dept of Biology](http://www.dal.ca/faculty/science/biology/faculty-staff/our-faculty/joe-bielawski.html)
+* [Dept of Biology](http://www.dal.ca/faculty/science/biology/faculty-staff/our-faculty/joe-bielawski.html)]
+
+* [GitHub](https://github.com/evoworks/)
 
 <br>
 
@@ -22,7 +24,9 @@ permalink: /faculty-bielawski/
 
 <br>
 
-## Contents
+UPDATING TOC LINKS
+
+## Content for workshop
 
 * [Quick start: models & methods](#Getting-started)
 
@@ -30,24 +34,29 @@ permalink: /faculty-bielawski/
 
 * [Lecture slides](#Getting-started)
 
-* [Additional reading on codon models](#Getting-started)
-
 * [PAML lab: English](#Getting-started)
 
 * [PAML lab: Translated](#Getting-started)
+  
+* [Scientific ethics](#foo)
 
+<br>
+
+## Content for additional activties
+
+* [Additional reading on codon models](#Getting-started)
+  
 * [Advanced PAML lab](#foo)
 
 * [Best practices in genome scans](#foo)
 
 * [Alternative software for codon models in the ML framework](#foo)
 
-* [Scientific ethics](#foo)
-
 
 <br>
+<br>
 
-
+# Content for workshop
 ## Quick start: models & methods
 
 **Are you completely new to models of sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00209.PUBLISHED.pdf) might be good for you.  Section 2 provides a great introduction to Markov models, but it can be skipped without any loss of continuity by readers in a hurry or who do not need to know the nitty-gritty details of the models.
@@ -89,6 +98,45 @@ Since 2022, the lecture provides less information on advanced statistical topics
 
 <br>
 
+
+
+
+## PAML lab: English
+
+The lab exercises (PAML demo) are available via small website (link below). The site contains some additional resources that are worth a look when you have time. Please note that slides may change a little prior to the lab. I will post modified PDFs as required. 
+
+**PAML demo**: [PAML Lab website](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html)
+
+**PAML demo resources**: [webpage](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html)
+
+**PAML demo slides**: [slides (PDF)](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO_2023.pdf) (updated for 2023)
+
+If you want doing the lab independently of the workshop (at home, on your own time and on your own computer), then you can do this by downloading all the necessary files from an archive [here](https://bitbucket.org/EvoWorks/protocol-paml-lab-at-mbl-workshop/downloads/), or you can download the files individually for each exercise as you need them [here](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/PAML_Lab_files.html).
+
+**NOTE: If you are doing the PAML Lab at the workshop, then use the VM and the 
+symlink in your home directory named "moledata" to obtain the course data files!!!**
+
+<br>
+
+## Translated PAML Tutorials
+
+[Will add Portuguese and possibly Spanish language translations in Summer of 2024.]
+
+<br>
+
+## Scientific ethics
+
+Beginning in 2022 we added a session dedicated to scientific ethics. Our discussions often touch on the many ways that science has “*unwritten rules*”, and how such rules can privilege members of some groups and serve as a barrier to members of other groups. If this is new to you, or if you just want to know more, here are a few resources.
+
+One way that unwritten rules impact who succeeds in science is sometimes referred to as the “*hidden curriculum*”. These are best practices for success in STEM that first-generation and underrepresented minority students must navigate but are not taught in classrooms. With this in mind, we recently wrote a paper called ["Ten simple rules for succeeding as an underrepresented STEM undergraduate"](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010101) to help make explicit the hidden curriculum of science.
+
+Many of the *unwritten rules* of science are the same as those that operate in society at large, including racism operating within people who adhere to egalitarian attitudes. In the essay [“Science in the Belly of the Beast: my Career in the Academy”](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Belly_of_the_Beast_2012.pdf) Joseph L. Graves, Jr. describes his personal experience with the unwritten rules of the academy, including the "one and one-quarter rule".
+
+<br>
+<br>
+
+# Content for additional activties
+
 ## Additional readings and advanced topics 
 
 * A novel phenotype+genotype codon-model (PG-BSM) formulated to test and identify sites within a gene involved in phenotypic adaptation.  This method does NOT require dN/dS>1 to infer adaptive molecular evolution!:<br>
@@ -115,34 +163,7 @@ Since 2022, the lecture provides less information on advanced statistical topics
 * Protocols, experimental design, and best practices for inference under complex codon models:<br>
 (_[Bielawski, J.P., Baker, J.L. and Mingrone, J., 2016. Inference of episodic changes in natural selection acting on protein coding sequences via CODEML. Current Protocols in Bioinformatics, pp.6-15.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/UNIT6.15.pdf)_)
 
-
 <br>
-
-
-## PAML lab: English
-
-The lab exercises (PAML demo) are available via small website (link below). The site contains some additional resources that are worth a look when you have time. Please note that slides may change a little prior to the lab. I will post modified PDFs as required. 
-
-**PAML demo**: [PAML Lab website](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html)
-
-**PAML demo resources**: [webpage](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html)
-
-**PAML demo slides**: [slides (PDF)](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO_2023.pdf) (updated for 2023)
-
-If you want doing the lab independently of the workshop (at home, on your own time and on your own computer), then you can do this by downloading all the necessary files from an archive [here](https://bitbucket.org/EvoWorks/protocol-paml-lab-at-mbl-workshop/downloads/), or you can download the files individually for each exercise as you need them [here](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/PAML_Lab_files.html).
-
-**NOTE: If you are doing the PAML Lab at the workshop, then use the VM and the 
-symlink in your home directory named "moledata" to obtain the course data files!!!**
-
-<br>
-
-## Translated PAML Tutorials
-
-[Will add Portuguese and possibly Spanish language translations in Summer of 2024.]
-
-<br>
-
-
 
 ## Alternative Lab (advanced inferences)
 
@@ -176,16 +197,6 @@ Large-scale evolutionary surveys are now commonplace. But with the use of progre
 **codeml_SBA:**  a program that implements smoothed Bootstrap Aggregation for Assessing Selection Pressure at Amino Acid Sites.[https://github.com/Jehops/codeml_sba](https://github.com/Jehops/codeml_sba)
 
 **ModL:**  a program for restoring regularity when testing for positive selection using codon models [https://github.com/jehops/codeml_modl](https://github.com/jehops/codeml_modl)
-
-<br>
-
-## Scientific ethics
-
-Beginning in 2022 we added a session dedicated to scientific ethics. Our discussions often touch on the many ways that science has “*unwritten rules*”, and how such rules can privilege members of some groups and serve as a barrier to members of other groups. If this is new to you, or if you just want to know more, here are a few resources.
-
-One way that unwritten rules impact who succeeds in science is sometimes referred to as the “*hidden curriculum*”. These are best practices for success in STEM that first-generation and underrepresented minority students must navigate but are not taught in classrooms. With this in mind, we recently wrote a paper called ["Ten simple rules for succeeding as an underrepresented STEM undergraduate"](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010101) to help make explicit the hidden curriculum of science.
-
-Many of the *unwritten rules* of science are the same as those that operate in society at large, including racism operating within people who adhere to egalitarian attitudes. In the essay [“Science in the Belly of the Beast: my Career in the Academy”](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Belly_of_the_Beast_2012.pdf) Joseph L. Graves, Jr. describes his personal experience with the unwritten rules of the academy, including the "one and one-quarter rule".
 
 <br>
 
