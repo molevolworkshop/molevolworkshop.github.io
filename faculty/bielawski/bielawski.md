@@ -89,8 +89,37 @@ Since 2022, the lecture provides less information on advanced statistical topics
 
 <br>
 
+## Additional readings and advanced topics 
 
-## PAML lab Materials
+* A novel phenotype+genotype codon-model (PG-BSM) formulated to test and identify sites within a gene involved in phenotypic adaptation.  This method does NOT require dN/dS>1 to infer adaptive molecular evolution!:<br>
+(_[Jones, C. T., Youssef, N., Susko, E., & Bielawski, J. P. (2020). A Phenotype–Genotype Codon Model for Detecting Adaptive Evolution. Systematic biology, 69(4), 722-738.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Jones_Susko_Bielawski-2020_PG-BSM.pdf)_)
+
+* Phenomenological load (PL) and biological conclusions under codon models:<br>
+(_[Jones C.T., Youssef N., Susko E., Bielawski J.P., 2018. Phenomenological Load on Model Parameters Can Lead to False Biological Conclusions. Mol Biol Evol. 35(6):1473-1488.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Jones_PL_MBE2018.pdf)_)
+
+* Review of major inference challenges under codon models:<br>
+(_[Jones C.T., Susko E., Bielawski J.P.,  2019. Looking for Darwin in genomic sequences: validity and success depends on the relationship between model and data. In Evolutionary Genomics: Statistical and Computational Methods. Maria Anisimova (ed.) 2nd edition, Human press.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Jones_etal_2019_Chapter13.pdf)_)
+
+* Positive selection, purifying selection, shifting balance & fitness landscapes:<br>
+(_[Jones, C., Youssef, N., Susko, E. and Bielawski, J., 2017.  Shifting balance on a static mutation-selection landscape: a novel scenario of positive selection. Molecular Biology and Evolution, 34(2):391-407.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/ShiftBalance_MBE_2016.pdf)_)
+
+* Improved inference of site-specific positive selection under a generalized parametric codon model when there are multi-nucleotide mutations and multiple nonsynonymous rates: <br>
+(_[Dunn KA, Kenney T, Gu H, Bielawski JP. Improved inference of site-specific positive selection under a generalized parametric codon model when there are multinucleotide mutations and multiple nonsynonymous rates. BMC Evol Biol. 2019 Jan 14;19(1):22.](https://bmcevolbiol.biomedcentral.com/articles/10.1186/s12862-018-1326-7)_)
+
+* ModL: restoring regularity when testing for positive selection: <br>
+(_[Mingrone J, Susko E, Bielawski JP. ModL: exploring and restoring regularity when testing for positive selection. Bioinformatics. 2019 Aug 1;35(15):2545-2554.](https://academic.oup.com/bioinformatics/article/35/15/2545/5239994)_)
+
+* Smoothed Bootstrap Aggregation (SBA) for assessing and correcting parameter estimate uncertainty in codon models:<br>
+(_[Mingrone, J., Susko, E. and Bielawski, J., 2016. Smoothed bootstrap aggregation for assessing selection pressure at amino acid sites. Molecular Biology and Evolution, 33(11):2976-2989.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Mingrone_SBA_MBE2016.pdf)_)
+
+* Protocols, experimental design, and best practices for inference under complex codon models:<br>
+(_[Bielawski, J.P., Baker, J.L. and Mingrone, J., 2016. Inference of episodic changes in natural selection acting on protein coding sequences via CODEML. Current Protocols in Bioinformatics, pp.6-15.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/UNIT6.15.pdf)_)
+
+
+<br>
+
+
+## PAML lab: English
 
 The lab exercises (PAML demo) are available via small website (link below). The site contains some additional resources that are worth a look when you have time. Please note that slides may change a little prior to the lab. I will post modified PDFs as required. 
 
@@ -115,36 +144,7 @@ symlink in your home directory named "moledata" to obtain the course data files!
 
 
 
-**Key papers related to the lecture material:**
-
-* A novel phenotype+genotype codon-model (PG-BSM) formulated to test and identify sites within a gene involved in phenotypic adaptation.  This method does NOT require dN/dS>1 to infer adaptive molecular evolution!:<br>
-(_[Jones, C. T., Youssef, N., Susko, E., & Bielawski, J. P. (2020). A Phenotype–Genotype Codon Model for Detecting Adaptive Evolution. Systematic biology, 69(4), 722-738.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Jones_Susko_Bielawski-2020_PG-BSM.pdf)_)
-
-* Phenomenological load (PL) and biological conclusions under codon models:<br>
-(_[Jones C.T., Youssef N., Susko E., Bielawski J.P., 2018. Phenomenological Load on Model Parameters Can Lead to False Biological Conclusions. Mol Biol Evol. 35(6):1473-1488.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Jones_PL_MBE2018.pdf)_)
-
-* Review of major inference challenges under codon models:<br>
-(_[Jones C.T., Susko E., Bielawski J.P.,  2019. Looking for Darwin in genomic sequences: validity and success depends on the relationship between model and data. In Evolutionary Genomics: Statistical and Computational Methods. Maria Anisimova (ed.) 2nd edition, Human press.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Jones_etal_2019_Chapter13.pdf)_)
-
-* Positive selection, purifying selection, shifting balance & fitness landscapes:<br>
-(_[Jones, C., Youssef, N., Susko, E. and Bielawski, J., 2017.  Shifting balance on a static mutation-selection landscape: a novel scenario of positive selection. Molecular Biology and Evolution, 34(2):391-407.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/ShiftBalance_MBE_2016.pdf)_)
-
-* Improved inference of site-specific positive selection under a generalized parametric codon model when there are multi-nucleotide mutations and multiple nonsynonymous rates: <br>
-(_[Dunn KA, Kenney T, Gu H, Bielawski JP. Improved inference of site-specific positive selection under a generalized parametric codon model when there are multinucleotide mutations and multiple nonsynonymous rates. BMC Evol Biol. 2019 Jan 14;19(1):22.](https://bmcevolbiol.biomedcentral.com/articles/10.1186/s12862-018-1326-7)_)
-
-
-* ModL: restoring regularity when testing for positive selection: <br>
-(_[Mingrone J, Susko E, Bielawski JP. ModL: exploring and restoring regularity when testing for positive selection. Bioinformatics. 2019 Aug 1;35(15):2545-2554.](https://academic.oup.com/bioinformatics/article/35/15/2545/5239994)_)
-
-* Smoothed Bootstrap Aggregation (SBA) for assessing and correcting parameter estimate uncertainty in codon models:<br>
-(_[Mingrone, J., Susko, E. and Bielawski, J., 2016. Smoothed bootstrap aggregation for assessing selection pressure at amino acid sites. Molecular Biology and Evolution, 33(11):2976-2989.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Mingrone_SBA_MBE2016.pdf)_)
-
-* Protocols, experimental design, and best practices for inference under complex codon models:<br>
-(_[Bielawski, J.P., Baker, J.L. and Mingrone, J., 2016. Inference of episodic changes in natural selection acting on protein coding sequences via CODEML. Current Protocols in Bioinformatics, pp.6-15.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/UNIT6.15.pdf)_)
-
-<br>
-
-## Alternative Lab (advanced topics)
+## Alternative Lab (advanced inferences)
 
 If you have some experience with codon models, and want to try out a tutorial for more advanced materials then use the link below to download an archive for a complete different set of PAML activities.  This tutorial focuses on detecting episodic protein evolution via **Branch-Site Model A**.  The tutorial also includes activities about (i) detecting **MLE instabilities**, (ii) carrying out **robustness analyses**, and (iii) use of **smoothed bootstrap aggregation (SBA)**.  The protocols for each activity are presented in Protocols in Bioinformatics UNIT 6.15.  The included PDF file for UNIT 6.16 also presents recommendations for "best practices" when carrying out a large-scale evolutionary survey for episodic adaptive evolution by using PAML.  The files required for this "alternative lab" are available via Bitbucket repository.  The repository link is given below.
 
