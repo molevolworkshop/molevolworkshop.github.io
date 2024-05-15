@@ -743,8 +743,6 @@ Last updated 2024-04-19.
 
 ### Install [maxcut](https://sagi-snir.wixsite.com/snir-lab/maxcut)
 
-#### TODO
-
 Sagi Snir's maxcut is used in the SNaQ tutorial. These instructions install the binary in _/usr/local/bin_.
 The software (v. 2.1) is no longer available from [here](http://research.haifa.ac.il/~ssagi/software/QMCN.tar.gz). Sagi suggested we use version 3.0 from [this dryad repository](https://datadryad.org/stash/dataset/doi:10.5061/dryad.r9k57). While that may work, the SNaQ tutorial has not been tested with this version of MaxCut, so this year we are using an archived copy of the `QMCN.tar.gz` file that I scp'd onto the virtual machine.
 ~~~~~~
@@ -765,6 +763,16 @@ Last updated 2024-04-19.
 Used for the IQ-TREE tutorial.
 ~~~~~~
 cd
+# Install 64-bit Linux Intel version 2.3.2
+curl -LO https://github.com/iqtree/iqtree2/releases/download/v2.3.2/iqtree-2.3.2-Linux-intel.tar.gz
+tar zxvf iqtree-2.3.2-Linux-intel.tar.gz
+mv iqtree-2.3.2-Linux-intel.tar.gz TARs
+sudo mv iqtree-2.3.2-Linux-intel/bin/iqtree /usr/local/bin
+~~~~~~
+Last updated 2024-05-14.
+
+{% comment %}
+cd
 # install standard version
 curl -LO https://github.com/Cibiv/IQ-TREE/releases/download/v1.6.12/iqtree-1.6.12-Linux.tar.gz
 tar zxvf iqtree-1.6.12-Linux.tar.gz
@@ -776,9 +784,8 @@ curl -LO https://github.com/iqtree/iqtree2/releases/download/v2.2.0/iqtree-2.2.0
 tar zxvf iqtree-2.2.0-Linux.tar.gz
 mv iqtree-2.2.0-Linux.tar.gz TARs
 sudo mv iqtree-2.2.0-Linux/bin/iqtree2 /usr/local/bin
-~~~~~~
 Installed 1.6.12 as _/usr/local/bin/iqtree_ and 2.0.6 as _/usr/local/bin/iqtree2_. 
-Last updated 2024-04-19.
+{% endcomment %}
 
 ### Install [libpython2.7.so.1.0 shared library](https://askubuntu.com/questions/1213461/cant-locate-libpython2-7-so-1-0)
 
@@ -1056,11 +1063,13 @@ For this to work, you will need to:
 
 It is wise to lock the _MOLE-2024-base_ instance as soon as you are finished setting it up. To do this, choose **Lock** from the **Actions** menu when you are viewing the details of the _MOLE-2024-base_ instance. Locking prevents you from doing something stupid, like deleting this image accidentally. It is easy to unlock it any time you need to, but it is much harder to recreate it after accidentally deleting it! I tend to keep all instances locked unless I find there is some action that requires unlocking.
 
-## Create MOLE-2024-snapshot
+## Create MOLE 2024 snapshots
 
-Once the **MOLE-2024-base** VM is set up and running, you can create a **snapshot** image using the Actions menu. I name these snapshot images something like **MOLE-2024-snapshot-04-25** (where the 04-25 part is the date) and make additional snapshots (deleting the really old ones) as changes are made to MOLE-2024-base.
+Once the **MOLE-2024-base** VM is set up and running, you can create a **snapshot** image using the Actions menu. I named the first of these snapshot images **MOLE-2024-snapshot-04-25** (where the 04-25 part is the date) and make additional snapshots (deleting the really old ones) as changes are made to MOLE-2024-base.
 
 Note that MOLE-2024-snapshot-05-25 will show `0 B` initially when viewed in the Images list. Not to worry; the size will be updated when the image is fully created.
+
+A second snapshot **MOLE-2024-snapshot-05-10** was created just prior to creating new test VMs.
 
 ## Creating instances based on MOLE-2024-snapshot-04-25
 
@@ -1118,6 +1127,7 @@ users:
     sudo: ['ALL=(ALL) NOPASSWD:ALL']{ssh-authorized-keys}
     ssh_authorized_keys:    # moleuser has public keys for directors and TAs allowing easy login
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpAtnEa/ULxAsa7HWP9puJfq8iTaMmkMxqEsu7f+psbmYTSmxH3QmAgWmPraNR0GQ+TG0uZUw9dR30jGn4e4+J6NCQ0H/qvoB3KIyIaFJzeg48skz0paGX+SfrdM2IEGd3ciIoKPnvx0xUZQot0DZfT6KTRm341G/u9tXzmMz/KIRmOokFmfNh4Bwt+qna5YLLBQs8GDyaLP6Sz/uabDi+k8S2BpVTV8OIGT0pFDkZ1Og8S5eJ0Rc7QHsrLfBijmB/XRtXmfMEuT7xNcvtKtQm7T/pGSy8eNhogJZX72GFCLAv/mHInBKk6qtU4wuHxan8yE2zGNhno7T8N87D0l4pxvev+kMfeUK7QvUKvxJuzGBY7SyiLlrPC3sfFTqLriOZvQg7d/o3BFyWFDFvfH3jTXe1rRdK9iHNwt9Qd7ARtKyVSKD3ZeQ3x33x9RPtDppOSEVY4oGAQ0YKVat1GmVVhiklDBoQYs13arIwHlEWoPr7xXqUlW8kQeRTn2epLAk= adetunjiadesina@BIOF-SAWYER-AA.local
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC42u90ydg9KNHHu9MIoZfAnilSb362WQRm+bT9hVhqX53LOnJ/KxSfdaOzadwdhi1aowevEvWvXINFa3MAVOyvuvkug42XffBH0TyjhrPcQcS+hIbFytwD/fdDLd3MYrksjvNFZPnTT1AKF6YQOZEKsRI5JLdfF6A3k3ddWCyEE6jtaY4tqXSYfLPia4HjA8zPXPgyDZBNvfD3yA+irT9PDZ2dJvbxQzrcDoOgpJfZW0zvEBnk+znD4xpJ2Zb9QFV5RTRKNYnjryGVnL7CAKr1scr9k09FQ9bXoSc0IEgoMFtcKnAnXroYcs/7vw2FvkbI9y8DToTn2LzDaPMsyMUSdPXd3JuqCDDyfPP1DrCKRkw0Adr/+L6JxEEgjOBy5BHj3nOQJsoaGQJUvPnryJCH9TSt4Cgvj5BrVm5j6MKwyR1lKPhLKnni+RE5zC/7Qd+hgd1cCIhx+94DHXf22eTzIN8qJtSlrHXqejL+CtMYPeVVrE49ebOKuIUv5BMSM+U= teejay@Adetunjis-MacBook-Air.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMpNe5iim6O1x93lNkJw5ZLF6f5Kd9KIMaNuifz3MY1K4+NIFQHgrbENAaimuvwNCQDCUDgOY2u4v92O2PQLmPjO5NR9Yl1vOhpzb3EFe1EM7lwFSIKNl6S2jNd4mghUXImaXT6vtS/V6X9HwB6/qhFwHrb3ic+7RPxUplMRhnflatIGWk7V+OaSBvC1AuswXqGAeBeOItJJKeGqerWDq8ytbeUbp3qFtzyHT+z08m0UnSYIIyPfV5lxztCpw22xmkReQ2pc1FtwJKmxCa3QxegsQ30X/r9fjiVS7K2CPJSTwqWbs33GfSnYgYyynjch0pQt0ByOPB1ncpfbLZWbw3 plewis@cormoran.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC6StAassFQ415BcyUxfTMG5cbziIxVn/E+KCbhx4/Csm1GjJmpCwSgxDqp2gXjQLprElASMIygnQMdZ1m6U8/CcbEPzviZdWeM+NHn/ELCa4OxL0MTPDLpnHC2Dyvi6RnM9UJYwnCIT1/U/R7ZVMXRtPU5xBhf+087HTLdMZ4gXx6yWWCynmrXpwbwJULhodDxkY9kouLudLHSNDjEfbI7PErvFLslOvCPnivgeEueJoJwpIvatpWFykohOn5UwXzZNmI9GWCQ1wtliZzhROKre1AnVfmHW8oO7QVQOGNxPfqSV6zKLnTpBfWsykqOYEVqR6M1kV+QjQHThxLCvLzrKoyLayuE0xdY8lbMzuw2LbWmsDv2rLKWiorH3rZRRH2NWi5EZEuNrQqPUug/kxCjAY5/jPHeavX6PdnyS2PwW4N7et1gRPcI64RwaQNofPUqbPrEFP+PYxEjJQw4B36tFRXvV+qs95TiMZ4Zuy7IUI/12phZqz5tvClI8i3O6sE= analisamilkey@MacBook-Air.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDIulLE6a+QGh/JE9mjGmTwRWtmcK29mbB1MJEN728+gLRnHV8oRfE5ahZVp4k0+h0onBn3Br8hVTkqQqC3GJmRe2PMlocqIJULe3hFvtXZqGh+w8QUj//+C3kTg6Lptc2m4f9JimjUjFNPnfX5sioJp2mHOjNbYXYbXb0zx1Y5jKVmi6r0NifcuZ+ObfIFG5+o1kytAq/J+8f6evBUKlTR8Gsk7V9zuZmGcffGZe5HA+3ilkUGd2Uyx18nbgE4VZTXC9K7RA7AFPtkLRH/ivaMGESUteH5Wqe1Bj46ORjapRV+hmU1t/VeOmHVWknkaTM3/yZpMKAiFYxWADDXsSNSNck38zMmDmWxzW+wcrNcCysKUZU60DxD4Czvk4VEUgFSVg/YmN1tJDqVse7GfcvYxzgC9R5qDItXPY3YBjq9ykOIGmn9C30lVqh4nELu3LujrmHmf0VTDtexc/4T+YPJlmVxr64UP4YTInLw5wBgQ89Thj6ahx+QnfC6m5Uv+ws= blakefauskee@Blakes-MacBook-Pro-3.local               
@@ -1127,6 +1137,7 @@ users:
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqJeFU3sEcA72fyYD2LCzDsfHqPmZonnATiXDKYeutIzQ+iVREIG3EMUNjeps8JS9oWw11ojXLFDZCHdg/z87qBZn7ilGgXZ6/PRhGaDx3kjPr5Mek10bV3BwB0O9Gws9rmepD/akuXY7wTS5M++YqCkwU1Ia9oAEW4QWDuc1Bdj3L1DqSYbI+xg38EA5TpRL2N968OPuu1xhGT9cPkRgOQAcTbFyknoeEXKwSUKamii8q8Lv+Zi9nA1nRYa0xZdJSGZNxso41FJkEmNfF6o/IKMtAJ0DHcg1B3aJpS8o2+cgyR+L0NqVHrJeBIagm4n3H8xP40pUCj5PyphdZam5L jpbielawski@Josephs-MacBook-Air.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1D6eflrh3q3daop2orqL0pXrAqOUt8AaYWaC/d+iZQutHiroByNjpSETkmEd1yw8NpF6gVkh8oNqvTH1ERlJtX1BETipUvJAlvV67ZwWDSoYVqM+RwFiUT4cIC2No0V3ETI9pd4D0Dnq/9l4V9pYaunnbvIaAUsQiDRPMcRq+aOZRB/fH9nTQ5jfWKWEAu2m77T6esXe0bFX6cMhoZdk4HQSc+Wdsfn5TZEoi7+0YVK7973ZmIHYRRl9a/80NtIIHQVOOjPve3mUxv5/dlFBvPVLVHe91XqD4DnXnjXytBgNpqjPHNY28yy/UZ7Ba8XXIxGzWEDy3p1+dJzXni/hOQ== DavidSwofford
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDV/XPzswM4seTioKLp01l4yzoaxRgK1Hx0yQQpr/HlokC0hSCuACQSaA6ULMqgsoAd4S1EhI9rujdpf8N7yKKsNIrwpGSX9UL5bUsCE8xh5n500iu2YUTkBuWDgZvGPqKWwMu9L9v5AxH/bk2l4EqfbPUyzgcQRX6w5OJoz7pYvEBD8BGc5y/V3VfW3BaQARdXQqvc6Eqg5wEewsLjBrkNwc0nVQHTxIuz3MP1eRybbsB44N6JuqyVlogdy8DzSI96Za/yVPCeVcGfl44N9rOa8+/7t2AsE+ycGuTM3tOeWJBUE5FOzFbEpk3SppcwKkOwTt+nnLMcCRpovHJOmSSHdptq7HJptm49FDChX/AYQy91EObHLqOkbciueHlTRNYjeye2+rnYS83kNi3f0iYr01HeUtK85GcvCGxbEpinPEVbSUFDI9inbkYVvSkL6T5JK9NWXgDpqFvGU1fESMaaZCtXDgDuFZI0T83k/tsRLvD8woxqCSsZPIvbz/UPUwM= tracyh@Indigo.local
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFYUmO7HPYTDvNCjAZIkXfR/P9cCm6QzQqRRLRFH7XI8ZF6w3+jhuT3bXDvHqYCP4W0s67UfWU1C92qtMWpzVzHw2XWi67agSNNU/PgywlCoQqoybf1s5SDfgPGJ54env9Y09KtHZF64n4WI/Sja5+FSeF7Cd4xt8SkJcRIPV+EHluE08imnFvNkW1REG32x1xDJq7euezwIHUhG9Be7nXN0VQlX0UH4D6KIDg7+autni/yZzKrfX0w7vFsAja8flWUj02mTGtZU428kHThjvzH6fJ7IonM+gSN+s+MW+1xkWSQp6N4OzM79aZS5xuzup29/8vkWcO03kg8Vigctvx ejmctavish@gmail.com
 ssh_pwauth: true             # allow password authentication (for students)
 chpasswd:
     expire: false            # do not force user to change passwd on first login
