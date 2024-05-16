@@ -131,7 +131,7 @@ You can also paste by pressing Shift-Ins.
 You should have a black screen asking for your password, which is on the piece of paper. Type it in. You will not see the letters you are typing.
 {% endcomment %}
 
-#### Changing your password 
+### Changing your password 
 
 The first thing to do once you have successfully logged onto your VM is to change your password. This is done by typing:
 
@@ -143,7 +143,7 @@ It may then ask you for your LDAP password and you should type in your original 
 {% endcomment %}
 Once you have done this every time you ssh in to your VM you will use the new password you just created (so don't forget it!).
 
-#### Basic Syntax
+### Basic Syntax
 
 Unix commands follow the general format of: 
 
@@ -157,7 +157,7 @@ For example:
 
 * ```ls -l mydir``` uses the command **ls** (list), the option **-l** for long-list, and the target **mydir** to list the contents of _mydir_ in the long list format, which provides more thorough descriptions than does the regular list command.
 
-#### Notes on syntax for directory structure
+### Notes on syntax for directory structure
 
 * Two dots (**..**) represents the parent directory of the present working directory. So, for example, ```cd ..``` will move you back one directory
 
@@ -167,7 +167,7 @@ For example:
 
 * A forward slash (**/**) by itself or at the start of a path refers to the root of the directory structure -- the folder that contains all other folders.
 
-## Intro-to-Unix tutorial
+### Intro-to-Unix tutorial
 
 If you are not familiar with typical linux commands, please go to the [Linux tutorial](/linux-tutorial/) and go through the step by step guide there.
 
