@@ -94,7 +94,7 @@ First, open a terminal window:
 * _Windows:_ Git for Windows 
 * _Mac:_ Terminal or iTerm2 (in _/Applications/Utilities_)
 * _Linux:_ Konsole (KDE), gnome-terminal (GNOME)
-Login to your particular virtual machine (VM) using the IP address on the sticker attached to the back of your name tag. If, for example, your IP address was 123.456.789.321, you would type the following into the terminal on your local computer (i.e. your laptop) and press the enter key:
+Login to your particular VM using the IP address on the sticker attached to the back of your name tag. If, for example, your IP address was 123.456.789.321, you would type the following into the terminal on your local computer (i.e. your laptop) and press the enter key:
 
     ssh moleuser@123.456.789.321
 
