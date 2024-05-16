@@ -77,14 +77,12 @@ You will use **Secure Shell** (SSH) and Secure File Transfer Protocol (sFTP) to 
 
 Shells are computer programs that represent the outermost (i.e. closest to you) layer of the operating system. Shells hide most of the gory details, allowing you to interact with the operating system via commands. Another (better) name for a shell is **command interpreter**. SSH represents a shell that is secure in that every bit of text that moves between your keyboard and the operating system (and _vice versa_) is encrypted.
 
+The cluster we will be using is from the [Jetstream2](https://jetstream-cloud.org) project at Indiana University. Jetstream was NSF's first science and engineering research cloud, completed in early 2016. Jetstream is one source of computing infrastructure provided under the umbrella of [Xsede](https://www.xsede.org), the Extreme Science and Engineering Discovery Environment, an NSF-sponsored program that provides cloud computing for researchers in academia. 
+
 {% comment %}
 Below is outdated and should be updated: 
-
 The virtual computing environment you will be using is provided through a (U.S.) National Science Foundation funded program called [Xsede](https://www.xsede.org/), which (at least for those of you at U.S. institutions) is good for you to know about because Xsede also provides (assuming your application is accepted) these same cloud computing resources to researchers to facilitate research. (Note that Xsede is currently winding down, but will be succeeded by a similar program called Access.)
-
-
 ## SSH 
-
 SSH stands for **Secure SHell**. 
 {% endcomment %}
 
