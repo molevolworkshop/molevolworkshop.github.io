@@ -69,6 +69,8 @@ You're set!
 
 We will be using more software throughout the workshop than what we're asking you to download here, all of which should be accessible on the remote servers. Feel free to download and use any and all software on your personal device as well, just know that not everything will necessarily finish running in the allotted time, depending on your device.
 
+***
+
 ## Remote computer access software 
 
 You will use Secure Shell (SSH) and Secure File Transfer Protocol (sFTP) to connect to your own personal virtual machine (VM). You will interact with your VM solely by typing or pasting commands into a terminal window. This way of interacting with a computer may not be familiar to you, but you will get some practice during this lab.
@@ -236,7 +238,7 @@ Close this window.
 
 Now when you single click on a file in Cyberduck, an _Edit_ button with the icon for the editor you selected should appear in the top right corner. Click this button to open that file in the editor. Now you can edit the file on the cluster without downloading to your local computer. When you save this file it will be automatically updated on the class cluster.
 
-## Short Cyber Duck Exercise
+### Short Cyber Duck Exercise
 
 The easiest way to transfer files using CyberDuck is with drag-and-drop. Try to drag a file from your desktop (or another folder of your choosing) from the CyberDuck window. This method allows you to choose unique destinations for each file you transfer.
 
@@ -248,7 +250,7 @@ These methods will all work to get files from the cluster to your computer, and 
 
 Make a folder on your local computer to hold all of your lab materials from this course!
 
-## SCP is a command line alternative to Cyberduck
+### SCP is a command line alternative to Cyberduck
 
 Navigate (using cd in a terminal window) to the folder (on your local computer) containing the file you wish to transfer to your virtual machine. Once there, type
 
@@ -285,6 +287,8 @@ You should now be able to do this:
     scp testfile molevm:
 
 Your scp command can look up _molevm_ in your _~/.ssh/config_ file to find what username and ip address to use!
+
+***
 
 ## Useful links
 
