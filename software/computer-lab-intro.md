@@ -71,19 +71,22 @@ We will be using more software throughout the workshop than what we're asking yo
 
 ***
 
-## Remote computer access software 
+## Remote computer access software and SSH
 
-You will use Secure Shell (SSH) and Secure File Transfer Protocol (sFTP) to connect to your own personal virtual machine (VM). You will interact with your VM solely by typing or pasting commands into a terminal window. This way of interacting with a computer may not be familiar to you, but you will get some practice during this lab.
+You will use **Secure Shell** (SSH) and Secure File Transfer Protocol (sFTP) to connect to your own personal virtual machine (VM). You will interact with your VM solely by typing or pasting commands into a terminal window. This way of interacting with a computer may not be familiar to you, but you will get some practice during this lab.
+
+Shells are computer programs that represent the outermost (i.e. closest to you) layer of the operating system. Shells hide most of the gory details, allowing you to interact with the operating system via commands. Another (better) name for a shell is **command interpreter**. SSH represents a shell that is secure in that every bit of text that moves between your keyboard and the operating system (and _vice versa_) is encrypted.
 
 {% comment %}
 Below is outdated and should be updated: 
 
 The virtual computing environment you will be using is provided through a (U.S.) National Science Foundation funded program called [Xsede](https://www.xsede.org/), which (at least for those of you at U.S. institutions) is good for you to know about because Xsede also provides (assuming your application is accepted) these same cloud computing resources to researchers to facilitate research. (Note that Xsede is currently winding down, but will be succeeded by a similar program called Access.)
-{% endcomment %}
+
 
 ## SSH 
 
-SSH stands for **Secure SHell**. Shells are computer programs that represent the outermost (i.e. closest to you) layer of the operating system. Shells hide most of the gory details, allowing you to interact with the operating system via commands. Another (better) name for a shell is **command interpreter**. SSH represents a shell that is secure in that every bit of text that moves between your keyboard and the operating system (and _vice versa_) is encrypted.
+SSH stands for **Secure SHell**. 
+{% endcomment %}
 
 {% comment %}
 I don't think this is necessary this year (POL)
