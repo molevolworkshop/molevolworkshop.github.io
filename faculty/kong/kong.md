@@ -7,7 +7,7 @@ permalink: /faculty-kong/
 
 ### Arrival and Departure
 
-May 24 - June 4
+May 24 - June 4, 2024
 
 ### Contact Info 
 
