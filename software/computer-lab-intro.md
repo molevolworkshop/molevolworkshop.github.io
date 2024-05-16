@@ -171,9 +171,11 @@ For example:
 
 If you are not familiar with typical linux commands, please go to the [Linux tutorial](/linux-tutorial/) and go through the step by step guide there.
 
+***
+
 ## Setting up Cyberduck
 
-#### Creating a bookmark
+### Creating a bookmark
 
 When you open Cyberduck a screen should appear that has some default connections bookmarked such as Google Docs and Amazon.
 
