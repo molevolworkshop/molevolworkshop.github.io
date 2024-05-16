@@ -64,7 +64,8 @@ I don't think this is needed if people install Git for Windows (POL)
 * [Seaview](http://doua.prabi.fr/software/seaview) (used to visualize small alignments)
 * [FigTree](https://github.com/rambaut/figtree/releases) (used to visualize phylogenetic trees)
 * [Tracer](https://github.com/beast-dev/tracer/releases/) (used for Bayesian divergence time analyses)
-* You're set!
+
+You're set!
 
 We will be using more software throughout the workshop than what we're asking you to download here, all of which should be accessible on the remote servers. Feel free to download and use any and all software on your personal device as well, just know that not everything will necessarily finish running in the allotted time, depending on your device.
 
