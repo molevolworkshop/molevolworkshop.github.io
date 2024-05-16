@@ -12,7 +12,8 @@ By the end of this introduction, you should be able to:
 * Log in to the class cluster.
 * Navigate and understand the directory structure.
 * Create and edit files and directories on the cluster.
-* Move files to the cluster.
+* Move files to and from the cluster.
+
 Ask for help if any of these things aren't working by the end!
 
 ## Slack workspace
