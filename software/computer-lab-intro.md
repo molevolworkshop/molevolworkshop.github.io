@@ -73,7 +73,11 @@ We will be using more software throughout the workshop than what we're asking yo
 
 You will use Secure Shell (SSH) and Secure File Transfer Protocol (sFTP) to connect to your own personal virtual machine (VM). You will interact with your VM solely by typing or pasting commands into a terminal window. This way of interacting with a computer may not be familiar to you, but you will get some practice during this lab.
 
+{% comment %}
+Below is outdated and should be updated: 
+
 The virtual computing environment you will be using is provided through a (U.S.) National Science Foundation funded program called [Xsede](https://www.xsede.org/), which (at least for those of you at U.S. institutions) is good for you to know about because Xsede also provides (assuming your application is accepted) these same cloud computing resources to researchers to facilitate research. (Note that Xsede is currently winding down, but will be succeeded by a similar program called Access.)
+{% endcomment %}
 
 ## SSH 
 
