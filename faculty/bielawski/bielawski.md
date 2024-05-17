@@ -93,7 +93,7 @@ permalink: /faculty-bielawski/
 
 ## 1.4 &nbsp; PAML lab in English
 
-* **PAML lab**: [PAML Lab website](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html)
+* **PAML lab**: [PAML Lab website](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html) &nbsp; (In 2024, we will do excercises 1, 3, and 4 only.)
 
 * **PAML lab resources**: [webpage](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html)
 
