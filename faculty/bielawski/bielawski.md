@@ -86,9 +86,7 @@ From 2022 this lecture will provide a more general background on evolutionary fo
 
 * **2024 Lecture slides (Part 1), Intro to Neutral & Nearly Neutral Theories of Molecular Evolution:** [slide set 1](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf) (updated)
 
-* **2023 Lecture slides (Part 2), Intro to Codon Models:** [slide set 2](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_2.pdf)
-
-There will be minor updates to the slides in 2024, which will be posted soon.
+* **2024 Lecture slides (Part 2), Intro to Codon Models:** [slide set 2](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_2.pdf)
 
 <br>
 
