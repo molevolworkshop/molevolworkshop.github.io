@@ -27,7 +27,7 @@ permalink: /faculty-bielawski/
 
 ## 1. &nbsp; Content for workshop
 
-* 1.1 &nbsp; Models & methods
+* 1.1 &nbsp; Quick start: Models & methods
 
 * 1.2 &nbsp; Quick start: codon models
 
