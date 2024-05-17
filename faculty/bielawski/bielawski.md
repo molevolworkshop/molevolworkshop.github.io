@@ -69,7 +69,7 @@ permalink: /faculty-bielawski/
 
 <br>
 
-## 1.2 Quick start for codon models
+## 1.2 &nbsp; Quick start for codon models
 
 **Are you completely new to codon models?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Delport_etal_2008.pdf) will give you an accessible review of the theory of codon models and how they are used. 
 
@@ -81,7 +81,7 @@ permalink: /faculty-bielawski/
 * *Jones C.T., Susko E., Bielawski J.P.,  2019. Looking for Darwin in genomic sequences: validity and success depends on the relationship between model and data. In Evolutionary Genomics: Statistical and Computational Methods. Maria Anisimova (ed.) 2nd edition, Human press.]*  
 <br>
 
-## 1.3 Lecture slides
+## 1.3 &nbsp; Lecture slides
 
 From 2022 this lecture will provide a more general background on evolutionary forces, and the Neutral and Nearly-Neutral theories of molecular evolution. 
 
@@ -94,7 +94,7 @@ There will be minor updates to the slides in 2024, which will be posted soon.
 <br>
 
 
-## 1.4 PAML lab in English
+## 1.4 &nbsp; PAML lab in English
 
 The lab exercises (PAML demo) are available via small website (link below). The site contains some additional resources that are worth a look when you have time. Please note that slides may change a little prior to the lab. I will post modified PDFs as required. 
 
@@ -111,13 +111,17 @@ symlink in your home directory named "moledata" to obtain the course data files!
 
 <br>
 
-## 1.5 Translated PAML Tutorials
+## 1.5 &nbsp; Translated PAML Tutorials
 
-[Will add Portuguese and possibly Spanish language translations in Summer of 2024.]
+You can do the tutorial in **Portuguese** via [this link](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab_PT/Lab_PT.html).  Many thanks to Letícia Magpali for the translation!
+
+Letícia Magpali and Esteban Salazar are working on a **Spanish** Language translation!  Hopfully we can provide this soon.
+
+If you woudl like to assist with the translation of these tutorials, please contacnt me.
 
 <br>
 
-## 1.6 Scientific ethics
+## 1.6 &nbsp; Scientific ethics
 
 Beginning in 2022 we added a session dedicated to scientific ethics. Our discussions often touch on the many ways that science has “*unwritten rules*”, and how such rules can privilege members of some groups and serve as a barrier to members of other groups. If this is new to you, or if you just want to know more, here are a few resources.
 
@@ -128,9 +132,9 @@ Many of the *unwritten rules* of science are the same as those that operate in s
 <br>
 <br>
 
-# 2. Content for additional activties
+# 2. &nbsp; Content for additional activties
 
-## Additional readings and advanced topics 
+## &nbsp; Additional readings and advanced topics 
 
 * A novel phenotype+genotype codon-model (PG-BSM) formulated to test and identify sites within a gene involved in phenotypic adaptation.  This method does NOT require dN/dS>1 to infer adaptive molecular evolution!:<br>
 (_[Jones, C. T., Youssef, N., Susko, E., & Bielawski, J. P. (2020). A Phenotype–Genotype Codon Model for Detecting Adaptive Evolution. Systematic biology, 69(4), 722-738.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Jones_Susko_Bielawski-2020_PG-BSM.pdf)_)
@@ -158,7 +162,7 @@ Many of the *unwritten rules* of science are the same as those that operate in s
 
 <br>
 
-## Alternative lab and advanced inferences
+## &nbsp; Alternative lab and advanced inferences
 
 If you have some experience with codon models, and want to try out a tutorial for more advanced materials then use the link below to download an archive for a complete different set of PAML activities.  This tutorial focuses on detecting episodic protein evolution via **Branch-Site Model A**.  The tutorial also includes activities about (i) detecting **MLE instabilities**, (ii) carrying out **robustness analyses**, and (iii) use of **smoothed bootstrap aggregation (SBA)**.  The protocols for each activity are presented in Protocols in Bioinformatics UNIT 6.15.  The included PDF file for UNIT 6.16 also presents recommendations for "best practices" when carrying out a large-scale evolutionary survey for episodic adaptive evolution by using PAML.  The files required for this "alternative lab" are available via Bitbucket repository.  The repository link is given below.
 
@@ -171,7 +175,7 @@ If you have some experience with codon models, and want to try out a tutorial fo
 <br>
 
 
-## Best practices in large-scale evolutionary surveys
+## &nbsp; Best practices in large-scale evolutionary surveys
 
 Large-scale evolutionary surveys are now commonplace. But with the use of progressively more complex codon models, these surveys are fraught with perils. Complex models are more prone to statistical problems such as MLE irregularities, and some can be quite sensitive to model misspecification.  UNIT 6.16 (see above) provides some recommended "best practices" for a **2-phase approach** to quality control and robustness in evolutionary surveys.  We have applied these to a large scale survey for functional divergence in nuclear receptors during homing evolution, and we used experimental approaches to investigate hypotheses about the role of a particular nuclear receptor (NR2C1) as a key modulator of developmental pluripotnetiality during hominid evolution. The paper that illustrates the power of such an evolutionary surgery, and the importance of an experimental design having explicit protocols for "best practices", is given below.
 
@@ -179,7 +183,7 @@ Large-scale evolutionary surveys are now commonplace. But with the use of progre
 
 <br>
 
-## Alternative software for codon models in the ML framework
+## &nbsp; Alternative software for codon models in the ML framework
 
 **HyPhy:**  comparative sequence analysis using stochastic evolutionary models; [http://www.hyphy.org/](http://www.hyphy.org/)
 
