@@ -61,6 +61,7 @@ permalink: /faculty-bielawski/
 **Are you completely new to models of sequence evolution?** &nbsp; Start with this...
 
 * *Bielawski, J. P. (2016). [Models of Molecular Evolution.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00209.PUBLISHED.pdf) In Encyclopedia of Evolutionary Biology. Vol 1, pp. 61-70. Oxford: Academic Press.* (Section 2 can be skipped without any loss of continuity.)
+<br>
 
 **Do you have some background in phylogenetics and DNA sequence models, but you are new to the area of detecting adaptive sequence evolution?** &nbsp; Start with this...
 
@@ -73,7 +74,7 @@ permalink: /faculty-bielawski/
 **Are you completely new to codon models?** &nbsp; Start with this...
 
 * *Delport, Scheffler, & Seoighe (2009). [Models of coding sequence evolution.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Delport_etal_2008.pdf) Briefings in bioinformatics, 10(1), 97-109.*
-
+<br>
 
 **Do you want to take a deep dive into the theory and legitimate (and illegitimate) interpretation of codon models?** &nbsp; The review below combines evolutionary theory and statistical theory to explain the major inference challenges under codon models. 
 
@@ -82,9 +83,8 @@ permalink: /faculty-bielawski/
 
 ## 1.3 &nbsp; Lecture slides
 
-From 2022 this lecture will provide a more general background on evolutionary forces, and the Neutral and Nearly-Neutral theories of molecular evolution. 
-
-* **2024 Lecture slides (Part 1), Intro to Neutral & Nearly Neutral Theories of Molecular Evolution:** [slide set 1](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf) (updated)
+* **2024 Lecture slides (Part 1), Intro to Neutral & Nearly Neutral Theories of Molecular Evolution:** [slide set 1](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf)
+<br>
 
 * **2024 Lecture slides (Part 2), Intro to Codon Models:** [slide set 2](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_2.pdf)
 
@@ -92,8 +92,6 @@ From 2022 this lecture will provide a more general background on evolutionary fo
 
 
 ## 1.4 &nbsp; PAML lab in English
-
-The lab exercises are available via a website (link below). The site contains additional resources that are worth a look when you have time.
 
 * **PAML lab**: [PAML Lab website](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html)
 
