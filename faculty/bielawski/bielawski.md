@@ -24,7 +24,7 @@ permalink: /faculty-bielawski/
 
 <br>
 
-UPDATING TOC LINKS
+*** UPDATING THIS PAGE ***
 
 ## Content for workshop
 
@@ -59,11 +59,11 @@ UPDATING TOC LINKS
 ### Content for workshop
 ## Quick start for models and methods
 
-**Are you completely new to models of sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00209.PUBLISHED.pdf) might be good for you.  Section 2 provides a great introduction to Markov models, but it can be skipped without any loss of continuity.
+**Are you completely new to models of sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00209.PUBLISHED.pdf) might be good for you.  (Section 2 can be skipped without any loss of continuity.)
 
 * **Citation:** Bielawski, J. P. (2016). Molecular Evolution, Models of. In Kliman, R.M. (ed.) Encyclopedia of Evolutionary Biology. Vol 1, pp. 61-70. Oxford: Academic Press.
 
-**Do you some background in phylogenetics and DNA sequence models, but you are new to the are of detecting adaptive sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00171.PUBLISHED.pdf) will give you a very broad starting point (population genetics, non-coding, codon and amino-acid-based methods).  
+**Do you some background in phylogenetics and DNA sequence models, but you are new to the are of detecting adaptive sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00171.PUBLISHED.pdf) will gives a very broad start.  
 
 * **Citation:**  Bielawski, Joseph & Jones, Chris. (2016). Adaptive Molecular Evolution: Detection Methods. In Kliman, R.M. (ed.) Encyclopedia of Evolutionary Biology. Vol 1, pp. 16-25. Oxford: Academic Press.
 
