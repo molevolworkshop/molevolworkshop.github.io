@@ -62,7 +62,7 @@ permalink: /faculty-bielawski/
 
 * *Bielawski, J. P. (2016). [Models of Molecular Evolution.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00209.PUBLISHED.pdf) In Encyclopedia of Evolutionary Biology. Vol 1, pp. 61-70. Oxford: Academic Press.* (Section 2 can be skipped without any loss of continuity.)
 
-**Do you have some background in phylogenetics and DNA sequence models, but you are new to the are of detecting adaptive sequence evolution?** &nbsp; Start with this...
+**Do you have some background in phylogenetics and DNA sequence models, but you are new to the area of detecting adaptive sequence evolution?** &nbsp; Start with this...
 
 * *Bielawski & Jones (2016). [Adaptive Molecular Evolution: Detection Methods.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00171.PUBLISHED.pdf) In Encyclopedia of Evolutionary Biology. Vol 1, pp. 16-25. Oxford: Academic Press.*
 
