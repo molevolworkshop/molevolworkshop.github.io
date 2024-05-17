@@ -26,38 +26,38 @@ permalink: /faculty-bielawski/
 
 *** UPDATING THIS PAGE ***
 
-## Content for workshop
+## 1. &nbsp; Content for workshop
 
-* [Quick start: models & methods](#Quick-start-for-models-and-methods)
+* 1.1 &nbsp; Models & methods
 
-* [Quick start: codon models](#Quick-start-for-codon-models)
+* 1.2 &nbsp; Quick start: codon models
 
-* [Lecture slides](#Lecture-slides)
+* 1.3 &nbsp; Lecture slides
 
-* [PAML lab: English](#PAML-lab-in-English)
+* 1.4 &nbsp; PAML lab: English
 
-* [PAML lab: Translated](#Translated-PAML-Tutorials)
+* 1.5 &nbsp; PAML lab: Translated
   
-* [Scientific ethics](#Scientific-ethics)
+* 1.6 &nbsp; Scientific ethics
 
 <br>
 
-## Content for additional activties
+## 2. &nbsp; Content for additional activties
 
-* [Additional reading on codon models](#Additional-readings-and-advanced-topics)
+* 2.1 &nbsp; Additional reading on codon models
   
-* [Advanced PAML lab](#Alternative-lab-and-advanced-inferences)
+* 2.1 &nbsp; Advanced PAML lab
 
-* [Best practices in genome scans](#Best-practices-in-large-scale-evolutionary-surveys)
+* 2.3 &nbsp; Best practices in genome scans
 
-* [Alternative software for codon models in the ML framework](#Alternative-software-for-codon-models-in-the-ML-framework)
+* 2.4 &nbsp; Alternative software for codon models in the ML framework
 
 
 <br>
 <br>
 
-### Content for workshop
-## Quick start for models and methods
+# 1. &nbsp; Content for workshop
+## 1.1 &nbsp; Quick start for models and methods
 
 **Are you completely new to models of sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00209.PUBLISHED.pdf) might be good for you.  (Section 2 can be skipped without any loss of continuity.)
 
@@ -69,7 +69,7 @@ permalink: /faculty-bielawski/
 
 <br>
 
-## Quick start for codon models
+## 1.2 Quick start for codon models
 
 **Are you completely new to codon models?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Delport_etal_2008.pdf) will give you an accessible review of the theory of codon models and how they are used. 
 
@@ -81,7 +81,7 @@ permalink: /faculty-bielawski/
 * *Jones C.T., Susko E., Bielawski J.P.,  2019. Looking for Darwin in genomic sequences: validity and success depends on the relationship between model and data. In Evolutionary Genomics: Statistical and Computational Methods. Maria Anisimova (ed.) 2nd edition, Human press.]*  
 <br>
 
-## Lecture slides
+## 1.3 Lecture slides
 
 From 2022 this lecture will provide a more general background on evolutionary forces, and the Neutral and Nearly-Neutral theories of molecular evolution. 
 
@@ -94,7 +94,7 @@ There will be minor updates to the slides in 2024, which will be posted soon.
 <br>
 
 
-## PAML lab in English
+## 1.4 PAML lab in English
 
 The lab exercises (PAML demo) are available via small website (link below). The site contains some additional resources that are worth a look when you have time. Please note that slides may change a little prior to the lab. I will post modified PDFs as required. 
 
@@ -111,13 +111,13 @@ symlink in your home directory named "moledata" to obtain the course data files!
 
 <br>
 
-## Translated PAML Tutorials
+## 1.5 Translated PAML Tutorials
 
 [Will add Portuguese and possibly Spanish language translations in Summer of 2024.]
 
 <br>
 
-## Scientific ethics
+## 1.6 Scientific ethics
 
 Beginning in 2022 we added a session dedicated to scientific ethics. Our discussions often touch on the many ways that science has “*unwritten rules*”, and how such rules can privilege members of some groups and serve as a barrier to members of other groups. If this is new to you, or if you just want to know more, here are a few resources.
 
@@ -128,7 +128,7 @@ Many of the *unwritten rules* of science are the same as those that operate in s
 <br>
 <br>
 
-# Content for additional activties
+# 2. Content for additional activties
 
 ## Additional readings and advanced topics 
 
