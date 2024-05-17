@@ -10,7 +10,7 @@ permalink: /faculty-bielawski/
 
 * [Dept of Mathematics & Statistics](https://www.dal.ca/faculty/science/math-stats/faculty-staff/our-faculty.html)
 
-* [Dept of Biology](http://www.dal.ca/faculty/science/biology/faculty-staff/our-faculty/joe-bielawski.html)]
+* [Dept of Biology](http://www.dal.ca/faculty/science/biology/faculty-staff/our-faculty/joe-bielawski.html)
 
 * [GitHub](https://github.com/evoworks/)
 
