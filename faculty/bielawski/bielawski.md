@@ -61,25 +61,24 @@ permalink: /faculty-bielawski/
 
 **Are you completely new to models of sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00209.PUBLISHED.pdf) might be good for you.  (Section 2 can be skipped without any loss of continuity.)
 
-* **Citation:** Bielawski, J. P. (2016). Molecular Evolution, Models of. In Kliman, R.M. (ed.) Encyclopedia of Evolutionary Biology. Vol 1, pp. 61-70. Oxford: Academic Press.
+* *Bielawski, J. P. (2016). Models of Molecular Evolution. In Encyclopedia of Evolutionary Biology. Vol 1, pp. 61-70. Oxford: Academic Press.*
 
-**Do you some background in phylogenetics and DNA sequence models, but you are new to the are of detecting adaptive sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00171.PUBLISHED.pdf) will gives a very broad start.  
+**Do you some background in phylogenetics and DNA sequence models, but you are new to the are of detecting adaptive sequence evolution?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/00171.PUBLISHED.pdf) will give you a very broad start.  
 
-* **Citation:**  Bielawski, Joseph & Jones, Chris. (2016). Adaptive Molecular Evolution: Detection Methods. In Kliman, R.M. (ed.) Encyclopedia of Evolutionary Biology. Vol 1, pp. 16-25. Oxford: Academic Press.
+* *Bielawski & Jones (2016). Adaptive Molecular Evolution: Detection Methods. In Encyclopedia of Evolutionary Biology. Vol 1, pp. 16-25. Oxford: Academic Press.*
 
 <br>
 
 ## Quick start for codon models
 
-**Are you completely new to codon models?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/XXXXXXXXX.pdf) will give an accessible review of the theory of codon models and how they are used to investigate how protein coding genes evolve. 
+**Are you completely new to codon models?**  Then [this review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Delport_etal_2008.pdf) will give you an accessible review of the theory of codon models and how they are used. 
 
-* **Citation:**
+* *Delport, Scheffler, & Seoighe (2009). Models of coding sequence evolution. Briefings in bioinformatics, 10(1), 97-109.*
 
 
 **Do you want to take a deep dive into the theory and legitimate interpretation of codon models?** [This review paper](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Jones_etal_2019_Chapter13.pdf) combines evolutionary theory and statistical theory to explain the major inference challenges under codon models.  The paper concludes with a strong critique of the canonical interpretation of the dN/dS ratio (omega parameter) as a measure of adaptive change in protein function.
 
-* **Citation:** Jones C.T., Susko E., Bielawski J.P.,  2019. Looking for Darwin in genomic sequences: validity and success depends on the relationship between model and data. In Evolutionary Genomics: Statistical and Computational Methods. Maria Anisimova (ed.) 2nd edition, Human press.]
-  
+* *Jones C.T., Susko E., Bielawski J.P.,  2019. Looking for Darwin in genomic sequences: validity and success depends on the relationship between model and data. In Evolutionary Genomics: Statistical and Computational Methods. Maria Anisimova (ed.) 2nd edition, Human press.]*  
 <br>
 
 ## Lecture slides
