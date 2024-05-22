@@ -11,7 +11,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Friday, May 24, 2024
 
 ---------------|--------------------------------------|-----------------------------------
- 18:00 - 21:00 | Swope Terrace (overlooking Eel Pond) | Opening Reception
+ 18:00 - 21:00 |  Meigs Room (Swope, 2nd floor) | Opening Reception
 {:.daily-schedule-std}
 
 ### Saturday, May 25, 2024
