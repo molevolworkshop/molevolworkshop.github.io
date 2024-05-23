@@ -112,11 +112,11 @@ symlink in your home directory named "moledata" to obtain the course data files!
 
 You can do the tutorial in **Portuguese** via [this link](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab_PT/Lab_PT.html).  Many thanks to Letícia Magpali for the translation!
 
-Letícia Magpali and Esteban Salazar are working on a **Spanish** Language translation!  Hopefully we can provide this soon
+Letícia Magpali and Esteban Salazar are working on a **Spanish** Language translation!  Hopefully we can provide this soon.
 
 If you have any suggestions or comments on the **Portuguese** translation, please send them to Letícia Magpali (leticiamagpali@dal.ca).  Feel free to communicate directly with her in Portuguese.
 
-If you would like to assist with the translation of these tutorials, please contact me or Letícia Magpali (leticiamagpali@dal.ca).  
+If you would like to assist with a translation, please contact me or Letícia Magpali (leticiamagpali@dal.ca).  
 
 <br>
 
