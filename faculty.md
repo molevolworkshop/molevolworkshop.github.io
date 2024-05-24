@@ -36,7 +36,7 @@ permalink: /faculty/
 
 [Claudia Solís-Lemus](/faculty-solis-lemus/), University of Wisconsin-Madison
 
-[Megan Smith](/faculty-smith/), Indiana State University
+[Megan Smith](/faculty-smith/), Mississippi State University
 
 [David Swofford](/faculty-swofford/), Duke University
 
