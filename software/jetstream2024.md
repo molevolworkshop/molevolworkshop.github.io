@@ -767,7 +767,7 @@ cd
 curl -LO https://github.com/iqtree/iqtree2/releases/download/v2.3.2/iqtree-2.3.2-Linux-intel.tar.gz
 tar zxvf iqtree-2.3.2-Linux-intel.tar.gz
 mv iqtree-2.3.2-Linux-intel.tar.gz TARs
-sudo mv iqtree-2.3.2-Linux-intel/bin/iqtree /usr/local/bin
+sudo mv iqtree-2.3.2-Linux-intel/bin/iqtree2 /usr/local/bin
 ~~~~~~
 Last updated 2024-05-14.
 
@@ -1087,7 +1087,7 @@ Advanced Options:
 | Public IP Address                        | Automatic              | Yes      |
 | Boot Script                              | see below              | No       |
 
-Be sure to change `<not shown>` to a real password in the boot script before pressing the Create button to create the instances. The Exosphere GUI will say "Building" in orange, then "running Setup", then "Ready" in green. Clicking on "Instances" will take you to a screen that shows each instance created and its IP address.
+Be sure to change `<passwd>` to a real password in the boot script before pressing the Create button to create the instances. The Exosphere GUI will say "Building" in orange, then "running Setup", then "Ready" in green. Clicking on "Instances" will take you to a screen that shows each instance created and its IP address.
 
 You (or a student) can now log into an instance as **moleuser** with a command like this:
 
@@ -1097,7 +1097,35 @@ You (or a student) can now log into an instance as **moleuser** with a command l
 
 This is the default cloud-config boot script with some modifications for MOLE. 
 
-* One modification is the addition of the moleuser. Note that SSH public keys for the co-directors as well as the TAs are automatically saved to the _~moleuser/.ssh/authorized_keys_ directory on each instance, making it easy for the TAs to log in to any instance, even if the student has changed the moleuser password (will be communicated to students in the first (intro) computer lab).
+* One modification is the addition of the moleuser. Note that SSH public keys for the co-directors as well as the TAs are automatically saved to the _~moleuser/.ssh/authorized_keys_ directory on each instance, making it easy for the TAs to log in to any instance, even if the student has changed the moleuser password (will be communicated to students in the first (intro) computer lab). Previously used a `chgpasswd` section that looked like this:
+        chpasswd:
+            expire: false            # do not force user to change passwd on first login
+            users:
+                - name: moleuser     # mkpasswd --method=SHA-512 --rounds=4096 <passwd> -s /gyk3ST/YBZpL/wh
+                  password: $6$rounds=4096$/gyk3ST/YBZpL/wh$GbjLz08E2xaEky9eSTH/uVmui2K2ZCBHWPPGBi7cVEgrvNKzUTEPqhdgXK74wqi8WWqtwKDi3nxgUWzw8bFbJ/
+This year I have changed it to be simpler:
+        chpasswd:
+            expire: false            # do not force user to change passwd on first login
+            users:
+                - name: moleuser
+                  password: <passwd>
+where `<passwd>` is to be modified to the actual password before running cloud-init. **HOWEVER** the simpler method failed to change the password! Had to set the password individually for all VMs! 
+
+Changes made to cloud-init (not used for any of the 2024 VMs, but has been tested on one VM):
+1. removed chpasswd section altogether
+        chpasswd:
+            expire: false            # do not force user to change passwd on first login
+            users:
+                - name: moleuser
+                  password: <passwd> # mkpasswd --method=SHA-512 --rounds=4096 <mypasswd>
+     and put the hashed password into the users declaration for moleuser:
+        password: <replace me with hashed password generated using "mkpasswd --method=SHA-512 --rounds=4096">
+        expiredate: '2024-12-31'
+        lock_passwd: false
+2. Replaced
+        sudo: ['ALL=(ALL) NOPASSWD:ALL']{ssh-authorized-keys}
+    with
+        sudo: ALL=(ALL) NOPASSWD:ALL 
 
 * Another modification is the addition of 15 lines to the runcmd section. These lines do the following:
 
@@ -1122,9 +1150,12 @@ This is the default cloud-config boot script with some modifications for MOLE.
 users:
   - default                 # preserve the standard default user
   - name: moleuser          # MOLE-specific: adds a user moleuser common to all
+    passwd: <replace me with hashed password generated using "mkpasswd --method=SHA-512 --rounds=4096">
+    expiredate: '2024-12-31'
+    lock_passwd: false
     shell: /bin/bash        #   VMs in addition to the exouser added by default
     groups: sudo, admin    
-    sudo: ['ALL=(ALL) NOPASSWD:ALL']{ssh-authorized-keys}
+    sudo: ALL=(ALL) NOPASSWD:ALL
     ssh_authorized_keys:    # moleuser has public keys for directors and TAs allowing easy login
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpAtnEa/ULxAsa7HWP9puJfq8iTaMmkMxqEsu7f+psbmYTSmxH3QmAgWmPraNR0GQ+TG0uZUw9dR30jGn4e4+J6NCQ0H/qvoB3KIyIaFJzeg48skz0paGX+SfrdM2IEGd3ciIoKPnvx0xUZQot0DZfT6KTRm341G/u9tXzmMz/KIRmOokFmfNh4Bwt+qna5YLLBQs8GDyaLP6Sz/uabDi+k8S2BpVTV8OIGT0pFDkZ1Og8S5eJ0Rc7QHsrLfBijmB/XRtXmfMEuT7xNcvtKtQm7T/pGSy8eNhogJZX72GFCLAv/mHInBKk6qtU4wuHxan8yE2zGNhno7T8N87D0l4pxvev+kMfeUK7QvUKvxJuzGBY7SyiLlrPC3sfFTqLriOZvQg7d/o3BFyWFDFvfH3jTXe1rRdK9iHNwt9Qd7ARtKyVSKD3ZeQ3x33x9RPtDppOSEVY4oGAQ0YKVat1GmVVhiklDBoQYs13arIwHlEWoPr7xXqUlW8kQeRTn2epLAk= adetunjiadesina@BIOF-SAWYER-AA.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC42u90ydg9KNHHu9MIoZfAnilSb362WQRm+bT9hVhqX53LOnJ/KxSfdaOzadwdhi1aowevEvWvXINFa3MAVOyvuvkug42XffBH0TyjhrPcQcS+hIbFytwD/fdDLd3MYrksjvNFZPnTT1AKF6YQOZEKsRI5JLdfF6A3k3ddWCyEE6jtaY4tqXSYfLPia4HjA8zPXPgyDZBNvfD3yA+irT9PDZ2dJvbxQzrcDoOgpJfZW0zvEBnk+znD4xpJ2Zb9QFV5RTRKNYnjryGVnL7CAKr1scr9k09FQ9bXoSc0IEgoMFtcKnAnXroYcs/7vw2FvkbI9y8DToTn2LzDaPMsyMUSdPXd3JuqCDDyfPP1DrCKRkw0Adr/+L6JxEEgjOBy5BHj3nOQJsoaGQJUvPnryJCH9TSt4Cgvj5BrVm5j6MKwyR1lKPhLKnni+RE5zC/7Qd+hgd1cCIhx+94DHXf22eTzIN8qJtSlrHXqejL+CtMYPeVVrE49ebOKuIUv5BMSM+U= teejay@Adetunjis-MacBook-Air.local
@@ -1138,12 +1169,7 @@ users:
         - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1D6eflrh3q3daop2orqL0pXrAqOUt8AaYWaC/d+iZQutHiroByNjpSETkmEd1yw8NpF6gVkh8oNqvTH1ERlJtX1BETipUvJAlvV67ZwWDSoYVqM+RwFiUT4cIC2No0V3ETI9pd4D0Dnq/9l4V9pYaunnbvIaAUsQiDRPMcRq+aOZRB/fH9nTQ5jfWKWEAu2m77T6esXe0bFX6cMhoZdk4HQSc+Wdsfn5TZEoi7+0YVK7973ZmIHYRRl9a/80NtIIHQVOOjPve3mUxv5/dlFBvPVLVHe91XqD4DnXnjXytBgNpqjPHNY28yy/UZ7Ba8XXIxGzWEDy3p1+dJzXni/hOQ== DavidSwofford
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDV/XPzswM4seTioKLp01l4yzoaxRgK1Hx0yQQpr/HlokC0hSCuACQSaA6ULMqgsoAd4S1EhI9rujdpf8N7yKKsNIrwpGSX9UL5bUsCE8xh5n500iu2YUTkBuWDgZvGPqKWwMu9L9v5AxH/bk2l4EqfbPUyzgcQRX6w5OJoz7pYvEBD8BGc5y/V3VfW3BaQARdXQqvc6Eqg5wEewsLjBrkNwc0nVQHTxIuz3MP1eRybbsB44N6JuqyVlogdy8DzSI96Za/yVPCeVcGfl44N9rOa8+/7t2AsE+ycGuTM3tOeWJBUE5FOzFbEpk3SppcwKkOwTt+nnLMcCRpovHJOmSSHdptq7HJptm49FDChX/AYQy91EObHLqOkbciueHlTRNYjeye2+rnYS83kNi3f0iYr01HeUtK85GcvCGxbEpinPEVbSUFDI9inbkYVvSkL6T5JK9NWXgDpqFvGU1fESMaaZCtXDgDuFZI0T83k/tsRLvD8woxqCSsZPIvbz/UPUwM= tracyh@Indigo.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFYUmO7HPYTDvNCjAZIkXfR/P9cCm6QzQqRRLRFH7XI8ZF6w3+jhuT3bXDvHqYCP4W0s67UfWU1C92qtMWpzVzHw2XWi67agSNNU/PgywlCoQqoybf1s5SDfgPGJ54env9Y09KtHZF64n4WI/Sja5+FSeF7Cd4xt8SkJcRIPV+EHluE08imnFvNkW1REG32x1xDJq7euezwIHUhG9Be7nXN0VQlX0UH4D6KIDg7+autni/yZzKrfX0w7vFsAja8flWUj02mTGtZU428kHThjvzH6fJ7IonM+gSN+s+MW+1xkWSQp6N4OzM79aZS5xuzup29/8vkWcO03kg8Vigctvx ejmctavish@gmail.com
-ssh_pwauth: true             # allow password authentication (for students)
-chpasswd:
-    expire: false            # do not force user to change passwd on first login
-    users:
-        - name: moleuser     # mkpasswd --method=SHA-512 --rounds=4096 <passwd> -s /gyk3ST/YBZpL/wh
-          password: $6$rounds=4096$/gyk3ST/YBZpL/wh$GbjLz08E2xaEky9eSTH/uVmui2K2ZCBHWPPGBi7cVEgrvNKzUTEPqhdgXK74wqi8WWqtwKDi3nxgUWzw8bFbJ/
+ssh_pwauth: true             # determines whether or not sshd will be configured to accept password authentication
 package_update: true
 package_upgrade: {install-os-updates}
 packages:
