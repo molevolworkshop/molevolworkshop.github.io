@@ -11,7 +11,7 @@ permalink: /faculty-beerli/
 
 ## Arrival and Departure
 
-May 25 - June 7, 2023
+May 24 - June 4, 2024
 
 ## Lecture Materials
 
@@ -20,15 +20,15 @@ Note: *The presentations may change up until the moment the lecture or lab begin
 
 Coalescence lecture (Tuesday, May 30 2023): I will introduce the coalescent and its use for population genetics inference. The first section of the lecture will discuss basics;  in the second part I will discuss extensions of the basic coalescent. I will focus on neutral population processes, such as population structure, population size changes through time, population divergence, multi-merger coalescence and problems and complications with inferences using the coalescence.
 
-* May 30 (9-10:30): Introduction to the coalescent [Coalescence2022-talk1]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2022.pdf) (talk given earlier: [Coalescence2019talk]({{site.baseurl}}/faculty/beerli/pdf/talk1-opt.pdf)[Coalescence2018-talk](https://peterbeerli.com/workshops/mbl/2018/talk1.pdf))
-* May 30 (10:30-12): extending the basic coalescent [Coalescence2022-talk2]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2022.pdf)
-* June 3 (19:00-22:00) *MIGRATE* tutorial and evolutionary model selection beyond mutation models, specific tutorial instructions TBA.
+* May 28 (9-10:30): Introduction to the coalescent [Coalescence2024-talk1]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2024.pdf) (talk given earlier: [Coalescence2019talk]({{site.baseurl}}/faculty/beerli/pdf/talk1-opt.pdf)[Coalescence2018-talk](https://peterbeerli.com/workshops/mbl/2018/talk1.pdf))
+* May 28 (10:30-12): extending the basic coalescent [Coalescence2024-talk2]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2024.pdf)
+* May 29 (19:00-22:00) *MIGRATE* tutorial and evolutionary model selection beyond mutation models, specific tutorial instructions TBA.
 
 ## Teaching Tools
 {% include figure.html description="Wright-Fisher Model" url="/faculty/beerli/img/Wf.png" css="image-right" %}
 
 * [Bugs_in_box](https://github.com/pbeerli/bugsinbox/zipball/master) is a python3 program that visualizes coalescence of bugs (well they are ladybugs and beetles) in a box. They crawl like crazy until they hit another bug, devour it and move on. There is a help menu (press H) that displays all options. This application has a few shortcomings: (1) it does not adjust well for different screen size (for example presentation beamers make the bugs huge); (2) No way to save or print directly out of the app, but Dave Swofford contributed a fun spin when there are two bugs left (see help menu in python bugsinbox.py).
-* [PopVizard/popsim](https://github.com/pbeerli/popsim/zipball/master) is a python program that allows to plot pictures of population genealogies like the ones on this page.
+* [PopVizard](https://github.com/pbeerli/popvizard/zipball/master) is a python program that allows to plot pictures of population genealogies like the ones on this page.
 
 ## Demo and Tutorials
 {% include figure.html description="Canning Model" url="/faculty/beerli/img/Canning.png" css="image-right" %}
