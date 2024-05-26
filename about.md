@@ -4,7 +4,7 @@ title: About
 menutitle: About
 permalink: /about/
 ---
-{% include figure.html description="Rainbow, Eel Pond, 2019" url="/assets/img/rainbow2019.jpg" css="image-right" height="300px" %}
+{% include figure.html description="Woods Hole Sunset, 2019" url="/assets/img/wh-sunset.jpeg" css="image-right" height="300px" %}
 
 MBL’s Workshop on Molecular Evolution is the most prestigious workshop serving the field of evolutionary studies. Founded in 1988, it is the longest-running workshop of its kind, and it has earned worldwide recognition for its rich and intensive learning experience. Students work closely with internationally-recognized scientists, receiving 
 * high-level instruction in the principles of molecular evolution and evolutionary genomics

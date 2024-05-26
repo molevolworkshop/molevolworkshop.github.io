@@ -7,12 +7,12 @@ permalink: /faculty-smith/
 
 ### Arrival and Departure
 
-May 26 - June 5, 2023
+May 27 - June 3, 2023
 
 ### Contact Info 
 E-mail: [ms4438@msstate.edu](mailto:ms4438@msstate.edu)
 
-Address: Current: Indiana University Bloomington
+Address: Current: Mississippi State University
 
 ### Lecture slides (2023)
 Machine Learning Part 1 [MLPart1]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_Part1.pdf)

@@ -11,14 +11,14 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Friday, May 24, 2024
 
 ---------------|--------------------------------------|-----------------------------------
- 18:00 - 21:00 | Swope Terrace (overlooking Eel Pond) | Opening Reception
+ 18:00 - 21:00 |  Meigs Room (Swope, 2nd floor) | Opening Reception
 {:.daily-schedule-std}
 
 ### Saturday, May 25, 2024
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Kubatko](/faculty-beerli/)           | Welcome, Introductions, and [Workshop introduction]({{ site.baseurl }}/faculty/beerli/pdf/MOLE-2023-intro-slides.pdf)
- 10:30 - 12:00 | [Lewis](/faculty-lewis/)             | [Introduction to Phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/phylointro.pdf)
+ 10:30 - 12:00 | [Lewis](/faculty-lewis/)             | [Introduction to Phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/phylointro-2024.pdf)
  14:00 - 15:30 | [Huelsenbeck](/faculty-huelsenbeck/) | [Introduction to Likelihood]({{ site.baseurl }}/faculty/huelsenbeck/pdf/WoodsHole2012_1-opt.pdf)
  15:30 - 17:00 | [Huelsenbeck](/faculty-huelsenbeck/) | Simulating Molecular Evolution
  19:00 - 20:30 | TAs                                  | [Intro computer lab](/labs/intro/)
@@ -29,12 +29,12 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional) ([Programming Book]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf))
- 09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Maximum likelihood (cont.)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-2023.pdf)
- 10:30 - 12:00 | [Swofford](/faculty-swofford/)       | [Model Selection]({{ site.baseurl }}/faculty/swofford/pdf/swofford_WH2023_modsel.pdf)
+ 09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Maximum likelihood (cont.)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-2024.pdf)
+ 10:30 - 12:00 | [Swofford](/faculty-swofford/)       | [Model Selection]({{ site.baseurl }}/faculty/swofford/pdf/swofford_WH2024_modsel.pdf)
  14:00 - 15:30 | [Swofford](/faculty-swofford/)       | [Introduction to PAUP*](http://paup.phylosolutions.com/)
  15:30 - 17:00 | [Swofford](/faculty-swofford/)       | [PAUP* lab](/faculty/swofford/pdf/modsel-sim-tutorial.html)
- 19:00 - 20:30 | TAs                                | [IQ-TREE Introduction]({{ site.baseurl }}/faculty/bui/pdf/MOLE2023-IQ-TREE.pdf)
- 20:30 - 22:00 | TAs                               | [IQ-TREE lab](http://www.iqtree.org/workshop/molevol2023) [IQ-TREE quiz](https://docs.google.com/forms/d/e/1FAIpQLScOaOwUZMof9GxTVzE0zDoqr9xWNUWRtNHUmQgZExU2hIEi0w/formResponse)
+ 19:00 - 20:30 | TAs                                | [IQ-TREE Introduction]({{ site.baseurl }}/faculty/fauskee/pdf/iqtree-BF-MOLE-2024.pdf)
+ 20:30 - 22:00 | TAs                               | [IQ-TREE lab](http://www.iqtree.org/workshop/molevol2023) [IQ-TREE quiz](https://docs.google.com/forms/d/e/1FAIpQLScoyuPHbCEYRxqf_H9Opu0QEmIw3KePZK_aTMAtBi5ktyqHlA/viewform?usp=sf_link)
  22:00 - 23:59 | Loeb Quad                            | Evening social gathering
 {:.daily-schedule-cpp}
  
