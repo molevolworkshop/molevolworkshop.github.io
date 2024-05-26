@@ -18,7 +18,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Kubatko](/faculty-beerli/)           | Welcome, Introductions, and [Workshop introduction]({{ site.baseurl }}/faculty/beerli/pdf/MOLE-2023-intro-slides.pdf)
- 10:30 - 12:00 | [Lewis](/faculty-lewis/)             | [Introduction to Phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/phylointro.pdf)
+ 10:30 - 12:00 | [Lewis](/faculty-lewis/)             | [Introduction to Phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/phylointro-2024.pdf)
  14:00 - 15:30 | [Huelsenbeck](/faculty-huelsenbeck/) | [Introduction to Likelihood]({{ site.baseurl }}/faculty/huelsenbeck/pdf/WoodsHole2012_1-opt.pdf)
  15:30 - 17:00 | [Huelsenbeck](/faculty-huelsenbeck/) | Simulating Molecular Evolution
  19:00 - 20:30 | TAs                                  | [Intro computer lab](/labs/intro/)
@@ -29,7 +29,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional) ([Programming Book]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf))
- 09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Maximum likelihood (cont.)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-2023.pdf)
+ 09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Maximum likelihood (cont.)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-2024.pdf)
  10:30 - 12:00 | [Swofford](/faculty-swofford/)       | [Model Selection]({{ site.baseurl }}/faculty/swofford/pdf/swofford_WH2023_modsel.pdf)
  14:00 - 15:30 | [Swofford](/faculty-swofford/)       | [Introduction to PAUP*](http://paup.phylosolutions.com/)
  15:30 - 17:00 | [Swofford](/faculty-swofford/)       | [PAUP* lab](/faculty/swofford/pdf/modsel-sim-tutorial.html)
