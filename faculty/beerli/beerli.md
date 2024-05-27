@@ -18,7 +18,7 @@ May 24 - June 4, 2024
 Note: *The presentations may change up until the moment the lecture or lab begins. I will try to post the modified the PDF before the lecture but will post the actual talk-PDF after each talk.*
 <!-- , and Laura Kubatko will follow and talk about speciestrees/genetree estimation. -->
 
-Coalescence lecture (Tuesday, May 30 2023): I will introduce the coalescent and its use for population genetics inference. The first section of the lecture will discuss basics;  in the second part I will discuss extensions of the basic coalescent. I will focus on neutral population processes, such as population structure, population size changes through time, population divergence, and problems and complications with inferences using the coalescence.
+Coalescence lecture (Tuesday, May 28/29 2024): I will introduce the coalescent and its use for population genetics inference. The first section of the lecture will discuss basics;  in the second part I will discuss extensions of the basic coalescent. I will focus on neutral population processes, such as population structure, population size changes through time, population divergence, and problems and complications with inferences using the coalescence.
 
 * May 28 (9-10:30): Introduction to the coalescent [Coalescence2024-talk1]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2024.pdf) (talk given earlier: [Coalescence2018-talk](https://peterbeerli.com/workshops/mbl/2018/talk1.pdf))
 * May 28 (10:30-12): extending the basic coalescent [Coalescence2024-talk2]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2024.pdf)
