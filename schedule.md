@@ -42,8 +42,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck)  | C++ Programming Workshop (optional)
- 09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics (part 1)]({{ site.baseurl}}/faculty/lewis/pdf/lewis-bayesian-2023a.pdf)
- 10:30 - 12:00 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics (part 2)]({{ site.baseurl}}/faculty/lewis/pdf/lewis-bayesian-2023b.pdf)
+ 09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics (part 1)]({{ site.baseurl}}/faculty/lewis/pdf/lewis-bayesian-2024a.pdf)
+ 10:30 - 12:00 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics (part 2)]({{ site.baseurl}}/faculty/lewis/pdf/lewis-bayesian-2024b.pdf)
  14:00 - 15:30 | [Brown](/faculty-brown/)             | [Introduction to graphical models and RevBayes](/faculty/brown/pdf/Brown_GraphicalModels_RevBayes.pdf)
  15:30 - 17:00 | [Brown](/faculty-brown/)             | [Gene tree estimation with RevBayes](https://revbayes.github.io/tutorials/ctmc/)
  19:00 - 20:30 | [Heath](/faculty-heath/)             | [Divergence time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
