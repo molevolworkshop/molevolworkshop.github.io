@@ -87,8 +87,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
  10:30 - 12:00 | [Bielawski](/faculty-bielawski/)     | [Intro to codon models: Lecture slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_2.pdf)
  14:00 - 15:30 | [Chang](/faculty-chang/)             | [Protein evolution & ancestral reconstruction]({{ site.baseurl }}/faculty/chang/pdf/Protein_Evolution_&_Ancestral_Reconstruction-opt.pdf)
  15:30 - 17:00 | [Chang](/faculty-chang/)             | [Adaptive protein evolution]({{ site.baseurl }}/faculty/chang/pdf/Adaptive_Protein_Evolution-opt.pdf)
- 19:00 - 20:30 | [Bielawski](/faculty-bielawski/)     | [PAML lab](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html), [lab slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO_2023.pdf)
- 20:30 - 22:00 | [Bielawski](/faculty-bielawski/)     | [Additional resources](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html), [advanced lab](https://bitbucket.org/EvoWorks/protocol-inference-of-episodic-selection/downloads)
+ 19:00 - 20:30 | [Bielawski](/faculty-bielawski/)     | [PAML lab](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html), [lab slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO_2024.pdf)
+ 20:30 - 22:00 | [Bielawski](/faculty-bielawski/)     | [Additional lab resources](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html), [optional advanced lab](https://bitbucket.org/EvoWorks/protocol-inference-of-episodic-selection/downloads)
  22:00 - 23:59 | Loeb Quad                            | Social	    
 {:.daily-schedule-cpp}
 
