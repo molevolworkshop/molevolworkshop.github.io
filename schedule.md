@@ -57,8 +57,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
  09:00 - 10:30 | [Beerli](/faculty-beerli/)           | [Introduction to The Coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2024.pdf)
  10:30 - 12:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2024.pdf)
  14:00 - 15:30 | [Kubatko](/faculty-kubatko/)         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2024.pdf)
- 15:30 - 17:00 | [Kubatko](/faculty-kubatko/), [Swofford](/faculty-swofford/) | [Species Tree Lab Slides]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreesLab_2024.pdf), [Species Tree Lab Tutorial]({{ site.baseurl }}/faculty/kubatko/pdf/species-trees-tutorial-2023.html)
- 19:00 - 20:30 | [Kubatko](/faculty-kubatko/), [Swofford](/faculty-swofford/) | [Species Tree Lab Slides]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreesLab1_2023.pdf), [Species Tree Lab Tutorial]({{ site.baseurl }}/faculty/kubatko/pdf/species-trees-tutorial-2023.html)
+ 15:30 - 17:00 | [Kubatko](/faculty-kubatko/), [Swofford](/faculty-swofford/) | [Species Tree Lab Slides]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreesLab_2024.pdf), [Species Tree Lab Tutorial]({{ site.baseurl }}/faculty/kubatko/pdf/species-trees-tutorial-2024.html)
+ 19:00 - 20:30 | [Kubatko](/faculty-kubatko/), [Swofford](/faculty-swofford/) | [Species Tree Lab Slides]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreesLab_2024.pdf), [Species Tree Lab Tutorial]({{ site.baseurl }}/faculty/kubatko/pdf/species-trees-tutorial-2024.html)
  20:30 - 22:00 | Open Lab                              | 
 {:.daily-schedule-cpp}
 
