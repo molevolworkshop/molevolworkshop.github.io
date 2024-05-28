@@ -17,7 +17,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Saturday, May 25, 2024
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Kubatko](/faculty-beerli/)           | Welcome, Introductions, and [Workshop introduction]({{ site.baseurl }}/faculty/beerli/pdf/MOLE-2023-intro-slides.pdf)
+ 09:00 - 10:30 | [Kubatko](/faculty-beerli/)           | Welcome, Introductions, and Workshop overview
  10:30 - 12:00 | [Lewis](/faculty-lewis/)             | [Introduction to Phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/phylointro-2024.pdf)
  14:00 - 15:30 | [Huelsenbeck](/faculty-huelsenbeck/) | [Introduction to Likelihood]({{ site.baseurl }}/faculty/huelsenbeck/pdf/WoodsHole2012_1-opt.pdf)
  15:30 - 17:00 | [Huelsenbeck](/faculty-huelsenbeck/) | Simulating Molecular Evolution
