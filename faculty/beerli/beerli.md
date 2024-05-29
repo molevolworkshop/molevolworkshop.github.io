@@ -22,7 +22,7 @@ Coalescence lecture (Tuesday, May 28/29 2024): I will introduce the coalescent a
 
 * May 28 (9-10:30): Introduction to the coalescent [Coalescence2024-talk1]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2024.pdf) (talk given earlier: [Coalescence2018-talk](https://peterbeerli.com/workshops/mbl/2018/talk1.pdf))
 * May 28 (10:30-12): extending the basic coalescent [Coalescence2024-talk2]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2024.pdf)
-* May 29 (19:00-22:00) *MIGRATE* tutorial and evolutionary model selection beyond mutation models, specific tutorial instructions TBA.
+* May 29 (9:00-12:00) *MIGRATE* tutorial and evolutionary model selection beyond mutation models, specific tutorial instructions [Tutorial-Intro]({{ site.baseurl }}/faculty/beerli/pdf/bayesfactor_presented2024.pdf) [Tutorial]({{ site.baseurl }}/faculty/beerli/migrate-tutorial-html/MIGRATEtutorial2023.html)
 
 ## Teaching Tools
 {% include figure.html description="Wright-Fisher Model" url="/faculty/beerli/img/Wf.png" css="image-right" %}
