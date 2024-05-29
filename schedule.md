@@ -109,8 +109,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Sunday, June 2, 2024
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Moreau](https://www.moreaulab.entomology.cornell.edu/team/corrie-moreau/)                 | [Phylogenomics and the evolution of ants and their gut microbiomes]()
- 10:30 - 12:00 | [Moreau](https://www.moreaulab.entomology.cornell.edu/team/corrie-moreau/)                 |  [Phylogenomics and the evolution of ants and their gut microbiomes]()
+ 09:00 - 10:30 | [Moreau](https://www.moreaulab.entomology.cornell.edu/team/corrie-moreau/)                 | [Phylogenomics and the evolution of ants and their gut microbiomes]({{ site.baseurl }}/faculty/moreau/pdf/Moreau_WoodsHole1_2024.pdf)
+ 10:30 - 12:00 | [Moreau](https://www.moreaulab.entomology.cornell.edu/team/corrie-moreau/)                 |  [Phylogenomics and the evolution of ants and their gut microbiomes]({{ site.baseurl }}/faculty/moreau/pdf/Moreau_WoodsHole2_2024.pdf)
  14:00 - 15:30 | [McTavish](/faculty-mctavish/)       | [Phylogenomics slides]({{ site.baseurl }}/faculty/mctavish/pdf/Genomics_MOLE2023-opt.pdf), [Tree updating lab](https://github.com/snacktavish/Mole2023/blob/master/TreeUpdating.md)
  15:30 - 17:00 | [McTavish](/faculty-mctavish/)       | [Open Tree slides]({{ site.baseurl }}/faculty/mctavish/pdf/OpenTree_MOLE2023-opt.pdf), [Tree comparison lab](https://github.com/snacktavish/Mole2023/blob/master/TreeComparison.md) 
  19:00 - 20:30 | [Knowles](/faculty-knowles/)         | [Evolutionary applications of genomic data]({{ site.baseurl }}/faculty/knowles/pdf/Knowles-Woodshole-2023-Lect-opt.pdf)
