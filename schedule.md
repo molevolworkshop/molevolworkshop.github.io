@@ -101,7 +101,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  10:30 - 12:00 | [Smith](/faculty-smith/)             | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_Part2.pdf)
  14:00 - 15:30 | [Gill](https://stat.uga.edu/directory/people/mandev-gill)                                                     | Phylodynamics of Infectious Disease
  15:30 - 17:00 | [Gill](https://stat.uga.edu/directory/people/mandev-gill)                                                     | Phylodynamics of Infectious Disease
- 19:00 - 20:30 | [Solís-Lemus](/faculty-solis-lemus/) | [Network models lecture (2023 version)]({{ site.baseurl }}/faculty/solis-lemus/pdf/talk-networks-mbl.pdf)
+ 19:00 - 20:30 | [Solís-Lemus](/faculty-solis-lemus/) | [Phylogenetic networks to study reticulate evolution]({{ site.baseurl }}/faculty/solis-lemus/pdf/talk-networks-mbl-2024.pdf)
  20:30 - 22:00 | [Solís-Lemus](/faculty-solis-lemus/) | [Network models tutorial](https://github.com/crsl4/PhyloNetworks.jl/wiki)
  22:00 - 23:59 | Loeb Quad                            | Social
  {:.daily-schedule-cpp}
