@@ -97,8 +97,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
- 09:00 - 10:30 | [Smith](/faculty-smith/)             | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_Part1.pdf)
- 10:30 - 12:00 | [Smith](/faculty-smith/)             | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_Part2.pdf)
+ 09:00 - 10:30 | [Smith](/faculty-smith/)             | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_MOLE_2024.pdf)
+ 10:30 - 12:00 | [Smith](/faculty-smith/)             | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_MOLE_2024.pdf)
  14:00 - 15:30 | [Gill](https://stat.uga.edu/directory/people/mandev-gill)                                                     | Phylodynamics of Infectious Disease
  15:30 - 17:00 | [Gill](https://stat.uga.edu/directory/people/mandev-gill)                                                     | Phylodynamics of Infectious Disease
  19:00 - 20:30 | [Solís-Lemus](/faculty-solis-lemus/) | [Phylogenetic networks to study reticulate evolution]({{ site.baseurl }}/faculty/solis-lemus/pdf/talk-networks-mbl-2024.pdf)
