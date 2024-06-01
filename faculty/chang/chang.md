@@ -12,9 +12,9 @@ permalink: /faculty-chang/
 
 ### Arrival and Departure
 
-June 2 to June 6
+May 30 to June 3, 2024
 
-### Lecture Materials (2022)
+### Lecture Materials
 
 * [Protein Evolution & Ancestral Reconstruction]({{ site.baseurl }}/faculty/chang/pdf/chang1-2022-opt.pdf)
 * [Adaptive Protein Evolution]({{ site.baseurl }}/faculty/chang/pdf/chang2-2022-opt.pdf)

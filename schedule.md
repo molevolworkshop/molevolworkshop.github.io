@@ -85,8 +85,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
  09:00 - 10:30 | [Bielawski](/faculty-bielawski/)     | [Theories of molecular evolution: Lecture slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf)
  10:30 - 12:00 | [Bielawski](/faculty-bielawski/)     | [Intro to codon models: Lecture slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_2.pdf)
- 14:00 - 15:30 | [Chang](/faculty-chang/)             | [Protein evolution & ancestral reconstruction]({{ site.baseurl }}/faculty/chang/pdf/Protein_Evolution_&_Ancestral_Reconstruction-opt.pdf)
- 15:30 - 17:00 | [Chang](/faculty-chang/)             | [Adaptive protein evolution]({{ site.baseurl }}/faculty/chang/pdf/Adaptive_Protein_Evolution-opt.pdf)
+ 14:00 - 15:30 | [Chang](/faculty-chang/)             | [Adaptive protein evolution: Introduction]({{ site.baseurl }}/faculty/chang/pdf/BChang_WH_1_2024_compressed_updated.pdf)
+ 15:30 - 17:00 | [Chang](/faculty-chang/)             | [Adaptive protein evolution: Detecting changes in selection]({{ site.baseurl }}/faculty/chang/pdf/BChang_WH_2_2024_compressed_updated.pdf)
  19:00 - 20:30 | [Bielawski](/faculty-bielawski/)     | [PAML lab](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html), [lab slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO_2024.pdf)
  20:30 - 22:00 | [Bielawski](/faculty-bielawski/)     | [Additional lab resources](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html), [optional advanced lab](https://bitbucket.org/EvoWorks/protocol-inference-of-episodic-selection/downloads)
  22:00 - 23:59 | Loeb Quad                            | Social	    
@@ -97,11 +97,11 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional)
- 09:00 - 10:30 | [Smith](/faculty-smith/)             | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_Part1.pdf)
- 10:30 - 12:00 | [Smith](/faculty-smith/)             | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_Part2.pdf)
+ 09:00 - 10:30 | [Smith](/faculty-smith/)             | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_MOLE_2024.pdf)
+ 10:30 - 12:00 | [Smith](/faculty-smith/)             | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_MOLE_2024.pdf) ([Jupyter Notebook Instructions](/ml-jupyter/))
  14:00 - 15:30 | [Gill](https://stat.uga.edu/directory/people/mandev-gill)                                                     | Phylodynamics of Infectious Disease
  15:30 - 17:00 | [Gill](https://stat.uga.edu/directory/people/mandev-gill)                                                     | Phylodynamics of Infectious Disease
- 19:00 - 20:30 | [Solís-Lemus](/faculty-solis-lemus/) | [Network models lecture (2023 version)]({{ site.baseurl }}/faculty/solis-lemus/pdf/talk-networks-mbl.pdf)
+ 19:00 - 20:30 | [Solís-Lemus](/faculty-solis-lemus/) | [Phylogenetic networks to study reticulate evolution]({{ site.baseurl }}/faculty/solis-lemus/pdf/talk-networks-mbl-2024.pdf)
  20:30 - 22:00 | [Solís-Lemus](/faculty-solis-lemus/) | [Network models tutorial](https://github.com/crsl4/PhyloNetworks.jl/wiki)
  22:00 - 23:59 | Loeb Quad                            | Social
  {:.daily-schedule-cpp}

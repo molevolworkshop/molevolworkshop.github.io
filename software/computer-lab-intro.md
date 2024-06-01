@@ -80,7 +80,7 @@ Shells are computer programs that represent the outermost (i.e. closest to you) 
 The cluster we will be using is from the [Jetstream2](https://jetstream-cloud.org) project at Indiana University. Jetstream was NSF's first science and engineering research cloud, completed in early 2016. Jetstream is one source of computing infrastructure provided under the umbrella of [Xsede](https://www.xsede.org), the Extreme Science and Engineering Discovery Environment, an NSF-sponsored program that provides cloud computing for researchers in academia. 
 
 {% comment %}
-Below is outdated and should be updated: 
+Below is outdated and should be updated to the one above [change made in 2024]: 
 The virtual computing environment you will be using is provided through a (U.S.) National Science Foundation funded program called [Xsede](https://www.xsede.org/), which (at least for those of you at U.S. institutions) is good for you to know about because Xsede also provides (assuming your application is accepted) these same cloud computing resources to researchers to facilitate research. (Note that Xsede is currently winding down, but will be succeeded by a similar program called Access.)
 ## SSH 
 SSH stands for **Secure SHell**. 
@@ -205,9 +205,9 @@ If you get a popup dialog box with a lot of ugly text in it, e.g.
     
 just press the Allow button. This is just letting you know that you are logging into a machine that you've never connected to before. This would only be a concern if you see it a _second time_ (which may mean someone has swapped the computer you thought you were connecting to with a different machine).
 
-Cyberduck should ask you for the password. Type in the password you created earlier. There should be a button asking for you to add to your keychain or something similar. Make sure this box is ticked. Once done, click to connect.
+Cyberduck should ask you for the password. Type in the password you created earlier. There should be a button asking for you to *Add to Keychain* or something similar. Make sure this box is ticked. Once done, click to *Login* (or connect).
 
-This may connect you directly to the virtual machine. If not double click on the bookmark again.
+This may connect you directly to the virtual machine. If not, double click on the bookmark again.
 
 You now should see your home directory on the cluster. You should see the folder named _myfolder_ that we created earlier as well as the symlink named _eg_ (which looks like an ordinary folder except that the folder icon contains a tiny little arrow symbol, which clues you into the fact that this is an alias and not a real folder.
 
@@ -217,7 +217,7 @@ Navigating through the class cluster in cyberduck is easy.
 
 Double click on a folder to open that folder.
 
-Above the window that lists files you should see your path: e.g. _/home/moleuser_. This tells you where you are in the virtual machine's directory structure. If you click this dropdown menu you can see each nested folder in the directory hierarchy above that point. Clicking on any of these intermediate directories will allow you to navigate to that directory. If you get lost in folders you can click this dropdown and select _/home/moleuser_ to return to your home directory.
+Above the window that lists files you should see your path: e.g., _/home/moleuser_. This tells you where you are in the virtual machine's directory structure. If you click this dropdown menu you can see each nested folder in the directory hierarchy above that point. Clicking on any of these intermediate directories will allow you to navigate to that directory. If you get lost in folders you can click this dropdown and select _/home/moleuser_ to return to your home directory.
 
 There are two ways to download files from the virtual machine to your computer.
 
@@ -239,7 +239,7 @@ Close this window.
 
 Now when you single click on a file in Cyberduck, an _Edit_ button with the icon for the editor you selected should appear in the top right corner. Click this button to open that file in the editor. Now you can edit the file on the cluster without downloading to your local computer. When you save this file it will be automatically updated on the class cluster.
 
-### Short Cyber Duck Exercise
+### Short Cyberduck exercise
 
 The easiest way to transfer files using CyberDuck is with drag-and-drop. Try to drag a file from your desktop (or another folder of your choosing) from the CyberDuck window. This method allows you to choose unique destinations for each file you transfer.
 
