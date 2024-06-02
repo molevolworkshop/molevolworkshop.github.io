@@ -121,7 +121,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Monday, June 3, 2024
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Swofford](/faculty-swofford/)/[Bielawski](/faculty-bielawski/)       | Scientific ethics panel discussion ([2024 Brief Intro Slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_Intro_2024.pdf)) ROOM CHANGE to: Meigs Room (Swope 2nd floor)
+ 09:00 - 10:30 | [Swofford](/faculty-swofford/)/[Bielawski](/faculty-bielawski/)       | Scientific ethics panel discussion ([2024 Brief Intro Slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Ethics_Intro_2024.pdf)) ROOM CHANGE to: Meigs Room (Swope 2nd floor)
  10:30 - 12:00 | Open lab                             |
 {:.daily-schedule-std}
      
