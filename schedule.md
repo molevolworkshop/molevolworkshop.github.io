@@ -71,7 +71,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  12:00 - 12:15 | group photo (don't miss it!)         | (Swope Terrace)
  14:00 - 15:30 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2024_partI.pdf)
  15:30 - 17:00 | [Edwards](/faculty-edwards/)         | [Pangenomes and evolution]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2024_partII.pdf)
- 19:00 - 22:00 | Swope Terrace                        | Course Dinner Party
+ 19:00 - 22:00 | Meigs Room (Swope 2nd floor)         | Course Dinner Party
  22:00 - 23:59 | Loeb Quad                            | Post-dinner social gathering
 {:.daily-schedule-cpp}
 
@@ -121,7 +121,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Monday, June 3, 2024
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Swofford](/faculty-swofford/)/[Bielawski](/faculty-bielawski/)       | Scientific ethics panel discussion ([Holder 2019 lecture]({{ site.baseurl }}/faculty/holder/pdf/Holder_last_lecture_2019-opt.pdf))
+ 09:00 - 10:30 | [Swofford](/faculty-swofford/)/[Bielawski](/faculty-bielawski/)       | Scientific ethics panel discussion ([Holder 2019 lecture]({{ site.baseurl }}/faculty/holder/pdf/Holder_last_lecture_2019-opt.pdf)) ROOM CHANGE to: Meigs Room (Swope 2nd floor)
  10:30 - 12:00 | Open lab                             |
 {:.daily-schedule-std}
      
