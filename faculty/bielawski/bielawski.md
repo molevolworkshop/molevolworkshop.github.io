@@ -122,12 +122,18 @@ If you would like to assist with a translation, please contact me or Letícia Ma
 
 ## 1.6 &nbsp; Scientific ethics
 
-In 2022 we added a session dedicated to scientific ethics. Our discussions touch the “*unwritten rules*” of science, and how such rules can privilege members of some groups and serve as a barrier others. If you just want to know more, here are a few resources.
+In 2022 we added a session dedicated to scientific ethics. Our discussions touch the “*unwritten rules*” of science, and how such rules can privilege members of some groups and serve as a barrier others. 
+
+If you want to get a copy of the "**Applied Ethics Primer**" you can get it here for free: [https://caul-cbua.pressbooks.pub/aep/](https://caul-cbua.pressbooks.pub/aep/)
+
+
+If you just want to know more, here are a few resources.
 
 *  &nbsp; We recently wrote a paper called ["Ten simple rules for succeeding as an underrepresented STEM undergraduate"](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010101) to help make explicit the "*hidden curriculum*" of science.
 
 * &nbsp; Many of the *unwritten rules* of science are the same as those that operate in society at large, including racism operating within people who adhere to egalitarian attitudes. In the essay [“Science in the Belly of the Beast: my Career in the Academy”](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Belly_of_the_Beast_2012.pdf) Joseph L. Graves, Jr. describes his personal experience with the "*unwritten rules*" of the academy, including the "*one and one-quarter rule*".
 
+* &nbsp; Here is a copy of [“Snow Brown and the Seven Detergents: A Metanarrative on Science and the Scientific Method.”](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Snow_Brown.pdf) by Banu Sbramaniam (Women's Studies Quarterly, Vol. 28, No. 1/2, (2000), pp. 296-304.) 
 <br>
 <br>
 
