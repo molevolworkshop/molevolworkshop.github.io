@@ -122,10 +122,9 @@ If you would like to assist with a translation, please contact me or Letícia Ma
 
 ## 1.6 &nbsp; Scientific ethics
 
-In 2022 we added a session dedicated to scientific ethics. Our discussions touch the “*unwritten rules*” of science, and how such rules can privilege members of some groups and serve as a barrier others. 
+In 2022 we added a session dedicated to scientific ethics. If you want to get a copy of the "**Applied Ethics Primer**" you can get it here for free: [https://caul-cbua.pressbooks.pub/aep/](https://caul-cbua.pressbooks.pub/aep/)
 
-If you want to get a copy of the "**Applied Ethics Primer**" you can get it here for free: [https://caul-cbua.pressbooks.pub/aep/](https://caul-cbua.pressbooks.pub/aep/)
-
+Our discussions touch the “**unwritten rules**” of science, and how such rules can privilege members of some groups and serve as a barrier others. 
 
 If you just want to know more, here are a few resources.
 
