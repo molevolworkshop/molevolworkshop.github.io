@@ -62,6 +62,8 @@ The design should include the following items:
 
 Color of the T-shirts can be decided after the design is selected.
 
+People take different size t-shirts from what they input. Even though we order extra, there will be some problems with the number of t-shirts and sizes. Make sure to check the number of t-shirts in different sizes matches with the number we ordered. Then, instead of letting students to take one by themselves, it is better to distribute one by one by checking the spreadsheet, so they take what they asked for.
+
 ## Survey
 To get information on the size of the t-shirts for each participant, as well as whether they would want to have a lobster for the course dinner party, we created a Google survey [e.g., https://docs.google.com/forms/d/1F0PLsQDkbpUwzcDr4vYRjnZd31H6qC1eqY8w97kC-1M] that contains the following questions:
 
@@ -134,4 +136,5 @@ I think the activity was good and straightforward.
 * There is a fridge with a lock on the second floor break room. It would be nice if MOLE can continue to use it in the coming years to store stuff in the future.
 * Getting drinks are not funded by MBL so it is a good idea to encourage participants to contribute as the workshop goes. 
 * Swim: Water is cold.
-* Tried contributed playlist, but seems not going well.
+* Get use to how lightings work.
+* Check if the markers seems to be working well.
