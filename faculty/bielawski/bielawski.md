@@ -136,6 +136,7 @@ If you just want to know more, here are a few resources.
 * &nbsp; Here is a copy of [“Snow Brown and the Seven Detergents: A Metanarrative on Science and the Scientific Method.”](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/SnowBrown.pdf) by Banu Sbramaniam (Women's Studies Quarterly, Vol. 28, No. 1/2, (2000), pp. 296-304.)
   
 <br> &nbsp; 
+
 <br>
 
 # 2. &nbsp; Content for additional activties
