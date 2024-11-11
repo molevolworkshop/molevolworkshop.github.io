@@ -8,59 +8,59 @@ permalink: /schedule/
 
 All sessions are in Loeb G70 (basement of Loeb building)
 
-### Thursday, May 23, 2024
+### Thursday, May 22, 2024
 
 ---------------|--------------------------------------|-----------------------------------
- 18:00 - 21:00 |  Meigs Room (Swope, 2nd floor) | Opening Reception
+ 18:00 - 21:00 |  Meigs Room (Swope, 2nd floor)       | Opening Reception
 {:.daily-schedule-std}
 
-### Friday, May 25, 2024
+### Friday, May 23, 2024
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Heath](/faculty-heath/)           | Welcome, Introductions, and Workshop overview
- 10:30 - 12:00 | [Bielawski](/faculty-bielawski/)             | [Scientific Ethics]()
- 10:30 - 12:00 | [Heath](/faculty-heath/)             | [Introduction to Phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/phylointro-2024.pdf)
+ 09:00 - 10:30 | Course Directors & Participants      | Welcome, introductions, and workshop overview
+ 10:30 - 11:00 | [Bielawski](/faculty-bielawski/)     | [Scientific ethics]()
+ 11:00 - 12:00 | [Heath](/faculty-heath/)             | [Introduction to phylogenetics]()
  14:00 - 15:30 | [Lewis](/faculty-lewis/) | [Introduction to Likelihood]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-2024.pdf)
- 15:30 - 17:00 | [Huelsenbeck](/faculty-huelsenbeck/) | Simulating Molecular Evolution
+ 15:30 - 17:00 | [Huelsenbeck](/faculty-huelsenbeck/) | Simulating molecular evolution
  19:00 - 20:30 | TAs                                  | [Intro computer lab](/labs/intro/)
  20:30 - 22:00 | TAs                                  | [Alignment lab](/labs/alignment/)
 {: .daily-schedule-cpp}
 
-### Saturday, May 26, 2024
+### Saturday, May 24, 2024
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Huelsenbeck](/faculty-huelsenbeck/) | [Model-based phylogenetics]()
- 10:30 - 12:00 | [Swofford](/faculty-swofford/)       | [Model Selection]({{ site.baseurl }}/faculty/swofford/pdf/swofford_WH2024_modsel.pdf)
+ 10:30 - 12:00 | [Swofford](/faculty-swofford/)       | [Model selection]({{ site.baseurl }}/faculty/swofford/pdf/swofford_WH2024_modsel.pdf)
  14:00 - 15:30 | [Swofford](/faculty-swofford/)       | [Introduction to PAUP*](http://paup.phylosolutions.com/)
  15:30 - 17:00 | [Swofford](/faculty-swofford/)       | [PAUP* lab](/faculty/swofford/pdf/modsel-sim-tutorial.html)
- 19:00 - 20:30 | TAs                                | [IQ-TREE Introduction]({{ site.baseurl }}/faculty/fauskee/pdf/iqtree-BF-MOLE-2024.pdf)
- 20:30 - 22:00 | TAs                               | [IQ-TREE lab](http://www.iqtree.org/workshop/molevol2023) [IQ-TREE quiz](https://docs.google.com/forms/d/e/1FAIpQLScoyuPHbCEYRxqf_H9Opu0QEmIw3KePZK_aTMAtBi5ktyqHlA/viewform?usp=sf_link)
+ 19:00 - 20:30 | TAs                                  | [IQ-TREE introduction]({{ site.baseurl }}/faculty/fauskee/pdf/iqtree-BF-MOLE-2024.pdf)
+ 20:30 - 22:00 | TAs                                  | [IQ-TREE lab](http://www.iqtree.org/workshop/molevol2023) [IQ-TREE quiz]()
  22:00 - 23:59 | Loeb Quad                            | Evening social gathering
 {:.daily-schedule-std}
  
-### Sunday, May 27, 2024
+### Sunday, May 25, 2024
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics (part 1)]({{ site.baseurl}}/faculty/lewis/pdf/lewis-bayesian-2024a.pdf)
  10:30 - 12:00 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics (part 2)]({{ site.baseurl}}/faculty/lewis/pdf/lewis-bayesian-2024b.pdf)
  14:00 - 15:30 | [Brown](/faculty-brown/)             | [Introduction to graphical models and RevBayes](/faculty/brown/pdf/Brown_GraphicalModels_RevBayes.pdf)
  15:30 - 17:00 | [Brown](/faculty-brown/)             | [Gene tree estimation with RevBayes](https://revbayes.github.io/tutorials/ctmc/)
- 19:00 - 20:30 | [Heath](/faculty-heath/)             | [Divergence time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
- 20:30 - 22:00 | [Heath](/faculty-heath/)             | [Divergence time estimation Lab](https://revbayes.github.io/tutorials/fbd_simple)
+ 19:00 - 20:30 | [Heath](/faculty-heath/)             | [Divergence-time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
+ 20:30 - 22:00 | [Heath](/faculty-heath/)             | [Divergence-time estimation Lab](https://revbayes.github.io/tutorials/fbd_simple)
 {:.daily-schedule-std}
 
-### Monday, May 28, 2024
+### Monday, May 26, 2024
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Beerli](/faculty-beerli/)           | [Introduction to The Coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2024.pdf)
- 10:30 - 12:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2024.pdf)
+ 09:00 - 10:30 | [Eme](/faculty-eme/)		          | [Deep phylogenomics]()
+ 10:30 - 12:00 | [Eme](/faculty-beerli/)              | [Deep phylogenomics]()
+ 14:00 - 15:30 | [Beerli](/faculty-beerli/)           | [Introduction to The Coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2024.pdf)
+ 15:30 - 17:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2024.pdf)
+ 17:00 - 15:30 | [Kubatko](/faculty-kubatko/)         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2024.pdf)
  14:00 - 15:30 | [Kubatko](/faculty-kubatko/)         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2024.pdf)
- 15:30 - 17:00 | [Kubatko](/faculty-kubatko/), [Swofford](/faculty-swofford/) | [Species Tree Lab Slides]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreesLab_2024.pdf), [Species Tree Lab Tutorial]({{ site.baseurl }}/faculty/kubatko/pdf/species-trees-tutorial-2024.html)
- 19:00 - 20:30 | [Kubatko](/faculty-kubatko/), [Swofford](/faculty-swofford/) | [Species Tree Lab Slides]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreesLab_2024.pdf), [Species Tree Lab Tutorial]({{ site.baseurl }}/faculty/kubatko/pdf/species-trees-tutorial-2024.html)
- 20:30 - 22:00 | Open Lab                              | 
 {:.daily-schedule-std}
 
-### Tuesday, May 29, 2024
+### Tuesday, May 27, 2024
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Beerli](/faculty-beerli/)           | [Model comparison in biogeography/population genetics using MIGRATE (introduction slides)]({{site.baseurl}}/faculty/beerli/pdf/bayesfactor_presented2024.pdf)
@@ -70,13 +70,13 @@ All sessions are in Loeb G70 (basement of Loeb building)
  15:30 - 17:00 | [Edwards](/faculty-edwards/)         | [Pangenomes and evolution]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2024_partII.pdf)
  19:00 - 22:00 | Meigs Room (Swope 2nd floor)         | Course Dinner Party
  22:00 - 23:59 | Loeb Quad                            | Post-dinner social gathering
-{:.daily-schedule-std}
+{:.daily-schedule-cpp}
 
-### Wednesday, May 30, 2024
+### Wednesday, May 28, 2024
 
 **Free Day** (sleep in, catch up on email, visit [Martha's Vineyard](https://mvol.com), go [whale watching in Hyannis](https://www.whales.net), etc.)
 
-### Thursday, May 31, 2024
+### Thursday, May 29, 2024
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Bielawski](/faculty-bielawski/)     | [Theories of molecular evolution: Lecture slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf)
@@ -89,7 +89,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 {:.daily-schedule-std}
 
 
-### Friday, June 1, 2024
+### Friday, May 30, 2024
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Smith](/faculty-smith/)             | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_MOLE_2024.pdf)
@@ -101,7 +101,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  22:00 - 23:59 | Loeb Quad                            | Social
  {:.daily-schedule-std}
 
-### Saturday, June 2, 2024
+### Saturday, May 31, 2024
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Moreau](https://www.moreaulab.entomology.cornell.edu/team/corrie-moreau/)                 | [Phylogenomics and the evolution of ants and their gut microbiomes]({{ site.baseurl }}/faculty/moreau/pdf/Moreau_WoodsHole1_2024.pdf)
@@ -113,7 +113,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  22:00 - 23:59 | Loeb Quad                            | Almost-the-end party
 {:.daily-schedule-std}
 
-### Sunday, June 3, 2024
+### Sunday, June 1, 2024
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Swofford](/faculty-swofford/)/[Bielawski](/faculty-bielawski/)       | Scientific ethics panel discussion ([2024 Brief Intro Slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Ethics_Intro_2024.pdf)) ROOM CHANGE to: Meigs Room (Swope 2nd floor)
