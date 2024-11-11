@@ -64,13 +64,12 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Beerli](/faculty-beerli/)           | [Model comparison in biogeography/population genetics using MIGRATE (introduction slides)]({{site.baseurl}}/faculty/beerli/pdf/bayesfactor_presented2024.pdf)
- 10:30 - 12:00 | [Beerli](/faculty-beerli/)           | [Model comparison in biogeography/population genetics using MIGRATE (Tutorial)]({{ site.baseurl }}/faculty/beerli/migrate-tutorial-html/MIGRATEtutorial2023.html)
- 12:00 - 12:15 | group photo (don't miss it!)         | (Swope Terrace)
+ 10:30 - 12:00 | [Beerli](/faculty-beerli/)           | [MIGRATE (Tutorial)]({{ site.baseurl }}/faculty/beerli/migrate-tutorial-html/MIGRATEtutorial2023.html)
  14:00 - 15:30 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2024_partI.pdf)
  15:30 - 17:00 | [Edwards](/faculty-edwards/)         | [Pangenomes and evolution]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2024_partII.pdf)
  19:00 - 22:00 | Meigs Room (Swope 2nd floor)         | Course Dinner Party
  22:00 - 23:59 | Loeb Quad                            | Post-dinner social gathering
-{:.daily-schedule-cpp}
+{:.daily-schedule-std}
 
 ### Wednesday, May 28, 2024
 
@@ -92,20 +91,20 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Friday, May 30, 2024
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Smith](/faculty-smith/)             | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_MOLE_2024.pdf)
- 10:30 - 12:00 | [Smith](/faculty-smith/)             | [Machine learning and Molecular Evolution]({{ site.baseurl }}/faculty/smith/pdf/MachineLearning_MOLE_2024.pdf) ([Jupyter Notebook Instructions](/ml-jupyter/))
- 14:00 - 15:30 | [Gill](https://stat.uga.edu/directory/people/mandev-gill)                                                     | [Phylodynamics of Infectious Disease]({{ site.baseurl }}/faculty/gill/pdf/msgill_mole1.pdf)
- 15:30 - 17:00 | [Gill](https://stat.uga.edu/directory/people/mandev-gill)                                                     | [Phylodynamics of Infectious Disease]({{ site.baseurl }}/faculty/gill/pdf/msgill_mole2.pdf)
- 19:00 - 20:30 | [Solís-Lemus](/faculty-solis-lemus/) | [Phylogenetic networks to study reticulate evolution]({{ site.baseurl }}/faculty/solis-lemus/pdf/talk-networks-mbl-2024.pdf)
- 20:30 - 22:00 | [Solís-Lemus](/faculty-solis-lemus/) | [Network models tutorial](https://github.com/crsl4/PhyloNetworks.jl/wiki)
+ 09:00 - 10:30 | [Solís-Lemus](/faculty-solis-lemus/) | [Phylogenetic networks to study reticulate evolution]({{ site.baseurl }}/faculty/solis-lemus/pdf/talk-networks-mbl-2024.pdf)
+ 10:30 - 12:00 | [Solís-Lemus](/faculty-solis-lemus/) | [Network models tutorial](https://github.com/crsl4/PhyloNetworks.jl/wiki)
+ 14:00 - 15:30 | [Gill](https://stat.uga.edu/directory/people/mandev-gill)       | [Phylodynamics of Infectious Disease]({{ site.baseurl }}/faculty/gill/pdf/msgill_mole1.pdf)
+ 15:30 - 17:00 | [Gill](https://stat.uga.edu/directory/people/mandev-gill)       | [Phylodynamics of Infectious Disease]({{ site.baseurl }}/faculty/gill/pdf/msgill_mole2.pdf)
+ 19:00 - 20:30 | [Zenil-Ferguson]()                   | [Phylogenetic comparative methods]()
+ 20:30 - 22:00 | [Zenil-Ferguson]()                   | Phylogenetic comparative methods]()
  22:00 - 23:59 | Loeb Quad                            | Social
  {:.daily-schedule-std}
 
 ### Saturday, May 31, 2024
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Moreau](https://www.moreaulab.entomology.cornell.edu/team/corrie-moreau/)                 | [Phylogenomics and the evolution of ants and their gut microbiomes]({{ site.baseurl }}/faculty/moreau/pdf/Moreau_WoodsHole1_2024.pdf)
- 10:30 - 12:00 | [Moreau](https://www.moreaulab.entomology.cornell.edu/team/corrie-moreau/)                 |  [Phylogenomics and the evolution of ants and their gut microbiomes]({{ site.baseurl }}/faculty/moreau/pdf/Moreau_WoodsHole2_2024.pdf)
+ 09:00 - 10:30 | [Yoder](/faculty-mctavish/)          | [Molecular evolution]()
+ 10:30 - 12:00 | [Yoder](/faculty-mctavish/)          | [Molecular evolution]()
  14:00 - 15:30 | [McTavish](/faculty-mctavish/)       | [Phylogenomics slides]({{ site.baseurl }}/faculty/mctavish/pdf/Genomics_MOLE2024.pdf), [Tree updating lab](https://github.com/snacktavish/Mole2023/blob/master/TreeUpdating.md)
  15:30 - 17:00 | [McTavish](/faculty-mctavish/)       | [Open Tree slides]({{ site.baseurl }}/faculty/mctavish/pdf/OpenTree_MOLE2024.pdf), [Tree comparison lab](https://github.com/snacktavish/Mole2023/blob/master/TreeComparison.md) 
  19:00 - 20:30 | [Knowles](/faculty-knowles/)         | [Evolutionary applications of genomic data]({{ site.baseurl }}/faculty/knowles/pdf/Knowles-Woodshole-2024-Lect.pdf)
