@@ -18,17 +18,18 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Heath](/faculty-heath/)           | Welcome, Introductions, and Workshop overview
+ 10:30 - 12:00 | [Bielawski](/faculty-bielawski/)             | [Scientific Ethics]()
  10:30 - 12:00 | [Heath](/faculty-heath/)             | [Introduction to Phylogenetics]({{ site.baseurl }}/faculty/lewis/pdf/phylointro-2024.pdf)
- 14:00 - 15:30 | [Lewis](/faculty-huelsenbeck/) | [Introduction to Likelihood]()
+ 14:00 - 15:30 | [Lewis](/faculty-lewis/) | [Introduction to Likelihood]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-2024.pdf)
  15:30 - 17:00 | [Huelsenbeck](/faculty-huelsenbeck/) | Simulating Molecular Evolution
  19:00 - 20:30 | TAs                                  | [Intro computer lab](/labs/intro/)
  20:30 - 22:00 | TAs                                  | [Alignment lab](/labs/alignment/)
-{: .daily-schedule-std}
+{: .daily-schedule-cpp}
 
 ### Saturday, May 26, 2024
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Maximum likelihood (cont.)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-2024.pdf)
+ 09:00 - 10:30 | [Huelsenbeck](/faculty-huelsenbeck/) | [Model-based phylogenetics]()
  10:30 - 12:00 | [Swofford](/faculty-swofford/)       | [Model Selection]({{ site.baseurl }}/faculty/swofford/pdf/swofford_WH2024_modsel.pdf)
  14:00 - 15:30 | [Swofford](/faculty-swofford/)       | [Introduction to PAUP*](http://paup.phylosolutions.com/)
  15:30 - 17:00 | [Swofford](/faculty-swofford/)       | [PAUP* lab](/faculty/swofford/pdf/modsel-sim-tutorial.html)
