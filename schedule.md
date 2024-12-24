@@ -8,13 +8,13 @@ permalink: /schedule/
 
 All sessions are in Loeb G70 (basement of Loeb building)
 
-### Thursday, May 22, 2024
+### Thursday, May 22, 2025
 
 ---------------|--------------------------------------|-----------------------------------
  18:00 - 21:00 |  Meigs Room (Swope, 2nd floor)       | Opening Reception
 {:.daily-schedule-std}
 
-### Friday, May 23, 2024
+### Friday, May 23, 2025
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | Course Faculty & Participants        | Welcome, introductions, and workshop overview
@@ -26,7 +26,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  20:30 - 22:00 | TAs                                  | [Alignment lab](/labs/alignment/)
 {: .daily-schedule-cpp}
 
-### Saturday, May 24, 2024
+### Saturday, May 24, 2025
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Huelsenbeck](/faculty-huelsenbeck/) | Simulating molecular evolution
@@ -38,7 +38,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  22:00 - 23:59 | Loeb Quad                            | Evening social gathering
 {:.daily-schedule-std}
  
-### Sunday, May 25, 2024
+### Sunday, May 25, 2025
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics (part 1)]({{ site.baseurl}}/faculty/lewis/pdf/lewis-bayesian-2024a.pdf)
@@ -49,7 +49,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  20:30 - 22:00 | [Heath](/faculty-heath/)             | [Divergence-time estimation Lab](https://revbayes.github.io/tutorials/fbd_simple)
 {:.daily-schedule-std}
 
-### Monday, May 26, 2024
+### Monday, May 26, 2025
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Eme](/faculty-eme/)		          | [Deep phylogenomics]()
@@ -60,7 +60,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  14:00 - 15:30 | [Kubatko](/faculty-kubatko/)         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2024.pdf)
 {:.daily-schedule-std}
 
-### Tuesday, May 27, 2024
+### Tuesday, May 27, 2025
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Beerli](/faculty-beerli/)           | [Model comparison in biogeography/population genetics using MIGRATE (introduction slides)]({{site.baseurl}}/faculty/beerli/pdf/bayesfactor_presented2024.pdf)
@@ -71,11 +71,11 @@ All sessions are in Loeb G70 (basement of Loeb building)
  22:00 - 23:59 | Loeb Quad                            | Post-dinner social gathering
 {:.daily-schedule-std}
 
-### Wednesday, May 28, 2024
+### Wednesday, May 28, 2025
 
 **Free Day** (sleep in, catch up on email, visit [Martha's Vineyard](https://mvol.com), go [whale watching in Hyannis](https://www.whales.net), etc.)
 
-### Thursday, May 29, 2024
+### Thursday, May 29, 2025
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Bielawski](/faculty-bielawski/)     | [Theories of molecular evolution: Lecture slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf)
@@ -88,7 +88,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 {:.daily-schedule-std}
 
 
-### Friday, May 30, 2024
+### Friday, May 30, 2025
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Solís-Lemus](/faculty-solis-lemus/) | [Phylogenetic networks to study reticulate evolution]({{ site.baseurl }}/faculty/solis-lemus/pdf/talk-networks-mbl-2024.pdf)
@@ -100,7 +100,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  22:00 - 23:59 | Loeb Quad                            | Social
  {:.daily-schedule-std}
 
-### Saturday, May 31, 2024
+### Saturday, May 31, 2025
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Yoder](/faculty-mctavish/)          | [Molecular evolution]()
@@ -112,7 +112,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  22:00 - 23:59 | Loeb Quad                            | Almost-the-end party
 {:.daily-schedule-std}
 
-### Sunday, June 1, 2024
+### Sunday, June 1, 2025
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | [Swofford](/faculty-swofford/)/[Bielawski](/faculty-bielawski/)       | Scientific ethics panel discussion ([2024 Brief Intro Slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Ethics_Intro_2024.pdf)) ROOM CHANGE to: Meigs Room (Swope 2nd floor)
