@@ -10,7 +10,7 @@ permalink: /people/
 
 [List of current and recent faculty, TAs, and course assistants](/faculty/)
 
-## 2024 Participants
+<!-- ## 2024 Participants
 
 
 |               First Name |                Last Name |                                                 Institution |
@@ -60,4 +60,4 @@ Hannah Elaine | Verdonk | Temple University
 Vicens | Vila-Coury | Columbia University & American Museum of Natural History
 Maya | Woolfolk | Harvard University
 Lei | Yang | University of Florida
-Mengjin | Zhang | University Of Hong Kong
+Mengjin | Zhang | University Of Hong Kong -->

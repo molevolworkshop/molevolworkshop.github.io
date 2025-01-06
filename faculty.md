@@ -4,7 +4,7 @@ title: Faculty
 permalink: /faculty/
 ---
 {% include figure.html description="" url="/assets/img/fromback2018.jpg" css="image-center" height="250px" %}
-## 2024 Course Faculty
+## 2025 Course Faculty
 
 [Peter Beerli](/faculty-beerli/), Florida State University
 
@@ -16,7 +16,7 @@ permalink: /faculty/
 
 [Scott Edwards](/faculty-edwards/), Harvard University
 
-<!-- [Laura Eme](/faculty-eme/), University Paris-Saclay -->
+[Laura Eme](/faculty-eme/), University Rhode Island
 
 [Mandev Gill](/faculty-gill/), University of Georgia
 
@@ -32,31 +32,35 @@ permalink: /faculty/
 
 [Emily Jane McTavish](/faculty-mctavish/), University of California-Merced
 
-[Corrie Moreau](/faculty-moreau/), Cornell University
+<!-- [Corrie Moreau](/faculty-moreau/), Cornell University -->
 
 [Claudia Solís-Lemus](/faculty-solis-lemus/), University of Wisconsin-Madison
 
-[Megan Smith](/faculty-smith/), Mississippi State University
+<!-- [Megan Smith](/faculty-smith/), Mississippi State University -->
 
 [David Swofford](/faculty-swofford/), Duke University
 
-<!-- [Anne Yoder](/faculty-yoder/), Duke University -->
+[Anne Yoder](/faculty-yoder/), Duke University
 
-## 2024 Course TAs
+[Rosana Zenil-Ferguson](/faculty-rzf/), University of Kentucky
+
+## 2025 Course TAs
 
 [Sungsik (Kevin) Kong](/faculty-kong/), University of Wisconsin-Madison
 
-[Blake Fauskee](/faculty-fauskee/), Duke University
+<!-- [Blake Fauskee](/faculty-fauskee/), Duke University
 
 [Analisa Milkey](/faculty-milkey/), University of Connecticut
 
 [Adetunji "Teejay" Adesina](/faculty-adesina/), University of Colorado Boulder
 
-[Bruno do Rosario Petrucci](/faculty-petrucci/), Iowa State University
+[Bruno do Rosario Petrucci](/faculty-petrucci/), Iowa State University -->
 
-## 2024 Course Assistant
+## 2025 Course Assistant
 
-[Camryn Ford](/course-assistant/)
+TBD
+
+<!-- [Camryn Ford](/course-assistant/) -->
 
 
 ## Former recent faculty
