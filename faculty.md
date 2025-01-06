@@ -91,9 +91,13 @@ Michael Landis, Washington University in St. Louis
 
 Conor Meehan, Institute of Tropical Medicine
 
+Corrie Moreau, Cornell University
+
 William Pearson, University of Virginia
 
 Antonis Rokas, Vanderbilt University
+
+Megan Smith, Mississippi State University
 
 Edward Susko, Dalhousie University
 
