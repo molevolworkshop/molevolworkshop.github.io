@@ -48,13 +48,12 @@ permalink: /faculty/
 
 [Sungsik (Kevin) Kong](/faculty-kong/), University of Wisconsin-Madison
 
-<!-- [Blake Fauskee](/faculty-fauskee/), Duke University
-
-[Analisa Milkey](/faculty-milkey/), University of Connecticut
-
 [Adetunji "Teejay" Adesina](/faculty-adesina/), University of Colorado Boulder
 
-[Bruno do Rosario Petrucci](/faculty-petrucci/), Iowa State University -->
+[Bruno do Rosario Petrucci](/faculty-petrucci/), Iowa State University
+
+[Hanon McShea](/faculty-mcshea/), University of California, San Francisco
+
 
 ## 2025 Course Assistant
 
@@ -113,6 +112,10 @@ Axel Meyer, Harold Zakon, Sara Sawyer, Shozo Yokoyama, Gavin Naylor
 
 ## Former recent TAs
 
+[Analisa Milkey](/faculty-milkey/), University of Connecticut
+
+[Blake Fauskee](/faculty-fauskee/), Duke University
+
 [Jordan Satler](/faculty-satler/) (lead TA), Ohio State University
 
 [Kate Taylor](/faculty-taylor/), University of Maryland
@@ -136,6 +139,8 @@ Axel Meyer, Harold Zakon, Sara Sawyer, Shozo Yokoyama, Gavin Naylor
 [April Wright](http://www.southeastern.edu/acad_research/depts/biol/faculty/directory/wright.html), Southeastern Louisiana University
 
 ## Former Recent Course Assistants
+
+Camryn Ford, The Ohio State University
 
 [Elena Korte](/course-assistant/), University of Connecticut
 
