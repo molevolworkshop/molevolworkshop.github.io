@@ -46,7 +46,7 @@ permalink: /faculty/
 
 ## 2025 Course TAs
 
-[Sungsik (Kevin) Kong](/faculty-kong/), University of Wisconsin-Madison
+[Sungsik (Kevin) Kong](/faculty-kong/), Brown University
 
 [Adetunji "Teejay" Adesina](/faculty-adesina/), University of Colorado Boulder
 
