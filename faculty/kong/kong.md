@@ -7,17 +7,14 @@ permalink: /faculty-kong/
 
 ### Arrival and Departure
 
-May 24 - June 4, 2024
+May 21 - May 30, 2025
 
 ### Contact Info 
 
-Address: University of Wisconsin-Madison
+Address: Brown University
 
 E-mail: [sungsik.kong@gmail.com](mailto:sungsik.kong@gmail.com)
 
 [Personal website](https://sungsik-kong.github.io)
-
-[Institutional homepage](https://wid.wisc.edu/people/sungsik-kong/)
-
 
 
