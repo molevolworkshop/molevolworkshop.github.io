@@ -11,7 +11,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Thursday, May 22, 2025
 
 ---------------|--------------------------------------|-----------------------------------
- 18:00 - 21:00 |  Meigs Room (Swope, 2nd floor)       | Opening Reception
+ 18:00 - 21:00 |  Swope Terrace and Cafe              | Opening Reception
 {:.daily-schedule-std}
 
 ### Friday, May 23, 2025
@@ -67,7 +67,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  10:30 - 12:00 | [Beerli](/faculty-beerli/)           | [MIGRATE (Tutorial)]({{ site.baseurl }}/faculty/beerli/migrate-tutorial-html/MIGRATEtutorial2023.html)
  14:00 - 15:30 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2024_partI.pdf)
  15:30 - 17:00 | [Edwards](/faculty-edwards/)         | [Pangenomes and evolution]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2024_partII.pdf)
- 19:00 - 22:00 | Meigs Room (Swope 2nd floor)         | Course Dinner Party
+ 19:00 - 22:00 | Swope Terrace and Cafe               | Course Dinner Party
  22:00 - 23:59 | Loeb Quad                            | Post-dinner social gathering
 {:.daily-schedule-std}
 
