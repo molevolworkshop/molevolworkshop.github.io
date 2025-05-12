@@ -33,13 +33,13 @@ Coalescence lecture (Monday, May 26 2025): I will introduce the coalescent and i
 ## Demo and Tutorials
 {% include figure.html description="Canning Model" url="/faculty/beerli/img/Canning.png" css="image-right" %}
 
-* [Population-model selection using MIGRATE on May 29 2024](http://peterbeerli.com/workshops/mbl/2024/tutorial). The tutorial guides you on estimating the most likely path of the Zika virus and discusses estimation of divergence times, gene flow, and model selection with MIGRATE 5.0.6. An older gene flow tutorial using the older version of migrate 3.x: [PDF](http://peterbeerli.com/workshops/mbl/2018/tutorial)).
+* [Population-model selection using MIGRATE on May 27 2025](http://peterbeerli.com/workshops/mbl/2024/tutorial). The tutorial guides you on estimating the most likely path of the Zika virus and discusses estimation of divergence times, gene flow, and model selection with MIGRATE 5.0.6. An older gene flow tutorial using the older version of migrate 3.x: [PDF](http://peterbeerli.com/workshops/mbl/2018/tutorial)).
 * If students are interested I am also happy to talk about LAMARC and give a [Lamarc tutorial](https://molevol.mbl.edu/index.php/Lamarc_tutorial): Recombination estimation with LAMARC
 
 ## Bayes factors and effect of parallel runs of MIGRATE
 {% include figure.html description="Moran Model" url="/faculty/beerli/img/Moran.png" css="image-right" %}
 
-This year I will have less time to introduce Bayes factor analysis in MIGRATE (but you will hear about them in Paul Lewis lecture). I gave in 2011 this lecture:
+<!-- This year I will have less time to introduce Bayes factor analysis in MIGRATE (but you will hear about them in Paul Lewis lecture). I gave in 2011 this lecture:-->
 
 * [Lecture on Bayes factor](http://people.sc.fsu.edu/~pbeerli/mbl2011_BF.pdf) that may help to understand the tasks in the MIGRATE lab.
 MIGRATE can run on many different operating systems and hardware, most efficiently it can run on computers that have more than one core (almost all these days) using parallelization:
