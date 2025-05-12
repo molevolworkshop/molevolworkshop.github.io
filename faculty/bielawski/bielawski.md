@@ -18,7 +18,7 @@ permalink: /faculty-bielawski/
 
 ## Arrival and Departure
 
-* Arrival: 22 May 2025 (Thur). Note I am currently schduled to fly through Newark
+* Arrival: 22 May 2025 (Thur).  --Note I am currently scheduled to fly through Newark.
 
 * Depart:  02 June 2025 (Mon)
 
