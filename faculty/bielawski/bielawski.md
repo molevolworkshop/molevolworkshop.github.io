@@ -27,9 +27,9 @@ permalink: /faculty-bielawski/
 
 ## 1. &nbsp; Content for workshop
 
-* 1.1 &nbsp; Quick start: Models & methods
+* 1.1 &nbsp; Quick start: Models & methods [A link to that custom anchor](#my-custom-anchor-point)
 
-* 1.2 &nbsp; Quick start: Codon models [Link Text](##1.2_quick_start_for_codon_models).
+* 1.2 &nbsp; Quick start: Codon models
 
 * 1.3 &nbsp; Lecture slides
 
@@ -56,7 +56,7 @@ permalink: /faculty-bielawski/
 <br>
 
 # 1. &nbsp; Content for workshop
-## 1.1 &nbsp; Quick start for models and methods
+## 1.1 &nbsp; Quick start for models and methods <a name="my-custom-anchor-point"></a>
 
 **Are you completely new to models of sequence evolution?** &nbsp; Start with this...
 
