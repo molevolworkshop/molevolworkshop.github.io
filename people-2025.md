@@ -2,7 +2,7 @@
 layout: page
 title: People
 menutitle: People
-permalink: /people/
+permalink: /people2025/
 ---
 {% include figure.html description="" url="/assets/img/group-photos/group-photo-2022.jpg" css="image-right" height="250px" %}
 
