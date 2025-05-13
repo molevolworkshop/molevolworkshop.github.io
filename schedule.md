@@ -18,7 +18,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | Course Faculty & Participants        | Welcome, introductions, and workshop overview
- 10:30 - 11:00 | [Bielawski](/faculty-bielawski/)     | [Scientific ethics]()
+ 10:30 - 11:00 | [Bielawski](/faculty-bielawski/)     | [Scientific ethics]([Intro Slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf))
  11:00 - 12:00 | [Heath](/faculty-heath/)             | [Introduction to phylogenetics]()
  14:00 - 15:30 | [Lewis](/faculty-lewis/)             | [Introduction to Likelihood]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-2024.pdf)
  15:30 - 17:00 | [Huelsenbeck](/faculty-huelsenbeck/) | [Model-based phylogenetics]()
@@ -115,7 +115,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Sunday, June 1, 2025
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Swofford](/faculty-swofford/)/[Bielawski](/faculty-bielawski/)       | Scientific ethics panel discussion ([2024 Brief Intro Slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Ethics_Intro_2024.pdf)) ROOM CHANGE to: Meigs Room (Swope 2nd floor)
+ 09:00 - 10:30 | [Swofford](/faculty-swofford/)/[Bielawski](/faculty-bielawski/)       | Scientific ethics panel discussion ([2025 Brief Intro Slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf)) ROOM CHANGE to: Meigs Room (Swope 2nd floor)
  10:30 - 12:00 | Open lab                             |
 {:.daily-schedule-std}
      
