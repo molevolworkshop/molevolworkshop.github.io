@@ -110,13 +110,15 @@ symlink in your home directory named "moledata" to obtain the course data files!
 
 ## 1.5 &nbsp; Translated PAML Tutorials <a name="anchor_1.5"></a>
 
-You can do the tutorial in **Portuguese** via [this link](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab_PT/Lab_PT.html).  Many thanks to Letícia Magpali for the translation! If you have any suggestions or comments on the **Portuguese** translation, please send them to Letícia Magpali (leticiamagpali@dal.ca).  Feel free to communicate directly with her in Portuguese.
+Do the tutorial in **Portuguese** via [this link](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab_PT/Lab_PT.html).  
 
-You can do the tutorial in **Spanish** via [temp](https://awarnach.mathstat.dal.ca/). Many thanks to Letícia Magpali and Esteban Salazar for the translation!
+*  Many thanks to Letícia Magpali for the translation! If you have any suggestions or comments on the **Portuguese** translation, please send them to Letícia Magpali (leticiamagpali@dal.ca).  Feel free to communicate directly with her in Portuguese.
 
-**Arabic and French** translations are in progress.
+Do the tutorial in **Spanish** via [temp](https://awarnach.mathstat.dal.ca/). 
 
-If you would like to assist with a translation, please contact me or Letícia Magpali (leticiamagpali@dal.ca).  
+* Many thanks to Letícia Magpali and Esteban Salazar for the translation!
+
+**Arabic and French** translations are in progress. If you would like to assist with a translation, please contact me or Letícia Magpali (leticiamagpali@dal.ca).  
 
 <br>
 
@@ -183,8 +185,8 @@ If you have some experience with codon models, and want to try out a tutorial fo
 
 <br>
 
-
-## 2.3 &nbsp; Best practices in large-scale evolutionary surveys <a name="anchor_2.3"></a>
+<a name="anchor_2.3"></a>
+## 2.3 &nbsp; Best practices in large-scale evolutionary surveys
 
 Large-scale evolutionary surveys are now commonplace. But with the use of progressively more complex codon models, these surveys are fraught with perils. Complex models are more prone to statistical problems such as MLE irregularities, and some can be quite sensitive to model misspecification.  UNIT 6.16 (see above) provides some recommended "best practices" for a **2-phase approach** to quality control and robustness in evolutionary surveys.  We have applied these to a large scale survey for functional divergence in nuclear receptors during homing evolution, and we used experimental approaches to investigate hypotheses about the role of a particular nuclear receptor (NR2C1) as a key modulator of developmental pluripotnetiality during hominid evolution. The paper that illustrates the power of such an evolutionary surgery, and the importance of an experimental design having explicit protocols for "best practices", is given below.
 
@@ -192,7 +194,8 @@ Large-scale evolutionary surveys are now commonplace. But with the use of progre
 
 <br>
 
-## 2.4 &nbsp; Alternative software for codon models in the ML framework <a name="anchor_2.4"></a>
+<a name="anchor_2.4"></a>
+## 2.4 &nbsp; Alternative software for codon models in the ML framework
 
 **HyPhy:**  comparative sequence analysis using stochastic evolutionary models; [http://www.hyphy.org/](http://www.hyphy.org/)
 
