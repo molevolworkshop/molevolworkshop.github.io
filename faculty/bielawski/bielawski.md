@@ -124,7 +124,7 @@ If you would like to assist with a translation, please contact me or Letícia Ma
 
 **2025 Ethics Lecture Resource**
 
-* **Lecture slides:** [slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_into_2025_A.pdf)
+* **Lecture slides:** [slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf)
 
 * Free copy of the "**Applied Ethics Primer**": [https://caul-cbua.pressbooks.pub/aep/](https://caul-cbua.pressbooks.pub/aep/)
 <br>
