@@ -85,17 +85,17 @@ permalink: /faculty-bielawski/
 
 ## 1.3 &nbsp; Lecture slides
 
-* **2024 Lecture slides (Part 1), Intro to the Neutral & Nearly Neutral Theories of Molecular Evolution:** [slide set 1](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf)
+* **Lecture slides (Part 1), Intro to the Neutral & Nearly Neutral Theories of Molecular Evolution:** [slide set 1](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf)
 <br>
 
-* **2024 Lecture slides (Part 2), Intro to Codon Models:** [slide set 2](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_2.pdf)
+* **Lecture slides (Part 2), Intro to Codon Models:** [slide set 2](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_2.pdf)
 
 <br>
 
 
 ## 1.4 &nbsp; PAML lab in English
 
-* **PAML lab**: [PAML Lab website](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html) &nbsp; (In 2024, we will do excercises **1, 3, and 4** only.)
+* **PAML lab**: [PAML Lab website](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html) &nbsp; (In 2025, we will do excercises **1, 3, and 4** only.)
 
 * **PAML lab resources**: [webpage](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html)
 
@@ -110,11 +110,11 @@ symlink in your home directory named "moledata" to obtain the course data files!
 
 ## 1.5 &nbsp; Translated PAML Tutorials
 
-You can do the tutorial in **Portuguese** via [this link](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab_PT/Lab_PT.html).  Many thanks to Letícia Magpali for the translation!
+You can do the tutorial in **Portuguese** via [this link](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab_PT/Lab_PT.html).  Many thanks to Letícia Magpali for the translation! If you have any suggestions or comments on the **Portuguese** translation, please send them to Letícia Magpali (leticiamagpali@dal.ca).  Feel free to communicate directly with her in Portuguese.
 
-Letícia Magpali and Esteban Salazar are working on a **Spanish** Language translation!  Hopefully we can provide this soon.
+You can do the tutorial in **Spanish** via [temp](https://awarnach.mathstat.dal.ca/). Many thanks to Letícia Magpali and Esteban Salazar for the translation!
 
-If you have any suggestions or comments on the **Portuguese** translation, please send them to Letícia Magpali (leticiamagpali@dal.ca).  Feel free to communicate directly with her in Portuguese.
+**Arabic and French** translations are in progress.
 
 If you would like to assist with a translation, please contact me or Letícia Magpali (leticiamagpali@dal.ca).  
 
@@ -124,7 +124,7 @@ If you would like to assist with a translation, please contact me or Letícia Ma
 
 **2025 Ethics Lecture Resource**
 
-* **Lecture slides:** [slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_2025.pdf)
+* **Lecture slides:** [slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_into_2025_A.pdf)
 
 * Free copy of the "**Applied Ethics Primer**": [https://caul-cbua.pressbooks.pub/aep/](https://caul-cbua.pressbooks.pub/aep/)
 <br>
