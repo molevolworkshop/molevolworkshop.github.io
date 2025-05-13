@@ -122,11 +122,14 @@ If you would like to assist with a translation, please contact me or Letícia Ma
 
 ## 1.6 &nbsp; Scientific ethics
 
-In 2022 we added a session dedicated to scientific ethics. If you want to get a copy of the "**Applied Ethics Primer**" you can get it here for free: [https://caul-cbua.pressbooks.pub/aep/](https://caul-cbua.pressbooks.pub/aep/)
+**2025 Ethics Lecture Resource**
 
-Our discussions touch the “**unwritten rules**” of science, and how such rules can privilege members of some groups and serve as a barrier others. 
+* **Lecture slides:** [slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_2025.pdf)
 
-If you just want to know more, here are a few resources.
+* Free copy of the "**Applied Ethics Primer**": [https://caul-cbua.pressbooks.pub/aep/](https://caul-cbua.pressbooks.pub/aep/)
+<br>
+
+**Supplemental Reading** (how such rules can privilege members of some groups and serve as a barrier others) 
 
 *  &nbsp; We recently wrote a paper called ["Ten simple rules for succeeding as an underrepresented STEM undergraduate"](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010101) to help make explicit the "*hidden curriculum*" of science.
 
