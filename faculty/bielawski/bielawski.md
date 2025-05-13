@@ -56,7 +56,8 @@ permalink: /faculty-bielawski/
 <br>
 
 # 1. &nbsp; Content for workshop
-## 1.1 &nbsp; Quick start for models and methods <a name="anchor_1.1"></a>
+<a name="anchor_1.1"></a>
+## 1.1 &nbsp; Quick start for models and methods
 
 **Are you completely new to models of sequence evolution?** &nbsp; Start with this...
 
@@ -70,7 +71,8 @@ permalink: /faculty-bielawski/
 
 <br>
 
-## 1.2 Quick start for codon models <a name="anchor_1.2"></a>
+<a name="anchor_1.2"></a>
+## 1.2 Quick start for codon models 
 
 **Are you completely new to codon models?** &nbsp; Start with this...
 
@@ -83,7 +85,8 @@ permalink: /faculty-bielawski/
 * *Jones C.T., Susko E., Bielawski J.P.,  2019. [Looking for Darwin in genomic sequences: validity and success depends on the relationship between model and data.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Jones_etal_2019_Chapter13.pdf)  In Evolutionary Genomics: Statistical and Computational Methods. Maria Anisimova (ed.) 2nd edition, Human press.]*  
 <br>
 
-## 1.3 &nbsp; Lecture slides <a name="anchor_1.3"></a>
+<a name="anchor_1.3"></a>
+## 1.3 &nbsp; Lecture slides 
 
 * **Lecture slides (Part 1), Intro to the Neutral & Nearly Neutral Theories of Molecular Evolution:** [slide set 1](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf)
 <br>
@@ -93,7 +96,8 @@ permalink: /faculty-bielawski/
 <br>
 
 
-## 1.4 &nbsp; PAML lab in English <a name="anchor_1.4"></a>
+<a name="anchor_1.4"></a>
+## 1.4 &nbsp; PAML lab in English 
 
 * **PAML lab**: [PAML Lab website](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html) &nbsp; (In 2025, we will do excercises **1, 3, and 4** only.)
 
@@ -108,7 +112,8 @@ symlink in your home directory named "moledata" to obtain the course data files!
 
 <br>
 
-## 1.5 &nbsp; Translated PAML Tutorials <a name="anchor_1.5"></a>
+<a name="anchor_1.5"></a>
+## 1.5 &nbsp; Translated PAML Tutorials
 
 Do the tutorial in **Portuguese** via [this link](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab_PT/Lab_PT.html).  
 
@@ -122,7 +127,8 @@ Do the tutorial in **Spanish** via [temp](https://awarnach.mathstat.dal.ca/).
 
 <br>
 
-## 1.6 &nbsp; Scientific ethics <a name="anchor_1.6"></a>
+<a name="anchor_1.6"></a>
+## 1.6 &nbsp; Scientific ethics 
 
 **2025 Ethics Lecture Resource**
 
@@ -144,8 +150,8 @@ Do the tutorial in **Spanish** via [temp](https://awarnach.mathstat.dal.ca/).
 <br>
 
 # 2. &nbsp; Content for additional activties
-
-## 2.1 &nbsp; Additional readings and advanced topics <a name="anchor_2.1"></a>
+<a name="anchor_2.1"></a>
+## 2.1 &nbsp; Additional readings and advanced topics 
 
 * A novel phenotype+genotype codon-model (PG-BSM) formulated to test and identify sites within a gene involved in phenotypic adaptation.  This method does NOT require dN/dS>1 to infer adaptive molecular evolution!:<br>
 (_[Jones, C. T., Youssef, N., Susko, E., & Bielawski, J. P. (2020). A Phenotype–Genotype Codon Model for Detecting Adaptive Evolution. Systematic biology, 69(4), 722-738.](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/Jones_Susko_Bielawski-2020_PG-BSM.pdf)_)
@@ -173,7 +179,8 @@ Do the tutorial in **Spanish** via [temp](https://awarnach.mathstat.dal.ca/).
 
 <br>
 
-## 2.2 &nbsp; Alternative lab and advanced inferences <a name="anchor_2.2"></a>
+<a name="anchor_2.2"></a>
+## 2.2 &nbsp; Alternative lab and advanced inferences 
 
 If you have some experience with codon models, and want to try out a tutorial for more advanced materials then use the link below to download an archive for a complete different set of PAML activities.  This tutorial focuses on detecting episodic protein evolution via **Branch-Site Model A**.  The tutorial also includes activities about (i) detecting **MLE instabilities**, (ii) carrying out **robustness analyses**, and (iii) use of **smoothed bootstrap aggregation (SBA)**.  The protocols for each activity are presented in Protocols in Bioinformatics UNIT 6.15.  The included PDF file for UNIT 6.16 also presents recommendations for "best practices" when carrying out a large-scale evolutionary survey for episodic adaptive evolution by using PAML.  The files required for this "alternative lab" are available via Bitbucket repository.  The repository link is given below.
 
