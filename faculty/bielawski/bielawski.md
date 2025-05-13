@@ -29,7 +29,7 @@ permalink: /faculty-bielawski/
 
 * 1.1 &nbsp; Quick start: Models & methods
 
-* 1.2 &nbsp; Quick start: Codon models
+* 1.2 &nbsp; Quick start: Codon models [Link Text](##1.2_quick_start_for_codon_models).
 
 * 1.3 &nbsp; Lecture slides
 
@@ -70,7 +70,7 @@ permalink: /faculty-bielawski/
 
 <br>
 
-## 1.2 &nbsp; Quick start for codon models
+## 1.2 Quick start for codon models
 
 **Are you completely new to codon models?** &nbsp; Start with this...
 
