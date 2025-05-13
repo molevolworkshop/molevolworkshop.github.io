@@ -11,7 +11,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Thursday, May 22, 2025
 
 ---------------|--------------------------------------|-----------------------------------
- 18:00 - 21:00 |  Swope Terrace and Cafe              | Opening Reception
+ 18:00 - 21:00 |  MBL Club (100 Water St.)            | Opening Reception
 {:.daily-schedule-std}
 
 ### Friday, May 23, 2025
@@ -52,11 +52,11 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Monday, May 26, 2025
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Eme](/faculty-eme/)		          | [Deep phylogenomics]()
+ 09:00 - 10:30 | [Eme](/faculty-eme/)		               | [Deep phylogenomics]()
  10:30 - 12:00 | [Eme](/faculty-beerli/)              | [Deep phylogenomics]()
  14:00 - 15:30 | [Beerli](/faculty-beerli/)           | [Introduction to The Coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2024.pdf)
  15:30 - 17:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2024.pdf)
- 19:00 - 20:30 | [McTavish](/faculty-mctavish/)      | [Phylogenomics slides]({{ site.baseurl }}/faculty/mctavish/pdf/Genomics_MOLE2024.pdf), [Tree updating lab](https://github.com/snacktavish/Mole2023/blob/master/TreeUpdating.md)
+ 19:00 - 20:30 | [McTavish](/faculty-mctavish/)       | [Phylogenomics slides]({{ site.baseurl }}/faculty/mctavish/pdf/Genomics_MOLE2024.pdf), [Tree updating lab](https://github.com/snacktavish/Mole2023/blob/master/TreeUpdating.md)
  20:30 - 22:00 | [McTavish](/faculty-mctavish/)       | [Open Tree slides]({{ site.baseurl }}/faculty/mctavish/pdf/OpenTree_MOLE2024.pdf), [Tree comparison lab](https://github.com/snacktavish/Mole2023/blob/master/TreeComparison.md)
 {:.daily-schedule-std}
 
