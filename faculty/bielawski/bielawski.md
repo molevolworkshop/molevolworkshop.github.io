@@ -121,7 +121,7 @@ Do the tutorial in **Spanish** via [this link](https://github.com/Evolution-for-
 
 Do the tutorial in **French** via [this link]( https://github.com/Evolution-for-Everyone/bioinformatics-for-everyone/blob/main/translated_tutorials/FR/Tutoriel-avanc%C3%A9-sur-Codeml.md). 
 
-Do the tutorial in **Arabic** via [this LINK](https://github.com/Evolution-for-Everyone/bioinformatics-for-everyone/blob/main/translated_tutorials/AR/advanced_tutorial.md). 
+Do the tutorial in **Arabic** via [this link](https://github.com/Evolution-for-Everyone/bioinformatics-for-everyone/blob/main/translated_tutorials/AR/advanced_tutorial.md). 
 
 Translations were developed as part of the [Bioinfromatics-4-Everyone](https://github.com/Evolution-for-Everyone/bioinformatics-for-everyone) (B4E) project
 *  If you have any suggestions or comments on these translations, please send them to Letícia Magpali (leticiamagpali@dal.ca).
