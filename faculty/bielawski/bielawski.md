@@ -123,10 +123,10 @@ Do the tutorial in **French** via [this link]( https://github.com/Evolution-for-
 
 Do the tutorial in **Arabic** via [this link](https://github.com/Evolution-for-Everyone/bioinformatics-for-everyone/blob/main/translated_tutorials/AR/advanced_tutorial.md). 
 
-Translations were developed as part of the [Bioinfromatics-4-Everyone](https://github.com/Evolution-for-Everyone/bioinformatics-for-everyone) (B4E) project
+Translations developed as part of the [Bioinfromatics-4-Everyone](https://github.com/Evolution-for-Everyone/bioinformatics-for-everyone) (B4E) project
 *  If you have any suggestions or comments on these translations, please send them to Letícia Magpali (leticiamagpali@dal.ca).
 *  If you would like to contribute a B4E translation, please contact me or Letícia Magpali (leticiamagpali@dal.ca).
-*  B4E is part of **E4E**... the [Evolution for Everyone Project](https://evolution-for-everyone.github.io/evolution4everyone/)
+*  B4E is part of **E4E**... the [Evolution for Everyone Project](https://evolution-for-everyone.github.io/evolution4everyone/) offering **free workshops and workshop resources**.
 
 <br>
 
