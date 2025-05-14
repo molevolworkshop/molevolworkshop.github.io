@@ -103,7 +103,7 @@ permalink: /faculty-bielawski/
 
 * **PAML lab resources**: [webpage](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html)
 
-* **PAML lab slides**: [slides (PDF)](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO_2024.pdf)
+* **PAML lab slides**: [slides (PDF)](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO.pdf)
 
 If you want doing the lab independently (at home, on your own computer), then download all the files from an archive [here](https://bitbucket.org/EvoWorks/protocol-paml-lab-at-mbl-workshop/downloads/), or individually [here](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/PAML_Lab_files.html).
 
