@@ -25,7 +25,7 @@ permalink: /faculty-bielawski/
 <br>
 
 
-## 1. &nbsp; Content for workshop
+## 1. &nbsp; Content for THIS workshop
 
 * 1.1 &nbsp; [Quick start: Models & Methods](#anchor_1.1)
 
@@ -117,13 +117,16 @@ symlink in your home directory named "moledata" to obtain the course data files!
 
 Do the tutorial in **Portuguese** via [this link](https://awarnach.mathstat.dal.ca/~joeb/PAML_lab_PT/Lab_PT.html).  
 
-*  Many thanks to Letícia Magpali for the translation! If you have any suggestions or comments on the **Portuguese** translation, please send them to Letícia Magpali (leticiamagpali@dal.ca).  Feel free to communicate directly with her in Portuguese.
+Do the tutorial in **Spanish** via [this link](https://github.com/Evolution-for-Everyone/bioinformatics-for-everyone/blob/main/translated_tutorials/SP/Tutorial_uno.md). 
 
-Do the tutorial in **Spanish** via [temp](https://awarnach.mathstat.dal.ca/). 
+Do the tutorial in **French** via [this link]( https://github.com/Evolution-for-Everyone/bioinformatics-for-everyone/blob/main/translated_tutorials/FR/Tutoriel-avanc%C3%A9-sur-Codeml.md). 
 
-* Many thanks to Letícia Magpali and Esteban Salazar for the translation!
+Do the tutorial in **Arabic** via [this LINK](https://github.com/Evolution-for-Everyone/bioinformatics-for-everyone/blob/main/translated_tutorials/AR/advanced_tutorial.md). 
 
-**Arabic and French** translations are in progress. If you would like to assist with a translation, please contact me or Letícia Magpali (leticiamagpali@dal.ca).  
+Translations were developed as part of the [Bioinfromatics-4-Everyone](https://github.com/Evolution-for-Everyone/bioinformatics-for-everyone) (B4E) project
+*  If you have any suggestions or comments on these translations, please send them to Letícia Magpali (leticiamagpali@dal.ca).
+*  If you would like to contribute a B4E translation, please contact me or Letícia Magpali (leticiamagpali@dal.ca).
+*  B4E is part of **E4E**... the [Evolution for Everyone Project](https://evolution-for-everyone.github.io/)
 
 <br>
 
