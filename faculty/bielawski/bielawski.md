@@ -18,7 +18,7 @@ permalink: /faculty-bielawski/
 
 ## Arrival and Departure
 
-* Arrival: 22 May 2025 (Thur).  --Note I am currently scheduled to fly through Newark.
+* Arrival: 22 May 2025 (Thur)
 
 * Depart:  02 June 2025 (Mon)
 
@@ -216,6 +216,8 @@ Large-scale evolutionary surveys are now commonplace. But with the use of progre
 **codeml_SBA:**  a program that implements smoothed Bootstrap Aggregation for Assessing Selection Pressure at Amino Acid Sites.[https://github.com/Jehops/codeml_sba](https://github.com/Jehops/codeml_sba)
 
 **ModL:**  a program for restoring regularity when testing for positive selection using codon models [https://github.com/jehops/codeml_modl](https://github.com/jehops/codeml_modl)
+
+**NOTE:**  We are actively developing codon models in **IQTREE**. They will be available soon and we anticipate using them in the 2026 workshop.
 
 <br>
 
