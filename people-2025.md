@@ -8,7 +8,7 @@ permalink: /people2025/
 
 ## Course Faculty
 
-[List of current and recent faculty, TAs, and course assistants](/faculty/)
+[List of current and recent faculty, TAs, and course assistants](/faculty2025/)
 
 ## 2025 Participants
 

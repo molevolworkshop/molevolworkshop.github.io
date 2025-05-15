@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Faculty
-permalink: /faculty/
+permalink: /faculty2025/
 ---
 {% include figure.html description="" url="/assets/img/fromback2018.jpg" css="image-center" height="250px" %}
 ## 2025 Course Faculty
