@@ -37,7 +37,7 @@ permalink: /faculty-bielawski/
 
 * 1.5 &nbsp; [PAML lab: Translated](#anchor_1.5)
   
-* 1.6 &nbsp; [Scientific ethics](#anchor_1.6)
+* 1.6 &nbsp; [Applied Scientific Ethics](#anchor_1.6)
 
 <br>
 
@@ -131,11 +131,13 @@ Translations developed as part of the [Bioinfromatics-4-Everyone](https://github
 <br>
 
 <a name="anchor_1.6"></a>
-## 1.6 &nbsp; Scientific ethics 
+## 1.6 &nbsp; Applied Scientific Ethics 
 
 **2025 Ethics Lecture Resource**
 
-* **Lecture slides:** [slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf)
+* Lecture on **Ethics in Science:** [slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf)
+
+* Lecture on **Scientific Values, Diversity and the Social Conract between Science and Society:** [slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Diversity_2025.pdf)
 
 * Free copy of the "**Applied Ethics Primer**": [https://caul-cbua.pressbooks.pub/aep/](https://caul-cbua.pressbooks.pub/aep/)
 <br>
