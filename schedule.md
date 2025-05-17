@@ -116,9 +116,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Sunday, June 1, 2025
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Swofford](/faculty-swofford/)/[Bielawski](/faculty-bielawski/)       | Scientific ethics panel discussion. Slides for reference: [Ethics Intro](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf) and [Values, diversity & ethics](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Diversity_2025.pdf)
- 
- ROOM CHANGE to: Meigs Room (Swope 2nd floor)
+ 09:00 - 10:30 | [Swofford](/faculty-swofford/)/[Bielawski](/faculty-bielawski/)       | Scientific ethics panel discussion. Slides for reference: [Ethics Intro](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf) and [Values, diversity & ethics](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Diversity_2025.pdf) ROOM CHANGE to: Meigs Room (Swope 2nd floor)
  10:30 - 12:00 | Open lab                             |
 {:.daily-schedule-std}
      
