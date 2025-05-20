@@ -68,7 +68,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  14:00 - 15:30 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2024_partI.pdf)
  15:30 - 17:00 | [Edwards](/faculty-edwards/)         | [Pangenomes and evolution]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2024_partII.pdf)
  17:00 - 18:00 | [Bielawski](/faculty-bielawski/)     | Optional session: [Values, diversity & ethics](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Diversity_2025.pdf)
- 19:00 - 22:00 | Swope Terrace and Cafe               | Course Dinner Party
+ 19:00 - 22:00 | Meigs Room (Swope 2nd floor)         | Course Dinner Party
  22:00 - 23:59 | Loeb Quad                            | Post-dinner social gathering
 {:.daily-schedule-std}
 
@@ -116,7 +116,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Sunday, June 1, 2025
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Swofford](/faculty-swofford/)/[Bielawski](/faculty-bielawski/)       | Scientific ethics panel discussion. (Slides are for reference: [Ethics Intro](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf) and [Values, diversity & ethics](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Diversity_2025.pdf)) ROOM CHANGE to: Meigs Room (Swope 2nd floor)
+ 09:00 - 10:30 | [Swofford](/faculty-swofford/)/[Bielawski](/faculty-bielawski/)       | Scientific ethics panel discussion. (Slides are for reference: [Ethics Intro](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf) and [Values, diversity & ethics](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Diversity_2025.pdf)) 
  10:30 - 12:00 | Open lab                             |
 {:.daily-schedule-std}
      
