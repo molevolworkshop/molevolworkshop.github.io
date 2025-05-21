@@ -20,7 +20,7 @@ Ask for help if any of these things aren't working by the end!
 
 Slack is a messaging/discussion program that allows for large groups to interact as needed.<br/>
 There is a slack workspace set up for people to ask questions and to have discussions.<br/>
-The Slack Workspace is **MBL-MOLE-2024**<br/>
+The Slack Workspace is **[MBL-MOLE-2025](mbl-mole-2025.slack.com)**<br/>
 You can use the Slack app on your laptop and your phone. <br/> 
 If you've lost your invitation to join this workspace, ask one of us and we'll resend the invitation to your email address.
 
