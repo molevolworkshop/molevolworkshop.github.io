@@ -7,8 +7,8 @@ permalink: /faculty-lewis/
 
 ### Arrival and Departure
 
-Arriving: May 22, 2025
-Departing: June 1, 2025
+* Arriving: May 22, 2025
+* Departing: June 1, 2025
 
 ### Contact Info 
 E-mail: [paul.lewis@uconn.edu](mailto:paul.lewis@uconn.edu)
@@ -16,7 +16,7 @@ E-mail: [paul.lewis@uconn.edu](mailto:paul.lewis@uconn.edu)
 Address: Department of Ecology and Evolutionary Biology, University of Connecticut, 75 N. Eagleville Road, Unit 3043, Storrs, CT 06269-3043 U.S.A.
 
 ### Institutional home page 
-[http://phylogeny.uconn.edu](http://phylogeny.uconn.edu/)
+[https://phylogeny.uconn.edu](https://phylogeny.uconn.edu/)
 
 ### Lecture Materials 
 
@@ -28,7 +28,7 @@ Address: Department of Ecology and Evolutionary Biology, University of Connectic
 
 * Slides for the Bayesian introduction lecture coming soon...
 
-The version of MCMC Robot I used in lecture is available at [http://phylogeny.uconn.edu/mcmc-robot/](http://phylogeny.uconn.edu/mcmc-robot/). Click outside an existing hill to move the starting point for a chain, and drag in an area outside a hill to create a new hill. Clicking on a hill to select it should allow you to delete it using the delete key. (It is currently easier to delete and recreate a hill than it is to change the diameter of an existing hill.)
+The version of MCMC Robot I used in lecture is available at [https://plewis.github.io/applets/mcmc-robot/](https://plewis.github.io/applets/mcmc-robot/). Click outside an existing hill to move the starting point for a chain, and drag in an area outside a hill to create a new hill. Clicking on a hill to select it should allow you to delete it using the delete key. (It is currently easier to delete and recreate a hill than it is to change the diameter of an existing hill.)
 
 {% comment %}
 #### C++ Bayesian Phylogenetics Software Tutorial
