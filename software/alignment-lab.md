@@ -138,7 +138,7 @@ exercise 1. A new window with the aligned data will appear.
 
 Run a standard alignment in MUSCLE on the cluster by using the command:
 ~~~~~~
-muscle -log muscle_dna.log -in 1ped.fasta -out muscle_dna.fasta
+muscle -log muscle_dna.log -align 1ped.fasta -output muscle_dna.fasta
 ~~~~~~
 The breakdown of this command is:
 * `muscle` starts the program MUSCLE
