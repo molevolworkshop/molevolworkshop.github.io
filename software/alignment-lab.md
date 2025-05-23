@@ -146,8 +146,8 @@ The breakdown of this command is:
 output except the alignment itself to the log file called
 *muscle_dna.log*. This file will then include things like the gap penalty
 used, etc.
-* `-in 1ped.fasta` specifies the input file to MUSCLE.
-* `-out muscle_dna.fasta` instructs MUSCLE to place the alignment
+* `-align 1ped.fasta` specifies the input file to MUSCLE.
+* `-output muscle_dna.fasta` instructs MUSCLE to place the alignment
 in the file *muscle_dna.fasta*. Note that `-log` are not always
 needed but it allows you to see the default options in MUSCLE.
 
