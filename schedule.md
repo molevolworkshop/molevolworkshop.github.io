@@ -29,7 +29,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Saturday, May 24, 2025
 
 ---------------|--------------------------------------|-----------------------------------
- 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional) ([Programming Book]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf))
+ 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | [C++ Programming Workshop]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf)) (optional)
  09:00 - 10:30 | [Huelsenbeck](/faculty-huelsenbeck/) | Simulating molecular evolution
  10:30 - 12:00 | [Swofford](/faculty-swofford/)       | [Model selection]({{ site.baseurl }}/faculty/swofford/pdf/swofford_WH2024_modsel.pdf)
  14:00 - 15:30 | [Swofford](/faculty-swofford/)       | [Introduction to PAUP*](http://paup.phylosolutions.com/)
