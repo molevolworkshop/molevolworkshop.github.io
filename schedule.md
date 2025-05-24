@@ -21,7 +21,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  10:30 - 11:30 | [Heath](/faculty-heath/)             | [Introduction to phylogenetics]({{ site.baseurl }}/faculty/heath/pdf/Intro_phylogeny_2025.pdf)
  11:30 - 12:00 | [Bielawski](/faculty-bielawski/)     | [Scientific ethics](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf)
  14:00 - 15:30 | [Lewis](/faculty-lewis/)             | [Introduction to Likelihood]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-2025.pdf)
- 15:30 - 17:00 | [Huelsenbeck](/faculty-huelsenbeck/) | [Model-based phylogenetics]()
+ 15:30 - 17:00 | [Huelsenbeck](/faculty-huelsenbeck/) | Model-based phylogenetics
  19:00 - 20:30 | TAs                                  | [Intro computer lab](/labs/intro/)
  20:30 - 22:00 | TAs                                  | [Alignment lab](/labs/alignment/)
 {: .daily-schedule-cpp}
