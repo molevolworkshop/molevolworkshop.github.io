@@ -21,7 +21,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
  10:30 - 11:30 | [Heath](/faculty-heath/)             | [Introduction to phylogenetics]({{ site.baseurl }}/faculty/heath/pdf/Intro_phylogeny_2025.pdf)
  11:30 - 12:00 | [Bielawski](/faculty-bielawski/)     | [Scientific ethics](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf)
  14:00 - 15:30 | [Lewis](/faculty-lewis/)             | [Introduction to Likelihood]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-2025.pdf)
- 15:30 - 17:00 | [Huelsenbeck](/faculty-huelsenbeck/) | Model-based phylogenetics
+ 15:30 - 17:00 | [Huelsenbeck](/faculty-huelsenbeck/) | [Likelihood-based phylogenetic analysis]({{ site.baseurl }}/faculty/huelsenbeck/pdf/woodsHole2025.pdf)
+)
  19:00 - 20:30 | TAs                                  | [Intro computer lab](/labs/intro/)
  20:30 - 22:00 | TAs                                  | [Alignment lab](/labs/alignment/)
 {: .daily-schedule-cpp}
@@ -30,7 +31,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | [C++ Programming Workshop]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf)) (optional)
- 09:00 - 10:30 | [Huelsenbeck](/faculty-huelsenbeck/) | Simulating molecular evolution
+ 09:00 - 10:30 | [Huelsenbeck](/faculty-huelsenbeck/) | [Likelihood-based phylogenetic analysis]({{ site.baseurl }}/faculty/huelsenbeck/pdf/woodsHole2025.pdf)
  10:30 - 12:00 | [Swofford](/faculty-swofford/)       | [Model selection]({{ site.baseurl }}/faculty/swofford/pdf/swofford_WH2025_modsel.pdf)
  14:00 - 15:30 | [Swofford](/faculty-swofford/)       | [Introduction to PAUP*](http://paup.phylosolutions.com/)
  15:30 - 17:00 | [Swofford](/faculty-swofford/)       | [PAUP* lab](/faculty/swofford/pdf/modsel-sim-tutorial.html)
