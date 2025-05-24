@@ -318,5 +318,5 @@ Ctrl-A                                                     | go to the beginning
 * A unix shell tutorial from Software Carpentry:<br/>
 [http://swcarpentry.github.io/shell-novice/](http://swcarpentry.github.io/shell-novice/)
 
-* Summary slide used in MOLE 2025:<br/>
+* Summary slides used in MOLE 2025:<br/>
 [PDF]({{ site.baseurl }}/faculty/kong/pdf/IntroComp2025.pdf)
