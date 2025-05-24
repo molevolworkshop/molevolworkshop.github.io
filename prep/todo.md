@@ -3,13 +3,14 @@ layout: page
 title: Workshop Preparation Timeline
 permalink: /todo/
 ---
-This file details the steps taken to prepare for the 2023 Workshop on Molecular Evolution.
+This file details the steps taken to prepare for the 2025 Workshop on Molecular Evolution.
 
 ## Table of contents
 
 * [Timeline](timeline)
 * [MBL People](mbl-people)
 * [Virtual Machines](virtual-machines)
+* [Badges](badges)
 
 ## Timeline
 
@@ -68,6 +69,8 @@ See [Jetstream2 Setup Notes]({{ site.baseurl }}/jetstream2023/) for details
 ## Badges
 
 The file [badges-2025.sla]({{ site.baseurl }}/prep/badges-2025.sla) is a Scribus file used in 2025 to create badges. In 2025, participant badges were printed on light yellow paper and TA/faculty/course assistant badges were printed on light green paper.
+
+If you are unfamiliar with [Scribus](https://sourceforge.net/projects/scribus/), it is an open-source free replacement for Adobe InDesign/Illustrator.
 
 ## Admissions
 

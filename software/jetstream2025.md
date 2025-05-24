@@ -75,7 +75,7 @@ Now you can ssh into the instance using the _molevm_ host set up in _.ssh/config
 
 To create a new instance, click the red Create button in the upper right corner of Exosphere. 
 
-I used the **Ubuntu 22.04 (latest)** image source and specified **MOLE-2025-base** as the name. I chose **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **1** for number of instances, **no** for enable web desktop, **cormy** for SSH public key, and **Show** for Advanced Options.
+I used the **Ubuntu 24.04 (latest)** image source and specified **MOLE-2025-base** as the name. I chose **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **1** for number of instances, **no** for enable web desktop, **cormy** for SSH public key, and **Show** for Advanced Options.
 
 Advanced Options:
 
@@ -220,6 +220,23 @@ Get current date:
 
     TZ="EST5EDT" date
     Fri May  9 06:47:59 EDT 2025
+    
+Get OS release:
+
+    cat /etc/os-release
+    PRETTY_NAME="Ubuntu 24.04.2 LTS"
+    NAME="Ubuntu"
+    VERSION_ID="24.04"
+    VERSION="24.04.2 LTS (Noble Numbat)"
+    VERSION_CODENAME=noble
+    ID=ubuntu
+    ID_LIKE=debian
+    HOME_URL="https://www.ubuntu.com/"
+    SUPPORT_URL="https://help.ubuntu.com/"
+    BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+    PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+    UBUNTU_CODENAME=noble
+    LOGO=ubuntu-logo
 
 Find processor info:
 
