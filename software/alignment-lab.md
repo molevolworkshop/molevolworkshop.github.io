@@ -360,4 +360,4 @@ Tan G, Muffato M, Ledergerber C, Herrero J, Goldman N, Gil M, Dessimoz C. 2015. 
 Yang Y, Smith SA. 2014. Orthology inference in nonmodel organisms using transcripts and low-coverage genomes: improving accuracy and matrix occupancy for phylogenetics. Mol. Biol. Evol. 31:3081-3092.
 
 
-Summary slides used in MOLE2025 [PPTX({{ site.baseurl }}/faculty/kong/pdf/Alignment_Lab_Mole2025.pptx)
+Summary slides used in MOLE2025 [PPTX]({{ site.baseurl }}/faculty/kong/pdf/Alignment_Lab_Mole2025.pptx)
