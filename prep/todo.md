@@ -70,7 +70,13 @@ See [Jetstream2 Setup Notes]({{ site.baseurl }}/jetstream2023/) for details
 
 The file [badges-2025.sla]({{ site.baseurl }}/prep/badges-2025.sla) is a Scribus file used in 2025 to create badges. In 2025, participant badges were printed on light yellow paper and TA/faculty/course assistant badges were printed on light green paper.
 
-If you are unfamiliar with [Scribus](https://sourceforge.net/projects/scribus/), it is an open-source free replacement for Adobe InDesign/Illustrator.
+If you are unfamiliar with [Scribus](https://sourceforge.net/projects/scribus/), it is an open-source free replacement for Adobe InDesign/Illustrator. The key combination you will find most useful for editing this file is (on MacIntosh version) Command-T (Edit Text with Story Editor): use this to edit text in the selected text frame.
+
+Several paragraph styles have been set up, and the style for the selected text frame is shown on the left of each line in the text frame. Use *surname* or *surname long* for surname (use the long style if the name is too long to fit using the normal surname style). Use *first name* or *first name long* for given names. Use "footer" for the Institution name. To edit the header, you will need to choose _Edit/Master Pages..._ to edit the master page, then use Command-T to edit the text in the header text frame. The style should be, of course, *header* for the header text. You can use _Edit/Styles..._ to change the styles if necessary.
+
+You can duplicate a page (e.g. the last page) using _Page/Copy..._. This is useful for creating new template pages that can then be edited.
+
+When you are ready to print the labels, I recommend using _File/Export/Save as PDF..._ to save a PDF version of the badges, then print pages from that PDF on the proper color of paper.
 
 ## Admissions
 
