@@ -22,7 +22,6 @@ All sessions are in Loeb G70 (basement of Loeb building)
  11:30 - 12:00 | [Bielawski](/faculty-bielawski/)     | [Scientific ethics](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf)
  14:00 - 15:30 | [Lewis](/faculty-lewis/)             | [Introduction to Likelihood]({{ site.baseurl }}/faculty/lewis/pdf/lewis-likelihood-2025.pdf)
  15:30 - 17:00 | [Huelsenbeck](/faculty-huelsenbeck/) | [Likelihood-based phylogenetic analysis]({{ site.baseurl }}/faculty/huelsenbeck/pdf/woodsHole2025.pdf)
-)
  19:00 - 20:30 | TAs                                  | [Intro computer lab](/labs/intro/)
  20:30 - 22:00 | TAs                                  | [Alignment lab](/labs/alignment/)
 {: .daily-schedule-cpp}
