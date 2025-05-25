@@ -35,7 +35,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  14:00 - 15:30 | [Swofford](/faculty-swofford/)       | [Introduction to PAUP*](http://paup.phylosolutions.com/)
  15:30 - 17:00 | [Swofford](/faculty-swofford/)       | [PAUP* lab](/faculty/swofford/pdf/modsel-sim-tutorial.html)
  19:00 - 20:30 | TAs                                  | [IQ-TREE introduction]({{ site.baseurl }}/faculty/mcshea/pdf/MOLE2025-IQ-TREE.pdf)
- 20:30 - 22:00 | TAs                                  | [IQ-TREE lab](https://iqtree.github.io/workshop/molevol_tutorial2025) [IQ-TREE quiz]()
+ 20:30 - 22:00 | TAs                                  | [IQ-TREE lab](https://iqtree.github.io/workshop/molevol_tutorial2025) [IQ-TREE quiz](https://docs.google.com/forms/d/e/1FAIpQLSfvNMk0HJFBHDU9qAbNopbhWORx0CwSEBFdxSuCiDLJ5K1g5w/viewform?usp=dialog)
  22:00 - 23:59 | Loeb Quad                            | Evening social gathering
 {:.daily-schedule-cpp}
  
@@ -43,8 +43,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional) ([Programming Book]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf))
- 09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics (part 1)]({{ site.baseurl}}/faculty/lewis/pdf/lewis-bayesian-2024a.pdf)
- 10:30 - 12:00 | [Lewis](/faculty-lewis/)             | [Bayesian phylogenetics (part 2)]({{ site.baseurl}}/faculty/lewis/pdf/lewis-bayesian-2024b.pdf)
+ 09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Bayesian intro (part a)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-2025a.pdf)
+ 10:30 - 12:00 | [Lewis](/faculty-lewis/)             | [Bayesian intro (part b)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-2025b.pdf)
  14:00 - 15:30 | [Brown](/faculty-brown/)             | [Introduction to graphical models and RevBayes](/faculty/brown/pdf/Brown_GraphicalModels_RevBayes.pdf)
  15:30 - 17:00 | [Brown](/faculty-brown/)             | [Gene tree estimation with RevBayes](https://revbayes.github.io/tutorials/ctmc/)
  19:00 - 20:30 | [Heath](/faculty-heath/)             | [Divergence-time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
