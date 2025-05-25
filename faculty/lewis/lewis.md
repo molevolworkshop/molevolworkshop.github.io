@@ -26,9 +26,12 @@ Address: Department of Ecology and Evolutionary Biology, University of Connectic
 
 #### Bayesian lecture (25 May 2025)
 
-* Slides for the Bayesian introduction lecture coming soon...
+* [Bayesian intro (part a)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-2025a.pdf)
+* [Bayesian intro (part b)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-2025b.pdf)
 
 The version of MCMC Robot I used in lecture is available at [https://plewis.github.io/applets/mcmc-robot/](https://plewis.github.io/applets/mcmc-robot/). Click outside an existing hill to move the starting point for a chain, and drag in an area outside a hill to create a new hill. Clicking on a hill to select it should allow you to delete it using the delete key. (It is currently easier to delete and recreate a hill than it is to change the diameter of an existing hill.)
+
+You may also be interested in the [lectures and lab tutorials](https://plewis.github.io/phylogenetics2024/) I use in my phylogenetics course at the University of Connecticut.
 
 {% comment %}
 #### C++ Bayesian Phylogenetics Software Tutorial
