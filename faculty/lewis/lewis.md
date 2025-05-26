@@ -36,6 +36,7 @@ You may also be interested in the [lectures and lab tutorials](https://plewis.gi
 {% comment %}
 #### C++ Bayesian Phylogenetics Software Tutorial
 If you took John Huelsenbeck's morning C++ class, you may wish to continue learning by working through this [http://phylogeny.uconn.edu/https://phylogeny.uconn.edu/tutorial-v2/ | C++ Bayesian phylogenetics tutorial]. This tutorial starts by teaching you how to set up your Windows or Mac laptop for compiling C++ programs and then explaining each step until you have a functioning Bayesian MCMC sampler for inferring phylogenies or estimating parameters of evolutionary models.
+{% endcomment %}
 
 #### The Chain Swapping Question
 During my demonstrations of the MCMC robot app, the question that is always asked is the following: Why does the swapping pattern of the cold chain appear concentrated between two of the three hills in the landscape; why is swapping not uniform and symmetrical between all three hills? The top figure below illustrates the pattern, with large magenta dots showing where each of the 3 chains are at the current time.
@@ -50,4 +51,3 @@ About 1/5 of the time, the 3 robots should all be on different hills (see the lo
 {% include figure.html description="" url="/faculty/lewis/img/MCMCRobotSymmetrical.png" height="250" css="image-left" %}
 
 Thus, we should expect ruts to develop, and it is not a problem because even in the top figure the cold chain robot is easily able to move between all three hills.
-{% endcomment %}
