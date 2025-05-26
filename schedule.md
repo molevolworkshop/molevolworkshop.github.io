@@ -55,8 +55,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional) ([Programming Book]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf))
- 09:00 - 10:30 | [Eme](/faculty-eme/)		               | [Deep phylogenomics]()
- 10:30 - 12:00 | [Eme](/faculty-beerli/)              | [Deep phylogenomics]()
+ 09:00 - 10:30 | [Eme](/faculty-eme/)		          | [Deep phylogenomics]({{ site.baseurl }}/faculty/eme/pdf/Phylogenomics_EmeLaura_WoodsHole2025.pdf)
+ 10:30 - 12:00 | [Eme](/faculty-beerli/)              | [Deep phylogenomics]({{ site.baseurl }}/faculty/eme/pdf/Phylogenomics_EmeLaura_WoodsHole2025.pdf)
  14:00 - 15:30 | [Beerli](/faculty-beerli/)           | [Introduction to The Coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2024.pdf)
  15:30 - 17:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2024.pdf)
  19:00 - 20:30 | [McTavish](/faculty-mctavish/)       | [Phylogenomics slides]({{ site.baseurl }}/faculty/mctavish/pdf/Genomics_MOLE2024.pdf), [Tree updating lab](https://github.com/snacktavish/Mole2023/blob/master/TreeUpdating.md)
