@@ -29,7 +29,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Saturday, May 24, 2025
 
 ---------------|--------------------------------------|-----------------------------------
- 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | [C++ Programming Workshop]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf)) (optional)
+ 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | [C++ Programming Workshop]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf) (optional)
  09:00 - 10:30 | [Huelsenbeck](/faculty-huelsenbeck/) | [Likelihood-based phylogenetic analysis]({{ site.baseurl }}/faculty/huelsenbeck/pdf/woodsHole2025.pdf)
  10:30 - 12:00 | [Swofford](/faculty-swofford/)       | [Model selection]({{ site.baseurl }}/faculty/swofford/pdf/swofford_WH2025_modsel.pdf)
  14:00 - 15:30 | [Swofford](/faculty-swofford/)       | [Introduction to PAUP*](http://paup.phylosolutions.com/)
@@ -42,31 +42,33 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Sunday, May 25, 2025
 
 ---------------|--------------------------------------|-----------------------------------
- 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional) ([Programming Book]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf))
+ 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | [C++ Programming Workshop]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf) (optional)
  09:00 - 10:30 | [Lewis](/faculty-lewis/)             | [Bayesian intro (part a)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-2025a.pdf)
  10:30 - 12:00 | [Lewis](/faculty-lewis/)             | [Bayesian intro (part b)]({{ site.baseurl }}/faculty/lewis/pdf/lewis-bayesian-2025b.pdf)
  14:00 - 15:30 | [Brown](/faculty-brown/)             | [Introduction to graphical models and RevBayes](/faculty/brown/pdf/Brown_GraphicalModels_RevBayes.pdf)
  15:30 - 17:00 | [Brown](/faculty-brown/)             | [Gene tree estimation with RevBayes](https://revbayes.github.io/tutorials/ctmc/)
  19:00 - 20:30 | [Heath](/faculty-heath/)             | [Divergence-time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
  20:30 - 22:00 | [Heath](/faculty-heath/)             | [Divergence-time estimation Lab](https://revbayes.github.io/tutorials/fbd_simple)
+ 22:00 - 23:59 | Loeb Quad                            | Social	    
 {:.daily-schedule-cpp}
 
 ### Monday, May 26, 2025
 
 ---------------|--------------------------------------|-----------------------------------
- 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional) ([Programming Book]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf))
+ 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | [C++ Programming Workshop]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf) (optional)
  09:00 - 10:30 | [Eme](/faculty-eme/)		          | [Deep phylogenomics]({{ site.baseurl }}/faculty/eme/pdf/Phylogenomics_EmeLaura_WoodsHole2025.pdf)
  10:30 - 12:00 | [Eme](/faculty-beerli/)              | [Deep phylogenomics]({{ site.baseurl }}/faculty/eme/pdf/Phylogenomics_EmeLaura_WoodsHole2025.pdf)
- 14:00 - 15:30 | [Beerli](/faculty-beerli/)           | [Introduction to The Coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2024.pdf)
- 15:30 - 17:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2024.pdf)
- 19:00 - 20:30 | [McTavish](/faculty-mctavish/)       | [Phylogenomics slides]({{ site.baseurl }}/faculty/mctavish/pdf/Genomics_MOLE2024.pdf), [Tree updating lab](https://github.com/snacktavish/Mole2023/blob/master/TreeUpdating.md)
- 20:30 - 22:00 | [McTavish](/faculty-mctavish/)       | [Open Tree slides]({{ site.baseurl }}/faculty/mctavish/pdf/OpenTree_MOLE2024.pdf), [Tree comparison lab](https://github.com/snacktavish/Mole2023/blob/master/TreeComparison.md)
+ 14:00 - 15:30 | [Beerli](/faculty-beerli/)           | [Introduction to The Coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2025.pdf)
+ 15:30 - 17:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2025.pdf)
+ 19:00 - 20:30 | [McTavish](/faculty-mctavish/)       | [Phylogenomics slides]({{ site.baseurl }}/faculty/mctavish/pdf/Genomics_MOLE2025.pdf), [Tree updating lab](https://github.com/snacktavish/Mole2023/blob/master/TreeUpdating.md)
+ 20:30 - 22:00 | [McTavish](/faculty-mctavish/)       | [Open Tree slides]({{ site.baseurl }}/faculty/mctavish/pdf/OpenTree_MOLE2025.pdf), [Tree comparison lab](https://github.com/snacktavish/Mole2023/blob/master/TreeComparison.md)
+ 22:00 - 23:59 | Loeb Quad                            | Social	    
 {:.daily-schedule-cpp}
 
 ### Tuesday, May 27, 2025
 
 ---------------|--------------------------------------|-----------------------------------
- 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional) ([Programming Book]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf))
+ 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | [C++ Programming Workshop]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf) (optional)
  09:00 - 10:30 | [Beerli](/faculty-beerli/)           | [Model comparison in biogeography/population genetics using MIGRATE (introduction slides)]({{site.baseurl}}/faculty/beerli/pdf/bayesfactor_presented2024.pdf)
  10:30 - 12:00 | [Beerli](/faculty-beerli/)           | [MIGRATE (Tutorial)]({{ site.baseurl }}/faculty/beerli/migrate-tutorial-html/MIGRATEtutorial2023.html)
  14:00 - 15:30 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2025_partI.pdf)
@@ -83,7 +85,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Thursday, May 29, 2025
 
 ---------------|--------------------------------------|-----------------------------------
- 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional) ([Programming Book]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf))
+ 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | [C++ Programming Workshop]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf) (optional)
  09:00 - 10:30 | [Bielawski](/faculty-bielawski/)     | [Theories of molecular evolution: Lecture slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf)
  10:30 - 12:00 | [Bielawski](/faculty-bielawski/)     | [Intro to codon models: Lecture slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_2.pdf)
  14:00 - 15:30 | [Chang](/faculty-chang/)             | [Adaptive protein evolution: Introduction]({{ site.baseurl }}/faculty/chang/pdf/BChang_WH_1_2024_compressed_updated.pdf)
@@ -97,7 +99,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Friday, May 30, 2025
 
 ---------------|--------------------------------------|-----------------------------------
- 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional) ([Programming Book]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf))
+ 08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | [C++ Programming Workshop]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf) (optional)
  09:00 - 10:30 | [Kubatko](/faculty-kubatko/)         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2024.pdf)
  10:30 - 12:00 | [Kubatko](/faculty-kubatko/)         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2024.pdf)
  14:00 - 15:30 | [Gill](https://stat.uga.edu/directory/people/mandev-gill)       | [Phylodynamics of Infectious Disease]({{ site.baseurl }}/faculty/gill/pdf/msgill_mole1.pdf)
