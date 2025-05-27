@@ -69,8 +69,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | C++ Programming Workshop (optional) ([Programming Book]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf))
  09:00 - 10:30 | [Beerli](/faculty-beerli/)           | [Model comparison in biogeography/population genetics using MIGRATE (introduction slides)]({{site.baseurl}}/faculty/beerli/pdf/bayesfactor_presented2024.pdf)
  10:30 - 12:00 | [Beerli](/faculty-beerli/)           | [MIGRATE (Tutorial)]({{ site.baseurl }}/faculty/beerli/migrate-tutorial-html/MIGRATEtutorial2023.html)
- 14:00 - 15:30 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2024_partI.pdf)
- 15:30 - 17:00 | [Edwards](/faculty-edwards/)         | [Pangenomes and evolution]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2024_partII.pdf)
+ 14:00 - 15:30 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2025_partI.pdf)
+ 15:30 - 17:00 | [Edwards](/faculty-edwards/)         | [Pangenomes and evolution]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2025_partII.pdf)
  17:00 - 18:00 | [Bielawski](/faculty-bielawski/)     | Optional session: [Values, diversity & ethics](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Diversity_2025.pdf)
  19:00 - 22:00 | Meigs Room (Swope 2nd floor)         | Course Dinner Party
  22:00 - 23:59 | Loeb Quad                            | Post-dinner social gathering
