@@ -18,7 +18,7 @@ E-mail: kubatko.2 (at) osu (dot) edu
 Twitter: [@Laura_Kubatko](https://twitter.com/Laura_Kubatko)
 
 
-### Lecture Material for 2024
+### Lecture Material for 2025
 
 [Species Tree Estimation Lecture 2025 slides]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2025.pdf)
 
