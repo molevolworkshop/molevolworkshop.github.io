@@ -7,7 +7,7 @@ permalink: /faculty-kubatko/
 
 ### Arrival and Departure
 
-May 23 - June 4, 2024
+May 28 - May 30, 2025
 
 ### Contact Info
 
@@ -20,7 +20,7 @@ Twitter: [@Laura_Kubatko](https://twitter.com/Laura_Kubatko)
 
 ### Lecture Material for 2024
 
-[Species Tree Estimation Lecture 2024 slides]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2024.pdf)
+[Species Tree Estimation Lecture 2025 slides]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2025.pdf)
 
 
 ### Lab Material for 2024
@@ -30,7 +30,7 @@ Twitter: [@Laura_Kubatko](https://twitter.com/Laura_Kubatko)
 [Species Tree 2024 Tutorial]({{ site.baseurl }}/faculty/kubatko/pdf/species-trees-tutorial-2024.html)
 
 
-### Reading List 2024
+### Reading List 2025
 
 [Degnan, J and L Salter. 2005. Gene tree distributions under the coalescent process, Evolution 59(1): 24-37.](http://www.stat.osu.edu/~lkubatko/degnan_salter2005.pdf)
 
