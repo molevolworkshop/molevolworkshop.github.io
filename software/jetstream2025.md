@@ -468,8 +468,9 @@ This follows the [instructions](https://github.com/crsl4/PhyloNetworks.jl/wiki) 
     export JULIA_DEPOT_PATH=/opt/julia-1.10.9/usr/share/julia/site
     julia
     julia> using Pkg                # to use functions that manage packages
-    julia> Pkg.add("PhyloNetworks") # to download/install PhyloNetworks (precompiling takes a few minutes)
-    julia> Pkg.add("PhyloPlots")    # to download/install PhyloPlots (precompiling takes a few minutes)
+    julia> Pkg.add("PhyloNetworks") # to download/install PhyloNetworks
+    julia> Pkg.add("PhyloPlots")    # to download/install PhyloPlots
+    julia> Pkg.add("SNaQ")          # to download/install SNaQ
     julia> Pkg.add("RCall")         # package to call R from within julia
     julia> Pkg.add("CSV")           # to read from / write to text files, e.g. csv files
     julia> Pkg.add("DataFrames")    # to create & manipulate data frames
