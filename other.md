@@ -22,3 +22,4 @@ Each year we take a group photo and create a key to people. Here are the most re
 * [2022 group photo](/group-photos/2022/)
 * [2023 group photo](/group-photos/2023/)
 * [2024 group photo](/group-photos/2024/)
+* [2025 group photo](/group-photos/2025/)
