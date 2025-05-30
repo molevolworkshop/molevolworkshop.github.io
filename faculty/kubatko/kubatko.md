@@ -29,12 +29,6 @@ Twitter: [@Laura_Kubatko](https://twitter.com/Laura_Kubatko)
 [Species Tree 2025 Tutorial]({{ site.baseurl }}/faculty/kubatko/pdf/svdq_tutorial.zip)
 
 
-### Lab Material for 2024
-
-[Species Tree Lab 2024 slides]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreesLab_2024.pdf)
-
-[Species Tree 2024 Tutorial]({{ site.baseurl }}/faculty/kubatko/pdf/species-trees-tutorial-2024.html)
-
 
 ### Reading List 2025
 
