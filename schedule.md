@@ -100,8 +100,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  08:00 - 09:00 | [Huelsenbeck](/faculty-huelsenbeck/) | [C++ Programming Workshop]({{ site.baseurl }}/assets/pdf/Programming_Book.pdf) (optional)
- 09:00 - 10:30 | [Kubatko](/faculty-kubatko/)         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2024.pdf)
- 10:30 - 12:00 | [Kubatko](/faculty-kubatko/)         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2024.pdf)
+ 09:00 - 10:30 | [Kubatko](/faculty-kubatko/)         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2025.pdf)
+ 10:30 - 12:00 | [Kubatko](/faculty-kubatko/)         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2025.pdf)
  14:00 - 15:30 | [Gill](https://stat.uga.edu/directory/people/mandev-gill)       | [Phylodynamics of Infectious Disease]({{ site.baseurl }}/faculty/gill/pdf/msgill_mole1.pdf)
  15:30 - 17:00 | [Gill](https://stat.uga.edu/directory/people/mandev-gill)       | [Phylodynamics of Infectious Disease]({{ site.baseurl }}/faculty/gill/pdf/msgill_mole2.pdf)
  19:00 - 20:30 | [Zenil-Ferguson]()                   | [Phylogenetic comparative methods](https://roszenil.github.io/mytutorials/contenido.html)
