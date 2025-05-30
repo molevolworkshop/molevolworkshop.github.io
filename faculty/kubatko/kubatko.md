@@ -23,6 +23,11 @@ Twitter: [@Laura_Kubatko](https://twitter.com/Laura_Kubatko)
 [Species Tree Estimation Lecture 2025 slides]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2025.pdf)
 
 
+### Optional lab for 2025 (on your own time)
+
+[Species Tree 2025 Tutorial]({{ site.baseurl }}/faculty/kubatko/pdf/svdq-tutorial.zip)
+
+
 ### Lab Material for 2024
 
 [Species Tree Lab 2024 slides]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreesLab_2024.pdf)
