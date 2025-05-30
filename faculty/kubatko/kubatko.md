@@ -9,6 +9,7 @@ permalink: /faculty-kubatko/
 
 May 28 - May 30, 2025
 
+
 ### Contact Info
 
 [Institutional webpage](http://www.stat.osu.edu/~lkubatko)
@@ -25,7 +26,7 @@ Twitter: [@Laura_Kubatko](https://twitter.com/Laura_Kubatko)
 
 ### Optional lab for 2025 (on your own time)
 
-[Species Tree 2025 Tutorial]({{ site.baseurl }}/faculty/kubatko/pdf/svdq-tutorial.zip)
+[Species Tree 2025 Tutorial]({{ site.baseurl }}/faculty/kubatko/pdf/svdq_tutorial.zip)
 
 
 ### Lab Material for 2024
