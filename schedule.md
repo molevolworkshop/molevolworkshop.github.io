@@ -116,7 +116,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  10:30 - 12:00 | [Yoder](/faculty-mctavish/)          | [Molecular evolution]({{ site.baseurl }}/faculty/yoder/pdf/Yoder_2025.pdf)
  14:00 - 15:30 | [Solís-Lemus](/faculty-solis-lemus/) | [Phylogenetic networks to study reticulate evolution](https://figshare.com/articles/presentation/MOLE_2025_Phylogenetic_networks_lecture/29144483?file=54806237)
  15:30 - 17:00 | [Solís-Lemus](/faculty-solis-lemus/) | [Network models tutorial](https://solislemuslab.github.io/snaq-tutorial/)
- 19:00 - 20:30 | [Knowles](/faculty-knowles/)         | [Evolutionary applications of genomic data]({{ site.baseurl }}/faculty/knowles/pdf/Knowles-Woodshole-2024-Lect.pdf)
+ 19:00 - 20:30 | [Knowles](/faculty-knowles/)         | [Evolutionary applications of genomic data](https://lsu.box.com/s/6txwe7pm0o5eth2yg3h0vdbpak9fkow5)
  20:30 - 22:00 | [Knowles](/faculty-knowles/)         | Evolutionary applications of genomic data (cont.)
  22:00 - 23:59 | Loeb Quad                            | Almost-the-end party
 {:.daily-schedule-std}
