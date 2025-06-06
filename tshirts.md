@@ -44,7 +44,7 @@ Past course t-shirt designs.
 | 2022 | ![2023front](/assets/img/tshirts/2022F.png) |                                             |
 | 2023 | ![2023front](/assets/img/tshirts/2023F.png) | ![2023back](/assets/img/tshirts/2023B.png)  |
 | 2024 | ![2024front](/assets/img/tshirts/2024F.jpg) |                                             |
-| 2025 | ![2024front](/assets/img/tshirts/2024F.png) |                                             |
+| 2025 | ![2025front](/assets/img/tshirts/2025F.png) |                                             |
 
 ## Credits for designed (where known)
 
