@@ -146,8 +146,8 @@ The breakdown of this command is:
 output except the alignment itself to the log file called
 *muscle_dna.log*. This file will then include things like the gap penalty
 used, etc.
-* `-in 1ped.fasta` specifies the input file to MUSCLE.
-* `-out muscle_dna.fasta` instructs MUSCLE to place the alignment
+* `-align 1ped.fasta` specifies the input file to MUSCLE.
+* `-output muscle_dna.fasta` instructs MUSCLE to place the alignment
 in the file *muscle_dna.fasta*. Note that `-log` are not always
 needed but it allows you to see the default options in MUSCLE.
 
@@ -358,3 +358,6 @@ Rochette NC, Rivera-Colón AG, Catchen JM. 2019. Stacks 2: Analytical methods fo
 Tan G, Muffato M, Ledergerber C, Herrero J, Goldman N, Gil M, Dessimoz C. 2015. Current methods for automated filtering of multiple sequence alignments frequently worsen single-gene phylogenetic inference. Syst. Biol. 64:778-791.
 
 Yang Y, Smith SA. 2014. Orthology inference in nonmodel organisms using transcripts and low-coverage genomes: improving accuracy and matrix occupancy for phylogenetics. Mol. Biol. Evol. 31:3081-3092.
+
+
+Summary slides used in MOLE2025 [PPTX]({{ site.baseurl }}/faculty/kong/pdf/Alignment_Lab_Mole2025.pptx)

@@ -83,7 +83,7 @@ Past course t-shirt designs.
 | 2019 | Lisa Byrne                                             |                                              |
 | 2020 |                                                        |                                              |
 | 2021 |                                                        |                                              |
-| 2022 |                                                        |                                              |
+| 2022 | Hanon Solomon McShea (Jaime Cordova, Alyssa McGurer)   |                                              |
 | 2023 | Carly Lo, Charlotte Benedict, Shelby Moshier           | Carly Lo, Charlotte Benedict, Shelby Moshier |
 | 2024 | Siena McKim, Hanna Makowski                            |                                              |
 

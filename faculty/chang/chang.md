@@ -12,7 +12,7 @@ permalink: /faculty-chang/
 
 ### Arrival and Departure
 
-May 30 to June 3, 2024
+May 28 to June 1, 2025
 
 ### Lecture Materials
 
