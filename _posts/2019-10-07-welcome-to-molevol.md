@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "2026 Course dates: TBD"
-date:   2024-09-27 
+date:   2025-06-06 
 categories: 2026 workshop
 ---
 
