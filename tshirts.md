@@ -43,7 +43,8 @@ Past course t-shirt designs.
 | 2021 | no workshop due to COVID-19 pandemic        |                                             |
 | 2022 | ![2023front](/assets/img/tshirts/2022F.png) |                                             |
 | 2023 | ![2023front](/assets/img/tshirts/2023F.png) | ![2023back](/assets/img/tshirts/2023B.png)  |
-| 2024 | ![2024front](/assets/img/tshirts/2024F.png) |                                             |
+| 2024 | ![2024front](/assets/img/tshirts/2024F.jpg) |                                             |
+| 2025 | ![2024front](/assets/img/tshirts/2024F.png) |                                             |
 
 ## Credits for designed (where known)
 
@@ -86,4 +87,5 @@ Past course t-shirt designs.
 | 2022 | Hanon Solomon McShea (Jaime Cordova, Alyssa McGurer)   |                                              |
 | 2023 | Carly Lo, Charlotte Benedict, Shelby Moshier           | Carly Lo, Charlotte Benedict, Shelby Moshier |
 | 2024 | Siena McKim, Hanna Makowski                            |                                              |
+| 2025 | Anik Grearson                                          |                                              |
 
