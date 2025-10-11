@@ -64,6 +64,18 @@ Color of the T-shirts can be decided after the design is selected.
 
 People take different size t-shirts from what they input. Even though we order extra, there will be some problems with the number of t-shirts and sizes. Make sure to check the number of t-shirts in different sizes matches with the number we ordered. Then, instead of letting students to take one by themselves, it is better to distribute one by one by checking the spreadsheet, so they take what they asked for.
 
+###2025 T-shirt notes:
+
+We worked with Howlingbird, now Kaleidoscope Imprints [https://www.kaleidoscopeimprints.com/], again in 2025. Some notes and then a narrative summary:
+
+1. Contact Kaleidoscope ahead of the course, it may be possible to make a plan such that they can print shirts by the end of the course.
+2. If they can, you'll still have a tight timeline: announce the t-shirt competition early, and make one google form to vote and collect sizes. You will also want to choose a color scheme, or let the students choose from a short list. Kaleidoscope will have good advice on colors, and may have certain fabrics and inks in stock. We got an extra size S, 2 extra Ms, 2 extra Ls, and an extra XL (I think), in case of loss or mix-up. Once all was said and done, we sent the remaining extras to MBL staff as a thank-you.
+
+We contacted Kaleidoscope at the beginning of the course but they had a huge Memorial Day order and a broken machine, such that they couldn't print shirts for us on a short timeline. Instead, we collected students' addresses and mailed them the shirts. Kaleidoscope mailed them to me (Hanon McShea) at home a few weeks after the course, and I bought plastic mailing envelopes and label sleeves. I created labels en masse from a spreadsheet using USPS Click-N-Ship, packaged the shirts, and mailed them out. This was about 10 hours of work after the course had ended. It cost about $300 to ship about 40 shirts domestically and another $300 to ship 15 internationally. The whole thing was pretty straightforward, and I am happy to answer questions and help future TAs through the process (hanonmcshea AT gmail.com).
+
+As we were figuring out what to do given that Kaleidoscope couldn't do the short timeline, we researched many online options. Everything we found was either a scam (angry reviews from people who never got their shirts, or who didn't get them on the promised timeline) or lousy (sticky iron-on sort of thing). I think this is a craft where the old saying - "pick two: good, fast, and cheap" - certainly still applies. 
+
+
 ## Survey
 To get information on the size of the t-shirts for each participant, as well as whether they would want to have a lobster for the course dinner party, we created a Google survey [e.g., https://docs.google.com/forms/d/1F0PLsQDkbpUwzcDr4vYRjnZd31H6qC1eqY8w97kC-1M] that contains the following questions:
 
