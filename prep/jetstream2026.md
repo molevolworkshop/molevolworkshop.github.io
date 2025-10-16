@@ -122,7 +122,7 @@ Press the Create button to create the instance. The Exosphere GUI will say "Buil
 
 You can now log into the instance as **exouser**.
 
-    $ ssh exouser@149.165.159.248
+    $ ssh exouser@149.165.147.68
     
 ### Default boot script
 
@@ -354,7 +354,7 @@ To remove a package (note: I didn't use this feature, but thought it good to kee
     $ sudo apt update
     $ sudo apt upgrade -y
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install apt-file
 
@@ -364,7 +364,7 @@ This allows us to find out what files are installed by a package using "apt-file
 
 This may pop up a graphical interface: use tab and arrow keys to navigate. May need to reboot, which can be done from the Exosphere interface.
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install net-tools
 
@@ -372,7 +372,7 @@ Provides ifconfig command.
 
     $ sudo apt install net-tools
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install whois
 
@@ -380,15 +380,18 @@ This enables use of the mkpasswd command used to create the hashed password used
 
     $ sudo apt install -y whois
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install mlocate
+
+Note: this didn't work!
+{:.pozor}
 
 This provides the locate command, useful for finding where libraries and other system files are installed.
 
     $ sudo apt install -y mlocate
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install unzip
 
@@ -396,7 +399,7 @@ Not really necessary, already installed.
 
     $ sudo apt install -y unzip
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install [R](https://www.r-project.org)
 
@@ -404,7 +407,7 @@ R is needed in order to precompile PhyloPlots.
 
     $ sudo apt-get install -y r-base
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install zlib
 
@@ -412,7 +415,7 @@ Needed for migrate-n. Not really necessary, already installed.
 
     $ sudo apt install -y zlib1g-dev
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install openmpi
 
@@ -422,7 +425,7 @@ Needed for migrate-n-mpi.
     $ sudo apt-get install -y libopenmpi-dev
     $ sudo apt-get install -y openmpi-common
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install [migrate-n](https://peterbeerli.com/migrate-html5/index.html)
 
@@ -445,7 +448,7 @@ Installed as _/usr/local/bin/migrate-n_ and _/usr/local/bin/migrate-n-mpi_:
     $ ls /usr/local/bin
     migrate-n  migrate-n-mpi
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install [Julia](https://julialang.org)
 
@@ -454,22 +457,23 @@ Julia is needed for Claudia's PhyloNetworks tutorial.
 From [Julia downloads](https://julialang.org/downloads/) web site, select the Generic Linux and x86 64-bit (glibc) version.
 
     $ cd
-    $ curl -LO https://julialang-s3.julialang.org/bin/linux/x64/1.10/julia-1.10.9-linux-x86_64.tar.gz
-    $ tar zxvf julia-1.10.9-linux-x86_64.tar.gz
-    $ mv julia-1.10.9-linux-x86_64.tar.gz TARs
-    $ sudo mv julia-1.10.9 /opt/
+    $ curl -LO https://julialang-s3.julialang.org/bin/linux/x64/1.12/julia-1.12.0-linux-x86_64.tar.gz
+    $ tar zxvf julia-1.12.0-linux-x86_64.tar.gz
+    $ mv julia-1.12.0-linux-x86_64.tar.gz TARs
+    $ sudo mv julia-1.12.0 /opt/
     $ cd /usr/local/bin
-    $ sudo ln -s /opt/julia-1.10.9/bin/julia julia
+    $ sudo ln -s /opt/julia-1.12.0/bin/julia julia
 
 This places the julia directory in _/opt_ and creates a symbolic link to the executable in _/usr/local/bin_.
-Last updated 2025-05-09.
+
+Last updated 2026-10-16.
 
 ### Install Julia packages needed by the [PhyloNetworks tutorial](https://github.com/crsl4/PhyloNetworks.jl/wiki)
 
 This follows the [instructions](https://github.com/crsl4/PhyloNetworks.jl/wiki) on the PhyloNetworks site. Also see [instructions in this post](https://stackoverflow.com/questions/32338701/install-just-one-package-globally-on-julia) and [this post](https://stackoverflow.com/questions/61273734/setting-up-a-centralized-julia-library-repository) on installing Julia packages globally. In particular, defining the JULIA_DEPOT_PATH environmental variable specifies the location where Julia packages will be installed.
 
     $ cd
-    $ export JULIA_DEPOT_PATH=/opt/julia-1.10.9/usr/share/julia/site
+    $ export JULIA_DEPOT_PATH=/opt/julia-1.12.0/usr/share/julia/site
     $ julia
     julia> using Pkg                # to use functions that manage packages
     julia> Pkg.add("PhyloNetworks") # to download/install PhyloNetworks
@@ -489,11 +493,11 @@ This follows the [instructions](https://github.com/crsl4/PhyloNetworks.jl/wiki) 
         [6f49c342] RCall v0.14.8
         [3eaba693] StatsModels v0.7.4
     julia> pathof(PhyloNetworks)    # useful for seeing where the package was installed
-        "/opt/julia-1.10.9/usr/share/julia/site/packages/PhyloNetworks/wyQ0b/src/PhyloNetworks.jl"    
+        "/opt/julia-1.12.0/usr/share/julia/site/packages/PhyloNetworks/7zhDI/src/PhyloNetworks.j"    
 
 Use Ctrl-d to quit julia.
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install [Boost C++](https://www.boost.org)
 
@@ -502,19 +506,19 @@ Needed in order to build RevBayes and BUCKy.
     $ cd
     $ sudo apt install -y libboost-all-dev
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install [RevBayes](https://revbayes.github.io/download)
 
 Downloaded v1.3.0 Linux executable from the [RevBayes Releases web page](https://github.com/revbayes/revbayes/releases) and installed as follows:
 
     $ cd
-    $ curl -LO https://github.com/revbayes/revbayes/releases/download/v1.3.0/revbayes-v1.3.0-linux64.tar.gz
-    $ tar zxvf revbayes-v1.3.0-linux64.tar.gz
-    $ cd revbayes-v1.3.0/bin
+    $ curl -LO https://github.com/revbayes/revbayes/releases/download/v1.3.1/revbayes-v1.3.1-linux64.tar.gz
+    $ tar zxvf revbayes-v1.3.1-linux64.tar.gz
+    $ cd revbayes-v1.3.1/bin
     $ sudo mv rb /usr/local/bin
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install [MrBayes](https://nbisweden.github.io/MrBayes/)
 
@@ -532,9 +536,12 @@ Note: do not run autoconf as this will create errors in the configure script!
     $ sudo make install
 
 Installed as _/usr/local/bin/mb_. 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install [BUCKy](http://pages.stat.wisc.edu/~ane/bucky/index.html)
+
+Note: this didn't work - web site down
+{:.pozor}
 
 BUCKy is used in the SNaQ tutorial. These instructions install the binary in _/usr/local/bin_.
 
@@ -550,7 +557,7 @@ Note: in order to get BUCKy to compile, I had to qualify `unordered_map` as `boo
     $ sudo mv bucky /usr/local/bin
     $ sudo mv mbsum /usr/local/bin
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install [RAxML](https://github.com/stamatak/standard-RAxML)
 
@@ -564,16 +571,16 @@ RAxML is used in both Claudia's SNaQ and Emily Jane's gene tree updating tutoria
     $ rm *.o  # no make clean available
 
 Installed as _/usr/local/bin/raxmlHPC_.
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install [Java](https://www.java.com/en/)
 
 The Java Runtime Environment is needed for ASTRAL and jModelTest.
 
     $ cd
-    $ udo apt install default-jre  # not really necessary, already installed
+    $ sudo apt install default-jre  # not really necessary, already installed
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install [ASTRAL](https://github.com/smirarab/ASTRAL)
 
@@ -603,33 +610,35 @@ The [cloud init script](#boot-script-used) will also change ownership to moleuse
     sudo chown moleuser.moleuser /opt/astral/astral.5.7.1.jar
     sudo chown moleuser.moleuser /opt/astral/lib -R
     
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Create MOLE directory
 
 This directory will be used to store example data needed by students for tutorials.
 
+    $ cd
     $ sudo mkdir /usr/local/share/examples/mole
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install data for [PhyloNetworks](http://crsl4.github.io/PhyloNetworks.jl/latest/) tutorial
 
     $ cd ~/clones
-    $ git clone https://github.com/crsl4/PhyloNetworks.jl.wiki.git
-    $ cd PhyloNetworks.jl.wiki
+    $ git clone https://github.com/JuliaPhylo/PhyloUtilities.git
+    $ cd PhyloUtilities
     $ sudo mkdir /usr/local/share/examples/mole/phylo-networks
     $ sudo cp -R data_results /usr/local/share/examples/mole/phylo-networks
+    $ sudo cp -R scripts /usr/local/share/examples/mole/phylo-networks
 
-Modify line 46 of /usr/local/share/examples/mole/phylo-networks/data_results/scripts/raxml.pl to say:
+Modify line 46 of /usr/local/share/examples/mole/phylo-networks/scripts/raxml.pl to say:
 
     my $raxml = '/usr/local/bin/raxmlHPC'; # executable
 
-Modify line 47 of /usr/local/share/examples/mole/phylo-networks/data_results/scripts/raxml.pl to say:
+Modify line 47 of /usr/local/share/examples/mole/phylo-networks/scripts/raxml.pl to say:
 
     my $astral = '/opt/astral/astral.5.7.1.jar'; # adapt to your system
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Download and install various datasets used in tutorials
 
@@ -649,7 +658,7 @@ Note: if any of these tutorials are changed during the workshop, be sure to pack
     $ sudo unzip revbayes.zip -d /usr/local/share/examples/mole # RevBayes tutorial
     $ sudo unzip machinelearning.zip -d /usr/local/share/examples/mole # machine learning tutorial
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install data files for the phylogenomics lab
 
@@ -659,7 +668,7 @@ These files are used in the McTavish tree updating and tree comparison labs. The
     git clone  https://github.com/snacktavish/TreeUpdatingComparison.git
     sudo cp -R TreeUpdatingComparison /usr/local/share/examples/mole/
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Set permissions and remove mac-specific dir
 
@@ -680,7 +689,7 @@ Last updated 2025-05-09.
     sudo make install
 
 Installed into _/usr/local/bin/_. 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install [MUSCLE](https://www.drive5.com/muscle/)
 
@@ -688,7 +697,7 @@ MUSCLE is used in the alignment lab as well as the McTavish gene tree updating l
 
     sudo apt install -y muscle
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install seqtk
 
@@ -696,7 +705,7 @@ seqtk is used in the McTavish gene tree updating lab.
 
     sudo apt install -y seqtk 
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install samtools
 
@@ -704,7 +713,7 @@ samtools is used in the McTavish gene tree updating lab.
 
     sudo apt install -y samtools 
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install bcftools
 
@@ -712,15 +721,17 @@ bcftools is used in the McTavish gene tree updating lab.
 
     sudo apt install -y bcftools
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install fastx
 
 The fastx toolkit is used in McTavish gene tree updating lab. fastx toolkit and bwa-mem are not available through apt.
 
+{% comment %}
 Note: I couldn't access the hannonlab web site so this year I retrieved the _fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2_ file from MOLE-2024-base.
 
 Here is what I did last year (hopefully hannonlab web site will be back up next time):
+{% endcomment %}
 
     cd
     curl -LO http://hannonlab.cshl.edu/fastx_toolkit/fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2
@@ -729,6 +740,7 @@ Here is what I did last year (hopefully hannonlab web site will be back up next 
     sudo mv bin/* /usr/local/bin/
     rm -rf bin
 
+{% comment %}
 There is a github version, but it looks like it has been modifed by people who are not the original authors and may behave differently: [lianos github repository](https://github.com/lianos/fastx-toolkit). Here is what they say in their _README.md_ file
 
     Tweaks to the FASTX-Toolkit.
@@ -738,6 +750,7 @@ There is a github version, but it looks like it has been modifed by people who a
     can be turned back on by adding the `-S` switch to the command.
 
     FASTX-Toolkit version 0.13 and libgtextutils version 0.6 were used as the base.
+{% endcomment %}
 
 Installed the following executables (version 0.0.13) in _/usr/local/bin_:
 
@@ -762,7 +775,7 @@ Installed the following executables (version 0.0.13) in _/usr/local/bin_:
     fastx_trimmer
     fastx_uncollapser
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install bwa-mem2
 
@@ -784,7 +797,7 @@ This installs the following binaries in _/usr/local/bin/_:
     bwa-mem2.sse41
     bwa-mem2.sse42
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install [maxcut](https://sagi-snir.wixsite.com/snir-lab/maxcut)
 
@@ -801,7 +814,7 @@ The software (v. 2.1) is no longer available from [here](http://research.haifa.a
     sudo cp find-cut-Linux-64 /usr/local/bin 
 
 Installed as _/usr/local/bin/find-cut-Linux-64_. 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install [IQ-TREE](http://www.iqtree.org)
 
@@ -814,8 +827,9 @@ Used for the IQ-TREE tutorial.
     mv iqtree-3.0.1-Linux-intel.tar.gz TARs
     sudo mv iqtree-3.0.1-Linux-intel/bin/iqtree3 /usr/local/bin
 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
+{% comment %}
 ### Install [libpython2.7.so.1.0 shared library](https://askubuntu.com/questions/1213461/cant-locate-libpython2-7-so-1-0)
 
 The file _libpython2.7.so.1.0_ is required for PAUP*. 
@@ -827,6 +841,7 @@ Note: had to postpone install because of the following message:
 E: Couldn't find any package by glob 'libpython2.7'"
 
 Last updated 2025-05-09.
+{% endcomment %}
 
 ### Install [jModelTest](https://github.com/ddarriba/jmodeltest2/)
 
@@ -850,7 +865,7 @@ An alias will be created by the [cloud init script](#boot-script-used) to make t
     alias jmodeltest="java -jar /opt/jmodeltest-2.1.10/jModelTest.jar"
 The [cloud init script](#boot-script-used) will also change ownership
     sudo chown -R moleuser.moleuser /opt/jmodeltest-2.1.10
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install [PAUP*](http://phylosolutions.com/paup-test/)
 
@@ -862,22 +877,25 @@ Last updated 2025-05-09.
     sudo chmod +x /usr/local/bin/paup
 
 Installed as _/usr/local/bin/paup_. 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Install [PAML](http://abacus.gene.ucl.ac.uk/software/paml.html)
 
     cd
-    curl -LO https://github.com/abacus-gene/paml/releases/download/v4.10.8/paml-4.10.8-linux-x86_64.tar.gz
-    tar zxvf paml-4.10.8-linux-x86_64.tar.gz
-    mv tar zxvf paml-4.10.8-linux-x86_64.tar.gz TARs
-    cd paml-4.10.8-linux-x86_64/src
+    curl -LO https://github.com/abacus-gene/paml/releases/download/v4.10.9/paml-4.10.9-linux-x86_64.tar.gz
+    tar zxvf paml-4.10.9-linux-x86_64.tar.gz
+    mv paml-4.10.9-linux-x86_64.tar.gz TARs
+    cd paml-4.10.9-linux-x86_64/src
     make -f Makefile
     sudo mv baseml basemlg chi2 codeml evolver infinitesites mcmctree pamp yn00 /usr/local/bin
 
 Installed baseml, basemlg, chi2, codeml, evolver, infinitesites, mcmctree, pamp, and yn00in _/usr/local/bin_. 
-Last updated 2025-05-09.
+Last updated 2026-10-16.
 
 ### Create pyenv python virtual environment
+
+Note: this is where we stopped on 2025-10-16
+{:.pozor}
 
 Python modules used in the McTavish tree comparison tutorial are installed into a virtual environment named pyenv. This may not be used because the tutorial specifies for the students to install python modules themselves (which will be installed in _~/.local_), but it is installed if we end up needing it.
 
