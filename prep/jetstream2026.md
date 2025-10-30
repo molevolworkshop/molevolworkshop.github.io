@@ -188,7 +188,6 @@ retry() {
   return 1
 }
 
-{create-cluster-command}
 (which apt-get && retry apt-get install -y python3-venv) # Install python3-venv on Debian-based platforms
 (which yum     && retry yum install -y python3)      # Install python3 on RHEL-based platforms
 python3 -m venv /opt/ansible-venv
@@ -227,7 +226,7 @@ ssh_pwauth: true
 package_update: true
 package_upgrade: {install-os-updates}
 packages:
-  - git{write-files}
+  - git
 
 
 --=================exosphere-user-data====--
@@ -929,9 +928,11 @@ opentree is used in the McTavish gene tree updating lab.
 
 Last updated 2025-05-09.
 
+{% comment %}
 ## Cleaning up VMs from 2024
 
 I used the script _delete-2024-VMs.sh_ the _late-additions/2025-05-10-delete-2024-VMs_ folder to delete the VMs that were shelved at the end of the 2024 workshop. See the section [Late additions](#late-additions) below for details on how the _late-additions_ folder.
+{% endcomment %}
 
 ## Locking an instance
 
@@ -939,13 +940,13 @@ It is wise to lock the _MOLE-2026-base_ instance as soon as you are finished set
 
 ## Create MOLE 2026 snapshots
 
-Once the **MOLE-2026-base** VM is set up and running, you can create a **snapshot** image using the Actions menu. I named the first of these snapshot images **MOLE-2026-snapshot-05-10** (where the 05-10 part is the date) and make additional snapshots (deleting the really old ones) as changes are made to MOLE-2026-base.
+Once the **MOLE-2026-base** VM is set up and running, you can create a **snapshot** image using the Actions menu. I named the first of these snapshot images **MOLE-2026-snapshot-2025-10-30** (where the 2025-10-30 part is the date) and make additional snapshots (deleting the really old ones) as changes are made to MOLE-2026-base.
 
-Note that MOLE-2026-snapshot-05-10 will show `0 B` initially when viewed in the Images list. Not to worry; the size will be updated when the image is fully created.
+Note that MOLE-2026-snapshot-2025-10-30 will show `0 B` initially when viewed in the Images list. Not to worry; the size will be updated when the image is fully created.
 
-## Creating instances based on MOLE-2026-snapshot-05-10
+## Creating instances based on MOLE-2026-snapshot-2025-10-30
 
-To create new instances, click the red _Create_ button in the upper right corner of Exosphere, then choose _Instance_ and then, in the _Choose an Instance Source_ section, click the _By Image_ tab and hit the _Create Instance_ button beside MOLE-2026-snapshot-05-10.
+To create new instances, click the red _Create_ button in the upper right corner of Exosphere, then choose _Instance_ and then, in the _Choose an Instance Source_ section, click the _By Image_ tab and hit the _Create Instance_ button beside MOLE-2026-snapshot-2025-10-30.
 
 Choose a base name (e.g. "amphioxus"), **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **62** for number of instances, **no** for enable web desktop, and **Show** for Advanced Options.
 
@@ -959,7 +960,7 @@ Advanced Options:
 | Public IP Address                        | Automatic              | Yes      |
 | Boot Script                              | see below              | No       |
 
-Be sure to change `<passwd>` to a real password in the boot script before pressing the Create button to create the instances. The Exosphere GUI will say "Building" in orange, then "running Setup", then "Ready" in green. Clicking on "Instances" will take you to a screen that shows each instance created and its IP address.
+Be sure to change `<passwd>` to a real password in the boot script (see below) before pressing the Create button to create the instances. The Exosphere GUI will say "Building" in orange, then "running Setup", then "Ready" in green. Clicking on "Instances" will take you to a screen that shows each instance created and its IP address.
 
 You (or a student) can now log into an instance as **moleuser** with a command like this:
 
@@ -969,22 +970,22 @@ You (or a student) can now log into an instance as **moleuser** with a command l
 
 This is the default cloud-config boot script with some modifications for MOLE. 
 
-* One modification is the addition of the moleuser. Note that SSH public keys for the co-directors as well as the TAs are automatically saved to the _~moleuser/.ssh/authorized_keys_ directory on each instance, making it easy for the TAs to log in to any instance, even if the student has changed the moleuser password (will be communicated to students in the first (intro) computer lab). 
+* One modification is the addition of the moleuser. Note that SSH public keys for the co-directors as well as the TAs are automatically saved to the _~moleuser/.ssh/authorized_keys_ directory on each instance, making it easy for the TAs to log in to any instance, even if the student has changed the moleuser password (the moleuser password will be given to students in the first lab). 
 
 * Another modification is the addition of 13 lines in the `runcmd` section. These lines do the following:
 
  1. makes moleuser the owner of everything inside _/usr/local/share/examples/mole_ 
  2. makes moleuser the owner of everything inside _/opt/astral_ (needed for ASTRAL to be started without using sudo) 
- 3. makes moleuser the owner of everything inside _/opt/jmodeltest-2.1.10_ (needed for jModelTest to be started without using sudo) 
- 4. makes moleuser the owner of everything inside _/opt/julia-1.10.9_  
+ 3. makes moleuser the owner of everything inside _/opt/jmodeltest-2.1.10_ (needed for jModelTest to be started without using `sudo`) 
+ 4. makes moleuser the owner of everything inside _/opt/julia-1.12.0_  
  5. creates an alias named _astral_ (makes it easier to start ASTRAL)
  6. creates an alias named _jmodeltest_ (makes it easier to start jModelTest)
  7. creates an alias named _phyml_ (which points to the phyml executable inside jModelTest)
- 8. adds a line exporting the environmental variable JULIA_DEPOT_PATH to moleuser's .bash_profile (this allows Julia to find the packages needed for the PhyloNetworks tutorial)
- 9. creates a symlink named _iqtree-beta_ in /usr/local/bin that points to /usr/local/bin/iqtree3 (in case the IQTREE tutorial still uses iqtree-beta rather than iqtree3)
-10. creates a symlink named _raxml_ in /usr/local/bin that points to /usr/local/bin/raxmlHPC (the PAUP* tutorial specifies raxml rather than raxmlHPC)
-11. creates a symlink named _raxmlHPC-PTHREADS-AVX_ in /usr/local/bin that points to /usr/local/bin/raxmlHPC (the SNaQ tutorial uses raxmlHPC-PTHREADS-AVX at some point)
-12. makes moleuser the owner of its own .bash_profile (created as a result of the alias definitions above)
+ 8. adds a line exporting the environmental variable JULIA_DEPOT_PATH to moleuser's _.bash_profile_ file (this allows Julia to find the packages needed for the PhyloNetworks tutorial)
+ 9. creates a symlink named _iqtree-beta_ in _/usr/local/bin_ that points to _/usr/local/bin/iqtree3_ (in case the IQTREE tutorial still uses iqtree-beta rather than iqtree3)
+10. creates a symlink named _raxml_ in _/usr/local/bin_ that points to _/usr/local/bin/raxmlHPC_ (the PAUP* tutorial specifies raxml rather than raxmlHPC)
+11. creates a symlink named _raxmlHPC-PTHREADS-AVX_ in _/usr/local/bin_ that points to _/usr/local/bin/raxmlHPC_ (the SNaQ tutorial uses raxmlHPC-PTHREADS-AVX at some point)
+12. makes moleuser the owner of its own _.bash_profile_ file (created as a result of the alias definitions above)
 13. creates a symbolic link named _moledata_ (makes it easier to find example datasets)
 
 These two lines not used in 2026 because NFS was only necessary for the machine learning tutorial
@@ -1052,7 +1053,6 @@ retry() {
   return 1
 }
 
-{create-cluster-command}
 (which apt-get && retry apt-get install -y python3-venv) # Install python3-venv on Debian-based platforms
 (which yum     && retry yum install -y python3)      # Install python3 on RHEL-based platforms
 python3 -m venv /opt/ansible-venv
@@ -1085,9 +1085,9 @@ users:
   - default
   - name: moleuser          # MOLE-specific: adds a user moleuser common to all
     passwd: <replace me with hashed password generated using "mkpasswd --method=SHA-512 --rounds=4096">
-    expiredate: '2026-12-31'
+    expiredate: '2027-12-31'
     lock_passwd: false
-    shell: /bin/bash        #   VMs in addition to the exouser added by default
+    shell: /bin/bash 
     groups: sudo, admin    
     sudo: ALL=(ALL) NOPASSWD:ALL
     ssh_authorized_keys:    # moleuser has public keys for directors and TAs allowing easy login
@@ -1109,16 +1109,16 @@ ssh_pwauth: true
 package_update: true
 package_upgrade: {install-os-updates}
 packages:
-  - git{write-files}
+  - git
 runcmd:
   - chown -R moleuser:moleuser /usr/local/share/examples/mole                                                 # MOLE
   - chown -R moleuser:moleuser /opt/astral                                                                    # MOLE
   - chown -R moleuser:moleuser /opt/jmodeltest-2.1.10                                                         # MOLE
-  - chown -R moleuser:moleuser /opt/julia-1.10.9                                                              # MOLE
+  - chown -R moleuser:moleuser /opt/julia-1.12.0                                                              # MOLE
   - echo 'alias astral="java -jar /opt/astral/astral.5.7.1.jar"' >> /home/moleuser/.bash_profile              # MOLE
   - echo 'alias jmodeltest="java -jar /opt/jmodeltest-2.1.10/jModelTest.jar"' >> /home/moleuser/.bash_profile # MOLE
   - echo 'alias phyml="/opt/jmodeltest-2.1.10/exe/phyml/PhyML_3.0_linux64"' >> /home/moleuser/.bash_profile   # MOLE
-  - echo 'export JULIA_DEPOT_PATH=/opt/julia-1.10.9/usr/share/julia/site' >> /home/moleuser/.bash_profile     # MOLE
+  - echo 'export JULIA_DEPOT_PATH=/opt/julia-1.12.0/usr/share/julia/site' >> /home/moleuser/.bash_profile     # MOLE
   - sudo ln -s /usr/local/bin/iqtree3 /usr/local/bin/iqtree-beta                                              # MOLE
   - sudo ln -s /usr/local/bin/raxmlHPC /usr/local/bin/raxml                                                   # MOLE
   - sudo ln -s /usr/local/bin/raxmlHPC /usr/local/bin/raxmlHPC-PTHREADS-AVX                                   # MOLE
@@ -1127,30 +1127,6 @@ runcmd:
 
 --=================exosphere-user-data====--
 ~~~~~~
-
-## Late additions
-
-There are always modifications that need to be made to all VMs after they have been created. For each of these tasks, I use the following basic procedure. I illustrate with an actual case. I had to modify a symbolic link on the 6 test VMs in the early testing stage in late April, 2024.
-
-* Create a folder named _2024-04-29-molelink_ under my _late-additions_ folder
-* Create a bash script named _molelink.sh_ in _late-additions/2024-04-29-molelink_ with these contents:
-        #!/bin/bash
-        IPADDRESSES=(149.165.172.51 149.165.169.200 149.165.170.188 149.165.174.163 149.165.168.150 149.165.175.105)
-        for ip in ${IPADDRESSES[@]}
-        do
-            ssh -t moleuser@$ip "bash -c 'rm moledata; ln -s /usr/local/share/examples/mole moledata'"
-        done
-* Create a *_readme.txt* file in _late-additions/2024-04-29-molelink_ explaining what the task was about
-        Fixes ~/moledata symbolic link on each test VM
-        
-        Incorrect: /usr/local/share/mole
-        Correct:   /usr/local/share/examples/mole
-* Run the script (assuming you are in _late-additions/2024-04-29-molelink_)
-        . molelink.sh
-
-You should see IP addresses listed as the script finished with each one.
-
-And, yes, you will need to list the IP addresses of all virtual machines in the `IPADDRESSES` variable.
 
 ## Command line client
 
@@ -1179,7 +1155,7 @@ These instructions copied from the illustrated and more complete instructions at
 
 Copied the password generated by my password manager into the Secret field.
 
-**Important!** A dialog box will appear with three buttons at the bottom: "Download openrc file", "Download clouds.yaml", and "Close". Do not press the "Close" button until you have safely downloaded both the _openrc_ and _clouds.yaml_ files to your local hard drive. If you fail, you will have to delete the credentials you just created and start again (the consequences of failing to save both files at this stage are minor, but annoying).
+**Important!** A dialog box will appear with three buttons at the bottom: "Download openrc file", "Download clouds.yaml", and "Close". **Do not press the "Close" button until you have safely downloaded _both_ the _openrc_ and _clouds.yaml_ files to your local hard drive.** If you fail, you will have to delete the credentials you just created and start again (the consequences of failing to save both files at this stage are minor, but annoying).
 
 The file _clouds.yaml_ was downloaded by pressing the "Download clouds.yaml" button and placed here on my local laptop:
 
@@ -1201,9 +1177,13 @@ I have not put a lot of effort into learning how to control things using the API
 
 Most of these instructions come from the [Jetstream2 API tutorial](https://github.com/jlf599/JetstreamAPITutorial).
 
-You will need to install the openstack client on your local laptop (see [installing openstack](https://pypi.org/project/python-openstackclient/)):
+You will need to install the openstack client on your local laptop (see [installing openstack](https://pypi.org/project/python-openstackclient/)). If you are sure that you only have one version of python3 installed on your laptop, you can safely use this method (but see below for an alternative that might be safer):
 
     pip3 install python-openstackclient
+    
+I actually prefer the following method because it explicitly uses the default python3 installed on my system (this way I know that python-openstackclient is installed in the version of python3 that I actually use):
+
+    python3 -m pip install python-openstackclient
     
 You will need to source your openrc file (see last section):
 
@@ -1219,7 +1199,7 @@ To show a list of images:
 
 To show details for one particular image:
 
-    openstack image show MOLE-2024-snapshot-04-25 --fit-width
+    openstack image show MOLE-2026-snapshot-2025-10-30 --fit-width
 
 To show a list of instances:
 
@@ -1229,7 +1209,7 @@ To show details for one particular instance, provide the ID:
 
     openstack server show a6e3ec6f-3e1a-42ed-a45a-3375af4146a5 --fit-width
 
-To create an launch an instance (see [Launch and Access Your Instance](https://docs.jetstream-cloud.org/ui/cli/launch/)):
+To create and launch an instance (see [Launch and Access Your Instance](https://docs.jetstream-cloud.org/ui/cli/launch/)):
 
     (normally done using exosphere interface)
 
@@ -1657,6 +1637,104 @@ To delete an instance (see [Deleting items in the CLI](https://docs.jetstream-cl
   406  sudo systemctl restart nfs-kernel-server
   407  history
 {% endcomment %}
+
+## Late additions
+
+There are always modifications that need to be made to all VMs after they have been created. For each of these tasks, I use the same basic procedure. 
+
+Note that, in each of the scripts described below, there are these lines:
+
+        # Comment out this line and the next to run this script
+        print("aborting because this script has already been run")
+        exit(0)
+
+I put these lines in as a safety check. They allow me to keep a script I've already run for future reference while preventing me from accidentally running the script again.
+
+Here are a few common use cases.
+
+### Modify a symbolic link on a selection of VMs
+
+I illustrate with an actual case. I had to modify a symbolic link on the 6 test VMs in the early testing stage in late April, 2024.
+
+* Create a folder named _2025-10-30-modify-symlink_ under your _late-additions_ folder on your laptop
+* Create a bash script named _modify-symlink.sh_ in _late-additions/2025-10-30-modify-symlink_ with these contents:
+
+        #!/bin/bash
+
+        # Comment out this line and the next to run this script
+        print("aborting because this script has already been run")
+        exit(0)
+        
+        # List of IP addresses
+        ilex=(149.165.159.248 149.165.154.105 149.165.159.104 149.165.153.47 149.165.152.64)
+        #     bruno           teejay          kevin           hanon          shared
+        
+        for ip in ${ilex[@]}
+        do
+            ssh -t moleuser@$ip "bash -c 'rm moledata; ln -s /usr/local/share/examples/mole moledata'"
+        done
+
+* Run the script (assuming you are in _late-additions/2025-10-30-modify-symlink_)
+
+        . modify-symlink.sh
+
+You should see IP addresses listed as the script finishes each one.
+
+And, yes, you will need to list the IP addresses of all virtual machines you want to modify in the `ilex` variable.
+
+### Replace a file on a selection of VMs
+
+* Create a folder named _2025-10-30-replace-file_ under your _late-additions_ folder on your laptop
+* Create a bash script named _replace-file.sh_ in _late-additions/2025-10-30-replace-file_ with these contents:
+
+        #!/bin/bash
+        
+        # Comment out this line and the next to run this script
+        print("aborting because this script has already been run")
+        exit(0)
+        
+        # List of IP addresses
+        ilex=(149.165.159.248 149.165.154.105 149.165.159.104 149.165.153.47 149.165.152.64)
+        #     bruno           teejay          kevin           hanon          shared
+        
+        for ip in ${ilex[@]}
+        do
+            echo $ip
+            scp junk.sh moleuser@$ip:/tmp
+            ssh -t moleuser@$ip "bash -c 'cd /tmp; chmod +x junk.sh; sudo mv junk.sh /usr/local/bin'"
+        done
+
+* Run the script (assuming you are in _late-additions/2025-10-30-replace-file_ folder)
+
+        . replace-file.sh_
+
+### Shelve a selection of VMs
+
+* Create a folder named _2025-10-30-shelve_ under your _late-additions_ folder on your laptop
+* Create a bash script named _shelve.sh_ in _late-additions/2025-10-30-shelve_ with these contents:
+
+        #!/bin/bash
+        
+        # Comment out this line and the next to run this script
+        print("aborting because this script has already been run")
+        exit(0)
+        
+        source ../../CLI-credentials/app-cred-POL-CLI-MOLE-2025-credentials-openrc.sh
+        
+        # List of IP addresses
+        ilex=(149.165.159.248 149.165.154.105 149.165.159.104 149.165.153.47 149.165.152.64)
+        #     bruno           teejay          kevin           hanon          shared
+
+        for vm in ${ilex[@]} ; do
+            echo Shelving $vm
+            openstack server shelve $vm
+        done
+
+* Run the script (assuming you are in _late-additions/2025-10-30-replace-file_ folder)
+
+        . shelve.sh_
+
+The only new thing here is the `source` command loading the variables in my CLI-credentials file. This is necessary before using any openstack commands in your script.
 
 ## Obsolete
 
