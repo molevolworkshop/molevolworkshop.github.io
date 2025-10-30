@@ -539,13 +539,10 @@ Last updated 2026-10-16.
 
 ### Install [BUCKy](http://pages.stat.wisc.edu/~ane/bucky/index.html)
 
-Note: this didn't work - web site down
-{:.pozor}
-
 BUCKy is used in the SNaQ tutorial. These instructions install the binary in _/usr/local/bin_.
 
     $ cd
-    $ curl -LO http://dstats.net/download/http://www.stat.wisc.edu/~ane/bucky/v1.4/bucky-1.4.4.tgz
+    $ curl -LO http://www.stat.wisc.edu/~ane/bucky/v1.4/bucky-1.4.4.tgz
     $ tar zxvf bucky-1.4.4.tgz
     $ mv bucky-1.4.4.tgz TARs
     $ cd bucky-1.4.4/src
@@ -900,33 +897,35 @@ Python modules used in the McTavish tree comparison tutorial are installed into 
 
     sudo chown -R exouser:exouser /usr/local/share/examples/mole/TreeUpdatingComparison
     cd /usr/local/share/examples/mole/TreeUpdatingComparison
-    python -m venv pyenv
+    python3 -m venv pyenv
 
-Last updated 2025-05-09.
+Last updated 2025-10-30.
 
 ### Install DendroPy ([DendroPy](https://dendropy.org/downloading.html))
 
 DendroPy is used in the McTavish gene tree updating lab.
 
     # activate the python environment pyenv
+    cd
     source /usr/local/share/examples/mole/TreeUpdatingComparison/pyenv/bin/activate
-    python -m pip install git+https://github.com/jeetsukumaran/DendroPy.git
-    python -m pip list
+    python3 -m pip install git+https://github.com/jeetsukumaran/DendroPy.git
+    python3 -m pip list
     deactivate
 
-Last updated 2025-05-09.
+Last updated 2025-10-30.
 
 ### Install opentree
 
 opentree is used in the McTavish gene tree updating lab.
 
     # activate the python environment pyenv
+    cd
     source /usr/local/share/examples/mole/TreeUpdatingComparison/pyenv/bin/activate
-    python -m pip install opentree
-    python -m pip list
+    python3 -m pip install opentree
+    python3 -m pip list
     deactivate
 
-Last updated 2025-05-09.
+Last updated 2025-10-30.
 
 {% comment %}
 ## Cleaning up VMs from 2024
@@ -1101,6 +1100,7 @@ users:
         - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1D6eflrh3q3daop2orqL0pXrAqOUt8AaYWaC/d+iZQutHiroByNjpSETkmEd1yw8NpF6gVkh8oNqvTH1ERlJtX1BETipUvJAlvV67ZwWDSoYVqM+RwFiUT4cIC2No0V3ETI9pd4D0Dnq/9l4V9pYaunnbvIaAUsQiDRPMcRq+aOZRB/fH9nTQ5jfWKWEAu2m77T6esXe0bFX6cMhoZdk4HQSc+Wdsfn5TZEoi7+0YVK7973ZmIHYRRl9a/80NtIIHQVOOjPve3mUxv5/dlFBvPVLVHe91XqD4DnXnjXytBgNpqjPHNY28yy/UZ7Ba8XXIxGzWEDy3p1+dJzXni/hOQ== DavidSwofford
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFYUmO7HPYTDvNCjAZIkXfR/P9cCm6QzQqRRLRFH7XI8ZF6w3+jhuT3bXDvHqYCP4W0s67UfWU1C92qtMWpzVzHw2XWi67agSNNU/PgywlCoQqoybf1s5SDfgPGJ54env9Y09KtHZF64n4WI/Sja5+FSeF7Cd4xt8SkJcRIPV+EHluE08imnFvNkW1REG32x1xDJq7euezwIHUhG9Be7nXN0VQlX0UH4D6KIDg7+autni/yZzKrfX0w7vFsAja8flWUj02mTGtZU428kHThjvzH6fJ7IonM+gSN+s+MW+1xkWSQp6N4OzM79aZS5xuzup29/8vkWcO03kg8Vigctvx ejmctavish@gmail.com
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQClRHzmCoSZcKZHFruBrwzDlqGbgmX0gGm8pRd7xDNwGoiRLk0ca9CPbQPSneD2aQkfECJHz94gkihkoDy7l2tw+oembZQwugiKU+cwbwp/HJMuJB7hpBdYyUgvUwvP2y+S6Hj3SZlIYzPRLaf/nx4JIRifXUtEdpu44ySjJSDsdN11mpF4MBsFCBbmJ+aSvt/BcZ7eg+d6MEezAAkTej1H6tEdZzZ4tBfuHC0/Qt69P6zBCHbSwrLhGoNGPZxY1ZGC8bJI7zjcuKcx48QEawoPbvro3oX8PVW8zUccia71AeCTmUrV/31YduesoGs9YatChzNpFkSVoCDbwjJ1QHjcYoL1E1U00jUJOaOGT72r2lwbCROJHk4T9j6mtkeKyzmT1XEchQhYQ7pCuAKavwkxRwghwAh6sfcFcGKnHUfhqJ8cxAAxrFBPM7sw572Ksk+259b2tNOIOQLXFosvdfxzHobvI/QgP2uPu2h/lVcQgWr1ILHGdTRJ91CTvHBMHG0= marmoset@Lenny
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDndxbOPDEMbBLJIIxOgKYGrd1FN3swhRJ+mYXj9/dE5IrB98YKWWT4+mS43mmWwlFDljRzIe9VlkwWvl2sYECefpBuNimkFwz+0V3E+FINSjSEBAgumaVhygr9L/3S6YnH4zpqWMyYPk4QOhvTYLIAC4vsLRaKHOTMRYj6JmWQi3DeX5I/utYHdOOMoGPZ1cTfFTyPbdFhPta09Umf1AfS93o73G7BanHdGSQBQajlcZlwT7ePEP/S80X5Bg/sTnli+pMojUXhdVXIQOi0nRnqxC4zqEV3zthCAqsKjvy0+GL7M3tybDIEyGnQtPCPD43RTNVgVGPrn4k1LmZtWlpoKsjXyBoO9rbZXZjWaSu7cIFm9Wcc7BXbLHiSjWFitl3S8C7Z0+iQAU0CT8ifRxGntAyYPNL+xKNHyuIwwVDaC8Z8toAkFO1RB1w6UgJmDgLhbi+saEo98HKFchDi8qED7JanXsW0ewnoguZUQLFuWMRbe7Be6lKGaea8wBhW0c8= useradmin@Users-MBP-2.lan
   - name: exouser
     shell: /bin/bash
     groups: sudo, admin
@@ -1722,12 +1722,14 @@ And, yes, you will need to list the IP addresses of all virtual machines you wan
         source ../../CLI-credentials/app-cred-POL-CLI-MOLE-2025-credentials-openrc.sh
         
         # List of IP addresses
-        ilex=(149.165.159.248 149.165.154.105 149.165.159.104 149.165.153.47 149.165.152.64)
-        #     bruno           teejay          kevin           hanon          shared
-
-        for vm in ${ilex[@]} ; do
-            echo Shelving $vm
-            openstack server shelve $vm
+        #caretta=(149.165.170.108 149.165.175.61 149.165.174.177 149.165.173.227 149.165.174.22 149.165.175.140 149.165.173.64)
+        
+        # List of IDs
+        carettaid=(0dbbe62e-46ea-4d23-94b9-f91b8ee093bb 5de50d14-159a-4b05-b3de-b4e614acdcb8 8ae88109-9d5c-44e9-a216-eb68f8ae0c3b 917c5de0-e4ce-42f0-9300-d2d7a8814b0a b3bcc94a-70aa-4fbf-bcef-b05c8cc8d057 c6c2a874-4e43-47ee-afe9-29664f1f63bd c84b88c0-5739-4f15-b23b-4b4e9070affb)
+        
+        for id in ${carettaid[@]} ; do
+            echo Shelving $id
+            openstack server shelve $id
         done
 
 * Run the script (assuming you are in _late-additions/2025-10-30-replace-file_ folder)
