@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "2026 Course dates: TBD"
-date:   2025-06-06 
+title:  "2026 Course dates: May 17, 2026 - May 27, 2026"
+date:   2025-11-14 
 categories: 2026 workshop
 ---
 
-Please check back in the fall of 2025 for details about the 2026 Workshop on Molecular Evolution
+Applications are now being accepted for the 2026 Workshop on Molecular Evolution!
 
 
