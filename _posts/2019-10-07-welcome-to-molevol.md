@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "2026 Course dates: May 17, 2026 - May 27, 2026"
+title:  "2026 Course dates: May 17 - May 27"
 date:   2025-11-14 
 categories: 2026 workshop
 ---
