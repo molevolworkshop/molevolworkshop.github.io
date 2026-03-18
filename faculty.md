@@ -54,7 +54,7 @@ permalink: /faculty/
 
 ## 2026 Course Assistant
 
-[Anne Smith](/course-assistant/) -->
+[Anne Smith](/course-assistant/)
 
 <!-- [Caitlin Randall](/course-assistant/) -->
 <!-- [Camryn Ford](/course-assistant/) -->
