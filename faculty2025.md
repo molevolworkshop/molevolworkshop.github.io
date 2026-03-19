@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Faculty
-permalink: /faculty2026/
+permalink: /faculty2025/
 ---
 {% include figure.html description="" url="/assets/img/fromback2018.jpg" css="image-center" height="250px" %}
-## 2026 Course Faculty
+## 2025 Course Faculty
 
 [Peter Beerli](/faculty-beerli/), Florida State University
 
@@ -22,41 +22,43 @@ permalink: /faculty2026/
 
 [Tracy Heath](/faculty-heath/), Iowa State University
 
-<!-- [John Huelsenbeck](/faculty-huelsenbeck/), University of California-Berkeley -->
+[John Huelsenbeck](/faculty-huelsenbeck/), University of California-Berkeley
 
 [Lacey Knowles](/faculty-knowles/), University of Michigan
 
 [Laura Kubatko](/faculty-kubatko/), Ohio State University
 
+[Paul Lewis](/faculty-lewis/), University of Connecticut
+
 [Emily Jane McTavish](/faculty-mctavish/), University of California-Merced
 
-[Corrie Moreau](/faculty-moreau/), Cornell University
+<!-- [Corrie Moreau](/faculty-moreau/), Cornell University -->
 
 [Claudia Solís-Lemus](/faculty-solis-lemus/), University of Wisconsin-Madison
 
-[Megan Smith](/faculty-smith/), Mississippi State University
+<!-- [Megan Smith](/faculty-smith/), Mississippi State University -->
 
 [David Swofford](/faculty-swofford/), Duke University
 
-<!-- [Anne Yoder](/faculty-yoder/), Duke University -->
+[Anne Yoder](/faculty-yoder/), Duke University
 
 [Rosana Zenil-Ferguson](/faculty-rzf/), University of Kentucky
 
-## 2026 Course TAs
+## 2025 Course TAs
 
-[Joshua Justison](/faculty-justison/) (lead TA), University of Wisconsin
+[Sungsik (Kevin) Kong](/faculty-kong/), Brown University
 
-[Analisa Milkey](/faculty-milkey/), University of Connecticut
+[Adetunji "Teejay" Adesina](/faculty-adesina/), University of Colorado Boulder
+
+[Bruno do Rosario Petrucci](/faculty-petrucci/), Iowa State University
 
 [Hanon McShea](/faculty-mcshea/), University of California, San Francisco
 
-[Thao Nguyen](/faculty-nguyen/), Iowa State University
 
-## 2026 Course Assistant
+## 2025 Course Assistant
 
-[Anne Smith](/course-assistant/) -->
+[Caitlin Randall](/course-assistant/)
 
-<!-- [Caitlin Randall](/course-assistant/) -->
 <!-- [Camryn Ford](/course-assistant/) -->
 <!-- [Elena Korte](/course-assistant/) -->
 
@@ -72,35 +74,35 @@ Casey Dunn, Yale University
 
 Deren Eaton, Yale University
 
-Ben Evans, McMaster University
+Laura Eme, Université Paris-Sud
 
-Joseph Felsenstein, University of Washington
+Ben Evans, McMaster University
 
 David Hillis, University of Texas
 
-Mark Holder, University of Kansas
-
-John Huelsenbeck, University of California-Berkeley
+Joseph Felsenstein, University of Washington
 
 Emilia Huerta-Sanchez, Brown University
 
+Mark Holder, University of Kansas
+
 Michael Landis, Washington University in St. Louis
 
-Paul Lewis, University of Connecticut
-
 Conor Meehan, Institute of Tropical Medicine
+
+Corrie Moreau, Cornell University
 
 William Pearson, University of Virginia
 
 Antonis Rokas, Vanderbilt University
+
+Megan Smith, Mississippi State University
 
 Edward Susko, Dalhousie University
 
 David Weisrock, University of Kentucky
 
 Rachel Williams, Duke University
-
-Anne Yoder, Duke University
 
 Derrick Zwickl, University of Arizona
 
@@ -110,11 +112,7 @@ Axel Meyer, Harold Zakon, Sara Sawyer, Shozo Yokoyama, Gavin Naylor
 
 ## Former recent TAs
 
-[Sungsik (Kevin) Kong](https://sungsik-kong.github.io/) (lead TA), Brown University
-
-[Bruno do Rosario Petrucci](https://brpetrucci.github.io/), Iowa State University
-
-[Adetunji “Teejay” Adesina](https://sawyerlab.org/team/), University of Colorado Boulder
+[Analisa Milkey](/faculty-milkey/), University of Connecticut
 
 [Blake Fauskee](/faculty-fauskee/), Duke University
 
@@ -141,8 +139,6 @@ Axel Meyer, Harold Zakon, Sara Sawyer, Shozo Yokoyama, Gavin Naylor
 [April Wright](http://www.southeastern.edu/acad_research/depts/biol/faculty/directory/wright.html), Southeastern Louisiana University
 
 ## Former Recent Course Assistants
-
-Caitlin Randall, Louisiana State University
 
 Camryn Ford, The Ohio State University
 
