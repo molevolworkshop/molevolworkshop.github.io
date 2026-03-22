@@ -1,10 +1,16 @@
 ---
 layout: page
-title: Anne Smith
+title: Anne Kathryn Smith
 permalink: /course-assistant/
 ---
 
-[Web Site]()
+Senior Undergraduate Student
+University of Connecticut
+Major: Pathobiology
+
+Contact Info
+School email: anne.smith@uconn.edu
+Professional email: anneksmithw@gmail.com
 
 ### Duration of Stay
 
