@@ -24,7 +24,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  15:30 - 17:00 |                                      | [Likelihood-based phylogenetic analysis]
  19:00 - 20:30 | TAs                                  | [Intro computer lab](/labs/intro/)
  20:30 - 22:00 | TAs                                  | [Alignment lab](/labs/alignment/)
-{: .daily-schedule-cpp}
+{: .daily-schedule-std}
 
 ### Tuesday, May 19, 2026
 
@@ -36,7 +36,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  19:00 - 20:30 | TAs                                  | [IQ-TREE introduction]({{ site.baseurl }}/faculty/mcshea/pdf/MOLE2025-IQ-TREE.pdf)
  20:30 - 22:00 | TAs                                  | [IQ-TREE lab](https://iqtree.github.io/workshop/molevol_tutorial2025) [IQ-TREE quiz](https://docs.google.com/forms/d/e/1FAIpQLSfvNMk0HJFBHDU9qAbNopbhWORx0CwSEBFdxSuCiDLJ5K1g5w/viewform?usp=dialog)
  22:00 - 23:59 | Loeb Quad                            | Evening social gathering
-{:.daily-schedule-cpp}
+{:.daily-schedule-std}
  
 ### Wednesday, May 20, 2026
 
@@ -48,7 +48,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  19:00 - 20:30 | [Heath](/faculty-heath/)             | [Divergence-time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
  20:30 - 22:00 | [Heath](/faculty-heath/)             | [Divergence-time estimation Lab](https://revbayes.github.io/tutorials/fbd_simple)
  22:00 - 23:59 | Loeb Quad                            | Social	    
-{:.daily-schedule-cpp}
+{:.daily-schedule-std}
 
 ### Thursday, May 21, 2026
 
@@ -60,7 +60,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  19:00 - 20:30 | [McTavish](/faculty-mctavish/)       | [Phylogenomics slides]({{ site.baseurl }}/faculty/mctavish/pdf/Genomics_MOLE2025.pdf), [Tree updating lab](https://github.com/snacktavish/Mole2023/blob/master/TreeUpdating.md)
  20:30 - 22:00 | [McTavish](/faculty-mctavish/)       | [Open Tree slides]({{ site.baseurl }}/faculty/mctavish/pdf/OpenTree_MOLE2025.pdf), [Tree comparison lab](https://github.com/snacktavish/Mole2023/blob/master/TreeComparison.md)
  22:00 - 23:59 | Loeb Quad                            | Social	    
-{:.daily-schedule-cpp}
+{:.daily-schedule-std}
 
 ### Friday, May 22, 2026
 
@@ -72,7 +72,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  17:00 - 18:00 | [Bielawski](/faculty-bielawski/)     | Optional session: [Values, diversity & ethics](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Diversity_2025.pdf)
  19:00 - 22:00 | Meigs Room (Swope 2nd floor)         | Course Dinner Party
  22:00 - 23:59 | Loeb Quad                            | Post-dinner social gathering
-{:.daily-schedule-cpp}
+{:.daily-schedule-std}
 
 ### Saturday, May 23, 2026
 
@@ -88,7 +88,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  19:00 - 20:30 | [Bielawski](/faculty-bielawski/)     | [PAML lab](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html), [lab slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO_2024.pdf)
  20:30 - 22:00 | [Bielawski](/faculty-bielawski/)     | [Additional lab resources](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html), [optional advanced lab](https://bitbucket.org/EvoWorks/protocol-inference-of-episodic-selection/downloads)
  22:00 - 23:59 | Loeb Quad                            | Social	    
-{:.daily-schedule-cpp}
+{:.daily-schedule-std}
 
 
 ### Monday, May 25, 2026 
@@ -101,7 +101,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  19:00 - 20:30 | [Zenil-Ferguson]()                   | [Phylogenetic comparative methods](https://roszenil.github.io/mytutorials/contenido.html)
  20:30 - 22:00 | [Zenil-Ferguson]()                   | [Phylogenetic comparative methods](https://roszenil.github.io/mytutorials/contenido.html)
  22:00 - 23:59 | Loeb Quad                            | Social
- {:.daily-schedule-cpp}
+ {:.daily-schedule-std}
 
 ### Tuesday, May 26, 2026
 
