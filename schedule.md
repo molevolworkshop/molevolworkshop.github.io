@@ -20,8 +20,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
  09:00 - 10:30 | Course Faculty & Participants        | Welcome, introductions, and workshop overview
  10:30 - 11:00 | [Bielawski](/faculty-bielawski/)     | [Scientific ethics](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf)
  11:00 - 12:00 |                                      | Introduction to phylogenetics
- 14:00 - 15:30 | [Rosana Zenil-Ferguson]              | [Introduction to Likelihood]
- 15:30 - 17:00 | [Rosana Zenil-Ferguson]              | [Likelihood in Phylogenetics]
+ 14:00 - 15:30 | Rosana Zenil-Ferguson                | Introduction to Likelihood
+ 15:30 - 17:00 | Rosana Zenil-Ferguson                | Likelihood in Phylogenetics
  19:00 - 20:30 | TAs                                  | [Intro computer lab](/labs/intro/)
  20:30 - 22:00 | TAs                                  | [Alignment lab](/labs/alignment/)
 {: .daily-schedule-std}
@@ -29,10 +29,10 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Tuesday, May 19, 2026
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 |                                      | [Phylogenetic Models]
- 10:30 - 12:00 |                                      | [Introduction to Bayesian Inference]
- 14:00 - 15:30 |                                      | [Model selection]
- 15:30 - 17:00 |                                      | [Bayesian Phylogenetics]
+ 09:00 - 10:30 |                                      | Phylogenetic Models
+ 10:30 - 12:00 |                                      | Introduction to Bayesian Inference
+ 14:00 - 15:30 |                                      | Model selection
+ 15:30 - 17:00 |                                      | Bayesian Phylogenetics
  19:00 - 20:30 | TAs                                  | [IQ-TREE introduction]({{ site.baseurl }}/faculty/mcshea/pdf/MOLE2025-IQ-TREE.pdf)
  20:30 - 22:00 | TAs                                  | [IQ-TREE lab](https://iqtree.github.io/workshop/molevol_tutorial2025) [IQ-TREE quiz](https://docs.google.com/forms/d/e/1FAIpQLSfvNMk0HJFBHDU9qAbNopbhWORx0CwSEBFdxSuCiDLJ5K1g5w/viewform?usp=dialog)
  22:00 - 23:59 | Loeb Quad                            | Evening social gathering
