@@ -4,7 +4,10 @@ table.daily-schedule-table {
     border: none;
 }
 
-table.daily-schedule-cpp tr:nth-child(1) {
+table.daily-schedule-cpp tr:nth-child(1),
+table.daily-schedule-mon tr:nth-child(1),
+table.daily-schedule-mon tr:nth-child(2),
+table.daily-schedule-mon tr:nth-child(3) {
     background-color: lavender;   // #E6E6FA
 }
 
@@ -15,14 +18,18 @@ table.daily-schedule-std tr:nth-child(6),
 table.daily-schedule-cpp tr:nth-child(2),
 table.daily-schedule-cpp tr:nth-child(3),
 table.daily-schedule-cpp tr:nth-child(6),
-table.daily-schedule-cpp tr:nth-child(7) {
+table.daily-schedule-cpp tr:nth-child(7),
+table.daily-schedule-mon tr:nth-child(4),
+table.daily-schedule-mon tr:nth-child(5) {
     background-color: thistle; // #D8BFD8
 }
 
 table.daily-schedule-std tr:nth-child(3),
 table.daily-schedule-std tr:nth-child(4),
 table.daily-schedule-cpp tr:nth-child(4),
-table.daily-schedule-cpp tr:nth-child(5) {
+table.daily-schedule-cpp tr:nth-child(5),
+table.daily-schedule-mon tr:nth-child(6),
+table.daily-schedule-mon tr:nth-child(7) {
     background-color: lavender; // #E6E6FA
 }
 
