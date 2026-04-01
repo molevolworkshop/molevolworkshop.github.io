@@ -48,7 +48,7 @@ permalink: /faculty/
 
 [Analisa Milkey](/faculty-milkey/), University of Connecticut
 
-[Hanon McShea](/faculty-mcshea/), University of California, San Francisco
+[Solomon McShea](/faculty-mcshea/), University of California, San Francisco
 
 [Thao Nguyen](/faculty-nguyen/), Iowa State University
 
