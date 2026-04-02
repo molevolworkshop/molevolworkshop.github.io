@@ -24,6 +24,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  15:30 - 17:00 | Zenil-Ferguson                       | Likelihood in Phylogenetics
  19:00 - 20:30 | TAs                                  | [Intro computer lab](/labs/intro/)
  20:30 - 22:00 | TAs                                  | [Alignment lab](/labs/alignment/)
+ 22:00 - 23:59 | Loeb Quad                            | Evening social gathering
 {: .daily-schedule-mon}
 
 ### Tuesday, May 19, 2026
@@ -45,6 +46,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  10:30 - 12:00 | [Brown](/faculty-brown/)             | [Gene tree estimation with RevBayes](https://revbayes.github.io/tutorials/ctmc/)
  14:00 - 15:30 | [Heath](/faculty-heath/)             | [Divergence-time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
  15:30 - 17:00 | [Heath](/faculty-heath/)             | [Divergence-time estimation Lab](https://revbayes.github.io/tutorials/fbd_simple)
+ 17:30 - 19:00 | Swope Private Dining Room            | Panel and Mixer with Logan Science Journalism Program
  19:00 - 20:30 | [Beerli](/faculty-beerli/)           | [Introduction to The Coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2025.pdf)
  20:30 - 22:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2025.pdf)
  22:00 - 23:59 | Loeb Quad                            | Social	    
