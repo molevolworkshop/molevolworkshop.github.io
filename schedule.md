@@ -50,7 +50,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  19:00 - 20:30 | [Beerli](/faculty-beerli/)           | [Introduction to The Coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2025.pdf)
  20:30 - 22:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2025.pdf)
  22:00 - 23:59 | Loeb Quad                            | Social	    
-{:.daily-schedule-std}
+{:.daily-schedule-wed}
 
 ### Thursday, May 21, 2026
 
