@@ -927,6 +927,109 @@ opentree is used in the McTavish gene tree updating lab.
 
 Last updated 2025-10-30.
 
+### Creating a shared read-only volume for the python virtual environment
+
+The python virtual environment used in the machine learning tutorial is large (1.8GB) and thus locating it on each VM brings these machines 1.8GB closer to their 20GB maximum disk space. To save space on the individual VMs used by participants and faculty, it is better to create a volume to hold just the python virtual environment that is used for both the machine learning and opentree labs. This volume is attached to MOLE-2026-base and shared with all other VMs via NFS.
+
+#### Creating and populating a volume
+
+In Exosphere, choose Create > Volume using the red Create button at the top right. Attach the volume to MOLE-2026-base using the Attach Volume button under the Volumes panel when viewing the details of the MOLE-2026-base instance. Mount the volume at _/media/volume/moledata_.
+
+Assuming you are logged into MOLE-2026-base as exouser, create a python virtual environment as follows:
+~~~~~~
+module list                     # ensure anaconda is not loaded
+cd /media/volume/moledata
+python -m venv pyenv            # create python virtual environment
+source ./pyenv/bin/activate     # activate the python virtual environment
+python -m pip install msprime==1.2.0
+python -m pip install numpy==1.23.5
+python -m pip install scipy==1.9.3
+python -m pip install scikit-learn==1.2.0
+python -m pip install tensorflow==2.10.0
+python -m pip install keras==2.10.0   # not really needed; already installed by tensorflow
+python -m pip install ipykernel
+python -m pip install opentree
+python -m pip install git+https://github.com/jeetsukumaran/DendroPy.git
+deactivate
+sudo chown -R moleuser.moleuser pyenv
+~~~~~~
+
+While pyenv is activated, calling
+    python -m pip freeze > mlmodules.txt
+will save the versions of all modules currently loaded to a file. If you need to recreate the environment later, you can install all of these at once using (again, while pyenv is activated)
+    python -m pip install -r mlmodules.txt
+You can use 
+    python -m pip list
+to list modules installed in the virtual environment.
+
+#### Setting up the NFS server on MOLE-2026-base
+
+See [this explanation](https://bluexp.netapp.com/blog/azure-anf-blg-linux-nfs-server-how-to-set-up-server-and-client#H_H9) for basic NFS setup and [this one](https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking) for an explanation of specifying IP ranges.
+~~~~~~
+sudo apt install -y nfs-kernel-server
+sudo vi /etc/exports
+# The example below shows exporting to just one VM
+#   /media/volume/sdb/mole 149.165.173.134(ro,sync,no_subtree_check)
+# The example below exports to a range of IP addresses (specifically 149.165.173.132, 149.165.173.133, 149.165.173.134, 149.165.173.135)
+#   /media/volume/sdb/mole 149.165.173.134/30(ro,sync,no_subtree_check)
+# The same example as above but spread across 4 lines
+#   /media/volume/sdb/mole 149.165.173.132(ro,sync,no_subtree_check)
+#   /media/volume/sdb/mole 149.165.173.133(ro,sync,no_subtree_check)
+#   /media/volume/sdb/mole 149.165.173.134(ro,sync,no_subtree_check)
+#   /media/volume/sdb/mole 149.165.173.135(ro,sync,no_subtree_check)
+# The same example but on one long line:
+#   /media/volume/sdb/mole 149.165.173.132(ro,sync,no_subtree_check) 149.165.173.133(ro,sync,no_subtree_check) 149.165.173.134(ro,sync,no_subtree_check) 149.165.173.135(ro,sync,no_subtree_check)
+sudo systemctl restart nfs-kernel-server
+~~~~~~
+
+#### Setting up the NFS client
+
+Assuming 149.165.172.151 is the ip address of MOLE-2026-base:
+~~~~~~
+sudo mkdir /var/pyenv
+sudo chown moleuser.moleuser /var/pyenv
+sudo mount -t nfs 149.165.172.151:/media/volume/moledata/pyenv /var/pyenv
+# use the following command to unmount
+# sudo umount /var/pyenv  # can also use -f (force) and/or -l (lazy) switches
+~~~~~~
+
+(Not sure the following is necessary or desirable or even correct!) The above mount command sets up NFS sharing temporarily. To automate this so that the share is mounted on startup:
+~~~~~~
+sudo vi /etc/fstab
+# Insert line similar to the following
+# 149.165.172.151:/media/volume/moledata/pyenv /var/pyenv nfs defaults 0 0
+sudo mount /var/pyenv
+sudo mount 149.165.172.151:/media/volume/moledata/pyenv
+~~~~~~
+
+### NFS
+
+You will need to mount the shared /var/pyenv directory on each instance. This involves:
+* adding a line to `/etc/exports` on MOLE-2026-base for each VM instance (allowing that VM instance to access the share);
+* restart the server on MOLE-2026-base (`sudo systemctl restart nfs-kernel-server`)
+* you will probably want to add each VM to the known_hosts file on your local laptop to avoid getting asked it is OK to connect for each:
+
+    ssh-keyscan 149.165.172.121 >> ~/.ssh/known_hosts
+    
+* mount the folder `/var/pyenv` on each VM instance
+
+You can use a script such as the following to mount the folder on all VMs at once (assuming MOLE-2026-base is exporting to all of them):
+
+~~~~~~
+#!/bin/bash
+
+IPADDRESSES=(149.165.172.121)
+
+for ip in ${IPADDRESSES[@]}
+do
+    ssh -t moleuser@$ip "bash -c 'sudo mount -t nfs 149.165.172.151:/media/volume/moledata/pyenv /var/pyenv'"
+done
+~~~~~~
+
+For this to work, you will need to:
+* set up the array IPADDRESSES in this script to contain all the virtual machine IP addresses beforehand;
+* change 149.165.172.151 to the IP address of the MOLE-2026-base machine
+
 {% comment %}
 ## Cleaning up VMs from 2024
 
