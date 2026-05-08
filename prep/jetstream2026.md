@@ -45,7 +45,7 @@ The basic procedure for setting up next year's computing is as follows:
 
 * ACCESS provides an _allocation_ of computing resources that can be "spent" at any number of participating computing centers. Our course has always used the JetStream2 resource at Indiana University in Bloomington, IN. This is an extremely well-run center, and I heartily recommend staying with them for future workshops if at all possible.
 
-* You will use Jetstream2's Exosphere web interface [https://jetstream2.exosphere.app/exosphere/](https://jetstream2.exosphere.app/exosphere/) to create the master virtual machine (VM) that provides the image cloned to create the faculty, TA, and participant VMs.
+* You will use Jetstream2's Exosphere web interface [https://jetstream2.exosphere.app/exosphere/](https://jetstream2.exosphere.app/exosphere/) to create the master virtual machine (VM) that provides the image cloned to create the faculty, TA, and participant VMs. This year this master VM is named _MOLE-2026-base_.
 
 * Most of this document is concerned with setting up the master VM after it is created. I go through this process every year rather than just cloning last year's image because operating systems and software change somewhat over the year and I like to have everything up-to-date. It will take a couple of hours to set up the master but only seconds to clone all the VMs using a snapshot image of the master VM. It behooves you to communicate with faculty and TAs early in the year to try to get all the updated software and tutorial data installed before cloning.
 
@@ -67,6 +67,7 @@ These have proven to be useful resources to have handy.
 * [Exosphere](https://jetstream2.exosphere.app/)
 * [Exosphere documentation](https://docs.jetstream-cloud.org/ui/exo/exo/)
 * [Horizon home page](https://js2.jetstream-cloud.org/)
+* [OpenStack command list](https://docs.openstack.org/python-openstackclient/yoga/cli/command-objects/server.html)
 * [Jetstream2 API tutorial](https://github.com/jlf599/JetstreamAPITutorial)
 * [Cloud-init examples](https://cloudinit.readthedocs.io/en/latest/reference/examples.html)
 
@@ -933,25 +934,24 @@ The python virtual environment used in the machine learning tutorial is large (1
 
 #### Creating and populating a volume
 
-In Exosphere, choose Create > Volume using the red Create button at the top right. Attach the volume to MOLE-2026-base using the Attach Volume button under the Volumes panel when viewing the details of the MOLE-2026-base instance. Mount the volume at _/media/volume/moledata_.
+In Exosphere, choose Create > Volume using the red Create button at the top right. Attach the volume to MOLE-2026-base using the Attach Volume button under the Volumes panel when viewing the details of the MOLE-2026-base instance. Mount the volume at _/media/volume/MOLE-data-2026_.
 
 Assuming you are logged into MOLE-2026-base as exouser, create a python virtual environment as follows:
 ~~~~~~
-module list                     # ensure anaconda is not loaded
-cd /media/volume/moledata
-python -m venv pyenv            # create python virtual environment
-source ./pyenv/bin/activate     # activate the python virtual environment
-python -m pip install msprime==1.2.0
-python -m pip install numpy==1.23.5
-python -m pip install scipy==1.9.3
-python -m pip install scikit-learn==1.2.0
-python -m pip install tensorflow==2.10.0
-python -m pip install keras==2.10.0   # not really needed; already installed by tensorflow
-python -m pip install ipykernel
-python -m pip install opentree
-python -m pip install git+https://github.com/jeetsukumaran/DendroPy.git
+module list                      # ensure anaconda is not loaded
+cd /media/volume/MOLE-data-2026
+python3 -m venv pyenv            # create python virtual environment
+source ./pyenv/bin/activate      # activate the python virtual environment
+python3 -m pip install msprime==1.3.3
+python3 -m pip install numpy==2.0.2
+python3 -m pip install scikit-learn==1.7.2
+#python3 -m pip install scipy==1.17.1 # not really needed; already installed by scikit-learn
+python3 -m pip install tensorflow==2.18.0
+python3 -m pip install keras==3.14.0  # not really needed; already installed by tensorflow
+python3 -m pip install ipykernel
+python3 -m pip install opentree
+python3 -m pip install git+https://github.com/jeetsukumaran/DendroPy.git
 deactivate
-sudo chown -R moleuser.moleuser pyenv
 ~~~~~~
 
 While pyenv is activated, calling
@@ -964,31 +964,34 @@ to list modules installed in the virtual environment.
 
 #### Setting up the NFS server on MOLE-2026-base
 
+Install nfs-kernel-server and nfs-common on MOLE-2026-base:
+
+    sudo apt install -y nfs-kernel-server
+    sudo apt install -y nfs-common
+    
+Edit the exports file:
+
+    sudo vi /etc/exports
+    
+Add virtual machine ip addresses to the exports file:
+    
+    /media/volume/sdb/mole 149.165.173.132(ro,sync,no_subtree_check)
+    /media/volume/sdb/mole 149.165.173.133(ro,sync,no_subtree_check)
+    /media/volume/sdb/mole 149.165.173.134(ro,sync,no_subtree_check)
+    /media/volume/sdb/mole 149.165.173.135(ro,sync,no_subtree_check)
+
+Close the file when finished.
+
 See [this explanation](https://bluexp.netapp.com/blog/azure-anf-blg-linux-nfs-server-how-to-set-up-server-and-client#H_H9) for basic NFS setup and [this one](https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking) for an explanation of specifying IP ranges.
-~~~~~~
-sudo apt install -y nfs-kernel-server
-sudo vi /etc/exports
-# The example below shows exporting to just one VM
-#   /media/volume/sdb/mole 149.165.173.134(ro,sync,no_subtree_check)
-# The example below exports to a range of IP addresses (specifically 149.165.173.132, 149.165.173.133, 149.165.173.134, 149.165.173.135)
-#   /media/volume/sdb/mole 149.165.173.134/30(ro,sync,no_subtree_check)
-# The same example as above but spread across 4 lines
-#   /media/volume/sdb/mole 149.165.173.132(ro,sync,no_subtree_check)
-#   /media/volume/sdb/mole 149.165.173.133(ro,sync,no_subtree_check)
-#   /media/volume/sdb/mole 149.165.173.134(ro,sync,no_subtree_check)
-#   /media/volume/sdb/mole 149.165.173.135(ro,sync,no_subtree_check)
-# The same example but on one long line:
-#   /media/volume/sdb/mole 149.165.173.132(ro,sync,no_subtree_check) 149.165.173.133(ro,sync,no_subtree_check) 149.165.173.134(ro,sync,no_subtree_check) 149.165.173.135(ro,sync,no_subtree_check)
-sudo systemctl restart nfs-kernel-server
-~~~~~~
+
 
 #### Setting up the NFS client
 
 Assuming 149.165.172.151 is the ip address of MOLE-2026-base:
 ~~~~~~
 sudo mkdir /var/pyenv
-sudo chown moleuser.moleuser /var/pyenv
-sudo mount -t nfs 149.165.172.151:/media/volume/moledata/pyenv /var/pyenv
+sudo chown moleuser:moleuser /var/pyenv
+sudo mount -t nfs 149.165.150.186:/media/volume/moledata/pyenv /var/pyenv
 # use the following command to unmount
 # sudo umount /var/pyenv  # can also use -f (force) and/or -l (lazy) switches
 ~~~~~~
@@ -1022,7 +1025,7 @@ IPADDRESSES=(149.165.172.121)
 
 for ip in ${IPADDRESSES[@]}
 do
-    ssh -t moleuser@$ip "bash -c 'sudo mount -t nfs 149.165.172.151:/media/volume/moledata/pyenv /var/pyenv'"
+    ssh -t moleuser@$ip "bash -c 'sudo mount -t nfs 149.165.150.186:/media/volume/moledata/pyenv /var/pyenv'"
 done
 ~~~~~~
 
@@ -1204,6 +1207,7 @@ users:
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFYUmO7HPYTDvNCjAZIkXfR/P9cCm6QzQqRRLRFH7XI8ZF6w3+jhuT3bXDvHqYCP4W0s67UfWU1C92qtMWpzVzHw2XWi67agSNNU/PgywlCoQqoybf1s5SDfgPGJ54env9Y09KtHZF64n4WI/Sja5+FSeF7Cd4xt8SkJcRIPV+EHluE08imnFvNkW1REG32x1xDJq7euezwIHUhG9Be7nXN0VQlX0UH4D6KIDg7+autni/yZzKrfX0w7vFsAja8flWUj02mTGtZU428kHThjvzH6fJ7IonM+gSN+s+MW+1xkWSQp6N4OzM79aZS5xuzup29/8vkWcO03kg8Vigctvx ejmctavish@gmail.com
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQClRHzmCoSZcKZHFruBrwzDlqGbgmX0gGm8pRd7xDNwGoiRLk0ca9CPbQPSneD2aQkfECJHz94gkihkoDy7l2tw+oembZQwugiKU+cwbwp/HJMuJB7hpBdYyUgvUwvP2y+S6Hj3SZlIYzPRLaf/nx4JIRifXUtEdpu44ySjJSDsdN11mpF4MBsFCBbmJ+aSvt/BcZ7eg+d6MEezAAkTej1H6tEdZzZ4tBfuHC0/Qt69P6zBCHbSwrLhGoNGPZxY1ZGC8bJI7zjcuKcx48QEawoPbvro3oX8PVW8zUccia71AeCTmUrV/31YduesoGs9YatChzNpFkSVoCDbwjJ1QHjcYoL1E1U00jUJOaOGT72r2lwbCROJHk4T9j6mtkeKyzmT1XEchQhYQ7pCuAKavwkxRwghwAh6sfcFcGKnHUfhqJ8cxAAxrFBPM7sw572Ksk+259b2tNOIOQLXFosvdfxzHobvI/QgP2uPu2h/lVcQgWr1ILHGdTRJ91CTvHBMHG0= marmoset@Lenny
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDndxbOPDEMbBLJIIxOgKYGrd1FN3swhRJ+mYXj9/dE5IrB98YKWWT4+mS43mmWwlFDljRzIe9VlkwWvl2sYECefpBuNimkFwz+0V3E+FINSjSEBAgumaVhygr9L/3S6YnH4zpqWMyYPk4QOhvTYLIAC4vsLRaKHOTMRYj6JmWQi3DeX5I/utYHdOOMoGPZ1cTfFTyPbdFhPta09Umf1AfS93o73G7BanHdGSQBQajlcZlwT7ePEP/S80X5Bg/sTnli+pMojUXhdVXIQOi0nRnqxC4zqEV3zthCAqsKjvy0+GL7M3tybDIEyGnQtPCPD43RTNVgVGPrn4k1LmZtWlpoKsjXyBoO9rbZXZjWaSu7cIFm9Wcc7BXbLHiSjWFitl3S8C7Z0+iQAU0CT8ifRxGntAyYPNL+xKNHyuIwwVDaC8Z8toAkFO1RB1w6UgJmDgLhbi+saEo98HKFchDi8qED7JanXsW0ewnoguZUQLFuWMRbe7Be6lKGaea8wBhW0c8= useradmin@Users-MBP-2.lan
+        ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHaGHTJV5ixEfHmvGAsGWEuChd3odBmT+2mvn/gjkhqo jjustis@MSI
   - name: exouser
     shell: /bin/bash
     groups: sudo, admin
