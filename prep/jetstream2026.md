@@ -1024,87 +1024,6 @@ sudo mount 149.165.150.186:/media/volume/MOLE-data-2026/pyenv
 ~~~~~~
 {% endcomment %}
 
-### Setting up the NFS clients on each VM
-
-Paul: above here is good, below here still needs some work (will remove this warning when done editing)
-{:.pozor}
-
-You will need to mount the shared _/var/pyenv_ directory on each instance. This involves:
-* adding a line to _/etc/exports_ on MOLE-2026-base for each VM instance (allowing that VM instance to access the share);
-* restart the server on MOLE-2026-base
-* you will probably want to add each VM to the known_hosts file on your local laptop to avoid getting asked it is OK to connect for each
-* mount the folder `/var/pyenv` on each VM instance
-
-#### Editing _/etc/exports_
-
-Edit the exports file:
-
-    sudo vi /etc/exports
-    
-Add virtual machine ip addresses to the exports file (the IP numbers shown here are those for the 7 chelydra testing VMs):
-    
-    /media/volume/sdb/mole 149.165.147.173(ro,sync,no_subtree_check)
-    /media/volume/sdb/mole 149.165.147.87(ro,sync,no_subtree_check)
-    /media/volume/sdb/mole 149.165.147.77(ro,sync,no_subtree_check)
-    /media/volume/sdb/mole 149.165.169.167(ro,sync,no_subtree_check)
-    /media/volume/sdb/mole 149.165.147.128(ro,sync,no_subtree_check)
-    /media/volume/sdb/mole 149.165.173.221(ro,sync,no_subtree_check)
-    /media/volume/sdb/mole 149.165.147.176(ro,sync,no_subtree_check)
-
-Close the file when finished.
-
-#### Restarting the NFS server
-
-On MOLE-2026-base:
-
-    sudo exportfs -a                            # causes /etc/exports file to be processed
-    sudo systemctl restart nfs-kernel-server    # retarts the server
-
-#### Adding host keys to your local _~/.ssh/known_hosts_ file
-
-On your local laptop, issue a line like this for each participant/faculty/TA VM:
-
-    ssh-keyscan 149.165.172.121 >> ~/.ssh/known_hosts
-    
-I would create a bash script to do this (be sure IPADDRESSES holds all the VM IP addresses before running):
-
-    #!/bin/bash
-    
-    IPADDRESSES=(149.165.147.173 149.165.147.87 149.165.147.77 149.165.169.167 149.165.147.128 149.165.173.221 149.165.147.176)
-    
-    for ip in ${IPADDRESSES[@]}
-    do
-        ssh-keyscan $ip >> ~/.ssh/known_hosts
-    done
-
-    # Remove duplicate entries from known_hosts file
-    sort -u ~/.ssh/known_hosts -o ~/.ssh/known_hosts
-    
-#### Mounting _/media/volume/MOLE-data-2026/pyenv_ at _/var/pyenv_ on each VM
-
-You can use a script such as the following to mount the _/media/volume/MOLE-data-2026/pyenv_ folder on MOLE-2026-base on all VMs at once (assuming MOLE-2026-base is exporting to all of them):
-
-    #!/bin/bash
-    
-    MOLEBASE="149.165.150.186"
-    IPADDRESSES=(149.165.147.173 149.165.147.87 149.165.147.77 149.165.169.167 149.165.147.128 149.165.173.221 149.165.147.176)
-    
-    for ip in ${IPADDRESSES[@]}
-    do
-        ssh -t moleuser@$ip "bash -c 'sudo mount -t nfs $MOLEBASE:/media/volume/MOLE-data-2026/pyenv /var/pyenv'"
-    done
-
-For this to work:
-* every VM should have a _/var/pyenv_ folder that is owned by moleuser (this should have been done when the VM was created by the cloud_init script)
-* the array IPADDRESSES in this script should contain all the virtual machine IP addresses
-* ensure MOLEBASE is set to the correct IP address of the MOLE-2026-base machine
-
-{% comment %}
-## Cleaning up VMs from 2024
-
-I used the script _delete-2024-VMs.sh_ the _late-additions/2025-05-10-delete-2024-VMs_ folder to delete the VMs that were shelved at the end of the 2024 workshop. See the section [Late additions](#late-additions) below for details on how the _late-additions_ folder.
-{% endcomment %}
-
 ## Locking an instance
 
 It is wise to lock the _MOLE-2026-base_ instance as soon as you are finished setting it up. To do this, choose **Lock** from the **Actions** menu when you are viewing the details of the _MOLE-2026-base_ instance. Locking prevents you from doing something stupid, like deleting this virtual machine accidentally. It is easy to unlock it any time you need to, but it is much harder to recreate it after accidentally deleting it! I tend to keep all instances locked unless I find there is some action that requires unlocking.
@@ -1117,9 +1036,9 @@ Note that MOLE-2026-snapshot-2025-10-30 will show `0 B` initially when viewed in
 
 ## Creating instances based on MOLE-2026-snapshot-2025-10-30
 
-To create new instances, click the red **Create** button in the upper right corner of Exosphere, then choose **Instance** and then, in the **Choose an Instance Source** section, click the **By Imag** tab and hit the **Create Instance** button beside MOLE-2026-snapshot-2025-10-30.
+To create new instances, click the red **Create** button in the upper right corner of Exosphere, then choose **Instance** and then, in the **Choose an Instance Source** section, click the **By Image** tab and hit the **Create Instance** button beside MOLE-2026-snapshot-2025-10-30 (**or the most recent snapshot**).
 
-Choose a base name (e.g. "amphioxus"), **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **62** for number of instances, **no** for enable web desktop, and **Show** for Advanced Options.
+Choose a base name (e.g. "amphioxus"), **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **62** for number of instances (this is 47 for participants, 4 for TAs, 1 for Course assistant, 2 for Co-directors, and 8 that can be shared amongst faculty), **no** for enable web desktop, and **Show** for Advanced Options.
 
 Advanced Options:
 
@@ -1261,15 +1180,16 @@ users:
     groups: sudo, admin    
     sudo: ALL=(ALL) NOPASSWD:ALL
     ssh_authorized_keys:    # moleuser has public keys for directors and TAs allowing easy login
-        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMpNe5iim6O1x93lNkJw5ZLF6f5Kd9KIMaNuifz3MY1K4+NIFQHgrbENAaimuvwNCQDCUDgOY2u4v92O2PQLmPjO5NR9Yl1vOhpzb3EFe1EM7lwFSIKNl6S2jNd4mghUXImaXT6vtS/V6X9HwB6/qhFwHrb3ic+7RPxUplMRhnflatIGWk7V+OaSBvC1AuswXqGAeBeOItJJKeGqerWDq8ytbeUbp3qFtzyHT+z08m0UnSYIIyPfV5lxztCpw22xmkReQ2pc1FtwJKmxCa3QxegsQ30X/r9fjiVS7K2CPJSTwqWbs33GfSnYgYyynjch0pQt0ByOPB1ncpfbLZWbw3 plewis@cormoran.local
+        - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKh6TEdeul5a+Q239SNR1gSQVq/WjsxDARMmTQIUTOmf plewis@cormoran.local
+        - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHaGHTJV5ixEfHmvGAsGWEuChd3odBmT+2mvn/gjkhqo jjustis@MSI
         - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGN3kowum4t/7rwKk1oPcSuYBH68ojiRG8eMSVpMpPaU analisamilkey@MacBook-Air-5.lan
+        - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC7lsWtZyDLX6fKOVCsuC/B1RNS9a/c6xAxUxOuFp66F thao@ARSIAAME5TQNGU1
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDndxbOPDEMbBLJIIxOgKYGrd1FN3swhRJ+mYXj9/dE5IrB98YKWWT4+mS43mmWwlFDljRzIe9VlkwWvl2sYECefpBuNimkFwz+0V3E+FINSjSEBAgumaVhygr9L/3S6YnH4zpqWMyYPk4QOhvTYLIAC4vsLRaKHOTMRYj6JmWQi3DeX5I/utYHdOOMoGPZ1cTfFTyPbdFhPta09Umf1AfS93o73G7BanHdGSQBQajlcZlwT7ePEP/S80X5Bg/sTnli+pMojUXhdVXIQOi0nRnqxC4zqEV3zthCAqsKjvy0+GL7M3tybDIEyGnQtPCPD43RTNVgVGPrn4k1LmZtWlpoKsjXyBoO9rbZXZjWaSu7cIFm9Wcc7BXbLHiSjWFitl3S8C7Z0+iQAU0CT8ifRxGntAyYPNL+xKNHyuIwwVDaC8Z8toAkFO1RB1w6UgJmDgLhbi+saEo98HKFchDi8qED7JanXsW0ewnoguZUQLFuWMRbe7Be6lKGaea8wBhW0c8= useradmin@Users-MBP-2.lan
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDV/XPzswM4seTioKLp01l4yzoaxRgK1Hx0yQQpr/HlokC0hSCuACQSaA6ULMqgsoAd4S1EhI9rujdpf8N7yKKsNIrwpGSX9UL5bUsCE8xh5n500iu2YUTkBuWDgZvGPqKWwMu9L9v5AxH/bk2l4EqfbPUyzgcQRX6w5OJoz7pYvEBD8BGc5y/V3VfW3BaQARdXQqvc6Eqg5wEewsLjBrkNwc0nVQHTxIuz3MP1eRybbsB44N6JuqyVlogdy8DzSI96Za/yVPCeVcGfl44N9rOa8+/7t2AsE+ycGuTM3tOeWJBUE5FOzFbEpk3SppcwKkOwTt+nnLMcCRpovHJOmSSHdptq7HJptm49FDChX/AYQy91EObHLqOkbciueHlTRNYjeye2+rnYS83kNi3f0iYr01HeUtK85GcvCGxbEpinPEVbSUFDI9inbkYVvSkL6T5JK9NWXgDpqFvGU1fESMaaZCtXDgDuFZI0T83k/tsRLvD8woxqCSsZPIvbz/UPUwM= tracyh@Indigo.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqJeFU3sEcA72fyYD2LCzDsfHqPmZonnATiXDKYeutIzQ+iVREIG3EMUNjeps8JS9oWw11ojXLFDZCHdg/z87qBZn7ilGgXZ6/PRhGaDx3kjPr5Mek10bV3BwB0O9Gws9rmepD/akuXY7wTS5M++YqCkwU1Ia9oAEW4QWDuc1Bdj3L1DqSYbI+xg38EA5TpRL2N968OPuu1xhGT9cPkRgOQAcTbFyknoeEXKwSUKamii8q8Lv+Zi9nA1nRYa0xZdJSGZNxso41FJkEmNfF6o/IKMtAJ0DHcg1B3aJpS8o2+cgyR+L0NqVHrJeBIagm4n3H8xP40pUCj5PyphdZam5L jpbielawski@Josephs-MacBook-Air.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1D6eflrh3q3daop2orqL0pXrAqOUt8AaYWaC/d+iZQutHiroByNjpSETkmEd1yw8NpF6gVkh8oNqvTH1ERlJtX1BETipUvJAlvV67ZwWDSoYVqM+RwFiUT4cIC2No0V3ETI9pd4D0Dnq/9l4V9pYaunnbvIaAUsQiDRPMcRq+aOZRB/fH9nTQ5jfWKWEAu2m77T6esXe0bFX6cMhoZdk4HQSc+Wdsfn5TZEoi7+0YVK7973ZmIHYRRl9a/80NtIIHQVOOjPve3mUxv5/dlFBvPVLVHe91XqD4DnXnjXytBgNpqjPHNY28yy/UZ7Ba8XXIxGzWEDy3p1+dJzXni/hOQ== DavidSwofford
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFYUmO7HPYTDvNCjAZIkXfR/P9cCm6QzQqRRLRFH7XI8ZF6w3+jhuT3bXDvHqYCP4W0s67UfWU1C92qtMWpzVzHw2XWi67agSNNU/PgywlCoQqoybf1s5SDfgPGJ54env9Y09KtHZF64n4WI/Sja5+FSeF7Cd4xt8SkJcRIPV+EHluE08imnFvNkW1REG32x1xDJq7euezwIHUhG9Be7nXN0VQlX0UH4D6KIDg7+autni/yZzKrfX0w7vFsAja8flWUj02mTGtZU428kHThjvzH6fJ7IonM+gSN+s+MW+1xkWSQp6N4OzM79aZS5xuzup29/8vkWcO03kg8Vigctvx ejmctavish@gmail.com
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQClRHzmCoSZcKZHFruBrwzDlqGbgmX0gGm8pRd7xDNwGoiRLk0ca9CPbQPSneD2aQkfECJHz94gkihkoDy7l2tw+oembZQwugiKU+cwbwp/HJMuJB7hpBdYyUgvUwvP2y+S6Hj3SZlIYzPRLaf/nx4JIRifXUtEdpu44ySjJSDsdN11mpF4MBsFCBbmJ+aSvt/BcZ7eg+d6MEezAAkTej1H6tEdZzZ4tBfuHC0/Qt69P6zBCHbSwrLhGoNGPZxY1ZGC8bJI7zjcuKcx48QEawoPbvro3oX8PVW8zUccia71AeCTmUrV/31YduesoGs9YatChzNpFkSVoCDbwjJ1QHjcYoL1E1U00jUJOaOGT72r2lwbCROJHk4T9j6mtkeKyzmT1XEchQhYQ7pCuAKavwkxRwghwAh6sfcFcGKnHUfhqJ8cxAAxrFBPM7sw572Ksk+259b2tNOIOQLXFosvdfxzHobvI/QgP2uPu2h/lVcQgWr1ILHGdTRJ91CTvHBMHG0= marmoset@Lenny
-        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDndxbOPDEMbBLJIIxOgKYGrd1FN3swhRJ+mYXj9/dE5IrB98YKWWT4+mS43mmWwlFDljRzIe9VlkwWvl2sYECefpBuNimkFwz+0V3E+FINSjSEBAgumaVhygr9L/3S6YnH4zpqWMyYPk4QOhvTYLIAC4vsLRaKHOTMRYj6JmWQi3DeX5I/utYHdOOMoGPZ1cTfFTyPbdFhPta09Umf1AfS93o73G7BanHdGSQBQajlcZlwT7ePEP/S80X5Bg/sTnli+pMojUXhdVXIQOi0nRnqxC4zqEV3zthCAqsKjvy0+GL7M3tybDIEyGnQtPCPD43RTNVgVGPrn4k1LmZtWlpoKsjXyBoO9rbZXZjWaSu7cIFm9Wcc7BXbLHiSjWFitl3S8C7Z0+iQAU0CT8ifRxGntAyYPNL+xKNHyuIwwVDaC8Z8toAkFO1RB1w6UgJmDgLhbi+saEo98HKFchDi8qED7JanXsW0ewnoguZUQLFuWMRbe7Be6lKGaea8wBhW0c8= useradmin@Users-MBP-2.lan
-        - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHaGHTJV5ixEfHmvGAsGWEuChd3odBmT+2mvn/gjkhqo jjustis@MSI
   - name: exouser
     shell: /bin/bash
     groups: sudo, admin
@@ -1298,11 +1218,91 @@ runcmd:
 --=================exosphere-user-data====--
 ~~~~~~
 
+### Setting up the NFS clients on each VM
+
+You will need to mount the _/media/volume/MOLE-data-2026/pyenv_ directory on MOLE-2026-base onto the _/var/pyenv_ directory on each VM instance. This involves (each of these items has its own subsection below):
+* adding a line to _/etc/exports_ on MOLE-2026-base for each VM instance (allowing that VM instance to access the share);
+* restart the server on MOLE-2026-base
+* add each VM to the known_hosts file on your local laptop to avoid getting asked it is OK to connect for each
+* mount the folder `/var/pyenv` on each VM instance
+
+#### Editing _/etc/exports_
+
+Edit the exports file:
+
+    sudo vi /etc/exports
+    
+Add virtual machine ip addresses to the exports file (the IP numbers shown here are those for the 7 chelydra testing VMs):
+    
+    /media/volume/sdb/mole 149.165.147.173(ro,sync,no_subtree_check)
+    /media/volume/sdb/mole 149.165.147.87(ro,sync,no_subtree_check)
+    /media/volume/sdb/mole 149.165.147.77(ro,sync,no_subtree_check)
+    /media/volume/sdb/mole 149.165.169.167(ro,sync,no_subtree_check)
+    /media/volume/sdb/mole 149.165.147.128(ro,sync,no_subtree_check)
+    /media/volume/sdb/mole 149.165.173.221(ro,sync,no_subtree_check)
+    /media/volume/sdb/mole 149.165.147.176(ro,sync,no_subtree_check)
+
+Close the file when finished.
+
+#### Restarting the NFS server
+
+On MOLE-2026-base:
+
+    sudo exportfs -a                            # causes /etc/exports file to be processed
+    sudo systemctl restart nfs-kernel-server    # retarts the server
+
+#### Adding host keys to your local _~/.ssh/known_hosts_ file
+
+On your local laptop, issue a line like this for each participant/faculty/TA VM:
+
+    ssh-keyscan 149.165.172.121 >> ~/.ssh/known_hosts
+    
+I would create a bash script to do this (be sure IPADDRESSES holds all the VM IP addresses before running):
+
+    #!/bin/bash
+    
+    IPADDRESSES=(149.165.147.173 149.165.147.87 149.165.147.77 149.165.169.167 149.165.147.128 149.165.173.221 149.165.147.176)
+    
+    for ip in ${IPADDRESSES[@]}
+    do
+        ssh-keyscan $ip >> ~/.ssh/known_hosts
+    done
+
+    # Remove duplicate entries from known_hosts file
+    sort -u ~/.ssh/known_hosts -o ~/.ssh/known_hosts
+    
+#### Mounting _/media/volume/MOLE-data-2026/pyenv_ at _/var/pyenv_ on each VM
+
+You can use a script such as the following to mount the _/media/volume/MOLE-data-2026/pyenv_ folder on MOLE-2026-base on all VMs at once (assuming MOLE-2026-base is exporting to all of them):
+
+    #!/bin/bash
+    
+    MOLEBASE="149.165.150.186"
+    IPADDRESSES=(149.165.147.173 149.165.147.87 149.165.147.77 149.165.169.167 149.165.147.128 149.165.173.221 149.165.147.176)
+    
+    for ip in ${IPADDRESSES[@]}
+    do
+        ssh -t moleuser@$ip "bash -c 'sudo mount -t nfs $MOLEBASE:/media/volume/MOLE-data-2026/pyenv /var/pyenv'"
+    done
+
+For this to work:
+* every VM should have a _/var/pyenv_ folder that is owned by moleuser (this should have been done when the VM was created)
+* the array IPADDRESSES in this script should contain all the virtual machine IP addresses
+* ensure MOLEBASE is set to the correct IP address of the MOLE-2026-base machine
+
+{% comment %}
+## Cleaning up VMs from 2024
+
+I used the script _delete-2024-VMs.sh_ the _late-additions/2025-05-10-delete-2024-VMs_ folder to delete the VMs that were shelved at the end of the 2024 workshop. See the section [Late additions](#late-additions) below for details on how the _late-additions_ folder.
+{% endcomment %}
+
 ## Command line client
 
 ### Obtaining CLI credentials
 
-Note: every year I create new credentials because the old ones have expired (see expiration date in table below).
+**Note:** every year I create new credentials because the old ones have expired (see expiration date in table below).
+
+**Note:** There is now a "Download Credentials for web shell access" section of the Exosphere web site. This may allow you to avoid logging into Horizon (as described below), but I haven't tried it.
 
 These instructions copied from the illustrated and more complete instructions at the [Setting up application credentials and openrc.sh for the Jetstream2 CLI](https://docs.jetstream-cloud.org/ui/cli/openrc/) page.
 
@@ -1310,7 +1310,7 @@ These instructions copied from the illustrated and more complete instructions at
 * Be sure it says ACCESS * DEB190022 at the top dropdown box
 * Choose **Identity**, then **Application Credentials** from the left sidebar menu
 * Click **Create Application Credential** towards the top right
-* Filled out form using entries below, then pressed the **Create Application Credential** button
+* Filled out form using entries below (but preferably make up your own name), then pressed the **Create Application Credential** button
 
 | Field                    | Value                                                            |
 | ------------------------ | ---------------------------------------------------------------- |
@@ -1323,15 +1323,20 @@ These instructions copied from the illustrated and more complete instructions at
 | Access Rules             | left blank                                                       |
 | Unrestricted (dangerous) | left unchecked                                                   |
 
-Copied the password generated by my password manager into the Secret field.
+Copied the password generated by my password manager into the Secret field. Note that using a password manager (e.g. 1Password) is not necessary; I used it because it makes it easy to generate a secure password.
 
-**Important!** A dialog box will appear with three buttons at the bottom: **Download openrc file**, **Download clouds.yaml**, and **Close**. **Do not press the "Close" button until you have safely downloaded _both_ the _openrc_ and _clouds.yaml_ files to your local hard drive.** If you fail, you will have to delete the credentials you just created and start again (the consequences of failing to save both files at this stage are minor, but annoying).
+**Important!** A dialog box will appear with three buttons at the bottom: **Download openrc file**, **Download clouds.yaml**, and **Close**. 
 
-The file _clouds.yaml_ was downloaded by pressing the **Download clouds.yaml** button and placed here on my local laptop:
+**Do not press the "Close" button until you have safely downloaded _both_ the _openrc_ and _clouds.yaml_ files to your local hard drive.** 
+{:.pozor}
+
+If you fail, you will have to delete the credentials you just created and start again (the consequences of failing to save both files at this stage are minor, but annoying).
+
+The file _clouds.yaml_ was downloaded by pressing the **Download clouds.yaml** button. I placed it here on my local laptop:
 
     ~/.config/openstack/clouds.yaml
 
-The file _app-cred-POL-CLI-MOLE-2026-credentials-openrc.sh_ was downloaded by pressing the "Download openrc file" and saved on my local hard drive. This is the file can be sourced to provide these environmental variables needed for authentication:
+The file _app-cred-POL-CLI-MOLE-2026-credentials-openrc.sh_ was downloaded by pressing the **Download openrc file** button and saved on my local hard drive. This is the file can be sourced to provide these environmental variables needed for authentication:
 
     OS_AUTH_TYPE
     OS_AUTH_URL
@@ -1342,8 +1347,6 @@ The file _app-cred-POL-CLI-MOLE-2026-credentials-openrc.sh_ was downloaded by pr
     OS_APPLICATION_CREDENTIAL_SECRET
 
 ### Using CLI
-
-I have not put a lot of effort into learning how to control things using the API from scripts because Exosphere makes many of these operations pretty simple. Thus, there are still a lot of TODO entries below.
 
 Most of these instructions come from the [Jetstream2 API tutorial](https://github.com/jlf599/JetstreamAPITutorial).
 
@@ -1820,7 +1823,57 @@ Note that, in each of the scripts described below, there are these lines:
 
 I put these lines in as a safety check. They allow me to keep a script I've already run for future reference while preventing me from accidentally running the script again.
 
-Here are a few common use cases.
+I created a folder named _/Users/plewis/Documents/woodshole/wh2026/computing2026_ on my local laptop with this structure:
+
+    computing2026
+        CLI-credentials
+            app-cred-POL-CLI-MOLE-2026-credentials-openrc.sh
+            clouds.yaml
+        late-additions
+            all-vm-ids.sh
+            all-vm-ips.sh
+            listIPs.sh
+            listVMs.sh
+
+The file _listIPs.sh_ can be used to get a list of the IP addresses for each VM:
+
+    #!/bin/bash
+    source ../CLI-credentials/app-cred-POL-CLI-MOLE-2026-credentials-openrc.sh
+    openstack floating ip list
+    
+The file listVMs.sh_ can be used to get a list of the IDs for each VM (some openstack operations require IDs, not IPs):
+
+    #!/bin/bash
+    source ../CLI-credentials/app-cred-POL-CLI-MOLE-2026-credentials-openrc.sh
+    openstack server list
+    
+I find it easiest to put all the VM IPs and IDs in separate bash scripts that can be sourced when needed. Here is what _all-vm-ips.sh_ looks like (only including the IP addresses for the 7 test VMs; at showtime, this file should contain IP addresses for all VMs except MOLE-2026-base):
+
+    #!/bin/bash
+    export VMIPS=(\
+        149.165.147.173 \  # chelydra 1 (josh)
+        149.165.147.87  \  # chelydra 2 (analisa)
+        149.165.147.77  \  # chelydra 3 (solomon)
+        149.165.169.167 \  # chelydra 4 (thao)
+        149.165.147.128 \  # chelydra 5 (jeremy)
+        149.165.173.221 \  # chelydra 6 (claudia)
+        149.165.147.176 \  # chelydra 7 (paul)
+        )
+
+Here is what _all-vm-ids.sh_ looks like (only including the IDs for the 7 test VMs; at showtime, this file should contain IDs for all VMs except MOLE-2026-base):
+
+    #!/bin/bash
+    export VMIDS=(\
+        2629d400-53d0-4df5-b449-73fc4445fcc0 \  # chelydra 1 (josh)
+        b7d97b60-8647-4611-8416-09080d08f0ce \  # chelydra 2 (analisa)
+        bb9c189c-b6d9-430a-9781-c1389c4f6ef7 \  # chelydra 3 (solomon)
+        63883810-052d-4b5c-a83d-7c44d0d83036 \  # chelydra 4 (thao)
+        2bb7a176-4fbd-496a-a390-5e5bf5714a60 \  # chelydra 5 (jeremy)
+        39291f2f-987f-4485-a621-7a845894bd67 \  # chelydra 6 (claudia)
+        27f59a98-4264-45ac-88ee-79cb308559e2 \  # chelydra 7 (paul)
+        )
+
+Here are a few common use cases. Note that I incorporate the date into the folder names. This allows me to later remember the order in which late additions were made, but it is not essential. If several late additions are carried out on one day, I add letters to the end of the date.
 
 ### Modify a symbolic link on a selection of VMs
 
@@ -1835,48 +1888,46 @@ I illustrate with an actual case. I had to modify a symbolic link on the 6 test 
         print("aborting because this script has already been run")
         exit(0)
         
-        # List of IP addresses
-        ilex=(149.165.159.248 149.165.154.105 149.165.159.104 149.165.153.47 149.165.152.64)
-        #     bruno           teejay          kevin           hanon          shared
-        
-        for ip in ${ilex[@]}
+        source ../all-vm-ips.sh     # provides the environmental variable VMIPS
+                
+        for ip in ${VMIPS[@]}
         do
             ssh -t moleuser@$ip "bash -c 'rm moledata; ln -s /usr/local/share/examples/mole moledata'"
         done
 
-* Run the script (assuming you are in _late-additions/2025-10-30-modify-symlink_)
+* Comment out the two "sanity check" lines and run the script (assuming you are in _late-additions/2025-10-30-modify-symlink_)
 
         . modify-symlink.sh
 
 You should see IP addresses listed as the script finishes each one.
 
-And, yes, you will need to list the IP addresses of all virtual machines you want to modify in the `ilex` variable.
+As soon as you have run the script, uncomment the two sanity check lines so that it cannot be accidentally run again.
 
 ### Replace a file on a selection of VMs
 
 * Create a folder named _2025-10-30-replace-file_ under your _late-additions_ folder on your laptop
 * Create a bash script named _replace-file.sh_ in _late-additions/2025-10-30-replace-file_ with these contents:
 
-        #!/bin/bash
-        
-        # Comment out this line and the next to run this script
-        print("aborting because this script has already been run")
-        exit(0)
-        
-        # List of IP addresses
-        ilex=(149.165.159.248 149.165.154.105 149.165.159.104 149.165.153.47 149.165.152.64)
-        #     bruno           teejay          kevin           hanon          shared
-        
-        for ip in ${ilex[@]}
-        do
-            echo $ip
-            scp junk.sh moleuser@$ip:/tmp
-            ssh -t moleuser@$ip "bash -c 'cd /tmp; chmod +x junk.sh; sudo mv junk.sh /usr/local/bin'"
-        done
+    #!/bin/bash
+    
+    # Comment out this line and the next to run this script
+    print("aborting because this script has already been run")
+    exit(0)
+    
+    source ../all-vm-ips.sh
+    
+    for ip in ${VMIPS[@]}
+    do
+        echo $ip
+        scp junk.sh moleuser@$ip:/tmp
+        ssh -t moleuser@$ip "bash -c 'cd /tmp; chmod +x junk.sh; sudo mv junk.sh /usr/local/bin'"
+    done
 
-* Run the script (assuming you are in _late-additions/2025-10-30-replace-file_ folder)
+* Comment out the two "sanity check" lines and run the script (assuming you are in _late-additions/2025-10-30-replace-file_ folder)
 
         . replace-file.sh_
+
+As soon as you have run the script, uncomment the two sanity check lines so that it cannot be accidentally run again.
 
 ### Shelve a selection of VMs
 
@@ -1890,96 +1941,48 @@ And, yes, you will need to list the IP addresses of all virtual machines you wan
         exit(0)
         
         source ../../CLI-credentials/app-cred-POL-CLI-MOLE-2025-credentials-openrc.sh
+        source ../all-vm-ids.sh
         
-        # List of IP addresses
-        #caretta=(149.165.170.108 149.165.175.61 149.165.174.177 149.165.173.227 149.165.174.22 149.165.175.140 149.165.173.64)
-        
-        # List of IDs
-        carettaid=(0dbbe62e-46ea-4d23-94b9-f91b8ee093bb 5de50d14-159a-4b05-b3de-b4e614acdcb8 8ae88109-9d5c-44e9-a216-eb68f8ae0c3b 917c5de0-e4ce-42f0-9300-d2d7a8814b0a b3bcc94a-70aa-4fbf-bcef-b05c8cc8d057 c6c2a874-4e43-47ee-afe9-29664f1f63bd c84b88c0-5739-4f15-b23b-4b4e9070affb)
-        
-        for id in ${carettaid[@]} ; do
+        for id in ${VMIDS[@]} ; do
             echo Shelving $id
             openstack server shelve $id
         done
 
-* Run the script (assuming you are in _late-additions/2025-10-30-replace-file_ folder)
+* Comment out the two "sanity check" lines and run the script (assuming you are in _late-additions/2025-10-30-shelve_ folder)
 
-        . shelve.sh_
+        . shelve.sh
 
-The only new thing here is the `source` command loading the variables in my CLI-credentials file. This is necessary before using any openstack commands in your script.
+The only new thing here is the `source` command loading the variables in my CLI-credentials file. This is necessary before using any openstack commands in your script. An additional `source` command is used to load all the VM IDs that will be visited in the for loop.
 
-## Obsolete
+Note that you could use a similar script to unshelve all VMs.
 
-Here are some instructions from the past that were not implemented in 2025.
+As soon as you have run the script, uncomment the two sanity check lines so that it cannot be accidentally run again.
 
-#### Setting up the NFS server on MOLE-2025-base
+### Lock a selection of VMs
 
-TODO: have not done this yet for 2025. Is this even necessary if we are not doing the machine learning tutorial?
+* Create a folder named _2025-10-30-lock_ under your _late-additions_ folder on your laptop
+* Create a bash script named _lock.sh_ in _late-additions/2025-10-30-lock_ with these contents:
 
-See [this explanation](https://bluexp.netapp.com/blog/azure-anf-blg-linux-nfs-server-how-to-set-up-server-and-client#H_H9) for basic NFS setup and [this one](https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking) for an explanation of specifying IP ranges.
+        #!/bin/bash
+        
+        # Comment out this line and the next to run this script
+        print("aborting because this script has already been run")
+        exit(0)
+        
+        source ../../CLI-credentials/app-cred-POL-CLI-MOLE-2026-credentials-openrc.sh
+        source ../all-vm-ids.sh
+        
+        for vm in ${VMIDS[@]} ; do
+            echo Locking $vm
+            openstack server lock $vm
+        done
 
-    sudo apt install -y nfs-kernel-server
-    sudo vi /etc/exports
-    # The example below shows exporting to just one VM
-    #   /media/volume/sdb/mole 149.165.173.134(ro,sync,no_subtree_check)
-    # The example below exports to a range of IP addresses (specifically 
-    #   149.165.173.132, 149.165.173.133, 149.165.173.134, 149.165.173.135)
-    #   /media/volume/sdb/mole 149.165.173.134/30(ro,sync,no_subtree_check)
-    # The same example as above but spread across 4 lines
-    #   /media/volume/sdb/mole 149.165.173.132(ro,sync,no_subtree_check)
-    #   /media/volume/sdb/mole 149.165.173.133(ro,sync,no_subtree_check)
-    #   /media/volume/sdb/mole 149.165.173.134(ro,sync,no_subtree_check)
-    #   /media/volume/sdb/mole 149.165.173.135(ro,sync,no_subtree_check)
-    # The same example but on one long line:
-    #   /media/volume/sdb/mole 149.165.173.132(ro,sync,no_subtree_check) 149.165.173.133(ro,sync,no_subtree_check) 149.165.173.134(ro,sync,no_subtree_check) 149.165.173.135(ro,sync,no_subtree_check)
-    sudo systemctl restart nfs-kernel-server
-    
-#### Setting up the NFS client
+* Comment out the two "sanity check" lines and run the script (assuming you are in _late-additions/2025-10-30-lock_ folder)
 
-TODO: have not done this yet for 2025. Is this even necessary if we are not doing the machine learning tutorial?
+        . lock.sh
 
-Assuming 149.165.172.79 is the ip address of MOLE-2025-base:
+The first `source` command loads the variables in my CLI-credentials file. This is necessary before using any openstack commands in your script. The second `source` command is used to load all the VM IDs that will be visited in the for loop.
 
-    sudo mkdir /var/pyenv
-    sudo chown moleuser.moleuser /var/pyenv
-    sudo mount -t nfs 149.165.172.79:/media/volume/moledata/pyenv /var/pyenv
-    # use the following command to unmount
-    # sudo umount /var/pyenv  # can also use -f (force) and/or -l (lazy) switches
+Note that you could use a similar script to unlock all VMs.
 
-(Not sure the following is necessary or desirable or even correct!) The above mount command sets up NFS sharing temporarily. To automate this so that the share is mounted on startup:
-
-    sudo vi /etc/fstab
-    # Insert line similar to the following
-    # 149.165.172.79:/media/volume/moledata/pyenv /var/pyenv nfs defaults 0 0
-    sudo mount /var/pyenv
-    sudo mount 149.165.172.79:/media/volume/moledata/pyenv
-
-### NFS
-
-TODO: have not done this yet for 2025. Is this even necessary if we are not doing the machine learning tutorial?
-
-You will need to mount the shared /var/pyenv directory on each instance. This involves:
-* adding a line to `/etc/exports` on MOLE-2024-base for each VM instance (allowing that VM instance to access the share);
-* restart the server on MOLE-2025-base (`sudo systemctl restart nfs-kernel-server`)
-* you will probably want to add each VM to the known_hosts file on your local laptop to avoid getting asked it is OK to connect for each:
-
-    ssh-keyscan 149.165.172.121 >> ~/.ssh/known_hosts
-    
-* mount the folder `/var/pyenv` on each VM instance
-
-You can use a script such as the following to mount the folder on all VMs at once (assuming MOLE-2024-base is exporting to all of them):
-
-
-    #!/bin/bash
-    
-    IPADDRESSES=(149.165.172.121)
-    
-    for ip in ${IPADDRESSES[@]}
-    do
-        ssh -t moleuser@$ip "bash -c 'sudo mount -t nfs 149.165.172.151:/media/volume/moledata/pyenv /var/pyenv'"
-    done
-
-For this to work, you will need to:
-* set up the array IPADDRESSES in this script to contain all the virtual machine IP addresses beforehand;
-* change 149.165.172.151 to the IP address of the MOLE-2024-base machine
-
+As soon as you have run the script, uncomment the two sanity check lines so that it cannot be accidentally run again.
