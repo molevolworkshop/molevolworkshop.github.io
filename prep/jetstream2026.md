@@ -23,9 +23,9 @@ The cluster we will be using is from the [Jetstream2](https://jetstream-cloud.or
 
 ### History 
 
-Peter Beerli and I applied to Xsede for an educational **allocation** to provide enough computing resources for the Workshop in 2020. [Here](/assets/pdf/jetstream-proposal.pdf) is our proposal. We were awarded 207360.0 SUs (Service Units), which would allow 120 4-core virtual machines to run continuously for 18 days (120*4*24*18 = 207360 core*hours). The Workshop was sidelined in 2020 and again in 2021.
+Peter Beerli and I applied to Xsede for an educational **allocation** to provide enough computing resources for the Workshop in 2020. [Here](/assets/pdf/jetstream-proposal.pdf) is our proposal. We were awarded 207360.0 SUs (Service Units), which would allow 120 4-core virtual machines to run continuously for 18 days (120*4*24*18 = 207360 core*hours). The Workshop was sidelined due to the COVID pandemic in 2020 and again in 2021.
 
-[Jetstream2](https://jetstream-cloud.org) was just coming online in the spring of 2022 and, while we could have continued to use Jetstream through the 2022 workshop, we were encouraged to go ahead and switch over to Jetstream2, which had the benefit of being better prepared for the 2023 Workshop when Jetstream2 is the only version available.
+[Jetstream2](https://jetstream-cloud.org) was just coming online in the spring of 2022 and, while we could have continued to use Jetstream through the 2022 workshop, we were encouraged to go ahead and switch over to Jetstream2, which had the benefit of being better prepared for the 2023 Workshop when Jetstream2 would be the only version available.
 
 Between the 2022 and 2023 Workshops, Xsede was replaced by [Access](https://access-ci.org). The Workshop directors (Peter Beerli, Laura Kubatko) and I submitted an [Explore ACCESS proposal](/assets/pdf/2022-11-24-ACCESS-proposal.pdf) in November 2022 asking for 68,080 SUs for the 2023 Workshop. We were actually granted 100,000 SUs.
 
@@ -35,9 +35,11 @@ I began building the 2025 master virtual machine instance on May 9, 2025. At tha
 
 At the end of July, 2025, Jeremy Brown submitted an extension request that was granted 31-July-2025. The new end date is Project: 2026-07-30. Technically, the extension was granted to Tracy Heath, who is still PI, because apparently changes to PI and Co-PI cannot be made for a continuing allocation. As of 16-Oct-2025, there were 127,053 SUs remaining in DEB190022. I met with Claudia and Jeremy to begin the process of setting up the MOLE-BASE-2026 virtual machine.
 
+On May 10, 2026, one week before the 2026 workshop began, there were 125,024 SUs remaining in allocation DEB190022, with 7 VMs plus MOLE-2026-base burning a total of 8*2=15 SUs/hour.
+
 ### High-level Overview
 
-The basic procedure for setting up next year's computing is as follows:
+The basic procedure for setting up computing for next year (2027) is as follows:
 
 * The current allocation expires July 20, 2026, so it is important to request an extension on the ACCESS web site well before that date.
 
@@ -51,7 +53,7 @@ The basic procedure for setting up next year's computing is as follows:
 
 * After you get all the VMs up and running, you should _shelve_ and _lock_ all of them until just before the course begins. If you follow the instructions below, you will create 2-core VMs that burn 2 SUs (Service Units) from your allocation each hour they are unshelved. While they are shelved, they burn 0 SUs, so it is _very_ important to keep them shelved unless you are actually using them. Note that _shelving_ is one of several states that sound similar, but shelving is the only one that does not burn SUs. Once the workshop begins, I let all the VMs run continuously for the entire workshop. It would be relatively simple to shelve them each evening at 10pm and unshelve them all again in the morning, but I fear that some students will want to run tutorials late at night and would be frustrated to find their VM shelved.
 
-* After the VMs are up and running, I seldom use the Exosphere web interface. Instead, I use command line tools that allow me to run scripts that loop over all the VMs. This allows you to, for example, quickly and easily replace a file on all VMs. Once the master VM has been cloned, this is the only way to make a change to all the clones apart from deleting them all and re-cloning, which would take much more time and effort. The command line tools require you to have created a file that is a sort of private key that has the allocation information baked in (see section [Obtaining CLI credentials](#obtaining-cli-credentials) below. Your script must `source` that file to be allowed to do anything with the VMs. Obtaining the credentials file requires you to login to a third web site (the other two being [ACCESS](https://access-ci.org/) and JetStream2's [Exosphere](https://jetstream2.exosphere.app/exosphere/)) called [Horizon](https://js2.jetstream-cloud.org/). This is probably the only thing you will need to do on the horizon web interface.
+* After the VMs are up and running, I seldom use the Exosphere web interface. Instead, I use command line tools (the CLI interface) that allow me to run scripts that loop over all the VMs. This allows you to, for example, quickly and easily replace a file on all VMs. Once the master VM has been cloned, this is the only way to make a change to all the clones apart from deleting them all and re-cloning, which would take much more time and effort. The command line tools require you to have created a file that is a sort of private key that has the allocation information baked in (see section [Obtaining CLI credentials](#obtaining-cli-credentials) below. Your script must `source` that file to be allowed to do anything with the VMs. Obtaining the credentials file requires you to login to a third web site (the other two being [ACCESS](https://access-ci.org/) and JetStream2's [Exosphere](https://jetstream2.exosphere.app/exosphere/)) called [Horizon](https://js2.jetstream-cloud.org/). This is probably the only thing you will need to do on the horizon web interface.
 
 * IP addresses are a restricted resource. You should create all the VMs without asking for IP addresses. Once they are created, you can request the same number of floating IP addresses and (with the command line tools) assign a floating IP to each VM.
 
@@ -89,9 +91,11 @@ I will use the dollar sign (`$`) at the beginning of a line of code to show that
 
 ### SSH stuff
 
-Using the red Create button in the upper right corner of Exosphere, I chose _SSH Public Key_ to upload my ssh public key. I named it `cormy` and pasted in the contents of the public key file _~/.ssh/id_rsa.pub_ on my local laptop.
+Using the red **Create** button in the upper right corner of Exosphere, I chose _SSH Public Key_ to upload my ssh public key. I named it `cormy` and pasted in the contents of the public key file _~/.ssh/id_rsa.pub_ on my local laptop.
 
-Once you have created an instance to login to (see below), you can create an entry in your _~/.ssh/config_ file to make it easy to login.
+**Ideally, the computer you use to set up everything should be the one you plan to have with you at Woods Hole.**
+
+Once you have created an instance to login to (see next section below), you can create an entry in your (local laptop's) _~/.ssh/config_ file to make it easy to login.
 ~~~~~~
 Host molevm
     HostName 149.165.156.59
@@ -99,15 +103,17 @@ Host molevm
     IdentityFile /Users/plewis/.ssh/id_rsa
 ~~~~~~    
         
-Now you can ssh into the instance using the _molevm_ host set up in _.ssh/config_ file:
+Now you will be able to ssh an instance you create using the _molevm_ host set up in _.ssh/config_ file:
 
     ssh molevm
 
 ### Creating the instance to be used as the base image
 
-To create a new instance, click the red Create button in the upper right corner of Exosphere. 
+To create a new instance, click the red **Create** button in the upper right corner of Exosphere. 
 
-I used the **Ubuntu 24.04 (latest)** image source and specified **MOLE-2026-base** as the name. I chose **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **1** for number of instances, **no** for enable web desktop, **cormy** for SSH public key, and **Show** for Advanced Options.
+I used the **Ubuntu 24.04 (latest)** image source and specified **MOLE-2026-base** as the name. I chose **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **1** for number of instances, **no** for enable web desktop, **cormy** for SSH public key, and **Show** for Advanced Options. (Note that you should specify your own SSH public key, **not cormy**).
+
+**About disk size:** The VMs we are using have 18.33GB of disk space of which about 16GB is taken up by the operating system and the software and data files we install. Thus, participants will have only about 2 GB to play with. Participants will thus need to off-load important files to their laptops to maintain some working disk space. Why are we so limited? The main reason is that, to get a larger disk, we would need to go to 8-core VMs, which burn 8 SU (service units) per hour rather than the 2 SUs/hour burn rate of the current 2-core VMs. Given that we have a limited number of SUs given to us by ACCESS, it is better to be frugal with disk space than risk running out of SUs before the workshop ends.
 
 Advanced Options:
 
@@ -119,15 +125,15 @@ Advanced Options:
 | Public IP Address                        | Automatic              | Yes      |
 | Boot Script (see below)                  | used default           | Yes      |
 
-Press the Create button to create the instance. The Exosphere GUI will say "Building" in lemon yellow for about 5 minutes, then "running Setup" for another minute, then "Ready" in green. Clicking on "Instances" will take you to a screen that shows the MOLE-2026-base instance and its IP address.
+Press the **Create** button to create the instance. The Exosphere GUI will say "Building" in lemon yellow for about 5 minutes, then "running Setup" for another minute, then "Ready" in green. Clicking on "Instances" will take you to a screen that shows the **MOLE-2026-base** instance and its **IP address** (149.165.150.186).
 
 You can now log into the instance as **exouser**.
 
-    $ ssh exouser@149.165.147.68
+    $ ssh exouser@149.165.150.186
     
 ### Default boot script
 
-For reference, here is the default boot script used to create MOLE-2026-base. Note: when creating MOLE-2026-base, do not change the default boot script! We will add some things to the default boot script when cloning MOLE-2026-base to create participant and faculty VMs, but the master VM should be set up using the default boot script.
+For reference, here is the default boot script used to create MOLE-2026-base. Note: when creating MOLE-2026-base, do not change the default boot script! We will add some things to the default boot script when cloning MOLE-2026-base to create participant and faculty VMs, but **the master VM should be set up using the default boot script**.
 
 ~~~~~~
 MIME-Version: 1.0
@@ -237,11 +243,13 @@ packages:
 
 The newly created MOLE-2026-base needs to be provisioned with the software and data files used during the workshop.
 
-First create a _TARs_ folder in which to store downloaded tar files (useful for backup purposes if, next year, some can't be downloaded). Also, create a _clones_ folder for git working directories.
+First create a _TARs_ folder in which to store downloaded tar files and a _clones_ folder for git working directories.
 
     cd
     mkdir TARs
     mkdir clones
+    
+If disk space gets tight, you can delete these directories.
 
 ### Finding basic information
 
@@ -354,7 +362,7 @@ To remove a package (note: I didn't use this feature, but thought it good to kee
     $ sudo apt update
     $ sudo apt upgrade -y
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install apt-file
 
@@ -364,7 +372,7 @@ This allows us to find out what files are installed by a package using "apt-file
 
 This may pop up a graphical interface: use tab and arrow keys to navigate. May need to reboot, which can be done from the Exosphere interface.
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install net-tools
 
@@ -372,7 +380,7 @@ Provides ifconfig command.
 
     $ sudo apt install net-tools
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install whois
 
@@ -380,7 +388,7 @@ This enables use of the mkpasswd command used to create the hashed password used
 
     $ sudo apt install -y whois
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install mlocate
 
@@ -391,7 +399,7 @@ This provides the locate command, useful for finding where libraries and other s
 
     $ sudo apt install -y mlocate
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install unzip
 
@@ -399,7 +407,7 @@ Not really necessary, already installed.
 
     $ sudo apt install -y unzip
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install [R](https://www.r-project.org)
 
@@ -407,7 +415,7 @@ R is needed in order to precompile PhyloPlots.
 
     $ sudo apt-get install -y r-base
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install zlib
 
@@ -415,7 +423,7 @@ Needed for migrate-n. Not really necessary, already installed.
 
     $ sudo apt install -y zlib1g-dev
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install openmpi
 
@@ -425,7 +433,7 @@ Needed for migrate-n-mpi.
     $ sudo apt-get install -y libopenmpi-dev
     $ sudo apt-get install -y openmpi-common
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install [migrate-n](https://peterbeerli.com/migrate-html5/index.html)
 
@@ -448,7 +456,7 @@ Installed as _/usr/local/bin/migrate-n_ and _/usr/local/bin/migrate-n-mpi_:
     $ ls /usr/local/bin
     migrate-n  migrate-n-mpi
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install [Julia](https://julialang.org)
 
@@ -466,7 +474,7 @@ From [Julia downloads](https://julialang.org/downloads/) web site, select the Ge
 
 This places the julia directory in _/opt_ and creates a symbolic link to the executable in _/usr/local/bin_.
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install Julia packages needed by the [PhyloNetworks tutorial](https://github.com/crsl4/PhyloNetworks.jl/wiki)
 
@@ -497,7 +505,7 @@ This follows the [instructions](https://github.com/crsl4/PhyloNetworks.jl/wiki) 
 
 Use Ctrl-d to quit julia.
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install [Boost C++](https://www.boost.org)
 
@@ -506,7 +514,7 @@ Needed in order to build RevBayes and BUCKy.
     $ cd
     $ sudo apt install -y libboost-all-dev
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install [RevBayes](https://revbayes.github.io/download)
 
@@ -518,7 +526,7 @@ Downloaded v1.3.0 Linux executable from the [RevBayes Releases web page](https:/
     $ cd revbayes-v1.3.1/bin
     $ sudo mv rb /usr/local/bin
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install [MrBayes](https://nbisweden.github.io/MrBayes/)
 
@@ -536,7 +544,7 @@ Note: do not run autoconf as this will create errors in the configure script!
     $ sudo make install
 
 Installed as _/usr/local/bin/mb_. 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install [BUCKy](http://pages.stat.wisc.edu/~ane/bucky/index.html)
 
@@ -554,7 +562,7 @@ Note: in order to get BUCKy to compile, I had to qualify `unordered_map` as `boo
     $ sudo mv bucky /usr/local/bin
     $ sudo mv mbsum /usr/local/bin
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install [RAxML](https://github.com/stamatak/standard-RAxML)
 
@@ -568,7 +576,7 @@ RAxML is used in both Claudia's SNaQ and Emily Jane's gene tree updating tutoria
     $ rm *.o  # no make clean available
 
 Installed as _/usr/local/bin/raxmlHPC_.
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install [Java](https://www.java.com/en/)
 
@@ -577,7 +585,7 @@ The Java Runtime Environment is needed for ASTRAL and jModelTest.
     $ cd
     $ sudo apt install default-jre  # not really necessary, already installed
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install [ASTRAL](https://github.com/smirarab/ASTRAL)
 
@@ -607,7 +615,7 @@ The [cloud init script](#boot-script-used) will also change ownership to moleuse
     sudo chown moleuser.moleuser /opt/astral/astral.5.7.1.jar
     sudo chown moleuser.moleuser /opt/astral/lib -R
     
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Create MOLE directory
 
@@ -616,7 +624,7 @@ This directory will be used to store example data needed by students for tutoria
     $ cd
     $ sudo mkdir /usr/local/share/examples/mole
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install data for [PhyloNetworks](http://crsl4.github.io/PhyloNetworks.jl/latest/) tutorial
 
@@ -635,7 +643,7 @@ Modify line 47 of /usr/local/share/examples/mole/phylo-networks/scripts/raxml.pl
 
     my $astral = '/opt/astral/astral.5.7.1.jar'; # adapt to your system
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Download and install various datasets used in tutorials
 
@@ -655,7 +663,7 @@ Note: if any of these tutorials are changed during the workshop, be sure to pack
     $ sudo unzip revbayes.zip -d /usr/local/share/examples/mole # RevBayes tutorial
     $ sudo unzip machinelearning.zip -d /usr/local/share/examples/mole # machine learning tutorial
 
-Last updated 2026-10-16.
+Last updated 2026-05-10 (replaced machinelearning.zip with new files).
 
 ### Install data files for the phylogenomics lab
 
@@ -665,7 +673,7 @@ These files are used in the McTavish tree updating and tree comparison labs. The
     git clone  https://github.com/snacktavish/TreeUpdatingComparison.git
     sudo cp -R TreeUpdatingComparison /usr/local/share/examples/mole/
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Set permissions and remove mac-specific dir
 
@@ -686,7 +694,7 @@ Last updated 2025-05-09.
     sudo make install
 
 Installed into _/usr/local/bin/_. 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install [MUSCLE](https://www.drive5.com/muscle/)
 
@@ -694,7 +702,7 @@ MUSCLE is used in the alignment lab as well as the McTavish gene tree updating l
 
     sudo apt install -y muscle
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install seqtk
 
@@ -702,7 +710,7 @@ seqtk is used in the McTavish gene tree updating lab.
 
     sudo apt install -y seqtk 
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install samtools
 
@@ -710,7 +718,7 @@ samtools is used in the McTavish gene tree updating lab.
 
     sudo apt install -y samtools 
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install bcftools
 
@@ -718,7 +726,7 @@ bcftools is used in the McTavish gene tree updating lab.
 
     sudo apt install -y bcftools
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install fastx
 
@@ -772,7 +780,7 @@ Installed the following executables (version 0.0.13) in _/usr/local/bin_:
     fastx_trimmer
     fastx_uncollapser
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install bwa-mem2
 
@@ -794,7 +802,7 @@ This installs the following binaries in _/usr/local/bin/_:
     bwa-mem2.sse41
     bwa-mem2.sse42
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install [maxcut](https://sagi-snir.wixsite.com/snir-lab/maxcut)
 
@@ -811,7 +819,7 @@ The software (v. 2.1) is no longer available from [here](http://research.haifa.a
     sudo cp find-cut-Linux-64 /usr/local/bin 
 
 Installed as _/usr/local/bin/find-cut-Linux-64_. 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install [IQ-TREE](http://www.iqtree.org)
 
@@ -824,7 +832,7 @@ Used for the IQ-TREE tutorial.
     mv iqtree-3.0.1-Linux-intel.tar.gz TARs
     sudo mv iqtree-3.0.1-Linux-intel/bin/iqtree3 /usr/local/bin
 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 {% comment %}
 ### Install [libpython2.7.so.1.0 shared library](https://askubuntu.com/questions/1213461/cant-locate-libpython2-7-so-1-0)
@@ -862,7 +870,7 @@ An alias will be created by the [cloud init script](#boot-script-used) to make t
     alias jmodeltest="java -jar /opt/jmodeltest-2.1.10/jModelTest.jar"
 The [cloud init script](#boot-script-used) will also change ownership
     sudo chown -R moleuser.moleuser /opt/jmodeltest-2.1.10
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install [PAUP*](http://phylosolutions.com/paup-test/)
 
@@ -874,7 +882,7 @@ Last updated 2026-10-16.
     sudo chmod +x /usr/local/bin/paup
 
 Installed as _/usr/local/bin/paup_. 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
 
 ### Install [PAML](http://abacus.gene.ucl.ac.uk/software/paml.html)
 
@@ -887,12 +895,12 @@ Last updated 2026-10-16.
     sudo mv baseml basemlg chi2 codeml evolver infinitesites mcmctree pamp yn00 /usr/local/bin
 
 Installed baseml, basemlg, chi2, codeml, evolver, infinitesites, mcmctree, pamp, and yn00in _/usr/local/bin_. 
-Last updated 2026-10-16.
+Last updated 2025-10-16.
+
+{% comment %}
+No longer using these sections because the python environment is created on the attached volume instead and used for both the machine learning and opentree labs.
 
 ### Create pyenv python virtual environment
-
-Note: this is where we stopped on 2025-10-16
-{:.pozor}
 
 Python modules used in the McTavish tree comparison tutorial are installed into a virtual environment named pyenv. This may not be used because the tutorial specifies for the students to install python modules themselves (which will be installed in _~/.local_), but it is installed if we end up needing it.
 
@@ -927,71 +935,81 @@ opentree is used in the McTavish gene tree updating lab.
     deactivate
 
 Last updated 2025-10-30.
+{% endcomment %}
 
 ### Creating a shared read-only volume for the python virtual environment
 
-The python virtual environment used in the machine learning tutorial is large (1.8GB) and thus locating it on each VM brings these machines 1.8GB closer to their 20GB maximum disk space. To save space on the individual VMs used by participants and faculty, it is better to create a volume to hold just the python virtual environment that is used for both the machine learning and opentree labs. This volume is attached to MOLE-2026-base and shared with all other VMs via NFS.
+The python virtual environment used in the machine learning tutorial is large (1.8GB) and thus locating it on each VM uses up most of the remaining disk space on the VM. It is thus necessary to create a **volume** to hold just the python virtual environment that is used for both the machine learning and opentree labs. This volume is attached to MOLE-2026-base and shared with all other VMs via NFS.
 
 #### Creating and populating a volume
 
-In Exosphere, choose Create > Volume using the red Create button at the top right. Attach the volume to MOLE-2026-base using the Attach Volume button under the Volumes panel when viewing the details of the MOLE-2026-base instance. Mount the volume at _/media/volume/MOLE-data-2026_.
+In Exosphere, choose **Create > Volume** using the red **Create** button at the top right. Attach the volume to MOLE-2026-base using the **Attach Volume** button under the Volumes panel when viewing the details of the MOLE-2026-base instance. Mount the volume at _/media/volume/MOLE-data-2026_.
 
 Assuming you are logged into MOLE-2026-base as exouser, create a python virtual environment as follows:
-~~~~~~
-module list                      # ensure anaconda is not loaded
-cd /media/volume/MOLE-data-2026
-python3 -m venv pyenv            # create python virtual environment
-source ./pyenv/bin/activate      # activate the python virtual environment
-python3 -m pip install msprime==1.3.3
-python3 -m pip install numpy==2.0.2
-python3 -m pip install scikit-learn==1.7.2
-#python3 -m pip install scipy==1.17.1 # not really needed; already installed by scikit-learn
-python3 -m pip install tensorflow==2.18.0
-python3 -m pip install keras==3.14.0  # not really needed; already installed by tensorflow
-python3 -m pip install ipykernel
-python3 -m pip install opentree
-python3 -m pip install git+https://github.com/jeetsukumaran/DendroPy.git
-deactivate
-~~~~~~
+
+    module list                                                               # ensure anaconda is not loaded
+    cd /media/volume/MOLE-data-2026
+    python3 -m venv pyenv                                                     # create python virtual environment
+    source ./pyenv/bin/activate                                               # activate the python virtual environment
+    python3 -m pip install msprime==1.3.3                                     # for machine learning lab
+    python3 -m pip install matplotlib==3.9.2                                  # for machine learning lab
+    python3 -m pip install numpy==2.0.2                                       # for machine learning lab
+    python3 -m pip install scikit-learn==1.7.2                                # for machine learning lab
+    #python3 -m pip install scipy==1.17.1 # not really needed; already installed by scikit-learn
+    python3 -m pip install tensorflow==2.18.0                                 # for machine learning lab
+    python3 -m pip install keras==3.14.0  # not really needed; already installed by tensorflow
+    python3 -m pip install ipykernel                                          # for machine learning lab
+    python3 -m pip install opentree                                           # for opentree lab
+    python3 -m pip install git+https://github.com/jeetsukumaran/DendroPy.git  # for opentree lab
+    deactivate
 
 While pyenv is activated, calling
-    python -m pip freeze > mlmodules.txt
+
+    python3 -m pip freeze > mlmodules.txt
+    
 will save the versions of all modules currently loaded to a file. If you need to recreate the environment later, you can install all of these at once using (again, while pyenv is activated)
-    python -m pip install -r mlmodules.txt
+
+    python3 -m pip install -r mlmodules.txt
+    
 You can use 
-    python -m pip list
+
+    python3 -m pip list
+    
 to list modules installed in the virtual environment.
+
+While still logged into MOLE-2026-base, create the directory _/var/pyenv_. This directory will serve as the mount point for each cloned VM.
+
+    mkdir /var/pyenv
+
+Last updated 2026-05-11.
 
 #### Setting up the NFS server on MOLE-2026-base
 
 Install nfs-kernel-server and nfs-common on MOLE-2026-base:
 
-    sudo apt install -y nfs-kernel-server
-    sudo apt install -y nfs-common
+    sudo apt install -y nfs-kernel-server   # needed for running the NFS server on MOLE-2026-base
+    sudo apt install -y nfs-common          # needed for running NFS clients on the VMs cloned from MOLE-2026-base
     
-Edit the exports file:
+**Note:** I received error messages related to nvidia libraries when trying to install nsf-common. Because we are not using GPUs, I solved the problem by simply removing nvidia
 
-    sudo vi /etc/exports
+    sudo rm /var/crash/nvidia-linux-grid-535.0.crash # to remove the crash report that causes problems
+    sudo apt remove --purge nvidia-*                 # to remove nvidia
+    sudo apt autoremove                              # removes files no longer referenced by any installed package
     
-Add virtual machine ip addresses to the exports file:
+See the section [Setting up the NFS clients on each VM](#setting-up-the-nfs-clients-on-each-VM) below for how to establish NFS connections between the server running on MOLE-2026-base and each VM.
     
-    /media/volume/sdb/mole 149.165.173.132(ro,sync,no_subtree_check)
-    /media/volume/sdb/mole 149.165.173.133(ro,sync,no_subtree_check)
-    /media/volume/sdb/mole 149.165.173.134(ro,sync,no_subtree_check)
-    /media/volume/sdb/mole 149.165.173.135(ro,sync,no_subtree_check)
-
-Close the file when finished.
-
 See [this explanation](https://bluexp.netapp.com/blog/azure-anf-blg-linux-nfs-server-how-to-set-up-server-and-client#H_H9) for basic NFS setup and [this one](https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking) for an explanation of specifying IP ranges.
 
+Last updated 2026-05-11.
 
+{% comment %}
 #### Setting up the NFS client
 
 Assuming 149.165.172.151 is the ip address of MOLE-2026-base:
 ~~~~~~
 sudo mkdir /var/pyenv
 sudo chown moleuser:moleuser /var/pyenv
-sudo mount -t nfs 149.165.150.186:/media/volume/moledata/pyenv /var/pyenv
+sudo mount -t nfs 149.165.150.186:/media/volume/MOLE-data-2026/pyenv /var/pyenv
 # use the following command to unmount
 # sudo umount /var/pyenv  # can also use -f (force) and/or -l (lazy) switches
 ~~~~~~
@@ -1000,38 +1018,86 @@ sudo mount -t nfs 149.165.150.186:/media/volume/moledata/pyenv /var/pyenv
 ~~~~~~
 sudo vi /etc/fstab
 # Insert line similar to the following
-# 149.165.172.151:/media/volume/moledata/pyenv /var/pyenv nfs defaults 0 0
+# 149.165.150.186:/media/volume/MOLE-data-2026/pyenv /var/pyenv nfs defaults 0 0
 sudo mount /var/pyenv
-sudo mount 149.165.172.151:/media/volume/moledata/pyenv
+sudo mount 149.165.150.186:/media/volume/MOLE-data-2026/pyenv
 ~~~~~~
+{% endcomment %}
 
-### NFS
+### Setting up the NFS clients on each VM
 
-You will need to mount the shared /var/pyenv directory on each instance. This involves:
-* adding a line to `/etc/exports` on MOLE-2026-base for each VM instance (allowing that VM instance to access the share);
-* restart the server on MOLE-2026-base (`sudo systemctl restart nfs-kernel-server`)
-* you will probably want to add each VM to the known_hosts file on your local laptop to avoid getting asked it is OK to connect for each:
+Paul: above here is good, below here still needs some work (will remove this warning when done editing)
+{:.pozor}
+
+You will need to mount the shared _/var/pyenv_ directory on each instance. This involves:
+* adding a line to _/etc/exports_ on MOLE-2026-base for each VM instance (allowing that VM instance to access the share);
+* restart the server on MOLE-2026-base
+* you will probably want to add each VM to the known_hosts file on your local laptop to avoid getting asked it is OK to connect for each
+* mount the folder `/var/pyenv` on each VM instance
+
+#### Editing _/etc/exports_
+
+Edit the exports file:
+
+    sudo vi /etc/exports
+    
+Add virtual machine ip addresses to the exports file (the IP numbers shown here are those for the 7 chelydra testing VMs):
+    
+    /media/volume/sdb/mole 149.165.147.173(ro,sync,no_subtree_check)
+    /media/volume/sdb/mole 149.165.147.87(ro,sync,no_subtree_check)
+    /media/volume/sdb/mole 149.165.147.77(ro,sync,no_subtree_check)
+    /media/volume/sdb/mole 149.165.169.167(ro,sync,no_subtree_check)
+    /media/volume/sdb/mole 149.165.147.128(ro,sync,no_subtree_check)
+    /media/volume/sdb/mole 149.165.173.221(ro,sync,no_subtree_check)
+    /media/volume/sdb/mole 149.165.147.176(ro,sync,no_subtree_check)
+
+Close the file when finished.
+
+#### Restarting the NFS server
+
+On MOLE-2026-base:
+
+    sudo exportfs -a                            # causes /etc/exports file to be processed
+    sudo systemctl restart nfs-kernel-server    # retarts the server
+
+#### Adding host keys to your local _~/.ssh/known_hosts_ file
+
+On your local laptop, issue a line like this for each participant/faculty/TA VM:
 
     ssh-keyscan 149.165.172.121 >> ~/.ssh/known_hosts
     
-* mount the folder `/var/pyenv` on each VM instance
+I would create a bash script to do this (be sure IPADDRESSES holds all the VM IP addresses before running):
 
-You can use a script such as the following to mount the folder on all VMs at once (assuming MOLE-2026-base is exporting to all of them):
+    #!/bin/bash
+    
+    IPADDRESSES=(149.165.147.173 149.165.147.87 149.165.147.77 149.165.169.167 149.165.147.128 149.165.173.221 149.165.147.176)
+    
+    for ip in ${IPADDRESSES[@]}
+    do
+        ssh-keyscan $ip >> ~/.ssh/known_hosts
+    done
 
-~~~~~~
-#!/bin/bash
+    # Remove duplicate entries from known_hosts file
+    sort -u ~/.ssh/known_hosts -o ~/.ssh/known_hosts
+    
+#### Mounting _/media/volume/MOLE-data-2026/pyenv_ at _/var/pyenv_ on each VM
 
-IPADDRESSES=(149.165.172.121)
+You can use a script such as the following to mount the _/media/volume/MOLE-data-2026/pyenv_ folder on MOLE-2026-base on all VMs at once (assuming MOLE-2026-base is exporting to all of them):
 
-for ip in ${IPADDRESSES[@]}
-do
-    ssh -t moleuser@$ip "bash -c 'sudo mount -t nfs 149.165.150.186:/media/volume/moledata/pyenv /var/pyenv'"
-done
-~~~~~~
+    #!/bin/bash
+    
+    MOLEBASE="149.165.150.186"
+    IPADDRESSES=(149.165.147.173 149.165.147.87 149.165.147.77 149.165.169.167 149.165.147.128 149.165.173.221 149.165.147.176)
+    
+    for ip in ${IPADDRESSES[@]}
+    do
+        ssh -t moleuser@$ip "bash -c 'sudo mount -t nfs $MOLEBASE:/media/volume/MOLE-data-2026/pyenv /var/pyenv'"
+    done
 
-For this to work, you will need to:
-* set up the array IPADDRESSES in this script to contain all the virtual machine IP addresses beforehand;
-* change 149.165.172.151 to the IP address of the MOLE-2026-base machine
+For this to work:
+* every VM should have a _/var/pyenv_ folder that is owned by moleuser (this should have been done when the VM was created by the cloud_init script)
+* the array IPADDRESSES in this script should contain all the virtual machine IP addresses
+* ensure MOLEBASE is set to the correct IP address of the MOLE-2026-base machine
 
 {% comment %}
 ## Cleaning up VMs from 2024
@@ -1051,7 +1117,7 @@ Note that MOLE-2026-snapshot-2025-10-30 will show `0 B` initially when viewed in
 
 ## Creating instances based on MOLE-2026-snapshot-2025-10-30
 
-To create new instances, click the red _Create_ button in the upper right corner of Exosphere, then choose _Instance_ and then, in the _Choose an Instance Source_ section, click the _By Image_ tab and hit the _Create Instance_ button beside MOLE-2026-snapshot-2025-10-30.
+To create new instances, click the red **Create** button in the upper right corner of Exosphere, then choose **Instance** and then, in the **Choose an Instance Source** section, click the **By Imag** tab and hit the **Create Instance** button beside MOLE-2026-snapshot-2025-10-30.
 
 Choose a base name (e.g. "amphioxus"), **m3.small** as the flavor, **20 GB** root disk size (default for selected flavor), **62** for number of instances, **no** for enable web desktop, and **Show** for Advanced Options.
 
@@ -1065,7 +1131,10 @@ Advanced Options:
 | Public IP Address                        | Automatic              | Yes      |
 | Boot Script                              | see below              | No       |
 
-Be sure to change `<passwd>` to a real password in the boot script (see below) before pressing the Create button to create the instances. The Exosphere GUI will say "Building" in orange, then "running Setup", then "Ready" in green. Clicking on "Instances" will take you to a screen that shows each instance created and its IP address.
+**Important** Be sure to change `<passwd>` to a real password in the boot script (see below) before pressing the **Create** button to create the instances. 
+{:.pozor}
+
+The Exosphere GUI will say "Building" in orange, then "running Setup", then "Ready" in green. Clicking on "Instances" will take you to a screen that shows each instance created and its IP address.
 
 You (or a student) can now log into an instance as **moleuser** with a command like this:
 
@@ -1075,28 +1144,24 @@ You (or a student) can now log into an instance as **moleuser** with a command l
 
 This is the default cloud-config boot script with some modifications for MOLE. 
 
-* One modification is the addition of the moleuser. Note that SSH public keys for the co-directors as well as the TAs are automatically saved to the _~moleuser/.ssh/authorized_keys_ directory on each instance, making it easy for the TAs to log in to any instance, even if the student has changed the moleuser password (the moleuser password will be given to students in the first lab). 
+* One modification is the addition of the user "moleuser". Note that SSH public keys for the co-directors as well as the TAs are automatically saved to the _~moleuser/.ssh/authorized_keys_ directory on each instance, making it easy for the TAs to log in to any instance, even if the student has changed the moleuser password (the moleuser password will be given to students in the first lab). 
 
-* Another modification is the addition of 13 lines in the `runcmd` section. These lines do the following:
+* Another modification is the addition of 14 lines in the `runcmd` section. These lines do the following:
 
- 1. makes moleuser the owner of everything inside _/usr/local/share/examples/mole_ 
- 2. makes moleuser the owner of everything inside _/opt/astral_ (needed for ASTRAL to be started without using sudo) 
- 3. makes moleuser the owner of everything inside _/opt/jmodeltest-2.1.10_ (needed for jModelTest to be started without using `sudo`) 
- 4. makes moleuser the owner of everything inside _/opt/julia-1.12.0_  
- 5. creates an alias named _astral_ (makes it easier to start ASTRAL)
- 6. creates an alias named _jmodeltest_ (makes it easier to start jModelTest)
- 7. creates an alias named _phyml_ (which points to the phyml executable inside jModelTest)
- 8. adds a line exporting the environmental variable JULIA_DEPOT_PATH to moleuser's _.bash_profile_ file (this allows Julia to find the packages needed for the PhyloNetworks tutorial)
- 9. creates a symlink named _iqtree-beta_ in _/usr/local/bin_ that points to _/usr/local/bin/iqtree3_ (in case the IQTREE tutorial still uses iqtree-beta rather than iqtree3)
-10. creates a symlink named _raxml_ in _/usr/local/bin_ that points to _/usr/local/bin/raxmlHPC_ (the PAUP* tutorial specifies raxml rather than raxmlHPC)
-11. creates a symlink named _raxmlHPC-PTHREADS-AVX_ in _/usr/local/bin_ that points to _/usr/local/bin/raxmlHPC_ (the SNaQ tutorial uses raxmlHPC-PTHREADS-AVX at some point)
-12. makes moleuser the owner of its own _.bash_profile_ file (created as a result of the alias definitions above)
-13. creates a symbolic link named _moledata_ (makes it easier to find example datasets)
-
-These two lines not used in 2026 because NFS was only necessary for the machine learning tutorial
-
-14. creates a directory /var/pyenv to use as a mount point for nfs
-15. makes moleuser the owner of /var/pyenv
+ 1. makes moleuser the owner of everything inside _/var/pyenv_ 
+ 2. makes moleuser the owner of everything inside _/usr/local/share/examples/mole_ 
+ 3. makes moleuser the owner of everything inside _/opt/astral_ (needed for ASTRAL to be started without using sudo) 
+ 4. makes moleuser the owner of everything inside _/opt/jmodeltest-2.1.10_ (needed for jModelTest to be started without using `sudo`) 
+ 5. makes moleuser the owner of everything inside _/opt/julia-1.12.0_  
+ 6. creates an alias named _astral_ (makes it easier to start ASTRAL)
+ 7. creates an alias named _jmodeltest_ (makes it easier to start jModelTest)
+ 8. creates an alias named _phyml_ (which points to the phyml executable inside jModelTest)
+ 9. adds a line exporting the environmental variable JULIA_DEPOT_PATH to moleuser's _.bash_profile_ file (this allows Julia to find the packages needed for the PhyloNetworks tutorial)
+10. creates a symlink named _iqtree-beta_ in _/usr/local/bin_ that points to _/usr/local/bin/iqtree3_ (in case the IQTREE tutorial still uses iqtree-beta rather than iqtree3)
+11. creates a symlink named _raxml_ in _/usr/local/bin_ that points to _/usr/local/bin/raxmlHPC_ (the PAUP* tutorial specifies raxml rather than raxmlHPC)
+12. creates a symlink named _raxmlHPC-PTHREADS-AVX_ in _/usr/local/bin_ that points to _/usr/local/bin/raxmlHPC_ (the SNaQ tutorial uses raxmlHPC-PTHREADS-AVX at some point)
+13. makes moleuser the owner of its own _.bash_profile_ file (created as a result of the alias definitions above)
+14. creates a symbolic link named _moledata_ (makes it easier to find example datasets)
 
 ~~~~~~
 MIME-Version: 1.0
@@ -1197,17 +1262,14 @@ users:
     sudo: ALL=(ALL) NOPASSWD:ALL
     ssh_authorized_keys:    # moleuser has public keys for directors and TAs allowing easy login
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMpNe5iim6O1x93lNkJw5ZLF6f5Kd9KIMaNuifz3MY1K4+NIFQHgrbENAaimuvwNCQDCUDgOY2u4v92O2PQLmPjO5NR9Yl1vOhpzb3EFe1EM7lwFSIKNl6S2jNd4mghUXImaXT6vtS/V6X9HwB6/qhFwHrb3ic+7RPxUplMRhnflatIGWk7V+OaSBvC1AuswXqGAeBeOItJJKeGqerWDq8ytbeUbp3qFtzyHT+z08m0UnSYIIyPfV5lxztCpw22xmkReQ2pc1FtwJKmxCa3QxegsQ30X/r9fjiVS7K2CPJSTwqWbs33GfSnYgYyynjch0pQt0ByOPB1ncpfbLZWbw3 plewis@cormoran.local
+        - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGN3kowum4t/7rwKk1oPcSuYBH68ojiRG8eMSVpMpPaU analisamilkey@MacBook-Air-5.lan
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDV/XPzswM4seTioKLp01l4yzoaxRgK1Hx0yQQpr/HlokC0hSCuACQSaA6ULMqgsoAd4S1EhI9rujdpf8N7yKKsNIrwpGSX9UL5bUsCE8xh5n500iu2YUTkBuWDgZvGPqKWwMu9L9v5AxH/bk2l4EqfbPUyzgcQRX6w5OJoz7pYvEBD8BGc5y/V3VfW3BaQARdXQqvc6Eqg5wEewsLjBrkNwc0nVQHTxIuz3MP1eRybbsB44N6JuqyVlogdy8DzSI96Za/yVPCeVcGfl44N9rOa8+/7t2AsE+ycGuTM3tOeWJBUE5FOzFbEpk3SppcwKkOwTt+nnLMcCRpovHJOmSSHdptq7HJptm49FDChX/AYQy91EObHLqOkbciueHlTRNYjeye2+rnYS83kNi3f0iYr01HeUtK85GcvCGxbEpinPEVbSUFDI9inbkYVvSkL6T5JK9NWXgDpqFvGU1fESMaaZCtXDgDuFZI0T83k/tsRLvD8woxqCSsZPIvbz/UPUwM= tracyh@Indigo.local
-        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpAtnEa/ULxAsa7HWP9puJfq8iTaMmkMxqEsu7f+psbmYTSmxH3QmAgWmPraNR0GQ+TG0uZUw9dR30jGn4e4+J6NCQ0H/qvoB3KIyIaFJzeg48skz0paGX+SfrdM2IEGd3ciIoKPnvx0xUZQot0DZfT6KTRm341G/u9tXzmMz/KIRmOokFmfNh4Bwt+qna5YLLBQs8GDyaLP6Sz/uabDi+k8S2BpVTV8OIGT0pFDkZ1Og8S5eJ0Rc7QHsrLfBijmB/XRtXmfMEuT7xNcvtKtQm7T/pGSy8eNhogJZX72GFCLAv/mHInBKk6qtU4wuHxan8yE2zGNhno7T8N87D0l4pxvev+kMfeUK7QvUKvxJuzGBY7SyiLlrPC3sfFTqLriOZvQg7d/o3BFyWFDFvfH3jTXe1rRdK9iHNwt9Qd7ARtKyVSKD3ZeQ3x33x9RPtDppOSEVY4oGAQ0YKVat1GmVVhiklDBoQYs13arIwHlEWoPr7xXqUlW8kQeRTn2epLAk= adetunjiadesina@BIOF-SAWYER-AA.local
-        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC42u90ydg9KNHHu9MIoZfAnilSb362WQRm+bT9hVhqX53LOnJ/KxSfdaOzadwdhi1aowevEvWvXINFa3MAVOyvuvkug42XffBH0TyjhrPcQcS+hIbFytwD/fdDLd3MYrksjvNFZPnTT1AKF6YQOZEKsRI5JLdfF6A3k3ddWCyEE6jtaY4tqXSYfLPia4HjA8zPXPgyDZBNvfD3yA+irT9PDZ2dJvbxQzrcDoOgpJfZW0zvEBnk+znD4xpJ2Zb9QFV5RTRKNYnjryGVnL7CAKr1scr9k09FQ9bXoSc0IEgoMFtcKnAnXroYcs/7vw2FvkbI9y8DToTn2LzDaPMsyMUSdPXd3JuqCDDyfPP1DrCKRkw0Adr/+L6JxEEgjOBy5BHj3nOQJsoaGQJUvPnryJCH9TSt4Cgvj5BrVm5j6MKwyR1lKPhLKnni+RE5zC/7Qd+hgd1cCIhx+94DHXf22eTzIN8qJtSlrHXqejL+CtMYPeVVrE49ebOKuIUv5BMSM+U= teejay@Adetunjis-MacBook-Air.local
-        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0lGJQrxeZ8wjpxwFvgAW+1gnHzB7cre8ejkAdBHR8rQjz+htA9U+nsgNvaSHoD4q0TzObhobdwOlkCVstJNYz1KKDH61Rbn61MToO5h1n4Ow1slHNl/Cy0NKwEg+YnyPULrMb1z5h+yzUUFgMpwzzQsutrcN9Im3HuAnRGD3giJFHKYhhEMl92EPgEf9/xs3b/0B1FdXIotFiuGkk3FkhZIA+1Ga+nNE6CEhjEHY2YQd3PsFRZWqo/FxujUQTS5hvy/5BOGpGo3LyRFiHiNWXcHXVLak+0SJzrDEcpoX1A1ezzJIvQbdGV3KNxxFPsX9T48oi5r50WRRiG3tmjUQjRm+tx41yUl/ZmZEISv8CQtn2p4h02sTLLOntIP3GBjiIok/zgTH2OHihMlqoahKbfoadWZLhkG05pnZ71YA0hFs8QQxPXNycf8zHxp8PmMAzKL9M4jtH+KRH+XVj9zoq9D0uU7WA5kyUVOjHYRMy8yvGBtFHbW3TH7BgMP7aYcM= khaosan@Sungsiks-MacBook-Pro.local
-        - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAXqA3oZ9t7u+MS7YPOjKQRrqR5Ti2KcsxRzq+MhsSQp petrucci@iastate.edu
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqJeFU3sEcA72fyYD2LCzDsfHqPmZonnATiXDKYeutIzQ+iVREIG3EMUNjeps8JS9oWw11ojXLFDZCHdg/z87qBZn7ilGgXZ6/PRhGaDx3kjPr5Mek10bV3BwB0O9Gws9rmepD/akuXY7wTS5M++YqCkwU1Ia9oAEW4QWDuc1Bdj3L1DqSYbI+xg38EA5TpRL2N968OPuu1xhGT9cPkRgOQAcTbFyknoeEXKwSUKamii8q8Lv+Zi9nA1nRYa0xZdJSGZNxso41FJkEmNfF6o/IKMtAJ0DHcg1B3aJpS8o2+cgyR+L0NqVHrJeBIagm4n3H8xP40pUCj5PyphdZam5L jpbielawski@Josephs-MacBook-Air.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1D6eflrh3q3daop2orqL0pXrAqOUt8AaYWaC/d+iZQutHiroByNjpSETkmEd1yw8NpF6gVkh8oNqvTH1ERlJtX1BETipUvJAlvV67ZwWDSoYVqM+RwFiUT4cIC2No0V3ETI9pd4D0Dnq/9l4V9pYaunnbvIaAUsQiDRPMcRq+aOZRB/fH9nTQ5jfWKWEAu2m77T6esXe0bFX6cMhoZdk4HQSc+Wdsfn5TZEoi7+0YVK7973ZmIHYRRl9a/80NtIIHQVOOjPve3mUxv5/dlFBvPVLVHe91XqD4DnXnjXytBgNpqjPHNY28yy/UZ7Ba8XXIxGzWEDy3p1+dJzXni/hOQ== DavidSwofford
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFYUmO7HPYTDvNCjAZIkXfR/P9cCm6QzQqRRLRFH7XI8ZF6w3+jhuT3bXDvHqYCP4W0s67UfWU1C92qtMWpzVzHw2XWi67agSNNU/PgywlCoQqoybf1s5SDfgPGJ54env9Y09KtHZF64n4WI/Sja5+FSeF7Cd4xt8SkJcRIPV+EHluE08imnFvNkW1REG32x1xDJq7euezwIHUhG9Be7nXN0VQlX0UH4D6KIDg7+autni/yZzKrfX0w7vFsAja8flWUj02mTGtZU428kHThjvzH6fJ7IonM+gSN+s+MW+1xkWSQp6N4OzM79aZS5xuzup29/8vkWcO03kg8Vigctvx ejmctavish@gmail.com
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQClRHzmCoSZcKZHFruBrwzDlqGbgmX0gGm8pRd7xDNwGoiRLk0ca9CPbQPSneD2aQkfECJHz94gkihkoDy7l2tw+oembZQwugiKU+cwbwp/HJMuJB7hpBdYyUgvUwvP2y+S6Hj3SZlIYzPRLaf/nx4JIRifXUtEdpu44ySjJSDsdN11mpF4MBsFCBbmJ+aSvt/BcZ7eg+d6MEezAAkTej1H6tEdZzZ4tBfuHC0/Qt69P6zBCHbSwrLhGoNGPZxY1ZGC8bJI7zjcuKcx48QEawoPbvro3oX8PVW8zUccia71AeCTmUrV/31YduesoGs9YatChzNpFkSVoCDbwjJ1QHjcYoL1E1U00jUJOaOGT72r2lwbCROJHk4T9j6mtkeKyzmT1XEchQhYQ7pCuAKavwkxRwghwAh6sfcFcGKnHUfhqJ8cxAAxrFBPM7sw572Ksk+259b2tNOIOQLXFosvdfxzHobvI/QgP2uPu2h/lVcQgWr1ILHGdTRJ91CTvHBMHG0= marmoset@Lenny
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDndxbOPDEMbBLJIIxOgKYGrd1FN3swhRJ+mYXj9/dE5IrB98YKWWT4+mS43mmWwlFDljRzIe9VlkwWvl2sYECefpBuNimkFwz+0V3E+FINSjSEBAgumaVhygr9L/3S6YnH4zpqWMyYPk4QOhvTYLIAC4vsLRaKHOTMRYj6JmWQi3DeX5I/utYHdOOMoGPZ1cTfFTyPbdFhPta09Umf1AfS93o73G7BanHdGSQBQajlcZlwT7ePEP/S80X5Bg/sTnli+pMojUXhdVXIQOi0nRnqxC4zqEV3zthCAqsKjvy0+GL7M3tybDIEyGnQtPCPD43RTNVgVGPrn4k1LmZtWlpoKsjXyBoO9rbZXZjWaSu7cIFm9Wcc7BXbLHiSjWFitl3S8C7Z0+iQAU0CT8ifRxGntAyYPNL+xKNHyuIwwVDaC8Z8toAkFO1RB1w6UgJmDgLhbi+saEo98HKFchDi8qED7JanXsW0ewnoguZUQLFuWMRbe7Be6lKGaea8wBhW0c8= useradmin@Users-MBP-2.lan
-        ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHaGHTJV5ixEfHmvGAsGWEuChd3odBmT+2mvn/gjkhqo jjustis@MSI
+        - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHaGHTJV5ixEfHmvGAsGWEuChd3odBmT+2mvn/gjkhqo jjustis@MSI
   - name: exouser
     shell: /bin/bash
     groups: sudo, admin
@@ -1218,6 +1280,7 @@ package_upgrade: {install-os-updates}
 packages:
   - git
 runcmd:
+  - chown -R moleuser:moleuser /var/pyenv                                                                     # MOLE
   - chown -R moleuser:moleuser /usr/local/share/examples/mole                                                 # MOLE
   - chown -R moleuser:moleuser /opt/astral                                                                    # MOLE
   - chown -R moleuser:moleuser /opt/jmodeltest-2.1.10                                                         # MOLE
@@ -1245,9 +1308,9 @@ These instructions copied from the illustrated and more complete instructions at
 
 * Login to [Horizon](https://js2.jetstream-cloud.org/) using Xsede credentials, ensuring that "ACCESS CILogon" is displayed
 * Be sure it says ACCESS * DEB190022 at the top dropdown box
-* Choose "Identity", then "Application Credentials" from the left sidebar menu
-* Click "Create Application Credential" towards the top right
-* Filled out form using entries below, then pressed the Create Application Credential button
+* Choose **Identity**, then **Application Credentials** from the left sidebar menu
+* Click **Create Application Credential** towards the top right
+* Filled out form using entries below, then pressed the **Create Application Credential** button
 
 | Field                    | Value                                                            |
 | ------------------------ | ---------------------------------------------------------------- |
@@ -1262,9 +1325,9 @@ These instructions copied from the illustrated and more complete instructions at
 
 Copied the password generated by my password manager into the Secret field.
 
-**Important!** A dialog box will appear with three buttons at the bottom: "Download openrc file", "Download clouds.yaml", and "Close". **Do not press the "Close" button until you have safely downloaded _both_ the _openrc_ and _clouds.yaml_ files to your local hard drive.** If you fail, you will have to delete the credentials you just created and start again (the consequences of failing to save both files at this stage are minor, but annoying).
+**Important!** A dialog box will appear with three buttons at the bottom: **Download openrc file**, **Download clouds.yaml**, and **Close**. **Do not press the "Close" button until you have safely downloaded _both_ the _openrc_ and _clouds.yaml_ files to your local hard drive.** If you fail, you will have to delete the credentials you just created and start again (the consequences of failing to save both files at this stage are minor, but annoying).
 
-The file _clouds.yaml_ was downloaded by pressing the "Download clouds.yaml" button and placed here on my local laptop:
+The file _clouds.yaml_ was downloaded by pressing the **Download clouds.yaml** button and placed here on my local laptop:
 
     ~/.config/openstack/clouds.yaml
 

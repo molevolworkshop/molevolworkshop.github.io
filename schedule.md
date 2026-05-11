@@ -88,7 +88,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  14:00 - 15:30 | [Chang](/faculty-chang/)             | [Adaptive protein evolution: Introduction]({{ site.baseurl }}/faculty/chang/pdf/BChang_WH_1_2024_compressed_updated.pdf)
  15:30 - 17:00 | [Chang](/faculty-chang/)             | [Adaptive protein evolution: Detecting changes in selection]({{ site.baseurl }}/faculty/chang/pdf/BChang_WH_2_2024_compressed_updated.pdf)
  19:00 - 20:30 | Smith                                | Machine learning and molecular evolution
- 20:30 - 22:00 | Smith                                | Machine learning and molecular evolution
+ 20:30 - 22:00 | Smith                                | [Machine learning tutorial](/machine-learning-tutorial/)
  22:00 - 23:59 | Loeb Quad                            | Social	    
 {:.daily-schedule-std}
 
