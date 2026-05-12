@@ -804,7 +804,26 @@ This installs the following binaries in _/usr/local/bin/_:
 
 Last updated 2025-10-16.
 
+### Install [TREE-QMC](https://github.com/molloy-lab/TREE-QMC)
+
+    git clone https://github.com/molloy-lab/TREE-QMC
+    cd TREE-QMC/external/MQLib
+    make
+    cd ../../ && mkdir -p build && cd build
+    g++ -std=c++11 -O2 \
+        -I ../external/MQLib/include \
+        -I ../external/toms743 \
+        -o tree-qmc \
+        ../src/*.cpp \
+        ../external/toms743/toms743.cpp \
+        ../external/MQLib/bin/MQLib.a \
+        -lm \
+        -DVERSION=\"$(cat ../version.txt)\"
+    sudo mv tree-qmc /usr/local/bin
+
 ### Install [maxcut](https://sagi-snir.wixsite.com/snir-lab/maxcut)
+
+Note: this was installed but has now been superceded by TREE-QMC
 
 Sagi Snir's maxcut is used in the SNaQ tutorial. These instructions install the binary in _/usr/local/bin_.
 The software (v. 2.1) is no longer available from [here](http://research.haifa.ac.il/~ssagi/software/QMCN.tar.gz). Sagi suggested we use version 3.0 from [this dryad repository](https://datadryad.org/stash/dataset/doi:10.5061/dryad.r9k57). While that may work, the SNaQ tutorial has not been tested with this version of MaxCut, so this year we are using an archived copy of the `QMCN.tar.gz` file that I scp'd onto the virtual machine.
@@ -1184,12 +1203,13 @@ users:
         - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHaGHTJV5ixEfHmvGAsGWEuChd3odBmT+2mvn/gjkhqo jjustis@MSI
         - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGN3kowum4t/7rwKk1oPcSuYBH68ojiRG8eMSVpMpPaU analisamilkey@MacBook-Air-5.lan
         - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC7lsWtZyDLX6fKOVCsuC/B1RNS9a/c6xAxUxOuFp66F thao@ARSIAAME5TQNGU1
+        - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMj4eIHXmM7xrRPF4ong/gA5nE+UrmncLLEQkcnmEsIo jembrown@bioscis-MacBook-Pro-2.local
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC70XJydvXPPFEui0f5XHGjTkVutUEABHXWQtNPfkgkl9r5nPShPooydGSTWci+84QLUI53OBretQ1dlrkrZvBqeT6YPwO33T7c2aQTmBpcWG4rhtieyvjfxVCXgOaJVaLqLE8k/0T34B/Ks1rTaaVJ0a8vMm4AuSkDFopKGoR9EZRJLCY5CUeJZA1byVWcQkLvrHekP0AcWlWqyT54UGhd1rWE2yijLHZIq1rhI5C8JMKU5m/q6BFHZj6TqaoAY63AiBT2l1vCG6CTz6pu5bS2edKCozoQ0JTlnodabwYQRHzsbQg6PPJ8OK1Qvezl2KeKa73jpRot+h6djD1iXfvoHOaQ2PndICWGpVm6gnLsFnjMtWN/aAdjHhp/A6veDbwo5gOw96j2LjCw+jwB80UsfMkRVqbc4pndzSKR0e+qOFOfxshr8n5JT9YJJ3uznjl58Lv487SJ4fCdeAVBSif49rRK5cToa0x3oKt50g2xvxmn2Z4mOwquUqo5UEoIttc= marmoset@Lenny
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDndxbOPDEMbBLJIIxOgKYGrd1FN3swhRJ+mYXj9/dE5IrB98YKWWT4+mS43mmWwlFDljRzIe9VlkwWvl2sYECefpBuNimkFwz+0V3E+FINSjSEBAgumaVhygr9L/3S6YnH4zpqWMyYPk4QOhvTYLIAC4vsLRaKHOTMRYj6JmWQi3DeX5I/utYHdOOMoGPZ1cTfFTyPbdFhPta09Umf1AfS93o73G7BanHdGSQBQajlcZlwT7ePEP/S80X5Bg/sTnli+pMojUXhdVXIQOi0nRnqxC4zqEV3zthCAqsKjvy0+GL7M3tybDIEyGnQtPCPD43RTNVgVGPrn4k1LmZtWlpoKsjXyBoO9rbZXZjWaSu7cIFm9Wcc7BXbLHiSjWFitl3S8C7Z0+iQAU0CT8ifRxGntAyYPNL+xKNHyuIwwVDaC8Z8toAkFO1RB1w6UgJmDgLhbi+saEo98HKFchDi8qED7JanXsW0ewnoguZUQLFuWMRbe7Be6lKGaea8wBhW0c8= useradmin@Users-MBP-2.lan
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDV/XPzswM4seTioKLp01l4yzoaxRgK1Hx0yQQpr/HlokC0hSCuACQSaA6ULMqgsoAd4S1EhI9rujdpf8N7yKKsNIrwpGSX9UL5bUsCE8xh5n500iu2YUTkBuWDgZvGPqKWwMu9L9v5AxH/bk2l4EqfbPUyzgcQRX6w5OJoz7pYvEBD8BGc5y/V3VfW3BaQARdXQqvc6Eqg5wEewsLjBrkNwc0nVQHTxIuz3MP1eRybbsB44N6JuqyVlogdy8DzSI96Za/yVPCeVcGfl44N9rOa8+/7t2AsE+ycGuTM3tOeWJBUE5FOzFbEpk3SppcwKkOwTt+nnLMcCRpovHJOmSSHdptq7HJptm49FDChX/AYQy91EObHLqOkbciueHlTRNYjeye2+rnYS83kNi3f0iYr01HeUtK85GcvCGxbEpinPEVbSUFDI9inbkYVvSkL6T5JK9NWXgDpqFvGU1fESMaaZCtXDgDuFZI0T83k/tsRLvD8woxqCSsZPIvbz/UPUwM= tracyh@Indigo.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqJeFU3sEcA72fyYD2LCzDsfHqPmZonnATiXDKYeutIzQ+iVREIG3EMUNjeps8JS9oWw11ojXLFDZCHdg/z87qBZn7ilGgXZ6/PRhGaDx3kjPr5Mek10bV3BwB0O9Gws9rmepD/akuXY7wTS5M++YqCkwU1Ia9oAEW4QWDuc1Bdj3L1DqSYbI+xg38EA5TpRL2N968OPuu1xhGT9cPkRgOQAcTbFyknoeEXKwSUKamii8q8Lv+Zi9nA1nRYa0xZdJSGZNxso41FJkEmNfF6o/IKMtAJ0DHcg1B3aJpS8o2+cgyR+L0NqVHrJeBIagm4n3H8xP40pUCj5PyphdZam5L jpbielawski@Josephs-MacBook-Air.local
         - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1D6eflrh3q3daop2orqL0pXrAqOUt8AaYWaC/d+iZQutHiroByNjpSETkmEd1yw8NpF6gVkh8oNqvTH1ERlJtX1BETipUvJAlvV67ZwWDSoYVqM+RwFiUT4cIC2No0V3ETI9pd4D0Dnq/9l4V9pYaunnbvIaAUsQiDRPMcRq+aOZRB/fH9nTQ5jfWKWEAu2m77T6esXe0bFX6cMhoZdk4HQSc+Wdsfn5TZEoi7+0YVK7973ZmIHYRRl9a/80NtIIHQVOOjPve3mUxv5/dlFBvPVLVHe91XqD4DnXnjXytBgNpqjPHNY28yy/UZ7Ba8XXIxGzWEDy3p1+dJzXni/hOQ== DavidSwofford
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFYUmO7HPYTDvNCjAZIkXfR/P9cCm6QzQqRRLRFH7XI8ZF6w3+jhuT3bXDvHqYCP4W0s67UfWU1C92qtMWpzVzHw2XWi67agSNNU/PgywlCoQqoybf1s5SDfgPGJ54env9Y09KtHZF64n4WI/Sja5+FSeF7Cd4xt8SkJcRIPV+EHluE08imnFvNkW1REG32x1xDJq7euezwIHUhG9Be7nXN0VQlX0UH4D6KIDg7+autni/yZzKrfX0w7vFsAja8flWUj02mTGtZU428kHThjvzH6fJ7IonM+gSN+s+MW+1xkWSQp6N4OzM79aZS5xuzup29/8vkWcO03kg8Vigctvx ejmctavish@gmail.com
-        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQClRHzmCoSZcKZHFruBrwzDlqGbgmX0gGm8pRd7xDNwGoiRLk0ca9CPbQPSneD2aQkfECJHz94gkihkoDy7l2tw+oembZQwugiKU+cwbwp/HJMuJB7hpBdYyUgvUwvP2y+S6Hj3SZlIYzPRLaf/nx4JIRifXUtEdpu44ySjJSDsdN11mpF4MBsFCBbmJ+aSvt/BcZ7eg+d6MEezAAkTej1H6tEdZzZ4tBfuHC0/Qt69P6zBCHbSwrLhGoNGPZxY1ZGC8bJI7zjcuKcx48QEawoPbvro3oX8PVW8zUccia71AeCTmUrV/31YduesoGs9YatChzNpFkSVoCDbwjJ1QHjcYoL1E1U00jUJOaOGT72r2lwbCROJHk4T9j6mtkeKyzmT1XEchQhYQ7pCuAKavwkxRwghwAh6sfcFcGKnHUfhqJ8cxAAxrFBPM7sw572Ksk+259b2tNOIOQLXFosvdfxzHobvI/QgP2uPu2h/lVcQgWr1ILHGdTRJ91CTvHBMHG0= marmoset@Lenny
   - name: exouser
     shell: /bin/bash
     groups: sudo, admin
