@@ -1314,7 +1314,7 @@ These instructions copied from the illustrated and more complete instructions at
 
 | Field                    | Value                                                            |
 | ------------------------ | ---------------------------------------------------------------- |
-| Name                     | POL-CLI-MOLE-2026-credentials                                    |
+| Name                     | CLI-MOLE-2026-credentials                                        |
 | Description              | 2026 Woods Hole Molecular Evolution Workshop at MBL              |
 | Secret                   | not shown here, stored in my password manager                    |
 | Expiration Date          | 07/30/2026                                                       |
@@ -1336,7 +1336,7 @@ The file _clouds.yaml_ was downloaded by pressing the **Download clouds.yaml** b
 
     ~/.config/openstack/clouds.yaml
 
-The file _app-cred-POL-CLI-MOLE-2026-credentials-openrc.sh_ was downloaded by pressing the **Download openrc file** button and saved on my local hard drive. This is the file can be sourced to provide these environmental variables needed for authentication:
+The file _app-cred-CLI-MOLE-2026-credentials-openrc.sh_ was downloaded by pressing the **Download openrc file** button and saved on my local hard drive. This is the file can be sourced to provide these environmental variables needed for authentication:
 
     OS_AUTH_TYPE
     OS_AUTH_URL
@@ -1815,6 +1815,8 @@ To delete an instance (see [Deleting items in the CLI](https://docs.jetstream-cl
 
 There are always modifications that need to be made to all VMs after they have been created. For each of these tasks, I use the same basic procedure. 
 
+Before going further, I recommend that you download the [_late-additions.zip_ file](https://github.com/molevolworkshop/moledata/blob/main/late-additions.zip) from the [moledata repository](https://github.com/molevolworkshop/moledata). This zip file, when unpacked, contains example scripts and a _README.md_ file that explains how to use them. Much of the information in the _README.md_ file is duplicated below.
+
 Note that, in each of the scripts described below, there are these lines:
 
         # Comment out this line and the next to run this script
@@ -1827,24 +1829,27 @@ I created a folder named _/Users/plewis/Documents/woodshole/wh2026/computing2026
 
     computing2026
         CLI-credentials
-            app-cred-POL-CLI-MOLE-2026-credentials-openrc.sh
+            app-cred-CLI-MOLE-2026-credentials-openrc.sh
             clouds.yaml
         late-additions
             all-vm-ids.sh
             all-vm-ips.sh
             listIPs.sh
             listVMs.sh
+            .
+            .
+            .
 
 The file _listIPs.sh_ can be used to get a list of the IP addresses for each VM:
 
     #!/bin/bash
-    source ../CLI-credentials/app-cred-POL-CLI-MOLE-2026-credentials-openrc.sh
+    source ../CLI-credentials/app-cred-CLI-MOLE-2026-credentials-openrc.sh
     openstack floating ip list
     
 The file listVMs.sh_ can be used to get a list of the IDs for each VM (some openstack operations require IDs, not IPs):
 
     #!/bin/bash
-    source ../CLI-credentials/app-cred-POL-CLI-MOLE-2026-credentials-openrc.sh
+    source ../CLI-credentials/app-cred-CLI-MOLE-2026-credentials-openrc.sh
     openstack server list
     
 I find it easiest to put all the VM IPs and IDs in separate bash scripts that can be sourced when needed. Here is what _all-vm-ips.sh_ looks like (only including the IP addresses for the 7 test VMs; at showtime, this file should contain IP addresses for all VMs except MOLE-2026-base):
@@ -1908,20 +1913,20 @@ As soon as you have run the script, uncomment the two sanity check lines so that
 * Create a folder named _2025-10-30-replace-file_ under your _late-additions_ folder on your laptop
 * Create a bash script named _replace-file.sh_ in _late-additions/2025-10-30-replace-file_ with these contents:
 
-    #!/bin/bash
-    
-    # Comment out this line and the next to run this script
-    print("aborting because this script has already been run")
-    exit(0)
-    
-    source ../all-vm-ips.sh
-    
-    for ip in ${VMIPS[@]}
-    do
-        echo $ip
-        scp junk.sh moleuser@$ip:/tmp
-        ssh -t moleuser@$ip "bash -c 'cd /tmp; chmod +x junk.sh; sudo mv junk.sh /usr/local/bin'"
-    done
+        #!/bin/bash
+        
+        # Comment out this line and the next to run this script
+        print("aborting because this script has already been run")
+        exit(0)
+        
+        source ../all-vm-ips.sh
+        
+        for ip in ${VMIPS[@]}
+        do
+            echo $ip
+            scp junk.sh moleuser@$ip:/tmp
+            ssh -t moleuser@$ip "bash -c 'cd /tmp; chmod +x junk.sh; sudo mv junk.sh /usr/local/bin'"
+        done
 
 * Comment out the two "sanity check" lines and run the script (assuming you are in _late-additions/2025-10-30-replace-file_ folder)
 
@@ -1969,7 +1974,7 @@ As soon as you have run the script, uncomment the two sanity check lines so that
         print("aborting because this script has already been run")
         exit(0)
         
-        source ../../CLI-credentials/app-cred-POL-CLI-MOLE-2026-credentials-openrc.sh
+        source ../../CLI-credentials/app-cred-CLI-MOLE-2026-credentials-openrc.sh
         source ../all-vm-ids.sh
         
         for vm in ${VMIDS[@]} ; do
