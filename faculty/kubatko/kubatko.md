@@ -7,7 +7,7 @@ permalink: /faculty-kubatko/
 
 ### Arrival and Departure
 
-May 28 - May 30, 2025
+May 20 - May 24, 2026
 
 
 ### Contact Info
@@ -30,7 +30,9 @@ Twitter: [@Laura_Kubatko](https://twitter.com/Laura_Kubatko)
 
 
 
-### Reading List 2025
+### Reading List 2026
+
+[Kubatko, L. 2026. An evolving view of species tree inference, Systematic Biology 75(2): 195-207](https://academic.oup.com/sysbio/article/75/2/195/8426283)
 
 [Degnan, J and L Salter. 2005. Gene tree distributions under the coalescent process, Evolution 59(1): 24-37.](http://www.stat.osu.edu/~lkubatko/degnan_salter2005.pdf)
 
