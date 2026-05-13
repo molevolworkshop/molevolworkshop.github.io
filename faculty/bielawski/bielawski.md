@@ -18,9 +18,9 @@ permalink: /faculty-bielawski/
 
 ## Arrival and Departure
 
-* Arrival: 22 May 2025 (Thur)
+* Arrival: 17 May 2026 (Sun)
 
-* Depart:  02 June 2025 (Mon)
+* Depart:  28 May 2026 (Thr)
 
 <br>
 
