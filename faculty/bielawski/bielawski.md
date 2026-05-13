@@ -87,6 +87,7 @@ permalink: /faculty-bielawski/
 
 <a name="anchor_1.3"></a>
 ## 1.3 &nbsp; Lecture slides 
+Note: Current slides are from 2025. There will only be minor updates for 2026, whcih will be posted during the workshop
 
 * **Lecture slides (Part 1), Intro to the Neutral & Nearly Neutral Theories of Molecular Evolution:** [slide set 1](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf)
 <br>
@@ -132,6 +133,8 @@ Translations developed as part of the [Bioinfromatics-4-Everyone](https://github
 
 <a name="anchor_1.6"></a>
 ## 1.6 &nbsp; Applied Scientific Ethics 
+
+NOTE: There will be an update in 2026 to the slides for the lecture on *Scientific Values and the Social Conract*. They will be posted here soon.
 
 **2025 Ethics Lecture Resource**
 
