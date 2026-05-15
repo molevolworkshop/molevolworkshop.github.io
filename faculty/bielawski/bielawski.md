@@ -136,11 +136,11 @@ Translations developed as part of the [Bioinfromatics-4-Everyone](https://github
 
 NOTE: There will be an update in 2026 to the slides for the lecture on *Scientific Values and the Social Conract*. They will be posted here soon.
 
-**2025 Ethics Lecture Resource**
-
 * Lecture on **Ethics in Science:** [slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf)
 
-* Lecture on **Scientific Values, Diversity and the Social Conract between Science and Society:** [slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Diversity_2025.pdf)
+* 2026 Lecture on **Science under pressure:** [slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Pressure_Ethics_2026.pdf)
+
+* 2025 Lecture on **Scientific Values, Diversity and the Social Conract between Science and Society:** [slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Diversity_2025.pdf)
 
 * Free copy of the "**Applied Ethics Primer**": [https://caul-cbua.pressbooks.pub/aep/](https://caul-cbua.pressbooks.pub/aep/)
 <br>
