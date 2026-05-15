@@ -134,9 +134,7 @@ Translations developed as part of the [Bioinfromatics-4-Everyone](https://github
 <a name="anchor_1.6"></a>
 ## 1.6 &nbsp; Applied Scientific Ethics 
 
-NOTE: There will be an update in 2026 to the slides for the lecture on *Scientific Values and the Social Conract*. They will be posted here soon.
-
-* Lecture on **Ethics in Science:** [slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf)
+* 2026 Lecture on **Ethics in Science:** [slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf)
 
 * 2026 Lecture on **Science under pressure:** [slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Pressure_Ethics_2026.pdf)
 
