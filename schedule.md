@@ -96,7 +96,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Monday, May 25, 2026 
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Bielawski](/faculty-bielawski/)     | [PAML lab](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html), [lab slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO.pdf)
+ 09:00 - 10:30 | [Bielawski](/faculty-bielawski/)     | [PAML lab](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html), [lab slides](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/pamlDEMO.pdf)
  10:30 - 12:00 | [Bielawski](/faculty-bielawski/)     | [Additional lab resources](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html), [optional advanced lab](https://bitbucket.org/EvoWorks/protocol-inference-of-episodic-selection/downloads)
  14:00 - 15:30 | [Gill](https://stat.uga.edu/directory/people/mandev-gill)       | [Phylodynamics of Infectious Disease]({{ site.baseurl }}/faculty/gill/pdf/msgill_mole1.pdf)
  15:30 - 17:00 | [Gill](https://stat.uga.edu/directory/people/mandev-gill)       | [Phylodynamics of Infectious Disease]({{ site.baseurl }}/faculty/gill/pdf/msgill_mole2.pdf)
