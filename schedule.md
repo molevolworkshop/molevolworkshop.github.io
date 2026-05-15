@@ -120,7 +120,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Wednesday, May 27, 2026
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Bielawski](/faculty-bielawski/)     | Scientific ethics panel discussion. (Slides are for reference: [Ethics Intro](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf) and [Values, diversity & ethics](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Diversity_2025.pdf)) 
+ 09:00 - 10:30 | [Bielawski](/faculty-bielawski/)     | Scientific ethics panel discussion. (Slides are for reference: [Ethics Intro](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf) and [Science under pressure](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Pressure_Ethics_2026.pdf)) 
  10:30 - 12:00 | Open lab                             |
 {:.daily-schedule-std}
      
