@@ -104,7 +104,7 @@ Note: Current slides are from 2025. There will only be minor updates for 2026, w
 
 * **PAML lab resources**: [webpage](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html)
 
-* **PAML lab slides**: [slides (PDF)](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/resources/pamlDEMO.pdf)
+* **PAML lab slides**: [slides (PDF)](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/pamlDEMO.pdf)
 
 If you want doing the lab independently (at home, on your own computer), then download all the files from an archive [here](https://bitbucket.org/EvoWorks/protocol-paml-lab-at-mbl-workshop/downloads/), or individually [here](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/PAML_Lab_files.html).
 
