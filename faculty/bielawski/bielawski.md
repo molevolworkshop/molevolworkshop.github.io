@@ -143,7 +143,7 @@ Translations developed as part of the [Bioinfromatics-4-Everyone](https://github
 * Free copy of the "**Applied Ethics Primer**": [https://caul-cbua.pressbooks.pub/aep/](https://caul-cbua.pressbooks.pub/aep/)
 <br>
 
-**Supplemental Reading** (how such rules can privilege members of some groups and serve as a barrier others) 
+**Supplemental Reading** (how "the rules of the science game" can privilege members of some groups and serve as a barrier others) 
 
 *  &nbsp; We recently wrote a paper called ["Ten simple rules for succeeding as an underrepresented STEM undergraduate"](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010101) to help make explicit the "*hidden curriculum*" of science.
 
