@@ -1,19 +1,15 @@
 ---
 layout: page
-title: Blake Fauskee
-permalink: /faculty-fauskee/
+title: Josh Justison
+permalink: /faculty-justison/
 ---
-{% include figure.html description="Blake Fauskee" url="/faculty/fauskee/img/fauskee.jpg" css="image-right" height="200px" %}
+{% include figure.html description="Josh Justison" url="/faculty/justison/img/justison.jpg" css="image-right" height="200px" %}
 
 ### Arrival and Departure
 
-not yet determined
+May 17 to May 28
 
 ### Contact Info 
-E-mail: [blake.fauskee@duke.edu](mailto:blake.fauskee@duke.edu)
-
-Address: Duke University
-
-### Institutional home page 
-[https://scholars.duke.edu/person/blake.fauskee](https://scholars.duke.edu/person/blake.fauskee)
+E-mail: [justison@wisc.edu](mailto:justison@wisc.edu)
+Github: [jjustison](https://github.com/jjustison)
 
