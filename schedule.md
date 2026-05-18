@@ -24,7 +24,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  15:30 - 17:00 | Zenil-Ferguson                       | [Likelihood in Phylogenetics](https://roszenil.github.io/mytutorials/docs/statistics/files/likelihood_phylogenetics.pdf)
  19:00 - 20:30 | TAs                                  | [Intro computer lab](/labs/intro/)
  20:30 - 22:00 | TAs                                  | [Alignment lab](/labs/alignment/)
- 22:00 - 23:59 | Loeb Quad                            | Evening social gathering
+ 22:00 - 23:30 | MBL Club                             | Evening social gathering
 {: .daily-schedule-mon}
 
 ### Tuesday, May 19, 2026
@@ -36,7 +36,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  15:30 - 17:00 | Solís-Lemus                          | [Bayesian Phylogenetics]({{site.baseurl}}/faculty/solis-lemus/pdf/bayesian-claudia-2026.pdf)
  19:00 - 20:30 | TAs                                  | [IQ-TREE introduction]({{ site.baseurl }}/faculty/mcshea/pdf/MOLE2025-IQ-TREE.pdf)
  20:30 - 22:00 | TAs                                  | [IQ-TREE lab](https://iqtree.github.io/workshop/molevol_tutorial2025) [IQ-TREE quiz](https://docs.google.com/forms/d/e/1FAIpQLSfvNMk0HJFBHDU9qAbNopbhWORx0CwSEBFdxSuCiDLJ5K1g5w/viewform?usp=dialog)
- 22:00 - 23:59 | Loeb Quad                            | Evening social gathering
+ 22:00 - 23:30 | MBL Club                             | Evening social gathering
 {:.daily-schedule-std}
  
 ### Wednesday, May 20, 2026
@@ -49,7 +49,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  17:30 - 19:00 | Swope Private Dining Room            | Panel and Mixer with Logan Science Journalism Program
  19:00 - 20:30 | [Beerli](/faculty-beerli/)           | [Introduction to The Coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2025.pdf)
  20:30 - 22:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2025.pdf)
- 22:00 - 23:59 | Loeb Quad                            | Social	    
+ 22:00 - 23:30 | MBL Club                             | Social	    
 {:.daily-schedule-wed}
 
 ### Thursday, May 21, 2026
@@ -61,7 +61,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  15:30 - 17:00 | Swofford and Kubatko                 | Species Tree Estimation with SVDQuartets
  19:00 - 20:30 | [Solís-Lemus](/faculty-solis-lemus/) | [Phylogenetic networks to study reticulate evolution](https://figshare.com/articles/presentation/MOLE_2025_Phylogenetic_networks_lecture/29144483?file=54806237)
  20:30 - 22:00 | [Solís-Lemus](/faculty-solis-lemus/) | [Network models tutorial](https://solislemuslab.github.io/snaq-tutorial/)
- 22:00 - 23:59 | Loeb Quad                            | Social	    
+ 22:00 - 23:30 | MBL Club                             | Social	    
 {:.daily-schedule-std}
 
 ### Friday, May 22, 2026
@@ -73,7 +73,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  15:30 - 17:00 | Moreau                               | Ant Phylogenomics and Evolution 
  17:00 - 19:00 | [Bielawski](/faculty-bielawski/)     | Optional session: [Science under pressure](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Pressure_Ethics_2026.pdf)
  19:00 - 22:00 | MBL Club                             | Course Dinner Party
- 22:00 - 23:59 | Loeb Quad                            | Post-dinner social gathering
+ 22:00 - 23:30 | MBL Club                             | Post-dinner social gathering
 {:.daily-schedule-std}
 
 ### Saturday, May 23, 2026
@@ -89,7 +89,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  15:30 - 17:00 | [Chang](/faculty-chang/)             | [Adaptive protein evolution: Detecting changes in selection]({{ site.baseurl }}/faculty/chang/pdf/BChang_WH_2_2024_compressed_updated.pdf)
  19:00 - 20:30 | Smith                                | Machine learning and molecular evolution
  20:30 - 22:00 | Smith                                | [Machine learning tutorial](/machine-learning-tutorial/)
- 22:00 - 23:59 | Loeb Quad                            | Social	    
+ 22:00 - 23:30 | MBL Club                             | Social	    
 {:.daily-schedule-std}
 
 
@@ -102,7 +102,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  15:30 - 17:00 | [Gill](https://stat.uga.edu/directory/people/mandev-gill)       | [Phylodynamics of Infectious Disease]({{ site.baseurl }}/faculty/gill/pdf/msgill_mole2.pdf)
  19:00 - 20:30 | [Edwards](/faculty-edwards/)         | [Multilocus phylogeography and phylogenetics]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2025_partI.pdf)
  20:30 - 22:00 | [Edwards](/faculty-edwards/)         | [Pangenomes and evolution]({{ site.baseurl }}/faculty/edwards/pdf/Edwards_MBL_2025_partII.pdf)
- 22:00 - 23:59 | Loeb Quad                            | Social
+ 22:00 - 23:30 | MBL Club                             | Social
  {:.daily-schedule-std}
 
 ### Tuesday, May 26, 2026
@@ -114,7 +114,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  15:30 - 17:00 | [McTavish](/faculty-mctavish/)       | [Open Tree slides]({{ site.baseurl }}/faculty/mctavish/pdf/OpenTree_MOLE2025.pdf), [Tree comparison lab](https://github.com/snacktavish/Mole2023/blob/master/TreeComparison.md)
  19:00 - 20:30 | [Knowles](/faculty-knowles/)         | [Evolutionary applications of genomic data](https://lsu.box.com/s/6txwe7pm0o5eth2yg3h0vdbpak9fkow5)
  20:30 - 22:00 | [Knowles](/faculty-knowles/)         | Evolutionary applications of genomic data (cont.)
- 22:00 - 23:59 | Loeb Quad                            | Almost-the-end party
+ 22:00 - 23:30 | MBL Club                             | Almost-the-end party
 {:.daily-schedule-std}
 
 ### Wednesday, May 27, 2026
