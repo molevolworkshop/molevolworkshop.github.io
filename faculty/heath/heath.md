@@ -10,7 +10,7 @@ Iowa State University
 
 ### Arrival and Departure
 
-June 27 to June 6
+May 77 to 24
 
 ### Contact Information
 
@@ -23,11 +23,6 @@ June 27 to June 6
 
 I develop statistical models for use as priors in Bayesian methods for phylogenetic inference. In particular, I'm interested in divergence-time estimation -- e.g. modeling rate variation across the tree of life, diversification processes, and methods for incorporating information from the fossil record. 
 
-### 2022 Course
-
-Lecture: [Bayesian Divergence Time Estimation](https://figshare.com/articles/presentation/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
-
-Tutorial: [Estimating a Time-Calibrated Phylogeny of Fossil and Extant Taxa using Morphological Data](https://revbayes.github.io/tutorials/fbd_simple/)
 
 ### Suggested Reading
 
