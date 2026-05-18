@@ -18,7 +18,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | Course Faculty & Participants        | Welcome, introductions, and workshop overview
- 10:30 - 11:30 | Heath                                | Introduction to phylogenetics
+ 10:30 - 11:30 | Heath                                | [Introduction to phylogenetics](https://doi.org/10.6084/m9.figshare.32314983)
  11:30 - 12:00 | [Bielawski](/faculty-bielawski/)     | [Scientific ethics](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf)
  14:00 - 15:30 | Zenil-Ferguson                       | Introduction to Likelihood
  15:30 - 17:00 | Zenil-Ferguson                       | Likelihood in Phylogenetics
