@@ -72,7 +72,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  14:00 - 15:30 | Moreau                               | Ant Phylogenomics and Evolution
  15:30 - 17:00 | Moreau                               | Ant Phylogenomics and Evolution 
  17:00 - 19:00 | [Bielawski](/faculty-bielawski/)     | Optional session: [Science under pressure](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Pressure_Ethics_2026.pdf)
- 19:00 - 22:00 | MBL Club                             | Course Dinner Party
+ 19:00 - 22:00 | Swope Cafe                           | Course Dinner Party
  22:00 - 23:30 | MBL Club                             | Post-dinner social gathering
 {:.daily-schedule-std}
 
