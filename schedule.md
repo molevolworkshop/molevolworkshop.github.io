@@ -35,7 +35,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  14:00 - 15:30 | Brown                                | Model selection
  15:30 - 17:00 | Solís-Lemus                          | [Bayesian Phylogenetics]({{site.baseurl}}/faculty/solis-lemus/pdf/bayesian-claudia-2026.pdf)
  19:00 - 20:30 | TAs                                  | [IQ-TREE introduction]({{ site.baseurl }}/faculty/mcshea/pdf/MOLE2025-IQ-TREE.pdf)
- 20:30 - 22:00 | TAs                                  | [IQ-TREE lab](https://iqtree.github.io/workshop/molevol_tutorial2025) [IQ-TREE quiz](https://docs.google.com/forms/d/e/1FAIpQLSfvNMk0HJFBHDU9qAbNopbhWORx0CwSEBFdxSuCiDLJ5K1g5w/viewform?usp=dialog)
+ 20:30 - 22:00 | TAs                                  | [IQ-TREE lab](https://iqtree.github.io/workshop/molevol_tutorial2026) [IQ-TREE quiz](https://docs.google.com/forms/d/e/1FAIpQLSfvNMk0HJFBHDU9qAbNopbhWORx0CwSEBFdxSuCiDLJ5K1g5w/viewform?usp=dialog)
  22:00 - 23:30 | MBL Club                             | Evening social gathering
 {:.daily-schedule-std}
  
