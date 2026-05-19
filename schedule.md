@@ -32,7 +32,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | Zenil-Ferguson                       | [Phylogenetic Models](https://roszenil.github.io/mytutorials/docs/statistics/files/phylogenetic_models.pdf)
  10:30 - 12:00 | Zenil-Ferguson                       | [Introduction to Bayesian Inference](https://roszenil.github.io/mytutorials/docs/statistics/files/bayesian_stats_intro.pdf)
- 14:00 - 15:30 | Brown                                | Model selection
+ 14:00 - 15:30 | Brown                                | [Model selection](/faculty/brown/pdf/ModelSelection_JMBrown.pdf)
  15:30 - 17:00 | Solís-Lemus                          | [Bayesian Phylogenetics]({{site.baseurl}}/faculty/solis-lemus/pdf/bayesian-claudia-2026.pdf)
  19:00 - 20:30 | TAs                                  | [IQ-TREE introduction]({{ site.baseurl }}/faculty/mcshea/pdf/MOLE2025-IQ-TREE.pdf)
  20:30 - 22:00 | TAs                                  | [IQ-TREE lab](https://iqtree.github.io/workshop/molevol_tutorial2026) [IQ-TREE quiz](https://docs.google.com/forms/d/e/1FAIpQLSfvNMk0HJFBHDU9qAbNopbhWORx0CwSEBFdxSuCiDLJ5K1g5w/viewform?usp=dialog)
@@ -47,8 +47,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
  14:00 - 15:30 | [Heath](/faculty-heath/)             | [Divergence-time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
  15:30 - 17:00 | [Heath](/faculty-heath/)             | [Divergence-time estimation Lab](https://revbayes.github.io/tutorials/fbd_simple)
  17:30 - 19:00 | Swope Private Dining Room            | Panel and Mixer with Logan Science Journalism Program
- 19:00 - 20:30 | [Beerli](/faculty-beerli/)           | [Introduction to The Coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2025.pdf)
- 20:30 - 22:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2025.pdf)
+ 19:00 - 20:30 | [Beerli](/faculty-beerli/)           | [Introduction to The Coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2026.pdf)
+ 20:30 - 22:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2026.pdf)
  22:00 - 23:30 | MBL Club                             | Social	    
 {:.daily-schedule-wed}
 
@@ -72,7 +72,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  14:00 - 15:30 | Moreau                               | Ant Phylogenomics and Evolution
  15:30 - 17:00 | Moreau                               | Ant Phylogenomics and Evolution 
  17:00 - 19:00 | [Bielawski](/faculty-bielawski/)     | Optional session: [Science under pressure](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Pressure_Ethics_2026.pdf)
- 19:00 - 22:00 | MBL Club                             | Course Dinner Party
+ 19:00 - 22:00 | Swope Cafe                           | Course Dinner Party
  22:00 - 23:30 | MBL Club                             | Post-dinner social gathering
 {:.daily-schedule-std}
 
