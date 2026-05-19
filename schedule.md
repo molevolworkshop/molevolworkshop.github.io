@@ -32,7 +32,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | Zenil-Ferguson                       | [Phylogenetic Models](https://roszenil.github.io/mytutorials/docs/statistics/files/phylogenetic_models.pdf)
  10:30 - 12:00 | Zenil-Ferguson                       | [Introduction to Bayesian Inference](https://roszenil.github.io/mytutorials/docs/statistics/files/bayesian_stats_intro.pdf)
- 14:00 - 15:30 | Brown                                | Model selection
+ 14:00 - 15:30 | Brown                                | [Model selection]({{site.baseurl}}/faculty/brown/pdf/ModelSelection_JMBrown.pdf)
  15:30 - 17:00 | Solís-Lemus                          | [Bayesian Phylogenetics]({{site.baseurl}}/faculty/solis-lemus/pdf/bayesian-claudia-2026.pdf)
  19:00 - 20:30 | TAs                                  | [IQ-TREE introduction]({{ site.baseurl }}/faculty/mcshea/pdf/MOLE2025-IQ-TREE.pdf)
  20:30 - 22:00 | TAs                                  | [IQ-TREE lab](https://iqtree.github.io/workshop/molevol_tutorial2026) [IQ-TREE quiz](https://docs.google.com/forms/d/e/1FAIpQLSfvNMk0HJFBHDU9qAbNopbhWORx0CwSEBFdxSuCiDLJ5K1g5w/viewform?usp=dialog)
