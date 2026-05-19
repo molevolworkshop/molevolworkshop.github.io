@@ -47,7 +47,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  14:00 - 15:30 | [Heath](/faculty-heath/)             | [Divergence-time estimation](https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005)
  15:30 - 17:00 | [Heath](/faculty-heath/)             | [Divergence-time estimation Lab](https://revbayes.github.io/tutorials/fbd_simple)
  17:30 - 19:00 | Swope Private Dining Room            | Panel and Mixer with Logan Science Journalism Program
- 19:00 - 20:30 | [Beerli](/faculty-beerli/)           | [Introduction to The Coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2025.pdf)
+ 19:00 - 20:30 | [Beerli](/faculty-beerli/)           | [Introduction to The Coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence1-mbl2026.pdf)
  20:30 - 22:00 | [Beerli](/faculty-beerli/)           | [Extending the coalescent]({{ site.baseurl }}/faculty/beerli/pdf/coalescence2-mbl2025.pdf)
  22:00 - 23:30 | MBL Club                             | Social	    
 {:.daily-schedule-wed}
