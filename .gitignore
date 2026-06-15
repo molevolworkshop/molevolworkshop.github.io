@@ -1,0 +1,14 @@
+# Build output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+_hidden/
+
+# Dependency management
+.bundle/
+vendor/
+
+# OS specific files
+.DS_Store
+Thumbs.db

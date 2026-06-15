@@ -1,0 +1,66 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%- seo -%}
+    <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+    <link rel="icon" type="image/png" href="{{ "/assets/img/favicon.png" | relative_url }}">
+    {%- feed_meta -%}
+    {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+    {%- endif -%}
+    <script type="text/javascript" charset="utf-8" src={{ "/assets/js/d3.min.js" | relative_url }}></script> 
+    <script type="text/javascript" charset="utf-8" src={{ "/assets/js/random-0.26.js" | relative_url }}></script>
+    <script type="text/javascript" charset="utf-8" src={{ "/assets/js/d3-3d.js" | relative_url }}></script>
+    <script type="text/javascript" charset="utf-8" src={{ "/assets/js/lgamma.js" | relative_url }}></script>
+    <script type="text/javascript" charset="utf-8" src={{ "/assets/js/mathfn-incbeta.js" | relative_url }}></script>
+    <script type="text/javascript" charset="utf-8" src={{ "/assets/js/POLPanel.js" | relative_url }}></script>
+    <script type="text/javascript" charset="utf-8" src={{ "/assets/js/POLTree.js" | relative_url }}></script>
+    <script type="text/javascript" charset="utf-8" src={{ "/assets/js/center-text.js" | relative_url }}></script>
+    <style type="text/css">
+        /* https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
+        /* <p class="noselect">Unselectable text</p> */
+        .noselect {
+          -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+             -khtml-user-select: none; /* Konqueror HTML */
+               -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                    user-select: none; /* Non-prefixed version, currently
+                                          supported by Chrome and Opera */
+            }
+            
+        #tooltip,#settings {
+            position: absolute;
+            top: 200px;
+            left: 150px;
+            width: 300px;
+            height: auto;
+            padding: 10px;
+            background-color: white;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+            -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+            /* pointer-events: none; */
+        }
+
+        #tooltip.hidden,#settings.hidden {
+            display: none;
+        }
+
+        #tooltip div,#settings div {
+            text-align:center;
+        }
+
+        #tooltip p {
+            text-align:center;
+            margin: 0;
+            font-family: sans-serif;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    </style>
+</head>

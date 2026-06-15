@@ -1,0 +1,13 @@
+<div class="{{ include.css }}"><figure>
+  {% if include.height %}
+  {%   assign h = include.height %}  
+  {% else %}
+  {%   assign h = "200px" %}  
+  {% endif %}
+  {% if include.targeturl %}
+  <a href="{{ include.targeturl }}"><img class="{{ include.css }}" src="{{ site.baseurl }}{{ include.url }}" alt="{{ include.description }}" height="{{ h }}"></a>
+  {% else %}
+  <img class="{{ include.css }}" src="{{ site.baseurl }}{{ include.url }}" alt="{{ include.description }}" height="{{ h }}">
+  {% endif %}
+  <figcaption>{{ include.description }}</figcaption>
+</figure></div>
