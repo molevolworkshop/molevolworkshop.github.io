@@ -6,7 +6,9 @@ permalink: /faculty-smithons/
 {% include figure.html description="Johnson Smithons" url="/faculty/Template/img/old-man-1.jpg" css="image-right" height="250px" %}
 
 Associate Dean
+
 Department of Redundancy Division
+
 College University
 
 ## About 
