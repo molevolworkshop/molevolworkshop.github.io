@@ -33,7 +33,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ---------------|--------------------------------------|-----------------------------------
  09:00 - 10:30 | Zenil-Ferguson                       | [Phylogenetic Models](https://roszenil.github.io/mytutorials/docs/statistics/files/phylogenetic_models.pdf)
  10:30 - 12:00 | Zenil-Ferguson                       | [Introduction to Bayesian Inference](https://roszenil.github.io/mytutorials/docs/statistics/files/bayesian_stats_intro.pdf)
- 14:00 - 15:30 | Brown                                | [Model selection](/faculty/brown/pdf/ModelSelection_JMBrown.pdf)
+ 14:00 - 15:30 | Brown                                | [Model selection]({{ site.baseurl }}materials/lectures/statistical_inference/ModelSelection_JMBrown.pdf)
  15:30 - 17:00 | Solís-Lemus                          | [Bayesian Phylogenetics]({{ site.baseurl }}/materials/lectures/statistical_inference/bayesian-claudia-2026)
  19:00 - 20:30 | TAs                                  | [IQ-TREE introduction]({{ site.baseurl }}/materials/lectures/iq-tree/MOLE2026-IQ-TREE.pdf)
  20:30 - 22:00 | TAs                                  | [IQ-TREE lab](https://iqtree.github.io/workshop/molevol_tutorial2026) [IQ-TREE quiz](https://docs.google.com/forms/d/e/1FAIpQLSfvNMk0HJFBHDU9qAbNopbhWORx0CwSEBFdxSuCiDLJ5K1g5w/viewform?usp=dialog)
@@ -68,7 +68,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Friday, May 22, 2026
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Beerli](/faculty-beerli/)           | [Model comparison in biogeography/population genetics using MIGRATE (introduction slides)]({{site.baseurl}}/faculty/beerli/pdf/bayesfactor_presented2024.pdf)
+ 09:00 - 10:30 | [Beerli](/faculty-beerli/)           | [Model comparison in biogeography/population genetics using MIGRATE (introduction slides)]({{site.baseurl}}/materials/lectures/coalescent/bayesfactor_presented2024.pdf)
  10:30 - 12:00 | [Beerli](/faculty-beerli/)           | [MIGRATE (Tutorial)]({{ site.baseurl }}/materials/labs/migrate_tutorial/MIGRATEtutorial2023.html)
  14:00 - 15:30 | [Moreau](/faculty-moreau/)           | [Ant Phylogenomics and Evolution]({{ site.baseurl }}/materials/lectures/evolutionary_applications/Moreau_WoodsHole1_2026.pdf)
  15:30 - 17:00 | [Moreau](/faculty-moreau/)           | [Ant Phylogenomics and Evolution]({{ site.baseurl }}/materials/lectures/evolutionary_applications/Moreau_WoodsHole2_2026.pdf)
