@@ -22,7 +22,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
  11:30 - 12:00 | [Bielawski](/faculty-bielawski/)     | [Scientific ethics](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf)
  14:00 - 15:30 | Zenil-Ferguson                       | [Introduction to Likelihood](https://roszenil.github.io/mytutorials/docs/statistics/files/likelihood_slides.pdf)
  15:30 - 17:00 | Zenil-Ferguson                       | [Likelihood in Phylogenetics](https://roszenil.github.io/mytutorials/docs/statistics/files/likelihood_phylogenetics.pdf)
- 19:00 - 20:30 | TAs                                  | [Intro computer lab](/labs/intro/)
+ 19:00 - 20:30 | TAs                                  | [Intro computer lab](materials/labs/MSAlab/computer-lab-intro)
  20:30 - 22:00 | TAs                                  | [Alignment lab](/labs/alignment/)
  22:00 - 23:30 | MBL Club                             | Evening social gathering
 {: .daily-schedule-mon}
@@ -55,7 +55,7 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Thursday, May 21, 2026
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | [Kubatko](/faculty-kubatko/)		       | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2026.pdf)
+ 09:00 - 10:30 | [Kubatko](/faculty-kubatko/)		       | [Species Tree Estimation]({{ site.baseurl }}/materials/lectures/species_trees_networks/SpeciesTreeEstimation2026.pdf)
  10:30 - 12:00 | [Kubatko](/faculty-kubatko/)         | [Species Tree Estimation]({{ site.baseurl }}/faculty/kubatko/pdf/SpeciesTreeEstimation2026.pdf)
  14:00 - 15:30 | [Swofford](/faculty-swofford/)       | PAUP*
  15:30 - 17:00 | Swofford and Kubatko                 | [Species Tree Estimation with SVDQuartets]({{ site.baseurl }}/faculty/kubatko/pdf/species-trees-tutorial-2026.html)
