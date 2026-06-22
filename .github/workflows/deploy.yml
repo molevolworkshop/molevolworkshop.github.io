@@ -18,8 +18,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: 'molevolworkshop/moledata'
-          path: 'materials' # Puts the files into a folder named _materials
-          lfs: true          # Crucial: This tells GitHub to pull down your actual Git LFS assets
+          path: 'materials'
+          lfs: true
 
       # Set up Ruby and standard dependencies
       - name: Set up Ruby
@@ -27,6 +27,11 @@ jobs:
         with:
           ruby-version: '3.2'
           bundle-cache: true # Caches your gems so subsequent builds are lightning fast
+
+      - name: Install Dependencies
+        run: |
+          gem install bundler
+          bundle install
 
       # Build the Jekyll site
       - name: Build Site
