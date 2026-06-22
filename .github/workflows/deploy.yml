@@ -1,0 +1,33 @@
+name: Deploy Jekyll Site
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Clone your main website repository into the root directory
+      - name: Checkout Website Repo
+        uses: actions/checkout@v4
+
+      # Clone the materials repo into a specific subfolder
+      - name: Fetch Latest Materials Repo
+        uses: actions/checkout@v4
+        with:
+          repository: 'molevolworkshop/moledata'
+          path: 'materials' # Puts the files into a folder named _materials
+          lfs: true          # Crucial: This tells GitHub to pull down your actual Git LFS assets
+
+      # Set up Ruby and standard dependencies
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundle-cache: true # Caches your gems so subsequent builds are lightning fast
+
+      # Build the Jekyll site
+      - name: Build Site
+        run: bundle exec jekyll build
