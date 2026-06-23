@@ -22,8 +22,6 @@ permalink: /faculty/
 
 [Tracy Heath](/faculty-heath/), Iowa State University
 
-<!-- [John Huelsenbeck](/faculty-huelsenbeck/), University of California-Berkeley -->
-
 [Lacey Knowles](/faculty-knowles/), University of Michigan
 
 [Laura Kubatko](/faculty-kubatko/), Ohio State University
@@ -38,9 +36,7 @@ permalink: /faculty/
 
 [David Swofford](/faculty-swofford/), Duke University
 
-<!-- [Anne Yoder](/faculty-yoder/), Duke University -->
-
-[Rosana Zenil-Ferguson](/faculty-rzf/), University of Kentucky
+[Rosana Zenil-Ferguson](/faculty-zenil-ferguson/), University of Kentucky
 
 ## 2026 Course TAs
 
@@ -54,11 +50,8 @@ permalink: /faculty/
 
 ## 2026 Course Assistant
 
-[Anne Smith](/course-assistant/)
+Anne Smith
 
-<!-- [Caitlin Randall](/course-assistant/) -->
-<!-- [Camryn Ford](/course-assistant/) -->
-<!-- [Elena Korte](/course-assistant/) -->
 
 ## Former recent faculty
 
@@ -104,9 +97,6 @@ Anne Yoder, Duke University
 
 Derrick Zwickl, University of Arizona
 
-{% comment %}
-Axel Meyer, Harold Zakon, Sara Sawyer, Shozo Yokoyama, Gavin Naylor
-{% endcomment %}
 
 ## Former recent TAs
 
@@ -116,29 +106,29 @@ Axel Meyer, Harold Zakon, Sara Sawyer, Shozo Yokoyama, Gavin Naylor
 
 [Adetunji “Teejay” Adesina](https://sawyerlab.org/team/), University of Colorado Boulder
 
-[Blake Fauskee](/faculty-fauskee/), Duke University
+Blake Fauskee, Duke University
 
-[Jordan Satler](/faculty-satler/) (lead TA), Ohio State University
+Jordan Satler (lead TA), Ohio State University
 
-[Kate Taylor](/faculty-taylor/), University of Maryland
+Kate Taylor, University of Maryland
 
-[Áki Láruson](/faculty-laruson/) (Lead TA), University of Iceland
+Áki Láruson (Lead TA), University of Iceland
 
-[Deise Gonçalves](/faculty-goncalves/), Department of Integrative Biology, University of Texas at Austin
+Deise Gonçalves, Department of Integrative Biology, University of Texas at Austin
 
-[George Tiley](http://yoderlab.org/people/current-lab-members/george-tiley/), Duke University
+George Tiley, Duke University
 
-[Peter Larsen](https://vetmed.umn.edu/bio/college-of-veterinary-medicine/peter-larsen), University of Minnesota
+Peter Larsen, University of Minnesota
 
-[Walker Pett](http://willpett.github.io), Iowa State University
+Walker Pett, Iowa State University
 
-[Ben Liebeskind](https://sites.cns.utexas.edu/raldrich/people/ben-leibeskind), University of Texas, Austin
+Ben Liebeskind, University of Texas, Austin
 
-[Nicholas Meyerson](https://scholar.google.com/citations?user=2nWxzoYAAAAJ&hl=en), University of Colorado Boulder
+Nicholas Meyerson, University of Colorado Boulder
 
-[Noor White](http://www.noorwhite.com), National Eye Institute, National Science Foundation
+Noor White, National Eye Institute, National Science Foundation
 
-[April Wright](http://www.southeastern.edu/acad_research/depts/biol/faculty/directory/wright.html), Southeastern Louisiana University
+April Wright, Southeastern Louisiana University
 
 ## Former Recent Course Assistants
 
@@ -146,12 +136,12 @@ Caitlin Randall, Louisiana State University
 
 Camryn Ford, The Ohio State University
 
-[Elena Korte](/course-assistant/), University of Connecticut
+Elena Korte, University of Connecticut
 
-[Alyssa McGurer](/course-assistant/), University of Connecticut
+Alyssa McGurer, University of Connecticut
 
-[Marlene Abouaassi](https://j.p.gogarten.uconn.edu/personnel.htm#Current)
+Marlene Abouaassi
 
-[Marcus W. Fedarko](https://fedarko.github.io)
+Marcus W. Fedarko
 
 

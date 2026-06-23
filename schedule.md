@@ -21,8 +21,8 @@ All sessions are in Loeb G70 (basement of Loeb building)
  09:00 - 10:30 | Course Faculty & Participants        | Welcome, introductions, and workshop overview
  10:30 - 11:30 | [Heath](/faculty-heath/)             | [Introduction to phylogenetics](https://doi.org/10.6084/m9.figshare.32314983)
  11:30 - 12:00 | [Bielawski](/faculty-bielawski/)     | [Scientific ethics](http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf)
- 14:00 - 15:30 | Zenil-Ferguson                       | [Introduction to Likelihood](https://roszenil.github.io/mytutorials/docs/statistics/files/likelihood_slides.pdf)
- 15:30 - 17:00 | Zenil-Ferguson                       | [Likelihood in Phylogenetics](https://roszenil.github.io/mytutorials/docs/statistics/files/likelihood_phylogenetics.pdf)
+ 14:00 - 15:30 | [Zenil-Ferguson](faculty-zenil-ferguson)                      | [Introduction to Likelihood](https://roszenil.github.io/mytutorials/docs/statistics/files/likelihood_slides.pdf)
+ 15:30 - 17:00 | [Zenil-Ferguson](faculty-zenil-ferguson)                       | [Likelihood in Phylogenetics](https://roszenil.github.io/mytutorials/docs/statistics/files/likelihood_phylogenetics.pdf)
  19:00 - 20:30 | TAs                                  | [Intro computer lab](/labs/intro)
  20:30 - 22:00 | TAs                                  | [Alignment lab](/labs/alignment/)
  22:00 - 23:30 | MBL Club                             | Evening social gathering
@@ -31,10 +31,10 @@ All sessions are in Loeb G70 (basement of Loeb building)
 ### Tuesday, May 19, 2026
 
 ---------------|--------------------------------------|-----------------------------------
- 09:00 - 10:30 | Zenil-Ferguson                       | [Phylogenetic Models](https://roszenil.github.io/mytutorials/docs/statistics/files/phylogenetic_models.pdf)
- 10:30 - 12:00 | Zenil-Ferguson                       | [Introduction to Bayesian Inference](https://roszenil.github.io/mytutorials/docs/statistics/files/bayesian_stats_intro.pdf)
- 14:00 - 15:30 | Brown                                | [Model selection]({{ site.baseurl }}materials/lectures/statistical_inference/ModelSelection_JMBrown.pdf)
- 15:30 - 17:00 | Solís-Lemus                          | [Bayesian Phylogenetics]({{ site.baseurl }}/materials/lectures/statistical_inference/bayesian-claudia-2026)
+ 09:00 - 10:30 | [Zenil-Ferguson](faculty-zenil-ferguson)                       | [Phylogenetic Models](https://roszenil.github.io/mytutorials/docs/statistics/files/phylogenetic_models.pdf)
+ 10:30 - 12:00 | [Zenil-Ferguson](faculty-zenil-ferguson)                      | [Introduction to Bayesian Inference](https://roszenil.github.io/mytutorials/docs/statistics/files/bayesian_stats_intro.pdf)
+ 14:00 - 15:30 | [Brown](/faculty-brown/)                              | [Model selection]({{ site.baseurl }}materials/lectures/statistical_inference/ModelSelection_JMBrown.pdf)
+ 15:30 - 17:00 | [Solís-Lemus](/faculty-solis-lemus/)                          | [Bayesian Phylogenetics]({{ site.baseurl }}/materials/lectures/statistical_inference/bayesian-claudia-2026)
  19:00 - 20:30 | TAs                                  | [IQ-TREE introduction]({{ site.baseurl }}/materials/lectures/iq-tree/MOLE2026-IQ-TREE.pdf)
  20:30 - 22:00 | TAs                                  | [IQ-TREE lab](https://iqtree.github.io/workshop/molevol_tutorial2026) [IQ-TREE quiz](https://docs.google.com/forms/d/e/1FAIpQLSfvNMk0HJFBHDU9qAbNopbhWORx0CwSEBFdxSuCiDLJ5K1g5w/viewform?usp=dialog)
  22:00 - 23:30 | MBL Club                             | Evening social gathering
