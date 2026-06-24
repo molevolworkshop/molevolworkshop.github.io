@@ -38,30 +38,19 @@ The _faculty.md_ page contains a listing of current faculty, in
 alphabetical order, along with their affiliations and links to their
 personal pages, which reside in subdirectories under the directory
 _faculty_. Each faculty member subdirectory contains a markdown page
-that describes the range of dates the faculty member will be at the
-workshop, contact info, and links to lectures, tutorials, data sets, and
-other materials referenced by that faculty member during their
-lecture/lab. PDF files of lectures reside in the faculty member's own
-_pdf_ subdirectory and a head shot of that faculty member resides in the
-_img_ subdirectory. For example, _/faculty/lewis/lewis.md_ is Paul
-Lewis' markdown page, Paul's lectures are in _/faculty/lewis/pdf_ and
-Paul's photo is in _/faculty/lewis/img/ (along with other images
-referenced in _/faculty/lewis/lewis.md_.
+that briefly describes their research, range of dates the faculty member will be at the
+workshop, and contact info.A head shot of that faculty member resides in the
+_img_ subdirectory. 
 
-Note that faculty markdown files specify permalinks that follow the
-convention _/faculty-lastname/_. For example, the front matter in
-_/faculty/lewis/lewis.md_ contains.
 ~~~~~~
 permalink: /faculty-lewis/
 ~~~~~~
-{:.bash}
+
 
 ### Schedule page
 
 The _schedule.md_ file contains a giant table showing the current year's
-schedule, with links to each presentation. The presentation links are
-either links to PDF files in a faculty member's _pdf_ subdirectory, or
-are external links to tutorials stored on another web site.
+schedule, with links to each presentation.
 
 ### Other page
 
@@ -85,6 +74,8 @@ web site that is published as a GitHub Pages site. Jekyll creates the directory
 *_site*, which can be deleted at any time because it is regenerated every time
 a new commit is pushed to the repository that affects the web site content. 
 
+**NOTE:** The website is **not** updated when new commits are made to `moledata`, which the website clones prior to deploying. Instead, the website can manually be rebuilt with Github Actions.
+
 ### Markdown files
 
 Jekyll generates HTML content using markdown files (which have the file
@@ -93,15 +84,6 @@ Jekyll ignores any directory whose name begins with an underscore
 character. Such directories are not completely ignored, but any markdown
 files in them will not be converted to HTML content in the *_sites*
 directory.
-
-Markdown cheatsheets are available (links provied below) that show you
-how to create links, show images, create lists and tables, etc. You may
-be disappointed in how limited markdown seems to be. For example, you
-cannot have lists within lists, and only very basic tables are possible
-(no merging of rows or columns). It is possible to use CSS to achieve
-some desired effects (i.e. make some table columns wider than they
-ordinarily would be), but the simplicity of markdown encourages you to
-write content that is easier to comprehend by your readers.
 
 ### Cheatsheet links
 
