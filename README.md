@@ -21,6 +21,8 @@ pages accessible via the main menu at the top (About, Faculty, Schedule,
 and Other). The next sections point out which files contain the
 information for these pages.
 
+Lectures and lab materials are stored in [moledata](https://github.com/molevolworkshop/moledata) but are pulled onto the website files upon deployment.
+
 ### Home page
 
 The home page is the page you land on when you visit
@@ -51,6 +53,9 @@ permalink: /faculty-lewis/
 
 The _schedule.md_ file contains a giant table showing the current year's
 schedule, with links to each presentation.
+
+Lecture materials stored in the `moledata` repo gets brought into the website upon deployment and is renamed to the `materials` folder.
+This means that if you want to link to a specific file that has the directory structure `moledata/lectures/topic/lecture.pdf`, you can do so with `({{ site.baseurl }}/materials/lectures/topic/lecture.pdf)`.
 
 ### Other page
 
