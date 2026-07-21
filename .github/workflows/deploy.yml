@@ -27,7 +27,21 @@ jobs:
         with:
           repository: 'molevolworkshop/moledata'
           path: 'materials'
-          lfs: true
+          lfs: false
+          
+      - name: Cache LFS Data
+        uses: actions/cache@v4
+        id: lfs-cache
+        with:
+          path: materials/.git/lfs
+          key: ${{ runner.os }}-lfs-${{ hashFiles('materials/.git/HEAD') }}
+          restore-keys: |
+            ${{ runner.os }}-lfs-
+
+      - name: Pull LFS Objects
+        run: |
+          cd materials
+          git lfs pull
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
