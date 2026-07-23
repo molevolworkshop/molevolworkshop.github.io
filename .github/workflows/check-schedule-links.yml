@@ -1,0 +1,38 @@
+# Checks the links in schedule.md whenever it changes.
+# Place this file at: .github/workflows/check-schedule-links.yml
+# and place the script at: scripts/check_schedule_links.py
+#
+# The check only REPORTS problems (it never edits anything). It will show up as
+# a red X on a commit/PR if a material file is missing or an off-site link is
+# definitively dead; warnings (like "could not verify") do not fail the check.
+
+name: Check schedule links
+
+on:
+  push:
+    paths:
+      - "schedule.md"
+      - "scripts/check_schedule_links.py"
+      - ".github/workflows/check-schedule-links.yml"
+  pull_request:
+    paths:
+      - "schedule.md"
+  workflow_dispatch:        # lets you run it by hand from the Actions tab
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the website repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run the link checker
+        env:
+          # Raises the GitHub API rate limit when the script lists moledata files.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/check_schedule_links.py schedule.md
