@@ -8,7 +8,7 @@ If you are instead interested in seeing the actual
 web site, please visit
 [molevolworkshop.github.io](https://molevolworkshop.github.io) instead.
 
-For faculty wishing to update their workshop lectures or labs, please look at [this](https://github.com/molevolworkshop/moledata) repository instead. **NOTE:** if you do update materials in the `moledata` repo, you will need to trigger a rebuild of the site for them to actually update on the website.
+For faculty wishing to update their workshop lectures or labs, please look at [this](https://github.com/molevolworkshop/moledata) repository instead.
 For faculty wishing to update their profile page, please look at `README` in the `faculty` folder.
 
 
@@ -21,7 +21,7 @@ pages accessible via the main menu at the top (About, Faculty, Schedule,
 and Other). The next sections point out which files contain the
 information for these pages.
 
-Lectures and lab materials are stored in [moledata](https://github.com/molevolworkshop/moledata) but are pulled onto the website files upon deployment. **NOTE:** if `moledata` is updated, the website is not automatically updated and will need to be rebuilt to be updated. 
+Lectures and lab materials are stored in [moledata](https://github.com/molevolworkshop/moledata) but are pulled onto the website files upon deployment. 
 
 ### Home page
 
