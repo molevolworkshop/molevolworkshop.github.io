@@ -27,20 +27,26 @@ jobs:
         with:
           repository: 'molevolworkshop/moledata'
           path: 'materials'
+          fetch-depth: 1
           lfs: false
           
+      - name: Create LFS Asset Index
+        run: |
+          cd materials
+          git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id    
       - name: Cache LFS Data
         uses: actions/cache@v4
         id: lfs-cache
         with:
           path: materials/.git/lfs
-          key: ${{ runner.os }}-lfs-${{ hashFiles('materials/.git/HEAD') }}
+          key: ${{ runner.os }}-lfs-${{ hashFiles('materials/.lfs-assets-id') }}
           restore-keys: |
             ${{ runner.os }}-lfs-
 
       - name: Pull LFS Objects
         run: |
           cd materials
+          git lfs install --local
           git lfs pull
 
       - name: Setup Ruby
