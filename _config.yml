@@ -27,4 +27,9 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+collections:
+  faculty:
+    output: true
+    permalink: /faculty/:name/
   
