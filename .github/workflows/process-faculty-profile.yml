@@ -1,3 +1,8 @@
+const fullName = getField('Full Name');
+if (!fullName) {
+  core.setFailed("Full Name is missing from issue submission.");
+  return;
+}
 name: Process Faculty Profile Issue
 
 on:
@@ -6,7 +11,6 @@ on:
 
 jobs:
   process-profile:
-    # Only run if the issue has the 'faculty-profile' label (from your template)
     if: contains(github.event.issue.labels.*.name, 'faculty-profile')
     runs-on: ubuntu-latest
     permissions:
@@ -37,32 +41,32 @@ jobs:
             const payload = JSON.parse(process.env.PARSED_PAYLOAD);
             
             // Helper function to extract text values safely
-            const getField = (label) => {
-              const val = payload[label];
+            const getField = (key) => {
+              const val = payload[key];
               if (!val || val.trim() === '_No response_') return '';
               return val.trim();
             };
 
-            const fullName = getField('Full Name');
+            const fullName = getField('full_name');
             if (!fullName) {
               core.setFailed("Full Name is missing from issue submission.");
               return;
             }
 
-            // Create clean slug for filename (e.g., "Jane Doe" -> "jane-doe")
+            // Create clean slug for filename
             const slug = fullName.toLowerCase()
               .replace(/[^a-z0-9\s-]/g, '')
               .replace(/\s+/g, '-');
 
-            const role = getField('Title / Role');
-            const department = getField('Department');
-            const institution = getField('University / Institution');
-            const headshot = getField('Headshot Photo');
-            const rawSocials = getField('Social Media & Contact Links');
-            const arrivalDate = getField('Arrival Date');
-            const departureDate = getField('Departure Date');
-            const bioAbout = getField('About / Bio');
-            const extraResources = getField('Other Resources & Lecture Notes');
+            const role = getField('title__role') || getField('title_role');
+            const department = getField('department');
+            const institution = getField('university__institution') || getField('university_institution');
+            const headshot = getField('headshot_photo');
+            const rawSocials = getField('social_media__contact_links') || getField('social_media_contact_links');
+            const arrivalDate = getField('arrival_date');
+            const departureDate = getField('departure_date');
+            const bioAbout = getField('about__bio') || getField('about_bio');
+            const extraResources = getField('other_resources__lecture_notes') || getField('other_resources_lecture_notes');
 
             // --- Parse Social Links Line-by-Line ---
             let githubHandle = '';
@@ -79,18 +83,18 @@ jobs:
                 
                 const firstColon = line.indexOf(':');
                 const key = line.substring(0, firstColon).trim().toLowerCase();
-                const val = line.substring(firstColon + 1).trim();
+                const linkVal = line.substring(firstColon + 1).trim();
 
                 if (key === 'github') {
-                  githubHandle = val.replace(/^@/, '').replace('https://github.com/', '');
+                  githubHandle = linkVal.replace(/^@/, '').replace('https://github.com/', '');
                 } else if (key === 'twitter' || key === 'x') {
-                  twitterHandle = val.replace(/^@/, '').replace('https://x.com/', '').replace('https://twitter.com/', '');
+                  twitterHandle = linkVal.replace(/^@/, '').replace('https://x.com/', '').replace('https://twitter.com/', '');
                 } else if (key === 'email') {
-                  emailAddr = val;
+                  emailAddr = linkVal;
                 } else if (key === 'website' || key === 'lab site' || key === 'lab website') {
-                  mainWebsite = val;
+                  mainWebsite = linkVal;
                 } else {
-                  otherLinks.push({ label: line.substring(0, firstColon).trim(), url: val });
+                  otherLinks.push({ label: line.substring(0, firstColon).trim(), url: linkVal });
                 }
               }
             }
@@ -137,7 +141,6 @@ jobs:
             const filePath = path.join(dirPath, `${slug}.md`);
             fs.writeFileSync(filePath, fullMarkdown, 'utf8');
 
-            // Export environment variables for subsequent workflow steps
             core.exportVariable('FACULTY_SLUG', slug);
             core.exportVariable('FACULTY_NAME', fullName);
         env:
