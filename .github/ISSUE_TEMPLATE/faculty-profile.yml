@@ -62,7 +62,7 @@ body:
   # ---------------------------------------------------------
   # CONTACT & SOCIAL LINKS
   # ---------------------------------------------------------
- - type: textarea
+  - type: textarea
     id: socials_list
     attributes:
       label: "Social Media & Contact Links"
