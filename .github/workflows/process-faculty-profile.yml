@@ -158,7 +158,7 @@ jobs:
           delete-branch: true
 
       - name: Comment on Issue
-        uses: github-script@v7
+        uses: actions/github-script@v7
         with:
           script: |
             github.rest.issues.createComment({
