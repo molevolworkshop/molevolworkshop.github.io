@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+<div class="faculty-profile-container" style="display: flex; gap: 2rem; align-items: flex-start; margin-top: 2rem;">
+
+  <!-- Left Column: Headshot & Logistics Sidebar -->
+  <aside class="faculty-sidebar" style="flex: 0 0 250px;">
+    {% if page.headshot %}
+      <div class="faculty-headshot" style="margin-bottom: 1.5rem;">
+        <img src="{{ page.headshot }}" alt="{{ page.name }}" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover; aspect-ratio: 1/1;">
+      </div>
+    {% endif %}
+
+    <div class="faculty-contact-box" style="background: #f6f8fa; padding: 1rem; border-radius: 8px; font-size: 0.9rem;">
+      <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 1rem;">Contact & Links</h4>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        {% if page.email %}
+          <li style="margin-bottom: 0.4rem;"><strong>Email:</strong> <a href="mailto:{{ page.email }}">{{ page.email }}</a></li>
+        {% endif %}
+        {% if page.github %}
+          <li style="margin-bottom: 0.4rem;"><strong>GitHub:</strong> <a href="https://github.com/{{ page.github }}" target="_blank">@{{ page.github }}</a></li>
+        {% endif %}
+        {% if page.twitter %}
+          <li style="margin-bottom: 0.4rem;"><strong>Twitter/X:</strong> <a href="https://x.com/{{ page.twitter }}" target="_blank">@{{ page.twitter }}</a></li>
+        {% endif %}
+        {% if page.website %}
+          <li style="margin-bottom: 0.4rem;"><strong>Website:</strong> <a href="{{ page.website }}" target="_blank">Lab Site</a></li>
+        {% endif %}
+
+        <!-- --- DYNAMICALLY GROUPED CUSTOM SOCIALS --- -->
+        {% if page.other_links %}
+          {% for item in page.other_links %}
+            <li style="margin-bottom: 0.4rem;"><strong>{{ item.label }}:</strong> <a href="{{ item.url }}" target="_blank">{{ item.url | truncate: 30 }}</a></li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+
+      {% if page.arrival_date or page.departure_date %}
+        <hr style="margin: 1rem 0; border: none; border-top: 1px solid #d0d7de;">
+        <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 1rem;">Travel Dates</h4>
+        <p style="margin: 0; color: #57606a;">
+          {% if page.arrival_date %}<strong>Arriving:</strong> {{ page.arrival_date }}<br>{% endif %}
+          {% if page.departure_date %}<strong>Departing:</strong> {{ page.departure_date }}{% endif %}
+        </p>
+      {% endif %}
+    </div>
+  </aside>
+
+  <!-- Right Column: Main Bio & Content -->
+  <main class="faculty-main-content" style="flex: 1;">
+    <h1 style="margin-top: 0; margin-bottom: 0.2rem;">{{ page.name }}</h1>
+    <p class="faculty-title-role" style="font-size: 1.2rem; color: #57606a; margin-top: 0; margin-bottom: 1rem;">
+      {{ page.role }}{% if page.department %} — {{ page.department }}{% endif %}{% if page.institution %}, <em>{{ page.institution }}</em>{% endif %}
+    </p>
+
+    <hr style="margin-bottom: 1.5rem; border: none; border-top: 1px solid #d0d7de;">
+
+    <!-- This renders the Markdown body content below the frontmatter -->
+    <div class="faculty-body">
+      {{ content }}
+    </div>
+  </main>
+
+</div>
