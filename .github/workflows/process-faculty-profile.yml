@@ -38,6 +38,7 @@ jobs:
             
             // Helper function to extract text values safely
             const getField = (label) => {
+              const val = payload[label];
               if (!val || val.trim() === '_No response_') return '';
               return val.trim();
             };
