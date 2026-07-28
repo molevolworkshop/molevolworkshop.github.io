@@ -1,0 +1,128 @@
+name: "Faculty Profile Creation or Update"
+description: "Submit or update your speaker bio, contact info, and travel dates for the workshop website."
+title: "Faculty Profile: [Your Full Name]"
+labels: ["faculty-profile", "automated"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Faculty & Speaker Profile Submission
+        Welcome! Please use this form to create or update your bio page on the workshop website. 
+        Once submitted, an automated bot will process your details and generate a preview Pull Request for review.
+
+  # ---------------------------------------------------------
+  # BASIC INFORMATION
+  # ---------------------------------------------------------
+  - type: input
+    id: full_name
+    attributes:
+      label: "Full Name"
+      description: "How you would like your name displayed on the site."
+      placeholder: "Jane Doe"
+    validations:
+      required: true
+
+  - type: input
+    id: role
+    attributes:
+      label: "Title / Role"
+      description: "e.g., Associate Professor, Senior Scientist, Postdoctoral Researcher"
+      placeholder: "Associate Professor"
+    validations:
+      required: true
+
+  - type: input
+    id: department
+    attributes:
+      label: "Department"
+      placeholder: "Department of Botany"
+    validations:
+      required: false
+
+  - type: input
+    id: institution
+    attributes:
+      label: "University / Institution"
+      placeholder: "University of Wisconsin–Madison"
+    validations:
+      required: true
+
+  # ---------------------------------------------------------
+  # HEADSHOT PHOTO
+  # ---------------------------------------------------------
+  - type: textarea
+    id: headshot
+    attributes:
+      label: "Headshot Photo"
+      description: "Drag and drop an image file (JPG/PNG) directly into this box, OR paste a link to an image."
+      placeholder: "Drag and drop your photo here..."
+    validations:
+      required: false
+
+  # ---------------------------------------------------------
+  # CONTACT & SOCIAL LINKS
+  # ---------------------------------------------------------
+ - type: textarea
+    id: socials_list
+    attributes:
+      label: "Social Media & Contact Links"
+      description: |
+        Add your social handles or custom contact links below, one per line using the format: `Type: Handle or URL`.
+        
+        **Supported Types:** `GitHub`, `Twitter`, `Email`, `Bluesky`, `ORCID`, `Google Scholar`, or any `Custom` label.
+      placeholder: |
+        GitHub: jmithons
+        Twitter: jsmithons
+        Email: jsmithons@college.edu
+        Bluesky: jsmithons.bsky.social
+        Google Scholar: https://scholar.google.com/citations?user=12345
+        Lab Site: https://example-lab.org
+
+  # ---------------------------------------------------------
+  # TRAVEL / LOGISTICS
+  # ---------------------------------------------------------
+  - type: markdown
+    attributes:
+      value: "#### Travel & Logistics\nThis helps organizers coordinate workshop scheduling and arrivals."
+
+  - type: input
+    id: arrival_date
+    attributes:
+      label: "Arrival Date"
+      placeholder: "MM/DD/YY (e.g., 06/13/27)"
+    validations:
+      required: false
+
+  - type: input
+    id: departure_date
+    attributes:
+      label: "Departure Date"
+      placeholder: "MM/DD/YY (e.g., 06/21/27)"
+    validations:
+      required: false
+
+  # ---------------------------------------------------------
+  # BIO & RESOURCES
+  # ---------------------------------------------------------
+  - type: textarea
+    id: bio_about
+    attributes:
+      label: "About / Bio"
+      description: "A summary of your research, interests, and background (Markdown formatting supported)."
+      placeholder: "My research focuses on computational phylogenetics, statistical models..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_resources
+    attributes:
+      label: "Other Resources & Lecture Notes"
+      description: "Any supplementary links, reading lists, or sub-headers you want on your page."
+      placeholder: |
+        ### Recommended Reading
+        * [Paper Title](https://example.com)
+        
+        ### Software & Tools
+        * [Tool Repository](https://github.com/...)
+    validations:
+      required: false
