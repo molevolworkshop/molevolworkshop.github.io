@@ -96,7 +96,12 @@ jobs:
             if (role) frontmatter += `role: "${role}"\n`;
             if (department) frontmatter += `department: "${department}"\n`;
             if (institution) frontmatter += `institution: "${institution}"\n`;
-            if (headshot) frontmatter += `headshot: "${headshot}"\n`;
+            if (headshot) {
+              let cleanHeadshot = headshot;
+              const imgMatch = headshot.match(/src="([^"]+)"/);
+              if (imgMatch) cleanHeadshot = imgMatch[1];
+              frontmatter += `headshot: "${cleanHeadshot}"\n`;
+            }
             if (githubHandle) frontmatter += `github: "${githubHandle}"\n`;
             if (twitterHandle) frontmatter += `twitter: "${twitterHandle}"\n`;
             if (emailAddr) frontmatter += `email: "${emailAddr}"\n`;
