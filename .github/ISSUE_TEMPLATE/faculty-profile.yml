@@ -17,7 +17,7 @@ body:
     id: full_name
     attributes:
       label: "Full Name"
-      description: "How you would like your name displayed on the site."
+      description: "How you would like your name displayed on the site. \nNote that this will dictate the specific website page that your profile is under (e.g., Jane Doe becomes creates a page with the url jane-doe"
       placeholder: "Jane Doe"
     validations:
       required: true

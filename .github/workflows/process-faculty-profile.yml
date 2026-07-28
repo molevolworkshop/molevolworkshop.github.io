@@ -1,0 +1,169 @@
+name: Process Faculty Profile Issue
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  process-profile:
+    # Only run if the issue has the 'faculty-profile' label (from your template)
+    if: contains(github.event.issue.labels.*.name, 'faculty-profile')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Parse Issue Form Body
+        id: parse
+        uses: peter-murray/issue-forms-body-parser@v2
+        with:
+          issue_id: ${{ github.event.issue.number }}
+          separator: '###'
+          label_case_response: 'lower'
+
+      - name: Generate Faculty Markdown File
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            // Retrieve parsed form payload
+            const payload = JSON.parse(process.env.PARSED_PAYLOAD);
+            
+            // Helper function to extract text values safely
+            const getField = (label) => {
+              const val = payload[label.toLowerCase()];
+              if (!val || val.trim() === '_No response_') return '';
+              return val.trim();
+            };
+
+            const fullName = getField('Full Name');
+            if (!fullName) {
+              core.setFailed("Full Name is missing from issue submission.");
+              return;
+            }
+
+            // Create clean slug for filename (e.g., "Jane Doe" -> "jane-doe")
+            const slug = fullName.toLowerCase()
+              .replace(/[^a-z0-9\s-]/g, '')
+              .replace(/\s+/g, '-');
+
+            const role = getField('Title / Role');
+            const department = getField('Department');
+            const institution = getField('University / Institution');
+            const headshot = getField('Headshot Photo');
+            const rawSocials = getField('Social Media & Contact Links');
+            const arrivalDate = getField('Arrival Date');
+            const departureDate = getField('Departure Date');
+            const bioAbout = getField('About / Bio');
+            const extraResources = getField('Other Resources & Lecture Notes');
+
+            // --- Parse Social Links Line-by-Line ---
+            let githubHandle = '';
+            let twitterHandle = '';
+            let emailAddr = '';
+            let mainWebsite = '';
+            const otherLinks = [];
+
+            if (rawSocials) {
+              const lines = rawSocials.split('\n');
+              for (let line of lines) {
+                line = line.trim();
+                if (!line || !line.includes(':')) continue;
+                
+                const firstColon = line.indexOf(':');
+                const key = line.substring(0, firstColon).trim().toLowerCase();
+                const val = line.substring(firstColon + 1).trim();
+
+                if (key === 'github') {
+                  githubHandle = val.replace(/^@/, '').replace('https://github.com/', '');
+                } else if (key === 'twitter' || key === 'x') {
+                  twitterHandle = val.replace(/^@/, '').replace('https://x.com/', '').replace('https://twitter.com/', '');
+                } else if (key === 'email') {
+                  emailAddr = val;
+                } else if (key === 'website' || key === 'lab site' || key === 'lab website') {
+                  mainWebsite = val;
+                } else {
+                  otherLinks.push({ label: line.substring(0, firstColon).trim(), url: val });
+                }
+              }
+            }
+
+            // --- Build Frontmatter YAML Block ---
+            let frontmatter = `---\n`;
+            frontmatter += `layout: faculty\n`;
+            frontmatter += `title: "${fullName}"\n`;
+            frontmatter += `name: "${fullName}"\n`;
+            if (role) frontmatter += `role: "${role}"\n`;
+            if (department) frontmatter += `department: "${department}"\n`;
+            if (institution) frontmatter += `institution: "${institution}"\n`;
+            if (headshot) frontmatter += `headshot: "${headshot}"\n`;
+            if (githubHandle) frontmatter += `github: "${githubHandle}"\n`;
+            if (twitterHandle) frontmatter += `twitter: "${twitterHandle}"\n`;
+            if (emailAddr) frontmatter += `email: "${emailAddr}"\n`;
+            if (mainWebsite) frontmatter += `website: "${mainWebsite}"\n`;
+            if (arrivalDate) frontmatter += `arrival_date: "${arrivalDate}"\n`;
+            if (departureDate) frontmatter += `departure_date: "${departureDate}"\n`;
+
+            if (otherLinks.length > 0) {
+              frontmatter += `other_links:\n`;
+              for (const item of otherLinks) {
+                frontmatter += `  - label: "${item.label}"\n`;
+                frontmatter += `    url: "${item.url}"\n`;
+              }
+            }
+            frontmatter += `---\n\n`;
+
+            // --- Build Markdown Body ---
+            let bodyContent = `## About\n\n${bioAbout}\n`;
+            if (extraResources) {
+              bodyContent += `\n\n${extraResources}\n`;
+            }
+
+            const fullMarkdown = frontmatter + bodyContent;
+
+            // Save file to _faculty/ directory
+            const dirPath = path.join(process.cwd(), '_faculty');
+            if (!fs.existsSync(dirPath)){
+                fs.mkdirSync(dirPath, { recursive: true });
+            }
+
+            const filePath = path.join(dirPath, `${slug}.md`);
+            fs.writeFileSync(filePath, fullMarkdown, 'utf8');
+
+            // Export environment variables for subsequent workflow steps
+            core.exportVariable('FACULTY_SLUG', slug);
+            core.exportVariable('FACULTY_NAME', fullName);
+        env:
+          PARSED_PAYLOAD: ${{ steps.parse.outputs.payload }}
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "update faculty profile: ${{ env.FACULTY_NAME }}"
+          title: "Faculty Profile Update: ${{ env.FACULTY_NAME }}"
+          body: |
+            Automated profile update generated from Issue #${{ github.event.issue.number }}.
+            
+            * **Faculty:** ${{ env.FACULTY_NAME }}
+            * **Target File:** `_faculty/${{ env.FACULTY_SLUG }}.md`
+          branch: "update-faculty/${{ env.FACULTY_SLUG }}"
+          base: "main"
+          delete-branch: true
+
+      - name: Comment on Issue
+        uses: github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `Thanks @${context.actor}! An automated Pull Request has been generated for your profile update. Organizers will review and merge it shortly.`
+            })
