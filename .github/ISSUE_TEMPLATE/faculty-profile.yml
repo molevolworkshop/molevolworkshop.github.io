@@ -40,8 +40,6 @@ body:
         - "Analisa Milkey"
         - "Solomon McShea"
         - "Thao Nguyen"
-    validations:
-      required: false
 
   - type: input
     id: custom_name
