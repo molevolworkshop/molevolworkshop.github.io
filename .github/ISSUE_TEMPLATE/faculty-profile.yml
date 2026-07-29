@@ -36,10 +36,11 @@ body:
         - "Megan Smith"
         - "David Swofford"
         - "Rosana Zenil-Ferguson"
-        - "Joshua Justison"
+        - "Joshooa Justison"
         - "Analisa Milkey"
         - "Solomon McShea"
         - "Thao Nguyen"
+
 
   - type: input
     id: custom_name
