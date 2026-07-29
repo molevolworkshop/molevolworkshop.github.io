@@ -13,14 +13,44 @@ body:
   # ---------------------------------------------------------
   # BASIC INFORMATION
   # ---------------------------------------------------------
-  - type: input
-    id: full_name
+  - type: dropdown
+    id: faculty_select
     attributes:
-      label: "Full Name"
-      description: "How you would like your name displayed on the site. \nNote that this will dictate the specific website page that your profile is under (e.g., Jane Doe becomes creates a page with the url jane-doe"
+      label: "Select Your Name (from Registry)"
+      description: "If you are on the official roster, select your name here."
+      options:
+        - "-- Not Listed / Write-in Below --"
+        - "Peter Beerli"
+        - "Joseph Bielawski"
+        - "Jeremy Brown"
+        - "Belinda Chang"
+        - "Scott Edwards"
+        - "Laura Eme"
+        - "Mandev Gill"
+        - "Tracy Heath"
+        - "Lacey Knowles"
+        - "Laura Kubatko"
+        - "Emily Jane McTavish"
+        - "Corrie Moreau"
+        - "Claudia Solís-Lemus"
+        - "Megan Smith"
+        - "David Swofford"
+        - "Rosana Zenil-Ferguson"
+        - "Joshua Justison"
+        - "Analisa Milkey"
+        - "Solomon McShea"
+        - "Thao Nguyen"
+    validations:
+      required: false
+
+  - type: input
+    id: custom_name
+    attributes:
+      label: "Write-in Name (If not listed above)"
+      description: "How you would like your name displayed on the site if you weren't in the dropdown."
       placeholder: "Jane Doe"
     validations:
-      required: true
+      required: false
 
   - type: input
     id: role

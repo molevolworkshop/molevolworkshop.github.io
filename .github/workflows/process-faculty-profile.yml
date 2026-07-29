@@ -36,9 +36,19 @@ jobs:
               return val;
             };
 
-            const fullName = getFieldValue('Full Name');
+            // --- Resolve Name from Dropdown or Write-in ---
+            const selectedName = getFieldValue('Select Your Name (from Registry)');
+            const customName = getFieldValue('Write-in Name (If not listed above)');
+
+            let fullName = '';
+            if (selectedName && selectedName !== '-- Not Listed / Write-in Below --') {
+              fullName = selectedName;
+            } else {
+              fullName = customName;
+            }
+
             if (!fullName) {
-              core.setFailed("Full Name is missing from issue submission.");
+              core.setFailed("A valid name must be selected from the dropdown or provided via the write-in field.");
               return;
             }
 
