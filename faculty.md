@@ -6,47 +6,47 @@ permalink: /faculty/
 {% include figure.html description="" url="/assets/img/fromback2018.jpg" css="image-center" height="250px" %}
 ## 2026 Course Faculty
 
-[Peter Beerli](/faculty-beerli/), Florida State University
+[Peter Beerli](/faculty/peter-beerli/), Florida State University
 
-[Joseph Bielawski](/faculty-bielawski/), Dalhousie University
+[Joseph Bielawski](/faculty/joseph-bielawski/), Dalhousie University
 
-[Jeremy Brown](/faculty-brown/), Louisiana State University
+[Jeremy Brown](/faculty/jeremy-brown/), Louisiana State University
 
-[Belinda Chang](/faculty-chang/), University of Toronto
+[Belinda Chang](/faculty/belinda-chang/), University of Toronto
 
-[Scott Edwards](/faculty-edwards/), Harvard University
+[Scott Edwards](/faculty/scott-edwards/), Harvard University
 
-[Laura Eme](/faculty-eme/), University Rhode Island
+[Laura Eme](/faculty/laura-eme/), University Rhode Island
 
-[Mandev Gill](/faculty-gill/), University of Georgia
+[Mandev Gill](/faculty/mandev-gill/), University of Georgia
 
-[Tracy Heath](/faculty-heath/), Iowa State University
+[Tracy Heath](/faculty/tracy-heath/), Iowa State University
 
-[Lacey Knowles](/faculty-knowles/), University of Michigan
+[Lacey Knowles](/faculty/lacey-knowles/), University of Michigan
 
-[Laura Kubatko](/faculty-kubatko/), Ohio State University
+[Laura Kubatko](/faculty/laura-kubatko/), Ohio State University
 
-[Emily Jane McTavish](/faculty-mctavish/), University of California-Merced
+[Emily Jane McTavish](/faculty/emily-jane-mctavish/), University of California-Merced
 
-[Corrie Moreau](/faculty-moreau/), Cornell University
+[Corrie Moreau](/faculty/corrie-moreau/), Cornell University
 
-[Claudia Solís-Lemus](/faculty-solis-lemus/), University of Wisconsin-Madison
+[Claudia Solís-Lemus](/faculty/claudia-solis-lemus/), University of Wisconsin-Madison
 
-[Megan Smith](/faculty-smith/), Mississippi State University
+[Megan Smith](/faculty/megan-smith/), Mississippi State University
 
-[David Swofford](/faculty-swofford/), Duke University
+[David Swofford](/faculty/david-swofford/), Duke University
 
-[Rosana Zenil-Ferguson](/faculty-zenil-ferguson/), University of Kentucky
+[Rosana Zenil-Ferguson](/faculty/rosana-zenil-ferguson/), University of Kentucky
 
 ## 2026 Course TAs
 
-[Joshua Justison](/faculty-justison/) (lead TA), University of Wisconsin
+[Joshua Justison](/faculty/joshua-justison/) (lead TA), University of Wisconsin
 
-[Analisa Milkey](/faculty-milkey/), University of Connecticut
+[Analisa Milkey](/faculty/analisa-milkey/), University of Connecticut
 
-[Solomon McShea](/faculty-mcshea/), University of California, San Francisco
+[Solomon McShea](/faculty/solomon-mcshea/), University of California, San Francisco
 
-[Thao Nguyen](/faculty-nguyen/), Iowa State University
+[Thao Nguyen](/faculty/thao-nguyen/), Iowa State University
 
 ## 2026 Course Assistant
 
@@ -143,5 +143,3 @@ Alyssa McGurer, University of Connecticut
 Marlene Abouaassi
 
 Marcus W. Fedarko
-
-
