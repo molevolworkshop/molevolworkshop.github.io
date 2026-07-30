@@ -25,13 +25,13 @@ layout: default
           <li style="margin-bottom: 0.4rem;"><strong>Twitter/X:</strong> <a href="https://x.com/{{ page.twitter }}" target="_blank">@{{ page.twitter }}</a></li>
         {% endif %}
         {% if page.website %}
-          <li style="margin-bottom: 0.4rem;"><strong>Website:</strong> <a href="{{ page.website }}" target="_blank">Lab Site</a></li>
+          <li style="margin-bottom: 0.4rem;"><a href="{{ page.website }}" target="_blank">Lab Website</a>[cite: 4]</li>
         {% endif %}
 
         <!-- --- DYNAMICALLY GROUPED CUSTOM SOCIALS --- -->
         {% if page.other_links %}
           {% for item in page.other_links %}
-            <li style="margin-bottom: 0.4rem;"><strong>{{ item.label }}:</strong> <a href="{{ item.url }}" target="_blank">{{ item.url | truncate: 30 }}</a></li>
+            <li style="margin-bottom: 0.4rem;"><a href="{{ item.url }}" target="_blank">{{ item.label }}</a></li>
           {% endfor %}
         {% endif %}
       </ul>

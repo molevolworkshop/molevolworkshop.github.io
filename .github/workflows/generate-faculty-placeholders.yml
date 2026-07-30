@@ -1,0 +1,97 @@
+name: Generate Faculty Placeholders
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/ISSUE_TEMPLATE/faculty-profile.yml'
+
+jobs:
+  create-placeholders:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Generate Placeholder Pages
+        run: |
+          python3 - << 'EOF'
+          import os
+          import re
+          import yaml
+
+          #Load the issue template to extract names
+          template_path = '.github/ISSUE_TEMPLATE/faculty-profile.yml'
+          faculty_dir = '_faculty'
+          with open(template_path, 'r') as f:
+              try:
+                  content = yaml.safe_load(f)
+              except yaml.YAMLError as exc:
+                  print(f"Error parsing YAML: {exc}")
+                  exit(1)
+
+          #Extract names from the faculty_select dropdown options
+          faculty_names = []
+          for field in content.get('body', []):
+              if field.get('id') == 'faculty_select':
+                  options = field.get('attributes', {}).get('options', [])
+                  for opt in options:
+                      if opt and not opt.startswith('--'):
+                          faculty_names.append(opt)
+
+          print(f"Found {len(faculty_names)} names in issue template registry.")
+          
+          master_template_path = '_faculty/faculty_template.md'
+          if not os.path.exists(master_template_path):
+            print(f"Error: Master template not found at {master_template_path}")
+            exit(1)
+
+          with open(master_template_path, 'r') as f:
+            master_template_content = f.read()
+
+
+          #Loop through names and create placeholders if missing
+          for name in faculty_names:
+              # Create a clean filename from the name (e.g., "Peter Beerli" -> "peter-beerli.md")
+              slug = re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
+              file_path = os.path.join(faculty_dir, f"{slug}.md")
+
+
+              if os.path.exists(file_path):
+                print(f"Skipping (already exists): {name} -> {file_path}")
+                continue
+
+              print(f"Creating placeholder for: {name} -> {file_path}")
+
+              # Define the GitHub file edit link for this specific file path
+              repo = os.environ.get('GITHUB_REPOSITORY', 'molevolworkshop/molevolworkshop.github.io')
+              edit_link = f"https://github.com/{repo}/blob/main/{file_path}"
+
+              # Customize the template content for this specific person
+              # Replaces default generic title/name fields and fills in the specific file's edit link
+              page_content = master_template_content.replace(
+                  'title: "Faculty Template"', f'title: "{name}"'
+              ).replace(
+                  'name: "Faculty Name"', f'name: "{name}"'
+              ).replace(
+                  '(Filler_link)', f'({edit_link})'
+              )
+
+              with open(file_path, 'w') as f:
+                  f.write(page_content)   
+          EOF
+
+      - name: Commit and Push Placeholder Files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(faculty): automatically generate missing faculty placeholder pages"
+          branch: main
