@@ -98,5 +98,5 @@ jobs:
       - name: Commit and Push Placeholder Files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(faculty): automatically generate missing faculty placeholder pages"
+          commit_message: "automatically generate missing faculty placeholder pages"
           branch: main
