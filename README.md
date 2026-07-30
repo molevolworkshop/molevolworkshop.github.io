@@ -9,7 +9,7 @@ web site, please visit
 [molevolworkshop.github.io](https://molevolworkshop.github.io) instead.
 
 For faculty wishing to update their workshop lectures or labs, please look at [this](https://github.com/molevolworkshop/moledata) repository instead.
-For faculty wishing to update their profile page, please look at `README` in the `faculty` folder.
+For faculty wishing to update their profile page, please look at `README` in the `_faculty` folder.
 
 
 
@@ -38,15 +38,9 @@ of the course, and the software introduced.
 
 The _faculty.md_ page contains a listing of current faculty, in
 alphabetical order, along with their affiliations and links to their
-personal pages, which reside in subdirectories under the directory
-_faculty_. Each faculty member subdirectory contains a markdown page
-that briefly describes their research, range of dates the faculty member will be at the
-workshop, and contact info.A head shot of that faculty member resides in the
-_img_ subdirectory. 
-
-~~~~~~
-permalink: /faculty-lewis/
-~~~~~~
+personal pages, which reside in the directory
+_\_faculty_. Each faculty member page briefly describes their research, range of dates the faculty member will be at the
+workshop, a head shot, and contact info. 
 
 
 ### Schedule page
@@ -79,7 +73,7 @@ web site that is published as a GitHub Pages site. Jekyll creates the directory
 *_site*, which can be deleted at any time because it is regenerated every time
 a new commit is pushed to the repository that affects the web site content. 
 
-**NOTE:** The website is **not** updated when new commits are made to `moledata`, which the website clones prior to deploying. Instead, the website can manually be rebuilt with Github Actions.
+**NOTE:** The website **is** updated when new commits are made to `moledata`, which the website clones prior to deploying. Additionally, the website can manually be rebuilt with Github Actions.
 
 ### Markdown files
 
