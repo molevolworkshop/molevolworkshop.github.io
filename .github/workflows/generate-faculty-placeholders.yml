@@ -32,6 +32,7 @@ jobs:
           python3 - << 'EOF'
           import os
           import re
+          import unicodedata
           import yaml
 
           #Load the issue template to extract names
@@ -67,7 +68,9 @@ jobs:
           #Loop through names and create placeholders if missing
           for name in faculty_names:
               # Create a clean filename from the name (e.g., "Peter Beerli" -> "peter-beerli.md")
-              slug = re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
+              nfkd_form = unicodedata.normalize('NFKD', name)
+              ascii_name = "".join([c for c in nfkd_form if not unicodedata.combining(c)])
+              slug = re.sub(r'[^a-z0-9]+', '-', ascii_name.lower()).strip('-')
               file_path = os.path.join(faculty_dir, f"{slug}.md")
 
 
