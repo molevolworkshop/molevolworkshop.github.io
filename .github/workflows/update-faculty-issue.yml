@@ -1,0 +1,86 @@
+name: Sync Faculty Dropdown to Website
+
+on:
+  push:
+    paths:
+      - '_data/faculty-registry.csv'
+
+jobs:
+  update-website-template:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout website repo
+        uses: actions/checkout@v4
+
+      - name: Update Issue Template Dropdown
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            // 1. Read and parse the CSV file from _data/faculty-registry.csv
+            const csvContent = fs.readFileSync('_data/faculty-registry.csv', 'utf8');
+            const lines = csvContent.trim().split('\n');
+            
+            // Extract headers (assuming header row is first)
+            const headers = lines[0].split(',').map(h => h.trim().replace(/^["']|["']/g, ''));
+            const nameIndex = headers.indexOf('name');
+
+            if (nameIndex === -1) {
+              console.error("Could not find 'name' column in faculty-registry.csv");
+              process.exit(1);
+            }
+
+            // Parse rows and extract names
+            const facultyNames = ["-- Not Listed / Write-in Below --"];
+            for (let i = 1; i < lines.length; i++) {
+              if (!lines[i].trim()) continue;
+              // Simple CSV split (handles basic comma separation)
+              const row = lines[i].split(',').map(val => val.trim().replace(/^["']|["']/g, ''));
+              if (row[nameIndex]) {
+                facultyNames.push(row[nameIndex]);
+              }
+            }
+
+            const newOptionsYaml = facultyNames.map(name => `        - "${name}"`).join('\n') + '\n';
+
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const path = '.github/ISSUE_TEMPLATE/faculty-profile.yml';
+
+            let fileData;
+            try {
+              fileData = await github.rest.repos.getContent({ owner, repo, path });
+            } catch (error) {
+              console.error("Error fetching template from website repo:", error);
+              process.exit(1);
+            }
+
+            const currentContent = Buffer.from(fileData.data.content, 'base64').toString('utf8');
+            const sha = fileData.data.sha;
+
+            // 2. Replace the options block using regex
+            const regex = /(id: faculty_select[\s\S]*?options:\n)([\s\S]*?)(?=\n\s+validations:|\n\s+- type:|\s*$)/;
+            if (!regex.test(currentContent)) {
+              console.error("Could not find faculty_select options block in the target template.");
+              process.exit(1);
+            }
+            const updatedContent = currentContent.replace(regex, `$1${newOptionsYaml}`);
+
+            // If nothing changed, skip committing
+            if (currentContent === updatedContent) {
+              console.log("Template is already up to date.");
+              return;
+            }
+
+            // 3. Commit the update back to the repository via GitHub API
+            await github.rest.repos.createOrUpdateFileContents({
+              owner,
+              repo,
+              path,
+              message: "Auto-update faculty issue template dropdown from CSV registry",
+              content: Buffer.from(updatedContent).toString('base64'),
+              sha: sha
+            });
+
+            console.log("Successfully updated issue template from CSV!");
