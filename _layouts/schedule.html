@@ -3,8 +3,14 @@ layout: default
 ---
 
 <style>
-  /* Schedule Table Styling */
-  .schedule-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  /* Schedule Table Styling - Expanded width for desktop */
+  /* Fully dynamic schedule container */
+  .schedule-container { 
+    width: 85%;          /* Takes up 85% of smaller screens */
+    max-width: 1400px;   /* Caps out at 1400px on very wide monitors */
+    margin: 0 auto; 
+    padding: 20px; 
+  }
   .date-header { margin-top: 40px; border-bottom: 2px solid #eee; padding-bottom: 10px; color: #333; }
 
   .schedule-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
@@ -86,7 +92,7 @@ layout: default
                 {% if item.presenter and item.presenter != "" %}
                   {% assign matched_faculty = nil %}
                   {% for f in site.data['faculty-registry'] %}
-                    {% assign f_id = f.id | default: f.slug | default: f.handle | default: f.item_id | downcase %}
+                    {% assign f_id = f.ID | default: f.id | default: f.slug | default: f.handle | default: f.item_id | downcase %}
                     {% assign p_id = item.presenter | downcase | strip %}
                     {% if f_id == p_id %}
                       {% assign matched_faculty = f %}
@@ -96,7 +102,7 @@ layout: default
 
                   {% if matched_faculty %}
                     {% assign faculty_name = matched_faculty.name | default: matched_faculty.full_name | default: matched_faculty.title | default: item.presenter %}
-                    {% assign faculty_slug = matched_faculty.id | default: matched_faculty.slug | default: matched_faculty.handle | default: matched_faculty.item_id | default: item.presenter %}
+                    {% assign faculty_slug = matched_faculty.ID | default: matched_faculty.id | default: matched_faculty.slug | default: matched_faculty.handle | default: matched_faculty.item_id | default: item.presenter %}
                     <a href="https://molevolworkshop.github.io/faculty/{{ faculty_slug }}/" target="_blank">{{ faculty_name }}</a>
                   {% else %}
                     {{ item.presenter }}
