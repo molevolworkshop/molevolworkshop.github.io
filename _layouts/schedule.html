@@ -1,17 +1,11 @@
 ---
 layout: default
-title: Course Schedule
-menutitle: Schedule
-permalink: /schedule/
 ---
 
 <style>
-  /* Fully dynamic schedule container */
-  .schedule-container { 
-    width: 95%;          
-    max-width: 1000px;   
-    margin: 0 auto; 
-    padding: 20px; 
+  /* Expand the site wrapper specifically on the schedule page */
+  .wrapper {
+    max-width: 1000px !important;
   }
 
   .date-header { margin-top: 40px; border-bottom: 2px solid #eee; padding-bottom: 10px; color: #333; }
@@ -31,8 +25,9 @@ permalink: /schedule/
     border-bottom: 1px solid #ddd; 
   }
 
-  /* Force Time and Presenter columns to stay compact and un-stretched */
+  /* Force Time, Location, and Presenter columns to stay compact and un-stretched */
   th:first-child, td:first-child,
+  th:nth-child(3), td:nth-child(3),
   th:last-child, td:last-child {
     width: 1%; 
     white-space: nowrap; 
@@ -49,82 +44,87 @@ permalink: /schedule/
   .row-evening { background-color: #fbf6ef !important; }   /* Soft Warm Cream */
 </style>
 
-<div class="schedule-container">
-  <h1>Course Schedule</h1>
+<h1>Course Schedule</h1>
+
+{{ content }}
+
+{% assign events = site.data.event-schedule | group_by: "date" %}
+
+{% for day in events %}
+  <h2 class="date-header">{{ day.name | date: "%A, %B %d, %Y" }}</h2>
   
-  <!-- This renders whatever markdown you write in schedule.md -->
-  {{ content }}
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Event</th>
+          <th>Location</th>
+          <th>Presenter</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in day.items %}
+          
+          {% assign start_hour = item.start_time | split: ":" | first | plus: 0 %}
+          
+          {% if start_hour < 13 %}
+            {% assign row_class = "row-morning" %}
+          {% elsif start_hour < 18 %}
+            {% assign row_class = "row-afternoon" %}
+          {% else %}
+            {% assign row_class = "row-evening" %}
+          {% endif %}
 
-  {% assign events = site.data.event-schedule | group_by: "date" %}
+          <tr class="{{ row_class }}">
+            <td class="time-col" data-label="Time">{{ item.start_time }} – {{ item.end_time }}</td>
+            <td class="event-col" data-label="Event">
+              {% if item.material_location %}
+                {% assign search_term = '{' | append: '{ site.baseurl }}' %}
+                {% assign search_term_no_spaces = '{' | append: '{site.baseurl}}' %}
+                {% assign fixed_url = item.material_location | replace: search_term, site.baseurl | replace: search_term_no_spaces, site.baseurl %}
+                <a href="{{ fixed_url }}" target="_blank"><strong>{{ item.title }}</strong></a>
+              {% else %}
+                <strong>{{ item.title }}</strong>
+              {% endif %}
 
-  {% for day in events %}
-    <h2 class="date-header">{{ day.name | date: "%A, %B %d, %Y" }}</h2>
-    
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>Time</th>
-            <th>Event</th>
-            <th>Presenter</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for item in day.items %}
-            
-            {% assign start_hour = item.start_time | split: ":" | first | plus: 0 %}
-            
-            {% if start_hour < 13 %}
-              {% assign row_class = "row-morning" %}
-            {% elsif start_hour < 18 %}
-              {% assign row_class = "row-afternoon" %}
-            {% else %}
-              {% assign row_class = "row-evening" %}
-            {% endif %}
-
-            <tr class="{{ row_class }}">
-              <td class="time-col" data-label="Time">{{ item.start_time }} – {{ item.end_time }}</td>
-              <td class="event-col" data-label="Event">
-                {% if item.material_location %}
-                  {% assign search_term = '{' | append: '{ site.baseurl }}' %}
-                  {% assign search_term_no_spaces = '{' | append: '{site.baseurl}}' %}
-                  {% assign fixed_url = item.material_location | replace: search_term, site.baseurl | replace: search_term_no_spaces, site.baseurl %}
-                  <a href="{{ fixed_url }}" target="_blank"><strong>{{ item.title }}</strong></a>
-                {% else %}
-                  <strong>{{ item.title }}</strong>
-                {% endif %}
-
-                {% if item.category and item.category != "other" %}
-                  <span class="badge {{ item.category }}">{{ item.category }}</span>
-                {% endif %}
-              </td>
-              <td data-label="Presenter">
-                {% if item.presenter and item.presenter != "" %}
-                  {% assign matched_faculty = nil %}
-                  {% for f in site.data['faculty-registry'] %}
-                    {% assign f_id = f.ID | default: f.id | default: f.slug | default: f.handle | default: f.item_id | downcase %}
-                    {% assign p_id = item.presenter | downcase | strip %}
-                    {% if f_id == p_id %}
-                      {% assign matched_faculty = f %}
-                      {% break %}
-                    {% endif %}
-                  {% endfor %}
-
-                  {% if matched_faculty %}
-                    {% assign faculty_name = matched_faculty.name | default: matched_faculty.full_name | default: matched_faculty.title | default: item.presenter %}
-                    {% assign faculty_slug = matched_faculty.ID | default: matched_faculty.id | default: matched_faculty.slug | default: matched_faculty.handle | default: matched_faculty.item_id | default: item.presenter %}
-                    <a href="https://molevolworkshop.github.io/faculty/{{ faculty_slug }}/" target="_blank">{{ faculty_name }}</a>
-                  {% else %}
-                    {{ item.presenter }}
+              {% if item.category and item.category != "other" %}
+                <span class="badge {{ item.category }}">{{ item.category }}</span>
+              {% endif %}
+            </td>
+            <td data-label="Location">
+              {% if item.room and item.room != "" %}
+                {{ item.room }}
+              {% else %}
+                -
+              {% endif %}
+            </td>
+            <td data-label="Presenter">
+              {% if item.presenter and item.presenter != "" %}
+                {% assign matched_faculty = nil %}
+                {% for f in site.data['faculty-registry'] %}
+                  {% assign f_id = f.ID | default: f.id | default: f.slug | default: f.handle | default: f.item_id | downcase %}
+                  {% assign p_id = item.presenter | downcase | strip %}
+                  {% if f_id == p_id %}
+                    {% assign matched_faculty = f %}
+                    {% break %}
                   {% endif %}
+                {% endfor %}
+
+                {% if matched_faculty %}
+                  {% assign faculty_name = matched_faculty.name | default: matched_faculty.full_name | default: matched_faculty.title | default: item.presenter %}
+                  {% assign faculty_slug = matched_faculty.ID | default: matched_faculty.id | default: matched_faculty.slug | default: matched_faculty.handle | default: matched_faculty.item_id | default: item.presenter %}
+                  <a href="https://molevolworkshop.github.io/faculty/{{ faculty_slug }}/" target="_blank">{{ faculty_name }}</a>
                 {% else %}
-                  -
+                  {{ item.presenter }}
                 {% endif %}
-              </td>
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
-  {% endfor %}
-</div>
+              {% else %}
+                -
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endfor %}
