@@ -1,27 +1,30 @@
 ---
-layout: default
+layout: schedule
+title: Course Schedule
+menutitle: Schedule
+permalink: /schedule/
 ---
 
 <style>
-  /* Schedule Table Styling - Expanded width for desktop */
   /* Fully dynamic schedule container */
   .schedule-container { 
-    width: 85%;          /* Takes up 85% of smaller screens */
-    max-width: 1400px;   /* Caps out at 1400px on very wide monitors */
+    width: 95%;          
+    max-width: 1400px;   
     margin: 0 auto; 
     padding: 20px; 
   }
+
   .date-header { margin-top: 40px; border-bottom: 2px solid #eee; padding-bottom: 10px; color: #333; }
 
   .schedule-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-  .schedule-table th, .schedule-table td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+  .schedule-table th, .schedule-table td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; font-size: 1.25rem }
   .schedule-table th { background-color: #f8f9fa; }
 
   /* Mobile responsiveness */
   @media (max-width: 600px) {
     .schedule-table thead { display: none; }
     .schedule-table, .schedule-table tbody, .schedule-table tr, .schedule-table td { display: block; width: 100%; }
-    .schedule-table td { text-align: right; padding-left: 50%; position: relative; }
+    .schedule-table td { text-align: right; padding-left: 50%; position: relative;  }
     .schedule-table td::before { content: attr(data-label); position: absolute; left: 10px; font-weight: bold; }
   }
 
@@ -42,8 +45,12 @@ layout: default
   .row-evening { background-color: #fbf6ef !important; }   /* Soft Warm Cream */
 </style>
 
+
 <div class="schedule-container">
   <h1>Course Schedule</h1>
+  
+  <!-- This renders whatever markdown you write in schedule.md -->
+  {{ content }}
 
   {% assign events = site.data.event-schedule | group_by: "date" %}
 
