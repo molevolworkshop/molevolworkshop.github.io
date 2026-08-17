@@ -54,7 +54,7 @@ See the `README.md` in the  _\_faculty_ folder for more information on these pag
 ### Schedule page
 
 The _schedule.md_ will generate a page that contains the daily schedule, and links to relevant materials to each presentation or lab.
-This page uses `envent-schedule.csv`, and `faculty-registry.csv` to generate the appropriate tables. 
+This page uses `event-schedule.csv`, and `faculty-registry.csv` to generate the appropriate tables. 
 
 Lecture materials stored in the `moledata` repo gets brought into the website upon deployment and is renamed to the `materials` folder.
 This means that if you want to link to a specific file that has the directory structure `moledata/lectures/topic/lecture.pdf`, you can do so with `({{ site.baseurl }}/materials/lectures/topic/lecture.pdf)`.
