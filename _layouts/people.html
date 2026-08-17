@@ -1,0 +1,111 @@
+---
+layout: default
+---
+
+<style>
+  table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
+  th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #ddd; }
+  th { background-color: #f8f9fa; }
+</style>
+
+<h1>{{ page.title }}</h1>
+
+{{ content }}
+
+<h2>2026 Course Faculty</h2>
+<ul>
+  {% for f in site.data['faculty-registry'] %}
+    {% assign role = f.role | downcase %}
+    {% if role contains "faculty" or role contains "director" %}
+      <li>
+        <a href="{{ site.baseurl }}/faculty/{{ f.ID }}/">{{ f.name }}</a>
+        {% if role == "director" %} (Director)
+        {% elsif role == "co-director" %} (Co-Director)
+        {% endif %}
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<h2>2026 Teaching Assistants</h2>
+<ul>
+  {% for f in site.data['faculty-registry'] %}
+    {% assign role = f.role | downcase %}
+    {% if role contains "ta" %}
+      <li>
+        <a href="{{ site.baseurl }}/faculty/{{ f.ID }}/">{{ f.name }}</a>
+        {% if role contains "lead" %} (Lead TA){% endif %}
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<h2>2026 Course Assistants</h2>
+<ul>
+  {% for f in site.data['faculty-registry'] %}
+    {% assign role = f.role | downcase %}
+    {% if role=="ca" %}
+      <li>
+        <a href="{{ site.baseurl }}/faculty/{{ f.ID }}/">{{ f.name }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<h2>2026 Participants</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Institution</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in site.data.participants %}
+      <tr>
+        <td>{{ p.Name | default: p.name }}</td>
+        <td>{{ p.Institution | default: p.institution }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h2>Former Faculty</h2>
+<ul>
+  {% for f in site.data['former-faculty'] %}
+    {% assign role = f.Role | default: f.role | downcase %}
+    {% if role contains "faculty" or role contains "director" %}
+      <li>{{ f.Name | default: f.name }}{% assign inst = f.Institution | default: f.institution %}{% if inst != blank and inst != "" %}, {{ inst }}{% endif %}</li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<h2>Former TAs</h2>
+<ul>
+  {% for f in site.data['former-faculty'] %}
+    {% assign role = f.Role | default: f.role | downcase %}
+    {% if role contains "ta" %}
+      {% assign link = f.URL | default: f.url %}
+      <li>
+        {% if link %}
+          <a href="{{ link }}" target="_blank">{{ f.Name | default: f.name }}</a>
+        {% else %}
+          {{ f.Name | default: f.name }}
+        {% endif %}
+        {% if role contains "lead" %} (Lead TA){% endif %}
+        {% assign inst = f.Institution | default: f.institution %}
+        {% if inst != blank and inst != "" %}, {{ inst }}{% endif %}
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<h2>Former Course Assistants</h2>
+<ul>
+  {% for f in site.data['former-faculty'] %}
+    {% assign role = f.Role | default: f.role | downcase %}
+    {% if role =="ca" %}
+      <li>{{ f.Name | default: f.name }}{% assign inst = f.Institution | default: f.institution %}{% if inst != blank and inst != "" %}, {{ inst }}{% endif %}</li>
+    {% endif %}
+  {% endfor %}
+</ul>

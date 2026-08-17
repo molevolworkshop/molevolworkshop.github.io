@@ -11,10 +11,7 @@ web site, please visit
 For faculty wishing to update their workshop lectures or labs, please look at [this](https://github.com/molevolworkshop/moledata) repository instead.
 For faculty wishing to update their profile page, please look at `README` in the `_faculty` folder.
 
-
-
 ## Organization of the web site
-
 
 The web site has a landing page (the home page) and several other main
 pages accessible via the main menu at the top (About, Faculty, Schedule,
@@ -22,6 +19,11 @@ and Other). The next sections point out which files contain the
 information for these pages.
 
 Lectures and lab materials are stored in [moledata](https://github.com/molevolworkshop/moledata) but are pulled onto the website files upon deployment. 
+
+### Website data
+
+Many pages of the website generates content from the information in the `_data` folder.
+Please see the `_data/README.md` for more information on the data files and format.
 
 ### Home page
 
@@ -34,19 +36,25 @@ determined by the file _index.md_.
 The _about.md_ file describes the workshop: when it began, the emphases
 of the course, and the software introduced.
 
-### Faculty page
+### People page
 
-The _faculty.md_ page contains a listing of current faculty, in
-alphabetical order, along with their affiliations and links to their
-personal pages, which reside in the directory
-_\_faculty_. Each faculty member page briefly describes their research, range of dates the faculty member will be at the
-workshop, a head shot, and contact info. 
+The _people.md_ is generates a page containing lists of current faculty, participants, and past faculty.
+Where applicable, the names will be converted to hyperlinks to the appropriate faculty webpage or personal webpage.
+This page uses `faculty-registry.csv`, `participants.csv`, and `former-faculty.csv` in the `_data` folder to generate the appropriate tables. 
+The actual layout and style of the page is set in `_layouts/people.html`. Updating the contents of the people page only requires updating the corresponding data files.
+
+### Faculty pages
+
+Faculty have personal pages, which reside in the directory _\_faculty_.
+Each faculty member page briefly describes their research, range of dates the faculty member will be at the
+workshop, a head shot, and contact info.
+See the `README.md` in the  _\_faculty_ folder for more information on these pages.
 
 
 ### Schedule page
 
-The _schedule.md_ file contains a giant table showing the current year's
-schedule, with links to each presentation.
+The _schedule.md_ will generate a page that contains the daily schedule, and links to relevant materials to each presentation or lab.
+This page uses `envent-schedule.csv`, and `faculty-registry.csv` to generate the appropriate tables. 
 
 Lecture materials stored in the `moledata` repo gets brought into the website upon deployment and is renamed to the `materials` folder.
 This means that if you want to link to a specific file that has the directory structure `moledata/lectures/topic/lecture.pdf`, you can do so with `({{ site.baseurl }}/materials/lectures/topic/lecture.pdf)`.
