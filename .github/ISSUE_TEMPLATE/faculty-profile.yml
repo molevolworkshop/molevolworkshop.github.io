@@ -14,6 +14,17 @@ body:
   # BASIC INFORMATION
   # ---------------------------------------------------------
   - type: dropdown
+    id: role_select
+    attributes:
+      label: "Select Your Workshop Role"
+      description: "e.g., Director, Teaching Assistant, Course Assistant"
+      options:
+        - "Director"
+        - "Co-Director"
+        - "Teaching Assistant"
+        - "Course Assistant"
+  
+  - type: dropdown
     id: faculty_select
     attributes:
       label: "Select Your Name (from Registry)"
@@ -41,10 +52,7 @@ body:
         - "Solomon McShea"
         - "Thao Nguyen"
         - "Anne Smith"
-
-
-
-
+        
 
   - type: input
     id: custom_name

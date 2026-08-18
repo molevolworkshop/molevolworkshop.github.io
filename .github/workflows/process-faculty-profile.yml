@@ -52,11 +52,19 @@ jobs:
               return;
             }
 
-            // Create clean slug for filename (e.g., "Jane Doe" -> "jane-doe")
-            const slug = fullName.toLowerCase()
-              .replace(/[^a-z0-9\s-]/g, '')
-              .replace(/\s+/g, '-');
+            let slug = '';
+            if (selectedName && selectedName !== '-- Not Listed / Write-in Below --') {
+              try {
+                const rows = fs.readFileSync('_data/faculty-registry.csv', 'utf8').trim().split('\n');
+                const headers = rows[0].split(',').map(h => h.trim().replace(/['"]/g, ''));
+                const match = rows.slice(1).map(r => r.split(',').map(v => v.trim().replace(/['"]/g, '')))
+                  .find(r => r[headers.indexOf('name')] === selectedName);
+                if (match) slug = match[headers.indexOf('ID')];
+              } catch (e) {}
+            }
+            if (!slug) slug = fullName.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
 
+            const workshopRole = getFieldValue('Select Your Workshop Role');
             const role = getFieldValue('Title / Role');
             const department = getFieldValue('Department');
             const institution = getFieldValue('University / Institution');
@@ -95,6 +103,32 @@ jobs:
                 } else {
                   otherLinks.push({ label: line.substring(0, firstColon).trim(), url: linkVal });
                 }
+              }
+            }
+            
+            //Update faculty registry if new Faculty
+            if (selectedName && selectedName == '-- Not Listed / Write-in Below --') {
+              try {
+                const csvPath = path.join(process.cwd(), '_data/faculty-registry.csv');
+                let csvContent = fs.readFileSync(csvPath, 'utf8').trim();
+                const lines = csvContent.split('\n');
+                const headers = lines[0].split(',').map(h => h.trim().replace(/['"]/g, ''));
+                
+                const newRow = headers.map(h => {
+                  const lower = h.toLowerCase();
+                  let val = '';
+                  if (lower === 'id') val = slug;
+                  else if (lower === 'name') val = fullName;
+                  else if (lower === 'role' || lower === 'title') val = workshopRole;
+                  else if (lower === 'email') val = emailAddr;
+                  if (!val) return '';
+                  return val.includes(',') ? `"${val}"` : val;
+                }).join(',');
+
+                csvContent += '\n' + newRow;
+                fs.writeFileSync(csvPath, csvContent, 'utf8');
+              } catch (err) {
+                console.log("Could not update faculty-registry.csv:", err);
               }
             }
 
@@ -148,6 +182,44 @@ jobs:
             core.exportVariable('FACULTY_SLUG', slug);
             core.exportVariable('FACULTY_NAME', fullName);
 
+      - name: Find Cross-Repo Issue 
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const submitterName = process.env.FACULTY_NAME || '';
+            let targetIssueNumber = '';
+
+            try {
+              // Fetch open issues from mole-logistics matching required labels
+              const { data: issues } = await github.rest.issues.listForRepo({
+                owner: context.repo.owner,
+                repo: 'mole-logistics',
+                state: 'open',
+                labels: 'needs-review, faculty-profile' // Adjust your target labels here (comma-separated string)
+              });
+
+              let issueCloseStr = '';
+              // Find the issue matching the name in the title or body
+              const targetIssue = issues.find(issue => 
+                (issue.title && issue.title.includes(submitterName)) || 
+                (issue.body && issue.body.includes(submitterName))
+              );
+              if (targetIssue) {
+                targetIssueNumber = targetIssue.number.toString();
+                console.log(`Matched target issue #${targetIssueNumber} in mole-logistics.`);
+                issueCloseStr = `Closes ${context.repo.owner}/mole-logistics#${targetIssueNumber}`
+                
+              } else {
+                console.log('No matching issue found with the specified name and tags.');
+              }
+            } catch (err) {
+              console.log('Could not fetch issues from mole-logistics:', err.message);
+            }
+
+            // Export environment variable (will be empty string if no match was found)
+            core.exportVariable('TARGET_ISSUE', issueCloseStr);
+
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
@@ -158,6 +230,9 @@ jobs:
             
             * **Faculty:** ${{ env.FACULTY_NAME }}
             * **Target File:** `_faculty/${{ env.FACULTY_SLUG }}.md`
+            
+            Closes #${{ github.event.issue.number }}
+            ${{ env.TARGET_ISSUE }}
           branch: "update-faculty/${{ env.FACULTY_SLUG }}"
           base: "main"
           delete-branch: true
