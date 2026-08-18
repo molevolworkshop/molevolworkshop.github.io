@@ -8,16 +8,26 @@
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li class="p-name">
-            Co-director: {{ site.director | escape }}
-          </li>
-          <li class="p-name">
-            Co-director: {{ site.codirector | escape }}
-          </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {%- endif -%}
-        </ul>
+          {% for f in site.data['faculty-registry'] %}
+            {% assign role = f.role | downcase %}
+            {% if role == "director" %}
+              <li class="p-name">Director: 
+              <a href="{{ site.baseurl }}/faculty/{{ f.ID }}/">{{ f.name }}</a>
+              </li>
+             {% endif %}
+            {% endfor %}
+          {% for f in site.data['faculty-registry'] %}
+            {% assign role = f.role | downcase %}
+            {% if role == "co-director" %}
+              <li class="p-name">Co-director: 
+              <a href="{{ site.baseurl }}/faculty/{{ f.ID }}/">{{ f.name }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+  {%- if site.email -%}
+    <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+  {%- endif -%}
+</ul>
       </div>
 
       <div class="footer-col footer-col-2">

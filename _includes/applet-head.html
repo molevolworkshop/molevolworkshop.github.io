@@ -6,9 +6,6 @@
     <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
     <link rel="icon" type="image/png" href="{{ "/assets/img/favicon.png" | relative_url }}">
     {%- feed_meta -%}
-    {%- if jekyll.environment == 'production' and site.google_analytics -%}
-    {%- include google-analytics.html -%}
-    {%- endif -%}
     <script type="text/javascript" charset="utf-8" src={{ "/assets/js/d3.min.js" | relative_url }}></script> 
     <script type="text/javascript" charset="utf-8" src={{ "/assets/js/random-0.26.js" | relative_url }}></script>
     <script type="text/javascript" charset="utf-8" src={{ "/assets/js/d3-3d.js" | relative_url }}></script>
