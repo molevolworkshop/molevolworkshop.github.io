@@ -208,6 +208,7 @@ jobs:
       - name: Find Cross-Repo Issue 
         uses: actions/github-script@v7
         with:
+          github-token: ${{ secrets.LOGISTICS_PAT }}
           script: |
             const submitterName = process.env.FACULTY_NAME || '';
             let targetIssueNumber = '';
@@ -218,7 +219,7 @@ jobs:
                 owner: context.repo.owner,
                 repo: 'mole-logistics',
                 state: 'open',
-                labels: 'needs-review, faculty-profile'
+                labels: 'needs-review,faculty-profile'
               });
 
               
