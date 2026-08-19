@@ -17,7 +17,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate Faculty Markdown File
+      - name: Generate or Update Faculty Markdown File
         uses: actions/github-script@v7
         with:
           script: |
@@ -26,7 +26,6 @@ jobs:
 
             const issueBody = context.payload.issue.body || '';
 
-            // Helper function to extract form fields cleanly using Regex
             const getFieldValue = (label) => {
               const regex = new RegExp(`###\\s+${label}\\s*\\n+([\\s\\S]*?)(?=\\n+###|$)`, 'i');
               const match = issueBody.match(regex);
@@ -36,7 +35,6 @@ jobs:
               return val;
             };
 
-            // --- Resolve Name from Dropdown or Write-in ---
             const selectedName = getFieldValue('Select Your Name (from Registry)');
             const customName = getFieldValue('Write-in Name (If not listed above)');
 
@@ -64,6 +62,37 @@ jobs:
             }
             if (!slug) slug = fullName.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
 
+            // --- Check for Existing File & Parse Old Data ---
+            const dirPath = path.join(process.cwd(), '_faculty');
+            const filePath = path.join(dirPath, `${slug}.md`);
+            
+            let existingFrontmatter = {};
+            let existingBio = '';
+            let existingExtra = '';
+
+            if (fs.existsSync(filePath)) {
+              try {
+                const fileContent = fs.readFileSync(filePath, 'utf8');
+                const parts = fileContent.split('---');
+                if (parts.length >= 3) {
+                  // Parse existing frontmatter lines roughly
+                  parts[1].trim().split('\n').forEach(line => {
+                    const colonIdx = line.indexOf(':');
+                    if (colonIdx !== -1) {
+                      const key = line.substring(0, colonIdx).trim();
+                      const val = line.substring(colonIdx + 1).trim().replace(/^["'](.*)["']$/, '$1');
+                      existingFrontmatter[key] = val;
+                    }
+                  });
+                  const bodyParts = parts.slice(2).join('---').split('## About');
+                  if (bodyParts[1]) existingBio = bodyParts[1].trim();
+                }
+              } catch (e) {
+                console.log("Could not parse existing markdown, proceeding with new values.");
+              }
+            }
+
+            // --- Get New Form Fields ---
             const workshopRole = getFieldValue('Select Your Workshop Role');
             const role = getFieldValue('Title / Role');
             const department = getFieldValue('Department');
@@ -75,7 +104,7 @@ jobs:
             const bioAbout = getFieldValue('About / Bio');
             const extraResources = getFieldValue('Other Resources & Lecture Notes');
 
-            // --- Parse Social Links Line-by-Line ---
+            // --- Parse Social Links ---
             let githubHandle = '';
             let twitterHandle = '';
             let emailAddr = '';
@@ -87,71 +116,56 @@ jobs:
               for (let line of lines) {
                 line = line.trim();
                 if (!line || !line.includes(':')) continue;
-                
                 const firstColon = line.indexOf(':');
                 const key = line.substring(0, firstColon).trim().toLowerCase();
                 const linkVal = line.substring(firstColon + 1).trim();
 
-                if (key === 'github') {
-                  githubHandle = linkVal.replace(/^@/, '').replace('https://github.com/', '');
-                } else if (key === 'twitter' || key === 'x') {
-                  twitterHandle = linkVal.replace(/^@/, '').replace('https://x.com/', '').replace('https://twitter.com/', '');
-                } else if (key === 'email') {
-                  emailAddr = linkVal;
-                } else if (key === 'website' || key === 'lab site' || key === 'lab website') {
-                  mainWebsite = linkVal;
-                } else {
-                  otherLinks.push({ label: line.substring(0, firstColon).trim(), url: linkVal });
-                }
+                if (key === 'github') githubHandle = linkVal.replace(/^@/, '').replace('https://github.com/', '');
+                else if (key === 'twitter' || key === 'x') twitterHandle = linkVal.replace(/^@/, '').replace('https://x.com/', '').replace('https://twitter.com/', '');
+                else if (key === 'email') emailAddr = linkVal;
+                else if (key === 'website' || key === 'lab site' || key === 'lab website') mainWebsite = linkVal;
+                else otherLinks.push({ label: line.substring(0, firstColon).trim(), url: linkVal });
               }
             }
-            
-            //Update faculty registry if new Faculty
-            if (selectedName && selectedName == '-- Not Listed / Write-in Below --') {
-              try {
-                const csvPath = path.join(process.cwd(), '_data/faculty-registry.csv');
-                let csvContent = fs.readFileSync(csvPath, 'utf8').trim();
-                const lines = csvContent.split('\n');
-                const headers = lines[0].split(',').map(h => h.trim().replace(/['"]/g, ''));
-                
-                const newRow = headers.map(h => {
-                  const lower = h.toLowerCase();
-                  let val = '';
-                  if (lower === 'id') val = slug;
-                  else if (lower === 'name') val = fullName;
-                  else if (lower === 'role' || lower === 'title') val = workshopRole;
-                  else if (lower === 'email') val = emailAddr;
-                  if (!val) return '';
-                  return val.includes(',') ? `"${val}"` : val;
-                }).join(',');
 
-                csvContent += '\n' + newRow;
-                fs.writeFileSync(csvPath, csvContent, 'utf8');
-              } catch (err) {
-                console.log("Could not update faculty-registry.csv:", err);
-              }
+            // --- Merge with Existing Data (Fallback if new field is empty) ---
+            const finalRole = role || existingFrontmatter.role || '';
+            const finalDepartment = department || existingFrontmatter.department || '';
+            const finalInstitution = institution || existingFrontmatter.institution || '';
+            
+            let cleanHeadshot = '';
+            if (headshot) {
+              cleanHeadshot = headshot;
+              const imgMatch = headshot.match(/src="([^"]+)"/);
+              if (imgMatch) cleanHeadshot = imgMatch[1];
+            } else {
+              cleanHeadshot = existingFrontmatter.headshot || '';
             }
+
+            const finalGithub = githubHandle || existingFrontmatter.github || '';
+            const finalTwitter = twitterHandle || existingFrontmatter.twitter || '';
+            const finalEmail = emailAddr || existingFrontmatter.email || '';
+            const finalWebsite = mainWebsite || existingFrontmatter.website || '';
+            const finalArrival = arrivalDate || existingFrontmatter.arrival_date || '';
+            const finalDeparture = departureDate || existingFrontmatter.departure_date || '';
+            const finalBio = bioAbout || existingBio || '';
+            const finalExtra = extraResources || existingExtra || '';
 
             // --- Build Frontmatter YAML Block ---
             let frontmatter = `---\n`;
             frontmatter += `layout: faculty\n`;
             frontmatter += `title: "${fullName}"\n`;
             frontmatter += `name: "${fullName}"\n`;
-            if (role) frontmatter += `role: "${role}"\n`;
-            if (department) frontmatter += `department: "${department}"\n`;
-            if (institution) frontmatter += `institution: "${institution}"\n`;
-            if (headshot) {
-              let cleanHeadshot = headshot;
-              const imgMatch = headshot.match(/src="([^"]+)"/);
-              if (imgMatch) cleanHeadshot = imgMatch[1];
-              frontmatter += `headshot: "${cleanHeadshot}"\n`;
-            }
-            if (githubHandle) frontmatter += `github: "${githubHandle}"\n`;
-            if (twitterHandle) frontmatter += `twitter: "${twitterHandle}"\n`;
-            if (emailAddr) frontmatter += `email: "${emailAddr}"\n`;
-            if (mainWebsite) frontmatter += `website: "${mainWebsite}"\n`;
-            if (arrivalDate) frontmatter += `arrival_date: "${arrivalDate}"\n`;
-            if (departureDate) frontmatter += `departure_date: "${departureDate}"\n`;
+            if (finalRole) frontmatter += `role: "${finalRole}"\n`;
+            if (finalDepartment) frontmatter += `department: "${finalDepartment}"\n`;
+            if (finalInstitution) frontmatter += `institution: "${finalInstitution}"\n`;
+            if (cleanHeadshot) frontmatter += `headshot: "${cleanHeadshot}"\n`;
+            if (finalGithub) frontmatter += `github: "${finalGithub}"\n`;
+            if (finalTwitter) frontmatter += `twitter: "${finalTwitter}"\n`;
+            if (finalEmail) frontmatter += `email: "${finalEmail}"\n`;
+            if (finalWebsite) frontmatter += `website: "${finalWebsite}"\n`;
+            if (finalArrival) frontmatter += `arrival_date: "${finalArrival}"\n`;
+            if (finalDeparture) frontmatter += `departure_date: "${finalDeparture}"\n`;
 
             if (otherLinks.length > 0) {
               frontmatter += `other_links:\n`;
@@ -163,20 +177,18 @@ jobs:
             frontmatter += `---\n\n`;
 
             // --- Build Markdown Body ---
-            let bodyContent = `## About\n\n${bioAbout}\n`;
-            if (extraResources) {
-              bodyContent += `\n\n${extraResources}\n`;
+            let bodyContent = `## About\n\n${finalBio}\n`;
+            if (finalExtra) {
+              bodyContent += `\n\n${finalExtra}\n`;
             }
 
             const fullMarkdown = frontmatter + bodyContent;
 
             // Save file to _faculty/ directory
-            const dirPath = path.join(process.cwd(), '_faculty');
             if (!fs.existsSync(dirPath)){
                 fs.mkdirSync(dirPath, { recursive: true });
             }
 
-            const filePath = path.join(dirPath, `${slug}.md`);
             fs.writeFileSync(filePath, fullMarkdown, 'utf8');
 
             core.exportVariable('FACULTY_SLUG', slug);
@@ -233,6 +245,8 @@ jobs:
             
             Closes #${{ github.event.issue.number }}
             ${{ env.TARGET_ISSUE }}
+            
+            **NOTE:** For some actions to properly execute, somebody with push access to this repo and `mole-logistics` should merge the PR.  
           branch: "update-faculty/${{ env.FACULTY_SLUG }}"
           base: "main"
           delete-branch: true
