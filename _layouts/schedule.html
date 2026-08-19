@@ -78,11 +78,14 @@ layout: default
           <tr class="{{ row_class }}">
             <td class="time-col" data-label="Time">{{ item.start_time }} – {{ item.end_time }}</td>
             <td class="event-col" data-label="Event">
-              {% if item.material_location %}
+              {% if item.material_location and item.material_location != "" %}
                 {% assign search_term = '{' | append: '{ site.baseurl }}' %}
                 {% assign search_term_no_spaces = '{' | append: '{site.baseurl}}' %}
                 {% assign fixed_url = item.material_location | replace: search_term, site.baseurl | replace: search_term_no_spaces, site.baseurl %}
                 <a href="{{ fixed_url }}" target="_blank"><strong>{{ item.title }}</strong></a>
+              {% elsif item.category == "lecture" %}
+                {% assign slug = item.item_id | default: item.title | slugify %}
+                <a href="{{ site.baseurl }}/lectures/{{ slug }}/{{ slug }}.pdf" target="_blank"><strong>{{ item.title }}</strong></a>
               {% else %}
                 <strong>{{ item.title }}</strong>
               {% endif %}

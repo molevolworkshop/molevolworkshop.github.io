@@ -10,9 +10,9 @@ date,start_time,end_time,room,item_id,category,title,presenter,material_location
 5/18/2026,22:00,23:30,MBL Club,evening-social,other,Evening social,,
 5/19/2026,9:00,10:30,Loeb G70,phylogenetic-models,lecture,Phylogenetic models,rosana-zenil-ferguson,https://roszenil.github.io/mytutorials/docs/statistics/files/phylogenetic_models.pdf
 5/19/2026,10:30,12:00,Loeb G70,bayesian-inference-intro,lecture,Introduction to Bayesian inference,rosana-zenil-ferguson,https://roszenil.github.io/mytutorials/docs/statistics/files/bayesian_stats_intro.pdf
-5/19/2026,14:00,15:30,Loeb G70,model-selection,lecture,Model selection,jeremy-brown,{{ site.baseurl }}/materials/lectures/brown/model-selection.pdf
-5/19/2026,15:30,17:00,Loeb G70,bayesian-phylogenetics,lecture,Bayesian phylogenetics,claudia-solis-lemus,{{ site.baseurl }}/materials/lectures/solis-lemus/bayesian-phylogenetics.pdf
-5/19/2026,19:00,20:30,Loeb G70,iqtree-intro,lecture,Introduction to IQ-TREE,TAs,{{ site.baseurl }}/materials/lectures/bui/iqtree-intro.pdf
+5/19/2026,14:00,15:30,Loeb G70,model-selection,lecture,Model selection,jeremy-brown,
+5/19/2026,15:30,17:00,Loeb G70,bayesian-phylogenetics,lecture,Bayesian phylogenetics,claudia-solis-lemus,
+5/19/2026,19:00,20:30,Loeb G70,iqtree-intro,lecture,Introduction to IQ-TREE,TAs,
 5/19/2026,20:30,22:00,Loeb G70,iqtree-lab,lab,IQ-TREE,TAs,https://iqtree.github.io/workshop/molevol_tutorial2026
 5/19/2026,22:00,23:30,MBL Club,evening-social,other,Evening social,,
 5/20/2026,9:00,10:30,Loeb G70,revbayes-graphical-models,lecture,RevBayes graphical models,jeremy-brown,/materials/lectures/brown/revbayes-graphical-models.pdf
@@ -20,46 +20,43 @@ date,start_time,end_time,room,item_id,category,title,presenter,material_location
 5/20/2026,14:00,15:30,Loeb G70,divergence-time-estimation,lecture,Divergence time estimation,tracy-heath,https://figshare.com/articles/Bayesian_Divergence-Time_Estimation_Lecture/6849005
 5/20/2026,15:30,17:00,Loeb G70,divergence-time-lab,lab,Divergence time estimation,tracy-heath,https://revbayes.github.io/tutorials/fbd_simple
 5/20/2026,17:30,19:00,Swope Private Dining Room,logan-panel-mixer,other,Logan panel mixer,,
-5/20/2026,19:00,20:30,Loeb G70,coalescent-intro,lecture,Introduction to the coalescent,peter-beerli,{{ site.baseurl }}/materials/lectures/beerli/coalescent-intro.pdf
-5/20/2026,20:30,22:00,Loeb G70,coalescent-extending,lecture,Extending the coalescent,peter-beerli,{{ site.baseurl }}/materials/lectures/beerli/coalescent-extending.pdf
+5/20/2026,19:00,20:30,Loeb G70,coalescent-intro,lecture,Introduction to the coalescent,peter-beerli,
+5/20/2026,20:30,22:00,Loeb G70,coalescent-extending,lecture,Extending the coalescent,peter-beerli,
 5/20/2026,22:00,23:30,MBL Club,social,other,Evening social,,
-5/21/2026,9:00,10:30,Loeb G70,species-tree-estimation,lecture,Species tree estimation,laura-kubatko,{{ site.baseurl }}/materials/lectures/kubatko/species-tree-estimation.pdf
-5/21/2026,10:30,12:00,Loeb G70,species-tree-estimation,lecture,Species tree estimation,laura-kubatko,{{ site.baseurl }}/materials/lectures/kubatko/species-tree-estimation.pdf
+5/21/2026,9:00,12:00,Loeb G70,species-tree-estimation,lecture,Species tree estimation,laura-kubatko,
 5/21/2026,14:00,15:30,Loeb G70,paup-session,lab,PAUP*,david-swofford,{{ site.baseurl }}/materials/labs/paup/paup-lab.html
 5/21/2026,15:30,17:00,Loeb G70,svdquartets-tutorial,lab,Species tree estimation with SVDQuartets,laura-kubatko,{{ site.baseurl }}/materials/labs/svdquartets_tutorial/species-trees-tutorial-2026.html
 5/21/2026,19:00,20:30,Loeb G70,reticulate-evolution-networks,lecture,Reticulate evolution and phylogenetic networks,claudia-solis-lemus,https://figshare.com/articles/presentation/MOLE_2025_Phylogenetic_networks_lecture/29144483?file=54806237
 5/21/2026,20:30,22:00,Loeb G70,network-models-tutorial,lab,Phylogenetic network models,claudia-solis-lemus,https://solislemuslab.github.io/snaq-tutorial/
 5/21/2026,22:00,23:30,MBL Club,social,other,Evening social,,
-5/22/2026,9:00,10:30,Loeb G70,migrate-bayesfactor,lecture,Migrate and Bayes factors,peter-beerli,{{site.baseurl}}/materials/lectures/beerli/migrate-bayesfactor.pdf
+5/22/2026,9:00,10:30,Loeb G70,migrate-bayesfactor,lecture,Migrate and Bayes factors,peter-beerli,
 5/22/2026,10:30,12:00,Loeb G70,migrate-tutorial,lab,Migrate,peter-beerli,{{ site.baseurl }}/materials/labs/migrate_tutorial/MIGRATEtutorial2023.html
-5/22/2026,14:00,15:30,Loeb G70,ant-phylogenomics-1,lecture,Ant phylogenomics I,corrie-moreau,{{ site.baseurl }}/materials/lectures/moreau/ant-phylogenomics-1.pdf
-5/22/2026,15:30,17:00,Loeb G70,ant-phylogenomics-2,lecture,Ant phylogenomics II,corrie-moreau,{{ site.baseurl }}/materials/lectures/moreau/ant-phylogenomics-2.pdf
+5/22/2026,14:00,15:30,Loeb G70,ant-phylogenomics-1,lecture,Ant phylogenomics I,corrie-moreau,
+5/22/2026,15:30,17:00,Loeb G70,ant-phylogenomics-2,lecture,Ant phylogenomics II,corrie-moreau,
 5/22/2026,17:00,19:00,Loeb G70,science-under-pressure,lecture,Science under pressure,joseph-bielawski,http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Pressure_Ethics_2026.pdf
 5/22/2026,19:00,22:00,Swope Cafe,course-dinner,other,Course dinner,,
 5/22/2026,22:00,23:30,MBL Club,post-dinner-social,other,Post-dinner social,,
 5/23/2026,0:00,0:00,Martha's Vineyard,free-day,other,Free day,,
 5/24/2026,9:00,10:30,Loeb G70,theories-molecular-evolution,lecture,Theories of molecular evolution,joseph-bielawski,http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_1.pdf
 5/24/2026,10:30,12:00,Loeb G70,codon-models-intro,lecture,Introduction to codon models,joseph-bielawski,http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Bielawski_lecture_PART_2.pdf
-5/24/2026,14:00,15:30,Loeb G70,adaptive-protein-intro,lecture,Adaptive protein evolution I,belinda-chang,{{ site.baseurl }}/materials/lectures/chang/adaptive-protein-intro.pdf
-5/24/2026,15:30,17:00,Loeb G70,adaptive-protein-selection,lecture,Adaptive protein evolution II,belinda-chang,{{ site.baseurl }}/materials/lectures/chang/adaptive-protein-selection.pdf
-5/24/2026,19:00,20:30,Loeb G70,machine-learning-lecture,lecture,Machine learning in molecular evolution,megan-smith,{{ site.baseurl }}/materials/lectures/smith/machine-learning.pdf
-5/24/2026,20:30,22:00,Loeb G70,machine-learning-tutorial,lab,Machine learning,megan-smith,/machine-learning-tutorial/
+5/24/2026,14:00,15:30,Loeb G70,adaptive-protein-intro,lecture,Adaptive protein evolution I,belinda-chang,
+5/24/2026,15:30,17:00,Loeb G70,adaptive-protein-selection,lecture,Adaptive protein evolution II,belinda-chang,
+5/24/2026,19:00,20:30,Loeb G70,machine-learning,lecture,Machine learning in molecular evolution,megan-smith,
+5/24/2026,20:30,22:00,Loeb G70,machine-learning-lab,lab,Machine learning,megan-smith,/machine-learning-tutorial/
 5/24/2026,22:00,23:30,MBL Club,social,other,Evening social,,
 5/25/2026,9:00,10:30,Loeb G70,paml-lab,lab,PAML,joseph-bielawski,http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/lab.html http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/pamlDEMO.pdf
 5/25/2026,10:30,12:00,Loeb G70,paml-advanced-resources,lab,PAML advanced resources,joseph-bielawski,http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/Resources.html https://bitbucket.org/EvoWorks/protocol-inference-of-episodic-selection/downloads
-5/25/2026,14:00,15:30,Loeb G70,phylodynamics-1,lecture,Phylodynamics I,mandev-gill,{{ site.baseurl }}/materials/lectures/gill/phylodynamics-1.pdf
-5/25/2026,15:30,17:00,Loeb G70,phylodynamics-2,lecture,Phylodynamics II,mandev-gill,{{ site.baseurl }}/materials/lectures/gill/phylodynamics-2.pdf
-5/25/2026,19:00,20:30,Loeb G70,phylogeography,lecture,Phylogeography,scott-edwards,{{ site.baseurl }}/materials/lectures/edwards/phylogeography.pdf
-5/25/2026,20:30,22:00,Loeb G70,pangenomes,lecture,Pangenomes and comparative genomics,scott-edwards,{{ site.baseurl }}/materials/lectures/edwards/pangenomes.pdf
+5/25/2026,14:00,15:30,Loeb G70,phylodynamics-1,lecture,Phylodynamics I,mandev-gill,
+5/25/2026,15:30,17:00,Loeb G70,phylodynamics-2,lecture,Phylodynamics II,mandev-gill,
+5/25/2026,19:00,20:30,Loeb G70,phylogeography,lecture,Phylogeography,scott-edwards,
+5/25/2026,20:30,22:00,Loeb G70,pangenomes,lecture,Pangenomes and comparative genomics,scott-edwards,
 5/25/2026,22:00,23:30,MBL Club,social,other,Evening social,,
-5/26/2026,9:00,10:30,Loeb G70,deep-phylogenomics,lecture,Deep phylogenomics,laura-eme,{{ site.baseurl }}/materials/lectures/eme/deep-phylogenomics.pdf
-5/26/2026,10:30,12:00,Loeb G70,deep-phylogenomics,lecture,Deep phylogenomics,laura-eme,{{ site.baseurl }}/materials/lectures/eme/deep-phylogenomics.pdf
-5/26/2026,14:00,15:00,Loeb G70,phylogenomics,lecture,Phylogenomics,emily-jane-mctavish,{{ site.baseurl }}/materials/lectures/mctavish/phylogenomics.pdf https://github.com/snacktavish/Mole2023/blob/master/TreeUpdating.md
-5/26/2026,15:00,15:30,Loeb G70,phylogenomics-session,lab,Tree updating,emily-jane-mctavish,https://github.com/snacktavish/TreeUpdatingComparison/blob/master/TreeUpdating.md
-5/26/2026,15:30,17:00,Loeb G70,open-tree-of-life,lecture,Open Tree of Life,emily-jane-mctavish,{{ site.baseurl }}/materials/lectures/mctavish/opentree.pdf https://github.com/snacktavish/Mole2023/blob/master/TreeComparison.md
+5/26/2026,9:00,12:00,Loeb G70,deep-phylogenomics,lecture,Deep phylogenomics,laura-eme,
+5/26/2026,14:00,15:00,Loeb G70,phylogenomics,lecture,Phylogenomics,emily-jane-mctavish,
+5/26/2026,15:00,15:30,Loeb G70,tree-updating,lab,Tree updating,emily-jane-mctavish,https://github.com/snacktavish/TreeUpdatingComparison/blob/master/TreeUpdating.md
+5/26/2026,15:30,17:00,Loeb G70,open-tree-of-life,lecture,Open Tree of Life,emily-jane-mctavish,
 5/26/2026,15:30,17:00,Loeb G70,tree-comparison,lab,Tree comparison,emily-jane-mctavish,https://github.com/snacktavish/Mole2023/blob/master/TreeComparison.md
-5/26/2026,19:00,20:30,Loeb G70,evolutionary-applications,lecture,Evolutionary applications of genomic data,lacey-knowles,{{ site.baseurl }}/materials/lectures/knowles/evolutionary-applications.pdf
-5/26/2026,20:30,22:00,Loeb G70,evolutionary-applications-cont,lecture,Evolutionary applications of genomic data (cont.),lacey-knowles,{{ site.baseurl }}/materials/lectures/knowles/evolutionary-applications.pdf
+5/26/2026,19:00,22:00,Loeb G70,evolutionary-applications,lecture,Evolutionary applications of genomic data,lacey-knowles,
 5/26/2026,22:00,23:30,MBL Club,end-party,other,End of course party,,
 5/27/2026,9:00,10:30,Loeb G70,ethics-panel-discussion,,Ethics panel discussion,joseph-bielawski,http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Ethics_intro_2025_A.pdf http://awarnach.mathstat.dal.ca/~joeb/PAML_lab/slides/Values_Pressure_Ethics_2026.pdf
 5/27/2026,10:30,12:00,Loeb G70,open-lab,lab,Open lab / project time,,
