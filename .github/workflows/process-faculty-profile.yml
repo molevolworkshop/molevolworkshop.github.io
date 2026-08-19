@@ -26,12 +26,25 @@ jobs:
 
             const issueBody = context.payload.issue.body || '';
 
+            // Robust parser to extract GitHub Issue Form fields into a dictionary
+            const parseIssueBody = (body) => {
+              const fields = {};
+              const sections = body.split(/^###\s+/m);
+              for (const section of sections) {
+                if (!section.trim()) continue;
+                const lines = section.split(/\r?\n/);
+                const label = lines[0].trim();
+                const value = lines.slice(1).join('\n').trim();
+                fields[label] = value;
+              }
+              return fields;
+            };
+
+            const issueFields = parseIssueBody(issueBody);
+
             const getFieldValue = (label) => {
-              const regex = new RegExp(`###\\s+${label}\\s*\\n+([\\s\\S]*?)(?=\\n+###|$)`, 'i');
-              const match = issueBody.match(regex);
-              if (!match) return '';
-              const val = match[1].trim();
-              if (val === '_No response_' || val === 'None') return '';
+              const val = issueFields[label] || '';
+              if (val === '_No response_' || val === 'None' || !val) return '';
               return val;
             };
 
@@ -75,7 +88,6 @@ jobs:
                 const fileContent = fs.readFileSync(filePath, 'utf8');
                 const parts = fileContent.split('---');
                 if (parts.length >= 3) {
-                  // Parse existing frontmatter lines roughly
                   parts[1].trim().split('\n').forEach(line => {
                     const colonIdx = line.indexOf(':');
                     if (colonIdx !== -1) {
@@ -184,7 +196,6 @@ jobs:
 
             const fullMarkdown = frontmatter + bodyContent;
 
-            // Save file to _faculty/ directory
             if (!fs.existsSync(dirPath)){
                 fs.mkdirSync(dirPath, { recursive: true });
             }
@@ -202,16 +213,14 @@ jobs:
             let targetIssueNumber = '';
 
             try {
-              // Fetch open issues from mole-logistics matching required labels
               const { data: issues } = await github.rest.issues.listForRepo({
                 owner: context.repo.owner,
                 repo: 'mole-logistics',
                 state: 'open',
-                labels: 'needs-review, faculty-profile' // Adjust your target labels here (comma-separated string)
+                labels: 'needs-review, faculty-profile'
               });
 
               let issueCloseStr = '';
-              // Find the issue matching the name in the title or body
               const targetIssue = issues.find(issue => 
                 (issue.title && issue.title.includes(submitterName)) || 
                 (issue.body && issue.body.includes(submitterName))
@@ -220,7 +229,6 @@ jobs:
                 targetIssueNumber = targetIssue.number.toString();
                 console.log(`Matched target issue #${targetIssueNumber} in mole-logistics.`);
                 issueCloseStr = `Closes ${context.repo.owner}/mole-logistics#${targetIssueNumber}`
-                
               } else {
                 console.log('No matching issue found with the specified name and tags.');
               }
@@ -228,9 +236,7 @@ jobs:
               console.log('Could not fetch issues from mole-logistics:', err.message);
             }
 
-            // Export environment variable (will be empty string if no match was found)
             core.exportVariable('TARGET_ISSUE', issueCloseStr);
-
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
