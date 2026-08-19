@@ -211,6 +211,7 @@ jobs:
           script: |
             const submitterName = process.env.FACULTY_NAME || '';
             let targetIssueNumber = '';
+            let issueCloseStr = '';
 
             try {
               const { data: issues } = await github.rest.issues.listForRepo({
@@ -220,7 +221,7 @@ jobs:
                 labels: 'needs-review, faculty-profile'
               });
 
-              let issueCloseStr = '';
+              
               const targetIssue = issues.find(issue => 
                 (issue.title && issue.title.includes(submitterName)) || 
                 (issue.body && issue.body.includes(submitterName))
