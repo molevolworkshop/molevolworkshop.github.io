@@ -85,7 +85,7 @@ layout: default
                 <a href="{{ fixed_url }}" target="_blank"><strong>{{ item.title }}</strong></a>
               {% elsif item.category == "lecture" %}
                 {% assign slug = item.item_id | default: item.title | slugify %}
-                <a href="{{ site.baseurl }}/lectures/{{ slug }}/{{ slug }}.pdf" target="_blank"><strong>{{ item.title }}</strong></a>
+                <a href="{{ site.baseurl }}/materials/lectures/{{ slug }}/{{ slug }}.pdf" target="_blank"><strong>{{ item.title }}</strong></a>
               {% else %}
                 <strong>{{ item.title }}</strong>
               {% endif %}
