@@ -47,9 +47,11 @@ layout: default
 
 {{ content }}
 
-{% assign events = site.data.event-schedule | group_by: "date" %}
+{% assign schedule_events = site.data.event-schedule | group_by: "date" %}
+{% assign event_registry = site.data.event-registry %}
+{% assign materials_registry = site.data.materials.materials-registry %}
 
-{% for day in events %}
+{% for day in schedule_events %}
   <h2 class="date-header">{{ day.name | date: "%A, %B %d, %Y" }}</h2>
   
   <div class="table-wrapper">
@@ -75,38 +77,68 @@ layout: default
             {% assign row_class = "row-evening" %}
           {% endif %}
 
+          <!-- Lookup strictly dictated by item.type -->
+          {% assign matched_meta = nil %}
+          {% if item.item_id and item.item_id != "" %}
+            {% if item.type == "material" %}
+              {% for mat in materials_registry %}
+                {% assign mat_id = mat.ID | default: mat.id | default: mat.slug | default: mat.item_id | downcase %}
+                {% assign it_id = item.item_id | downcase | strip %}
+                {% if mat_id == it_id %}
+                  {% assign matched_meta = mat %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+            {% elsif item.type == "event" %}
+              {% for ev in event_registry %}
+                {% assign ev_id = ev.ID | default: ev.id | default: ev.slug | default: ev.item_id | downcase %}
+                {% assign it_id = item.item_id | downcase | strip %}
+                {% if ev_id == it_id %}
+                  {% assign matched_meta = ev %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          {% endif %}
+
+          {% assign display_title = matched_meta.title | default: item.title %}
+          {% assign display_category = matched_meta.category | default: item.category | default: "other" %}
+          {% assign display_location = item.room | default: matched_meta.room %}
+          {% assign display_presenter = matched_meta.presenter | default: item.presenter %}
+          {% assign material_location = matched_meta.material_location %}
+
           <tr class="{{ row_class }}">
             <td class="time-col" data-label="Time">{{ item.start_time }} – {{ item.end_time }}</td>
             <td class="event-col" data-label="Event">
-              {% if item.material_location and item.material_location != "" %}
+              {% if material_location and material_location != "" %}
                 {% assign search_term = '{' | append: '{ site.baseurl }}' %}
                 {% assign search_term_no_spaces = '{' | append: '{site.baseurl}}' %}
-                {% assign fixed_url = item.material_location | replace: search_term, site.baseurl | replace: search_term_no_spaces, site.baseurl %}
-                <a href="{{ fixed_url }}" target="_blank"><strong>{{ item.title }}</strong></a>
-              {% elsif item.category == "lecture" %}
-                {% assign slug = item.item_id | default: item.title | slugify %}
-                <a href="{{ site.baseurl }}/materials/lectures/{{ slug }}/{{ slug }}.pdf" target="_blank"><strong>{{ item.title }}</strong></a>
+                {% assign fixed_url = material_location | replace: search_term, site.baseurl | replace: search_term_no_spaces, site.baseurl %}
+                <a href="{{ fixed_url }}" target="_blank"><strong>{{ display_title }}</strong></a>
+              {% elsif display_category == "lecture" %}
+                {% assign slug = item.item_id | default: display_title | slugify %}
+                <a href="{{ site.baseurl }}/materials/lectures/{{ slug }}/{{ slug }}.pdf" target="_blank"><strong>{{ display_title }}</strong></a>
               {% else %}
-                <strong>{{ item.title }}</strong>
+                <strong>{{ display_title }}</strong>
               {% endif %}
 
-              {% if item.category and item.category != "other" %}
-                <span class="badge {{ item.category }}">{{ item.category }}</span>
+              {% if display_category and display_category != "other" %}
+                <span class="badge {{ display_category }}">{{ display_category }}</span>
               {% endif %}
             </td>
             <td data-label="Location">
-              {% if item.room and item.room != "" %}
-                {{ item.room }}
+              {% if display_location and display_location != "" %}
+                {{ display_location }}
               {% else %}
                 -
               {% endif %}
             </td>
             <td data-label="Presenter">
-              {% if item.presenter and item.presenter != "" %}
+              {% if display_presenter and display_presenter != "" %}
                 {% assign matched_faculty = nil %}
                 {% for f in site.data['faculty-registry'] %}
                   {% assign f_id = f.ID | default: f.id | default: f.slug | default: f.handle | default: f.item_id | downcase %}
-                  {% assign p_id = item.presenter | downcase | strip %}
+                  {% assign p_id = display_presenter | downcase | strip %}
                   {% if f_id == p_id %}
                     {% assign matched_faculty = f %}
                     {% break %}
@@ -114,11 +146,11 @@ layout: default
                 {% endfor %}
 
                 {% if matched_faculty %}
-                  {% assign faculty_name = matched_faculty.name | default: matched_faculty.full_name | default: matched_faculty.title | default: item.presenter %}
-                  {% assign faculty_slug = matched_faculty.ID | default: matched_faculty.id | default: matched_faculty.slug | default: matched_faculty.handle | default: matched_faculty.item_id | default: item.presenter %}
+                  {% assign faculty_name = matched_faculty.name | default: matched_faculty.full_name | default: matched_faculty.title | default: display_presenter %}
+                  {% assign faculty_slug = matched_faculty.ID | default: matched_faculty.id | default: matched_faculty.slug | default: matched_faculty.handle | default: matched_faculty.item_id | default: display_presenter %}
                   <a href="https://molevolworkshop.github.io/faculty/{{ faculty_slug }}/" target="_blank">{{ faculty_name }}</a>
                 {% else %}
-                  {{ item.presenter }}
+                  {{ display_presenter }}
                 {% endif %}
               {% else %}
                 -

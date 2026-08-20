@@ -19,10 +19,13 @@ body:
       label: "Select Your Workshop Role"
       description: "e.g., Director, Teaching Assistant, Course Assistant"
       options:
+        - "Faculty"
         - "Director"
         - "Co-Director"
         - "Teaching Assistant"
+        - "Lead Teaching Assistant
         - "Course Assistant"
+        - "Other"
   
   - type: dropdown
     id: faculty_select
@@ -70,7 +73,7 @@ body:
       description: "e.g., Associate Professor, Senior Scientist, Postdoctoral Researcher"
       placeholder: "Associate Professor"
     validations:
-      required: true
+      required: false
 
   - type: input
     id: department
@@ -86,7 +89,7 @@ body:
       label: "University / Institution"
       placeholder: "University of Wisconsin–Madison"
     validations:
-      required: true
+      required: false
 
   # ---------------------------------------------------------
   # HEADSHOT PHOTO
@@ -152,7 +155,7 @@ body:
       description: "A summary of your research, interests, and background (Markdown formatting supported)."
       placeholder: "My research focuses on computational phylogenetics, statistical models..."
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: additional_resources
