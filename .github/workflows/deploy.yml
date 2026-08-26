@@ -47,7 +47,7 @@ jobs:
 
       - name: Run Unified Preparation Script
         run: |
-          chmod +x ./scripts/prepare-materials.sh
+          chmod +x ./scripts/prep_build.sh
           ./scripts/prep_build.sh
 
       - name: Setup Ruby
