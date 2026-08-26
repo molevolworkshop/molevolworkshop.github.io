@@ -12,6 +12,18 @@ header_pages:
    - schedule.md
    - other.md
 
+defaults:
+  #Global default for everything else in your site
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+  #Specific override for everything inside your labs folder
+  - scope:
+      path: "materials/labs"
+    values:
+      layout: "default"
 
 #not maintained
 #twitter_username: jekyllrb

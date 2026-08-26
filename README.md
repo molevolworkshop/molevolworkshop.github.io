@@ -83,6 +83,13 @@ a new commit is pushed to the repository that affects the web site content.
 
 **NOTE:** The website **is** updated when new commits are made to `moledata`, which the website clones prior to deploying. Additionally, the website can manually be rebuilt with Github Actions.
 
+You can build the website locally with the following commands 
+```
+./scripts/prep_build.sh #downloads moledata and makes index files for labs
+bundle exec jekyll serve 
+
+```
+
 ### Markdown files
 
 Jekyll generates HTML content using markdown files (which have the file

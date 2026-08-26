@@ -118,6 +118,21 @@ layout: default
               {% elsif display_category == "lecture" %}
                 {% assign slug = item.item_id | default: display_title | slugify %}
                 <a href="{{ site.baseurl }}/materials/lectures/{{ slug }}/{{ slug }}.pdf" target="_blank"><strong>{{ display_title }}</strong></a>
+              {% elsif display_category == "lab" %}
+                {% assign slug = item.item_id | default: display_title | slugify %}
+                {% assign lab_path = "materials/labs/" | append: slug | append: "/index.md" %}
+                {% assign lab_exists = false %}
+                {% for p in site.pages %}
+                  {% if p.path == lab_path %}
+                    {% assign lab_exists = true %}
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+                {% if lab_exists %}
+                  <a href="{{ site.baseurl }}/materials/labs/{{ slug }}/"><strong>{{ display_title }}</strong></a>
+                {% else %}
+                  <strong>{{ display_title }}</strong>
+                {% endif %}
               {% else %}
                 <strong>{{ display_title }}</strong>
               {% endif %}

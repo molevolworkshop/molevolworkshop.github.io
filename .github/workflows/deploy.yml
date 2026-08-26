@@ -45,11 +45,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-lfs-
 
-      - name: Pull LFS Objects
+      - name: Run Unified Preparation Script
         run: |
-          cd materials
-          git lfs install --local
-          git lfs pull
+          chmod +x ./scripts/prepare-materials.sh
+          ./scripts/prep_build.sh
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -68,6 +67,7 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        
 
   # Deployment job
   deploy:
