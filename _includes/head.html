@@ -13,7 +13,6 @@
         async src="//gc.zgo.at/count.js"></script>
 
 <script>
-    // Automatically populated from your Jekyll data registry
     const registeredMaterials = [
         {% for item in site.data.material_registry %}
             {% if item.material_location and item.material_location != "" %}
@@ -32,15 +31,14 @@
 
         var url = link.href;
         var cleanUrl = url.split('?')[0].split('#')[0];
+        var filename = cleanUrl.split('/').pop().toLowerCase();
 
-        if (window.goatcounter && typeof window.goatcounter.count !== 'function') return;
+        if (!window.goatcounter || typeof window.goatcounter.count !== 'function') return;
 
         // 1. Check if the clicked link is a PDF
-        if (cleanUrl.toLowerCase().endsWith('.pdf')) {
-            // Try to find a matching registry item by comparing filename or full url
-            var filename = cleanUrl.split('/').pop();
+        if (cleanUrl.endsWith('.pdf')) {
             var matchedPdfItem = registeredMaterials.find(function(m) {
-                return m.url === url || m.url === cleanUrl || m.url.endsWith(filename);
+                return m.url === url || m.url === cleanUrl || m.url.toLowerCase().endsWith(filename);
             });
 
             var eventPath = matchedPdfItem ? matchedPdfItem.id + '-download' : 'download-' + filename;
@@ -55,15 +53,29 @@
 
         // 2. Check if the clicked link matches an external/custom material registry link
         var matchedMaterial = registeredMaterials.find(function(m) {
-            return m.url === url || m.url === cleanUrl || url.endsWith(m.url);
+            return m.url === url || m.url === cleanUrl || url.endsWith(m.url) || m.url.endsWith(cleanUrl);
         });
 
         if (matchedMaterial) {
-            window.goatcounter.count({
-                path: matchedMaterial.eventPath,
-                title: link.innerText || 'Material Registry Link',
-                event: true,
-            });
+            // If it's an external link or opens in a new tab, prevent instant navigation unload
+            var isExternal = link.hostname !== window.location.hostname;
+            if (isExternal || link.target === '_blank') {
+                e.preventDefault();
+                window.goatcounter.count({
+                    path: matchedMaterial.eventPath,
+                    title: link.innerText || 'Material Registry Link',
+                    event: true,
+                });
+                setTimeout(function() {
+                    window.location.href = url;
+                }, 150); // Small delay to let the beacon fire
+            } else {
+                window.goatcounter.count({
+                    path: matchedMaterial.eventPath,
+                    title: link.innerText || 'Material Registry Link',
+                    event: true,
+                });
+            }
         }
     });
 </script>
