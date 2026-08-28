@@ -6,9 +6,60 @@
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="shortcut icon" type="image/png" href="{{ "/assets/img/favicon.png" | relative_url }}">
   {%- feed_meta -%}
-  {% if jekyll.environment == "production" %}
-<script data-goatcounter="https://moleevolution.goatcounter.com/count"
+  
+  
+{% if jekyll.environment == "production" %}
+<script data-goatcounter="https://{{ site.goatcounter_code }}.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+
+<script>
+    // Automatically populated from your Jekyll data registry
+    const registeredMaterials = [
+        {% for item in site.data.material_registry %}
+            {% if item.material_location and item.material_location != "" %}
+            {
+                id: "{{ item.item_id }}",
+                url: "{{ item.material_location }}",
+                eventPath: "{{ item.item_id }}-{{ item.custom_url | default: 'resource' }}"
+            },
+            {% endif %}
+        {% endfor %}
+    ];
+
+    document.addEventListener('click', function(e) {
+        var link = e.target.closest('a');
+        if (!link || !link.href) return;
+
+        var url = link.href;
+        var cleanUrl = url.split('?')[0].split('#')[0];
+
+        if (window.goatcounter && typeof window.goatcounter.count !== 'function') return;
+
+        // 1. Check if the clicked link is a PDF matching any material registry item
+        if (cleanUrl.toLowerCase().endsWith('.pdf')) {
+            var matchedPdfItem = registeredMaterials.find(m => m.url === url || m.url === cleanUrl);
+            var eventPath = matchedPdfItem ? matchedPdfItem.id + '-onsite' : 'download-' + link.getAttribute('href').split('/').pop();
+            
+            window.goatcounter.count({
+                path: eventPath,
+                title: link.innerText || 'PDF Download',
+                event: true,
+            });
+            return;
+        }
+
+        // 2. Check if the clicked link matches any external/custom material registry link
+        var matchedMaterial = registeredMaterials.find(m => m.url === url || m.url === cleanUrl);
+        if (matchedMaterial) {
+            window.goatcounter.count({
+                path: matchedMaterial.eventPath,
+                title: link.innerText || 'Material Registry Link',
+                event: true,
+            });
+        }
+    });
+</script>
+
 {% endif %}
 </head>
 
