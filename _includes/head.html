@@ -13,15 +13,14 @@
         async src="//gc.zgo.at/count.js"></script>
 
 <script>
-    const registeredMaterials = [
+    // Build a lookup map of your registry items
+    const registryItems = [
         {% for item in site.data.material_registry %}
-            {% if item.material_location and item.material_location != "" %}
-            {
-                id: "{{ item.item_id }}",
-                url: "{{ item.material_location }}",
-                eventPath: "{{ item.item_id }}-{{ item.custom_url | default: 'resource' }}"
-            },
-            {% endif %}
+        {
+            id: "{{ item.item_id }}",
+            location: "{{ item.material_location }}",
+            eventPath: "{{ item.item_id }}-{{ item.custom_url | default: 'download' }}"
+        },
         {% endfor %}
     ];
 
@@ -35,47 +34,55 @@
 
         if (!window.goatcounter || typeof window.goatcounter.count !== 'function') return;
 
-        // 1. Check if the clicked link is a PDF
-        if (cleanUrl.endsWith('.pdf')) {
-            var matchedPdfItem = registeredMaterials.find(function(m) {
-                return m.url === url || m.url === cleanUrl || m.url.toLowerCase().endsWith(filename);
-            });
-
-            var eventPath = matchedPdfItem ? matchedPdfItem.id + '-download' : 'download-' + filename;
-            
-            window.goatcounter.count({
-                path: eventPath,
-                title: link.innerText || 'PDF Download',
-                event: true,
-            });
-            return;
-        }
-
-        // 2. Check if the clicked link matches an external/custom material registry link
-        var matchedMaterial = registeredMaterials.find(function(m) {
-            return m.url === url || m.url === cleanUrl || url.endsWith(m.url) || m.url.endsWith(cleanUrl);
+        // 1. Check if it matches an explicit external material_location
+        var matchedExternal = registryItems.find(function(item) {
+            return item.location && (item.location === url || item.location === cleanUrl || url.endsWith(item.location));
         });
 
-        if (matchedMaterial) {
-            // If it's an external link or opens in a new tab, prevent instant navigation unload
+        if (matchedExternal) {
             var isExternal = link.hostname !== window.location.hostname;
             if (isExternal || link.target === '_blank') {
                 e.preventDefault();
                 window.goatcounter.count({
-                    path: matchedMaterial.eventPath,
+                    path: matchedExternal.eventPath,
                     title: link.innerText || 'Material Registry Link',
                     event: true,
                 });
                 setTimeout(function() {
                     window.location.href = url;
-                }, 150); // Small delay to let the beacon fire
+                }, 150);
             } else {
                 window.goatcounter.count({
-                    path: matchedMaterial.eventPath,
+                    path: matchedExternal.eventPath,
                     title: link.innerText || 'Material Registry Link',
                     event: true,
                 });
             }
+            return;
+        }
+
+        // 2. Handle blank/onsite items (PDFs or local files where material_location was left blank)
+        // Try to find a registry item whose item_id matches part of the filename or path
+        var matchedOnsite = registryItems.find(function(item) {
+            return !item.location && (filename.includes(item.id) || cleanUrl.includes(item.id));
+        });
+
+        if (matchedOnsite) {
+            window.goatcounter.count({
+                path: matchedOnsite.id + '-download',
+                title: link.innerText || 'Onsite Material Download',
+                event: true,
+            });
+            return;
+        }
+
+        // 3. Absolute fallback for any other unlisted PDF
+        if (cleanUrl.endsWith('.pdf')) {
+            window.goatcounter.count({
+                path: filename.replace('.pdf', '') + '-download',
+                title: link.innerText || 'PDF Download',
+                event: true,
+            });
         }
     });
 </script>
