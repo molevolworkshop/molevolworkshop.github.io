@@ -7,18 +7,20 @@ These files manage dynamic content such as the schedule, current instructors and
 Stores the complete day-by-day timetable of events, lectures, labs, and social gatherings for the workshop.
 
 This file has the following elements:
-- date: The calendar date of the event (e.g., 5/17/2026).
-- start_time: The start time in 24-hour format (e.g., 18:00).
-- end_time: The end time in 24-hour format (e.g., 21:00).
-- room: The physical location or venue where the event takes place (e.g., MBL Club (100 Water St.)).
-- item_id: A unique machine-readable slug/identifier for the event item (e.g., opening-reception).
-- category: The type of session. Common values include lecture, lab, or other.
-- title: The display title of the session or event.
-- presenter: The name of the instructor or speaker leading the session (leave blank if not applicable). These generally should match the `ID` element of a faculty found in the `faculty-registry.csv` 
-- material_location: Path or URL to slides, code repositories, or auxiliary files associated with the session (leave blank if none).
+- `date`: The calendar date of the event (e.g., 5/17/2026).
+- `start_time`: The start time in 24-hour format (e.g., 18:00).
+- `end_time`: The end time in 24-hour format (e.g., 21:00).
+- `room`: The physical location or venue where the event takes place (e.g., MBL Club (100 Water St.)).
+- `item_id`: A unique machine-readable slug/identifier for the event item (e.g., opening-reception).
+- `type`: Either `event` or `material`. This specifies the appropriate registry to look for the event-specific information. 
 
 Ensure all times use 24-hour formatting (HH:MM).
 Use clear, concise titles and lowercase slug identifiers for item_id. 
+
+### event-registry.CSV
+
+Contains the non-lecture/lab event information. 
+
 Leave presenter and material_location empty (NaN or blank) if the event is a break, reception, or unstructured block.
 
 ### faculty-registry.csv

@@ -35,10 +35,15 @@
 
         if (window.goatcounter && typeof window.goatcounter.count !== 'function') return;
 
-        // 1. Check if the clicked link is a PDF matching any material registry item
+        // 1. Check if the clicked link is a PDF
         if (cleanUrl.toLowerCase().endsWith('.pdf')) {
-            var matchedPdfItem = registeredMaterials.find(m => m.url === url || m.url === cleanUrl);
-            var eventPath = matchedPdfItem ? matchedPdfItem.id + '-onsite' : 'download-' + link.getAttribute('href').split('/').pop();
+            // Try to find a matching registry item by comparing filename or full url
+            var filename = cleanUrl.split('/').pop();
+            var matchedPdfItem = registeredMaterials.find(function(m) {
+                return m.url === url || m.url === cleanUrl || m.url.endsWith(filename);
+            });
+
+            var eventPath = matchedPdfItem ? matchedPdfItem.id + '-download' : 'download-' + filename;
             
             window.goatcounter.count({
                 path: eventPath,
@@ -48,8 +53,11 @@
             return;
         }
 
-        // 2. Check if the clicked link matches any external/custom material registry link
-        var matchedMaterial = registeredMaterials.find(m => m.url === url || m.url === cleanUrl);
+        // 2. Check if the clicked link matches an external/custom material registry link
+        var matchedMaterial = registeredMaterials.find(function(m) {
+            return m.url === url || m.url === cleanUrl || url.endsWith(m.url);
+        });
+
         if (matchedMaterial) {
             window.goatcounter.count({
                 path: matchedMaterial.eventPath,
@@ -59,7 +67,6 @@
         }
     });
 </script>
-
 {% endif %}
 </head>
 
