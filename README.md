@@ -8,8 +8,14 @@ If you are instead interested in seeing the actual
 web site, please visit
 [molevolworkshop.github.io](https://molevolworkshop.github.io) instead.
 
+Lab and lecture content is in the [moledata](https://github.com/molevolworkshop/moledata) repo.
+
 For faculty wishing to update their workshop lectures or labs, please look at [this](https://github.com/molevolworkshop/moledata) repository instead.
 For faculty wishing to update their profile page, please look at `README` in the `_faculty` folder.
+
+## Workflow
+This repo makes heavy use of Github Actions to automate certain processes.
+If changing things please familiarize yourself with file formats (often specified in `README` files) and the actions themselves found in the `./github/workflows` folder.
 
 ## Organization of the web site
 
@@ -54,7 +60,7 @@ See the `README.md` in the  _\_faculty_ folder for more information on these pag
 ### Schedule page
 
 The _schedule.md_ will generate a page that contains the daily schedule, and links to relevant materials to each presentation or lab.
-This page uses `event-schedule.csv`, and `faculty-registry.csv` to generate the appropriate tables. 
+This page uses `event-schedule.csv`, and `faculty-registry.csv`, and `event-registry` in `/_data/` and `/materials/_data/material-registry` to generate the appropriate tables. 
 
 Lecture materials stored in the `moledata` repo gets brought into the website upon deployment and is renamed to the `materials` folder.
 This means that if you want to link to a specific file that has the directory structure `moledata/lectures/topic/lecture.pdf`, you can do so with `({{ site.baseurl }}/materials/lectures/topic/lecture.pdf)`.
@@ -87,8 +93,9 @@ You can build the website locally with the following commands
 ```
 ./scripts/prep_build.sh #downloads moledata and makes index files for labs
 bundle exec jekyll serve 
-
 ```
+
+The `prep_build.sh` script is used to bring the `moledata` repo into the website repo under `materials` and convert some of the `README.md` files to `index.md` for better website pathing.
 
 ### Markdown files
 
@@ -106,6 +113,13 @@ directory.
 * [Mark Dunkley Liquid Cheatsheet](http://cheat.markdunkley.com)
 * [Adam Pritchard Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 * [GitHub Markdown Cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+
+### Layouts and Headers/Footers
+
+Many of the pages specify a `layout` that dictates how the page is rendered in the browser. The layouts in the `layouts` folder specifies the style for each page type.
+
+Also, all pages have the same header and footer specified in the `_includes` folder (`header.html` and `footer.html`, respectively)
+Lastly, pages also use the `_/includes/head.html` which specififes some metadata and the image in tabs.
 
 ### Liquid
 
