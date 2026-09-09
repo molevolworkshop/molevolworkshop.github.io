@@ -64,7 +64,7 @@ jobs:
                   owner: context.repo.owner,
                   repo: 'mole-logistics',
                   state: 'open',
-                  labels: 'needs-review,faculty-profile'
+                  labels: 'needs-review,faculty-page'
                 });
 
                 const targetIssue = issues.find(issue => 
