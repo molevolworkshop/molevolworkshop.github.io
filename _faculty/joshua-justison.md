@@ -15,4 +15,4 @@ departure_date: "09/08/2027"
 
 ## About
 
-My research focuses on phylogenetic networks.
+My research focuses on developing methods related to phylogenetic networks.
