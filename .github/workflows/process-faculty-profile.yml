@@ -14,8 +14,18 @@ jobs:
       pull-requests: write
 
     steps:
+      - name: Generate GitHub App Token
+        id: generate-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+    
+    
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
 
       - name: Generate or Update Faculty Markdown File
         uses: actions/github-script@v7
@@ -205,44 +215,10 @@ jobs:
             core.exportVariable('FACULTY_SLUG', slug);
             core.exportVariable('FACULTY_NAME', fullName);
 
-      - name: Find Cross-Repo Issue 
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.LOGISTICS_PAT }}
-          script: |
-            const submitterName = process.env.FACULTY_NAME || '';
-            let targetIssueNumber = '';
-            let issueCloseStr = '';
-
-            try {
-              const { data: issues } = await github.rest.issues.listForRepo({
-                owner: context.repo.owner,
-                repo: 'mole-logistics',
-                state: 'open',
-                labels: 'needs-review,faculty-profile'
-              });
-
-              
-              const targetIssue = issues.find(issue => 
-                (issue.title && issue.title.includes(submitterName)) || 
-                (issue.body && issue.body.includes(submitterName))
-              );
-              if (targetIssue) {
-                targetIssueNumber = targetIssue.number.toString();
-                console.log(`Matched target issue #${targetIssueNumber} in mole-logistics.`);
-                issueCloseStr = `Closes ${context.repo.owner}/mole-logistics#${targetIssueNumber}`
-              } else {
-                console.log('No matching issue found with the specified name and tags.');
-              }
-            } catch (err) {
-              console.log('Could not fetch issues from mole-logistics:', err.message);
-            }
-
-            core.exportVariable('TARGET_ISSUE', issueCloseStr);
-
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
+          token: ${{ steps.generate-token.outputs.token }}
           commit-message: "update faculty profile: ${{ env.FACULTY_NAME }}"
           title: "Faculty Profile Update: ${{ env.FACULTY_NAME }}"
           body: |
@@ -252,7 +228,6 @@ jobs:
             * **Target File:** `_faculty/${{ env.FACULTY_SLUG }}.md`
             
             Closes #${{ github.event.issue.number }}
-            ${{ env.TARGET_ISSUE }}
             
             **NOTE:** For some actions to properly execute, somebody with push access to this repo and `mole-logistics` should merge the PR.  
           branch: "update-faculty/${{ env.FACULTY_SLUG }}"
@@ -262,6 +237,7 @@ jobs:
       - name: Comment on Issue
         uses: actions/github-script@v7
         with:
+          github-token: ${{ steps.generate-token.outputs.token }}
           script: |
             github.rest.issues.createComment({
               issue_number: context.issue.number,
