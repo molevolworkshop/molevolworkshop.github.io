@@ -7,9 +7,9 @@ body:
     attributes:
       value: |
         ### Faculty & Speaker Profile Submission
-        Welcome! Please use this form to create or update your bio page on the workshop website. 
+        Welcome! Please use this form to create or update your bio page on the workshop website.  If you already have a bio page then you may leave any field blank to keep the old content in the bio page. 
         Once submitted, an automated bot will process your details and generate a preview Pull Request for review.
-
+        
   # ---------------------------------------------------------
   # BASIC INFORMATION
   # ---------------------------------------------------------
@@ -113,7 +113,7 @@ body:
       description: |
         Add your social handles or custom contact links below, one per line using the format: `Type: Handle or URL`.
         
-        **Supported Types:** `GitHub`, `Twitter`, `Email`, `Bluesky`, `ORCID`, `Google Scholar`, or any `Custom` label.
+        **Supported Types:** `GitHub`, `Twitter`, `Email`, `Bluesky`, `ORCID`, `Google Scholar`, or any `Custom` label (e.g., `Lab Site: URL`).
       placeholder: |
         GitHub: jmithons
         Twitter: jsmithons
@@ -133,7 +133,7 @@ body:
     id: arrival_date
     attributes:
       label: "Arrival Date"
-      placeholder: "MM/DD/YY (e.g., 06/13/27)"
+      placeholder: "MM/DD/YY"
     validations:
       required: false
 
@@ -141,7 +141,7 @@ body:
     id: departure_date
     attributes:
       label: "Departure Date"
-      placeholder: "MM/DD/YY (e.g., 06/21/27)"
+      placeholder: "MM/DD/YY"
     validations:
       required: false
 
@@ -162,7 +162,7 @@ body:
     attributes:
       label: "Other Resources & Lecture Notes"
       description: "Any supplementary links, reading lists, or sub-headers you want on your page."
-      placeholder: |
+
         ### Recommended Reading
         * [Paper Title](https://example.com)
         
