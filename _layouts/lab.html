@@ -2,7 +2,7 @@
 layout: default
 ---
 <style>
-  /* Container for the whole lab page, breaking out of narrow theme defaults */
+  /* Layout Container */
   .lab-wrapper {
     display: flex;
     flex-direction: row;
@@ -28,91 +28,93 @@ layout: default
     word-wrap: break-word; 
   }
 
-  /* Main Content Styling */
-  .lab-content {
-    flex: 1; 
-    min-width: 0; 
+  /* Main Overview Header Styling */
+  .lab-sidebar h3 { 
+    margin-top: 0; 
+    font-size: 1.2rem;
+    border-bottom: 2px solid #eaecef;
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
+  }
+  .lab-sidebar h3 a { 
+    color: #0366d6; 
+    text-decoration: none; 
+    display: inline-block;
+  }
+  .lab-sidebar h3 a::before {
+    content: "🏠 ";
+    font-size: 0.9em;
+  }
+  .lab-sidebar h3 a:hover { 
+    text-decoration: underline; 
   }
 
-  /* OVERRIDE: Strip theme's narrow text column restrictions */
-  .lab-content p,
-  .lab-content h1,
-  .lab-content h2,
-  .lab-content h3,
-  .lab-content h4,
-  .lab-content ul,
-  .lab-content ol,
-  .lab-content pre,
-  .lab-content table {
+  .lab-content { flex: 1; min-width: 0; }
+  .lab-content p, .lab-content h1, .lab-content h2, .lab-content h3, 
+  .lab-content h4, .lab-content ul, .lab-content ol, .lab-content pre, .lab-content table {
     max-width: 100% !important;
     width: 100% !important;
   }
 
-  /* Sidebar Hierarchy & Subfolder Styling */
-  .sidebar-menu ul {
-    list-style-type: none;
-    padding-left: 1rem;
-    margin: 0.25rem 0;
-  }
-  .sidebar-menu > ul {
+  /* Navigation Tree Styling & Bullet Removal */
+  .sidebar-menu,
+  .sidebar-menu ul,
+  .sidebar-menu li { 
+    list-style: none !important; 
+    list-style-type: none !important; 
     padding-left: 0;
+    margin: 0;
   }
-  .nav-group { 
-    margin-bottom: 0.5rem; 
-  }
-  .nav-subfolder {
-    margin-left: 0.5rem;
-    border-left: 1px solid #d0d0d0;
-    padding-left: 0.5rem;
-    margin-top: 0.4rem;
+
+  .sidebar-menu ul { 
+    padding-left: 1.1rem !important; 
+    margin: 0.25rem 0 !important; 
   }
   
-  /* Link color matching */
-  .nav-subfolder summary a,
-  .sidebar-menu a {
-    color: #0366d6;
-    text-decoration: none;
-  }
-  .nav-subfolder summary a:hover,
-  .sidebar-menu a:hover {
-    text-decoration: underline;
+  .sidebar-menu li { 
+    margin: 0.35rem 0; 
   }
 
-  /* Distinguish page clicks vs download clicks with clean icons */
-  .nav-file::before {
-    content: "📄 ";
-    font-size: 0.85em;
-  }
-  .nav-download::before {
-    content: "📥 ";
-    font-size: 0.85em;
+  .nav-group { margin-bottom: 0.4rem; }
+  .nav-subfolder { margin-left: 0; border-left: none; padding-left: 0; margin-top: 0.4rem; }
+
+  .nav-subfolder summary {
+    cursor: pointer;
+    font-weight: 600;
   }
 
-  .nav-single {
-    margin-bottom: 0.4rem;
+  .nav-subfolder summary a, .sidebar-menu a { 
+    color: #0366d6; 
+    text-decoration: none; 
   }
-  .sidebar-menu li {
-    margin: 0.3rem 0;
+  .nav-subfolder summary a:hover, .sidebar-menu a:hover { 
+    text-decoration: underline; 
+  }
+  .sidebar-menu a.active-link { 
+    font-weight: bold; 
+    color: #000;
   }
 
-  /* Mobile Responsiveness */
+  .nav-file::before { content: "📄 "; font-size: 0.85em; }
+  .nav-download::before { content: "📥 "; font-size: 0.85em; }
+
+  /* Subheadings TOC */
+  .toc-subheadings-list {
+    list-style: none !important;
+    padding-left: 1.25rem !important;
+    margin: 0.25rem 0 !important;
+    font-size: 0.9em;
+    font-weight: normal;
+  }
+  .toc-subheadings-list li { margin: 0.2rem 0; }
+  .toc-subheadings-list .toc-level-3 { padding-left: 0.75rem; font-size: 0.95em; }
+
   @media (max-width: 768px) {
-    .lab-wrapper {
-      flex-direction: column;
-      width: 95vw;
-      gap: 2rem;
-    }
-    .lab-sidebar {
-      width: 100%;
-      position: static;
-      flex: none;
-    }
+    .lab-wrapper { flex-direction: column; width: 95vw; gap: 2rem; }
+    .lab-sidebar { width: 100%; position: static; flex: none; }
   }
 </style>
 
-{% comment %}
-  Extract lab folder name dynamically from URL (/materials/labs/<lab_slug>/...)
-{% endcomment %}
 {% assign path_parts = page.url | split: "/" %}
 {% assign lab_slug = path_parts[3] %}
 {% assign lab_dir = "/materials/labs/" | append: lab_slug | append: "/" %}
@@ -121,199 +123,195 @@ layout: default
 <div class="lab-wrapper">
   <!-- Dynamic Sidebar -->
   <aside class="lab-sidebar">
-    <h3>{{ dynamic_lab_title }}</h3>
-    <nav class="sidebar-menu">
-      {% assign lab_pages = site.pages | where_exp: "p", "p.url contains lab_dir" | sort: "url" %}
-      {% assign lab_files = site.static_files | where_exp: "f", "f.path contains lab_dir" %}
-      
-      {% comment %} 1. Render Root Lab Pages First {% endcomment %}
-      {% for p in lab_pages %}
-        {% assign p_subpath = p.url | remove_first: lab_dir %}
-        {% unless p_subpath contains "/" %}
-          <div class="nav-single nav-file">
-            <a href="{{ p.url | relative_url }}">
-              {% if p.name == "index.md" or p.name == "index.html" or p.name == "INDEX.md" %}
-                <strong>{{ dynamic_lab_title }} Overview</strong>
-              {% else %}
-                {% if p.title %}{{ p.title }}{% else %}{{ p.name | remove: ".md" | replace: "-", " " | capitalize }}{% endif %}
-              {% endif %}
-            </a>
-          </div>
-        {% endunless %}
-      {% endfor %}
-
-      {% comment %} 2. Collect Unique Top-Level Directories {% endcomment %}
-      {% assign top_dirs = "" | split: "" %}
-      
-      {% for p in lab_pages %}
-        {% assign p_subpath = p.url | remove_first: lab_dir %}
-        {% if p_subpath contains "/" %}
-          {% assign top_seg = p_subpath | split: "/" | first %}
-          {% assign full_top_dir = lab_dir | append: top_seg | append: "/" %}
-          {% unless top_dirs contains full_top_dir %}
-            {% assign top_dirs = top_dirs | push: full_top_dir %}
-          {% endunless %}
-        {% endif %}
-      {% endfor %}
-
-      {% for f in lab_files %}
-        {% assign f_subpath = f.path | remove_first: lab_dir %}
-        {% if f_subpath contains "/" %}
-          {% assign top_seg = f_subpath | split: "/" | first %}
-          {% assign full_top_dir = lab_dir | append: top_seg | append: "/" %}
-          {% unless top_dirs contains full_top_dir %}
-            {% assign top_dirs = top_dirs | push: full_top_dir %}
-          {% endunless %}
-        {% endif %}
-      {% endfor %}
-
-      {% assign sorted_top_dirs = top_dirs | sort %}
-
-      {% comment %} 3. Render Top-Level Subdirectories (Default Closed, Auto-Open if Active) {% endcomment %}
-      {% for top_dir in sorted_top_dirs %}
-        {% assign top_path_array = top_dir | split: "/" %}
-        {% assign folder_name = top_path_array.last | replace: "-", " " | capitalize %}
-
-        {% assign dir_pages = lab_pages | where_exp: "p", "p.dir == top_dir" %}
-        
-        {% comment %} Find direct files inside this top-level directory {% endcomment %}
-        {% assign direct_files = "" | split: "" %}
-        {% for f in lab_files %}
-          {% assign f_dir = f.path | replace: f.name, "" %}
-          {% if f_dir == top_dir %}
-            {% assign direct_files = direct_files | push: f %}
-          {% endif %}
-        {% endfor %}
-
-        {% comment %} Check for index page {% endcomment %}
-        {% assign folder_index = nil %}
-        {% for p in dir_pages %}
-          {% assign down_name = p.name | downcase %}
-          {% if down_name == "index.md" or down_name == "index.html" %}
-            {% assign folder_index = p %}
-          {% endif %}
-        {% endfor %}
-
-        {% comment %} Determine if this top-level folder contains the current page {% endcomment %}
-        {% assign is_top_active = false %}
-        {% if page.url contains top_dir %}
-          {% assign is_top_active = true %}
-        {% endif %}
-
-        <details {% if is_top_active %}open{% endif %} class="nav-group nav-subfolder">
-          <summary>
-            {% if folder_index %}
-              <a href="{{ folder_index.url | relative_url }}"><strong>{{ folder_name }}</strong></a>
-            {% else %}
-              <strong>{{ folder_name }}</strong>
-            {% endif %}
-          </summary>
-          <ul>
-            {% comment %} Render markdown pages (excluding index files) {% endcomment %}
-            {% for p in dir_pages %}
-              {% assign down_name = p.name | downcase %}
-              {% unless down_name == "index.md" or down_name == "index.html" %}
-                <li class="nav-file">
-                  <a href="{{ p.url | relative_url }}">
-                    {% if p.title %}{{ p.title }}{% else %}{{ p.name | remove: ".md" | replace: "-", " " | capitalize }}{% endif %}
-                  </a>
-                </li>
-              {% endunless %}
-            {% endfor %}
-
-            {% comment %} Render direct downloadable files {% endcomment %}
-            {% for f in direct_files %}
-              <li class="nav-download">
-                <a href="{{ f.path | relative_url }}" download>{{ f.name }}</a>
-              </li>
-            {% endfor %}
-
-            {% comment %} 4. Check for Nested Subfolders (e.g., outputs/o1/) {% endcomment %}
-            {% assign nested_dirs = "" | split: "" %}
-            {% for p in lab_pages %}
-              {% if p.dir contains top_dir and p.dir != top_dir %}
-                {% unless nested_dirs contains p.dir %}
-                  {% assign nested_dirs = nested_dirs | push: p.dir %}
-                {% endunless %}
-              {% endif %}
-            {% endfor %}
-            {% for f in lab_files %}
-              {% assign f_dir = f.path | replace: f.name, "" %}
-              {% if f_dir contains top_dir and f_dir != top_dir %}
-                {% unless nested_dirs contains f_dir %}
-                  {% assign nested_dirs = nested_dirs | push: f_dir %}
-                {% endunless %}
-              {% endif %}
-            {% endfor %}
-
-            {% assign sorted_nested_dirs = nested_dirs | sort %}
-            {% for nested_dir in sorted_nested_dirs %}
-              {% assign nested_path_array = nested_dir | split: "/" %}
-              {% assign nested_folder_name = nested_path_array.last | replace: "-", " " | capitalize %}
-
-              {% assign nested_pages = lab_pages | where_exp: "p", "p.dir == nested_dir" %}
-              
-              {% assign nested_direct_files = "" | split: "" %}
-              {% for f in lab_files %}
-                {% assign f_dir = f.path | replace: f.name, "" %}
-                {% if f_dir == nested_dir %}
-                  {% assign nested_direct_files = nested_direct_files | push: f %}
-                {% endif %}
-              {% endfor %}
-
-              {% assign nested_folder_index = nil %}
-              {% for p in nested_pages %}
-                {% assign down_name = p.name | downcase %}
-                {% if down_name == "index.md" or down_name == "index.html" %}
-                  {% assign nested_folder_index = p %}
-                {% endif %}
-              {% endfor %}
-
-              {% comment %} Determine if this nested subfolder contains the current page {% endcomment %}
-              {% assign is_nested_active = false %}
-              {% if page.url contains nested_dir %}
-                {% assign is_nested_active = true %}
-              {% endif %}
-
-              <li>
-                <details {% if is_nested_active %}open{% endif %} class="nav-group" style="margin-top: 0.25rem;">
-                  <summary>
-                    {% if nested_folder_index %}
-                      <a href="{{ nested_folder_index.url | relative_url }}"><strong>{{ nested_folder_name }}</strong></a>
-                    {% else %}
-                      <strong>{{ nested_folder_name }}</strong>
-                    {% endif %}
-                  </summary>
-                  <ul>
-                    {% for p in nested_pages %}
-                      {% assign down_name = p.name | downcase %}
-                      {% unless down_name == "index.md" or down_name == "index.html" %}
-                        <li class="nav-file">
-                          <a href="{{ p.url | relative_url }}">
-                            {% if p.title %}{{ p.title }}{% else %}{{ p.name | remove: ".md" | replace: "-", " " | capitalize }}{% endif %}
-                          </a>
-                        </li>
-                      {% endunless %}
-                    {% endfor %}
-
-                    {% for f in nested_direct_files %}
-                      <li class="nav-download">
-                        <a href="{{ f.path | relative_url }}" download>{{ f.name }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </details>
-              </li>
-            {% endfor %}
-          </ul>
-        </details>
-      {% endfor %}
-
+    <h3 id="lab-main-title">
+      <a href="{{ lab_dir | relative_url }}" id="lab-title-link">{{ dynamic_lab_title }} Overview</a>
+    </h3>
+    <nav class="sidebar-menu" id="sidebar-menu">
+      <!-- Built recursively by JS -->
     </nav>
   </aside>
 
-  <!-- Page Content -->
+  <!-- Main Content -->
   <main class="lab-content">
     {{ content }}
   </main>
 </div>
+
+{% assign lab_pages = site.pages | where_exp: "p", "p.url contains lab_dir" %}
+{% assign lab_files = site.static_files | where_exp: "f", "f.path contains lab_dir" %}
+
+<!-- Flat Manifest for JS parsing -->
+<ul id="raw-sidebar-data" style="display: none;" data-lab-dir="{{ lab_dir | relative_url }}" data-lab-slug="{{ lab_slug }}">
+  {% for p in lab_pages %}
+    <li data-type="page"
+        data-url="{{ p.url | relative_url }}"
+        data-path="{{ p.path }}"
+        data-title="{% if p.title %}{{ p.title }}{% else %}{{ p.name | remove: '.md' | remove: '.html' | replace: '-', ' ' | replace: '_', ' ' | capitalize }}{% endif %}"
+        data-name="{{ p.name | downcase }}"></li>
+  {% endfor %}
+  {% for f in lab_files %}
+    <li data-type="file"
+        data-url="{{ f.path | relative_url }}"
+        data-path="{{ f.path }}"
+        data-title="{{ f.name }}"></li>
+  {% endfor %}
+</ul>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const dataContainer = document.getElementById("raw-sidebar-data");
+    const rawItems = document.querySelectorAll("#raw-sidebar-data li");
+    const container = document.getElementById("sidebar-menu");
+    if (!rawItems.length || !container) return;
+
+    const norm = p => p ? p.replace(/\/index\.html?$/, '/').replace(/\/$/, '') : '';
+    const currentPath = norm(window.location.pathname);
+    const labDir = norm(dataContainer.dataset.labDir);
+    const labSlug = dataContainer.dataset.labSlug;
+    const headings = document.querySelectorAll('.lab-content h2, .lab-content h3');
+
+    // Build heading Table of Contents list
+    let tocUl = null;
+    if (headings.length) {
+      tocUl = document.createElement('ul');
+      tocUl.className = 'toc-subheadings-list';
+      headings.forEach(h => {
+        if (!h.id) return;
+        const li = document.createElement('li');
+        li.className = `toc-level-${h.tagName.toLowerCase()}`;
+        li.innerHTML = `<a href="#${h.id}">${h.textContent}</a>`;
+        tocUl.appendChild(li);
+      });
+    }
+
+    // Active state for Main Lab Overview Link
+    const titleLink = document.getElementById("lab-title-link");
+    const mainTitleElem = document.getElementById("lab-main-title");
+    if (currentPath === labDir) {
+      if (titleLink) titleLink.classList.add("active-link");
+      if (tocUl && mainTitleElem) mainTitleElem.after(tocUl.cloneNode(true));
+    }
+
+    const formatTitle = str => str.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+    // 1. Build nested object tree of arbitrary depth
+    const root = { folders: {}, pages: [], files: [], indexPage: null };
+
+    rawItems.forEach(item => {
+      const data = item.dataset;
+      
+      // Normalize source path relative to lab root folder
+      let relPath = data.path;
+      const slugPattern = `materials/labs/${labSlug}/`;
+      if (relPath.includes(slugPattern)) {
+        relPath = relPath.split(slugPattern)[1];
+      }
+
+      if (!relPath) return;
+
+      const parts = relPath.split('/').filter(Boolean);
+      let curr = root;
+
+      for (let i = 0; i < parts.length - 1; i++) {
+        const folder = parts[i];
+        if (!curr.folders[folder]) {
+          curr.folders[folder] = { folders: {}, pages: [], files: [], indexPage: null, name: folder };
+        }
+        curr = curr.folders[folder];
+      }
+
+      const isIndex = data.type === 'page' && (data.name === 'index.md' || data.name === 'index.html');
+      const entry = { url: data.url, title: data.title };
+
+      if (isIndex) {
+        curr.indexPage = entry;
+      } else if (data.type === 'page') {
+        curr.pages.push(entry);
+      } else {
+        curr.files.push(entry);
+      }
+    });
+
+    // Check if current page path belongs inside a subtree
+    const isSubtreeActive = node => {
+      if (node.indexPage && norm(node.indexPage.url) === currentPath) return true;
+      if (node.pages.some(p => norm(p.url) === currentPath)) return true;
+      if (node.files.some(f => norm(f.url) === currentPath)) return true;
+      return Object.values(node.folders).some(sub => isSubtreeActive(sub));
+    };
+
+    // 2. Render tree recursively
+    const renderTree = (node) => {
+      const ul = document.createElement('ul');
+
+      // Render Markdown pages
+      node.pages.sort((a,b) => a.title.localeCompare(b.title)).forEach(p => {
+        const li = document.createElement('li');
+        li.className = 'nav-file';
+        const a = document.createElement('a');
+        a.href = p.url;
+        a.textContent = p.title;
+        li.appendChild(a);
+
+        if (norm(p.url) === currentPath) {
+          a.classList.add('active-link');
+          if (tocUl) li.appendChild(tocUl.cloneNode(true));
+        }
+        ul.appendChild(li);
+      });
+
+      // Render downloadable files
+      node.files.sort((a,b) => a.title.localeCompare(b.title)).forEach(f => {
+        const li = document.createElement('li');
+        li.className = 'nav-download';
+        const a = document.createElement('a');
+        a.href = f.url;
+        a.download = true;
+        a.textContent = f.title;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+
+      // Render subfolders recursively
+      Object.keys(node.folders).sort().forEach(key => {
+        const sub = node.folders[key];
+        const li = document.createElement('li');
+        const details = document.createElement('details');
+        details.className = 'nav-group nav-subfolder';
+        if (isSubtreeActive(sub)) details.open = true;
+
+        const summary = document.createElement('summary');
+        
+        if (sub.indexPage) {
+          const folderLink = document.createElement('a');
+          folderLink.href = sub.indexPage.url;
+          folderLink.textContent = formatTitle(sub.name);
+          folderLink.onclick = (e) => {
+            e.stopPropagation();
+            window.location.href = folderLink.href;
+          };
+          summary.appendChild(folderLink);
+
+          if (norm(sub.indexPage.url) === currentPath) {
+            folderLink.classList.add('active-link');
+            if (tocUl) summary.appendChild(tocUl.cloneNode(true));
+          }
+        } else {
+          summary.innerHTML = `<span>${formatTitle(sub.name)}</span>`;
+        }
+
+        details.appendChild(summary);
+        details.appendChild(renderTree(sub));
+        li.appendChild(details);
+        ul.appendChild(li);
+      });
+
+      return ul;
+    };
+
+    const treeUl = renderTree(root);
+    while (treeUl.firstChild) {
+      container.appendChild(treeUl.firstChild);
+    }
+  });
+</script>
