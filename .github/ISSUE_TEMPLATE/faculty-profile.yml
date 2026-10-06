@@ -162,7 +162,7 @@ body:
     attributes:
       label: "Other Resources & Lecture Notes"
       description: "Any supplementary links, reading lists, or sub-headers you want on your page."
-
+      placeholder: |
         ### Recommended Reading
         * [Paper Title](https://example.com)
         
