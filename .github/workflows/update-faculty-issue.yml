@@ -42,7 +42,7 @@ jobs:
               }
             }
 
-            const newOptionsYaml = facultyNames.map(name => `        - "${name}"`).join('\n') + '\n';
+            const newOptionsYaml = facultyNames.map(name => `        - "${name}"`).join('\n');
 
             const owner = context.repo.owner;
             const repo = context.repo.repo;
