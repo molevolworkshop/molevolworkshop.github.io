@@ -5,19 +5,17 @@ This webpage is meant to give a brief overview of your research program and the 
 
 Any educational material should be uploaded to the [moledata](https://github.com/molevolworkshop/moledata) repository, **not** here.
 
-## FAQ for Faculty
+## How do I edit my personal page?
+
+We encourage all faculty to update the personal page via the Github Issue template [here](https://github.com/molevolworkshop/molevolworkshop.github.io/issues/new?template=faculty-profile.yml). 
+Submitting an issue using the template will automatically create a Pull Request with an updated faculty bio page that the co-directors can review before modifying the site.
 
 
-### How do I edit my personal page?
-
-You can fill out the Github Issue template [here](https://github.com/molevolworkshop/molevolworkshop.github.io/issues/new?template=faculty-profile.yml). 
-Submitting an issue using the template will automatically create a Pull Request with an updated faculty bio page that maintainers can review before modifying the site.
+## I do not want to use the GitHub Issue, what can I do?
 
 Alternatively, each faculty member should already have a faculty page at a url specific to thier name (e.g., https://github.com/molevolworkshop/molevolworkshop.github.io/blob/main/_faculty/firstname-lastname.md) that you can edit directly and create a PR.
 If you go this route please be sure to follow the frontmatter formatting (the lines at the top between the lines of hyphens)that you find in existing faculty pages to ensure it renders correctly.
 Specifically, contact information, home institution, department, faculty position, photo, and arrival/departure dates are a part of the frontmatter.
-
-
 
 ### What are those lines at the top between lines of hyphens?
 
