@@ -1,5 +1,5 @@
 date,start_time,end_time,room,item_id,type
-5/22/2027,18:00,21:00,MBL Club (100 Water St.),opening-reception,event
+5/22/2027,18:00,21:00,Meigs Room (Swope Center),opening-reception,event
 5/23/2027,9:00,10:30,Loeb G70,welcome-overview,event
 5/23/2027,10:30,11:30,Loeb G70,intro-phylogenetics,material
 5/23/2027,11:30,12:00,Loeb G70,scientific-ethics,material
@@ -33,7 +33,7 @@ date,start_time,end_time,room,item_id,type
 5/27/2027,9:00,10:30,Loeb G70,theories-molecular-evolution,material
 5/27/2027,10:30,12:00,Loeb G70,codon-models-intro,material
 5/27/2027,17:00,19:00,Loeb G70,science-under-pressure,material
-5/27/2027,19:00,22:00,Swope Cafe,course-dinner,event
+5/27/2027,19:00,22:00,Meigs Room (Swope Center),course-dinner,event
 5/27/2027,22:00,23:30,MBL Club,post-dinner-social,event
 5/28/2027,0:00,0:00,Martha's Vineyard,free-day,event
 5/29/2027,9:00,10:30,Loeb G70,adaptive-protein-intro,material
