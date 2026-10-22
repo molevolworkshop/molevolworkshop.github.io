@@ -9,16 +9,16 @@ headshot: "https://github.com/user-attachments/assets/bc78848f-4556-4675-ad97-49
 github: "pbeerli"
 twitter: "peterbeerli"
 email: "beerli@fsu.edu"
-website: "peterbeerli.com"
+website: "https://peterbeerli.com"
 arrival_date: "05/21/27"
 departure_date: "06/02/27"
 other_links:
   - label: "Blusky"
-    url: "peterbeerli"
+    url: "https://bsky.app/profile/peterbeerli.bsky.social"
   - label: "ORCID"
-    url: "0000-0003-0947-5451"
+    url: "https://orcid.org/0000-0003-0947-5451"
   - label: "Google Scholar"
-    url: "pbeerli@fsu.edu"
+    url: "https://scholar.google.com/citations?user=N3oasbQAAAAJ&hl=en"
 ---
 
 ## About
