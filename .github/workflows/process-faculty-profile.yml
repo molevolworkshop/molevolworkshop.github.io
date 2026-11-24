@@ -120,33 +120,62 @@ jobs:
             const department = getFieldValue('Department');
             const institution = getFieldValue('University / Institution');
             const headshot = getFieldValue('Headshot Photo');
-            const rawSocials = getFieldValue('Social Media & Contact Links');
+            const rawSupportedLinks = getFieldValue('Supported Links');
+            const rawOtherLinks = getFieldValue('Other / Unsupported Links');
             const arrivalDate = getFieldValue('Arrival Date');
             const departureDate = getFieldValue('Departure Date');
             const bioAbout = getFieldValue('About / Bio');
             const extraResources = getFieldValue('Other Resources & Lecture Notes');
 
-            // --- Parse Social Links ---
+            // --- Parse Supported & Other Links ---
             let githubHandle = '';
             let twitterHandle = '';
             let emailAddr = '';
             let mainWebsite = '';
             const otherLinks = [];
 
-            if (rawSocials) {
-              const lines = rawSocials.split('\n');
+            if (rawSupportedLinks) {
+              const lines = rawSupportedLinks.split('\n');
               for (let line of lines) {
                 line = line.trim();
                 if (!line || !line.includes(':')) continue;
                 const firstColon = line.indexOf(':');
-                const key = line.substring(0, firstColon).trim().toLowerCase();
+                const rawKey = line.substring(0, firstColon).trim();
+                const key = rawKey.toLowerCase();
                 const linkVal = line.substring(firstColon + 1).trim();
+                if (!linkVal) continue;
 
-                if (key === 'github') githubHandle = linkVal.replace(/^@/, '').replace('https://github.com/', '');
-                else if (key === 'twitter' || key === 'x') twitterHandle = linkVal.replace(/^@/, '').replace('https://x.com/', '').replace('https://twitter.com/', '');
-                else if (key === 'email') emailAddr = linkVal;
-                else if (key === 'website' || key === 'lab site' || key === 'lab website') mainWebsite = linkVal;
-                else otherLinks.push({ label: line.substring(0, firstColon).trim(), url: linkVal });
+                if (key === 'github') {
+                  githubHandle = linkVal
+                    .replace(/^@/, '')
+                    .replace(/^https?:\/\/(www\.)?github\.com\//i, '')
+                    .replace(/\/$/, '');
+                } else if (key === 'twitter' || key === 'x') {
+                  twitterHandle = linkVal
+                    .replace(/^@/, '')
+                    .replace(/^https?:\/\/(www\.)?(x|twitter)\.com\//i, '')
+                    .replace(/\/$/, '');
+                } else if (key === 'email') {
+                  emailAddr = linkVal.replace(/^mailto:/i, '');
+                } else if (key === 'website' || key === 'lab site' || key === 'lab website') {
+                  mainWebsite = linkVal;
+                } else {
+                  otherLinks.push({ label: rawKey, url: linkVal });
+                }
+              }
+            }
+
+            if (rawOtherLinks) {
+              const lines = rawOtherLinks.split('\n');
+              for (let line of lines) {
+                line = line.trim();
+                if (!line || !line.includes(':')) continue;
+                const firstColon = line.indexOf(':');
+                const label = line.substring(0, firstColon).trim();
+                const url = line.substring(firstColon + 1).trim();
+                if (label && url) {
+                  otherLinks.push({ label, url });
+                }
               }
             }
 

@@ -1,0 +1,24 @@
+{% comment %}
+  Generates a collapsible Table of Contents for H2/H3 headers
+{% endcomment %}
+{% assign headings = include.content | split: '<h' %}
+{% if headings.size > 1 %}
+  <details class="toc-subheadings">
+    <summary><strong>On this page</strong></summary>
+    <ul>
+      {% for section in headings offset:1 %}
+        {% assign level = section | slice: 0 %}
+        {% if level == '2' or level == '3' %}
+          {% assign id_parts = section | split: 'id="' %}
+          {% assign header_id = id_parts[1] | split: '"' | first %}
+          {% assign title_parts = section | split: '>' %}
+          {% assign raw_title = title_parts[1] | split: '</h' | first %}
+          
+          <li class="toc-level-{{ level }}">
+            <a href="#{{ header_id }}">{{ raw_title | strip_html }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </details>
+{% endif %}

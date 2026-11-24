@@ -10,6 +10,3 @@ The Workshop on Molecular Evolution is committed to providing a safe, caring and
 * take appropriate measures to help those in need. 
 
 If you have experienced or observed a violation of the code of conduct please communicate this to a member of the course faculty. They will ensure that appropriate action is taken.
-
-MBL's education office has [additional links and information here](http://www.mbl.edu/hr/employment/equal-employment-opportunity-affirmative-action/).
-

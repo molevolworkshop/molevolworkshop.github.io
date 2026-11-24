@@ -103,25 +103,39 @@ body:
     validations:
       required: false
 
-  # ---------------------------------------------------------
+ # ---------------------------------------------------------
   # CONTACT & SOCIAL LINKS
   # ---------------------------------------------------------
   - type: textarea
-    id: socials_list
+    id: supported_links
     attributes:
-      label: "Social Media & Contact Links"
+      label: "Supported Links"
       description: |
-        Add your social handles or custom contact links below, one per line using the format: `Type: Handle or URL`.
-        
-        **Supported Types:** `GitHub`, `Twitter`, `Email`, `Bluesky`, `ORCID`, `Google Scholar`, or any `Custom` label (e.g., `Lab Site: URL`).
+        Add supported links one per line using the format: `Type: Handle/username or URL (for lab website)`.
+        Handles will be automatically normalized/linked where supported.
+
+        **Supported Types:** `GitHub`, `Twitter`, `X`, `Email`, `Website`, `Lab Site` 
       placeholder: |
         GitHub: jmithons
         Twitter: jsmithons
         Email: jsmithons@college.edu
-        Bluesky: jsmithons.bsky.social
-        Google Scholar: https://scholar.google.com/citations?user=12345
-        Lab Site: https://example-lab.org
+        Website: https://example-lab.org
+    validations:
+      required: false
 
+  - type: textarea
+    id: other_links
+    attributes:
+      label: "Other / Unsupported Links"
+      description: |
+        Add any other links (e.g., Bluesky, ORCID, Google Scholar, LinkedIn), one per line using the format: `Label: URL`.
+        Unsupported socials do not process handles/usernames so links to the account or social will need to be provided
+      placeholder: |
+        Bluesky: https://bsky.app/profile/jsmithons.bsky.social
+        ORCID: https://orcid.org/0000-0000-0000-0000
+        Google Scholar: https://scholar.google.com/citations?user=12345
+    validations:
+      required: false
   # ---------------------------------------------------------
   # TRAVEL / LOGISTICS
   # ---------------------------------------------------------
